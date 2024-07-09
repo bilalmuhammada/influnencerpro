@@ -1084,7 +1084,7 @@
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
                         <h1 class="header-title" style="margin-top: -23px">
-                            Influencer Reviews</h1>
+                            Influencer Reviewscodepull</h1>
                     </div>
                 </div>
             </div>
