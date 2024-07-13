@@ -85,7 +85,9 @@
         //     window.location = base_url;
         // }
 
+        
         var api_url = "{{ env('API_URL') }}";
+        
         function togglePassword() {
             var passwordInput = document.getElementById('password');
             // var toggleIcon = document.getElementById('toggleIcon');
@@ -116,7 +118,7 @@
         function login_call(form) {
             var inputs = $(form).find('input');
             var allInputsValid = validate_inputs(form);
-alert(api_url);
+
             if (allInputsValid) {
                 form.classList.add('was-validated');
                 var formData = new FormData(form);
@@ -134,11 +136,11 @@ alert(api_url);
 
                             if (response.role_key == 'influencer') {
                                 setTimeout(function () {
-                                    window.location.href = base_url + 'influencer/dashboard';
+                                    window.location.href = base_url + '/influencer/dashboard';
                                 }, 600);
                             } else if(response.role_key == 'vendor') {
                                 setTimeout(function () {
-                                    window.location.assign(base_url + 'vendor/dashboard');
+                                    window.location.assign(base_url + '/vendor/dashboard');
                                 }, 600);
                             }else {
                                 setTimeout(function () {
