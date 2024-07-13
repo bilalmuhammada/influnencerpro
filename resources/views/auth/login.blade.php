@@ -115,12 +115,12 @@
         function login_call(form) {
             var inputs = $(form).find('input');
             var allInputsValid = validate_inputs(form);
-alert(inputs);
+alert(api_url);
             if (allInputsValid) {
                 form.classList.add('was-validated');
                 var formData = new FormData(form);
                 $.ajax({
-                    url: API_URL + 'auth/login',
+                    url: api_url + 'auth/login',
                     type: 'POST',
                     data: formData,
                     processData: false,
