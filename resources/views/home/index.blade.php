@@ -22,10 +22,10 @@
 }
 /* Default text style */
 .responsive-text {
-    color: rgb(169, 128, 25);
-    font-size: 1.5rem; /* Use responsive units like rem */
+    color: rgb(169, 128, 25) !important;
+    /* font-size: 1.5rem; Use responsive units like rem */
     line-height: 1.5; /* Adjust line height for readability */
-    text-align: center; /* Center the text for better visibility */
+    /* text-align: center; Center the text for better visibility */
 }
 
 /* Media queries for different screen sizes */
@@ -107,7 +107,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers1</span></h1>
+                                        <span class="orange-text"><br>Influncers</span></h1>
                                         <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                             hire for Business Brands Marketing Worldwide!
                                             </p>

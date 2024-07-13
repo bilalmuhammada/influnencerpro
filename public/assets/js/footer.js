@@ -7,7 +7,7 @@ function logout(e) {
     // e.preventDefault();
 
     $.ajax({
-        url: api_url + 'logout',
+        url: API_URL + 'logout',
         type: 'POST',
         dataType: "JSON",
         success: function (response) {
@@ -30,7 +30,7 @@ function logout(e) {
 $(document).on('click', '.read-all-notification', function (e) {
     e.preventDefault();
     $.ajax({
-        url: api_url + 'chats/mark-as-read-all',
+        url: API_URL + 'chats/mark-as-read-all',
         type: 'POST',
         dataType: "JSON",
         success: function (response) {
