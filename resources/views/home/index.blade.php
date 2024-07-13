@@ -1259,7 +1259,7 @@
                         <div class="review-blog" width="220" style="background-color: none !important; ">
                             <div class="circlez" style="border: 0px solid red;">
                                 <div class="circleThumb"
-                                     style="background-image:url({{ asset('assets/img/icon/icons/image2.jpg')}});"></div>
+                                     style="background-image:url({{ asset('assets/img/icon/icons/image1.jpg')}});"></div>
                             </div>
                             <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
@@ -1291,7 +1291,7 @@
                         <div class="review-blog" width="220" style="background-color: none !important; ">
                             <div class="circlez" style="border: 0px solid red;">
                                 <div class="circleThumb"
-                                     style="background-image:url({{ asset('assets/img/icon/icons/image2.JPG')}});"></div>
+                                     style="background-image:url({{ asset('assets/img/icon/icons/image2.jpg')}});"></div>
                             </div>
                             <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
