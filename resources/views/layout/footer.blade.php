@@ -71,12 +71,16 @@
                         @endif
                         <!-- <li><a href="{{ env('BASE_URL') }}subscriptions"><i class="fas fa-angle-right me-1"></i>Subscription</a>
                             </li> -->
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal"><i
-                                        class="fas fa-angle-right me-1"></i>Terms & Conditions</a>
-                            </li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"><i
-                                        class="fas fa-angle-right me-1"></i>Privacy Policy</a>
-                            </li>
+                            <li><a href="{{ env('BASE_URL') }}/termcondition"
+                                {{-- data-bs-toggle="modal" data-bs-target="#termsModal" --}}
+                                ><i
+                                       class="fas fa-angle-right me-1"></i>Terms & Conditions</a>
+                           </li>
+                           <li><a href="{{ env('BASE_URL') }}/privacy-policy"
+                                {{-- data-bs-toggle="modal" data-bs-target="#privacyModal" --}}
+                                ><i
+                                       class="fas fa-angle-right me-1"></i>Privacy Policy</a>
+                           </li>
                         </ul>
 
                     </div>

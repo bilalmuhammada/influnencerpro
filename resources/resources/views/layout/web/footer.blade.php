@@ -80,12 +80,16 @@
                         <h2 class="footer-title">Help & Support</h2>
                         <ul>
                             <li><a href="#"><i class="fas fa-angle-right me-1"></i>FAQ</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal"><i
-                                        class="fas fa-angle-right me-1"></i>Terms & Conditions</a>
-                            </li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"><i
-                                        class="fas fa-angle-right me-1"></i>Privacy Policy</a>
-                            </li>
+                            <li><a href="{{ env('BASE_URL') }}/termcondition"
+                                {{-- data-bs-toggle="modal" data-bs-target="#termsModal" --}}
+                                ><i
+                                       class="fas fa-angle-right me-1"></i>Terms & Conditions555</a>
+                           </li>
+                           <li><a href="{{ env('BASE_URL') }}/privacy-policy"
+                                {{-- data-bs-toggle="modal" data-bs-target="#privacyModal" --}}
+                                ><i
+                                       class="fas fa-angle-right me-1"></i>Privacy Policy</a>
+                           </li>
                             <!-- <li><a href="javascript:;"><i class="fas fa-angle-right me-1"></i>Change Location</a></li> -->
                         </ul>
                     </div>
