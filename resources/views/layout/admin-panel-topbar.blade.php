@@ -36,11 +36,11 @@
         @php
         // dd( session()->get('User'));
         @endphp
-                <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashbaord</a></li>
+                <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}">Dashbaord</a></li>
                     <li class="has-submenu {{ request()->is('influencers/' . session()->get('User')['id'] . '/public-profile') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . 'influencers'}}/{{session()->has('User') ? session()->get('User')['id'] : '' }}/public-profile">Public
+                        <a href="{{ env('BASE_URL') . '/influencers'}}/{{session()->has('User') ? session()->get('User')['id'] : '' }}/public-profile">Public
                             Profile</a></li>
-                    <li class="has-submenu {{ request()->is('influencer/complete-profile') ? 'active' : '' }}"><a href="{{ env('BASE_URL') }}influencer/complete-profile">Edit Profile</a>
+                    <li class="has-submenu {{ request()->is('influencer/complete-profile') ? 'active' : '' }}"><a href="{{ env('BASE_URL') }}/influencer/complete-profile">Edit Profile</a>
                     </li>
             @endif
             <!-- <li class="has-submenu">
@@ -57,20 +57,20 @@
                     <ul class="submenu">
                         <li class="has-submenu">
                             @if(session()->get('role') == 'influencer')
-                            <li><a href="{{ env('BASE_URL') . 'influncersubscriptions' }}">Subscription</a></li>
+                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscription</a></li>
                             @else
-                            <li><a href="{{ env('BASE_URL') . 'subscriptions' }}">Subscription</a></li>
+                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscription</a></li>
                             @endif
                        
                        
-                    <!-- <li><a href="{{ env('BASE_URL') . 'reports/my-reports' }}">Bank/card Details for Renewal</a>
+                    <!-- <li><a href="{{ env('BASE_URL') . '/reports/my-reports' }}">Bank/card Details for Renewal</a>
                         </li> -->
-                        <li><a href="{{ env('BASE_URL') . 'reports/transaction-history' }}">Transaction
+                        <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transaction
                                 History</a></li>
-                    <!-- <li><a href="{{ env('BASE_URL') . 'reports/my-reports' }}">Download invoices</a></li> -->
+                    <!-- <li><a href="{{ env('BASE_URL') . '/reports/my-reports' }}">Download invoices</a></li> -->
                     </ul>
                 </li>
-                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . 'chats' }}">Chats</a></li>
+                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/chats' }}">Chats</a></li>
                 <!-- <li>
                     <div class="input-box text-center mx-auto"
                          style="border:none;height:35px;width:250px;border:1px solid #999;border-radius:30px;text-align:center;margin-top:20px;">
@@ -140,12 +140,12 @@
                         {{--                        <li><a href="{{env('BASE_URL'). 'dashboard-vendor-profile'}}">Profile</a></li>--}}
                         {{--                        <li><a href="{{env('BASE_URL'). 'vendor-dashboard-settings'}}">Settings</a></li>--}}
                        
-                        <!-- <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Settings</a></li> -->
+                        <!-- <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}">Settings</a></li> -->
                         @if(session()->get('role') == 'vendor')
-                        <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Edit Profile</a></li>
+                        <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}">Edit Profile</a></li>
                         @endif
                         @if(session()->get('role') == 'influencer')
-                         <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Edit Profile</a></li>
+                         <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}">Edit Profile</a></li>
                             <!-- <li>
                                 <a href="{{ env('BASE_URL') . 'influencer/complete-profile' }}" class="logout-btn">
                                     Profile
