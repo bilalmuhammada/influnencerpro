@@ -85,6 +85,7 @@
         //     window.location = base_url;
         // }
 
+        var api_url = "{{ env('API_URL') }}";
         function togglePassword() {
             var passwordInput = document.getElementById('password');
             // var toggleIcon = document.getElementById('toggleIcon');
