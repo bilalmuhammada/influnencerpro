@@ -57,7 +57,7 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
