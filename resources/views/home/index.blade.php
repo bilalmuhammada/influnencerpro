@@ -79,7 +79,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brand2342</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
