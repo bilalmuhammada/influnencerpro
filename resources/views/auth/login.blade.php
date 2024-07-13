@@ -120,7 +120,7 @@ alert(inputs);
                 form.classList.add('was-validated');
                 var formData = new FormData(form);
                 $.ajax({
-                    url: api_url + 'auth/login',
+                    url: API_URL + 'auth/login',
                     type: 'POST',
                     data: formData,
                     processData: false,
