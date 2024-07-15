@@ -114,7 +114,7 @@
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Socials</h2>
-                        <ul>
+                        <ul style="margin-left: 14px;">
                             <li><a href="#" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
                                         width="30"

@@ -28,7 +28,7 @@
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header text-center">
-                                <h3>Privacy And Policy</h3>
+                                <h3>Privacy & Policy</h3>
                                
                                 
                             </div>

@@ -108,7 +108,7 @@
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Social Media</h2>
-                        <ul>
+                        <ul style="margin-left: 14px;">
                             <li><a href="#" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/icon/icons/facebook-svgrepo-com.svg') }}" alt="fb"
                                         width="30"
