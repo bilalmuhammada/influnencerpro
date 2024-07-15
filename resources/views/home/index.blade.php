@@ -61,7 +61,7 @@
         <div class="container-fluid" style="border-top:0px solid #eee;height:auto;">
             <div class="col-md-12 col-lg-12">
                 <div class="row">
-                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/11.jpg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -79,7 +79,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand2342</span></h1>
+                                            class="orange-text"><br>Brand</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/11.jpg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -1506,7 +1506,7 @@
                                         <img class="img-fluid" src="{{ asset('assets/img/test-quote.svg') }}" alt="quote">
                                     </div> --}}
                                 </div>
-                                <div class="review-content" style=" font-size: 15px;line-height: 25px;  height: 200px;">
+                                <div class="review-content" style=" font-size: 15px;line-height: 25px;height: 200px;">
                                     <p>Can hire Talents, Speakers, Singers, Dancers and DJs for parties.</p>
                                 </div>
                             </div>

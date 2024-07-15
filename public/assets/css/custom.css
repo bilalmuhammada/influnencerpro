@@ -177,7 +177,7 @@ animation: scroll 40% linear infinite
 }
     .circleThumb{
         position: absolute;
-    left: 89px;
+    left: 122px;
     /* margin: 0px auto; */
     top: 17px;
     border-width: 3px;
@@ -197,7 +197,7 @@ animation: scroll 40% linear infinite
     border-width: 1px;
     border-color: #fff;
 }
-    .mySlides {display:none;}
+    
 .switch {
   position: relative;
   display: inline-block;
