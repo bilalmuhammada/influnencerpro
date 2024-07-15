@@ -22,6 +22,13 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+input[type="file"] {
+            color: transparent;
+        }
+
+        /* input[type="file"]::-webkit-file-upload-button {
+            visibility: hidden;
+        } */
     </style>
    <div class="content">
     <div class="container" style="margin-top: 60px;">
@@ -92,7 +99,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
                                           <select name="iam" id="" class="form-control floating"> 
-                                          <option  selected value="">I am</option>
+                                          <option  selected value="">I'm a/an                                        </option>
                                             <option value="influncer">Influncer</option>
                                             <option value="brands">Brands</option>
                                            
@@ -109,6 +116,7 @@
                                                   <option value="reportbrand">Report Brand</option>
                                                   <option value="reportinfluncer">Report Influncer</option>
                                                 </select>
+                                                <label class="focus-label">Reason </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

@@ -73,12 +73,12 @@
             <li><a href="contact-us.php">Contact us</a></li> -->
             @if(session()->missing('User'))
                 <li class="has-submenu">
-                    <a href="{{ env('BASE_URL') . 'register?role=influencer' }}">Register<i
+                    <a href="{{ env('BASE_URL') . '/register?role=influencer' }}">Register<i
                             class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="has-submenu"></li>
-                        <li><a href="{{ env('BASE_URL') . 'register?role=influencer' }}">As  Influencer</a></li>
-                        <li><a href="{{ env('BASE_URL') . 'register?role=brand' }}">As  Brand</a></li>
+                        <li><a href="{{ env('BASE_URL') . '/register?role=influencer' }}">As  Influencer</a></li>
+                        <li><a href="{{ env('BASE_URL') . '/register?role=brand' }}">As  Brand</a></li>
                     </ul>
                 </li>
                 <li>
