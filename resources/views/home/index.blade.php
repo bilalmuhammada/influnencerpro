@@ -79,7 +79,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                         <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                             hire for Business Brands Marketing Worldwide!
                                             </p>
@@ -110,7 +110,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                     <p style="color:rgb(169, 128, 25);;white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace </br>to    
                                         hire for Business Brands Marketing Worldwide!
                           </p>
@@ -169,7 +169,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                     <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br>  to  
                                         hire for Business Brands Marketing Worldwide!
                           </p>
@@ -230,7 +230,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -259,7 +259,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                     <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                         hire for Business Brands Marketing Worldwide!
                           </p>
@@ -290,7 +290,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -319,7 +319,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                     <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                         hire for Business Brands Marketing Worldwide!
                           </p>
@@ -350,7 +350,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>
@@ -378,7 +378,7 @@
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influncers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h1>
                                     <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                         hire for Business Brands Marketing Worldwide!
                           </p>
@@ -409,7 +409,7 @@
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brand</span></h1>
+                                            class="orange-text"><br>Brands</span></h1>
                                     <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                                 </div>
                             </div>

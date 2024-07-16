@@ -640,10 +640,21 @@ width: 200px !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Cloth Size</label>
-                                            <input type="text" class="form-control" name="cloth_size"
+                                            {{-- <input type="text" class="form-control" name="cloth_size"
                                                    {{-- placeholder=" Cloth Size..." --}}
-                                                   value="@if(request()->cloth_size){{ request()->cloth_size }}@endif">
-                                        </div>
+                                                   {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} --}}
+                                                   <select name="clothsize" id=""
+                                                   class="form-control available-country floating">
+                                             
+                                               <option value="XS">XS</option>
+                                               <option value="S">S</option>
+                                               <option value="M">M</option>
+                                                <option value="L">L</option> 
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option>
+                                                <option value="XXL">XXL</option>
+                                           </select>
+                                                </div>
                                         <div class="col-md-6">
                                             {{-- select2 --}}
                                             <label class="font_label">Tattoo</label>

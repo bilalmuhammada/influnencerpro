@@ -116,7 +116,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                         {{-- <div class="input-container"> --}}
                                            
-                                            <select name="spoken_language_ids[]" id="" class="form-control floating "
+                                            <select name="spoken_language_ids[]" id="" class="form-control floating seletct2" multiple
                                                     >
                                                 {{-- <option value="">Spoken Language</option> --}}
                                                 @foreach(getSpokenLanguages() as $language)
@@ -200,10 +200,17 @@ display: none !important;
                                             <select name="hair_type" id=""
                                             class="form-control available-country floating">
                                         {{-- <option value="">Hair Typess</option> --}}
-                                        @foreach( $userInformation as $userinfo)
+                                        {{-- @foreach( $userInformation as $userinfo)
                                             <option
                                                 value="{{ $userinfo->id }}" >{{ $userinfo->hairtype }}</option>
-                                        @endforeach
+                                        @endforeach --}}
+                                        {{-- <option selected value="">Select Hair Type</option> --}}
+                                        <option value="short">Short</option>
+                                        <option value="long">Long</option>
+                                         <option value="curly">Curly</option>
+                                         <option value="wavy">Wavy</option>
+                                         <option value="blad">Bald</option>
+                                         <option value="coily">Coily</option>
                                     </select>
                                       <label for="username" class="focus-label">Hair Type</label>
                                         </div>
@@ -214,10 +221,17 @@ display: none !important;
                                             <select name="hair_color" id=""
                                             class="form-control available-country floating">
                                         {{-- <option value="">Hair Color</option> --}}
-                                        @foreach( $userInformation as $userinfo)
+                                        {{-- @foreach( $userInformation as $userinfo)
                                             <option
                                                 value="{{ $userinfo->id }}" >{{ $userinfo->haircolor }}</option>
-                                        @endforeach
+                                        @endforeach --}}
+                                        {{-- <option selected value="">Hair color</option> --}}
+                                        <option value="grey">Grey</option>
+                                        <option value="black">Black</option>
+                                        <option value="blonde">Blonde</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="white">White</option>
+                                        <option value="red">Red</option>
                                     </select>
                                     <label for="username" class="focus-label">Hair Color</label>
                                         </div>
@@ -228,10 +242,18 @@ display: none !important;
                                             <select name="eye_color" id=""
                                             class="form-control available-country floating">
                                         {{-- <option value="">Eye Type</option> --}}
-                                        @foreach( $userInformation as $userinfo)
+                                        {{-- @foreach( $userInformation as $userinfo)
                                             <option
                                                 value="{{ $userinfo->id }}" >{{ $userinfo->eyecolor }}</option>
-                                        @endforeach
+                                        @endforeach --}}
+                                        {{-- <option selected value="">Eye Color</option> --}}
+                                        <option value="amber">Amber</option>
+                                        <option value="black">Black</option>
+                                        <option value="brown">Brown</option>
+                                         <option value="grey">Gray</option> 
+                                         <option value="green">Green</option>
+                                         <option value="hazel">Hazel</option>
+                                         <option value="red">Red</option>
                                     </select>
                                     <label for="username" class="focus-label">Eye Color</label>
                                         </div>
@@ -271,9 +293,20 @@ display: none !important;
                                 <div class="row" style="">
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
-                                            <input type="text" class="form-control floating" name="clothsize" 
+                                            {{-- <input type="text" class="form-control floating" name="clothsize" 
                                          
-                                            value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/>
+                                            value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
+                                            <select name="clothsize" id=""
+                                            class="form-control available-country floating">
+                                      
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                         <option value="L">L</option> 
+                                         <option value="XL">XL</option>
+                                         <option value="XXL">XXL</option>
+                                         <option value="XXL">XXL</option>
+                                    </select>
                                             <label for="username" class="focus-label">Cloth Size</label>
                                         </div>
                                  
@@ -957,6 +990,7 @@ display: none !important;
 
 
         $(document).ready(function () {
+            $('.seletct2').select2();
             show_img();
             show_img('#image0', '#logo0');
             // $('.feature-select2').select2();
