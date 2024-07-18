@@ -6,6 +6,9 @@
     font-weight: bolder;
     color: goldenrod;
     }
+    .changeColor:hover{
+        color: goldenrod;
+    }
     ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }
@@ -80,9 +83,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                        <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
-                                            hire for Business Brands Marketing Worldwide!
-                                            </p>
+                                        <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -97,7 +99,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -111,7 +113,10 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                   
+                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                        hire for Business Brands Marketing Worldwide!
+                                        </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -139,9 +144,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                    <p style="color:rgb(169, 128, 25);;white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace </br>to    
-                                        hire for Business Brands Marketing Worldwide!
-                          </p>
+                                        <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -156,7 +160,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -170,7 +174,9 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                                hire for Business Brands Marketing Worldwide!
+                                                </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -200,9 +206,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br>  to  
-                                        hire for Business Brands Marketing Worldwide!
-                          </p>
+                                        <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -217,7 +222,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -231,7 +236,9 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                                hire for Business Brands Marketing Worldwide!
+                                                </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -260,9 +267,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
-                                        hire for Business Brands Marketing Worldwide!
-                          </p>
+                                        <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -277,7 +283,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -291,7 +297,9 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                                hire for Business Brands Marketing Worldwide!
+                                                </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -320,9 +328,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
-                                        hire for Business Brands Marketing Worldwide!
-                          </p>
+                                        <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -337,7 +344,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -351,7 +358,9 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                                hire for Business Brands Marketing Worldwide!
+                                                </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -379,9 +388,8 @@
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
-                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
-                                        hire for Business Brands Marketing Worldwide!
-                          </p>
+                               <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                            
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -396,7 +404,7 @@
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;line-height:20%;">
+                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
@@ -410,7 +418,9 @@
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                    <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
+                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                                hire for Business Brands Marketing Worldwide!
+                                                </p>
                                 </div>
                             </div>
                             <!-- <div class="col-md-4 col-lg-5">
@@ -577,7 +587,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="app-version-img text-center aos" data-aos="fade-up">
-                        <img class="img-fluid" src="{{ asset('assets/img/blog/3.webp') }}" alt="App">
+                        <img class="img-fluid" src="{{ asset('assets/img/blog/3.jpeg') }}" alt="App">
                     </div>
                 </div>
 
@@ -595,7 +605,7 @@
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2><a href="{{ env('BASE_URL') . 'register?role=influencer' }}">Influncer </a></h2>
+                        <h2><a href="{{ env('BASE_URL') . 'register?role=influencer' }}" class="changeColor">Influencers </a></h2>
                         <p>Join InfluencerPro and be a Pro-Influncer to receive direct Collaborations from all Business Brands Worldwide!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>
@@ -604,7 +614,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2><a href="{{ env('BASE_URL') . 'register?role=brand' }}">Brand</a></h2>
+                        <h2><a href="{{ env('BASE_URL') . 'register?role=brand' }}"  class="changeColor">Brands</a></h2>
                         <p>Register InfluencerPro & Gain access to Millions of Pro-Influencers Database which allows you to view Influencers Profiles & Social Platforms, Multi-Country Availability, Direct Chat, Price Offers & Collaborations!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>

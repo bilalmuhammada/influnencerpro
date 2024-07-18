@@ -21,10 +21,11 @@ class UserController extends Controller
             return redirect('/register?role=influencer');
         }
 
-        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail'])->whereHas('role', function ($Role) {
+        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail','favourites'])->whereHas('role', function ($Role) {
             $Role->where('code', 'influencer');
         });
 
+        // dd(  $influencers);
         return view('vendor-dashboard.home')->with(['view_type' => 'influencer', 'influencers' => $influencers->paginate(20), 'total_influencers' => $influencers->count()]);
     }
 

@@ -172,8 +172,8 @@
                                      alt="Logo">
                             </a>
                         </div>
-                        <div class="copyright-text">
-                            <p class="mb-0">© InfluencerPro.com 2023. All Rights Reserved.</p>
+                        <div class="copyright-text bilal-footer">
+                            <p class="mb-0">© InfluencerPro.org 2023. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4 right-text">

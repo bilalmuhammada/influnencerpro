@@ -260,7 +260,7 @@ width: 195px !important;
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                 <div class="start"
                                      style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:225px;">
-                                    <i class="fas fa-check-circle text-success verified" data-id="{{ $influencer->id }}"
+                                    <i class="fas fa-check-circle text-success verified bilal-farviote" data-id="{{ $influencer->id }}"
                                        style="padding:7px;border-radius:50%;"></i>
                                     &nbsp;
                                 </div>

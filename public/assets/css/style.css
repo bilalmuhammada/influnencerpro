@@ -8875,7 +8875,7 @@ div#global-loader {
 
 .search-filter .select2-container .select2-selection--single,
 .search-filter .form-control {
-    border: 1px solid #ecf0f9;
+    border: 1px solid #aaa;
     border-radius: 6px;
 }
 

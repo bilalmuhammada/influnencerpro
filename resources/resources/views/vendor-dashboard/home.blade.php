@@ -287,7 +287,7 @@
                                                     $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
                                                     $facebook = getInfluencerSocialMediaProfileByTypeAndId('facebook', $influencer->id);
                                                 @endphp
-                                                <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp; <span
+                                                <li style=" display: inline-block;color:#fff; margin-left: 9px;">&nbsp;&nbsp; <span
                                                         style="font-size: 12px;text-align:center;"><a href=""><img
                                                                 src="{{ asset('assets/img/social-icon/insta.png') }}"
                                                                 alt=""

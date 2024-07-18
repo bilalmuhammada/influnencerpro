@@ -114,13 +114,13 @@
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Socials</h2>
-                        <ul style="margin-left: 14px;"
+                        <ul style="margin-left: 14px;">
                             <li><a href="#" class="icon" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/fb.png')}}" alt="fb"
+                                        src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
                                         width="30"
                                         height="30"></a></li>
                             <li><a href="#" class="icon" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/insta.png') }}"
+                                        src="{{ asset('assets/icons/instagram.png') }}"
                                         alt="insta" width="30"
                                         height="30"></a></li>
                             <li><a href="#" class="icon" target="_blank"><img
@@ -181,8 +181,8 @@
                                      alt="Logo">
                             </a>
                         </div>
-                        <div class="copyright-text">
-                            <p class="mb-0">© InfluencerPro.com 2023. All Rights Reserved.</p>
+                        <div class="copyright-text bilal-footer1" >
+                            <p class="mb-0">© InfluencerPro.org 2023. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-4 right-text">

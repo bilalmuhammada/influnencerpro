@@ -85,9 +85,9 @@ width: 200px !important;
                                     <input type="text" class="form-control" placeholder=" search..." name="">
                                     <label for="" class="font_label">Country</label>
                                     @php $countries = getCountries(); @endphp
-                                    <select class="form-control select2 nationality_id" id="nationality_id" multiple
-                                            name="country_id[]">
-                                        <option value="">Select Nationality</option>
+                                    <select class="form-control select2 nationality_id" id="nationality_id" 
+                                            name="country_id">
+                                        <option value=""></option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -423,9 +423,9 @@ width: 200px !important;
                                         <label class="font_label">Nationality</label>
                                         <!-- <div class="form-group"> -->
                                         @php $countries = getCountries(); @endphp
-                                        <select class="form-control select2 nationality_id" multiple
-                                                name="country_id[]">
-                                            <option value="">Select Nationality</option>
+                                        <select class="form-control  select2 nationality_id" 
+                                                name="country_id">
+                                            <option value=""></option> 
                                             @forelse($countries as $country)
                                                 <option value="{{ $country->id }}"
                                                         @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -508,18 +508,19 @@ width: 200px !important;
                                                        }
                                                        ?> style="width:18px;height:18px;">
                                             </div>
-                                            <div class="col-md-6">
+                                            {{-- <div class="col-md-6">
                                                 <span
                                                     style="font-size:14px;position:relative;top:-7px;">Other</span>
                                                 <input type="checkbox" name="other"
                                                        <?php
-                                                       if (request()->other) {
-                                                           echo "checked";
-                                                       } else {
-                                                           echo "";
-                                                       }
-                                                       ?> style="width:18px;height:18px;">
-                                            </div>
+                                                       //if (request()->other) {
+                                                       //    echo "checked";
+                                                       //} else {
+                                                          // echo "";
+                                                      // }
+                                                       ?> 
+                                                       style="width:18px;height:18px;">
+                                            </div> --}}
                                         </div>
                                     </div>
                                     <!-- <div class="filter-widget"> -->
@@ -547,7 +548,7 @@ width: 200px !important;
                                                                         <option value="{{$hair}}">{{$hair}}</option>
                                                                          
                                                                            @endforeach --}}
-                                                                           <option selected value="">Select Hair Type</option>
+                                                                           {{-- <option selected value="">Select Hair Type</option> --}}
                                                                            <option value="short">Short</option>
                                                                            <option value="long">Long</option>
                                                                             <option value="curly">Curly</option>
@@ -579,7 +580,7 @@ width: 200px !important;
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
                                              
                                                @endforeach --}}
-                                               <option selected value="">Hair color</option>
+                                               {{-- <option selected value="">Hair color</option> --}}
                                                <option value="grey">Grey</option>
                                                <option value="black">Black</option>
                                                <option value="blonde">Blonde</option>
@@ -608,7 +609,7 @@ width: 200px !important;
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
                                          
                                            @endforeach --}}
-                                           <option selected value="">Eye Color</option>
+                                           {{-- <option selected value="">Eye Color</option> --}}
                                            <option value="amber">Amber</option>
                                            <option value="black">Black</option>
                                            <option value="brown">Brown</option>
@@ -642,7 +643,7 @@ width: 200px !important;
                                             <label class="font_label">Cloth Size</label>
                                             {{-- <input type="text" class="form-control" name="cloth_size"
                                                    {{-- placeholder=" Cloth Size..." --}}
-                                                   {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} --}}
+                                                   {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} 
                                                    <select name="clothsize" id=""
                                                    class="form-control available-country floating">
                                              
@@ -823,9 +824,13 @@ width: 200px !important;
                     {{--                        <span class="badge badge-pill badge-skills">USD <span class="tag-close" data-role="remove"><i--}}
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
+
+                  
                     <div class="row" id="infulecer-show">
                         @forelse($influencers as $influencer)
-
+                        @php
+                        // dd($influencer->favourites[0]->influencer_id,$influencer->id );
+                        @endphp
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                                 <div class="card avatar-one"
                                      style="width:100%;box-shadow:1px 1px 1px 1px #eee;">
@@ -836,17 +841,26 @@ width: 200px !important;
                                                style="background-color:;padding:7px;margin:2px;border-radius:50%; color: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'green' : '#999' }} !important;"></i> --}}
 
                                         </div>
+                                        
+                                          
+   @php
+    $color = (isset($influencer->favourites) && count($influencer->favourites) > 0 && $influencer->favourites[0]->influencer_id == $influencer->id) ? 'goldenrod' : 'red';
+    $color1 = (isset($influencer->favourites) && count($influencer->favourites) > 0 && $influencer->favourites[0]->influencer_id == $influencer->id) ? '#099ffc' : 'green';
+@endphp
+
+
+                                       
                                         <div class="influencerdetail" id="">
                                             <div class="start"
-                                                 style="color:#ff0000;position:absolute;text-align:right;border:0px solid red;width:220px;">
+                                                 style="position:absolute;text-align:right;border:0px solid red;width:220px;">
 
-                                                 <i class="fa-solid fa-heart text-danger add-to-favourite"
+                                                 <i class="fa-solid fa-heart  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
-                                                 style="padding:7px;border-radius:50%;margin-top: 12px; color:red !important margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : 'none' }}"></i>
+                                                 style="padding:7px;border-radius:50%;margin-top: 12px;color:{{$color}} ;  margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
-                                                <i class="fas fa-check-circle text-success add-to-favourite"
+                                                <i class="fas fa-check-circle   add-to-favourite"
                                                    data-id="{{ $influencer->id }}"
-                                                   style="padding:7px;border-radius:50%;margin-top: 12px; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : 'none' }}"></i>
+                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 {{-- <i class="fas fa-check-circle remove-favourite"
                                                    data-id="{{ $influencer->id }}"
@@ -867,7 +881,7 @@ width: 200px !important;
                                                 @endphp
                                                 &nbsp;
                                                 @if($instagram)
-                                                    <li style=" display: inline-block;color:#fff;"><span
+                                                    <li style=" display: inline-block;color:#fff;margin-left: 9px; "><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/insta.png') }}"
                                                                     alt=""
@@ -927,7 +941,7 @@ width: 200px !important;
                                     </a>
                                     <div class="influencer-dev" style="margin:10px;padding:3px;">
                                         <h5 style="font-size:12px;"
-                                            class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
+                                            class="influencer-name bilal-list-influencer">{{ $influencer ? $influencer->full_name : '' }}</h5>
                                         <h5 style="font-size:12px;">{{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}

@@ -84,7 +84,7 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Active: <b>30 days</b></li>
+        <li><i class="fa fa-check-circle"></i>  Active: <b>90 days</b></li>
         <li><i class="fa fa-check-circle"></i>  Chat Influencers: <b>500</b></li>
         <li><i class="fa fa-check-circle"></i>  Favorite Influencers: <b>700</b></li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: <b>1 – 1M Followers</b></li>
@@ -121,7 +121,7 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Active: <b>100 Days</b></li>
+        <li><i class="fa fa-check-circle"></i>  Active: <b>180 Days</b></li>
         <li><i class="fa fa-check-circle"></i>  Chat Influencers: <b>Unlimited</b></li>
         <li><i class="fa fa-check-circle"></i>  Favorite Influencers: <b>Unlimited</b></li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: <b>Unlimited Followers</b></li>
