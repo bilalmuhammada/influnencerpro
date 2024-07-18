@@ -615,6 +615,7 @@ class AuthController extends Controller
 
     public function forgotPassword()
     {
+        // dd('dd');
         return view('auth.forgot-password');
     }
 

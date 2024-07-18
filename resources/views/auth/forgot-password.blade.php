@@ -35,7 +35,7 @@
                                     </div>
                                     <button class="btn-block btn-lg t-btn reset-btn" type="submit" style="margin-left: 18pc;">Reset</button>
                                     <div class="row">
-                                        <div class="col-6 text-end dont-have">Login <a 
+                                        <div class="col-6 text-end dont-have">Login <a  style="margin-left: 43px;"
                                                 href="{{ env('BASE_URL') }}login">Click
                                                 here</a></div>
                                     </div>
@@ -52,10 +52,10 @@
 
 @section('page_scripts')
     <script>
-        var token = localStorage.getItem("user_token");
-        if (token) {
-            window.location = base_url;
-        }
+        // var token = localStorage.getItem("user_token");
+        // if (token) {
+        //     window.location = base_url;
+        // }
 
         $(document).ready(function () {
             var form = $('#forgot-password-form')[0];

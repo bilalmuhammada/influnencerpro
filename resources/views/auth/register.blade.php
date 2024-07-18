@@ -289,7 +289,7 @@
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Password.
                                                 </div>
-                                                <label class="focus-label">Password <span style="font-size: 10px">(8  Characters - 1 Capital, 1 Number, 1 Special)</span></label>
+                                                <label class="focus-label bilal-register">Password1 <span style="font-size: 10px">(8  Characters - 1 Capital, 1 Number, 1 Special)</span></label>
                                             </div>
                                             <div class="form-group form-focus mb-0">
                                                 <input type="password" class="form-control floating"
@@ -328,7 +328,8 @@
 
                                             <div class="row form-row">
                                                 <div class="col-6 text-start">
-                                                    <a class="forgot-link" href="#">Forgot Password ?</a>
+                                                    <a class="forgot-link" href="{{ env('BASE_URL') }}forgot-password">Forgot
+                                                        Password ?</a>
                                                 </div>
                                                 <div class="col-6 text-end dont-have">Already on influencerPro <a
                                                         href="{{env('BASE_URL').'login'}}">Click here</a></div>

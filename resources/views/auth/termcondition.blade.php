@@ -412,9 +412,9 @@ In accordance with the DMCA, we’ve adopted the policy below toward copyright i
                                                                                         <li>  Once Proper Bona Fide Infringement Notification is Received by the Designated Agent. Upon receipt of a proper notice of copyright infringement, we reserve the right to: </li>
                                                                                             <li> remove or disable access to the infringing material; </li>
                                                                                                 <li> notify the content provider who is accused of infringement that we have removed or disabled access to the applicable material; and </li>
-                                                                                                    <li> terminate such content provider's access to the Services if he or she is a repeat offender. </li>
-                                                                                                        <li> Please contact InfluencerPro’s Designated Agent at the following address: </li>
-                                                                                                            <li> support@influencerpro.org </li>
+                                                                                                    <li class="bilal-termcondition"> terminate such content provider's access to the Services if he or she is a repeat offender. </li>
+                                                                                                         Please contact InfluencerPro’s Designated Agent at the following address 
+                                                                                                         support@influencerpro.org 
 
                                                             </p>
 
