@@ -13,6 +13,13 @@
   .dz-message{
 display: none !important;
   }
+  .form
+  .select2-container--default .select2-selection--multiple .select2-selection__choice{
+    font-size: 12px !important;
+  }
+  .select2-container {
+    z-index: 1 !important;
+}
   .inputbg:focus, .floating:focus {
     border: 1px solid blue !important;
 }
@@ -25,6 +32,15 @@ display: none !important;
   width: 12px; /* You can adjust this value based on your preference */
 }
 
+.form-control{
+    color: black !important;
+
+}
+#Priceinclude::placeholder {
+            font-size: 14px !important; /* Change font size */
+            /* color: black !important;   */
+            /* font-weight: bold  !important; Change color */
+        }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;
@@ -101,8 +117,8 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="category_ids[]" class="form-control floating  category_ids"
-                                                    >
+                                            <select name="category_ids[]" id="category_ids" class="form-control floating  category_ids"
+                                            multiple >
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories() as $category)
                                                     <option
@@ -114,19 +130,17 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
-                                        {{-- <div class="input-container"> --}}
-                                           
-                                            <select name="spoken_language_ids[]" id="" class="form-control floating seletct2" multiple
-                                                    >
-                                                {{-- <option value="">Spoken Language</option> --}}
+                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control floating" multiple>
                                                 @foreach(getSpokenLanguages() as $language)
-                                                    <option
-                                                        value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>{{ $language->name }}</option>
+                                                    <option value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>
+                                                        {{ $language->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
- <label for="" class="focus-label">Spoken Language</label>
+                                            <label for="spoken_language_ids" class="focus-label">Spoken Language</label>
                                         </div>
-                                    </div>
+                                        </div>
+                                    
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus">
@@ -182,10 +196,7 @@ display: none !important;
                                                     value="FEMALE" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'FEMALE' ? 'selected' : '' }}>
                                                     Female
                                                 </option>
-                                                <option
-                                                    value="OTHER" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'OTHER' ? 'selected' : '' }}>
-                                                    Other
-                                                </option>
+                                               
                                             </select>
                                             <label for="username" class="focus-label">Gender</label> 
                                         </div>
@@ -283,7 +294,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <input type="number" class="form-control floating" name="shoes_size"
+                                            <input type="text" class="form-control floating" name="shoes_size"
                                                    placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->shoes_size : '' }}"/>
                                                    <label for="username" class="inner_label focus-label">Shoes Size-EU</label>
@@ -317,8 +328,8 @@ display: none !important;
                                             {{--                                               placeholder="}
                                             {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
                                        
-                                            <select name="arts[]" id="professional_category"
-                                                    class="form-control professional_category floating " >
+                                            <select name="arts[]" id="arts"
+                                               multiple     class="form-control professional_category floating " >
                                                 {{-- <option value="">--Select Art--</option> --}}
                                                 @foreach(getArts() as $art)
                                                     <option
@@ -374,9 +385,9 @@ display: none !important;
                                                    name="main_available_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder="From Date"
+                                                   placeholder=" Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
-                                            <label for="username" class="inner_label focus-label">From Date</label>
+                                            <label for="username" class="inner_label focus-label"> Date</label>
                                         </div>
                                     </div>
 
@@ -387,9 +398,9 @@ display: none !important;
                                                    name="main_available_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder="To Date"
+                                                   placeholder="Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label">To Date</label>
+                                                   <label for="username" class="inner_label focus-label">Date</label>
                                         </div>
                                     </div>
 
@@ -437,9 +448,9 @@ display: none !important;
                                                    name="availability_from_date[0]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder="From Date"
+                                                   placeholder=" Date"
                                                    value="{{ count($availabilities) > 0  ? formatDateToread($availabilities[0]['availability_from_date'])  : '' }}">
-                                                   <label for="username" class="inner_label focus-label">From Date</label>
+                                                   <label for="username" class="inner_label focus-label"> Date</label>
                                         </div>
                                     </div>
 
@@ -450,9 +461,9 @@ display: none !important;
                                                    name="availability_to_date[0]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder="To Date"
+                                                   placeholder=" Date"
                                                    value="{{ count($availabilities) > 0  ? $availabilities[0]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label">To Date</label>
+                                                   <label for="username" class="inner_label focus-label"> Date</label>
                                         </div>
                                     </div>
 
@@ -503,9 +514,9 @@ display: none !important;
                                                    name="availability_from_date[1]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder="From Date"
+                                                   placeholder=" Date"
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? formatDateToread($availabilities[1]['availability_from_date']) :  '' }}">
-                                                   <label for="username" class="inner_label focus-label">From Date</label>
+                                                   <label for="username" class="inner_label focus-label"> Date</label>
                                         </div>
                                     </div>
 
@@ -518,7 +529,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                 
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? $availabilities[1]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label">To Date</label>
+                                                   <label for="username" class="inner_label focus-label"> Date</label>
                                         </div>
                                     </div>
 
@@ -538,8 +549,8 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
 
-                                             <input type="text" class="form-control floating" name="Priceinclude"
-                                                   placeholder="Reel Story Vlog Modal"
+                                             <input type="text" class="form-control floating" id="Priceinclude" name="Priceinclude"
+                                                   placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
                                                    value=""/>
                                             {{-- <select name="Priceinclude" id="Priceinclude" 
                                                     class="form-control floating " >
@@ -976,21 +987,84 @@ display: none !important;
 @section('page_scripts')
 
 {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
-    {{-- <script src="{{ asset('assets/js/skills.js') }}"></script> --}}
-    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-    
+<!-- Include jQuery -->
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- Include jQuery UI JS -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- Include Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Include Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   
   <script>
           
 
-
+          $(document).ready(function() {
+            $('#spoken_language_ids').select2({
+                placeholder: "Select Spoken Languages",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            $('#category_ids').select2({
+                // placeholder: "Select Spoken Languages",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            $('#arts').select2({
+                // placeholder: "Select Spoken Languages",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            
+            
+        });
 
 
         $(document).ready(function () {
-            $('.seletct2').select2();
+            
+           
             show_img();
             show_img('#image0', '#logo0');
             // $('.feature-select2').select2();
@@ -999,7 +1073,7 @@ display: none !important;
             $('.datepicker').datepicker({
                 format: 'dd-M-yyyy'
             });
-            $('.select2').select2();
+           
 
 
             Dropzone.autoDiscover = false;

@@ -25,6 +25,16 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.form-group {
+            margin-bottom: 1.5rem;
+        }
+        .invalid-feedback {
+            display: none;
+            color: red;
+        }
+        .is-invalid + .invalid-feedback {
+            display: block;
+        }
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
@@ -73,7 +83,7 @@
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="phone">
+                                                <input type="text" class="form-control floating" name="phone" pattern="\+?\d*" title="Please enter a valid mobile number" oninput="validateInput(this)">
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Mobile.
                                                 </div>
@@ -81,10 +91,12 @@
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="email" class="form-control floating" name="email">
+                                               
+                                                <label class="focus-label">Email </label>
+
                                                 <div class="invalid-feedback">
                                                     Please provide a valid email.
                                                 </div>
-                                                <label class="focus-label">Email </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 
@@ -99,9 +111,9 @@
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating" name="age">
+                                                <input type="email" class="form-control floating" name="age"   pattern="\+?\d*" oninput="validateInput(this)">
                                                 <div class="invalid-feedback">
-                                                    Please provide a valid email.
+                                                    {{-- Please provide a valid Age. --}}
                                                 </div>
                                                 <label class="focus-label">Age</label>
                                             </div>
@@ -147,19 +159,17 @@
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
                                             <div class="dont-have">
-                                                <label class="custom_check">
-                                                    <input type="checkbox" name="agreed_to_terms"
-                                                           class="agreed_to_terms"
-                                                           style="border:1px solid #eee !important;">
-                                                    <span class="checkmark"></span> You agree to the influencerPro
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms
-                                                        & Conditions</a> and <a href="#" data-bs-toggle="modal"
-                                                                                data-bs-target="#privacyModal">Privacy
-                                                        Policy</a>.
+                                                <span class="custom_check">
+                                                    <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
+                                                >
+                                                    {{-- <span class="checkmark"></span> --}}
+                                                    You agree to the influencerPro
+                                                    <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
+                                                    <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     <div class="invalid-feedback">
                                                         Please Check this.
                                                     </div>
-                                                </label>
+                                                </span>
                                             </div>
                                             <div class="invalid-feedback" style="display: none">
 
@@ -202,14 +212,14 @@
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Website.
                                                 </div>
-                                                <label class="focus-label">Website</label>
+                                                <label class="focus-label">Business Website</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" id="bemail" name="email">
                                                 <div class="invalid-feedback">
-                                                    Please provide a valid Business Mail.
+                                                    Please provide a valid Business Email.
                                                 </div>
-                                                <label class="focus-label">Business Mail</label>
+                                                <label class="focus-label">Business Email</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" name="name"/>
@@ -234,7 +244,7 @@
                                                 <label class="focus-label">Position </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="phone"/>
+                                                <input type="text" class="form-control floating"   pattern="\+?\d*" oninput="validateInput(this)" name="phone"/>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Mobile.
                                                 </div>
@@ -253,9 +263,9 @@
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating" name="age">
+                                                <input type="email" class="form-control floating"   pattern="\+?\d*" name="age">
                                                 <div class="invalid-feedback">
-                                                    Please provide a valid email.
+                                                    Please provide a valid age.
                                                 </div>
                                                 <label class="focus-label">Age</label>
                                             </div>
@@ -302,19 +312,19 @@
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
                                             <div class="dont-have">
-                                                <label class="custom_check">
-                                                    <input type="checkbox" name="agreed_to_terms"
-                                                           class="agreed_to_terms">
-                                                    <span class="checkmark"></span> You agree to the influencerPro
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms
-                                                        & Conditions</a> and <a href="#" data-bs-toggle="modal"
-                                                                                data-bs-target="#privacyModal">Privacy
-                                                        Policy</a>.
+                                                <span class="custom_check">
+                                                    <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
+                                                >
+                                                    {{-- <span class="checkmark"></span> --}}
+                                                    You agree to the influencerPro
+                                                    <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
+                                                    <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     <div class="invalid-feedback">
                                                         Please Check this.
                                                     </div>
-                                                </label>
+                                                </span>
                                             </div>
+                                            
 
                                             <div class="invalid-feedback term-invalid" style="display: none">
 
@@ -350,6 +360,12 @@
 
 @section('page_scripts')
     <script>
+
+
+function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+}
     $('#brand-register-form').on('submit', function(event) {
         var emailInput = $('#bemail');
         var emailError = $('#emailError');

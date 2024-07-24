@@ -93,13 +93,13 @@
                             <!-- <lable>Book Talent<i class="fa fa-email"></i></lable> -->
                             <!-- <a href="javascript:void(0);">Clear All</a> -->
                         </div>
-                        <div class="card-body" style="background-color:#f2e49c;">
+                        <div class="card-body" style="background-color:#f2e49c;height: 800px;">
 
                             <div class="filter-widget">
                                 <h4><b>Profile Info</b></h4>
                             </div>
                             <div class="row">
-                                <div class="col-md-4" style="height:65px;margin-bottom:9px;">
+                                {{-- <div class="col-md-6" style="height:65px;margin-bottom:9px;">
                                     <label class="font-label">Category</label>
                                     <div class="form-group">
                                         <p class="badge badge-pill badge-skill">
@@ -109,99 +109,103 @@
                                             @endforeach
                                     </p>
                                     </div>
-                                </div>
-                                <div class="col-md-4" style="height:65px;">
+                                </div> --}}
+                                <div class="col-md-6" style="">
                                     <label class="font-label">Languages</label>
                                     <div class="form-group">
                                         <span
-                                        @php
-                                        // dd($influencer->spoken_languages);
-                                            
-                                        @endphp
+                                       
                                             class="badge badge-pill badge-skill">@foreach ($influencer->spoken_languages as $spokenLanguage)
                                                 {{ $spokenLanguage->spoken_language?->name }}
                                                 <br>
                                             @endforeach</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Ethnicity</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information->ethnicity->name ?? '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                {{-- <div class="col-md-6" >
                                     <label class="font-label">Nationality</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
                                     </div>
-                                </div>
-                                <div class="col-md-4" style="height:65px;">
+                                </div> --}}
+                                <div class="col-md-6" >
                                     <label class="font-label">Age</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Gender</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'gender') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Hair Type</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->hair_type : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Hair color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->hair_color : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Eye color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'eye_color') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Height-CM</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'height') }} </span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Weight-KG</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'weight') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Shoes Size-EU</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'shoes_size') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
+                                    <label class="font-label">Cloth Size-EU</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'shoes_size') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
                                     <label class="font-label">Tattoo</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->tattoes : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Art</label>
                                     <div class="form-group">
                                         <span
@@ -213,9 +217,17 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
-
+                                <div class="col-md-6" >
+                                    <label class="font-label">Availability</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill"
+                                            style="width:100%;">{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}</span>
+                                    </div>
                                 </div>
+                                {{-- <div class="col-md-6" >
+
+                                </div> --}}
                                 <!-- <div class="col-md-12"> -->
                             <!-- <label class="font-label">Platforms Icons</label>
                                     <div class="form-group">
@@ -226,45 +238,94 @@
                                         @endforeach
                                 </div> -->
                                 <!-- </div> -->
-                                <div class="col-md-6" style="height:75px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Based City</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->city, 'name') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="height:75px;">
+                                <div class="col-md-6" >
                                     <label class="font-label">Based Country</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="height:65px;margin-top:-8px;">
-                                    <label class="font-label">Availability</label>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Traveling City</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}</span>
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="height:65px;margin-top:-8px;">
+                                    <div class="col-md-6" >
+                                    <label class="font-label">Traveling Country</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Traveling City</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                    </div>
+                                </div>
+                                    <div class="col-md-6" >
+                                    <label class="font-label">Traveling Country</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Traveling City</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                    </div>
+                                </div>
+                                    <div class="col-md-6" >
+                                    <label class="font-label">Traveling Country</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Price Include</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Price Negotiable</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
+                                    </div>
+                                </div>
+                              
+                                {{-- <div class="col-md-6" style="height:65px;margin-top:-8px;">
                                     <label class="font-label">&nbsp;</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
                                             style="width:100%;">{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}</span>
                                     </div>
-                                </div>
-                                @foreach($availabilities as $availability)
-                                    <div class="col-md-6" style="height:75px;">
+                                </div> --}}
+                                {{-- @foreach($availabilities as $availability)
+                                    <div class="col-md-6" >
                                         <label class="font-label">Other City</label>
                                         <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($availability->city, 'name') }}</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6" style="height:75px;">
+                                    <div class="col-md-6" >
                                         <label class="font-label"> Other Country</label>
                                         <div class="form-group">
                                         <span
@@ -287,30 +348,30 @@
                                             style="width:100%;">{{ formatDateToread(getSafeValueFromObject($availability, 'availability_to_date')) }}</span>
                                         </div>
                                     </div>
-                                @endforeach
-
-                                <div class="col-md-4" style="height:75px;">
+                                @endforeach --}}
+                                <div class="col-md-6" >
+                                    <label class="font-label"> Collaboration</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'is_collaboration_formatted') }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" >
                                     <label class="font-label">Willing to Travel</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'willing_to_travel_formatted') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-4" style="height:65px;">
+                                {{-- <div class="col-md-6" >
                                     <label class="font-label">Price<br/> &nbsp;</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <div class="col-md-4" style="height:65px;">
-                                    <label class="font-label">Open for Collaboration</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'is_collaboration_formatted') }}</span>
-                                    </div>
-                                </div>
+                             
 
 
                                 {{--                                <div class="col-md-6">--}}
@@ -325,13 +386,7 @@
                                 {{--                                        <span class="badge badge-pill badge-skill">art...</span>--}}
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
-                                <div class="col-md-4" style="height:65px;">
-                                    <label class="font-label">Price Include</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }}</span>
-                                    </div>
-                                </div>
+                             
                                 <div class="col-md-12">
                                     <label class="font-label">Bio</label>
                                    
@@ -356,14 +411,15 @@
                     <div class="row">
                         <div class="col-md-6">
                             <strong>
-                        <span style="font-size:30px;padding-left:3px; display: flex;">
+                        <span style="margin-top: 40px;   font-size:30px;padding-left:3px; display: flex;">
                             {{ $influencer ? $influencer->full_name : ''}}
-                             <a href="javascript:void(0)" style="    margin: 6px;" class="share-link" onclick="shareLink()">
+                             <a href="javascript:void(0)" style="margin: 9px 6px 0px 10px;" class="share-link" onclick="shareLink()">
                                         <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
                                     </a>
-                                <button id="downloadButton" class="rounded-circle">
-                                    <i class="fas fa-download" style="color: blue;"></i>
-                                </button>
+                                <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;">
+                                    {{-- <i class="fas fa-download" style="color: blue;"></i> --}}
+                                    <img src="{{ asset('assets/img/icons/dwnld.png') }}" alt="" width="30px">
+                                </a>
                                    
                                     <div class="text-center" style="font-size: 11px;">&nbsp;</div>
                           
@@ -394,7 +450,7 @@
                         $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
                         $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                     @endphp
-                    <div class="details" style="height:auto;padding:7px 3px;">
+                    <div class="details" style=" margin-top:10px;hight:auto;padding:7px 3px;">
                         <ul style="list-style-type: none;">
                             @if($instagram)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
@@ -417,7 +473,7 @@
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img
                                                 src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                alt=""
+                                                alt="" style="margin-left: -4px"
                                                 width="30px"></a> <div class="text-center"
                                                                        style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                 </li> &nbsp;
@@ -464,7 +520,7 @@
                                     style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Based in: {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City in: {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
                                     style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>

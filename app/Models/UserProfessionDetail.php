@@ -20,12 +20,12 @@ class UserProfessionDetail extends Model
 
     public function getPriceFormattedAttribute()
     {
-        return  '$'. number_format($this->price) ;
+        return  '$'.' '. number_format($this->price);
     }
 
     public function getPriceIncludeFormattedAttribute()
     {
-        return '$'.number_format($this->price_include);
+        return '$'.' '. number_format($this->price_include);
     }
 
     public function getAvailableFromDateFormattedAttribute()

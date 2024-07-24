@@ -65,6 +65,7 @@ class UserController extends Controller
         $Influencer = User::with(['role', 'user_professional_detail', 'features.feature', 'influencer_profile_images', 'availabilities', 'categories.category'])->find($request->id);
         $chat = Chat::where(['second_user_id' => $request->id, 'first_user_id' => SiteHelper::getLoginUserId()])->first();
 
+        // <!-- dd($Influencer); -->
         if ($Influencer) {
             $total_views = $Influencer->total_views + 1;
             $total_clicks = $Influencer->total_clicks + 1;

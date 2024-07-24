@@ -475,13 +475,13 @@
                         <div class="col-lg-2 col-md-6 col-sm-6 mx-auto" style="border:0px solid red;width:170px;border:0px solid red;">
                             <div class="project-item aos">
                                 <div class="project-img">
-                                <a href="{{ env('BASE_URL') }}category/{{ $category->id }}/influencers"><img src="{{ $category->image_url }}" alt="cats"  class="img-fluid"></a>
+                                <a href="{{ env('BASE_URL') }}/category/{{ $category->id }}/influencers"><img src="{{ $category->image_url }}" alt="cats"  class="img-fluid"></a>
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="project-content">
                                         <!-- <h4>20</h4> -->
-                                        <h5><a href="{{ env('BASE_URL') }}category/{{ $category->id }}/influencers">{{ $category->name }}</a></h5>
+                                        <h5><a href="{{ env('BASE_URL') }}/category/{{ $category->id }}/influencers">{{ $category->name }}</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -936,7 +936,7 @@
 
                                     <div class="feature-content course-count">
                                         <h6 style="  font-weight: bolder;">Create Profile </h6>
-                                        <p style="font-size: 12px;">Fill in Profile Details.</p>
+                                        <p style="font-size: 12px;">Fill in Profile Details</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -954,7 +954,7 @@
 
                                     <div class="feature-content course-count">
                                         <h6 style="  font-weight: bolder;">Fill Socials URL </h6>
-                                        <p style="font-size: 12px;">Place Social Platforms URLs .</p>
+                                        <p style="font-size: 12px;">Place Social Platforms URLs</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -971,8 +971,8 @@
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
-                                        <h6 style="  font-weight: bolder;">Receive Brand Collaborations </h6>
-                                        <p style="font-size: 12px;">Start receiving Brands Collaborations .</p>
+                                        <h6 style="  font-weight: bolder;">Receive Brands Collaborations </h6>
+                                        <p style="font-size: 12px;">Start receiving Brands Collaborations</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -1032,8 +1032,8 @@
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
-                                        <h6 style="  font-weight: bolder;">Register Brand Profile </h6>
-                                        <p style="font-size: 12px;">Create Brand Profile.</p>
+                                        <h6 style="  font-weight: bolder;">Register Brands Profile </h6>
+                                        <p style="font-size: 12px;">Create Brand Profile</p>
                                     </div>
                                     <!-- </div> -->
                                 </div>
@@ -1052,7 +1052,7 @@
 
                                     <div class="feature-content course-count">
                                         <h6 style="  font-weight: bolder;">Filter Influencers </h6>
-                                        <p style="font-size: 12px;">Filter your requirements .</p>
+                                        <p style="font-size: 12px;">Filter your requirements</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -1070,7 +1070,7 @@
 
                                     <div class="feature-content course-count">
                                         <h6 style="  font-weight: bolder;">Select Influencers & Talents </h6>
-                                        <p style="font-size: 12px;">Favorite from Options.</p>
+                                        <p style="font-size: 12px;">Favorite from Options</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -1087,8 +1087,8 @@
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
-                                        <h6 style="  font-weight: bolder;">Chat & Book</h6>
-                                        <p style="font-size: 12px; ">Chat & Hire Influencers & Talents for your Brand.</p>
+                                        <h6 style="  font-weight: bolder;">Chat & Hire</h6>
+                                        <p style="font-size: 12px; ">Book Influencers & Talents for your Brand</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->

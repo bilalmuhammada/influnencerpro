@@ -207,7 +207,7 @@
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>
 </button>
-<script src="assets/js/feather.min.js"></script>
+{{-- <script src="assets/js/feather.min.js"></script> --}}
 {{--<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>--}}
 
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>

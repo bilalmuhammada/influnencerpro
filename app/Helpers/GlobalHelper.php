@@ -394,7 +394,7 @@ function getSafeValueFromObject($object, $index='', $default = '')
     if (empty($object) || !is_object($object)) {
         return $default;
     }
-    // dd($object);
+
 
     // Check if the index exists and is not null
     if (isset($object->$index) && !empty($object->$index)) {

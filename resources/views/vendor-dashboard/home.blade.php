@@ -137,7 +137,7 @@ width: 200px !important;
                                                                             echo "";
                                                                         }
                                                                         ?>
-                                                                        style="width:18px;height:18px;">
+                                                                        style="width:20px;height:20px">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
@@ -152,7 +152,7 @@ width: 200px !important;
                                                                                 echo "";
                                                                             }
                                                                             ?>
-                                                                            style="width:18px;height:18px;">
+                                                                            style="width:20px;height:20px">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
@@ -168,7 +168,7 @@ width: 200px !important;
                                                                                              echo "";
                                                                                          }
                                                                                          ?>
-                                                                                         style="width:18px;height:18px;">
+                                                                                         style="width:20px;height:20px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
@@ -185,7 +185,7 @@ width: 200px !important;
                                                                                                     echo "";
                                                                                                 }
                                                                                                 ?>
-                                                                                                style="width:18px;height:18px;">
+                                                                                                style="width:20px;height:20px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
@@ -204,7 +204,7 @@ width: 200px !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:18px;height:18px;">
+                                                                                               style="width:20px;height:20px;">
                                             </div>
 
                                             <div class="col-md-6">
@@ -224,14 +224,14 @@ width: 200px !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:18px;height:18px; margin-left: -13px;">
+                                                                                               style="width:20px;height:20px; margin-left: -14px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/snapchat.png')}}"
                                                     alt="insta"
-                                                    width="20">
+                                                    style="margin-left: -3px; height: 23px;width: 23px;">
                                                     Snapchat &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -243,7 +243,7 @@ width: 200px !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:18px;height:18px;margin-left: -12px;">
+                                                                                               style="width:20px;height:20px;margin-left: -14px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
@@ -262,7 +262,7 @@ width: 200px !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:18px;height:18px; margin-left: -14px;">
+                                                                                               style="width:20px;height:20px ;margin-left: -14px;">
                                             </div>
                                         </div>
                                     </div>
@@ -289,7 +289,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:18px;height:18px;">
+                                                               style="width:20px;height:20px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -306,7 +306,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:18px;height:18px;    margin-left: -22px;">
+                                                               ?> style="width:20px;height:19px  ;  margin-left: -17px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -324,7 +324,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:18px;height:18px;    margin-left: -8px;">
+                                                               ?> style="width:20px;height:20px  ;  margin-left: -3px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -341,7 +341,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:18px;height:18px;">
+                                                               ?> style="width:20px;height:19px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -360,7 +360,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:18px;height:18px;     margin-left: -5px;">
+                                                               style="width:20px;height:21px ;    margin-left: -1px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -379,7 +379,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:18px;height:18px;">
+                                                               style="width:20px;height:19px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -492,7 +492,7 @@ width: 200px !important;
                                                        } else {
                                                            echo "";
                                                        }
-                                                       ?> style="width:18px;height:18px;">
+                                                       ?> style="width:20px;height:20px">
                                             </div>
                                             <div class="col-md-6">
                                                 <span
@@ -506,7 +506,7 @@ width: 200px !important;
                                                        } else {
                                                            echo "";
                                                        }
-                                                       ?> style="width:18px;height:18px;">
+                                                       ?> style="width:20px;height:20px">
                                             </div>
                                             {{-- <div class="col-md-6">
                                                 <span
@@ -519,7 +519,7 @@ width: 200px !important;
                                                           // echo "";
                                                       // }
                                                        ?> 
-                                                       style="width:18px;height:18px;">
+                                                       style="width:20px;height:20px">
                                             </div> --}}
                                         </div>
                                     </div>
@@ -673,8 +673,7 @@ width: 200px !important;
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label style="font-size:11px !important;color:#0504aa;font-weight:bold;">Open
-                                                for Collaboration</label>
+                                            <label class="font_label">Collaboration</label>
                                             <select name="is_collaboration" class="form-control" id="">
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
@@ -696,12 +695,12 @@ width: 200px !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Availability</label>
-                                            <input type="text" class="form-control datepicker" name="availability_from_date" placeholder="From Date" onchange="formatDate(this)"
+                                            <input type="text" class="form-control datepicker" name="availability_from_date" placeholder=" Date" onchange="formatDate(this)"
                                                    value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">&nbsp;</label>
-                                            <input type="text" class="form-control datepicker" name="availability_to_date" placeholder="To Date" onchange="formatDate(this)"
+                                            <input type="text" class="form-control datepicker" name="availability_to_date" placeholder=" Date" onchange="formatDate(this)"
                                                    value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif">
                                         </div>
                                     </div>
@@ -719,7 +718,7 @@ width: 200px !important;
 
                                 </div>
 
-                                <div class="btn-search text-center">
+                                <div class="btn-search text-center" style="margin-top: 12px;">
                                     <button type="submit" class="btn btn-block">Search</button>
                                 </div>
                             </div>

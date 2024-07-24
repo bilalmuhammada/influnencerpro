@@ -1790,6 +1790,7 @@ label {
     left: 12px;
     top: -3px;
     z-index: 1;
+    font-weight: bold;
     color: #000;
     margin-bottom: 0;
 }
@@ -8062,7 +8063,7 @@ div#global-loader {
     -webkit-tap-highlight-color: transparent;
 }
 .font-label{
-    font-size: 10px !important;
+    font-size: 12px !important;
     font-weight: bold;
     color:#0504aa;
 }
@@ -9094,9 +9095,10 @@ label.file-upload.image-btn {
 }
 
 .custom_check input {
+    margin-left: -2pc;
     position: absolute;
-    opacity: 0;
-    cursor: pointer
+    /* opacity: 0; */
+    cursor: pointer;
 }
 
 .custom_check input:checked~.checkmark {
@@ -10439,8 +10441,8 @@ label.file-upload input[type="file"] {
     border-radius: 6px;
     font-weight: 500;
     font-size: 12px;
-    color: #6e727d;
-    padding: 7px;
+    color: black;
+    padding: 0px !important;
     margin: 0 7px 7px 0;
 }
 
@@ -20407,9 +20409,9 @@ button.scroll-top:focus {
     color: #8A2BE2;
 }
 
-.dropzone span {
+/* .dropzone span {
     display: none;
-}
+} */
 
 .multistep-form {
     background: #F9F9F9;
