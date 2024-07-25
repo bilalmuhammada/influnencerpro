@@ -9,6 +9,9 @@
   .floating {
     padding-top: 20px !important;
   }
+  .inner_label{
+    margin-left: 12px;
+  }
  
   .dz-message{
 display: none !important;
@@ -19,6 +22,10 @@ display: none !important;
   }
   .select2-container {
     z-index: 1 !important;
+}
+.baseCountry{
+font-size: 14px;
+font-weight: bold;
 }
   .inputbg:focus, .floating:focus {
     border: 1px solid blue !important;
@@ -71,6 +78,7 @@ width: 200px !important;
 display: none !important;
 }
 </style>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('content')
     @php
@@ -100,7 +108,7 @@ display: none !important;
                 <div class="card px-0 pb-0 " style="border:0px solid red;">
                     {{-- <h2 id="heading">Profile</h2> --}}
                     <!-- <p>Fill all form field to go to next step</p> -->
-                    <form id="msform" action="/upload" class="dropzone" >
+                    <form id="msform" action="/upload" class="dropzone" enctype="multipart/form-data" >
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="active" id="personal"><strong>Personal Info</strong></li>
@@ -157,6 +165,7 @@ display: none !important;
                                     </div>
 
                                 </div>
+                               
                                 <div class="row" style="margin-top:3px;">
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
@@ -355,26 +364,83 @@ display: none !important;
                                             
                                             <select name="country_id" id=""
                                                     class="form-control available-country floating">
-                                                {{-- <option value="">Country</option> --}}
+                                                <option value="">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
-<label for="username" class="focus-label">Country</label>
+                                         <label for="username" class="focus-label">Based Country</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
                                             <select name="city_id" id="" class="form-control city_id floating">
-                                                {{-- <option value="">--City--</option> --}}
+                                                <option value="">--City--</option>
                                                 @foreach(getCityByStateId(1) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-<label for="username" class="focus-label">City</label>
+                                        <label for="username" class="focus-label">Based City</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-focus">
+                                         
+                                            <input type="text" class="form-control datepicker floating"
+                                                   name="main_available_from_date"
+                                                   {{--                                               onfocus="(this.type='date')"--}}
+                                                   {{--                                               onblur="(this.type='text')"--}}
+                                                   placeholder=" Date"
+                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
+                                            <label for="username" class="inner_label focus-label">Availability</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group form-focus">
+                                        
+                                            <input type="text" class="form-control datepicker floating"
+                                                   name="main_available_to_date"
+                                                   {{--                                               onfocus="(this.type='date')"--}}
+                                                   {{--                                               onblur="(this.type='text')"--}}
+                                                   placeholder="Date"
+                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
+                                                   <label for="username" class="inner_label focus-label">Date</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            
+                                <div class="row available-box" style="">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-focus">
+                                            
+                                            <select name="country_id" id=""
+                                                    class="form-control available-country floating">
+                                                <option value="">Country</option>
+                                                @foreach(getCountries() as $country)
+                                                    <option
+                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                @endforeach
+                                            </select>
+                                         <label for="username" class="focus-label">Traveling Country</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-focus">
+                                            
+                                            <select name="city_id" id="" class="form-control city_id floating">
+                                                <option value="">--City--</option>
+                                                @foreach(getCityByStateId(1) as $city)
+                                                    <option
+                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        <label for="username" class="focus-label">Traveling City</label>
                                         </div>
 
                                     </div>
@@ -411,13 +477,13 @@ display: none !important;
                                            
                                             <select name="available_country_id[0]" id=""
                                                     class="form-control available-country floating">
-                                                {{-- <option value="">--Country--</option> --}}
+                                                <option value="">--Country--</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) > 0 && $availabilities[0]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
- <label for="username" class=" focus-label">Country</label>
+ <label for="username" class=" focus-label">Traveling Country</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -432,13 +498,13 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                {{-- <option value="">--City--</option> --}}
+                                                <option value="">--City--</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) > 0 &&  $availabilities[0]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-  <label for="username" class="focus-label">City</label>
+  <label for="username" class="focus-label">Traveling City</label>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -474,13 +540,13 @@ display: none !important;
                                          
                                             <select name="available_country_id[1]" id=""
                                                     class="form-control available-country  floating">
-                                                {{-- <option value="">Country</option> --}}
+                                                <option value="">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
-   <label for="username" class=" focus-label">Country</label>
+   <label for="username" class=" focus-label">Traveling Country</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -496,13 +562,13 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                {{-- <option value="">City</option> --}}
+                                                <option value="">City</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-                                                <label for="username" class="focus-label">City</label>
+                                                <label for="username" class="focus-label">Traveling City</label>
 
                                         </div>
                                     </div>
@@ -821,7 +887,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
                                                          alt="insta"
-                                                         width="40">
+                                                         width="44px" height="44px">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -883,7 +949,7 @@ display: none !important;
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
-                                                    <img src="{{ asset('assets/img/social-icon/web.jpg') }}" alt="insta"
+                                                    <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
                                                          width="40">
                                                 </div>
                                                 {{-- <div class="col-md-3">
@@ -897,7 +963,7 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="web_url"
                                                            placeholder="URL" value="{{ $webProfiles ? $webProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Web URL</label>
+                                                           <label for="username" class="inner_label focus-label">Webite URL</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -950,7 +1016,8 @@ display: none !important;
                                 </div>
                                 <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label>
                                 <div class="row mt-2" style="margin-left: 108px">
-                                    <div class="col-md-10 dropzone-container" id="myDropzone" style="border: white">
+                                                                               
+                                    <div class="col-md-10 dropzone-container" id="myDropzone"  style="border: white">
                                       <span>Click here or drag and drop files to upload</span>
                                     </div>
                                   </div>
@@ -1006,6 +1073,25 @@ display: none !important;
           
 
           $(document).ready(function() {
+            show_img();
+            show_img('#image0', '#logo0');
+            var maxSelections = 3;
+            $('.category_id').on('select2:select', function (e) {
+                // Check if the maximum number of selections is reached
+                if ($('.category_id').val().length > maxSelections) {
+                    // Remove the last selected option
+                    $('.category_id').find('option:selected').last().prop('selected', false);
+                    // Trigger the change event to update Select2
+                    $('.category_id').trigger('change');
+                }
+            });
+            // $('.feature-select2').select2();
+            // $('.category_id').select2();
+
+            $('.datepicker').datepicker({
+                format: 'dd-M-yyyy'
+            });
+           
             $('#spoken_language_ids').select2({
                 placeholder: "Select Spoken Languages",
                 allowClear: true
@@ -1064,59 +1150,53 @@ display: none !important;
 
         $(document).ready(function () {
             
-           
-            show_img();
-            show_img('#image0', '#logo0');
-            // $('.feature-select2').select2();
-            // $('.category_id').select2();
-
-            $('.datepicker').datepicker({
-                format: 'dd-M-yyyy'
-            });
-           
-
-
             Dropzone.autoDiscover = false;
     var myDropzone = new Dropzone("#myDropzone", {
-      url: "/your-upload-endpoint", // Set your upload endpoint URL here
-      paramName: "file", // The name that will be used to transfer the file
-      maxFilesize: 5, // MB
-      acceptedFiles: "image/*",
-      addRemoveLinks: false, 
-      init: function() {
+// Ensure api_url is defined properly
+  url: api_url + 'auth/upload-profile-web',
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 5, // Maximum file size in MB
+    method: "post", // HTTP method for the upload
+    acceptedFiles: "image/*", // Accept images only
+    addRemoveLinks: false, // Do not add default remove links
+    autoProcessQueue: false ,
+    // headers: {
+    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // CSRF token for security
+    // },
+    init: function() {
+       
+        this.on("success", function(file, response) {
+            console.log("File uploaded successfully");
+        });
         this.on("addedfile", function(file) {
             console.log("File added:", file);
-            var removeButton = Dropzone.createElement("<button class='remove-button' style='width: 25px;height: 25px; border: none; background-color: transparent;position: absolute;color: #FF5A5A; top: 5px; right: 5px; z-index: 10;font-size: 14px;font-weight: bolder;cursor: pointer; transition: transform 0.2s ease;'>X</button>");
+
+            // Create a custom remove button
+            var removeButton = Dropzone.createElement(
+                "<button class='remove-button' style='width: 25px;height: 25px; border: none; background-color: transparent;position: absolute;color: #FF5A5A; top: 5px; right: 5px; z-index: 10;font-size: 14px;font-weight: bolder;cursor: pointer; transition: transform 0.2s ease;'>X</button>"
+            );
+
             var _this = this;
+            // Attach click event to the remove button
             removeButton.addEventListener("click", function(e) {
-                alert('dd');
                 e.preventDefault();
                 e.stopPropagation();
+
+                // Remove the file from Dropzone
                 _this.removeFile(file);
             });
+
+            // Append the remove button to the file preview element
             file.previewElement.appendChild(removeButton);
         });
+
         this.on("removedfile", function(file) {
             console.log("File removed:", file);
         });
     }
     });
 
-            // Set the maximum number of allowed selections
-            var maxSelections = 3;
-
-            // Event listener for changes in the selection
-            $('.category_id').on('select2:select', function (e) {
-                // Check if the maximum number of selections is reached
-                if ($('.category_id').val().length > maxSelections) {
-                    // Remove the last selected option
-                    $('.category_id').find('option:selected').last().prop('selected', false);
-                    // Trigger the change event to update Select2
-                    $('.category_id').trigger('change');
-                }
-            });
-});
-        $(document).on('click', '.submit-btn', function () {
+    $(document).on('click', '.submit-btn', function () {
             // Get the selected tags from the Slick input
             // var selectedTags = $('#input-tag').slick('getTags');
 
@@ -1130,8 +1210,13 @@ display: none !important;
 
 
             formData.append('skills[]', tags);
+            myDropzone.getAcceptedFiles().forEach(function (file) {
+            formData.append('files[]', file);
+        });
 
-
+        // Handle Dropzone uploads manually
+        myDropzone.processQueue();
+            myDropzone.on('complete', function () {
             $.ajax({
                 url: api_url + 'auth/complete-profile-web',
                 type: 'POST',
@@ -1149,6 +1234,9 @@ display: none !important;
                 }
             })
         });
+    });  
+});
+      
 
         var count = 0;
 

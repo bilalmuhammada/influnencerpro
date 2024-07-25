@@ -512,7 +512,7 @@
                         </ul>
                         <!-- <span style="font-size: 14px;"><img src="assets/img/social-icon/insta.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/fb.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/tiktok.png" alt="" width="30px"></span> -->
                     </div>
-                    <div class="details" style="margin-top:13px;margin-bottom:8px;">
+                    <div class="details" style="margin-top:-15px;margin-bottom:8px;">
                         <div class="row">
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
@@ -573,7 +573,11 @@
                     {{--                        <span class="badge badge-pill badge-skills">USD <span class="tag-close" data-role="remove"><i--}}
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
+                    @php
+                    // dd($influencer);
+                    @endphp
                     <div class="row">
+
                         @forelse($influencer->influencer_profile_images as $image)
                             <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
                                 <div class="avatar-one"

@@ -612,6 +612,33 @@ class AuthController extends Controller
             'message' => 'Profile updated successfully'
         ]);
     }
+   public function uploadProfileImageForWeb(Request $request){
+
+    $user_id = Auth::id();
+    $Influencer = User::with(['role', 'attachment'])->find($user_id);
+
+
+ $profile_images = $request->file('file');
+dd($profile_images );
+        if ($profile_images && $Influencer) {
+            foreach ($profile_images as $profile_image) {
+
+                $profile_image_name = $profile_image->getClientOriginalName() . Auth::id() . '.' . $profile_image->getClientOriginalExtension();
+                $profile_image->move(public_path('uploads/users'), $profile_image_name);
+
+                Attachment::create([
+                    'name' => $profile_image_name,
+                    'file_name' => $profile_image->getClientOriginalName() . Auth::id(),
+                    'type' => $profile_image->getClientOriginalExtension(),
+                    'object' => 'User',
+                    'object_id' => $Influencer->id,
+                    'context' => 'influencer-profile-image'
+                ]);
+
+                SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $profile_image_name);
+            }
+        }
+    }
 
     public function forgotPassword()
     {

@@ -458,7 +458,7 @@
                         <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
                         <img src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="" width="60px" height="60px"  style="margin-right: 10px;">
                         <img src="{{ asset('assets/img/social-icon/twitter.png') }}" alt="" width="60px" height="60px"style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px; border-radius: 2px;">
+                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt="" width="70px" height="70px" style="margin-right: 10px; border-radius: 2px;">
                         <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
                         <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
                     </div>
@@ -504,7 +504,7 @@
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>Influencers Market</h2> --}}
-                        <p>Influencer Marketing became the strongest social media marketing in the World, with effective more than 75% of Businesses Revenue Growth & 82% of Business Leads Generated in 2023. Pro-Influencers drive Brand Affirmation & Message to Business Target Audience at fastest pace through a perceived Latest-Trend Awareness and Influential Social Impact in their professional field. </p>
+                        <p>Influencer Marketing has emerged as the most powerful form of social media marketing worldwide, driving over 75% of Business Revenue Growth and generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their professional domains. </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <!-- <br/>
                         <div class="col-md-8 align-items-center">
@@ -544,8 +544,7 @@
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>Business Marketing</h2> --}}
-                        <p>In today’s globalized and highly competitive environment, Businesses play a fundamental role in worldwide economy growth by fostering innovation & providing goods and services, as well contributes to society by supporting communities and promoting social and economic developments. 
-                            Successful businesses must adapt to changing social business marketing & Latest-Trend Awareness in order to stay successful.
+                        <p>In today’s globalized & highly competitive environment, Businesses are crucial to global economic growth by fostering innovation and providing goods and services. Further, they contribute significantly to societal advancement by supporting communities and fostering social and economic development. To remain successful, Businesses must adapt to changing Social Business Marketing Trends and stay aware of the Latest-Trends.
                              </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                     </div>
@@ -579,8 +578,7 @@
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>InfluencerPro</h2> --}}
-                        <p>InfluencerPro is number 1 worldwide visionary force at the intersection of Influencer collaborations & a suite of innovative direct-connection between Influencers & Businesses, offering direct access to millions of Celebrity & 
-                            Pro-Influencers, Media Artists & Talents database in over 30 business categories, where Business Brands gain access to Micro, Nano, Mega & Celebrity Influencers profiles with easy Filter & Chat function, that helps Business Brands generate high Revenues & Guaranteed ROI on their marketing budget-set. 
+                        <p>InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across more than 30 business categories. Business Brands can easily Filter & Chat with Micro, Nano, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their marketing budgets. 
                              </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                     </div>
@@ -606,7 +604,7 @@
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         <h2><a href="{{ env('BASE_URL') . 'register?role=influencer' }}" class="changeColor">Influencers </a></h2>
-                        <p>Join InfluencerPro and be a Pro-Influncer to receive direct Collaborations from all Business Brands Worldwide!</p>
+                        <p>Join InfluencerPro & Stay connected to receive direct Collaborations from all Business Brands Worldwide & Make the best of your Professional Life!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>
                         <!-- <button class="t-btn" type="submit">Get started free</button> -->
@@ -615,7 +613,7 @@
                 <div class="col-md-6">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         <h2><a href="{{ env('BASE_URL') . 'register?role=brand' }}"  class="changeColor">Brands</a></h2>
-                        <p>Register InfluencerPro & Gain access to Millions of Pro-Influencers Database which allows you to view Influencers Profiles & Social Platforms, Multi-Country Availability, Direct Chat, Price Offers & Collaborations!</p>
+                        <p>Register InfluencerPro & Gain access to millions of Influencers’ Database which allows you to view their Profiles & Social Platforms, Multi-Country Availability, Direct Chat, Price Offers & Collaborations!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>
                         <!-- <button class="t-btn" type="submit">Get started free</button> -->

@@ -62,6 +62,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get("get-data-for-dashboard", [\App\Http\Controllers\AdminController::class, 'getDataFroDashboard']);
     Route::post("auth/complete-profile", [AuthController::class, 'completeProfileBackend']);
     Route::post("auth/complete-profile-web", [AuthController::class, 'completeProfileBackendForWeb']);
+    // Route::post("auth/upload-profile-web", [AuthController::class, 'uploadProfileImageForWeb']);
+    Route::post('/auth/upload-profile-web', [AuthController::class, 'uploadProfileImageForWeb'])->name('upload-profile-web');
+    
     Route::post("auth/logout", [AuthController::class, 'logout']);
     Route::post("auth/account-setting-update", [AuthController::class, 'accountSettingUpdate']);
     Route::post("auth/vendor-account-setting-update", [AuthController::class, 'vendorAccountSettingUpdateBackend']);

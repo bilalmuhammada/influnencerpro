@@ -90,7 +90,9 @@ class User extends Authenticatable
 
     public function influencer_profile_images()
     {
-        return $this->hasMany(Attachment::class,'object_id')->where('object', 'User')->where('context', '=', 'influencer-profile-image');
+        return $this->hasMany(Attachment::class,'object_id')
+        ->where('object', 'User')
+        ->where('context', '=', 'influencer-profile-image');
     }
 
     public function getImageUrlAttribute()
