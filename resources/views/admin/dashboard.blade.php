@@ -10,6 +10,9 @@ width: 212px !important;
   .from_date:focus, .to_date:focus {
     border: 1px solid blue !important;
 }
+.apexcharts-legend {
+    margin-right: 6pc !important;
+}
 </style>
 @section('content')
 
@@ -19,10 +22,10 @@ width: 212px !important;
             <div class="col-md-12" style="padding:10px;margin-top:30px;">
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
-                        <input type="text" id="from_datepicker" class="form-control from_date" name="from_date" placeholder="From Date" >
+                        <input type="text" id="from_datepicker" class="form-control from_date" name="from_date" placeholder="Date" >
                     </div>
                     <div class="col-lg-2 col-md-6">
-                        <input type="text"  id="to_datepicker" class="form-control to_date" name="to_date" placeholder="To Date" >
+                        <input type="text"  id="to_datepicker" class="form-control to_date" name="to_date" placeholder="Date" >
                     </div>
                     <div class="col-lg-2 col-md-6" style="margin-top:5px;">
                         <button class="btn btn-primary filter">Filter</button>
@@ -35,7 +38,7 @@ width: 212px !important;
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx3"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <!-- <h1 class="total_click">{{ formatNumber($influencer->total_clicks) }}</h1> -->
-                                <h1 class="total_click">{{ formatNumber($influencer->total_views) }}</h1>
+                                <h1 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h1>
                                 <!-- <span><b>Clicks</b></span> -->
                                 <span><b>Profile Views</b></span>
                             </div>

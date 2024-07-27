@@ -614,30 +614,37 @@ class AuthController extends Controller
     }
    public function uploadProfileImageForWeb(Request $request){
 
-    $user_id = Auth::id();
+     $user_id =  Auth::id();
     $Influencer = User::with(['role', 'attachment'])->find($user_id);
 
 
- $profile_images = $request->file('file');
-dd($profile_images );
-        if ($profile_images && $Influencer) {
-            foreach ($profile_images as $profile_image) {
+ $profile_image= $request->file('file');
+//   dd($user_id );
+        // if ($profile_images && $Influencer) {
+            // foreach ($profile_images as $profile_image) {
 
-                $profile_image_name = $profile_image->getClientOriginalName() . Auth::id() . '.' . $profile_image->getClientOriginalExtension();
+                $profile_image_name = $profile_image->getClientOriginalName() .$user_id. '.' . $profile_image->getClientOriginalExtension();
                 $profile_image->move(public_path('uploads/users'), $profile_image_name);
 
                 Attachment::create([
                     'name' => $profile_image_name,
-                    'file_name' => $profile_image->getClientOriginalName() . Auth::id(),
+                    'file_name' => $profile_image->getClientOriginalName() .$user_id,
                     'type' => $profile_image->getClientOriginalExtension(),
                     'object' => 'User',
                     'object_id' => $Influencer->id,
                     'context' => 'influencer-profile-image'
                 ]);
+// dd('dd');
 
                 SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $profile_image_name);
-            }
-        }
+            // }
+
+        // }
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Image updated successfully'
+        ]);
     }
 
     public function forgotPassword()

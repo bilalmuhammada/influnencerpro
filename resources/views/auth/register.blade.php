@@ -8,6 +8,9 @@
         input:focus {
             border: 1px solid blue !important;
         }
+        .email::placeholder {
+            color: red !important;
+        }
         .form-control:invalid ~ .invalid-feedback {
             display: block;
         }
@@ -26,7 +29,7 @@
   background: transparent;
 }
 .form-group {
-            margin-bottom: 1.5rem;
+            /* margin-bottom: 1.5rem; */
         }
         .invalid-feedback {
             display: none;
@@ -46,8 +49,8 @@
                             <div class="login-right">
                                 <div class="login-header text-center">
                                     <!-- <img src="assets/img/logo/Influencers Pro-01-01.png" class="img-fluid" alt="Logo"> -->
-                                    <h3>Join InfluencerPro</h3>
-                                    <p>Make the most of your professional life</p>
+                                    <h3>Register InfluencerPro</h3>
+                                    <p>Gain access to millions of Influencers’ Database!</p>
                                 </div>
                                 <nav class="user-tabs mb-4">
                                     <ul role="tablist" class="nav nav-pills nav-justified">
@@ -83,20 +86,20 @@
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="phone" pattern="\+?\d*" title="Please enter a valid mobile number" oninput="validateInput(this)">
+                                                <input type="text" class="form-control floating email" name="phone" placeholder="Please enter a valid Mobile" pattern="\+?\d*"  oninput="validateInput(this)">
                                                 <div class="invalid-feedback">
-                                                    Please provide a valid Mobile.
+                                                    {{-- Please provide a valid Mobile. --}}
                                                 </div>
                                                 <label class="focus-label">Mobile </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating" name="email">
+                                                <input type="email" class="form-control floating email" name="email" placeholder="Please provide a valid Email.">
                                                
                                                 <label class="focus-label">Email </label>
 
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid email.
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="form-group form-focus">
                                                 
@@ -208,21 +211,21 @@
                                                 <label class="focus-label">Company Name</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="website">
+                                                <input type="text" class="form-control floating email"  placeholder="Please provide a valid Business Website." name="website">
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Website.
                                                 </div>
                                                 <label class="focus-label">Business Website</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" id="bemail" name="email">
+                                                <input type="text" class="form-control floating email" id="bemail" placeholder="Please provide a valid Business Email." name="email">
                                                 <div class="invalid-feedback">
-                                                    Please provide a valid Business Email.
+                                                    {{-- Please provide a valid Business Email. --}}
                                                 </div>
                                                 <label class="focus-label">Business Email</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="name"/>
+                                                <input type="text" class="form-control floating"  name="name"/>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid First Name.
                                                 </div>
@@ -244,7 +247,7 @@
                                                 <label class="focus-label">Position </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating"   pattern="\+?\d*" oninput="validateInput(this)" name="phone"/>
+                                                <input type="text" class="form-control floating email"   pattern="\+?\d*" placeholder="Please provide a valid Mobile." oninput="validateInput(this)" name="phone"/>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Mobile.
                                                 </div>

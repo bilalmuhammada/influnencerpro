@@ -6,6 +6,9 @@
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
         }
+        .font_label {
+            padding-top: 0px !important;
+        }
         .select2-search--inline{
             display: none;
         }
@@ -251,7 +254,7 @@ width: 200px !important;
                                                     src="{{ asset('assets/img/social-icon/web.png')}}"
                                                     alt="insta"
                                                     width="20">
-                                                    Web Site &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
+                                                    Website &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
 
@@ -262,7 +265,7 @@ width: 200px !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:20px;height:20px ;margin-left: -14px;">
+                                                                                               style="width:20px;height:20px ;margin-left: -9px;">
                                             </div>
                                         </div>
                                     </div>
@@ -289,7 +292,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:20px">
+                                                               style="width:20px;height:20px; margin-left: 10px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -306,7 +309,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:20px;height:19px  ;  margin-left: -17px;">
+                                                               ?> style="width:20px;height:19px  ;  margin-left: -8px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -324,7 +327,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:20px;height:20px  ;  margin-left: -3px;">
+                                                               ?> style="width:20px;height:20px  ;  margin-left:6px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -341,7 +344,7 @@ width: 200px !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:20px;height:19px">
+                                                               ?> style="width:20px;height:19px; margin-left: 8px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -360,7 +363,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:21px ;    margin-left: -1px;">
+                                                               style="width:20px;height:21px;margin-left: 8px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -379,7 +382,7 @@ width: 200px !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:19px">
+                                                               style="width:20px;height:19px; margin-left: 8px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -496,7 +499,7 @@ width: 200px !important;
                                             </div>
                                             <div class="col-md-6">
                                                 <span
-                                                    style="font-size:14px;position:relative;top:-7px;">Female</span>
+                                                    style="font-size:14px;position:relative;top:-7px;">Female &nbsp;</span>
                                                 <input type="checkbox" name="female"
                                                        <?php
 
@@ -623,19 +626,19 @@ width: 200px !important;
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="font_label">Height-CM</label>
-                                            <input type="text" class="form-control" name="height"
+                                            <input type="text" class="form-control" name="height" pattern="\+?\d*"  oninput="validateInput(this)"
                                                    {{-- placeholder=" Height..." --}}
                                                    value="@if(request()->height){{ request()->height }}@endif">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Weight-KG</label>
-                                            <input type="text" class="form-control" name="width"
+                                            <input type="text" class="form-control" name="width" pattern="\+?\d*"  oninput="validateInput(this)"
                                                    {{-- placeholder=" Weight..." --}}
                                                    value="@if(request()->width){{ request()->width }}@endif">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Shoes Size - EU</label>
-                                            <input type="text" class="form-control" name="shoes_size"
+                                            <input type="text" class="form-control" name="shoes_size" pattern="\+?\d*"  oninput="validateInput(this)"
                                                    {{-- placeholder=" Shoes Size..." --}}
                                                    value="@if(request()->shoes_size){{ request()->shoes_size }}@endif">
                                         </div>
@@ -708,10 +711,10 @@ width: 200px !important;
 
                                     <label class="font_label">Price $</label>
                                     <div class="row">
-                                        <div class="col-md-6"><input type="text" name="min_price"  placeholder="Min" class="form-control"
+                                        <div class="col-md-6"><input type="text" name="min_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Min" class="form-control"
                                                                      value="@if(request()->min_price){{ request()->min_price }}@endif"
                                                                    ></div>
-                                        <div class="col-md-6"><input type="text" name="max_price"   placeholder="Max" class="form-control"
+                                        <div class="col-md-6"><input type="text" name="max_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Max" class="form-control"
                                                                      value="@if(request()->max_price){{ request()->max_price }}@endif"
                                                                      ></div>
                                     </div>
@@ -824,11 +827,11 @@ width: 200px !important;
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
 
-                  
+                 
                     <div class="row" id="infulecer-show">
                         @forelse($influencers as $influencer)
                         @php
-                        // dd($influencer->favourites[0]->influencer_id,$influencer->id );
+                        //  dd($influencer,$influencer->id );
                         @endphp
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                                 <div class="card avatar-one"
@@ -843,22 +846,44 @@ width: 200px !important;
                                         
                                           
    @php
-    $color = (isset($influencer->favourites) && count($influencer->favourites) > 0 && $influencer->favourites[0]->influencer_id == $influencer->id) ? 'goldenrod' : 'red';
-    $color1 = (isset($influencer->favourites) && count($influencer->favourites) > 0 && $influencer->favourites[0]->influencer_id == $influencer->id) ? '#099ffc' : 'green';
-@endphp
+  $color = 'red';
+    $color1 = 'green';
+    
+    if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
+        if ($influencer->favourites[0]->influencer_id == $influencer->id) {
+            if ($influencer->favourites[0]->fr_in == 1) {
+                $color = 'goldenrod';
+            }
+         
+        }
+    }
 
+    if (isset($influencer->invented) && count($influencer->invented) > 0) {
+        if ($influencer->invented[0]->influencer_id == $influencer->id) {
+            
+            if ($influencer->invented[0]->fr_in == 2) {
+                $color1 = '#099ffc';
+            }
+        }
+    }
+    
+  
+ 
+  
+@endphp
 
                                        
                                         <div class="influencerdetail" id="">
-                                            <div class="start"
-                                                 style="position:absolute;text-align:right;border:0px solid red;width:220px;">
+                                            <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;">
 
                                                  <i class="fa-solid fa-heart  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
-                                                 style="padding:7px;border-radius:50%;margin-top: 12px;color:{{$color}} ;  margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                 data-fvt="1"
+                                                 style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
-                                                <i class="fas fa-check-circle   add-to-favourite"
+                                                <i class="fas fa-check-circle   add-to-invented"
                                                    data-id="{{ $influencer->id }}"
+                                                   data-fvt="2"
                                                    style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 {{-- <i class="fas fa-check-circle remove-favourite"
@@ -980,14 +1005,17 @@ width: 200px !important;
         //         // Configuration options go here
         //     });
         // });
-       
+        function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+} 
 
 
         $(document).ready(function () {
-
-            $('.datepicker').datepicker({
-        dateFormat: 'dd-mm-yy'
-    });
+   
+            $('.datepicker').attr('readonly', 'readonly').datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
 
             
             $('.seletct2').select2();
@@ -1079,15 +1107,56 @@ width: 200px !important;
         $(document).on('click', '.add-to-favourite', function (e) {
             e.preventDefault();
             thisElem = $(this);
+            let influencerId = thisElem.data('id');
+            let fvt = thisElem.data('fvt');
+            
             $.ajax({
                 url: api_url + 'influencers/add-to-favourites',
                 type: "POST",
                 dataType: "json",
                 data: {
-                    "influencer_id": $(this).attr('data-id')
+                    "influencer_id": influencerId,
+                    "fvt": fvt
                 },
                 success: function (response) {
+                    if(response.fr_in==1){
+                        $('.add-to-favourite').css('color', 'goldenrod');
+}else{
+    $('.add-to-favourite').css('color', 'red');
+}
                     if (response.status) {
+                        show_success_message(response.message);
+                        $(thisElem).hide();
+                        $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
+                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                    } else {
+                        show_error_message(response.message);
+
+                    }
+                }
+            });
+        });
+        $(document).on('click', '.add-to-invented', function (e) {
+            e.preventDefault();
+            thisElem = $(this);
+            let influencerId = thisElem.data('id');
+            let fvt = thisElem.data('fvt');
+            
+            $.ajax({
+                url: api_url + 'influencers/add-to-invented',
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "influencer_id": influencerId,
+                    "fvt": fvt
+                },
+                success: function (response) {
+
+ 
+
+                    if (response.status) {
+
+                        console.log(response.fr_in);
                         show_success_message(response.message);
                         $(thisElem).hide();
                         $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();

@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("auth/complete-profile", [AuthController::class, 'completeProfileBackend']);
     Route::post("auth/complete-profile-web", [AuthController::class, 'completeProfileBackendForWeb']);
     // Route::post("auth/upload-profile-web", [AuthController::class, 'uploadProfileImageForWeb']);
-    Route::post('/auth/upload-profile-web', [AuthController::class, 'uploadProfileImageForWeb'])->name('upload-profile-web');
+    Route::post('auth/upload-profile-web', [AuthController::class, 'uploadProfileImageForWeb'])->name('dropzone.upload');
     
     Route::post("auth/logout", [AuthController::class, 'logout']);
     Route::post("auth/account-setting-update", [AuthController::class, 'accountSettingUpdate']);
@@ -91,6 +91,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::post("/", [UserController::class, 'influencers']);
         Route::post("chat-status", [UserController::class, 'chatStatus']);
         Route::post('add-to-favourites', [UserController::class, 'addToFavourites']);
+        Route::post('add-to-invented', [UserController::class, 'addToInvented']);
+
+
         Route::post('remove-profile-image', [AuthController::class, 'removeProfileImage']);
         Route::post('remove-from-favourites', [UserController::class, 'removeFromFavourites']);
         Route::post("detail", [MobileApiController::class, 'detail']);

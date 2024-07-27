@@ -101,6 +101,7 @@
     </a>
     </div>
     </div>
+</form>
     </div>
 
 
@@ -113,7 +114,7 @@
     <span class="plan-h">Pro</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
     <h6 style="padding-top:10px;">
-        <b>$ 1299</b> 
+        <b>$ 1,299</b> 
         {{-- <b>(Save 20%)</b>  --}}
     </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">6 Months</div>
@@ -142,6 +143,7 @@
     </div>
     </div>
     </div>
+</form>
     </div>
 </div>
 <!-------->

@@ -39,7 +39,7 @@
                                 <form id="account-setting-form">
                                     <input type="hidden" name="role" value="influencer">
                                     <div class="form-group form-focus">
-                                        <input type="file" class="form-control floating" name="image">
+                                        <input type="file" class="form-control floating bilal-profileedit" name="image" accept="image/*">
                                         <div class="invalid-feedback">
                                             Please provide a valid Image.
                                         </div>

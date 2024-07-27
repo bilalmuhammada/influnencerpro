@@ -28,7 +28,7 @@ class GeneralController extends Controller
  
         $productname = $request->get('productname');
         $totalprice = $request->get('total');
-        $two0 = "00";
+         $two0 = "00";
         $total = "$totalprice$two0";
  
         $session = \Stripe\Checkout\Session::create([

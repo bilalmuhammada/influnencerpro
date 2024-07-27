@@ -52,7 +52,8 @@
                                     <div class="form-group">
                                         <label class="custom_check">
                                             <input type="checkbox" name="rem_password">
-                                            <span class="checkmark"></span> Remember password
+                                            {{-- <span class="checkmark"></span>  --}}
+                                            Remember password
                                         </label>
                                     </div>
                                     <div class="text-center">
@@ -60,8 +61,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6 text-start">
-                                            <a class="forgot-link" href="{{ env('BASE_URL') }}forgot-password">Forgot
-                                                Password ?</a>
+                                            <a class="forgot-link" href="{{ env('BASE_URL') }}forgot-password" style="color:#0504aa;">Forgot
+                                                Password?</a>
                                         </div>
                                         <div class="col-6 text-end dont-have">New to InfluencerPro? <a
                                                 href="{{ env('BASE_URL') }}register?role=influencer" style="color:#0504aa;">Click

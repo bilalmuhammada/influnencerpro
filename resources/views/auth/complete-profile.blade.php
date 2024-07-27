@@ -1,4 +1,7 @@
 @extends('layout.master')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>   
 .dropzone-container {
     border: 2px solid #ccc;
@@ -30,6 +33,9 @@ font-weight: bold;
   .inputbg:focus, .floating:focus {
     border: 1px solid blue !important;
 }
+.inputbg::placeholder{
+
+}
 .dropzone .dz-preview .dz-image {
     border-radius: 0px !important;}
 
@@ -38,6 +44,7 @@ font-weight: bold;
 ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }
+
 
 .form-control{
     color: black !important;
@@ -108,7 +115,7 @@ display: none !important;
                 <div class="card px-0 pb-0 " style="border:0px solid red;">
                     {{-- <h2 id="heading">Profile</h2> --}}
                     <!-- <p>Fill all form field to go to next step</p> -->
-                    <form id="msform" action="/upload" class="dropzone" enctype="multipart/form-data" >
+                    <form id="msform" action="/upload"  enctype="multipart/form-data" >
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="active" id="personal"><strong>Personal Info</strong></li>
@@ -133,7 +140,7 @@ display: none !important;
                                                         value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('category_id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
- <label for="" class="focus-label">Influencer Category</label>
+                                         <label for="" class="focus-label">Influencer Category</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -145,7 +152,7 @@ display: none !important;
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <label for="spoken_language_ids" class="focus-label">Spoken Language</label>
+                                            <label for="spoken_language_ids" class="focus-label">Languages</label>
                                         </div>
                                         </div>
                                     
@@ -160,7 +167,7 @@ display: none !important;
                                                         value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->ethnicity_id == $ethnicity->id ? 'selected' : '' }}>{{ $ethnicity->name }}</option>
                                                 @endforeach
                                             </select>
- <label for="" class="focus-label">Ethnicity</label>
+                                        <label for="" class="focus-label">Ethnicity</label>
                                         </div>
                                     </div>
 
@@ -306,7 +313,7 @@ display: none !important;
                                             <input type="text" class="form-control floating" name="shoes_size"
                                                    placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->shoes_size : '' }}"/>
-                                                   <label for="username" class="inner_label focus-label">Shoes Size-EU</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Shoes Size-EU</label>
                                         </div>
                                     </div>
                                 </div>
@@ -396,7 +403,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder=" Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
-                                            <label for="username" class="inner_label focus-label">Availability</label>
+                                            <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Availability</label>
                                         </div>
                                     </div>
 
@@ -409,7 +416,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label">Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
 
@@ -453,7 +460,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder=" Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
-                                            <label for="username" class="inner_label focus-label"> Date</label>
+                                            <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -466,7 +473,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label">Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
 
@@ -516,7 +523,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder=" Date"
                                                    value="{{ count($availabilities) > 0  ? formatDateToread($availabilities[0]['availability_from_date'])  : '' }}">
-                                                   <label for="username" class="inner_label focus-label"> Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -529,7 +536,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder=" Date"
                                                    value="{{ count($availabilities) > 0  ? $availabilities[0]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label"> Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -582,7 +589,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder=" Date"
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? formatDateToread($availabilities[1]['availability_from_date']) :  '' }}">
-                                                   <label for="username" class="inner_label focus-label"> Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -595,7 +602,7 @@ display: none !important;
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                 
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? $availabilities[1]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label"> Date</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -609,7 +616,7 @@ display: none !important;
                                             <input type="price" class="form-control floating" name="price"
                                                    placeholder=""
                                                    value="{{ $influencer_professional_detail->price ?? ''  }}">
-                                                   <label for="username" class="inner_label focus-label">Price $</label>
+                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Price $</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -696,7 +703,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                         
                                                 <textarea class="form-control floating" style="height:120px;" name="bi">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
-                                                <label class="inner_label focus-label">Bio</label>
+                                                <label class="inner_label focus-label"  style="margin-left: 0px;">Bio</label>
                                     
                                         
                                             {{-- <input type="text" class="form-control floating" name="bio" style="height: 100px"
@@ -742,17 +749,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="instagram_url"
                                                            placeholder="URL" value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Instagram URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Instagram</label>
                                                         </div>
                                                     </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 92%; margin-left: 7px;"
+                                                    <input type="text" id="" style=" width: 92%;"
                                                            class="form-control floating inputbg"
                                                            name="instagram_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $instagramProfiles ? $instagramProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                               
@@ -773,17 +780,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg"  style=" width: 92% margin-left: 7px;" name="facebook_url"
                                                            placeholder="URL" value="{{ $facebookProfiles ? $facebookProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Facebook URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Facebook</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92% ;margin-left: 7px;"
+                                                    <input type="text" id=""  style=" width: 92%;"
                                                            class="form-control floating"
                                                            name="facebook_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $facebookProfiles ? $facebookProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                          
@@ -804,17 +811,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="tiktok_url"
                                                            placeholder="URL" value="{{ $tiktokProfiles ? $tiktokProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">TikTok URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">TikTok</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92% ;margin-left: 7px;"
+                                                    <input type="text" id=""  style=" width: 92%;"
                                                            class="form-control floating inputbg"
                                                            name="tiktok_followers"
                                                            placeholder=" 10K,  1M,  2,5M "
                                                            value="{{ $tiktokProfiles ? $tiktokProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -836,17 +843,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="youtube_url"
                                                            placeholder="URL" value="{{ $youtubeProfiles ? $youtubeProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Youtube URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Youtube</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 92%; margin-left: 7px;"
+                                                    <input type="text" id="" style="width:92%;"
                                                            class="form-control  floating inputbg"
                                                            name="youtube_followers"
                                                            placeholder=" 10K,  1M,  2,5M "
                                                            value="{{ $youtubeProfiles ? $youtubeProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -868,17 +875,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="twitter_url"
                                                            placeholder="URL" value="{{ $twitterProfiles ? $twitterProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Twitter URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Twitter</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%; margin-left: 7px;"
+                                                    <input type="text" id=""  style=" width: 92%;"
                                                            class="form-control floating inputbg"
                                                            name="twitter_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $twitterProfiles ? $twitterProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -900,17 +907,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="snapchat_url"
                                                            placeholder="URL" value="{{ $snapchatProfiles ? $snapchatProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Snapchat URL</label>
+                                                           <label for="username" class="inner_label focus-label " style="margin-left: 0px;">Snapchat</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 92% ;margin-left: 7px;"
+                                                    <input type="text" id="" style=" width: 92%;"
                                                            class="form-control floating inputbg"
                                                            name="snapchat_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $snapchatProfiles ? $snapchatProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -932,17 +939,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="pinterest_url"
                                                            placeholder="URL" value="{{ $pinterestProfiles ? $pinterestProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Pinterest URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Pinterest</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92% ;margin-left: 7px;"
+                                                    <input type="text" id=""  style=" width: 92% ;"
                                                            class="form-control floating inputbg"
                                                            name="pinterest_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $pinterestProfiles ? $pinterestProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -963,17 +970,17 @@ display: none !important;
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="web_url"
                                                            placeholder="URL" value="{{ $webProfiles ? $webProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label">Webite URL</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Website</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%; margin-left: 7px;"
+                                                    <input type="text" id=""  style=" width: 92%;"
                                                            class="form-control floating inputbg"
                                                            name="web_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $webProfiles ? $webProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                 
@@ -1014,11 +1021,11 @@ display: none !important;
                                                style="border:0px solid #1A237E;!important"/>
                                     </div>
                                 </div>
-                                <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label>
+                                {{-- <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label> --}}
                                 <div class="row mt-2" style="margin-left: 108px">
                                                                                
-                                    <div class="col-md-10 dropzone-container" id="myDropzone"  style="border: white">
-                                      <span>Click here or drag and drop files to upload</span>
+                                    <div class="col-md-10 dropzone-container" id="myDropzone" class="drop"  style="border: white;color: blue; font-weight: bold;">
+                                      <span>or Upload & Drop Images Here</span>
                                     </div>
                                   </div>
                             </div>
@@ -1056,7 +1063,7 @@ display: none !important;
 {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script> --}}
 <!-- Include jQuery -->
 
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -1068,135 +1075,43 @@ display: none !important;
 <!-- Include Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  
+
   <script>
           
 
-          $(document).ready(function() {
-            show_img();
-            show_img('#image0', '#logo0');
-            var maxSelections = 3;
-            $('.category_id').on('select2:select', function (e) {
-                // Check if the maximum number of selections is reached
-                if ($('.category_id').val().length > maxSelections) {
-                    // Remove the last selected option
-                    $('.category_id').find('option:selected').last().prop('selected', false);
-                    // Trigger the change event to update Select2
-                    $('.category_id').trigger('change');
-                }
-            });
-            // $('.feature-select2').select2();
-            // $('.category_id').select2();
-
-            $('.datepicker').datepicker({
-                format: 'dd-M-yyyy'
-            });
-           
-            $('#spoken_language_ids').select2({
-                placeholder: "Select Spoken Languages",
-                allowClear: true
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
-            });
-            $('#category_ids').select2({
-                // placeholder: "Select Spoken Languages",
-                allowClear: true
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
-            });
-            $('#arts').select2({
-                // placeholder: "Select Spoken Languages",
-                allowClear: true
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
-            });
-            
-            
-        });
+      
 
 
         $(document).ready(function () {
-            
+          
+        
+           
+        
+  
             Dropzone.autoDiscover = false;
-    var myDropzone = new Dropzone("#myDropzone", {
-// Ensure api_url is defined properly
-  url: api_url + 'auth/upload-profile-web',
-    paramName: "file", // The name that will be used to transfer the file
-    maxFilesize: 5, // Maximum file size in MB
-    method: "post", // HTTP method for the upload
-    acceptedFiles: "image/*", // Accept images only
-    addRemoveLinks: false, // Do not add default remove links
-    autoProcessQueue: false ,
-    // headers: {
-    //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // CSRF token for security
-    // },
-    init: function() {
-       
-        this.on("success", function(file, response) {
-            console.log("File uploaded successfully");
+        const myDropzone = new Dropzone("#myDropzone", {
+            url: api_url + 'auth/upload-profile-web/',
+            maxFilesize: 2, // MB
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                'Authorization': `Bearer ${token}`
+            },
+            success: function (file, response) {
+                console.log(response);
+            },
+            error: function (file, response) {
+                console.log(response);
+            }
         });
-        this.on("addedfile", function(file) {
-            console.log("File added:", file);
+   
+}); 
 
-            // Create a custom remove button
-            var removeButton = Dropzone.createElement(
-                "<button class='remove-button' style='width: 25px;height: 25px; border: none; background-color: transparent;position: absolute;color: #FF5A5A; top: 5px; right: 5px; z-index: 10;font-size: 14px;font-weight: bolder;cursor: pointer; transition: transform 0.2s ease;'>X</button>"
-            );
+    
 
-            var _this = this;
-            // Attach click event to the remove button
-            removeButton.addEventListener("click", function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                // Remove the file from Dropzone
-                _this.removeFile(file);
-            });
-
-            // Append the remove button to the file preview element
-            file.previewElement.appendChild(removeButton);
-        });
-
-        this.on("removedfile", function(file) {
-            console.log("File removed:", file);
-        });
-    }
-    });
-
-    $(document).on('click', '.submit-btn', function () {
+      
+$(document).on('click', '.submit-btn', function () {
             // Get the selected tags from the Slick input
             // var selectedTags = $('#input-tag').slick('getTags');
 
@@ -1210,13 +1125,7 @@ display: none !important;
 
 
             formData.append('skills[]', tags);
-            myDropzone.getAcceptedFiles().forEach(function (file) {
-            formData.append('files[]', file);
-        });
-
-        // Handle Dropzone uploads manually
-        myDropzone.processQueue();
-            myDropzone.on('complete', function () {
+           
             $.ajax({
                 url: api_url + 'auth/complete-profile-web',
                 type: 'POST',
@@ -1234,10 +1143,7 @@ display: none !important;
                 }
             })
         });
-    });  
-});
-      
-
+  
         var count = 0;
 
         $(document).on('click', '.add-more-image', function (e) {
@@ -1306,6 +1212,83 @@ display: none !important;
                 });
             }
         })
+;
 
+
+
+        $(document).ready(function() {
+            show_img();
+            show_img('#image0', '#logo0');
+            var maxSelections = 3;
+            $('.category_id').on('select2:select', function (e) {
+                // Check if the maximum number of selections is reached
+                if ($('.category_id').val().length > maxSelections) {
+                    // Remove the last selected option
+                    $('.category_id').find('option:selected').last().prop('selected', false);
+                    // Trigger the change event to update Select2
+                    $('.category_id').trigger('change');
+                }
+            });
+            // $('.feature-select2').select2();
+            // $('.category_id').select2();
+
+            $('.datepicker').datepicker({
+                format: 'dd-M-yyyy'
+            });
+           
+            $('#spoken_language_ids').select2({
+                //  placeholder: "Select Spoken",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            $('#category_ids').select2({
+                // placeholder: "Select Spoken Languages",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            $('#arts').select2({
+                // placeholder: "Select Spoken Languages",
+                allowClear: true
+            }).on('select2:select', function (e) {
+                var maxSelection = 3;
+                var selectedOptions = $(this).find('option:selected');
+                if (selectedOptions.length >= maxSelection) {
+                    // Disable the remaining options
+                    $(this).find('option:not(:selected)').prop('disabled', true);
+                } else {
+                    // Enable all options
+                    $(this).find('option').prop('disabled', false);
+                }
+            }).on('select2:unselect', function (e) {
+                // Enable all options
+                $(this).find('option').prop('disabled', false);
+            });
+            
+            
+        });
     </script>
 @endsection

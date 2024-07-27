@@ -24,13 +24,13 @@
             <ul class="main-nav nav">
                 @if(session()->get('role') == 'vendor')
                     <li class="has-submenu {{ request()->is('vendor/dashboard') || request()->is('vendor/influencers-filter') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . 'vendor/dashboard' }}">Influencers</a>
+                        <a href="{{ env('BASE_URL') . '/vendor/dashboard' }}">Influencers</a>
                     </li>
                     <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . 'vendor/favourite-influencers' }}">Favourite Influencers</a>
+                        <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourite Influencers</a>
                     </li>
                     <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . 'chats/invited-influencers' }}">Invited Influencers</a>
+                        <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
                     </li>
             @else
         @php

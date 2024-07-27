@@ -21,11 +21,11 @@ class UserController extends Controller
             return redirect('/register?role=influencer');
         }
 
-        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail','favourites'])->whereHas('role', function ($Role) {
+        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail','favourites','invented'])->whereHas('role', function ($Role) {
             $Role->where('code', 'influencer');
         });
 
-        // dd(  $influencers);
+    
         return view('vendor-dashboard.home')->with(['view_type' => 'influencer', 'influencers' => $influencers->paginate(20), 'total_influencers' => $influencers->count()]);
     }
 
@@ -131,13 +131,16 @@ class UserController extends Controller
 
         return response()->json([
             'status' => true,
+            
             'message' => $influencers
         ]);
     }
 
-    public function addToFavourites(Request $request)
+    
+    public function addToInvented(Request $request)
     {
         $influencer_id = $request->influencer_id;
+        $fvt = $request->fvt;
         $validation_arr = [
             'influencer_id' => $influencer_id,
         ];
@@ -164,22 +167,87 @@ class UserController extends Controller
         $Favourite = Favourite::where([
             'influencer_id' => $influencer_id,
             'user_id' => Auth::id(),
+            'fr_in' =>$fvt,
         ])->first();
 
         if (!empty($Favourite)) {
+
+            $Favourite->delete();
+
             return response()->json([
-                'status' => false,
-                'message' => "Already exists",
+                'status' => true,
+                'fr_in'=>$fvt,
+                'message' => "Remove from Invented",
             ]);
         }
 
         Favourite::create([
             'influencer_id' => $influencer_id,
             'user_id' => Auth::id(),
+            'fr_in' => $fvt
         ]);
 
         return response()->json([
             'status' => true,
+            'fr_in'=>$fvt,
+            'message' => "Added to Invented",
+        ]);
+
+    }
+    public function addToFavourites(Request $request)
+    {
+        $influencer_id = $request->influencer_id;
+        $fvt = $request->fvt;
+        $validation_arr = [
+            'influencer_id' => $influencer_id,
+        ];
+
+        $Validator = Validator::make($validation_arr, [
+            'influencer_id' => 'required|exists:users,id',
+        ]);
+
+//        if (!Auth::id() || !Session::has('user')) {
+//            return response()->json([
+//                'status' => false,
+//                'message' => "Login to continue",
+//            ]);
+//        }
+
+        if ($Validator->fails()) {
+            $error = $Validator->errors()->first();
+            return response()->json([
+                'status' => false,
+            
+                'message' => "Invalid Selection",
+            ]);
+        }
+
+        $Favourite = Favourite::where([
+            'influencer_id' => $influencer_id,
+            'user_id' => Auth::id(),
+            'fr_in' =>$fvt,
+        ])->first();
+
+        if (!empty($Favourite)) {
+
+            $Favourite->delete();
+
+            return response()->json([
+                'status' => true,
+                'fr_in'=>$fvt,
+                'message' => "Remove from favourites",
+            ]);
+        }
+
+        Favourite::create([
+            'influencer_id' => $influencer_id,
+            'user_id' => Auth::id(),
+            'fr_in' => $fvt
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'fr_in'=>$fvt,
             'message' => "Added to favourites",
         ]);
 

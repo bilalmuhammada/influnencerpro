@@ -272,7 +272,7 @@ width: 212px !important;
 
 
                 <div class="project-download" style="padding-top:60px;">
-                    <div class="title-group d-flex">
+                    <div class="title-group d-flex bilal-transc">
                         <h2>Transaction History</h2>
                         <div class="down-load">
                             <a href="#" class="btn-primary" id="deleteSelected" style="margin-right: 20px">
@@ -287,10 +287,10 @@ width: 212px !important;
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
                                 <input type="text" class="form-control datepicker  from_date" name="from_date"
-                                       placeholder="From Date">
+                                       placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder="To Date">
+                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder="Date">
                             </div>
                         {{--                            <div class="col-lg-2 col-md-6">--}}
                         {{--                                <select class="form-select">--}}

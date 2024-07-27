@@ -70,7 +70,7 @@ ul.circle-check li i {
 
 #msform input,
 #msform textarea {
-    padding: 6px 15px;
+    /* padding: 6px 15px; */
     border-color: #E7E8EA;
     /* border: 0px solid #ccc; */
     border-radius: 0px;

@@ -253,7 +253,7 @@ input[type=password] {
 .form-control {
     border-color: #E7E8EA;
     /* color: #353535; */
-    color: #999;
+    color: black;
     font-size: 15px;
     min-height: 46px;
     padding: 6px 15px;
@@ -1790,7 +1790,7 @@ label {
     left: 12px;
     top: -3px;
     z-index: 1;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #000;
     margin-bottom: 0;
 }
@@ -9095,7 +9095,7 @@ label.file-upload.image-btn {
 }
 
 .custom_check input {
-    margin-left: -2pc;
+    margin-left: -87px;
     position: absolute;
     /* opacity: 0; */
     cursor: pointer;
@@ -9252,7 +9252,7 @@ label.file-upload.image-btn {
 }
 
 .filter-widget {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .filter-widget h4 {

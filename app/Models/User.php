@@ -106,7 +106,11 @@ class User extends Authenticatable
 
     public function favourites()
     {
-        return $this->hasMany(Favourite::class, 'influencer_id', 'id');
+        return $this->hasMany(Favourite::class, 'influencer_id')->where('fr_in',1);
+    }
+    public function invented()
+    {
+        return $this->hasMany(Favourite::class, 'influencer_id')->where('fr_in',2);
     }
 
     public function categories()

@@ -1216,7 +1216,7 @@
                                     <div class="review-img">
                                     </div>
                                     <div class="review-info align-items-center" style="padding-top:25px;border:0px solid red;width:500px;text-align:center; font-size: 15px;line-height: 25px;">
-                                        <h3><a href="#" style="font-size: 14px;">Oliver</a></h3>
+                                        <h3><a href="#" style="font-size: 14px;">Jack</a></h3>
                                         <h5>Travel, Fitness, Retail</h5>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
