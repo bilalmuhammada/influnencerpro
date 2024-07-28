@@ -603,7 +603,7 @@
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2><a href="{{ env('BASE_URL') . 'register?role=influencer' }}" class="changeColor">Influencers </a></h2>
+                        <h2><a href="{{ env('BASE_URL') . '/register?role=influencer' }}" class="changeColor">Influencers </a></h2>
                         <p>Join InfluencerPro & Stay connected to receive direct Collaborations from all Business Brands Worldwide & Make the best of your Professional Life!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>
@@ -612,7 +612,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2><a href="{{ env('BASE_URL') . 'register?role=brand' }}"  class="changeColor">Brands</a></h2>
+                        <h2><a href="{{ env('BASE_URL') . '/register?role=brand' }}"  class="changeColor">Brands</a></h2>
                         <p>Register InfluencerPro & Gain access to millions of Influencers’ Database which allows you to view their Profiles & Social Platforms, Multi-Country Availability, Direct Chat, Price Offers & Collaborations!</p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <br/>
