@@ -86,21 +86,21 @@
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating email" name="phone" placeholder="Please enter a valid Mobile" pattern="\+?\d*"  oninput="validateInput(this)">
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating " name="phone"  pattern="\+?\d*"  oninput="validateInput(this)" placeholder="Please enter a valid Mobile">
+                                                {{-- <div class="invalid-feedback">
                                                     {{-- Please provide a valid Mobile. --}}
-                                                </div>
-                                                <label class="focus-label">Mobile </label>
+                                                {{-- </div> --}} 
+                                                <label class="inner_label focus-label">Mobile </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating email" name="email" placeholder="Please provide a valid Email.">
-                                               
-                                                <label class="focus-label">Email </label>
+                                                
+                                                <input type="email" class="form-control floating inputbg" name="email"
+                                                       placeholder="Please provide a valid Email." >
+                                                {{-- <label class="inner_label focus-label">Email33 </label> --}}
+                                                <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Email</label>
 
-                                                {{-- <div class="invalid-feedback">
-                                                    Please provide a valid email.
-                                                </div> --}}
                                             </div>
+                                            
                                             <div class="form-group form-focus">
                                                 
                                                 <select name="gender" class="form-control floating" id="gender">
@@ -143,13 +143,11 @@
                                             <div class="form-group form-focus">
                                                 <input type="password" class="form-control floating" name="password"
                                                        id="influencer_password"
-                                                >
+                                                placeholder="Password 8  Characters - 1 Capital, 1 Number, 1 Special" >
                                                 <i class="fa-solid fa-eye" id="eye"
                                                    onclick="togglePassword('influencer_password')"></i>
-                                                <div class="invalid-feedback">
-                                                    Please provide a valid Password.
-                                                </div>
-                                                <label class="focus-label">Password <span style="font-size: 10px">(8  Characters - 1 Capital, 1 Number, 1 Special)</span></label>
+
+                                                <label class="focus-label">Password</label>
                                             </div>
                                             <div class="form-group form-focus mb-0">
                                                 <input type="password" class="form-control floating"
@@ -184,7 +182,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-6 text-start">
-                                                    <a class="forgot-link" href="{{ url('forgot-password') }}">Forgot
+                                                    <a class="forgot-link" style="color: blue;"  href="{{ url('forgot-password') }}">Forgot
                                                         Password ?</a>
                                                 </div>
                                                 <div class="col-6 text-end dont-have">Already on InfluencerPro <a
@@ -211,18 +209,18 @@
                                                 <label class="focus-label">Company Name</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating email"  placeholder="Please provide a valid Business Website." name="website">
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating "  placeholder="Please provide a valid Business Website." name="website">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Website.
-                                                </div>
-                                                <label class="focus-label">Business Website</label>
+                                                </div> --}}
+                                                <label class="inner_label focus-label">Business Website</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating email" id="bemail" placeholder="Please provide a valid Business Email." name="email">
+                                                <input type="text" class="form-control floating " id="bemail" placeholder="Please provide a valid Business Email." name="email">
                                                 <div class="invalid-feedback">
                                                     {{-- Please provide a valid Business Email. --}}
                                                 </div>
-                                                <label class="focus-label">Business Email</label>
+                                                <label class="inner_label focus-label">Business Email</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating"  name="name"/>
@@ -247,11 +245,11 @@
                                                 <label class="focus-label">Position </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating email"   pattern="\+?\d*" placeholder="Please provide a valid Mobile." oninput="validateInput(this)" name="phone"/>
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating"   pattern="\+?\d*" placeholder="Please provide a valid Mobile." oninput="validateInput(this)" name="phone"/>
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Mobile.
-                                                </div>
-                                                <label class="focus-label">Mobile </label>
+                                                </div> --}}
+                                                <label class="inner_label focus-label">Mobile </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 
@@ -296,13 +294,11 @@
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="password" class="form-control floating" name="password"
-                                                       id="brand">
+                                                       id="brand" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special">
                                                 <i class="fa-solid fa-eye" id="eye"
                                                    onclick="togglePassword('brand')"></i>
-                                                <div class="invalid-feedback">
-                                                    Please provide a valid Password.
-                                                </div>
-                                                <label class="focus-label bilal-register">Password1 <span style="font-size: 10px">(8  Characters - 1 Capital, 1 Number, 1 Special)</span></label>
+                                                
+                                                <label class="inner_label focus-label bilal-register">Password</label>
                                             </div>
                                             <div class="form-group form-focus mb-0">
                                                 <input type="password" class="form-control floating"
@@ -341,11 +337,11 @@
 
                                             <div class="row form-row">
                                                 <div class="col-6 text-start">
-                                                    <a class="forgot-link" href="{{ env('BASE_URL') }}forgot-password">Forgot
+                                                    <a class="forgot-link" style="color: blue;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                         Password ?</a>
                                                 </div>
                                                 <div class="col-6 text-end dont-have">Already on influencerPro <a
-                                                        href="{{env('BASE_URL').'login'}}">Click here</a></div>
+                                                        href="{{env('BASE_URL').'/login'}}">Click here</a></div>
                                             </div>
                                         </form>
                                     </div>
