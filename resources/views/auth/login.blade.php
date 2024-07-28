@@ -35,13 +35,13 @@
                                 </div>
                                 <form id="login-form">
                                     <div class="form-group form-focus">
-                                        <input type="email" class="form-control floating email" name="email">
+                                        <input type="email" class="form-control floating email" name="email" >
                                         <div class="invalid-feedback">
                                             Please provide a valid email.
                                         </div>
                                         <label class="focus-label">Email</label>
                                     </div>
-                                    <div class="form-group form-focus">
+                                    <div class="form-group form-focus" style="margin-top:14px;">
                                         <input type="password" class="form-control floating password" name="password" id="password">
                                         <i class="fa-solid fa-eye" id="eye" onclick="togglePassword()"></i>
                                         <div class="invalid-feedback">
@@ -49,9 +49,9 @@
                                         </div>
                                         <label class="focus-label">Password</label>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-top: 15px;">
                                         <label class="custom_check">
-                                            <input type="checkbox" name="rem_password">
+                                            <input type="checkbox" name="rem_password" style="margin-left: -86px !important;">
                                             {{-- <span class="checkmark"></span>  --}}
                                             Remember password
                                         </label>
