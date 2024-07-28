@@ -21,7 +21,7 @@ display: none !important;
   }
   .form
   .select2-container--default .select2-selection--multiple .select2-selection__choice{
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
   .select2-container {
     z-index: 1 !important;
@@ -140,7 +140,7 @@ display: none !important;
                                                         value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('category_id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
-                                         <label for="" class="focus-label">Influencer Category</label>
+                                         <label for="" class="focus-label">Category</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">

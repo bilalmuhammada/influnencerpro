@@ -86,7 +86,7 @@
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating " name="phone"  pattern="\+?\d*"  oninput="validateInput(this)" placeholder="Please enter a valid Mobile">
+                                                <input type="text" class="form-control floating " name="phone"  pattern="\+?\d*"  oninput="validateInput(this)" placeholder="Please enter a valid Mobile.">
                                                 {{-- <div class="invalid-feedback">
                                                     {{-- Please provide a valid Mobile. --}}
                                                 {{-- </div> --}} 
@@ -143,7 +143,7 @@
                                             <div class="form-group form-focus">
                                                 <input type="password" class="form-control floating" name="password"
                                                        id="influencer_password"
-                                                placeholder="Password 8  Characters - 1 Capital, 1 Number, 1 Special" >
+                                                placeholder="8 Characters - 1 Capital, 1 Number, 1 Special" >
                                                 <i class="fa-solid fa-eye" id="eye"
                                                    onclick="togglePassword('influencer_password')"></i>
 
@@ -164,7 +164,7 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    You agree to the influencerPro
+                                                    I agree to the influencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     <div class="invalid-feedback">
@@ -315,7 +315,7 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    You agree to the influencerPro
+                                                    I agree to the influencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     <div class="invalid-feedback">
