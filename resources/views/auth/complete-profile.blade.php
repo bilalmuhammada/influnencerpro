@@ -755,7 +755,7 @@ display: none !important;
                                                     </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 92%;"
+                                                    <input type="text" id="" style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="instagram_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -786,7 +786,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%;"
+                                                    <input type="text" id=""  style=" width: 90%;"
                                                            class="form-control floating"
                                                            name="facebook_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -817,7 +817,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%;"
+                                                    <input type="text" id=""  style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="tiktok_followers"
                                                            placeholder=" 10K,  1M,  2,5M "
@@ -849,7 +849,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style="width:92%;"
+                                                    <input type="text" id="" style="width:90%;"
                                                            class="form-control  floating inputbg"
                                                            name="youtube_followers"
                                                            placeholder=" 10K,  1M,  2,5M "
@@ -881,7 +881,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%;"
+                                                    <input type="text" id=""  style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="twitter_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -913,7 +913,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 92%;"
+                                                    <input type="text" id="" style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="snapchat_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -945,7 +945,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92% ;"
+                                                    <input type="text" id=""  style=" width: 90% ;"
                                                            class="form-control floating inputbg"
                                                            name="pinterest_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -976,7 +976,7 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 92%;"
+                                                    <input type="text" id=""  style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="web_followers"
                                                            placeholder="10K,  1M,  2,5M "
@@ -1025,7 +1025,7 @@ display: none !important;
                                 {{-- <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label> --}}
                                 <div class="row mt-2" style="margin-left: 108px">
                                                                                
-                                    <div class="col-md-10 dropzone-container" id="myDropzone" class="drop"  style="border: white;color: blue; font-weight: bold;">
+                                    <div class="col-md-2 dropzone-container" id="myDropzone" class="drop"  style="border: white;color: blue; font-weight: bold;">
                                       <span>or Upload & Drop Images Here</span>
                                     </div>
                                   </div>
