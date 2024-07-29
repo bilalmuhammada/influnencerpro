@@ -64,7 +64,7 @@ input[type="file"] {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
-                                            <input type="tel" class="form-control floating" name="mobile">
+                                            <input type="tel" class="form-control floating" name="mobile" pattern="\+?\d*"  oninput="validateInput(this)"   placeholder="Please enter a valid Mobile."> 
                                             <label class="focus-label">Mobile</label>
                                         </div>
                                     </div>
