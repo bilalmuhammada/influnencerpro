@@ -2,7 +2,7 @@
 //     window.location = base_url;
 // }
 
-var api_url = "{{ env('API_URL') }}";
+// var api_url = "{{ env('API_URL') }}";
 function logout(e) {
     // e.preventDefault();
     alert(api_url);
