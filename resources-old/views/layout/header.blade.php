@@ -44,8 +44,8 @@
 
     <script>
         base_url = "{{ env('BASE_URL') }}";
-        api_url = "{{ env("API_URL") }}";
-
+        api_url = "{{ env('API_URL') }}";
+       
         token = localStorage.getItem('user_token');
     </script>
 
