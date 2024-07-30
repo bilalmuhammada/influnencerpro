@@ -6,18 +6,50 @@
 .dropzone-container {
     border: 2px solid #ccc;
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
     margin-top: 20px;
   }
+  .dz-image {
+    position: relative;
+  }
+
+  .dz-preview {
+            position: relative;
+        }
+  .dz-preview .dz-remove {
+    position: absolute;
+    top: 0px;
+    left: 181px;
+   
+    background-color: #f0f8ff03;
+    color: #f20909f7;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 35px;
+    width: 20px;
+    font-weight: 600;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+        }
+
   .floating {
     padding-top: 20px !important;
+  }
+  .dz-image img{
+width: 200px;
+height: 200px;
+  }
+  .dz-success-mark{
+    display: none;
   }
   .inner_label{
     margin-left: 12px;
   }
  
   .dz-message{
-display: none !important;
+/* display: none !important; */
   }
   .form
   .select2-container--default .select2-selection--multiple .select2-selection__choice{
@@ -76,11 +108,21 @@ width: 200px !important;
   .from_date:focus, .to_date:focus {
     border: 1px solid blue !important;
 }
-.dropzone{
-    border: 0px !important;
-    box-shadow: 0 0px 22px #997045 !important;
-}
-
+#my-dropzone .dz-preview {
+            display: inline-block;
+            margin: 30px;
+        }
+        #my-dropzone .dz-image {
+            width: 150px;
+            height: 150px;
+        }
+        #my-dropzone .dz-details {
+            display: none;
+        }
+        #my-dropzone .dz-message {
+            text-align: center;
+            margin: 20px;
+        }
 
 .dz-error-mark{
 display: none !important;
@@ -1022,13 +1064,17 @@ display: none !important;
                                                style="border:0px solid #1A237E;!important"/>
                                     </div>
                                 </div>
-                                {{-- <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label> --}}
-                                <div class="row mt-2" style="margin-left: 108px">
+                                <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label>
+                                {{-- <div class="row" > --}}
                                                                                
-                                    <div class="col-md-2 dropzone-container" id="myDropzone" class="drop"  style="border: white;color: blue; font-weight: bold;">
-                                      <span>or Upload & Drop Images Here</span>
-                                    </div>
-                                  </div>
+                                   
+                                      <div class="dropzone-container dz-message "  id="my-Dropzone"  style="border: white;color: blue; font-weight: bold;">
+                                        {{-- <span>or Upload & Drop Images Here</span> --}}
+                                      </div>
+                                     
+                                       
+                                    {{-- </div> --}}
+                              {{-- </div> --}}
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous"
                                    value="Previous"/>
@@ -1086,15 +1132,16 @@ display: none !important;
         $(document).ready(function () {
           
         
-           
+    
         
   
             Dropzone.autoDiscover = false;
-        const myDropzone = new Dropzone("#myDropzone", {
+        const myDropzone = new Dropzone("#my-Dropzone", {
             url: api_url + 'auth/upload-profile-web/',
             maxFilesize: 2, // MB
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            addRemoveLinks: true,
+            addRemoveLinks: false,
+            maxFiles: 5,
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 'Authorization': `Bearer ${token}`
@@ -1104,10 +1151,36 @@ display: none !important;
             },
             error: function (file, response) {
                 console.log(response);
+            },
+            init: function() {
+                this.on("addedfile", function(file) {
+                    // Create the remove button
+                    var removeButton = Dropzone.createElement("<button class='dz-remove'>×</button>");
+                    
+                    // Capture the Dropzone instance as closure.
+                    var _this = this;
+
+                    // Listen to the click event
+                    removeButton.addEventListener("click", function(e) {
+                        // Make sure the button click doesn't submit the form
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        // Remove the file preview.
+                        _this.removeFile(file);
+
+                        // Optionally, you can also remove the file from your server here using an AJAX request.
+                    });
+
+                    // Add the button to the file preview element.
+                    file.previewElement.appendChild(removeButton);
+                });
             }
+           
         });
    
-}); 
+});     
+
 
     
 
