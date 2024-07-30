@@ -36,7 +36,7 @@
 width: 200px !important;
   }
   .font_label{
-    padding-top: 12px !important;
+    /* padding-top: 12px !important; */
     margin-bottom: -0.5rem !important;
 
   }
