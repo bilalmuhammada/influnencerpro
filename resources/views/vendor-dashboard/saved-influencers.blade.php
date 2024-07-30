@@ -201,6 +201,9 @@ width: 195px !important;
   background-color: #997045;
   border-radius: 34px;
 }
+.datepicker {
+    padding-left: 18px !important;
+}
 
 /* Define the scrollbar track */
 ::-webkit-scrollbar-track {

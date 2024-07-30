@@ -199,6 +199,9 @@ width: 195px !important;
   width: 12px; /* You can adjust this value based on your preference */
 }
 
+.datepicker {
+    padding-left: 18px !important;
+}
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;
