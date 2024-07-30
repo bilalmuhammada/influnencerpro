@@ -853,7 +853,7 @@ class AuthController extends Controller
             }
 
             $logo_name = $logo->getClientOriginalName() . Auth::id() . '.' . $logo->getClientOriginalExtension();
-            dd( $logo->move(public_path('uploads/users'), $logo_name));
+            // dd( $logo->move(public_path('uploads/users'), $logo_name));
             $logo->move(public_path('uploads/users'), $logo_name);
 
             
