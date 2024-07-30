@@ -12,14 +12,29 @@ class GeneralController extends Controller
 {
     public function subscription()
     {
+        session(['current_url' => url()->current()]);
         return view('subscription.index');
     }
     public function influncersubscription()
     {
+        session(['current_url' => url()->current()]);
+
         return view('subscription.influncerindex');
     }
     public function checkout()
+
     {
+        $url=session('current_url');
+        
+        $path = parse_url($url, PHP_URL_PATH); // Get the path component of the URL
+        $segments = explode('/', rtrim($path, '/')); // Split the path into segments and remove trailing slash
+
+        $lastSegment = end($segments);
+        if($lastSegment==="subscriptions"){
+            return view('subscription.index');
+        }else{
+            return view('subscription.influncerindex');
+        }
         return view('subscription.checkout');
     }
     public function session(Request $request)
