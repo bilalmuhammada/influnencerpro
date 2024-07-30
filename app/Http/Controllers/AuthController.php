@@ -837,7 +837,7 @@ class AuthController extends Controller
                 'errors' => ['name' => ['Invalid request!']]
             ]);
         }
-        dd($User);
+    
 
         $User->update([
             'name' => $request->input('name', NULL),
@@ -846,6 +846,7 @@ class AuthController extends Controller
         ]);
 
         $logo = $request->file('image');
+        dd($logo);
         if ($logo) {
             if ($User->attachment && File::exists(public_path('uploads/users/' . $User->attachment->name))) {
                 unlink(public_path('uploads/users/' . $User->attachment->name));
