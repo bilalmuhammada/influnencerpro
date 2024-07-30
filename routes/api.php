@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("auth/complete-profile", [AuthController::class, 'completeProfileBackend']);
     Route::post("auth/complete-profile-web", [AuthController::class, 'completeProfileBackendForWeb']);
     // Route::post("auth/upload-profile-web", [AuthController::class, 'uploadProfileImageForWeb']);
-    Route::post('auth/upload-profile-web', [AuthController::class, 'uploadProfileImageForWeb'])->name('dropzone.upload');
+    Route::post('auth/upload_profile_web', [AuthController::class, 'uploadProfileImageForWeb'])->name('dropzone.upload');
     
     Route::post("auth/logout", [AuthController::class, 'logout']);
     Route::post("auth/account-setting-update", [AuthController::class, 'accountSettingUpdate']);

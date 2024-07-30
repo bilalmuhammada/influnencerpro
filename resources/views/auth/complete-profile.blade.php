@@ -1137,7 +1137,7 @@ display: none !important;
   
             Dropzone.autoDiscover = false;
         const myDropzone = new Dropzone("#my-Dropzone", {
-            url: api_url + 'auth/upload-profile-web/',
+            url: api_url + 'auth/upload_profile_web/',
             maxFilesize: 2, // MB
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             addRemoveLinks: false,
