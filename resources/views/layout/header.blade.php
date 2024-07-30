@@ -74,8 +74,8 @@
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     {{-- <script src="{{ asset('assets/js/slick.js') }}"></script> --}}
    <script>
-        base_url = "{{ env('BASE_URL') }}";
-        api_url = "{{ env('API_URL') }}";
+       var  base_url = "{{ env('BASE_URL') }}";
+       var  api_url = "{{ env('API_URL') }}";
         alert(api_url);
         alert(base_url);
         token = localStorage.getItem('user_token');
