@@ -1132,7 +1132,7 @@ display: none !important;
         $(document).ready(function () {
           
         
-    
+    alert(api_url);
         
   
             Dropzone.autoDiscover = false;
