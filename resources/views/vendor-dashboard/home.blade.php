@@ -427,7 +427,7 @@ width: 200px !important;
                                         <!-- <div class="form-group"> -->
                                         @php $countries = getCountries(); @endphp
                                         <select class="form-control  select2 nationality_id" 
-                                                name="country_id">
+                                                name="country_id" multiple>
                                             <option value=""></option> 
                                             @forelse($countries as $country)
                                                 <option value="{{ $country->id }}"
@@ -459,14 +459,14 @@ width: 200px !important;
                                                                               </select>--}}
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="age1"
+                                                <input type="text" class="form-control" pattern="\+?\d*" oninput="validateInput(this)" name="age1"
                                             
                                                 placeholder='Min' value="" >
                                             </div>
                                             <div class="col-md-6">
 
 
-                                                <input type="text" class="form-control" name="age"
+                                                <input type="text" class="form-control" name="age" pattern="\+?\d*" oninput="validateInput(this)"
                                                 
                                                 placeholder='Max ' value="{{$ages}}" >
                                               
@@ -699,12 +699,12 @@ width: 200px !important;
                                         <div class="col-md-6">
                                             <label class="font_label">Availability</label>
                                             <input type="text" class="form-control datepicker" name="availability_from_date" placeholder=" Date" onchange="formatDate(this)"
-                                                   value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif">
+                                                   value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style="text-align: center;  background-color: white;">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">&nbsp;</label>
                                             <input type="text" class="form-control datepicker" name="availability_to_date" placeholder=" Date" onchange="formatDate(this)"
-                                                   value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif">
+                                                   value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style="text-align: center;  background-color: white;">
                                         </div>
                                     </div>
 
@@ -997,6 +997,10 @@ width: 200px !important;
     <script src="{{ asset('assets/js/range.js') }}"></script>
     <script src="{{ asset('assets/js/skills.js') }}"></script>
     <script>
+        function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+}
         var range_start = "{{ isset(request()->min_value) ? request()->min_value : 0 }}";
         var range_end = "{{ isset(request()->max_value) ? request()->max_value : 50 }}";
         // // Initialize theia-sticky-sidebar
