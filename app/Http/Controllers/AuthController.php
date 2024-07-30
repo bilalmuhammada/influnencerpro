@@ -846,7 +846,7 @@ class AuthController extends Controller
         ]);
 
         $logo = $request->file('image');
-        dd($logo);
+        // dd($logo);
         if ($logo) {
             if ($User->attachment && File::exists(public_path('uploads/users/' . $User->attachment->name))) {
                 unlink(public_path('uploads/users/' . $User->attachment->name));
