@@ -18,8 +18,8 @@
         }
   .dz-preview .dz-remove {
     position: absolute;
-    top: 5px;
-    left: 177px;
+    top: 0px;
+    left: 181px;
    
     background-color: #f0f8ff03;
     color: #f20909f7;
@@ -1137,7 +1137,7 @@ display: none !important;
   
             Dropzone.autoDiscover = false;
         const myDropzone = new Dropzone("#my-Dropzone", {
-            url:'http://142.93.184.196:80/api/auth/upload_profile_web',
+            url: api_url + 'auth/upload_profile_web',
             maxFilesize: 2, // MB
             method: 'post',
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
