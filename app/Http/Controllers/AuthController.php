@@ -853,9 +853,10 @@ class AuthController extends Controller
             }
 
             $logo_name = $logo->getClientOriginalName() . Auth::id() . '.' . $logo->getClientOriginalExtension();
+            dd( $logo_name);
             $logo->move(public_path('uploads/users'), $logo_name);
 
-            dd( $logo_name);
+            
             Attachment::where('object', 'User')->where('object_id', $User->id)->where('context', 'user-image')->delete();
             Attachment::create([
                 'name' => $logo_name,
