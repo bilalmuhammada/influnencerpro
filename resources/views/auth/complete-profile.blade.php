@@ -1132,12 +1132,12 @@ display: none !important;
         $(document).ready(function () {
           
         
-    alert(api_url);
+    // alert(api_url);
         
   
             Dropzone.autoDiscover = false;
         const myDropzone = new Dropzone("#my-Dropzone", {
-            url: api_url + 'auth/upload_profile_web/',
+            url:'http://142.93.184.196/api/auth/upload_profile_web/',
             maxFilesize: 2, // MB
             method: 'post',
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
