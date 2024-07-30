@@ -12,6 +12,8 @@
         .select2-search--inline{
             display: none;
         }
+        .datepicker {
+            padding-left: 10px !important;}
         .select2-container--default.select2-container--focus .select2-selection--multiple:focus{
             border: 1px solid blue !important;
         }
@@ -699,12 +701,12 @@ width: 200px !important;
                                         <div class="col-md-6">
                                             <label class="font_label">Availability</label>
                                             <input type="text" class="form-control datepicker" name="availability_from_date" placeholder=" Date" onchange="formatDate(this)"
-                                                   value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style="text-align: center;  background-color: white;">
+                                                   value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">&nbsp;</label>
                                             <input type="text" class="form-control datepicker" name="availability_to_date" placeholder=" Date" onchange="formatDate(this)"
-                                                   value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style="text-align: center;  background-color: white;">
+                                                   value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                     </div>
 
