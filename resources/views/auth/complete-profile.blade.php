@@ -18,8 +18,8 @@
         }
   .dz-preview .dz-remove {
     position: absolute;
-    top: 0px;
-    left: 181px;
+    top: 5px;
+    left: 177px;
    
     background-color: #f0f8ff03;
     color: #f20909f7;
