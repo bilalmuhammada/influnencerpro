@@ -229,10 +229,10 @@ width: 195px !important;
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
                                 <input type="text" class="form-control datepicker from_date" name="from_date" style="width:115%"
-                                       placeholder="From Date">
+                                       placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control datepicker to_date" name="to_date" style="width:115%;margin-left: 14px;" placeholder="To Date">
+                                <input type="text" class="form-control datepicker to_date" name="to_date" style="width:115%;margin-left: 14px;" placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6" style="margin-top:5px;     margin-left: 31px;"  >                          
                                 <button class="btn btn-primary filter" type="submit">Filter</button>

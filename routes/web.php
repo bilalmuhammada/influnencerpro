@@ -22,7 +22,7 @@ Route::get('/subscriptions', [\App\Http\Controllers\GeneralController::class, 's
 Route::get('/influncersubscriptions', [\App\Http\Controllers\GeneralController::class, 'influncersubscription']);
 
 
-Route::get('/checkout',  [\App\Http\Controllers\GeneralController::class,'checkout'])->name('checkout');
+Route::get('/checkout',  [\App\Http\Controllers\GeneralController::class,'influncersubscription'])->name('checkout');
 Route::post('/session',  [\App\Http\Controllers\GeneralController::class,'session'])->name('session');
 Route::get('/success',  [\App\Http\Controllers\GeneralController::class,'success'])->name('success');
 
