@@ -85,7 +85,7 @@
     top: 10px;
     right: 10px;
     display: none; /* Hide by default */
-    background: rgba(255, 255, 255, 0.8); /* Optional: background for better visibility */
+    /* background: rgba(255, 255, 255, 0.8); Optional: background for better visibility */
     padding: 5px;
     border-radius: 4px;
 }
