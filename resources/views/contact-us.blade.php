@@ -113,8 +113,8 @@ input[type="file"] {
                                                   <option value="collaboration">Collaboration</option>
                                                   <option value="suggestion">Suggestion</option>
                                                   <option value="complain">Complain</option>
-                                                  <option value="reportbrand">Report Brand</option>
-                                                  <option value="reportinfluncer">Report Influncer</option>
+                                                  <option value="reportbrand">Report a Brand</option>
+                                                  <option value="reportinfluncer">Report an Influncer</option>
                                                 </select>
                                                 <label class="focus-label">Reason </label>
                                         </div>
