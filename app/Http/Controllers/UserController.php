@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\SiteHelper;
+use App\Models\Attachment;
 use App\Models\Chat;
 use App\Models\Favourite;
 use App\Models\ProfileVisit;
@@ -251,6 +252,19 @@ class UserController extends Controller
             'message' => "Added to favourites",
         ]);
 
+    }
+    public function deleteImage($id)
+    {
+        // dd(Auth::id());
+        $image = Attachment::where('id',$id)->where('object_id',Auth::id())->first();
+        
+    //    dd($image);
+        if ($image) {
+            // dd($image);
+             $image->delete();
+            return response()->json(['success' => true,'message'=>'Image Delete Successfully']);
+        }
+        return response()->json(['success' => false], 404);
     }
 
     public function removeFromFavourites(Request $request)

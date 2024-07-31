@@ -44,6 +44,11 @@ Route::prefix('/influencer')->middleware(['checkLogin'])->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->middleware('checkUser:influencer');
     Route::get('/complete-profile', [\App\Http\Controllers\AuthController::class, 'completeProfile'])->middleware('checkUser:influencer');
     Route::get('/change-old-password', [\App\Http\Controllers\AuthController::class, 'changeOldPassword'])->middleware('checkUser:vendor,influencer');
+   
+
+});
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::delete('influencer/image/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteImage'])->name('influencer.image.delete');
 });
 
 Route::prefix('/reports')->middleware(['checkUser:vendor,influencer', 'checkLogin'])->group(function () {

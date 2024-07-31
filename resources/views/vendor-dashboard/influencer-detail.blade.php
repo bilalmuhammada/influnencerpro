@@ -1,10 +1,12 @@
 @extends('layout.master')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
     .profile {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
 }
+
 
 .profile h1 {
     margin-top: 160px;
@@ -44,7 +46,7 @@
     width: 30px;
     margin: 6px;
     height: 30px;
-    background-color: #f1f1f1;
+
     border: none;
     color: rgb(0, 0, 0);
     display: flex;
@@ -66,6 +68,38 @@
 .open-chat:hover {
     color: #0056b3;
 }
+
+
+.gallerys {
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar-one {
+    position: relative;
+    box-shadow: 1px 1px 1px 1px #eee;
+}
+
+.image-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none; /* Hide by default */
+    background: rgba(255, 255, 255, 0.8); /* Optional: background for better visibility */
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.gallerys:hover .image-actions {
+    display: flex; /* Show when hovering over the gallery container */
+}
+
+.image-actions img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 </style>
 @section('content')
 
@@ -517,13 +551,13 @@
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality : {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City in: {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City : {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price : {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
                             </div>
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>
@@ -579,29 +613,27 @@
                     <div class="row">
 
                         @forelse($influencer->influencer_profile_images as $image)
-                            <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
-                                <div class="avatar-one"
-                                     style="width:100%;box-shadow:1px 1px 1px 1px #eee;">
-                                    <a href="{{ $image->file_name_url }}">
-                                        <!-- <div class="start"
-                                             style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:220px;">
-                                            <i class="fas fa-check-circle text-success verified"
-                                               style="background-color:;padding:7px;border-radius:50%;"></i>
-                                        </div> -->
-                                        <img src="{{ $image->file_name_url }}" alt="author"
-                                             width="100%" height="200px">
-                                    </a>
-                                    {{--                                    <div class="influencer-dev" style="margin:10px;padding:3px;">--}}
-                                    {{--                                        <h5 style="font-size:16px;">{{ $influencer->full_name }}</h5>--}}
-                                    {{--                                        <h5 style="font-size:16px;">No. &nbsp;{{ $influencer->phone }}</i></h5>--}}
-                                    {{--                                    </div>--}}
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center" style=" margin-top: 20px;">
-                                <p>No Images</p>
-                            </div>
-                        @endforelse
+<div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
+    <div class="avatar-one" style="width:100%;">
+        <a href="{{ $image->file_name_url }}">
+            <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
+        </a>
+        <div class="image-actions">
+            {{-- <a href="{{ $image->file_name_url }}" download class="btn  mr-2" style="padding: 0;">
+                <img src="{{ asset('assets/icons/dwnl.png') }}" alt="Download" style="width: 24px; height: 24px;">
+            </a> --}}
+            
+            <img src="{{ asset('assets/icons/close.png') }}" alt="Delete" class="delete-icon" data-image-id="{{ $image->id }}">
+        </div>
+    </div>
+</div>
+@empty
+<div class="col-12 text-center" style="margin-top: 20px;">
+    <p>No Images</p>
+</div>
+@endforelse
+
+
                     </div>
                 </div>
             </div>
@@ -613,6 +645,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
     <script>
+        
+    $(document).ready(function() {
+        // Handle delete icon click
+        $('.delete-icon').on('click', function() {
+
+            // alert('dd')
+            if (confirm('Are you sure you want to delete this image?')) {
+                var imageId = $(this).data('image-id');
+                var $this = $(this);
+
+                $.ajax({
+                    url: '/influencer/image/delete/' + imageId,
+                    type: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        // On success, remove the image element or show a success message
+                        $this.closest('.gallerys').remove();
+                        // t('Image deleted successfully.');
+                        show_success_message(response.message);
+                    },
+                    error: function(xhr) {
+                        // Handle errors
+                        console.log('An error occurred while deleting the image.');
+                    }
+                });
+            }
+        });
+    });
+
 
 $(document).ready(function() {
     $('#downloadButton').on('click', function() {
