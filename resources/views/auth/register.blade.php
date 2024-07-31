@@ -417,7 +417,7 @@ function validateInput(input) {
             $('.changetext').text('Gain access to millions of Influencers’ Database!');
 
           }else{
-            $('.rgt').text('join');
+            $('.rgt').text('Join');
             $('.changetext').text('Make the best of your Professional Life!');
           }
             console.log(role)
