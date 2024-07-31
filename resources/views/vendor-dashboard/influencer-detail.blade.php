@@ -656,7 +656,7 @@
                 var $this = $(this);
 
                 $.ajax({
-                    url: '/influencer/image/delete/' + imageId,
+                    url: '/influencer/image/delete' + imageId,
                     type: 'DELETE',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
