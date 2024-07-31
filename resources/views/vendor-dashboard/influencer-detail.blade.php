@@ -623,7 +623,7 @@
                 <img src="{{ asset('assets/icons/dwnl.png') }}" alt="Download" style="width: 24px; height: 24px;">
             </a> --}}
             
-            <img src="{{ asset('assets/icons/close.png') }}" alt="Delete" class="delete-icon" data-image-id="{{ $image->id }}">
+            <img src="{{ asset('assets/icons/close.png') }}" alt="Delete" class="delete-icon" data-url="{{ route('influencer.image.delete', ['id' => $image->id]) }}">
         </div>
     </div>
 </div>
@@ -650,22 +650,29 @@
         // Handle delete icon click
         $('.delete-icon').on('click', function() {
 
-            // alert('dd')
+            var url = $(this).data('url');
+            var imageElement = $(this).closest('.gallerys');
             if (confirm('Are you sure you want to delete this image?')) {
                 var imageId = $(this).data('image-id');
                 var $this = $(this);
 
                 $.ajax({
-                    url: 'influencer/image/delete/' + imageId,
+                    url: url,
                     type: 'DELETE',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(response) {
+                        if (response.success) {
+                            imageElement.remove();
+                            show_success_message(response.message);
+                        } else {
+                            show_error_message(response.message);
+                        }
                         // On success, remove the image element or show a success message
-                        $this.closest('.gallerys').remove();
+                        // $this.closest('.gallerys').remove();
                         // t('Image deleted successfully.');
-                        show_success_message(response.message);
+                       
                     },
                     error: function(xhr) {
                         // Handle errors
