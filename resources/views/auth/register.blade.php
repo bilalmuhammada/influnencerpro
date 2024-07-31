@@ -420,7 +420,7 @@ function validateInput(input) {
             $('.rgt').text('Join');
             $('.changetext').text('Make the best of your Professional Life!');
           }
-            console.log(role)
+            
         }
 
         $(document).on('click', '.influencer-register', function (e) {
