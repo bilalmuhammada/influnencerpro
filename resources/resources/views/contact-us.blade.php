@@ -154,6 +154,9 @@
                 });
             }
         }
-
+        function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+}
     </script>
 @endsection

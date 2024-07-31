@@ -40,7 +40,7 @@ input[type="file"] {
                             <div class="login-header text-center">
                                 <a href="{{ env('BASE_URL') }}"><img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="logo" class="img-fluid"></a>
                                 <h3>Contact Us</h3>
-                                <p>Share Your mind with us!</p>
+                                <p>Share your mind with us!</p>
                             </div>
                             <form action="#" id="contact-us-form">
                                 <div class="row">
@@ -58,7 +58,7 @@ input[type="file"] {
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
-                                            <input type="email" class="form-control floating" name="email">
+                                            <input type="email" class="form-control floating" name="email"  placeholder="Please enter a valid Email.">
                                             <label class="focus-label">Email</label>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@ input[type="file"] {
                                           <select name="iam" id="" class="form-control floating"> 
                                           <option  selected value="">I'm a/an                                        </option>
                                             <option value="influncer">Influncer</option>
-                                            <option value="brands">Brands</option>
+                                            <option value="brands">Brand</option>
                                            
                                           </select>
                                         </div>
@@ -254,5 +254,10 @@ input[type="file"] {
             }
         });
 
+
+        function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+}
     </script>
 @endsection
