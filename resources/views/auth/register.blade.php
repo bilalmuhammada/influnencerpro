@@ -49,7 +49,7 @@
                             <div class="login-right">
                                 <div class="login-header text-center">
                                     <!-- <img src="assets/img/logo/Influencers Pro-01-01.png" class="img-fluid" alt="Logo"> -->
-                                    <h3>Register InfluencerPro</h3>
+                                   <h3 class="rgt">Register </h3> <h3> InfluencerPro</h3>
                                     <p class="changetext">Gain access to millions of Influencers’ Database!</p>
                                 </div>
                                 <nav class="user-tabs mb-4">
@@ -412,9 +412,12 @@ function validateInput(input) {
             var role = $(thisElem).attr('role');
 // alert( role );
           if(role=='brand'){
+            rgt
+            $('.rgt').text('Register');
             $('.changetext').text('Gain access to millions of Influencers’ Database!');
 
           }else{
+            $('.rgt').text('join');
             $('.changetext').text('Make the best of your Professional Life!');
           }
             console.log(role)

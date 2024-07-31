@@ -109,7 +109,7 @@ input[type="file"] {
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
                                             <select name="reason" id="" class="form-control floating"> 
-                                                <option  selected value="">Reason</option>
+                                                {{-- <option  selected value="">Reason</option> --}}
                                                   <option value="collaboration">Collaboration</option>
                                                   <option value="suggestion">Suggestion</option>
                                                   <option value="complain">Complain</option>
