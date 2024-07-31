@@ -49,8 +49,9 @@
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar</li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
+        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar</li>
+       
         <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
         {{-- <li><i class="fa fa-times-circle text-danger"></i> Featured Days: <b>No</b></li> --}}
@@ -92,8 +93,9 @@
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms </li>
+        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar </li>
+
         <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
     </ul>
@@ -132,9 +134,10 @@
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar  </li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
-        <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands/li>
+        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar  </li>
+
+        <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
 
     </ul>

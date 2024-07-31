@@ -969,8 +969,8 @@
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
-                                        <h6 style="  font-weight: bolder;">Receive Brands Collaborations </h6>
-                                        <p style="font-size: 12px;">Start receiving Brands Collaborations</p>
+                                        <h6 style="  font-weight: bolder;">Receive Brand Collaborations </h6>
+                                        <p style="font-size: 12px;">Start receiving Brand Collaborations</p>
                                     </div>
                                 </div>
                                 <!-- </div> -->
@@ -1103,7 +1103,7 @@
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
-                                        <h6>Watch the video</h6>
+                                        <h6 style="  font-weight: bolder;">Watch the video</h6>
                                         <div class="play-btn">
                                             <a class="popup-video"
                                                {{-- href="https://www.youtube.com/watch?time_continue=3&amp;v=_X0eYtY8T_U" --}}
