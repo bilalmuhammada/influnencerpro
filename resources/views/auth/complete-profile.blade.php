@@ -1085,7 +1085,10 @@ display: none !important;
                                                style="border:0px solid #1A237E;!important"/>
                                     </div>
                                 </div>
-                                <label style="color:#0504aa;font-weight:bold;">Or Upload  images</label>
+                                <div style="left: 41%;  position: absolute;">
+                                    <label style="color:#0504aa;font-weight:bold;">Or Upload & Drop Images Here</label>
+                                </div>
+                               
                                 {{-- <div class="row" > --}}
                                                                                
                                    
