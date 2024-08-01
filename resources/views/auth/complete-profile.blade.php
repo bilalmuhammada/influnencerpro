@@ -677,7 +677,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <input type="price" class="form-control floating" name="price"
+                                            <input type="price" id="price" class="form-control floating" name="price"
                                                    placeholder=""
                                                    value="{{ $influencer_professional_detail->price ?? ''  }}">
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Price $</label>
@@ -1151,6 +1151,13 @@ display: none !important;
             $(document).ready(function() {
             $('.datepicker').datepicker({
                 dateFormat: 'dd-mm-yy'
+            });
+            $('#price').on('input', function() {
+                let value = $(this).val();
+                this.value = this.value.replace(/[^0-9]/g, '');
+                if (value.includes('.')) {
+                    $(this).val(Math.floor(value));
+                }
             });
         });
 
