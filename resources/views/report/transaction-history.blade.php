@@ -211,6 +211,8 @@ width: 212px !important;
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.datepicker {
+    padding: 12px;}
     </style>
 
     <div class="main-wrapper">
