@@ -399,16 +399,17 @@ display: none !important;
                                             {{--                                        <input type="text" class="form-control" name="professional_category"--}}
                                             {{--                                               placeholder="}
                                             {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
-                                       
                                             <select name="arts[]" id="arts"
-                                               multiple     class="form-control floating" >
+                                            class="form-control floating"     multiple>
+                                           
                                                 {{-- <option value="">--Select Art--</option> --}}
                                                 @foreach(getArts() as $art)
                                                     <option
                                                         value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
                                                 @endforeach
                                             </select>
-                                                 <label for="username" class="focus-label">Art</label>
+                                            <label for="username" class="focus-label" style="margin-top: -18px;">Art</label>
+                                                 {{-- <label for="" class="focus-label"></label> --}}
 
                                         </div>
                                     </div>
@@ -427,7 +428,7 @@ display: none !important;
                                             
                                             <select name="country_id" id=""
                                                     class="form-control available-country floating">
-                                                <option value="">Country</option>
+                                                <option value="null">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -440,7 +441,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                             
                                             <select name="city_id" id="" class="form-control city_id floating">
-                                                <option value="">--City--</option>
+                                                <option value="null">City</option>
                                                 @foreach(getCityByStateId(1) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -484,7 +485,7 @@ display: none !important;
                                             
                                             <select name="country_id" id=""
                                                     class="form-control available-country floating">
-                                                <option value="">Country</option>
+                                                <option value="null">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -497,7 +498,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                             
                                             <select name="city_id" id="" class="form-control city_id floating">
-                                                <option value="">--City--</option>
+                                                <option value="null">City</option>
                                                 @foreach(getCityByStateId(1) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -540,7 +541,7 @@ display: none !important;
                                            
                                             <select name="available_country_id[0]" id=""
                                                     class="form-control available-country floating">
-                                                <option value="">--Country--</option>
+                                                <option value="null">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) > 0 && $availabilities[0]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -561,7 +562,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="">--City--</option>
+                                                <option value="null">City</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) > 0 &&  $availabilities[0]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -603,7 +604,7 @@ display: none !important;
                                          
                                             <select name="available_country_id[1]" id=""
                                                     class="form-control available-country  floating">
-                                                <option value="">Country</option>
+                                                <option value="null">Country</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -625,7 +626,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="">City</option>
+                                                <option value="null">City</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
