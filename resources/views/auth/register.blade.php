@@ -183,7 +183,7 @@
                                             <div class="row">
                                                 <div class="col-6 text-start">
                                                     <a class="forgot-link" style="color: blue;"  href="{{ url('forgot-password') }}">Forgot
-                                                        Password ?</a>
+                                                        Password?</a>
                                                 </div>
                                                 <div class="col-6 text-end dont-have">Already on InfluencerPro <a
                                                         href="{{ url('login') }}">Click here</a></div>
@@ -338,7 +338,7 @@
                                             <div class="row form-row">
                                                 <div class="col-6 text-start">
                                                     <a class="forgot-link" style="color: blue;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
-                                                        Password ?</a>
+                                                        Password?</a>
                                                 </div>
                                                 <div class="col-6 text-end dont-have">Already on influencerPro <a
                                                         href="{{env('BASE_URL').'/login'}}">Click here</a></div>
