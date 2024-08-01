@@ -140,6 +140,9 @@ display: none !important;
     height: 12px;
 
 }
+.select2-container--default .select2-selection--multiple{
+    border: 1px solid #997045 !important;
+}
 </style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -428,7 +431,7 @@ display: none !important;
                                             
                                             <select name="country_id" id=""
                                                     class="form-control available-country floating">
-                                                <option value="null">Country</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -441,7 +444,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                             
                                             <select name="city_id" id="" class="form-control city_id floating">
-                                                <option value="null">City</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -485,7 +488,7 @@ display: none !important;
                                             
                                             <select name="country_id" id=""
                                                     class="form-control available-country floating">
-                                                <option value="null">Country</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -498,7 +501,7 @@ display: none !important;
                                         <div class="form-group form-focus">
                                             
                                             <select name="city_id" id="" class="form-control city_id floating">
-                                                <option value="null">City</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -541,7 +544,7 @@ display: none !important;
                                            
                                             <select name="available_country_id[0]" id=""
                                                     class="form-control available-country floating">
-                                                <option value="null">Country</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) > 0 && $availabilities[0]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -562,7 +565,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="null">City</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) > 0 &&  $availabilities[0]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -604,7 +607,7 @@ display: none !important;
                                          
                                             <select name="available_country_id[1]" id=""
                                                     class="form-control available-country  floating">
-                                                <option value="null">Country</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -626,7 +629,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="null">City</option>
+                                                <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
