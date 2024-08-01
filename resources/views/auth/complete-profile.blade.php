@@ -401,7 +401,7 @@ display: none !important;
                                             {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
                                        
                                             <select name="arts[]" id="arts"
-                                               multiple     class="form-control professional_category floating " >
+                                               multiple     class="form-control floating" >
                                                 {{-- <option value="">--Select Art--</option> --}}
                                                 @foreach(getArts() as $art)
                                                     <option
