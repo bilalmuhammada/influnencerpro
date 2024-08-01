@@ -127,6 +127,19 @@ width: 200px !important;
 .dz-error-mark{
 display: none !important;
 }
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    overflow: auto !important;
+}
+.select2-container--default .select2-selection--multiple.select2-selection--clearable{
+    overflow: auto !important;
+}
+.select2-selection__rendered{
+    position: absolute;
+    top: 12px;
+    height: 12px;
+
+}
 </style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -175,7 +188,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="category_ids[]" id="category_ids" class="form-control floating  category_ids"
+                                            <select name="category_ids[]" id="category_ids"    class="form-control floating  category_ids"
                                             multiple >
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories() as $category)
@@ -183,7 +196,7 @@ display: none !important;
                                                         value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('category_id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
-                                         <label for="" class="focus-label">Category</label>
+                                         <label for="" class="focus-label">Influencer Category</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -1330,7 +1343,8 @@ $(document).on('click', '.submit-btn', function () {
             });
             $('#category_ids').select2({
                 // placeholder: "Select Spoken Languages",
-                allowClear: true
+                allowClear: true,
+                 width: '100%'
             }).on('select2:select', function (e) {
                 var maxSelection = 3;
                 var selectedOptions = $(this).find('option:selected');

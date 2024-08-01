@@ -12,10 +12,10 @@ class StaticDatabase extends Model
     public static function getArts()
     {
         return collect([
-            (object)[
-                'key' => 'not_applicable',
-                'name' => 'Not Applicable',
-            ],
+            // (object)[
+            //     'key' => 'not_applicable',
+            //     'name' => 'Not Applicable',
+            // ],
             (object)[
                 'key' => 'actor',
                 'name' => 'Actor',

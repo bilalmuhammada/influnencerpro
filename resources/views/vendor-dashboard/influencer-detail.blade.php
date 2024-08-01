@@ -546,6 +546,9 @@
                         </ul>
                         <!-- <span style="font-size: 14px;"><img src="assets/img/social-icon/insta.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/fb.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/tiktok.png" alt="" width="30px"></span> -->
                     </div>
+                    @php
+                    // dd($influencer->user_professional_detail);
+                    @endphp
                     <div class="details" style="margin-top:-15px;margin-bottom:8px;">
                         <div class="row">
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
