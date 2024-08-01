@@ -92,7 +92,7 @@ width: 200px !important;
                                     @php $countries = getCountries(); @endphp
                                     <select class="form-control select2 nationality_id" id="nationality_id" 
                                             name="country_id">
-                                        <option value="">&nbsp;&nbsp;</option>
+                                        {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -108,7 +108,7 @@ width: 200px !important;
                                     <div class="form-group">
                                         <label for="" class="font_label">Category</label>
                                         <select class="form-control select2" name="category_id[]" multiple>
-                                            <option value="">&nbsp;&nbsp;</option>
+                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                             @forelse($categories as $category)
                                                 <option
                                                     value="{{ $category->id }}"
@@ -399,7 +399,7 @@ width: 200px !important;
                                         <!-- <div class="form-group"> -->
                                         @php $spoken_languages = getSpokenLanguages(); @endphp
                                         <select class="form-control select2" name="spoken_language_ids[]" multiple>
-                                            <option value="">&nbsp;&nbsp;</option>
+                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                             @forelse($spoken_languages as $language)
                                                 <option value="{{ $language->id }}"
                                                         @if(isset(request()->spoken_language_ids) && in_array($language->id, request()->spoken_language_ids)) selected @endif>{{ $language->name }}</option>
@@ -414,7 +414,7 @@ width: 200px !important;
                                         <!-- <div class="form-group"> -->
                                         @php $ethnicities = getEthnicity(); @endphp
                                         <select class="form-control select2" name="ethnicity_ids[]" multiple>
-                                            <option value="">&nbsp;&nbsp;</option>
+                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                             @forelse($ethnicities as $ethnicity)
                                                 <option value="{{ $ethnicity->id }}"
                                                         @if(isset(request()->ethnicity_ids) && in_array($ethnicity->id, request()->ethnicity_ids)) selected @endif>{{ $ethnicity->name }}</option>
@@ -430,7 +430,7 @@ width: 200px !important;
                                         @php $countries = getCountries(); @endphp
                                         <select class="form-control  select2 nationality_id" 
                                                 name="country_id" multiple>
-                                            <option value="">&nbsp;&nbsp;</option> 
+                                            {{-- <option value="">&nbsp;&nbsp;</option>  --}}
                                             @forelse($countries as $country)
                                                 <option value="{{ $country->id }}"
                                                         @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
