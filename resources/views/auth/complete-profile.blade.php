@@ -62,7 +62,7 @@ height: 200px;
 font-size: 14px;
 font-weight: bold;
 }
-  .inputbg:focus, .floating:focus {
+  .inputbg:focus,.floating:focus {
     border: 1px solid blue !important;
 }
 .inputbg::placeholder{
@@ -139,6 +139,9 @@ display: none !important;
     top: 12px;
     height: 12px;
 
+}
+.select2-container--default:focus .select2-selection--multiple:focus{
+    border: 1px solid blue !important;
 }
 .select2-container--default .select2-selection--multiple{
     border: 1px solid #997045 !important;
@@ -461,7 +464,7 @@ display: none !important;
                                                    name="main_available_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder=" Date"
+                                                   placeholder="Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
                                             <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Availability</label>
                                         </div>
@@ -518,7 +521,7 @@ display: none !important;
                                                    name="main_available_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder=" Date"
+                                                   placeholder="Date"
                                                    value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
                                             <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
@@ -581,7 +584,7 @@ display: none !important;
                                                    name="availability_from_date[0]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder=" Date"
+                                                   placeholder="Date"
                                                    value="{{ count($availabilities) > 0  ? formatDateToread($availabilities[0]['availability_from_date'])  : '' }}">
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
@@ -594,9 +597,9 @@ display: none !important;
                                                    name="availability_to_date[0]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder=" Date"
+                                                   placeholder="Date"
                                                    value="{{ count($availabilities) > 0  ? $availabilities[0]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
+                                                   <label for="username" class="focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
 
@@ -647,22 +650,23 @@ display: none !important;
                                                    name="availability_from_date[1]"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                   placeholder=" Date"
+                                                   placeholder="Date"
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? formatDateToread($availabilities[1]['availability_from_date']) :  '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
+                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
 
                                     <div class="col-md-2">
                                         <div class="form-group form-focus">
                                             
-                                            <input type="text" class="form-control datepicker floating "
-                                                   name="availability_to_date[1]"
+                                            <input type="text" class="form-control floating datepicker "
+                                                   name="availability_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                 
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? $availabilities[1]['to_date_formatted'] :  '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
+                                                   {{-- <label for="username" class="focus-label" >Date11</label> --}}
+                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Date </label>
                                         </div>
                                     </div>
 
@@ -676,7 +680,7 @@ display: none !important;
                                             <input type="price" class="form-control floating" name="price"
                                                    placeholder=""
                                                    value="{{ $influencer_professional_detail->price ?? ''  }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Price $</label>
+                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Price $</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -1141,7 +1145,11 @@ display: none !important;
 
 
   <script>
-          
+            $(document).ready(function() {
+            $('.datepicker').datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+        });
 
       
 
@@ -1324,9 +1332,7 @@ $(document).on('click', '.submit-btn', function () {
             // $('.feature-select2').select2();
             // $('.category_id').select2();
 
-            $('.datepicker').datepicker({
-                format: 'dd-M-yyyy'
-            });
+          
            
             $('#spoken_language_ids').select2({
                 //  placeholder: "Select Spoken",
