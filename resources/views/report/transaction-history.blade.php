@@ -287,10 +287,10 @@ width: 212px !important;
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
                                 <input type="text" class="form-control datepicker  from_date" name="from_date"
-                                       placeholder="Date">
+                                       placeholder=" Date">
                             </div>
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder="Date">
+                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder=" Date">
                             </div>
                         {{--                            <div class="col-lg-2 col-md-6">--}}
                         {{--                                <select class="form-select">--}}

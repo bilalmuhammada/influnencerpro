@@ -105,7 +105,7 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-2 text-center"><input type="checkbox" id="check-all"></div>
-                                        <div class="col-md-10">Select ALL</div>
+                                        <div class="col-md-10">Select All</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4"></div>

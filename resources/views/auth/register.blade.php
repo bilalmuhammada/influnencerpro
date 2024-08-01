@@ -31,13 +31,13 @@
 .form-group {
             /* margin-bottom: 1.5rem; */
         }
-        .invalid-feedback {
+        /* .invalid-feedback {
             display: none;
             color: red;
         }
         .is-invalid + .invalid-feedback {
             display: block;
-        }
+        } */
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
@@ -73,16 +73,16 @@
                                             <input type="hidden" name="role" value="influencer">
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating name" name="name">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid First Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">First Name </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" name="last_name">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Last Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -108,16 +108,16 @@
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Gender.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating" name="age"   pattern="\+?\d*" oninput="validateInput(this)">
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating" name="age"   pattern="\+?\d*" oninput="validateInput(this)">
+                                                {{-- <div class="invalid-feedback">
                                                     {{-- Please provide a valid Age. --}}
-                                                </div>
+                                                {{-- </div>  --}}
                                                 <label class="focus-label">Age</label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -374,10 +374,10 @@ function validateInput(input) {
         if (!officialEmailPattern.test(email)) {
             event.preventDefault();
             emailError.show();
-            emailInput.addClass('is-invalid');
+            // emailInput.addClass('is-invalid');
         } else {
             emailError.hide();
-            emailInput.removeClass('is-invalid');
+            // emailInput.removeClass('is-invalid');
         }
     });
 
@@ -435,7 +435,7 @@ function validateInput(input) {
 
         function register(form) {
             var inputs = $(form).find('input');
-            var allInputsValid = validate_inputs(form);
+            // var allInputsValid = validate_inputs(form);
 
             if (!$(form).find('.agreed_to_terms').is(":checked")) {
                 $('.term-invalid').show();
@@ -460,22 +460,22 @@ function validateInput(input) {
                                 window.location.assign(base_url + "login");
                             }, 600);
                         } else {
-                            $('.invalid-feedback').show();
+                            // $('.invalid-feedback').show();
                             // Handle validation errors
                             var errors = response.errors;
 
                             // Clear previous validation messages
-                            $(form).find('.invalid-feedback').html('');
+                            // $(form).find('.invalid-feedback').html('');
 
                             // Add the 'was-validated' class to show validation messages
                             // form.classList.add('is-invalid');
-                            form.classList.remove('was-validated');
+                            // form.classList.remove('was-validated');
                             // Display validation messages for each field6
                             for (var fieldName in errors) {
-                                var errorElement = $(form).find('[name="' + fieldName + '"]');
+                                // var errorElement = $(form).find('[name="' + fieldName + '"]');
                                 // errorElement.removeClass('was-validated')
-                                errorElement.addClass('is-invalid')
-                                errorElement.siblings('.invalid-feedback').html(errors[fieldName]);
+                                // errorElement.addClass('is-invalid')
+                                // errorElement.siblings('.invalid-feedback').html(errors[fieldName]);
                             }
                         }
                     },
