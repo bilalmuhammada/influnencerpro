@@ -445,7 +445,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <strong>
-                        <span style="margin-top: 40px;   font-size:30px;padding-left:3px; display: flex;">
+                        <span style="font-size:30px;padding-left:3px; display: flex;">
                             {{ $influencer ? $influencer->full_name : ''}}
                              <a href="javascript:void(0)" style="margin: 9px 6px 0px 10px;" class="share-link" onclick="shareLink()">
                                         <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
@@ -484,7 +484,7 @@
                         $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
                         $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                     @endphp
-                    <div class="details" style=" margin-top:10px;hight:auto;padding:7px 3px;">
+                    <div class="details" style=" margin-top:45px;hight:auto;padding:7px 3px;">
                         <ul style="list-style-type: none;">
                             @if($instagram)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
@@ -551,13 +551,13 @@
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality : {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City : {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City: {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price : {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
                             </div>
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>
@@ -608,9 +608,11 @@
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
                     @php
-                    // dd($influencer);
+                    //  dd($influencer->role_id)
                     @endphp
                     <div class="row">
+
+                
 
                         @forelse($influencer->influencer_profile_images as $image)
 <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
@@ -618,6 +620,8 @@
         <a href="{{ $image->file_name_url }}">
             <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
         </a>
+        
+        @if($influencer->role_id==2)
         <div class="image-actions">
             {{-- <a href="{{ $image->file_name_url }}" download class="btn  mr-2" style="padding: 0;">
                 <img src="{{ asset('assets/icons/dwnl.png') }}" alt="Download" style="width: 24px; height: 24px;">
@@ -625,6 +629,7 @@
             
             <img src="{{ asset('assets/icons/close.png') }}" alt="Delete" class="delete-icon" data-url="{{ route('influencer.image.delete', ['id' => $image->id]) }}">
         </div>
+        @endif
     </div>
 </div>
 @empty
