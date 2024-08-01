@@ -663,7 +663,7 @@ display: none !important;
                                                    name="availability_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
-                                                
+                                                placeholder="Date"
                                                    value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? $availabilities[1]['to_date_formatted'] :  '' }}">
                                                    {{-- <label for="username" class="focus-label" >Date11</label> --}}
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Date </label>
