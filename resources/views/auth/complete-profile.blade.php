@@ -823,7 +823,7 @@ display: none !important;
                                                            name="instagram_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $instagramProfiles ? $instagramProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                               
@@ -854,7 +854,7 @@ display: none !important;
                                                            name="facebook_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $facebookProfiles ? $facebookProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                          
@@ -883,9 +883,9 @@ display: none !important;
                                                     <input type="text" id=""  style=" width: 90%;"
                                                            class="form-control floating inputbg"
                                                            name="tiktok_followers"
-                                                           placeholder=" 10K,  1M,  2,5M "
+                                                           placeholder="10K,  1M,  2,5M "
                                                            value="{{ $tiktokProfiles ? $tiktokProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -915,9 +915,9 @@ display: none !important;
                                                     <input type="text" id="" style="width:90%;"
                                                            class="form-control  floating inputbg"
                                                            name="youtube_followers"
-                                                           placeholder=" 10K,  1M,  2,5M "
+                                                           placeholder="10K,  1M,  2,5M "
                                                            value="{{ $youtubeProfiles ? $youtubeProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -949,7 +949,7 @@ display: none !important;
                                                            name="twitter_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $twitterProfiles ? $twitterProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -981,7 +981,7 @@ display: none !important;
                                                            name="snapchat_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $snapchatProfiles ? $snapchatProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -1013,7 +1013,7 @@ display: none !important;
                                                            name="pinterest_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $pinterestProfiles ? $pinterestProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
@@ -1044,7 +1044,7 @@ display: none !important;
                                                            name="web_followers"
                                                            placeholder="10K,  1M,  2,5M "
                                                            value="{{ $webProfiles ? $webProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                 
