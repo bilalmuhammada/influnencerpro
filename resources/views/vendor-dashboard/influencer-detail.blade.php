@@ -607,9 +607,7 @@
                     {{--                        <span class="badge badge-pill badge-skills">USD <span class="tag-close" data-role="remove"><i--}}
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
-                    @php
-                    //  dd($influencer->role_id)
-                    @endphp
+                   
                     <div class="row">
 
                 
@@ -621,7 +619,7 @@
             <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
         </a>
         
-        @if($influencer->role_id==2)
+        @if($influencer->role_id==session()->get('User')['role_id'])
         <div class="image-actions">
             {{-- <a href="{{ $image->file_name_url }}" download class="btn  mr-2" style="padding: 0;">
                 <img src="{{ asset('assets/icons/dwnl.png') }}" alt="Download" style="width: 24px; height: 24px;">

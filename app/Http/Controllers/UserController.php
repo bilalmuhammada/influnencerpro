@@ -66,7 +66,7 @@ class UserController extends Controller
         $Influencer = User::with(['role', 'user_professional_detail', 'features.feature', 'influencer_profile_images', 'availabilities', 'categories.category'])->find($request->id);
         $chat = Chat::where(['second_user_id' => $request->id, 'first_user_id' => SiteHelper::getLoginUserId()])->first();
 
-        // <!-- dd($Influencer); -->
+    //   dd($Influencer); 
         if ($Influencer) {
             $total_views = $Influencer->total_views + 1;
             $total_clicks = $Influencer->total_clicks + 1;
@@ -84,6 +84,7 @@ class UserController extends Controller
                 'date' => Carbon::now()
             ]);
 
+           
             return view('vendor-dashboard.influencer-detail')->with(['view_type' => 'influencer', 'chat' => $chat]);
         }
 

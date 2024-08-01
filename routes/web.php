@@ -49,6 +49,7 @@ Route::prefix('/influencer')->middleware(['checkLogin'])->group(function () {
 });
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::delete('influencer/image/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteImage'])->name('influencer.image.delete');
+    Route::get('influencers/{id}/public-profile', [\App\Http\Controllers\UserController::class, 'detail']);
 });
 
 Route::prefix('/reports')->middleware(['checkUser:vendor,influencer', 'checkLogin'])->group(function () {
@@ -77,7 +78,7 @@ Route::prefix('/influencers')->middleware(['checkUser:vendor', 'checkLogin'])->g
     Route::get('/{id}/detail', [\App\Http\Controllers\UserController::class, 'detail']);
 });
 
-Route::get('influencers/{id}/public-profile', [\App\Http\Controllers\UserController::class, 'detail']);
+
 
 //Route::get('/dashboard-messages', function () {
 //    return view('vendor-dashboard.messages');
