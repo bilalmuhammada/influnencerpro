@@ -457,7 +457,7 @@ function validateInput(input) {
                         if (response.status) {
                             // Handle successful submission here
                             setTimeout(function () {
-                                window.location.assign(base_url + "login");
+                                window.location.assign(base_url + "/login");
                             }, 600);
                         } else {
                             // $('.invalid-feedback').show();
