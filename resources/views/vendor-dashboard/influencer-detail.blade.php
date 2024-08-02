@@ -8,6 +8,9 @@
 }
 
 
+.lobibox-notify-success{
+    width: 260px !important;
+}
 .profile h1 {
     margin-top: 160px;
     margin-bottom: 10px;
