@@ -63,6 +63,7 @@ class AuthController extends Controller
 
     public function registerBackend(Request $request)
     {
+      
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
@@ -94,7 +95,7 @@ class AuthController extends Controller
                 ]);
             }
         }
-
+       
         if ($request->agreed_to_terms != 'on') {
             return response()->json([
                 'status' => FALSE,
@@ -106,6 +107,7 @@ class AuthController extends Controller
 
         $User = User::where('email', $request->email)->first();
 
+     
         // check if User exist or not
         if ($User) {
             return response()->json([
@@ -114,7 +116,7 @@ class AuthController extends Controller
                 'errors' => ['email' => ["Please user different email address"]]
             ]);
         }
-
+      
         $User = User::create([
             'name' => $request->name,
             'last_name' => $request->last_name,
@@ -131,14 +133,15 @@ class AuthController extends Controller
             'role_id' => Role::firstWhere('code', $request->role)->id,
             'type' => $request->role == 'influencer' ? 'BUYER' : 'SELLER',
         ]);
-
+       
         $token = $User->createToken($request->role)->plainTextToken;
+        
         return response()->json([
             'status' => 200,
             'message' => 'You have registered successfully',
             'token' => ['token' => $token]
         ])->header('Cache-Control', 'private')->header('Authorization', $token);
-
+     
     }
 
     public function loginBackend(Request $request)

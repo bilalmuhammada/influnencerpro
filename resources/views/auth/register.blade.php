@@ -443,7 +443,7 @@ function validateInput(input) {
                 return;
             }
 
-            if (allInputsValid) {
+            // if (allInputsValid) {
                 form.classList.remove('was-validated');
                 var formData = new FormData(form);
                 $.ajax({
@@ -484,7 +484,7 @@ function validateInput(input) {
                         // showAlert("error", "Server Error");
                     }
                 });
-            }
+            // }
         }
 
         $(document).on('change', '#country_id', function () {
