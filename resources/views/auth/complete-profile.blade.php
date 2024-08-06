@@ -410,8 +410,7 @@ display: none !important;
                                            
                                                 {{-- <option value="">--Select Art--</option> --}}
                                                 @foreach(getArts() as $art)
-                                                    <option
-                                                        value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
+                                                    <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
                                                 @endforeach
                                             </select>
                                             <label for="username" class="focus-label" style="margin-top: -18px;">Art</label>
@@ -432,12 +431,11 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <select name="country_id" id=""
+                                            <select name="base_country_id" id=""
                                                     class="form-control available-country floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
-                                                    <option
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                    <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
                                          <label for="username" class="focus-label">Based Country</label>
@@ -446,11 +444,12 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <select name="city_id" id="" class="form-control city_id floating">
+                                            <select name="base_city_id" id="" class="form-control city_id floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
-                                                    <option
-                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+
+                                                <option  value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }} > {{ $city->name }} </option>
+                                                
                                                 @endforeach
                                             </select>
                                         <label for="username" class="focus-label">Based City</label>
@@ -465,7 +464,7 @@ display: none !important;
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->main_available_from_date)  : '' }}">
                                             <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Availability</label>
                                         </div>
                                     </div>
@@ -474,11 +473,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                         
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="main_available_to_date"
+                                                   name="base_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->base_date)  : '' }}">
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
@@ -489,12 +488,12 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <select name="country_id" id=""
+                                            <select name="travlling_one_country_id" id=""
                                                     class="form-control available-country floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->state_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
                                          <label for="username" class="focus-label">Traveling Country</label>
@@ -503,13 +502,32 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <select name="city_id" id="" class="form-control city_id floating">
+                                            <select name="travlling_one_city_id" id="" class="form-control city_id floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
+                                                @php
+                                                if($influencer_personal_info && isset($influencer_personal_info->travlling_one_country_id)){
+
+                                                    $static= DB::table('states')->where('country_id',$influencer_personal_info->travlling_one_country_id)->pluck('id')->toArray();
+                                                    
+                                                  
+                                                    $states_ids = getCityByStateIds($static)->pluck('id')->toArray();
+                                                  
+                                                }else{
+                                                     $states_ids = [1];
+                                                }
+
+                                               
+                                            @endphp
+                                            
                                                 @foreach(getCityByStateId(1) as $city)
+
                                                     <option
-                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $states_ids == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
+                                            @php
+                                            //    dd($static,$states_ids,getCityByStateId(1));
+                                            @endphp
                                         <label for="username" class="focus-label">Traveling City</label>
                                         </div>
 
@@ -518,11 +536,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                          
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="main_available_from_date"
+                                                   name="travlling_one_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_from_date)  : '' }}">
                                             <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
@@ -531,11 +549,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                         
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="main_available_to_date"
+                                                   name="travlling_one_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_to_date)  : '' }}">
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
@@ -545,21 +563,22 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="available_country_id[0]" id=""
-                                                    class="form-control available-country floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
-                                                @foreach(getCountries() as $country)
-                                                    <option
-                                                        value="{{ $country->id }}" {{ $availabilities && count($availabilities) > 0 && $availabilities[0]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                                @endforeach
-                                            </select>
- <label for="username" class=" focus-label">Traveling Country</label>
+                                          
+                                            <select name="travlling_two_country_id" id=""
+                                            class="form-control available-country floating">
+                                        <option value="null">&nbsp;&nbsp;</option>
+                                        @foreach(getCountries() as $country)
+                                            <option
+                                                value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                        @endforeach
+                                    </select>
+                                            <label for="username" class=" focus-label">Traveling Country2</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                           
-                                            <select name="available_city_id[0]" id="" class="form-control city_id floating">
+                                            <select name="travlling_two_city_id" id="" class="form-control city_id floating">
                                                 @php
                                                     if($availabilities && count($availabilities) > 0){
                                                         $states_ids = getStateByCountryId($availabilities[0]['country_id'])->pluck('id')->toArray();
@@ -571,21 +590,21 @@ display: none !important;
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
-                                                        value="{{ $city->id }}" {{ $availabilities && count($availabilities) > 0 &&  $availabilities[0]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-  <label for="username" class="focus-label">Traveling City</label>
+                                            <label for="username" class="focus-label">Traveling City</label>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group form-focus">
                                           
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="availability_from_date[0]"
+                                                   name="travlling_two_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ count($availabilities) > 0  ? formatDateToread($availabilities[0]['availability_from_date'])  : '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_from_date)  : '' }}">
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
@@ -594,11 +613,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                           
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="availability_to_date[0]"
+                                                   name="travlling_two_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ count($availabilities) > 0  ? $availabilities[0]['to_date_formatted'] :  '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_to_date)  : '' }}">
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;"> Date</label>
                                         </div>
                                     </div>
@@ -608,21 +627,29 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                          
-                                            <select name="available_country_id[1]" id=""
+                                            {{-- <select name="travlling_three_country_id" id=""
                                                     class="form-control available-country  floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
-                                                        value="{{ $country->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['country_id'] == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $city->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
-                                            </select>
-   <label for="username" class=" focus-label">Traveling Country</label>
+                                            </select> --}}
+                                            <select name="travlling_three_country_id" id=""
+                                            class="form-control available-country floating">
+                                        <option value="null">&nbsp;&nbsp;</option>
+                                        @foreach(getCountries() as $country)
+                                            <option
+                                                value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                        @endforeach
+                                    </select>
+                                           <label for="username" class=" focus-label">Traveling Country</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                         
-                                            <select name="available_city_id[1]" id="" class="form-control city_id floating">
+                                            <select name="travlling_three_city_id" id="" class="form-control city_id floating">
 
                                                 @php
                                                     if($availabilities && count($availabilities) >= 2){
@@ -635,7 +662,7 @@ display: none !important;
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
-                                                        value="{{ $city->id }}" {{ $availabilities && count($availabilities) >= 2 && $availabilities[1]['city_id'] == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
                                                 <label for="username" class="focus-label">Traveling City</label>
@@ -647,11 +674,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                            
                                             <input type="text" class="form-control datepicker floating"
-                                                   name="availability_from_date[1]"
+                                                   name="travlling_three_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                    placeholder="Date"
-                                                   value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? formatDateToread($availabilities[1]['availability_from_date']) :  '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Date</label>
                                         </div>
                                     </div>
@@ -660,11 +687,11 @@ display: none !important;
                                         <div class="form-group form-focus">
                                             
                                             <input type="text" class="form-control floating datepicker "
-                                                   name="availability_to_date"
+                                                   name="travlling_three_to_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
                                                 placeholder="Date"
-                                                   value="{{ count($availabilities) >= 2 && isset($availabilities[1]) ? $availabilities[1]['to_date_formatted'] :  '' }}">
+                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
                                                    {{-- <label for="username" class="focus-label" >Date11</label> --}}
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Date </label>
                                         </div>
@@ -686,7 +713,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
 
-                                             <input type="text" class="form-control floating" id="Priceinclude" name="Priceinclude"
+                                             <input type="text" class="form-control floating" id="Priceinclude" name="price_include"
                                                    placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
                                                    value=""/>
                                             {{-- <select name="Priceinclude" id="Priceinclude" 
@@ -707,7 +734,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus focus-label">
                                            
-                                            <select name="priceNegotion" id=""
+                                            <select name="price_negotion" id=""
                                                     class="form-control floating available-country">
                                                 {{-- <option value="">Price Negotiable</option> --}}
                                                 
@@ -716,7 +743,7 @@ display: none !important;
                                                     <option value="0">No</option>  
                                                 
                                             </select>
- <label for="username" class=" focus-label">Price Negotiable</label>
+                                        <label for="username" class=" focus-label">Price Negotiable</label>
                                         </div>
                                     </div>
                                     
@@ -766,7 +793,7 @@ display: none !important;
                                     <div class="col-md-12" >
                                         <div class="form-group form-focus">
                                         
-                                                <textarea class="form-control floating" style="height:120px;" name="bi">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
+                                                <textarea class="form-control floating" style="height:120px;" name="bio">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
                                                 <label class="inner_label focus-label"  style="margin-left: 0px;">Bio</label>
                                     
                                         
@@ -1293,6 +1320,19 @@ $(document).on('click', '.submit-btn', function () {
                 }
             })
         });
+
+        
+     
+        $(document).ready(function() {
+            var selectedCountryId = $('.available-country').val();
+  
+    var selectedCountryId = $('.available-country').val();
+    if (selectedCountryId) {
+        $('.available-country').trigger('change');
+    }
+});
+
+
 
         $(document).on('change', '.available-country', function () {
             var country_id = $(this).val();

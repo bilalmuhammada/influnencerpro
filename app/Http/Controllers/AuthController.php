@@ -422,6 +422,7 @@ class AuthController extends Controller
 //                'errors' => $validator->errors()
 //            ]);
 //        }
+// dd($request->all());
 
         $user_id = Auth::id();
         $Influencer = User::with(['role', 'attachment'])->find($user_id);
@@ -449,7 +450,7 @@ class AuthController extends Controller
         $match = ['user_id' => $user_id];
         // personal information store here
         UserPersonalInformation::updateOrCreate($match, [
-            'dialects' => $request->dialects,
+            // 'dialects' => $request->dialects,
             'hair_type' => $request->hair_type,
             'hair_color' => $request->hair_color,
             'age' => $request->age,
@@ -465,11 +466,40 @@ class AuthController extends Controller
             'bio' => $request->bio,
             'willing_to_traval' => $request->willing_to_traval,
             'is_collaboration' => $request->is_collaboration,
+
+            'country_id' => $request->base_country_id,
+            'city_id' => $request->base_city_id,
+
+            'travlling_one_country_id' => $request->travlling_one_country_id,
+            'travlling_one_city_id' => $request->travlling_one_city_id,
+            'travlling_one_from_date' =>date('Y-m-d', strtotime($request->travlling_one_from_date)),
+            'travlling_one_to_date' => date('Y-m-d', strtotime($request->travlling_one_to_date)),
+
+
+            'travlling_two_country_id' => $request->travlling_two_country_id,
+            'travlling_two_city_id' => $request->travlling_two_city_id,
+            'travlling_two_from_date' => date('Y-m-d', strtotime($request->travlling_two_from_date)),
+            'travlling_two_to_date' => date('Y-m-d', strtotime($request->travlling_two_to_date)),
+
+
+            'travlling_three_country_id' => $request->travlling_three_country_id,
+            'travlling_three_city_id' => $request->travlling_three_city_id,
+            'travlling_three_from_date' => date('Y-m-d', strtotime($request->travlling_three_from_date)),
+            'travlling_three_to_date' => date('Y-m-d', strtotime($request->travlling_three_to_date)),
+
+            'main_available_from_date' => date('Y-m-d', strtotime($request->main_available_from_date)),
+            'base_date' => date('Y-m-d', strtotime($request->base_date)),
+            
+
+
+
             'user_id' => Auth::id()
         ]);
 
+//   
         // user feature store here
         if ($request->features) {
+            // dd($request->features);
             UserFeature::where('user_id', Auth::id())->delete();
             foreach ($request->features as $key => $value) {
                 UserFeature::create([
@@ -480,22 +510,58 @@ class AuthController extends Controller
         }
 
         // social media profile store here
-        $socialMediaTypes = ['facebook', 'instagram', 'twitter', 'tiktok', 'youtube', 'snapchat', 'pinterest', 'web'];
-
+        // $socialMediaTypes = ['facebook', 'instagram', 'twitter', 'tiktok', 'youtube', 'snapchat', 'pinterest', 'web'];
+        $socialMediaTypes = [
+            'instagram',
+            'facebook',
+            'tiktok',
+            'youtube',
+            'twitter',
+            'snapchat',
+            'pinterest',
+            'web',
+        ];
+        //  dd($request->all());
+        // dd(,$request->input(  '_username'),$request->input($socialMediaType . '_followers'),$request->input($socialMediaType . '_url'));
         foreach ($socialMediaTypes as $socialMediaType) {
-            $username = $request->input($socialMediaType . '_username');
-            if ($username) {
+            
+            // $username = $request->input($socialMediaType . '_username');
+            // if ($username) {
 
                 $followers = $request->input($socialMediaType . '_followers');
                 $url = $request->input($socialMediaType . '_url');
                 $matchArray = ['user_id' => Auth::id(), 'type' => $socialMediaType];
-
+// dd($matchArray);
                 UserSocialMediaProfile::updateOrCreate($matchArray, [
                     'user_id' => Auth::id(),
                     'type' => $socialMediaType,
-                    'username' => $username,
+                   
                     'followers' => $followers,
                     'url' => $url,
+            
+                ]);
+            // }
+        }
+        // dd($request->arts,$request->spoken_language_ids);
+        if ($request->spoken_language_ids) {
+
+            UserSpokenLanguage::where('user_id', $Influencer->id)->delete();
+
+            foreach ($request->spoken_language_ids as $language_id) {
+                UserSpokenLanguage::create([
+                    'user_id' => $Influencer->id,
+                    'spoken_language_id' => $language_id
+                ]);
+            }
+        }
+
+        if ($request->arts) {
+            UserArt::where('user_id', $Influencer->id)->delete();
+            foreach ($request->arts as $art) {
+                UserArt::create([
+                    'user_id' => $Influencer->id,
+                    'art_key' => $art,
+                    'art_name' => StaticDatabase::getArts()->where('key', '=', $art)->first()->name
                 ]);
             }
         }
@@ -513,49 +579,49 @@ class AuthController extends Controller
             'skills' => json_encode($request->skills),
         ]);
 
-        $logo = $request->file('logo');
-        if ($logo && $Influencer) {
+        // $logo = $request->file('logo');
+        // if ($logo && $Influencer) {
 
-            if ($Influencer->attachment && File::exists(public_path('uploads/users/' . $Influencer->attachment->name))) {
-                unlink(public_path('uploads/users/' . $Influencer->attachment->name));
-            }
+        //     if ($Influencer->attachment && File::exists(public_path('uploads/users/' . $Influencer->attachment->name))) {
+        //         unlink(public_path('uploads/users/' . $Influencer->attachment->name));
+        //     }
 
-            $logo_name = $logo->getClientOriginalName() . Auth::id() . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('uploads/users'), $logo_name);
+        //     $logo_name = $logo->getClientOriginalName() . Auth::id() . '.' . $logo->getClientOriginalExtension();
+        //     $logo->move(public_path('uploads/users'), $logo_name);
 
-            Attachment::where('object', 'User')->where('object_id', $Influencer->id)->where('context', 'user-image')->delete();
-            Attachment::create([
-                'name' => $logo_name,
-                'file_name' => $logo->getClientOriginalName() . Auth::id(),
-                'type' => $logo->getClientOriginalExtension(),
-                'object' => 'User',
-                'object_id' => $Influencer->id,
-                'context' => 'user-image'
-            ]);
+        //     Attachment::where('object', 'User')->where('object_id', $Influencer->id)->where('context', 'user-image')->delete();
+        //     Attachment::create([
+        //         'name' => $logo_name,
+        //         'file_name' => $logo->getClientOriginalName() . Auth::id(),
+        //         'type' => $logo->getClientOriginalExtension(),
+        //         'object' => 'User',
+        //         'object_id' => $Influencer->id,
+        //         'context' => 'user-image'
+        //     ]);
 
-            SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $logo_name);
-        }
+        //     SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $logo_name);
+        // }
 
-        $profile_images = $request->file('profile_images');
+        // $profile_images = $request->file('profile_images');
 
-        if ($profile_images && $Influencer) {
-            foreach ($profile_images as $profile_image) {
+        // if ($profile_images && $Influencer) {
+        //     foreach ($profile_images as $profile_image) {
 
-                $profile_image_name = $profile_image->getClientOriginalName() . Auth::id() . '.' . $profile_image->getClientOriginalExtension();
-                $profile_image->move(public_path('uploads/users'), $profile_image_name);
+        //         $profile_image_name = $profile_image->getClientOriginalName() . Auth::id() . '.' . $profile_image->getClientOriginalExtension();
+        //         $profile_image->move(public_path('uploads/users'), $profile_image_name);
 
-                Attachment::create([
-                    'name' => $profile_image_name,
-                    'file_name' => $profile_image->getClientOriginalName() . Auth::id(),
-                    'type' => $profile_image->getClientOriginalExtension(),
-                    'object' => 'User',
-                    'object_id' => $Influencer->id,
-                    'context' => 'influencer-profile-image'
-                ]);
+        //         Attachment::create([
+        //             'name' => $profile_image_name,
+        //             'file_name' => $profile_image->getClientOriginalName() . Auth::id(),
+        //             'type' => $profile_image->getClientOriginalExtension(),
+        //             'object' => 'User',
+        //             'object_id' => $Influencer->id,
+        //             'context' => 'influencer-profile-image'
+        //         ]);
 
-                SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $profile_image_name);
-            }
-        }
+        //         SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $profile_image_name);
+        //     }
+        // }
 
         if ($request->available_country_id) {
             UserAvailability::where('user_id', $Influencer->id)->where('is_default', 0)->delete();
@@ -587,34 +653,15 @@ class AuthController extends Controller
             ]);
         }
 
-        if ($request->spoken_language_ids) {
-
-            UserSpokenLanguage::where('user_id', $Influencer->id)->delete();
-
-            foreach ($request->spoken_language_ids as $language_id) {
-                UserSpokenLanguage::create([
-                    'user_id' => $Influencer->id,
-                    'spoken_language_id' => $language_id
-                ]);
-            }
-        }
-
-        if ($request->arts) {
-            UserArt::where('user_id', $Influencer->id)->delete();
-            foreach ($request->arts as $art) {
-                UserArt::create([
-                    'user_id' => $Influencer->id,
-                    'art_key' => $art,
-                    'art_name' => StaticDatabase::getArts()->where('key', '=', $art)->first()->name
-                ]);
-            }
-        }
+       
 
         return response()->json([
             'status' => true,
             'message' => 'Profile updated successfully'
         ]);
     }
+
+
    public function uploadProfileImageForWeb(Request $request){
 
      $user_id =  Auth::id();

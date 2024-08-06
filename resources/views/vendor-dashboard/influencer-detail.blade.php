@@ -259,7 +259,9 @@
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }}</span>
+                                            style="width:100%;">{{formatDateToread($influencer->personal_information->main_available_from_date)}}
+                                            {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                 {{-- <div class="col-md-6" >
@@ -277,59 +279,99 @@
                                 <!-- </div> -->
                                 <div class="col-md-6" >
                                     <label class="font-label">Based City</label>
+                                    @php
+                                  $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
+                                    @endphp
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->city, 'name') }}</span>
+                                            class="badge badge-pill badge-skill">{{$city->name ?? ''}}
+                                            {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Based Country</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
-                                    </div>
+                                    @php
+                                    $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
+                                      @endphp
+                                      <div class="form-group">
+                                          <span
+                                              class="badge badge-pill badge-skill">{{$country->name ?? ''}}
+                                              {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                          </span>
+                                      </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
-                                    <div class="form-group">
+                                    @php
+                                    $city1=  DB::table('cities')->where('id',$influencer->personal_information->travlling_one_city_id)->first();
+                                      @endphp
+                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                            class="badge badge-pill badge-skill">{{$city1->name ?? ''}}
+                                            {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
-                                    </div>
+                                    @php
+                                    $country1 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_one_country_id)->first();
+                                      @endphp
+                                      <div class="form-group">
+                                          <span
+                                              class="badge badge-pill badge-skill">{{$country1->name ?? ''}}
+                                              {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                          </span>
+                                      </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
-                                    <div class="form-group">
+                                    @php
+                                    $city2=  DB::table('cities')->where('id',$influencer->personal_information->travlling_two_city_id)->first();
+                                      @endphp
+                                      <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                            class="badge badge-pill badge-skill">{{$city2->name ?? ''}}
+                                            {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
-                                    </div>
+                                    @php
+                                    $country2 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_two_country_id)->first();
+                                      @endphp
+                                      <div class="form-group">
+                                          <span
+                                              class="badge badge-pill badge-skill">{{$country2->name ?? ''}}
+                                              {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                          </span>
+                                      </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
+                                    @php
+                                    $city3=  DB::table('cities')->where('id',$influencer->personal_information->travlling_three_city_id)->first();
+                                      @endphp
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
+                                            class="badge badge-pill badge-skill">{{$city3->name ?? ''}}
+                                            {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
-                                    </div>
+                                    @php
+                                    $country3 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_three_country_id)->first();
+                                      @endphp
+                                      <div class="form-group">
+                                          <span
+                                              class="badge badge-pill badge-skill">{{$country3->name ?? ''}}
+                                              {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                          </span>
+                                      </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Price Include</label>
@@ -556,14 +598,24 @@
                         <div class="row">
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
+                            @php
+                            $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
+                            $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
+                              @endphp
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality:{{ $country->name ?? '' }}
+                                    {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }} --}}
+                                </span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City: {{ getSafeValueFromObject($influencer->state, 'name') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City:{{$city->name ?? ''}}
+                                    {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
+                                </span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price:{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} 
+                                    {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
+                                </span>
                             </div>
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>

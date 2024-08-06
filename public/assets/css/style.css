@@ -10437,6 +10437,7 @@ label.file-upload input[type="file"] {
 }
 
 .badge-skill {
+    display: contents;
     background: #f2e49c;
     border-radius: 6px;
     font-weight: 500;
@@ -20884,7 +20885,7 @@ button.scroll-top:focus {
         font-size: 14px;
         left: 0;
         margin: 0;
-        min-width: 200px;
+        /* min-width: 200px; */
         opacity: 0;
         padding: 0;
         position: absolute;
