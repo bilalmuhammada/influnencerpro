@@ -113,6 +113,10 @@ function formatNumber($number, $precision = 1)
 {
     $abbrevs = ['k', 'M', 'B', 'T'];
 
+    // dd(is_string($number));
+    if (is_string($number)) {
+        return $number;
+    }else{
     for ($index = count($abbrevs) - 1; $index >= 0; $index--) {
         $divisor = pow(1000, $index + 1);
 
@@ -121,7 +125,7 @@ function formatNumber($number, $precision = 1)
         }
     }
 
-    return number_format($number);
+    return number_format($number);}
 }
 
 function getInfluencerSocialMediaProfileByTypeAndId($type, $userId)

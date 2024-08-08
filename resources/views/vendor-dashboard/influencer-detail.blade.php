@@ -6,10 +6,18 @@
     padding: 20px;
     border-radius: 10px;
 }
+.form-group::first-letter {
+    text-transform: uppercase !important;
+} 
 
 
 .lobibox-notify-success{
-    width: 260px !important;
+    width: 181px !important;
+    white-space: nowrap;
+}
+
+.lobibox-notify.notify-mini .lobibox-notify-body{
+    margin: 7px 0px 5px 6px !important;
 }
 .profile h1 {
     margin-top: 160px;
@@ -183,7 +191,7 @@
                                     <label class="font-label">Gender</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'gender') }}</span>
+                                            class="badge badge-pill badge-skill">{{ ucfirst(getSafeValueFromObject($influencer->personal_information, 'gender')) }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" >
@@ -259,7 +267,7 @@
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{formatDateToread($influencer->personal_information->main_available_from_date)}}
+                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date)}} - {{formatDateToread($influencer->personal_information->base_date)}}
                                             {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
                                         </span>
                                     </div>
@@ -377,14 +385,18 @@
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }}</span>
+                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include}}
+                                            {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Price Negotiable</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
+                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_negotiable==1 ? "Yes" : "No"  }}
+                                            {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
+                                        </span>
                                     </div>
                                 </div>
                               
@@ -528,6 +540,8 @@
                         $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                         $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
                         $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
+                        $pinterestProfiles = getInfluencerSocialMediaProfileByTypeAndId('pinterest', $influencer->id);
+                        $web = getInfluencerSocialMediaProfileByTypeAndId('web', $influencer->id);
                     @endphp
                     <div class="details" style=" margin-top:45px;hight:auto;padding:7px 3px;">
                         <ul style="list-style-type: none;">
@@ -535,8 +549,8 @@
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                          width="30px"></a> <div class="text-center"
-                                                                                style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
-                                </li> &nbsp;
+                                                                                style="font-size:11px;">{{ $instagram ? $instagram->followers :  0 }}</div></span>
+                                </li> &nbsp; &nbsp;
                             @endif
 
                             @if($twitter)
@@ -545,8 +559,8 @@
                                                 src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                                 alt=""
                                                 width="30px"></a> <div class="text-center"
-                                                                       style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
-                                </li> &nbsp;
+                                                                       style="font-size:11px;">{{ $twitter ? $twitter->followers :  0 }}</div></span>
+                                </li> &nbsp; &nbsp;
                             @endif
                             @if($youtube)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
@@ -554,32 +568,50 @@
                                                 src="{{ asset('assets/img/social-icon/youtube.png') }}"
                                                 alt="" style="margin-left: -4px"
                                                 width="30px"></a> <div class="text-center"
-                                                                       style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
-                                </li> &nbsp;
+                                                                       style="font-size:11px;">{{ $youtube ? $youtube->followers :  0 }}</div></span>
+                                </li> &nbsp; &nbsp;
                             @endif
                             @if($tiktok)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""
                                                 width="30px"></a> <div
                                             class="text-center"
-                                            style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
-                                </li>&nbsp;
+                                            style="font-size:11px;">{{ $tiktok ? $tiktok->followers : 0 }}</div></span>
+                                </li> &nbsp;&nbsp;
                             @endif
                             @if($facebook)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="30px"></a> <div
                                             class="text-center"
-                                            style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
-                                </li> &nbsp;
+                                            style="font-size:11px;">{{ $facebook ? $facebook->followers : 0 }}</div></span>
+                                </li>  &nbsp;&nbsp;
                             @endif
                             @if($snapchat)
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""
-                                                width="30px"></a> <div
+                                                width="33px"></a> <div
                                             class="text-center"
-                                            style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
-                                </li> &nbsp;
+                                            style="font-size:11px;">
+                                            {{ 
+                                            $snapchat ? $snapchat->followers : 0 }}</div></span>
+                                </li>  &nbsp;&nbsp;
                         @endif
+                        @if($pinterestProfiles)
+                        <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
+                                        src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt=""
+                                        width="30px"></a> <div
+                                    class="text-center"
+                                    style="font-size:11px;">{{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}</div></span>
+                        </li>  &nbsp;&nbsp;
+                @endif
+                @if($web)
+                <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
+                                src="{{ asset('assets/img/social-icon/web.png') }}" alt=""
+                                width="30px"></a> <div
+                            class="text-center"
+                            style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
+                </li> &nbsp;
+        @endif
                         <!-- <li style="display: inline-block;">
                                 <span style="font-size: 12px;">
                                     <a href="javascript:void(0)" class="share-link" onclick="shareLink()">
@@ -603,17 +635,17 @@
                             $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
                               @endphp
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality:{{ $country->name ?? '' }}
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ $country->name ?? '' }}
                                     {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }} --}}
                                 </span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City:{{$city->name ?? ''}}
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City: {{$city->name ?? ''}}
                                     {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
                                 </span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price:{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} 
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} 
                                     {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
                                 </span>
                             </div>

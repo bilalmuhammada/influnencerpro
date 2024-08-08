@@ -464,6 +464,10 @@ class AuthController extends Controller
             'weight' => $request->weight,
             'shoes_size' => $request->shoes_size,
             'bio' => $request->bio,
+
+            'price_include' => $request->price_include,
+            'price_negotiable' => $request->price_negotion,
+
             'willing_to_traval' => $request->willing_to_traval,
             'is_collaboration' => $request->is_collaboration,
 
@@ -660,7 +664,6 @@ class AuthController extends Controller
             'message' => 'Profile updated successfully'
         ]);
     }
-
 
    public function uploadProfileImageForWeb(Request $request){
 

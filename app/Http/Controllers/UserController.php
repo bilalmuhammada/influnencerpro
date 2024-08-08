@@ -263,7 +263,7 @@ class UserController extends Controller
         if ($image) {
             // dd($image);
              $image->delete();
-            return response()->json(['success' => true,'message'=>'Image Delete Successfully']);
+            return response()->json(['success' => true,'message'=>'Image Deleted']);
         }
         return response()->json(['success' => false], 404);
     }
