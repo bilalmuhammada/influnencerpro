@@ -63,7 +63,7 @@ class UserController extends Controller
     public function detail(Request $request)
     {
         // get influencer for increment view and click
-        $Influencer = User::with(['role', 'user_professional_detail', 'features.feature', 'influencer_profile_images', 'availabilities', 'categories.category'])->find($request->id);
+        $Influencer = User::with(['role', 'user_professional_detail', 'features.feature', 'influencer_profile_images', 'availabilities', 'categories'])->find($request->id);
         $chat = Chat::where(['second_user_id' => $request->id, 'first_user_id' => SiteHelper::getLoginUserId()])->first();
 
     //   dd($Influencer); 
