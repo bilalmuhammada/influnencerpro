@@ -559,10 +559,11 @@
                         $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                         $pinterestProfiles = getInfluencerSocialMediaProfileByTypeAndId('pinterest', $influencer->id);
                         $web = getInfluencerSocialMediaProfileByTypeAndId('web', $influencer->id);
-                    @endphp
+            //    dd( , isset($instagram->followers) );
+                  @endphp
                     <div class="details" style=" margin-top:45px;hight:auto;padding:7px 3px;">
                         <ul style="list-style-type: none;">
-                            @if($instagram)
+                            @if($instagram && isset($instagram->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                          width="30px"></a> <div class="text-center"
@@ -570,7 +571,7 @@
                                 </li> &nbsp; &nbsp;
                             @endif
 
-                            @if($twitter)
+                            @if($twitter  && isset($twitter->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img
                                                 src="{{ asset('assets/img/social-icon/twitter.png') }}"
@@ -579,7 +580,7 @@
                                                                        style="font-size:11px;">{{ $twitter ? $twitter->followers :  0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
-                            @if($youtube)
+                            @if($youtube && isset($youtube->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img
                                                 src="{{ asset('assets/img/social-icon/youtube.png') }}"
@@ -588,7 +589,7 @@
                                                                        style="font-size:11px;">{{ $youtube ? $youtube->followers :  0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
-                            @if($tiktok)
+                            @if($tiktok && isset($tiktok->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""
                                                 width="30px"></a> <div
@@ -596,14 +597,14 @@
                                             style="font-size:11px;">{{ $tiktok ? $tiktok->followers : 0 }}</div></span>
                                 </li> &nbsp;&nbsp;
                             @endif
-                            @if($facebook)
+                            @if($facebook && isset($facebook->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="30px"></a> <div
                                             class="text-center"
                                             style="font-size:11px;">{{ $facebook ? $facebook->followers : 0 }}</div></span>
                                 </li>  &nbsp;&nbsp;
                             @endif
-                            @if($snapchat)
+                            @if($snapchat && isset($snapchat->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""
                                                 width="33px"></a> <div
@@ -613,7 +614,7 @@
                                             $snapchat ? $snapchat->followers : 0 }}</div></span>
                                 </li>  &nbsp;&nbsp;
                         @endif
-                        @if($pinterestProfiles)
+                        @if($pinterestProfiles && isset($pinterestProfiles->followers))
                         <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                         src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt=""
                                         width="30px"></a> <div
@@ -621,7 +622,7 @@
                                     style="font-size:11px;">{{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}</div></span>
                         </li>  &nbsp;&nbsp;
                 @endif
-                @if($web)
+                @if($web && isset($web->followers))
                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                 src="{{ asset('assets/img/social-icon/web.png') }}" alt=""
                                 width="30px"></a> <div

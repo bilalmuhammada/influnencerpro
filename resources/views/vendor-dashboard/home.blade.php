@@ -898,13 +898,15 @@ width: 200px !important;
                                              {{-- <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span> --}}
                                             <ul style="list-style-type: none;margin-top:7rem;">
                                                 @php
+                                                
                                                     $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
                                                     $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
                                                     $facebook = getInfluencerSocialMediaProfileByTypeAndId('facebook', $influencer->id);
                                                     $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
                                                     $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                                                     $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
-                                                @endphp
+                                            //    dd( $instagram );
+                                               @endphp
                                                 &nbsp;
                                                 @if($instagram)
                                                     <li style=" display: inline-block;color:#fff;margin-left: 9px; "><span
