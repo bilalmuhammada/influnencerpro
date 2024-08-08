@@ -908,7 +908,7 @@ width: 200px !important;
                                             //    dd( $instagram );
                                                @endphp
                                                 &nbsp;
-                                                @if($instagram)
+                                                @if($instagram && isset($instagram->followers))
                                                     <li style=" display: inline-block;color:#fff;margin-left: 9px; "><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/insta.png') }}"
@@ -918,7 +918,7 @@ width: 200px !important;
                                                     </li> &nbsp;
                                                 @endif
 
-                                                @if($twitter)
+                                                @if($twitter  && isset($twitter->followers))
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/twitter.png') }}"
@@ -928,7 +928,7 @@ width: 200px !important;
                                                     </li> &nbsp;
                                                 @endif
 
-                                                @if($youtube)
+                                                @if($youtube && isset($youtube->followers))
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/youtube.png') }}"
@@ -937,7 +937,7 @@ width: 200px !important;
                                                                                            style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
-                                                @if($tiktok)
+                                                @if($tiktok && isset($tiktok->followers))
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/tiktok.png') }}"
@@ -946,7 +946,7 @@ width: 200px !important;
                                                                                            style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
-                                                @if($facebook)
+                                                @if($facebook && isset($facebook->followers))
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/fb.png') }}"
@@ -954,7 +954,7 @@ width: 200px !important;
                                                                                                   style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
-                                                @if($snapchat)
+                                                @if($snapchat && isset($snapchat->followers))
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/snapchat.png') }}"
