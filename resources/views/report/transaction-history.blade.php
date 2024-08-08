@@ -337,7 +337,7 @@ width: 212px !important;
                                 <thead>
                                 <tr>
                                     <th><input type="checkbox" id="selectAll"></th>
-                                    <th>Transaction date</th>
+                                    <th>Transaction Date</th>
                                     <th>Invoice #</th>
                                     <th>Subscription Plan</th>
                                     <th>Amount</th>
@@ -379,7 +379,7 @@ width: 212px !important;
                   
                     $('#datatable').DataTable({
         language: {
-            emptyTable: "No Data Available"
+            emptyTable: "No Data"
         }
     });
 
@@ -507,7 +507,7 @@ width: 212px !important;
                 $(document).on('click', '.download-csv', function (e) {
                     e.preventDefault();
 
-                    exportToExcel('earning-report');
+                    exportToExcel('TransactionsReport');
                 });
 
 
