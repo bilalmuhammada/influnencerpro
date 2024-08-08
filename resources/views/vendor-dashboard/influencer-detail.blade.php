@@ -267,7 +267,7 @@
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}} - {{formatDateToread($influencer->personal_information->base_date ?? '')}}
+                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}}  {{formatDateToread($influencer->personal_information->base_date ?? '')}}
                                             {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
                                         </span>
                                     </div>
@@ -289,6 +289,7 @@
                                     <label class="font-label">Based City</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $main_available_from_date=  $influencer->personal_information->main_available_from_date;   
                                   $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
                                     }
                                    @endphp
@@ -297,12 +298,18 @@
                                             class="badge badge-pill badge-skill">{{$city->name ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                         </span>
+                                        <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($main_available_from_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Based Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $base_date= $travlling_one_from_date=  $influencer->personal_information->base_date;
                                     $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
                                     }
                                     @endphp
@@ -311,12 +318,18 @@
                                               class="badge badge-pill badge-skill">{{$country->name ?? ''}}
                                               {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                           </span>
+                                          <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($base_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                       </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $travlling_one_from_date= $travlling_one_from_date=  $influencer->personal_information->travlling_one_from_date;
                                     $city1=  DB::table('cities')->where('id',$influencer->personal_information->travlling_one_city_id)->first();
                                     }
                                     @endphp
@@ -325,12 +338,18 @@
                                             class="badge badge-pill badge-skill">{{$city1->name ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                         </span>
+                                        <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_one_from_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $travlling_one_to_date= $influencer->personal_information->travlling_one_to_date;
                                     $country1 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_one_country_id)->first();
                                     }
                                     @endphp
@@ -339,13 +358,18 @@
                                               class="badge badge-pill badge-skill">{{$country1->name ?? ''}}
                                               {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                           </span>
+                                          <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_one_to_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                       </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
-
+                                        $travlling_two_from_date=  $influencer->personal_information->travlling_two_from_date;
                                     $city2=  DB::table('cities')->where('id',$influencer->personal_information->travlling_two_city_id)->first();
                                     }
                                     @endphp
@@ -354,12 +378,18 @@
                                             class="badge badge-pill badge-skill">{{$city2->name ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                         </span>
+                                        <br>
+                                        <span
+                                        class="badge badge-pill badge-skill">{{formatDateToread($travlling_two_from_date ?? '')}}
+                                        {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                    </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $travlling_two_to_date=  $influencer->personal_information->travlling_two_to_date;
                                     $country2 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_two_country_id)->first();
                                     }
                                     @endphp
@@ -368,12 +398,18 @@
                                               class="badge badge-pill badge-skill">{{$country2->name ?? ''}}
                                               {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                           </span>
+                                          <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_two_to_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                       </div>
                                 </div>
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                        $travlling_three_from_date=  $influencer->personal_information->travlling_three_from_date;
                                     $city3=  DB::table('cities')->where('id',$influencer->personal_information->travlling_three_city_id)->first();
                                     }
                                     @endphp
@@ -382,12 +418,18 @@
                                             class="badge badge-pill badge-skill">{{$city3->name ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                         </span>
+                                        <br>
+                                        <span
+                                        class="badge badge-pill badge-skill">{{formatDateToread($travlling_three_from_date ?? '')}}
+                                        {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                    </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
+                                         $travlling_three_to_date=  $influencer->personal_information->travlling_three_to_date;
                                     $country3 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_three_country_id)->first();
                                     }
                                     @endphp
@@ -396,6 +438,11 @@
                                               class="badge badge-pill badge-skill">{{$country3->name ?? ''}}
                                               {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                           </span>
+                                          <br>
+                                          <span
+                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_three_to_date ?? '')}}
+                                          {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
+                                      </span>
                                       </div>
                                 </div>
                                 <div class="col-md-6" >
