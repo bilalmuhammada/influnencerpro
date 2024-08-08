@@ -414,6 +414,71 @@ $('.datepicker').datepicker({
 dateFormat: 'dd-mm-yy'
 });
  });
+
+ $(document).on('click', '.add-to-favourite', function (e) {
+            e.preventDefault();
+            thisElem = $(this);
+            let influencerId = thisElem.data('id');
+            let fvt = thisElem.data('fvt');
+            
+            $.ajax({
+                url: api_url + 'influencers/add-to-favourites',
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "influencer_id": influencerId,
+                    "fvt": fvt
+                },
+                success: function (response) {
+                    if(response.fr_in==1){
+                        $('.add-to-favourite').css('color', 'goldenrod');
+                      }else{
+                        $('.add-to-favourite').css('color', 'red');
+}
+                    if (response.status) {
+                        show_success_message(response.message);
+                        $(thisElem).hide();
+                        $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
+                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                    } else {
+                        show_error_message(response.message);
+
+                    }
+                }
+            });
+        });
+        $(document).on('click', '.add-to-invented', function (e) {
+            e.preventDefault();
+            thisElem = $(this);
+            let influencerId = thisElem.data('id');
+            let fvt = thisElem.data('fvt');
+            
+            $.ajax({
+                url: api_url + 'influencers/add-to-invented',
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "influencer_id": influencerId,
+                    "fvt": fvt
+                },
+                success: function (response) {
+
+ 
+
+                    if (response.status) {
+
+                        console.log(response.fr_in);
+                        show_success_message(response.message);
+                        $(thisElem).hide();
+                        $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
+                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                    } else {
+                        show_error_message(response.message);
+
+                    }
+                }
+            });
+        });
 </script>
 @endsection
 
