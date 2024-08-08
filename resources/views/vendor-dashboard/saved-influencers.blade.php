@@ -257,22 +257,57 @@ width: 195px !important;
 
 
                 @forelse($influencers as $influencer)
-                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:20px;margin-right:20px;">
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
                         <div class="card avatar-one"
                              style="border:0px solid #997045;width:220px;box-shadow:1px 1px 1px 1px #eee;">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
-                                <div class="start"
-                                     style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:225px;">
-                                    <i class="fas fa-check-circle text-success verified bilal-farviote" data-id="{{ $influencer->id }}"
-                                       style="padding:7px;border-radius:50%;"></i>
-                                    &nbsp;
-                                </div>
+                                
+                                
+                                @php
+                                $color = 'red';
+                                  $color1 = 'green';
+                                  
+                                  if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
+                                      if ($influencer->favourites[0]->influencer_id == $influencer->id) {
+                                          if ($influencer->favourites[0]->fr_in == 1) {
+                                              $color = 'goldenrod';
+                                          }
+                                       
+                                      }
+                                  }
+                              
+                                  if (isset($influencer->invented) && count($influencer->invented) > 0) {
+                                      if ($influencer->invented[0]->influencer_id == $influencer->id) {
+                                          
+                                          if ($influencer->invented[0]->fr_in == 2) {
+                                              $color1 = '#099ffc';
+                                          }
+                                      }
+                                  }
+                                  
+                                
+                               
+                                
+                              @endphp
+                               
                                 <div class="influencerdetail" id="">
-                                    <div class="start"
-                                         style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:220px;">
-                                        <i class="fas fa-check-circle text-success verified"
-                                           style="padding:7px;border-radius:50%;" data-id="{{ $influencer->id }}"></i>
-                                    </div>
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;margin-left:-11px">
+
+                                        <i class="fa-solid fa-heart  add-to-favourite"
+                                        data-id="{{ $influencer->id }}"
+                                        data-fvt="1"
+                                        style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+    
+                                       <i class="fas fa-check-circle   add-to-invented"
+                                          data-id="{{ $influencer->id }}"
+                                          data-fvt="2"
+                                          style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+    
+                                       {{-- <i class="fas fa-check-circle remove-favourite"
+                                          data-id="{{ $influencer->id }}"
+                                          style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i> --}}
+    
+                                   </div>
                                     <br>
                                     {{--<span
                                         style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}

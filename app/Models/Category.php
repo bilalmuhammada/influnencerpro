@@ -24,4 +24,9 @@ class Category extends Model
             return 'https://via.placeholder.com/30x30';
         }
     }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_categories', 'category_id', 'user_id');
+    }
+
 }

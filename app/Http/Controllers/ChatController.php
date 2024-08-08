@@ -178,17 +178,26 @@ class ChatController extends Controller
     {
         $role = session()->get('role');
 
-        $Chats = Chat::with('first_user', 'second_user')->when($role == 'vendor', function ($Chat) {
-            $Chat->where('first_user_id', SiteHelper::getLoginUserId());
-        })->when($role == 'influencer', function ($Chat) {
-            $Chat->where('second_user_id', SiteHelper::getLoginUserId())->where('status', 'requested');
-        })->when($request->from_date, function ($chat) use ($request) {
-            $chat->whereDate('created_at', '>=', $request->from_date);
-        })->when($request->to_date, function ($chat) use ($request) {
-            $chat->whereDate('created_at', '<=', $request->to_date);
+        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail'])->has('invented')->whereHas('role', function ($Role) {
+            $Role->where('code', 'influencer');
+        })->whereHas('invented', function ($favourite) use ($request) {
+            $favourite->where('user_id', SiteHelper::getLoginUserId())->when($request->from_date, function ($fav) use ($request) {
+                $fav->whereDate('created_at', '>=', $request->from_date);
+            })->when($request->to_date, function ($fav) use ($request) {
+                $fav->whereDate('created_at', '<=', $request->to_date);
+            });
         })->get();
+        // $Chats = Chat::with('first_user', 'second_user')->when($role == 'vendor', function ($Chat) {
+        //     $Chat->where('first_user_id', SiteHelper::getLoginUserId());
+        // })->when($role == 'influencer', function ($Chat) {
+        //     $Chat->where('second_user_id', SiteHelper::getLoginUserId())->where('status', 'requested');
+        // })->when($request->from_date, function ($chat) use ($request) {
+        //     $chat->whereDate('created_at', '>=', $request->from_date);
+        // })->when($request->to_date, function ($chat) use ($request) {
+        //     $chat->whereDate('created_at', '<=', $request->to_date);
+        // })->get();
 
-        return view('chats.invited-influencer')->with('influencers', $Chats);
+        return view('chats.invited-influencer')->with('influencers', $influencers);
     }
 
     public function statusUpdate(Request $request)

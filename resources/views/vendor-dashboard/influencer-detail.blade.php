@@ -267,7 +267,7 @@
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date)}} - {{formatDateToread($influencer->personal_information->base_date)}}
+                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}} - {{formatDateToread($influencer->personal_information->base_date ?? '')}}
                                             {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
                                         </span>
                                     </div>
@@ -288,8 +288,10 @@
                                 <div class="col-md-6" >
                                     <label class="font-label">Based City</label>
                                     @php
-                                  $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
-                                    @endphp
+                                    if($influencer->personal_information !=null){
+                                  $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
+                                    }
+                                   @endphp
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{$city->name ?? ''}}
@@ -300,8 +302,10 @@
                                 <div class="col-md-6" >
                                     <label class="font-label">Based Country</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                       <div class="form-group">
                                           <span
                                               class="badge badge-pill badge-skill">{{$country->name ?? ''}}
@@ -312,8 +316,10 @@
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $city1=  DB::table('cities')->where('id',$influencer->personal_information->travlling_one_city_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                      <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{$city1->name ?? ''}}
@@ -324,8 +330,10 @@
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $country1 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_one_country_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                       <div class="form-group">
                                           <span
                                               class="badge badge-pill badge-skill">{{$country1->name ?? ''}}
@@ -336,8 +344,11 @@
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
+                                    if($influencer->personal_information !=null){
+
                                     $city2=  DB::table('cities')->where('id',$influencer->personal_information->travlling_two_city_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                       <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{$city2->name ?? ''}}
@@ -348,8 +359,10 @@
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $country2 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_two_country_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                       <div class="form-group">
                                           <span
                                               class="badge badge-pill badge-skill">{{$country2->name ?? ''}}
@@ -360,8 +373,10 @@
                                 <div class="col-md-6" >
                                     <label class="font-label">Traveling City</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $city3=  DB::table('cities')->where('id',$influencer->personal_information->travlling_three_city_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{$city3->name ?? ''}}
@@ -372,8 +387,10 @@
                                     <div class="col-md-6" >
                                     <label class="font-label">Traveling Country</label>
                                     @php
+                                    if($influencer->personal_information !=null){
                                     $country3 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_three_country_id)->first();
-                                      @endphp
+                                    }
+                                    @endphp
                                       <div class="form-group">
                                           <span
                                               class="badge badge-pill badge-skill">{{$country3->name ?? ''}}
@@ -385,7 +402,7 @@
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include}}
+                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
                                         </span>
                                     </div>
@@ -394,7 +411,7 @@
                                     <label class="font-label">Price Negotiable</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_negotiable==1 ? "Yes" : "No"  }}
+                                            class="badge badge-pill badge-skill">{{ $influencer->personal_information && $influencer->personal_information->price_negotiable==1 ? "Yes" : "No"  }}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
                                         </span>
                                     </div>
@@ -631,8 +648,10 @@
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
                             @php
+                            if($influencer->personal_information!=null){
                             $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
                             $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
+                            }
                               @endphp
                             <div class="col-md-3"><span
                                     style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ $country->name ?? '' }}

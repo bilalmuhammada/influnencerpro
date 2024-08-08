@@ -22,7 +22,7 @@ class UserController extends Controller
             return redirect('/register?role=influencer');
         }
 
-        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail','favourites','invented'])->whereHas('role', function ($Role) {
+        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail','categories','favourites','invented'])->whereHas('role', function ($Role) {
             $Role->where('code', 'influencer');
         });
 

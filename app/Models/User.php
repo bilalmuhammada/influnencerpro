@@ -113,11 +113,19 @@ class User extends Authenticatable
         return $this->hasMany(Favourite::class, 'influencer_id')->where('fr_in',2);
     }
 
+  
+
     public function categories()
     {
-        return $this->hasMany(UserCategory::class);
+        return $this->belongsToMany(Category::class, 'user_categories', 'user_id', 'category_id');
     }
-
+    
+    // public function categories()
+    // {
+    //     return $this->belongsToMany(Category::class, 'category_user');
+    // }
+    
+    
     public function country()
     {
         return $this->belongsTo(Country::class);

@@ -847,7 +847,7 @@ width: 200px !important;
                                         </div>
                                         
                                           
-   @php
+                    @php
   $color = 'red';
     $color1 = 'green';
     
@@ -895,7 +895,7 @@ width: 200px !important;
                                             </div>
                                             <br>
                                             <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}} -->
-                                            <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}} -->
+                                             {{-- <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span> --}}
                                             <ul style="list-style-type: none;margin-top:7rem;">
                                                 @php
                                                     $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
@@ -968,7 +968,24 @@ width: 200px !important;
                                     <div class="influencer-dev" style="margin:10px;padding:3px;">
                                         <h5 style="font-size:12px;"
                                             class="influencer-name bilal-list-influencer">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                                        <h5 style="font-size:12px;">{{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</h5>
+
+
+                                            @php
+                                            $categoryNames = '';
+                                           foreach ($influencer->categories as $key => $category) {
+    // Append the category name to the string
+    $categoryNames .= $category->name;
+
+    // Add a comma and space if it's not the last category
+    if ($key != $influencer->categories->count() - 1) {
+        $categoryNames .= ', ';
+    }
+}
+
+
+                                            // dd($influencer->categories);
+                                            @endphp
+                                        <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
                                             &nbsp;&nbsp;Based
