@@ -138,7 +138,7 @@
                             <!-- <lable>Book Talent<i class="fa fa-email"></i></lable> -->
                             <!-- <a href="javascript:void(0);">Clear All</a> -->
                         </div>
-                        <div class="card-body" style="background-color:#f2e49c;height: 800px;">
+                        <div class="card-body" style="background-color:#f2e49c;height: 974px;">
 
                             <div class="filter-widget">
                                 <h4><b>Profile Info</b></h4>
@@ -267,7 +267,7 @@
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}}  {{formatDateToread($influencer->personal_information->base_date ?? '')}}
+                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}}&nbsp;&nbsp;&nbsp;&nbsp;{{formatDateToread($influencer->personal_information->base_date ?? '')}}
                                             {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
                                         </span>
                                     </div>
@@ -299,6 +299,7 @@
                                             {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                         </span>
                                         <br>
+                                        
                                           <span
                                           class="badge badge-pill badge-skill">{{formatDateToread($main_available_from_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
@@ -315,11 +316,13 @@
                                     @endphp
                                       <div class="form-group">
                                           <span
-                                              class="badge badge-pill badge-skill">{{$country->name ?? ''}}
+                                              class="badge badge-pill badge-skill">{{$country->name ?? ''}} 
                                               {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                           </span>
-                                          <br>
+                                          
+                                          <br> 
                                           <span
+                                        
                                           class="badge badge-pill badge-skill">{{formatDateToread($base_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>

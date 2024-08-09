@@ -55,7 +55,12 @@ class UserController extends Controller
             })->when($request->to_date, function ($fav) use ($request) {
                 $fav->whereDate('created_at', '<=', $request->to_date);
             });
-        })->get();
+        })->orderBy('id','DESC')
+        // ->join('favourites', 'users.id', '=', 'favourites.user_id')
+        // ->where('favourites.user_id', SiteHelper::getLoginUserId())
+        // ->orderBy('favourites.id', 'desc')
+        // ->select('users.*') // Ensures you get only user columns
+        ->get();
 
         return view('vendor-dashboard.saved-influencers')->with(['view_type' => 'influencer', 'influencers' => $influencers]);
     }

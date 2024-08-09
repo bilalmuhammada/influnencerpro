@@ -10442,6 +10442,7 @@ label.file-upload input[type="file"] {
     border-radius: 6px;
     font-weight: 500;
     font-size: 14px;
+    line-height: inherit !important;
     color: black;
     padding: 0px !important;
     margin: 0 7px 7px 0;

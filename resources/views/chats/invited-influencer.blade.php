@@ -319,7 +319,7 @@ width: 195px !important;
                                     style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}
                                 {{--<span
                                     style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}}
-                                <ul style="list-style-type: none;margin-top:90px;">
+                                <ul style="list-style-type: none;margin-top:120px;">
                                     @php
                                         $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
                                         $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
@@ -328,17 +328,17 @@ width: 195px !important;
                                         $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                                         $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                     @endphp
-                                    @if($instagram)
+                                    @if($instagram && isset($instagram->followers))
                                         <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp;
                                             <span
                                                 style="font-size: 12px;text-align:center;"><a
                                                     href=""><img
                                                         src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                         width="20px"></a> <br> <div class="text-center"
-                                                                                    style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
+                                                                                    style="font-size:11px; margin-left: 9px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
                                         </li> &nbsp;
                                     @endif
-                                    @if($twitter)
+                                    @if($twitter && isset($twitter->followers))
                                         <li style=" display: inline-block;color:#fff;"><span
                                                 style="font-size: 12px;text-align:center;"><a href=""><img
                                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
@@ -347,7 +347,7 @@ width: 195px !important;
                                                                                style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
                                         </li> &nbsp;
                                     @endif
-                                    @if($youtube)
+                                    @if($youtube && isset($youtube->followers))
                                         <li style=" display: inline-block;color:#fff;"><span
                                                 style="font-size: 12px;text-align:center;"><a href=""><img
                                                         src="{{ asset('assets/img/social-icon/youtube.png') }}"
@@ -356,7 +356,7 @@ width: 195px !important;
                                                                                style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                         </li> &nbsp;
                                     @endif
-                                    @if($tiktok)
+                                    @if($tiktok && isset($tiktok->followers))
                                         <li style=" display: inline-block;color:#fff;"><span
                                                 style="font-size: 12px;"><a
                                                     href=""><img
@@ -367,7 +367,7 @@ width: 195px !important;
                                         </li>&nbsp;
                                     @endif
 
-                                    @if($facebook)
+                                    @if($facebook && isset($facebook->followers))
                                         <li style=" display: inline-block;color:#fff;"><span
                                                 style="font-size: 12px;"><a href=""><img
                                                         src="{{ asset('assets/img/social-icon/fb.png') }}"
@@ -375,7 +375,7 @@ width: 195px !important;
                                                                                       style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                                         </li> &nbsp;
                                     @endif
-                                    @if($snapchat)
+                                    @if($snapchat && isset($snapchat->followers))
                                         <li style=" display: inline-block;color:#fff;"><span
                                                 style="font-size: 12px;"><a href=""><img
                                                         src="{{ asset('assets/img/social-icon/snapchat.png') }}"
@@ -387,12 +387,27 @@ width: 195px !important;
                             </div>
                             <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
                                  class="influencer"
-                                 width="220px" style="max-height: 200px !important;">
+                                 width="220px" height="200px">
                         </a>
+                        @php
+                                            $categoryNames = '';
+                                           foreach ($influencer->categories as $key => $category) {
+    // Append the category name to the string
+    $categoryNames .= $category->name;
+
+    // Add a comma and space if it's not the last category
+    if ($key != $influencer->categories->count() - 1) {
+        $categoryNames .= ', ';
+    }
+}
+
+
+                                            // dd($influencer->categories);
+                                            @endphp
                         <div class="influencer-dev" style="margin:10px;padding:3px;">
                             <h5 style="font-size:12px;"
                                 class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                            <h5 style="font-size:12px;">{{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</h5>
+                                <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                             <h5 style="font-size:12px;">
                                 Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
                                 &nbsp;&nbsp;Based
