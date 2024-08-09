@@ -259,169 +259,168 @@ width: 195px !important;
             <div class="row mx-auto">
 
 
-                @forelse($influencers as $influencer)
-                <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
-                    <div class="card avatar-one"
-                         style="border:0px solid #997045;width:220px;box-shadow:1px 1px 1px 1px #eee;">
-                        <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
-                            {{-- <div class="start"
-                                 style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:225px;">
-                                <i class="fas fa-check-circle text-success verified bilal-farviote" data-id="{{ $influencer->id }}"
-                                   style="padding:7px;border-radius:50%;"></i>
-                                &nbsp;
-                            </div> --}}
+                  @forelse($influencers as $influencer)
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
+                        <div class="card avatar-one"
+                             style="border:0px solid #997045;width:220px;box-shadow:1px 1px 1px 1px #eee; padding: 0px;">
+                            <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
+                                
+                                
+                                @php
+                                $color = 'red';
+                                  $color1 = 'green';
+                                  
+                                  if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
+                                      if ($influencer->favourites[0]->influencer_id == $influencer->id) {
+                                          if ($influencer->favourites[0]->fr_in == 1) {
+                                              $color = 'goldenrod';
+                                          }
+                                       
+                                      }
+                                  }
+                              
+                                  if (isset($influencer->invented) && count($influencer->invented) > 0) {
+                                      if ($influencer->invented[0]->influencer_id == $influencer->id) {
+                                          
+                                          if ($influencer->invented[0]->fr_in == 2) {
+                                              $color1 = '#099ffc';
+                                          }
+                                      }
+                                  }
+                                  
+                                
+                               
+                                
+                              @endphp
+                               
+                                <div class="influencerdetail" id="">
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;margin-left:-11px">
+
+                                        <i class="fa-solid fa-heart  add-to-favourite"
+                                        data-id="{{ $influencer->id }}"
+                                        data-fvt="1"
+                                        style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+    
+                                       <i class="fas fa-check-circle   add-to-invented"
+                                          data-id="{{ $influencer->id }}"
+                                          data-fvt="2"
+                                          style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+    
+                                       {{-- <i class="fas fa-check-circle remove-favourite"
+                                          data-id="{{ $influencer->id }}"
+                                          style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i> --}}
+    
+                                   </div>
+                                    <br>
+                                    {{--<span
+                                        style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}
+                                    {{--<span
+                                        style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}}
+                                    <ul style="list-style-type: none;margin-top:120px;">
+                                        @php
+                                            $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
+                                            $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
+                                            $facebook = getInfluencerSocialMediaProfileByTypeAndId('facebook', $influencer->id);
+                                            $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
+                                            $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
+                                            $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
+                                        @endphp
+                                        @if($instagram && isset($instagram->followers))
+                                            <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp;
+                                                <span
+                                                    style="font-size: 12px;text-align:center;"><a
+                                                        href=""><img
+                                                            src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
+                                                            width="20px"></a> <br> <div class="text-center"
+                                                                                        style="font-size:11px; margin-left: 9px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
+                                            </li> &nbsp;
+                                        @endif
+                                        @if($twitter && isset($twitter->followers))
+                                            <li style=" display: inline-block;color:#fff;"><span
+                                                    style="font-size: 12px;text-align:center;"><a href=""><img
+                                                            src="{{ asset('assets/img/social-icon/twitter.png') }}"
+                                                            alt=""
+                                                            width="20px"></a> <div class="text-center"
+                                                                                   style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
+                                            </li> &nbsp;
+                                        @endif
+                                        @if($youtube && isset($youtube->followers))
+                                            <li style=" display: inline-block;color:#fff;"><span
+                                                    style="font-size: 12px;text-align:center;"><a href=""><img
+                                                            src="{{ asset('assets/img/social-icon/youtube.png') }}"
+                                                            alt=""
+                                                            width="20px"></a> <div class="text-center"
+                                                                                   style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
+                                            </li> &nbsp;
+                                        @endif
+                                        @if($tiktok && isset($tiktok->followers))
+                                            <li style=" display: inline-block;color:#fff;"><span
+                                                    style="font-size: 12px;"><a
+                                                        href=""><img
+                                                            src="{{ asset('assets/img/social-icon/tiktok.png') }}"
+                                                            alt=""
+                                                            width="20px"></a> <div class="text-center"
+                                                                                   style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
+                                            </li>&nbsp;
+                                        @endif
+
+                                        @if($facebook && isset($facebook->followers))
+                                            <li style=" display: inline-block;color:#fff;"><span
+                                                    style="font-size: 12px;"><a href=""><img
+                                                            src="{{ asset('assets/img/social-icon/fb.png') }}"
+                                                            alt="" width="20px"></a> <div class="text-center"
+                                                                                          style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
+                                            </li> &nbsp;
+                                        @endif
+                                        @if($snapchat && isset($snapchat->followers))
+                                            <li style=" display: inline-block;color:#fff;"><span
+                                                    style="font-size: 12px;"><a href=""><img
+                                                            src="{{ asset('assets/img/social-icon/snapchat.png') }}"
+                                                            alt="" width="20px"></a> <div class="text-center"
+                                                                                          style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
+                                            </li>&nbsp;
+                                        @endif
+                                    </ul>
+                                </div>
+                                <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
+                                     class="influencer"
+                                     width="100%" height="200px">
+                            </a>
                             @php
-  $color = 'red';
-    $color1 = 'green';
-    
-    if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
-        if ($influencer->favourites[0]->influencer_id == $influencer->id) {
-            if ($influencer->favourites[0]->fr_in == 1) {
-                $color = 'goldenrod';
-            }
-         
-        }
-    }
+                            $categoryNames = '';
+                           foreach ($influencer->categories as $key => $category) {
+// Append the category name to the string
+                $categoryNames .= $category->name;
 
-    if (isset($influencer->invented) && count($influencer->invented) > 0) {
-        if ($influencer->invented[0]->influencer_id == $influencer->id) {
-            
-            if ($influencer->invented[0]->fr_in == 2) {
-                $color1 = '#099ffc';
-            }
-        }
-    }
-    
-  
- 
-  
-@endphp
-                            <div class="influencerdetail" id="">
-                                <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;margin-left:-11px">
+// Add a comma and space if it's not the last category
+           if ($key != $influencer->categories->count() - 1) {
+                            $categoryNames .= ', ';
+                       }
+                 }
 
-                                    <i class="fa-solid fa-heart  add-to-favourite"
-                                    data-id="{{ $influencer->id }}"
-                                    data-fvt="1"
-                                    style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
-                                   <i class="fas fa-check-circle   add-to-invented"
-                                      data-id="{{ $influencer->id }}"
-                                      data-fvt="2"
-                                      style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
-
-                                   {{-- <i class="fas fa-check-circle remove-favourite"
-                                      data-id="{{ $influencer->id }}"
-                                      style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i> --}}
-
-                               </div>
-                                <br>
-                                {{--<span
-                                    style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}
-                                {{--<span
-                                    style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}}
-                                <ul style="list-style-type: none;margin-top:120px;">
-                                    @php
-                                        $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
-                                        $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
-                                        $facebook = getInfluencerSocialMediaProfileByTypeAndId('facebook', $influencer->id);
-                                        $twitter = getInfluencerSocialMediaProfileByTypeAndId('twitter', $influencer->id);
-                                        $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
-                                        $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
-                                    @endphp
-                                    @if($instagram && isset($instagram->followers))
-                                        <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp;
-                                            <span
-                                                style="font-size: 12px;text-align:center;"><a
-                                                    href=""><img
-                                                        src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
-                                                        width="20px"></a> <br> <div class="text-center"
-                                                                                    style="font-size:11px; margin-left: 9px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
-                                        </li> &nbsp;
-                                    @endif
-                                    @if($twitter && isset($twitter->followers))
-                                        <li style=" display: inline-block;color:#fff;"><span
-                                                style="font-size: 12px;text-align:center;"><a href=""><img
-                                                        src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                        alt=""
-                                                        width="20px"></a> <div class="text-center"
-                                                                               style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
-                                        </li> &nbsp;
-                                    @endif
-                                    @if($youtube && isset($youtube->followers))
-                                        <li style=" display: inline-block;color:#fff;"><span
-                                                style="font-size: 12px;text-align:center;"><a href=""><img
-                                                        src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                        alt=""
-                                                        width="20px"></a> <div class="text-center"
-                                                                               style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
-                                        </li> &nbsp;
-                                    @endif
-                                    @if($tiktok && isset($tiktok->followers))
-                                        <li style=" display: inline-block;color:#fff;"><span
-                                                style="font-size: 12px;"><a
-                                                    href=""><img
-                                                        src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                        alt=""
-                                                        width="20px"></a> <div class="text-center"
-                                                                               style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
-                                        </li>&nbsp;
-                                    @endif
-
-                                    @if($facebook && isset($facebook->followers))
-                                        <li style=" display: inline-block;color:#fff;"><span
-                                                style="font-size: 12px;"><a href=""><img
-                                                        src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                        alt="" width="20px"></a> <div class="text-center"
-                                                                                      style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
-                                        </li> &nbsp;
-                                    @endif
-                                    @if($snapchat && isset($snapchat->followers))
-                                        <li style=" display: inline-block;color:#fff;"><span
-                                                style="font-size: 12px;"><a href=""><img
-                                                        src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                        alt="" width="20px"></a> <div class="text-center"
-                                                                                      style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
-                                        </li>&nbsp;
-                                    @endif
-                                </ul>
+                            // dd($influencer->categories);
+                            @endphp
+                            <div class="influencer-dev" style="margin:10px;padding:3px;">
+                                <h5 style="font-size:12px;"
+                                    class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
+                                    <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
+                                <h5 style="font-size:12px;">
+                                    Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
+                                    &nbsp;&nbsp;Based
+                                    in: {{ $influencer->state ? $influencer->state->name : '' }}</h5>
                             </div>
-                            <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
-                                 class="influencer"
-                                 width="220px" height="200px">
-                        </a>
-                        @php
-                                            $categoryNames = '';
-                                           foreach ($influencer->categories as $key => $category) {
-    // Append the category name to the string
-    $categoryNames .= $category->name;
-
-    // Add a comma and space if it's not the last category
-    if ($key != $influencer->categories->count() - 1) {
-        $categoryNames .= ', ';
-    }
-}
-
-
-                                            // dd($influencer->categories);
-                                            @endphp
-                        <div class="influencer-dev" style="margin:10px;padding:3px;">
-                            <h5 style="font-size:12px;"
-                                class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                                <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
-                            <h5 style="font-size:12px;">
-                                Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                &nbsp;&nbsp;Based
-                                in: {{ $influencer->state ? $influencer->state->name : '' }}</h5>
                         </div>
                     </div>
-                </div>
-            @empty
+                @empty
 
-                <div class="col-12 text-center">
-                    <p>Nothing Found</p>
-                </div>
+                    <div class="col-12 text-center">
+                        <p>Nothing Found</p>
+                    </div>
 
-            @endforelse
+                @endforelse
+
+            </div>
 
             </div>
         </div>

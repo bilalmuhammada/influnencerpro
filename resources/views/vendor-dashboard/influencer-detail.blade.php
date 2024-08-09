@@ -12,7 +12,7 @@
 
 
 .lobibox-notify-success{
-    width: 181px !important;
+    width: 136px !important;
     white-space: nowrap;
 }
 
@@ -120,7 +120,8 @@
 
         $main_availability = $influencer->availabilities->where('is_default', 1)->first();
         $availabilities = $influencer->availabilities->where('is_default', 0);
-    @endphp
+//    dd($influencer->image_url
+   @endphp
 
     <div class="content" style="padding-top: 100px; border-top: 1px solid #ccc"  >
         <div class="container">
@@ -131,9 +132,11 @@
                         <!-- <div class="card-header d-flex justify-content-between"> -->
                         <div class="card-header__">
                             <div class="influencer" id="influencer">
+                                <a href="{{ $influencer ? $influencer->image_url : '' }}">
                                 <img class="card-title mb-0" src="{{ $influencer ? $influencer->image_url : '' }}"
                                      alt="author"
-                                     width="100%" height="200px"><br/>
+                                     width="100%" height="200px">
+                                </a><br/>
                             </div>
                             <!-- <lable>Book Talent<i class="fa fa-email"></i></lable> -->
                             <!-- <a href="javascript:void(0);">Clear All</a> -->

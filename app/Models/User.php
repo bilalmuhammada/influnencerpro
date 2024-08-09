@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
-    protected $appends = ['full_name', 'image_url', 'is_favourite_influencer', 'instagram_followers', 'tiktok_followers', 'facebook_followers', 'country_name', 'user_arts'];
+    protected $appends = ['full_name', 'getImageUrlAttribute','image_url', 'is_favourite_influencer', 'instagram_followers', 'tiktok_followers', 'facebook_followers', 'country_name', 'user_arts'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -90,6 +90,7 @@ class User extends Authenticatable
 
     public function influencer_profile_images()
     {
+        
         return $this->hasMany(Attachment::class,'object_id')
         ->where('object', 'User')
         ->where('context', '=', 'influencer-profile-image');
@@ -97,8 +98,11 @@ class User extends Authenticatable
 
     public function getImageUrlAttribute()
     {
-        if ($this->attachment) {
-            return asset('uploads/users') . '/' . $this->attachment->name;
+        // Get the first related influencer profile image
+        $image = $this->influencer_profile_images()->first();
+
+        if ($image) {
+            return asset('uploads/users') . '/' . $image->name;
         } else {
             return 'https://via.placeholder.com/30x30';
         }

@@ -387,13 +387,13 @@ width: 195px !important;
                             $categoryNames = '';
                            foreach ($influencer->categories as $key => $category) {
 // Append the category name to the string
-$categoryNames .= $category->name;
+                $categoryNames .= $category->name;
 
 // Add a comma and space if it's not the last category
-if ($key != $influencer->categories->count() - 1) {
-$categoryNames .= ', ';
-}
-}
+           if ($key != $influencer->categories->count() - 1) {
+                            $categoryNames .= ', ';
+                       }
+                 }
 
 
                             // dd($influencer->categories);
