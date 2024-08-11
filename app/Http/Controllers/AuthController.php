@@ -30,6 +30,7 @@ class AuthController extends Controller
 {
     public function login()
     {
+        // dd('dd');
         if (\session()->has('User')) {
             return redirect('/home');
         }
@@ -144,54 +145,59 @@ class AuthController extends Controller
      
     }
 
-    public function loginBackend(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required',
-            'password' => 'required|min:6',
+    // public function loginBackend(Request $request)
+    // {
+        public function loginBackend(Request $request)
+{
+    // Validate the request inputs
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email',  // Ensure that email is validated correctly
+        'password' => 'required|min:6',
+    ]);
+
+    // Handle validation failure
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => false,
+            'message' => $validator->errors()->first(),
+            'errors' => $validator->errors()
         ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => FALSE,
-                'message' => $validator->errors()->first(),
-                'errors' => $validator->errors()
-            ]);
-        }
-
-        $User = User::with('role')->where('email', $request->email)->first();
-
-        // check if User exist or not
-        if (!$User) {
-            return response()->json([
-                'status' => false,
-                'message' => 'No user registered with this email',
-                'errors' => ['email' => ["No user registered with this email."]]
-            ]);
-        }
-
-        // check if password match or not
-        if (Hash::check($request->password, $User->password)) {
-            $token = $User->createToken('admin')->plainTextToken;
-
-            Session::put('role', $User->role->code);
-            Session::put('User', $User);
-
-            return response()->json([
-                'status' => true,
-                'message' => 'Logged in',
-                'user' => $User,
-                'role_key' => Role::firstWhere('id', $User->role_id)->code,
-                'token' => ['token' => $token]
-            ])->header('Cache-Control', 'private')->header('Authorization', $token);
-        } else {
-            return response()->json([
-                'status' => false,
-                'message' => 'Invalid Password!',
-                'errors' => ['password' => ["Invalid Password!"]]
-            ]);
-        }
     }
+
+    // Attempt to log in using the provided credentials
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // Authentication passed, get the authenticated user
+        $User = Auth::user();
+
+        // Optionally, load the user's role relationship if needed
+        $User->load('role');
+
+        // Generate token for the user (if you need to use tokens)
+        $token = $User->createToken('admin')->plainTextToken;
+
+        // Store additional session data if necessary
+        Session::put('role', $User->role->code);
+        Session::put('User', $User);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Logged in',
+            'user' => $User,
+            'role_key' => $User->role->code,
+            'token' => ['token' => $token]
+        ])->header('Cache-Control', 'private')->header('Authorization', $token);
+    } else {
+        // Authentication failed
+        return response()->json([
+            'status' => false,
+            'message' => 'Invalid Email or Password!',
+            'errors' => ['email' => ['Invalid Email or Password!']]
+        ]);
+    }
+}
+
 
     public function logout()
     {

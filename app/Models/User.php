@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
-    protected $appends = ['full_name', 'getImageUrlAttribute','image_url', 'is_favourite_influencer', 'instagram_followers', 'tiktok_followers', 'facebook_followers', 'country_name', 'user_arts'];
+    protected $appends = ['full_name','image_url', 'is_favourite_influencer', 'instagram_followers', 'tiktok_followers', 'facebook_followers', 'country_name', 'user_arts'];
 
     /**
      * The attributes that should be hidden for serialization.

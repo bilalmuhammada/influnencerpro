@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('chats/invited-influencers/', [\App\Http\Controllers\ChatController::class, 'invitedInfluencer']);
 Route::get('/chats/', [\App\Http\Controllers\ChatController::class, 'index']);
-
+// Route::prefix('/auth')->group(function () {
+//     Route::post("/register", [AuthController::class, 'registerBackend']);
+//     Route::post("/login", [AuthController::class, 'loginBackend']);
+// });
 Route::get('/register', [\App\Http\Controllers\AuthController::class, 'register']);
-Route::get('/login', [\App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::get('/subscriptions', [\App\Http\Controllers\GeneralController::class, 'subscription']);
 Route::get('/influncersubscriptions', [\App\Http\Controllers\GeneralController::class, 'influncersubscription']);
 
@@ -45,11 +50,15 @@ Route::prefix('/influencer')->middleware(['checkLogin'])->group(function () {
     Route::get('/complete-profile', [\App\Http\Controllers\AuthController::class, 'completeProfile'])->middleware('checkUser:influencer');
     Route::get('/change-old-password', [\App\Http\Controllers\AuthController::class, 'changeOldPassword'])->middleware('checkUser:vendor,influencer');
    
-
+    
 });
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::delete('influencer/image/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteImage'])->name('influencer.image.delete');
     Route::get('influencers/{id}/public-profile', [\App\Http\Controllers\UserController::class, 'detail']);
+
+
+    // Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name(config('chatify.routes.prefix'));
+
 });
 
 Route::prefix('/reports')->middleware(['checkUser:vendor,influencer', 'checkLogin'])->group(function () {
