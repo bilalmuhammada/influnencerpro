@@ -340,8 +340,8 @@
                                                     <a class="forgot-link" style="color: blue;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                         Password?</a>
                                                 </div>
-                                                <div class="col-6 text-end dont-have">Already on influencerPro <a
-                                                        href="{{env('BASE_URL').'/login'}}">Click here</a></div>
+                                                <div class="col-6 text-end dont-have">Already on influencerPro 
+                                                    <a href="{{env('BASE_URL').'/login'}}">Click here</a></div>
                                             </div>
                                         </form>
                                     </div>

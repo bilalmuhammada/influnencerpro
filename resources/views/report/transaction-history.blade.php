@@ -507,7 +507,7 @@ width: 212px !important;
                 $(document).on('click', '.download-csv', function (e) {
                     e.preventDefault();
 
-                    exportToExcel('TransactionsReport');
+                    exportToExcel('Transactions Report');
                 });
 
 

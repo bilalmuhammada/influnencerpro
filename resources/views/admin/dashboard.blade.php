@@ -309,6 +309,12 @@ $(function() {
 
             var chart = new ApexCharts(document.querySelector("#barChart"), options);
             chart.render();
+            var dataURL = chart.dataURI().then(({ imgURI, blob }) => {
+  const { jsPDF } = window.jspdf
+  const pdf = new jsPDF();
+  pdf.addImage(imgURI, 'PNG', 0, 0);
+  pdf.save("pdf-chart.pdf");
+})
             //END OF DONUT CHART
         }
 

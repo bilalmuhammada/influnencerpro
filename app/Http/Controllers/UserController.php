@@ -182,9 +182,9 @@ class UserController extends Controller
             $Favourite->delete();
 
             return response()->json([
-                'status' => true,
+                'status' => false,
                 'fr_in'=>$fvt,
-                'message' => "Remove from Invented",
+                'message' => "Invited",
             ]);
         }
 
@@ -197,7 +197,7 @@ class UserController extends Controller
         return response()->json([
             'status' => true,
             'fr_in'=>$fvt,
-            'message' => "Added to Invented",
+            'message' => "Invited",
         ]);
 
     }
@@ -240,9 +240,9 @@ class UserController extends Controller
             $Favourite->delete();
 
             return response()->json([
-                'status' => true,
+                'status' => false,
                 'fr_in'=>$fvt,
-                'message' => "Remove from favourites",
+                'message' => "Favourited",
             ]);
         }
 
@@ -255,7 +255,7 @@ class UserController extends Controller
         return response()->json([
             'status' => true,
             'fr_in'=>$fvt,
-            'message' => "Added to favourites",
+            'message' => "Favourited",
         ]);
 
     }

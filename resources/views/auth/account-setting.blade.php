@@ -64,7 +64,7 @@
                                         <label class="focus-label">Mobile </label>
                                     </div>
                                    <div class="form-group form-focus">
-                                      <input type="text" class="form-control floating" name="password" value="">
+                                      <input type="text" class="form-control floating" name="password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
                                      <div class="invalid-feedback">
                                         Please provide a valid Password.
                               </div>
@@ -78,7 +78,7 @@
                                     </div> 
                                     <div class="text-center">
                                     <button class="t-btn account-setting-update" type="button">
-                                        Save
+                                        Update
                                     </button>
                                     </div>
                                 </form>

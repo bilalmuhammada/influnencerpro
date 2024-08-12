@@ -25,11 +25,11 @@
   width: 12px; /* You can adjust this value based on your preference */
 }
 .ui-state-default  {
-        border: 0px !important;
+    border: 0px !important;
     background-color: white !important; /* Change this to the desired color */
   }
   .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 230px !important;
+    width: 182px !important;
     margin-right: 120px !important; 
 }
   #ui-datepicker-div{
@@ -49,6 +49,9 @@ width: 200px !important;
 /* Define the scrollbar track */
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+.lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
 }
     </style>
     <section style="border-top:2px solid #eee;">
