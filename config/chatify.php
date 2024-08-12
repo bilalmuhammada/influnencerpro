@@ -23,7 +23,7 @@ return [
     */
     'routes' => [
         'custom' => env('CHATIFY_CUSTOM_ROUTES', false),
-        'prefix' => env('CHATIFY_ROUTES_PREFIX', 'chatify1'),
+        'prefix' => env('CHATIFY_ROUTES_PREFIX', 'chatify'),
          'middleware' => ['web', 'auth.ensure'],
 
         'namespace' => env('CHATIFY_ROUTES_NAMESPACE', 'Chatify\Http\Controllers'),

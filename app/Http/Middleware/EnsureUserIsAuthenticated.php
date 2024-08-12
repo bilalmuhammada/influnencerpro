@@ -17,7 +17,7 @@ class EnsureUserIsAuthenticated
      */
     public function handle(Request $request, Closure $next)
     {
-        // dd(Auth::check());
+         dd(Auth::check());
         if (!Auth::check()) {
             // If not authenticated, redirect to login page or handle it as needed
             return redirect()->route('login');
