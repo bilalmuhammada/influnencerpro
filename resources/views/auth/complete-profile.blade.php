@@ -579,7 +579,7 @@ display: none !important;
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                         @endforeach
                                     </select>
-                                            <label for="username" class=" focus-label">Traveling Country2</label>
+                                            <label for="username" class=" focus-label">Traveling Country</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">

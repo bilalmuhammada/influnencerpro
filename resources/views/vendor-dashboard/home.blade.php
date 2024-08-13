@@ -29,8 +29,9 @@
     background-color: white !important; /* Change this to the desired color */
   }
   .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 182px !important;
+    width: 122px !important;
     margin-right: 120px !important; 
+    text-align: center !important;
 }
   #ui-datepicker-div{
 width: 200px !important;
