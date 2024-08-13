@@ -29,7 +29,7 @@
     background-color: white !important; /* Change this to the desired color */
   }
   .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 122px !important;
+    width: 125px !important;
     margin-right: 120px !important; 
     text-align: center !important;
 }
@@ -852,8 +852,8 @@ width: 200px !important;
                                         
                                           
                     @php
-  $color = 'red';
-    $color1 = 'green';
+    $color = 'red';
+    $color1 = 'red';
     
     if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
         if ($influencer->favourites[0]->influencer_id == $influencer->id) {

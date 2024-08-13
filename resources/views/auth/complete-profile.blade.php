@@ -299,7 +299,7 @@ display: none !important;
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus">
                                             {{-- <label for="username" class="inner_label">Age</label> --}}
-                                            <input type="text" class="form-control  floating" name="age" placeholder=""
+                                            <input type="text" class="form-control  floating" name="age"   pattern="\+?\d*"  oninput="validateInput(this)"  placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->age : '' }}"/>
                                                    <label class="focus-label">Age</label>
                                         </div>
@@ -377,7 +377,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                           
-                                            <input type="text" class="form-control floating" name="height"
+                                            <input type="text" class="form-control floating" name="height"  pattern="\+?\d*"  oninput="validateInput(this)"
                                                    placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->height : '' }}"/>
                                                    <label for="username" class="focus-label">Height-CM</label>
@@ -386,7 +386,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                         
-                                            <input type="text" class="form-control floating" name="weight"
+                                            <input type="text" class="form-control floating" name="weight"  pattern="\+?\d*"  oninput="validateInput(this)"
                                                    placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->weight : '' }}"/>
                                                    <label for="username" class="focus-label">Weight-KG</label>
@@ -398,7 +398,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
-                                            <input type="text" class="form-control floating" name="shoes_size"
+                                            <input type="text" class="form-control floating" name="shoes_size"  pattern="\+?\d*"  oninput="validateInput(this)"
                                                    placeholder=""
                                                    value="{{ $influencer_personal_info ? $influencer_personal_info->shoes_size : '' }}"/>
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Shoes Size-EU</label>
@@ -1185,7 +1185,14 @@ display: none !important;
 
 
   <script>
+
+
+function validateInput(input) {
+    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+}
             $(document).ready(function() {
+         
             $('.datepicker').datepicker({
                 dateFormat: 'dd-mm-yy'
             });
