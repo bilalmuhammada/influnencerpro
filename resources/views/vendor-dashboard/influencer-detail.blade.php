@@ -110,7 +110,20 @@
     height: 24px;
     cursor: pointer;
 }
+::-webkit-scrollbar {
+  width: 12px; /* You can adjust this value based on your preference */
+}
 
+/* Define the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #997045;
+  border-radius: 34px;
+}
+
+/* Define the scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 </style>
 @section('content')
 
@@ -600,12 +613,10 @@
                                         Chat
                                     </button>
                                     <!-- <button class="btn btn-primary send-chat-request">Chat Request Send</button> -->
-                                @elseif($chat->status == 'accepted')
-                                    <a class="open-chat btn"
-                                       href="{{ env('BASE_URL') }}chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
-                                            Chat</b></a>
-                                @endif
-                            </div> --}}
+                                @elseif($chat->status == 'accepted')--}}
+                                   
+                                {{-- @endif
+                            </div>  --}}
                         </div>
                     </div>
                     @php
@@ -620,6 +631,7 @@
             //    dd( , isset($instagram->followers) );
                   @endphp
                     <div class="details" style=" margin-top:45px;hight:auto;padding:7px 3px;">
+                       
                         <ul style="list-style-type: none;">
                             @if($instagram && isset($instagram->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
@@ -688,14 +700,11 @@
                             style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
                 </li> &nbsp;
         @endif
-                        <!-- <li style="display: inline-block;">
-                                <span style="font-size: 12px;">
-                                    <a href="javascript:void(0)" class="share-link" onclick="shareLink()">
-                                        <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
-                                    </a>
-                                    <div class="text-center" style="font-size: 11px;">&nbsp;</div>
-                                </span>
-                            </li> -->
+                         <li style="display: inline-block;float: right;">
+                            <a class="open-chat btn"
+                            href="{{ env('BASE_URL') }}chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
+                                 Chat</b></a> 
+                            </li> 
                         </ul>
                         <!-- <span style="font-size: 14px;"><img src="assets/img/social-icon/insta.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/fb.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/tiktok.png" alt="" width="30px"></span> -->
                     </div>
