@@ -853,7 +853,7 @@ width: 200px !important;
                                           
                     @php
     $color = 'red';
-    $color1 = 'red';
+    $color1 = '#61de2a';
     
     if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
         if ($influencer->favourites[0]->influencer_id == $influencer->id) {
