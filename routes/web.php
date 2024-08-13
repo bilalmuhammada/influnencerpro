@@ -52,12 +52,10 @@ Route::prefix('/influencer')->middleware(['checkLogin'])->group(function () {
    
     
 });
-Route::group(['middleware' => 'auth:sanctum'], function () {
+Route::group(['middleware' => 'auth.ensure'], function () {
     Route::delete('influencer/image/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteImage'])->name('influencer.image.delete');
     Route::get('influencers/{id}/public-profile', [\App\Http\Controllers\UserController::class, 'detail']);
 
-
-    // Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name(config('chatify.routes.prefix'));
 
 });
 

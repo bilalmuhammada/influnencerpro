@@ -126,7 +126,7 @@
     <div class="content" style="padding-top: 100px; border-top: 1px solid #ccc"  >
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar" style="border:0px solid red;">
+                <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys" style="border:0px solid red;">
 
                     <div class="card search-filter" style="border:0px solid red;">
                         <!-- <div class="card-header d-flex justify-content-between"> -->
@@ -158,6 +158,18 @@
                                     </p>
                                     </div>
                                 </div> --}}
+                                <div class="col-md-6" >
+                                    <label class="font-label">Art</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">
+                                            @foreach($influencer->arts as $art)
+                                                {{ getSafeValueFromObject($art, 'art_name') }}
+                                                <br>
+                                            @endforeach
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="col-md-6" style="">
                                     <label class="font-label">Languages</label>
                                     <div class="form-group">
@@ -184,19 +196,20 @@
                                     </div>
                                 </div> --}}
                                 <div class="col-md-6" >
-                                    <label class="font-label">Age</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6" >
                                     <label class="font-label">Gender</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ ucfirst(getSafeValueFromObject($influencer->personal_information, 'gender')) }}</span>
                                     </div>
                                 </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label">Age</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span>
+                                    </div>
+                                </div>
+                               
                                 <div class="col-md-6" >
                                     <label class="font-label">Hair Type</label>
                                     <div class="form-group">
@@ -254,27 +267,23 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6" >
-                                    <label class="font-label">Art</label>
+                                    <label class="font-label">Willing to Travel</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">
-                                            @foreach($influencer->arts as $art)
-                                                {{ getSafeValueFromObject($art, 'art_name') }}
-                                                <br>
-                                            @endforeach
-                                        </span>
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'willing_to_travel_formatted') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" >
+                               
+                                {{-- <div class="col-md-6" >
                                     <label class="font-label">Availability</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
-                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}}&nbsp;&nbsp;&nbsp;&nbsp;{{formatDateToread($influencer->personal_information->base_date ?? '')}}
+                                            style="width:100%; font-size: 12px !important;" >{{formatDateToread($influencer->personal_information->main_available_from_date ?? '')}}&nbsp;&nbsp;&nbsp;&nbsp;{{formatDateToread($influencer->personal_information->base_date ?? '')}} --}}
                                             {{-- {{ $main_availability ? formatDateToread($main_availability->availability_from_date)  : '' }} --}}
-                                        </span>
+                                        {{-- </span>
                                     </div>
-                                </div>
+                                </div> --}}
                                 {{-- <div class="col-md-6" >
 
                                 </div> --}}
@@ -452,15 +461,6 @@
                                       </div>
                                 </div>
                                 <div class="col-md-6" >
-                                    <label class="font-label">Price Include</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include ?? ''}}
-                                            {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6" >
                                     <label class="font-label">Price Negotiable</label>
                                     <div class="form-group">
                                         <span
@@ -469,6 +469,24 @@
                                         </span>
                                     </div>
                                 </div>
+                                <div class="col-md-6" >
+                                    <label class="font-label"> Collaboration</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'is_collaboration_formatted') }}</span>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-md-6" >
+                                    <label class="font-label">Price Include</label>
+                                    <div class="form-group">
+                                        <span
+                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include ?? ''}}
+                                            {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
+                                        </span>
+                                    </div>
+                                </div>
+                                
                               
                                 {{-- <div class="col-md-6" style="height:65px;margin-top:-8px;">
                                     <label class="font-label">&nbsp;</label>
@@ -510,20 +528,7 @@
                                         </div>
                                     </div>
                                 @endforeach --}}
-                                <div class="col-md-6" >
-                                    <label class="font-label"> Collaboration</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'is_collaboration_formatted') }}</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6" >
-                                    <label class="font-label">Willing to Travel</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'willing_to_travel_formatted') }}</span>
-                                    </div>
-                                </div>
+                               
                                 {{-- <div class="col-md-6" >
                                     <label class="font-label">Price<br/> &nbsp;</label>
                                     <div class="form-group">

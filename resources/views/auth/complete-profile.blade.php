@@ -194,7 +194,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="category_ids[]" id="category_ids"    class="form-control floating  category_ids"
+                                            <select name="category_ids[]" id="category_ids"   class="form-control floating  category_ids"
                                             multiple >
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories() as $category)
@@ -203,6 +203,24 @@ display: none !important;
                                                 @endforeach
                                             </select>
                                          <label for="" class="focus-label">Influencer Category</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-focus">
+                                            {{--                                        <input type="text" class="form-control" name="professional_category"--}}
+                                            {{--                                               placeholder="}
+                                            {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
+                                            <select name="arts[]" id="arts"
+                                            class="form-control floating"     multiple>
+                                           
+                                                {{-- <option value="">--Select Art--</option> --}}
+                                                @foreach(getArts() as $art)
+                                                    <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <label for="username" class="focus-label" >Art</label>
+                                                 {{-- <label for="" class="focus-label"></label> --}}
+
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -218,20 +236,7 @@ display: none !important;
                                         </div>
                                         </div>
                                     
-                                    <div class="col-md-4">
-                                        {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus">
-                                           
-                                            <select name="ethnicity_id" id="" class="form-control floating">
-                                                {{-- <option value="">Ethnicity</option> --}}
-                                                @foreach(getEthnicity() as $ethnicity)
-                                                    <option
-                                                        value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->ethnicity_id == $ethnicity->id ? 'selected' : '' }}>{{ $ethnicity->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        <label for="" class="focus-label">Ethnicity</label>
-                                        </div>
-                                    </div>
+                                   
 
                                 </div>
                                
@@ -253,10 +258,15 @@ display: none !important;
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus">
-                                            {{-- <label for="username" class="inner_label">Age</label> --}}
-                                            <input type="text" class="form-control  floating" name="age" placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->age : '' }}"/>
-                                                   <label class="focus-label">Age</label>
+                                           
+                                            <select name="ethnicity_id" id="" class="form-control floating">
+                                                {{-- <option value="">Ethnicity</option> --}}
+                                                @foreach(getEthnicity() as $ethnicity)
+                                                    <option
+                                                        value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->ethnicity_id == $ethnicity->id ? 'selected' : '' }}>{{ $ethnicity->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        <label for="" class="focus-label">Ethnicity</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -279,9 +289,21 @@ display: none !important;
                                             <label for="username" class="focus-label">Gender</label> 
                                         </div>
                                     </div>
+                                  
+                                  
+                                   
                                 </div>
 
                                 <div class="row" style="">
+                                    <div class="col-md-4">
+                                        {{-- <div class="input-container"> --}}
+                                            <div class="form-group form-focus">
+                                            {{-- <label for="username" class="inner_label">Age</label> --}}
+                                            <input type="text" class="form-control  floating" name="age" placeholder=""
+                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->age : '' }}"/>
+                                                   <label class="focus-label">Age</label>
+                                        </div>
+                                    </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                         {{-- <div class="input-container"> --}}
@@ -325,6 +347,11 @@ display: none !important;
                                     <label for="username" class="focus-label">Hair Color</label>
                                         </div>
                                     </div>
+                                    
+                                
+
+                                </div>
+                                <div class="row" >
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
@@ -347,10 +374,6 @@ display: none !important;
                                     <label for="username" class="focus-label">Eye Color</label>
                                         </div>
                                     </div>
-                                
-
-                                </div>
-                                <div class="row" >
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                           
@@ -369,6 +392,9 @@ display: none !important;
                                                    <label for="username" class="focus-label">Weight-KG</label>
                                         </div>
                                     </div>
+                                    
+                                </div>
+                                <div class="row" style="">
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
@@ -378,8 +404,6 @@ display: none !important;
                                                    <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Shoes Size-EU</label>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row" style="">
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             {{-- <input type="text" class="form-control floating" name="clothsize" 
@@ -400,24 +424,7 @@ display: none !important;
                                         </div>
                                  
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            {{--                                        <input type="text" class="form-control" name="professional_category"--}}
-                                            {{--                                               placeholder="}
-                                            {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
-                                            <select name="arts[]" id="arts"
-                                            class="form-control floating"     multiple>
-                                           
-                                                {{-- <option value="">--Select Art--</option> --}}
-                                                @foreach(getArts() as $art)
-                                                    <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <label for="username" class="focus-label" style="margin-top: -18px;">Art</label>
-                                                 {{-- <label for="" class="focus-label"></label> --}}
-
-                                        </div>
-                                    </div>
+                                   
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             <input type="text" class="form-control floating" name="tattoes" 
@@ -700,17 +707,67 @@ display: none !important;
                                 </div>
 
                                 <div class="row" style="">
-                                    
+                                    <div class="col-md-4">
+                                        <div class="form-group form-focus">
+                                            
+                                            <select name="willing_to_traval" id="" class="form-control floating">
+                                                {{-- <option value="">Willing To Traval</option> --}}
+                                                <option
+                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
+                                                    Yes
+                                                </option>
+                                                <option
+                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 0 ? 'selected' : '' }}>
+                                                    No
+                                                </option>
+                                            </select>
+<label for="username" class="focus-label">Willing To Traval</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                       
+                                        <div class="form-group form-focus">
+                                          
+                                            <select name="is_collaboration" id="" class="form-control floating">
+                                                {{-- <option value="">--Collaboration--</option> --}}
+                                                <option
+                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
+                                                    Yes
+                                                </option>
+                                                <option
+                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 0 ? 'selected' : '' }}>
+                                                    No
+                                                </option>
+                                            </select>
+  <label for="username" class="focus-label">Collaboration</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-focus focus-label">
+                                           
+                                            <select name="price_negotion" id=""
+                                                    class="form-control floating available-country">
+                                                {{-- <option value="">Price Negotiable</option> --}}
+                                                
+                                                    <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
+                                                     
+                                                    <option value="0" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 0 ? 'selected' : '' }}>No</option>  
+                                                
+                                            </select>
+                                        <label for="username" class=" focus-label">Price Negotiable</label>
+                                        </div>
+                                    </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             
                                             <input type="price" id="price" class="form-control floating" name="price"
                                                    placeholder=""
-                                                   value="{{ $influencer_professional_detail->price ?? ''  }}">
+                                                   value="{{ isset($influencer_professional_detail->price) ? rtrim(rtrim(number_format($influencer_professional_detail->price, 2, '.', ''), '0'), '.') : '' }}">
+
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Price $</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <div class="form-group form-focus">
 
                                              <input type="text" class="form-control floating" id="Priceinclude" name="price_include"
@@ -731,60 +788,13 @@ display: none !important;
                                             <label for="username" class="focus-label ">Price Includes</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus focus-label">
-                                           
-                                            <select name="price_negotion" id=""
-                                                    class="form-control floating available-country">
-                                                {{-- <option value="">Price Negotiable</option> --}}
-                                                
-                                                    <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
-                                                     
-                                                    <option value="0" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 0 ? 'selected' : '' }}>No</option>  
-                                                
-                                            </select>
-                                        <label for="username" class=" focus-label">Price Negotiable</label>
-                                        </div>
-                                    </div>
+                                   
                                     
                                 </div>
                                 <div class="row available-box" style="">
-                                    <div class="col-md-4">
-                                       
-                                        <div class="form-group form-focus">
-                                          
-                                            <select name="is_collaboration" id="" class="form-control floating">
-                                                {{-- <option value="">--Collaboration--</option> --}}
-                                                <option
-                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
-                                                    Yes
-                                                </option>
-                                                <option
-                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 0 ? 'selected' : '' }}>
-                                                    No
-                                                </option>
-                                            </select>
-  <label for="username" class="focus-label">Collaboration</label>
-                                        </div>
-                                    </div>
                                    
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            
-                                            <select name="willing_to_traval" id="" class="form-control floating">
-                                                {{-- <option value="">Willing To Traval</option> --}}
-                                                <option
-                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
-                                                    Yes
-                                                </option>
-                                                <option
-                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 0 ? 'selected' : '' }}>
-                                                    No
-                                                </option>
-                                            </select>
-<label for="username" class="focus-label">Willing To Traval</label>
-                                        </div>
-                                    </div>
+                                   
+                               
                                    
 
                                 </div>
