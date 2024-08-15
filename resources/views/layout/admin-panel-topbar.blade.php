@@ -81,7 +81,7 @@
                     <!-- <li><a href="{{ env('BASE_URL') . '/reports/my-reports' }}">Download invoices</a></li> -->
                     </ul>
                 </li>
-                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/chat' }}">Chats</a></li>
+                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/chats' }}">Chats</a></li>
                 <!-- <li>
                     <div class="input-box text-center mx-auto"
                          style="border:none;height:35px;width:250px;border:1px solid #999;border-radius:30px;text-align:center;margin-top:20px;">
