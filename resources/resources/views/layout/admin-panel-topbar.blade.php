@@ -67,7 +67,7 @@
                     </a>
                     <div class="dropdown-menu notifications"
                          style="width:400px; margin-left:-240px; height: 400px; overflow: auto">
-                        <div class="topnav-dropdown-header">
+                        <div class="topnav-dropdown-header" style="white-space: nowrap; gap: 14pc;display: flex;">
                             <span class="notification-title p-2">Notifications</span>
                             <a href="javascript:void(0)" class="clear-noti p-2 read-all-notification"> Clear All</a>
                         </div>
@@ -85,7 +85,7 @@
                                                     <p class="noti-details"><span
                                                             class="noti-title">{{ $message->message }}</span></p>
                                                     <p class="noti-time"><span
-                                                            class="notification-time">{{ $message->message_recieved_time_diff }} ago</span>
+                                                            class="notification-time">{{ $message->message_recieved_time_diff }} </span>
                                                     </p>
                                                 </div>
                                             </div>

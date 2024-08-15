@@ -33,10 +33,7 @@ class Chat extends Model
         $ids = [$this->first_user_id, $this->second_user_id];
 
         $current_user_id = SiteHelper::getLoginUserId();
-        //uncomment it while dealing in project
-//        $current_user_id = 1;
-
-
+//    dd( $ids );
         return User::whereIn('id', $ids)
             ->where('id', '!=', $current_user_id)
             ->first();

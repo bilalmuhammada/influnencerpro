@@ -138,13 +138,13 @@ $(function() {
 //     // Update the content of the <span> element with the formatted date
 //     $('.from_date').text(formattedDate);
 // });
-    $(document).ready(function () {
-        renderDashboard();
-        });
+    // $(document).ready(function () {
+    //     renderDashboard();
+    //     });
 
-        $('.filter').click(function () {
-            renderDashboard();
-        });
+    //     $('.filter').click(function () {
+    //         renderDashboard();
+    //     });
 
         function renderDashboard() {
             $.ajax({
@@ -309,12 +309,6 @@ $(function() {
 
             var chart = new ApexCharts(document.querySelector("#barChart"), options);
             chart.render();
-            var dataURL = chart.dataURI().then(({ imgURI, blob }) => {
-  const { jsPDF } = window.jspdf
-  const pdf = new jsPDF();
-  pdf.addImage(imgURI, 'PNG', 0, 0);
-  pdf.save("pdf-chart.pdf");
-})
             //END OF DONUT CHART
         }
 

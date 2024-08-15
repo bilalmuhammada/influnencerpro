@@ -1356,8 +1356,8 @@ label {
 }
 
 .avatar-sm {
-    width: 2.5rem;
-    height: 2.5rem;
+    width:3.5rem;
+    height:3.5rem;
 }
 
 .avatar-sm .border {
@@ -13871,15 +13871,30 @@ label.file-upload input[type="file"] {
     width: 100%;
 }
 
-.chat-cont-right .chat-body .media .avatar {
+.chat-cont-right .chat-body .media.received .avatar {
+    
+
+
     height: 30px;
     width: 30px;
     bottom: 0;
+    
     position: absolute;
 }
 
-.chat-cont-right .chat-body .media .media-body {
+.chat-cont-right .chat-body .media.received .media-body {
+    
+   
+    align-items: flex-start;
+    
+    display: flex;
+    
+    flex-direction: column;
+   
+    
+    -ms-flex-pack: flex-end;
     margin-left: 45px;
+    margin-right: 0;
 }
 
 .chat-cont-right .chat-body .media .media-body .msg-box>div {
@@ -13994,7 +14009,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-right .chat-footer .input-group {
     width: 100%;
-    background-color: #f5f5f6;
+    /* background-color: #f5f5f6; */
     border: none;
     border-radius: 50px;
     padding: 5px;
@@ -14109,15 +14124,15 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.received .media-body .msg-box:first-child:before {
-    border-bottom: 15px solid #0504aa;
-    border-right: 15px solid #0504aa;
+    border-bottom: 15px solid #e8efff;
+    border-right: 15px solid #e8efff;
     border-top: 15px solid transparent;
     border-left: 15px solid transparent;
     content: "";
     height: 0;
-    left: -10px;
+    left: auto;
     position: absolute;
-    right: auto;
+    left: -10px;
     bottom: 12px;
     width: 0;
 }

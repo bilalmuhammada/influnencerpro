@@ -104,15 +104,22 @@
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-2 text-center"><input type="checkbox" id="check-all"></div>
-                                        <div class="col-md-10">Select All</div>
+                                        <div class="col-md-2 text-center "><input type="checkbox" class="hiddencheck"  id="check-all"></div>
+                                        <div class="col-md-10 hiddencheck">Select All</div>
                                     </div>
                                 </div>
                                 <div class="col-md-4"></div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 hiddentrash" >
                                     <div class="row">
                                         <div class="col-md-12 text-center">
                                             <i class="fa fa-trash " style="color: rgb(9, 9, 166);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 edit" >
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <i class="fa fa-pencil " id="edit-icon" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +141,7 @@
 
                                     @foreach($chats as $chat)
                                         <input type="checkbox" style="position:relative;top:57px;right:250px;"
-                                               value="{{ $chat->id }}" class="dlt-chat">
+                                               value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;"
@@ -157,7 +164,7 @@
                                                 </div>
                                                 <div>
                                                     <div
-                                                        class="last-chat-time block">{{ $chat->latest_message_recieved_time_diff }}</div>
+                                                        class="last-chat-time block">{{ $chat->latest_message_recieved_time_diff }}55</div>
 
                                                     <div
                                                         class="badge bgg-yellow badge-pill unread-count"
@@ -180,18 +187,21 @@
                                         <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
                                             <i class="material-icons">chevron_left</i>
                                         </a>
+                                        @php
+                                        // dd($chat);
+                                        @endphp
                                         <div class="media d-flex">
                                             <div class="media-img-wrap flex-shrink-0">
                                                 <div class="avatar">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                                        alt="User Image"
+                                                        alt="UserImage"
                                                         class="avatar-img rounded-circle">
                                                 </div>
                                             </div>
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }}</div>
+                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
                                                 {{--                                            <div class="user-status">online</div>--}}
                                             </div>
                                         </div>
@@ -211,8 +221,8 @@
                                                                         class="avatar-img rounded-circle">
                                                                 </div>
                                                                 <div class="media-body flex-grow-1">
-                                                                    <div class="msg-box">
-                                                                        <div>
+                                                                    <div class="msg-box" >
+                                                                        <div style="display: flex;">
                                                                             <p>{{ $message->message }}</p>
                                                                             <ul class="chat-msg-info">
                                                                                 <li>
@@ -232,17 +242,17 @@
                                         </div>
                                         <div class="chat-footer">
                                             <div class="input-group">
-                                                <div class="avatar" style="padding:4px;">
+                                                {{-- <div class="avatar" style="padding:4px;">
 
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
-                                                </div>
+                                                </div> --}}
                                                 <div class="inputs"
-                                                     style="padding:4px;width:88%;height:42px !important;">
-                                                    <input type="text" class="input-msg-send form-controls"
-                                                           id="emoji-trigger"
+                                                     style="width:96%;height:42px !important;">
+                                                    <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
+                                                           {{-- id="emoji-trigger" --}}
                                                            placeholder="Reply..."
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                            data-chat-id="{{ $chat->id }}">
@@ -260,7 +270,7 @@
                                                 <button type="button" class="btn btn-primary msg-send-btn"
                                                         data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                         data-chat-id="{{ $chat->id }}"
-                                                        style="background-color:inherit !important;"><i
+                                                        style="margin-top: 6px;  background-color: transparent !important;"><i
                                                         class="fa fa-paper-plane" aria-hidden="true"
                                                         style="color:#0504aa;font-size:30px;background-color:none !important;"></i>
                                                 </button>
@@ -297,6 +307,21 @@
 
         var api_url = "{{ env('API_URL') }}";
 
+        $(document).ready(function () {
+
+
+
+            $('.hiddencheck').hide()
+            $('.hiddentrash').hide()
+
+
+            $('#edit-icon').click(function() {
+                $('.edit').hide()
+            $('.hiddencheck').toggle();
+            $('.hiddentrash').toggle();
+        });
+
+        });
         $(document).ready(function () {
             @if(request()->i)
             $('.chat-body-div').css('display', 'none');

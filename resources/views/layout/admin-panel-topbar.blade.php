@@ -1,3 +1,14 @@
+
+
+<style>
+    .noti-details{
+        margin-bottom: 0px !important;
+
+    }
+    .dropdown-menu.show {
+            display: block;
+        }
+</style>
 <header class="header header-bg">
     <nav class="navbar navbar-expand-lg header-nav">
         <div class="navbar-header">
@@ -70,7 +81,7 @@
                     <!-- <li><a href="{{ env('BASE_URL') . '/reports/my-reports' }}">Download invoices</a></li> -->
                     </ul>
                 </li>
-                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/chatify' }}">Chats</a></li>
+                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/chat' }}">Chats</a></li>
                 <!-- <li>
                     <div class="input-box text-center mx-auto"
                          style="border:none;height:35px;width:250px;border:1px solid #999;border-radius:30px;text-align:center;margin-top:20px;">
@@ -80,55 +91,73 @@
                 </li> -->
                 <!-- <li> -->
                 <!-- <li><a href="#"><i class="fa fa-bell" style="font-size:20px;"></i></a></li> -->
+                @php
+                       
+                @endphp 
+                
                 <li class="nav-item dropdown">
                     <a href="#" class=" nav-link" data-bs-toggle="dropdown">
                         <!-- <i class="fa fa-bell" style="font-size:25px;"></i> <span class="badge badge-pill">5</span> -->
                         Notifications
                     </a>
-                    <div class="dropdown-menu notifications"
-                         style="width:400px; margin-left:-240px; height: 400px; overflow: auto;">
-                        <div class="topnav-dropdown-header">
-                            <span class="notification-title p-2">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti p-2 read-all-notification"> Clear All</a>
+     <div class="dropdown-menu notifications"
+     style="width: 400px; margin-left: -240px; height: auto; overflow: auto;">
+    <div class="topnav-dropdown-header" style="white-space: nowrap; gap: 10pc; display: flex;">
+        <span class="notification-title p-2">Notifications</span>
+        <a href="javascript:void(0)" class="clear-noti p-2 read-all-notification" onclick="markAllAsRead()">Mark all as Read</a>
+    </div>
+    <div class="noti-content p-2" onclick="event.stopPropagation()">
+        <ul class="notification-list">
+            @forelse (getUnreadMessages() as $message)
+            <li class="notification-message" style="margin-bottom: 12px; position: relative;">
+                <div style="display: contents;">
+                    <div class="media d-flex" style="background-color: whitesmoke; position: relative;">
+                        <span class="avatar avatar-sm flex-shrink-0" style="margin: 12px;">
+                            <img class="avatar-img rounded-circle" alt src="{{ $message->receiver->image_url ?? asset('assets/img/user/avatar-2.jpg')}}">
+                        </span>
+                       
+                        <div class="media-body flex-grow-1" style="padding: 11px 0px 0px 0px; font-size: 12px;">
+                            <p class="noti-details" style="font-weight:bolder ">
+                                <span class="noti-title">{{$message->receiver->name ?? '' }}</span>
+                            </p>
+                            <p class="noti-details">
+                                <span class="noti-title" style="font-weight: normal;">{{ $message->message }}</span>
+                            </p>
+                            <p class="noti-time">
+                                <span class="notification-time" style="font-weight: normal;">{{ $message->message_recieved_time_diff }}</span>
+                            </p>
                         </div>
-                        <div class="noti-content p-2">
-                            <ul class="notification-list">
-                                @forelse (getUnreadMessages() as $message)
-                                    <li class="notification-message">
-                                        <a href="#">
-                                            <div class="media d-flex">
-                                            <span class="avatar avatar-sm flex-shrink-0">
-                                            <img class="avatar-img rounded-circle" alt
-                                                 src="{{ $message->user->image_url ?? asset('assets/img/user/avatar-2.jpg')}}">
-                                            </span>
-                                                <div class="media-body flex-grow-1">
-                                                    <p class="noti-details"><span
-                                                            class="noti-title">{{ $message->message }}</span></p>
-                                                    <p class="noti-time"><span
-                                                            class="notification-time">{{ $message->message_recieved_time_diff }} ago</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @empty
-                                    <li class="notification-message">
-                                        <a href="#">
-                                            <div class="media d-flex">
-                                                <div class="media-body flex-grow-1">
-                                                    <p class="noti-details text-center"><span
-                                                            class="noti-title">No Message Found</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforelse
-                            </ul>
-                        </div>
-                        <div class="topnav-dropdown-footer">
-                            <a href="#">View all Notifications</a>
+                        <div class="notification-options" style="position: absolute; top: 12px; right: 12px;">
+                            <button class="btn btn-link" onclick="toggleOptionsMenu(event)">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </button>
+                            <div class="options-menu" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); z-index: 1000;">
+                                <a href="javascript:void(0)" class="dropdown-item" onclick="markAsRead('{{ $message->id }}')">Mark as Read</a>
+                                <a href="javascript:void(0)" class="dropdown-item" onclick="removeNotification('{{ $message->id }}')">Remove</a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </li>
+            @empty
+            <li class="notification-message">
+                <a href="#">
+                    <div class="media d-flex">
+                        <div class="media-body flex-grow-1">
+                            <p class="noti-details text-center"><span class="noti-title">No Message Found</span></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            @endforelse
+        </ul>
+    </div>
+    <div class="topnav-dropdown-footer" style="text-align: center;">
+        <a href="#">View all Notifications</a>
+    </div>
+</div>
+
+               
                 </li>
 
                 <li class="has-submenu" style="padding-right:50px !important;">
@@ -164,3 +193,24 @@
         </div>
     </nav>
 </header>
+
+<script>
+    function toggleOptionsMenu(event) {
+    // Prevent event from propagating to parent elements
+    event.stopPropagation();
+
+    // Toggle visibility of the options menu
+    const button = event.currentTarget;
+    const optionsMenu = button.nextElementSibling;
+
+    // Hide other open menus
+    document.querySelectorAll('.options-menu').forEach(menu => {
+        if (menu !== optionsMenu) {
+            menu.style.display = 'none';
+        }
+    });
+
+    // Toggle the current menu
+    optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'none' : 'block';
+}
+</script>
