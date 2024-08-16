@@ -11,13 +11,13 @@
 } 
 
 
-.lobibox-notify-success{
-    width: 136px !important;
-    white-space: nowrap;
+.lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
 }
-
-.lobibox-notify.notify-mini .lobibox-notify-body{
-    margin: 7px 0px 5px 6px !important;
+.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
+    width: 125px !important;
+    margin-right: 120px !important; 
+    text-align: center !important;
 }
 .profile h1 {
     margin-top: 160px;
