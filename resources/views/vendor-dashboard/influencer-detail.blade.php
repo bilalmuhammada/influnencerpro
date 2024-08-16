@@ -701,7 +701,7 @@
                 </li> &nbsp;
         @endif
                          <li style="display: inline-block;float: right; margin-right: -184px; margin-top: -14px;">
-                            <a class="open-chat btn" style="font-size: 21px;"
+                            <a class="open-chat btn" style="font-size: 21px; color: #0504aa"
                             href="{{ env('BASE_URL') }}chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
                                  Chat</b></a> 
                             </li> 
