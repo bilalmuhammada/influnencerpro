@@ -453,9 +453,9 @@ dateFormat: 'dd-mm-yy'
                 },
                 success: function (response) {
                     if(response.fr_in==1){
-                        $('.add-to-favourite').css('color', 'goldenrod');
-                      }else{
                         $('.add-to-favourite').css('color', 'red');
+                      }else{
+                        $('.add-to-favourite').css('color', 'white');
 }
                     if (response.status) {
                         show_success_message(response.message);
@@ -485,7 +485,11 @@ dateFormat: 'dd-mm-yy'
                 },
                 success: function (response) {
 
- 
+                    if(response.fr_in==2){
+                        $('.add-to-favourite').css('color', 'green');
+                      }else{
+                        $('.add-to-favourite').css('color', 'white');
+}
 
                     if (response.status) {
 

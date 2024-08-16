@@ -1151,7 +1151,7 @@ width: 200px !important;
                     if(response.fr_in==1){
                         $('.add-to-favourite').css('color', 'red');
                       }else{
-                        $('.add-to-favourite').css('color', 'red');
+                        $('.add-to-favourite').css('color', 'white');
 }
                     if (response.status) {
                         show_success_message(response.message);
@@ -1183,7 +1183,7 @@ width: 200px !important;
                     if(response.fr_in==2){
                         $('.add-to-invented').css('color', 'green');
                       }else{
-                        $('.add-to-invented').css('color', 'green');
+                        $('.add-to-invented').css('color', 'white');
 }
  
 
