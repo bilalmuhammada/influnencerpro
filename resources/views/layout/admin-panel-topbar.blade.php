@@ -8,6 +8,9 @@
     .dropdown-menu.show {
             display: block;
         }
+        .main-nav li a.show {
+    color: #0504aa !important;
+}
 </style>
 <header class="header header-bg">
     <nav class="navbar navbar-expand-lg header-nav">
@@ -96,7 +99,7 @@
                 @endphp 
                 
                 <li class="nav-item dropdown">
-                    <a href="#" class=" nav-link" data-bs-toggle="dropdown">
+                    <a href="#" class="nav-link" data-bs-toggle="dropdown">
                         <!-- <i class="fa fa-bell" style="font-size:25px;"></i> <span class="badge badge-pill">5</span> -->
                         Notifications
                     </a>
@@ -144,7 +147,7 @@
                 <a href="#">
                     <div class="media d-flex">
                         <div class="media-body flex-grow-1">
-                            <p class="noti-details text-center"><span class="noti-title">No Message Found</span></p>
+                            <p class="noti-details text-center"><span class="noti-title" style="font-weight:300; ">No Message</span></p>
                         </div>
                     </div>
                 </a>
