@@ -964,7 +964,7 @@ $(document).ready(function() {
             document.body.removeChild(dummyInput);
 
             // Optionally, you can provide user feedback (e.g., show a tooltip)
-            show_success_message('URL Copied!');
+            show_success_message('URL Copied');
         }
     </script>
 @endsection
