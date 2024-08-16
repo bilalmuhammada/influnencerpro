@@ -77,7 +77,7 @@ width: 200px !important;
                             <div class="card-header d-flex justify-content-between"
                                  style="background:#f2e49c  !important;">
                                 <h4 class="card-title mb-0">FILTERS</h4>
-                                <a href="{{ env('BASE_URL') }}vendor/dashboard">Clear All</a>
+                                <a href="{{ env('BASE_URL') }}/vendor/dashboard">Clear All</a>
                             </div>
                             <div class="card-body" style="background:#f2e49c  !important;">
                                 {{--                                <div class="filter-widget">--}}
