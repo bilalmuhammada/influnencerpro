@@ -418,7 +418,7 @@ display: none !important;
                                          <option value="L">L</option> 
                                          <option value="XL">XL</option>
                                          <option value="XXL">XXL</option>
-                                         <option value="XXL">XXL</option>
+                                         <option value="XXXL">XXXL</option>
                                     </select>
                                             <label for="username" class="focus-label">Cloth Size</label>
                                         </div>
