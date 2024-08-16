@@ -184,7 +184,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => true,
                 'fr_in'=>$fvt,
-                'message' => "Invited",
+                'message' => "Removed",
             ]);
         }
 
@@ -242,7 +242,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => false,
                 'fr_in'=>$fvt,
-                'message' => "Favourited",
+                'message' => "Removed",
             ]);
         }
 
