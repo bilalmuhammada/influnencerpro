@@ -1149,7 +1149,7 @@ width: 200px !important;
                 },
                 success: function (response) {
                     if(response.fr_in==1){
-                        $('.add-to-favourite').css('color', 'goldenrod');
+                        $('.add-to-favourite').css('color', 'red');
                       }else{
                         $('.add-to-favourite').css('color', 'red');
 }
@@ -1180,7 +1180,11 @@ width: 200px !important;
                     "fvt": fvt
                 },
                 success: function (response) {
-
+                    if(response.fr_in==2){
+                        $('.add-to-invented').css('color', 'green');
+                      }else{
+                        $('.add-to-invented').css('color', 'green');
+}
  
 
                     if (response.status) {
