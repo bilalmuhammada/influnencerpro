@@ -138,13 +138,13 @@ $(function() {
 //     // Update the content of the <span> element with the formatted date
 //     $('.from_date').text(formattedDate);
 // });
-    // $(document).ready(function () {
-    //     renderDashboard();
-    //     });
+    $(document).ready(function () {
+        renderDashboard();
+        });
 
-    //     $('.filter').click(function () {
-    //         renderDashboard();
-    //     });
+        $('.filter').click(function () {
+            renderDashboard();
+        });
 
         function renderDashboard() {
             $.ajax({

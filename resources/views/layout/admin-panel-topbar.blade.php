@@ -147,7 +147,7 @@
                 <a href="#">
                     <div class="media d-flex">
                         <div class="media-body flex-grow-1">
-                            <p class="noti-details text-center"><span class="noti-title" style="font-weight:300; ">No Message</span></p>
+                            <p class="noti-details text-center"><span class="noti-title" style="font-weight:300; ">No Messages</span></p>
                         </div>
                     </div>
                 </a>
