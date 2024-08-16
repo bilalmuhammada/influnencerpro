@@ -69,16 +69,9 @@
 
 /* Icon styles */
 
-.open-chat {
-  
-    color: #007bff !important;
-    font-size: 16px;
-    margin-right: 175px; /* Add margin between buttons */
-}
 
-.open-chat:hover {
-    color: #0056b3;
-}
+
+
 
 
 .gallerys {
@@ -103,6 +96,12 @@
 
 .gallerys:hover .image-actions {
     display: flex; /* Show when hovering over the gallery container */
+}
+.open-chat:hover{
+color: #0504aa !important;
+}
+.open-chat{
+    color: goldenrod !important;
 }
 
 .image-actions img {
@@ -700,8 +699,8 @@
                             style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
                 </li> &nbsp;
         @endif
-                         <li style="display: inline-block;float: right; margin-right: -184px; margin-top: -14px;">
-                            <a class="open-chat btn" style="font-size: 21px; color: #0504aa !important;"
+                         <li style="display: inline-block;float: right; margin-right: -14px; margin-top: -14px;">
+                            <a class="open-chat btn" style="font-size: 21px;"
                             href="{{ env('BASE_URL') }}chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
                                  Chat</b></a> 
                             </li> 

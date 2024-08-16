@@ -67,13 +67,13 @@
 
 
                 <li class="has-submenu {{ request()->is('subscriptions') || request()->is('reports/transaction-history') ? 'active' : '' }}">
-                    <a href="#">Subscription<i class="fas fa-chevron-down"></i></a>
+                    <a href="#">Subscriptions<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="has-submenu">
                             @if(session()->get('role') == 'influencer')
-                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscription</a></li>
+                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
                             @else
-                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscription</a></li>
+                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
                             @endif
                        
                        
