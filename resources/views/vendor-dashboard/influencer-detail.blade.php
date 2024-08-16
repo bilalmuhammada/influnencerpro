@@ -15,8 +15,8 @@
     margin: 7px 1px 0px 0px !important;
 }
 .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 140px !important;
-    margin-right: 120px !important; 
+    width: 135px !important;
+    margin-right: 110px !important; 
     text-align: center !important;
 }
 .profile h1 {
@@ -701,7 +701,7 @@
                 </li> &nbsp;
         @endif
                          <li style="display: inline-block;float: right; margin-right: -184px; margin-top: -14px;">
-                            <a class="open-chat btn" style="font-size: 21px; color: #0504aa"
+                            <a class="open-chat btn" style="font-size: 21px; color: #0504aa !important;"
                             href="{{ env('BASE_URL') }}chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
                                  Chat</b></a> 
                             </li> 
