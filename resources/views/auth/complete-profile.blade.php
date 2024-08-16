@@ -837,7 +837,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                         alt="insta" width="40" style="margin-left: 27px;">
+                                                         alt="insta" width="40" style="margin-left: 24px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -868,7 +868,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="insta"
-                                                         width="40" style="margin-left: 27px;">
+                                                         width="40" style="margin-left: 24px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -899,7 +899,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center " style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                         alt="insta" width="40" style="margin-left:27px;">
+                                                         alt="insta" width="40" style="margin-left:24px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -931,7 +931,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                        alt="insta" width="40" style="margin-left:27px;">
+                                                        alt="insta" width="40" style="margin-left:24px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -963,7 +963,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                        alt="insta" width="40" style="margin-left:27px;">
+                                                        alt="insta" width="40" style="margin-left:24px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -995,7 +995,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
                                                          alt="insta"
-                                                         width="44px" height="44px" style="margin-left:27px;">
+                                                         width="44px" height="44px" style="margin-left:20px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1027,7 +1027,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}"
                                                          alt="insta"
-                                                         width="40" style="margin-left:27px;">
+                                                         width="40" style="margin-left:21px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1058,7 +1058,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
-                                                         width="40" style="margin-left:27px;">
+                                                         width="40" style="margin-left:21px;">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""

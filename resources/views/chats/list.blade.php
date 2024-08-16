@@ -87,6 +87,26 @@
         padding: 3px 8px;
         border-radius: 10px;
     }
+
+
+    /* Professional Dropdown Styling */
+
+
+#filter-dropdown:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#filter-dropdown:hover {
+    border-color: #80bdff;
+}
+
+/* Customize the dropdown arrow */
+select::-ms-expand {
+    display: none;
+}
+
     </style>
 @section('content')
     <div class="content-chat"
@@ -104,26 +124,35 @@
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-2 text-center "><input type="checkbox" class="hiddencheck"  id="check-all"></div>
+                                        <div class="col-md-2 text-center ">
+                                            <input type="checkbox" class="hiddencheck" id="check-all">
+                                        </div>
                                         <div class="col-md-10 hiddencheck">Select All</div>
                                     </div>
                                 </div>
-                                <div class="col-md-4"></div>
-                                <div class="col-md-2 hiddentrash" >
+                                <div class="col-md-2" style="margin-left: -97px;">
+                                    <select class="form-select" id="filter-dropdown" style="width: 190%; border:transparent !important">
+                                        <option value="all">All Chats</option>
+                                        <option value="favorites">Favorites</option>
+                                        <option value="blocked">Blocked</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <i class="fa fa-trash " style="color: rgb(9, 9, 166);"></i>
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 163px;">
+                                            <i class="fa fa-trash" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 edit" >
+                                <div class="col-md-2 edit">
                                     <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <i class="fa fa-pencil " id="edit-icon" style="color: rgb(9, 9, 166);"></i>
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 163px;">
+                                            <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <!-- <div class="chat-header">
                                 <form class="chat-search">
                                     <div class="input-group">
@@ -138,7 +167,6 @@
 
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
-
                                     @foreach($chats as $chat)
                                         <input type="checkbox" style="position:relative;top:57px;right:250px;"
                                                value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
@@ -148,33 +176,42 @@
                                            id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
                                             <div class="media-img-wrap flex-shrink-0">
-                                                {{-- avatar-away --}}
                                                 <div class="avatar">
                                                     <img
-                                                        src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                        src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: 'https://via.placeholder.com/30x30' }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div>
+                                                
                                             </div>
                                             <div class="media-body flex-grow-1">
                                                 <div>
-                                                    <div
-                                                        class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }}</div>
+                                                    <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }}</div>
                                                     <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                 </div>
                                                 <div>
-                                                    <div
-                                                        class="last-chat-time block">{{ $chat->latest_message_recieved_time_diff }}55</div>
-
-                                                    <div
-                                                        class="badge bgg-yellow badge-pill unread-count"
-                                                        style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
+                                                   
+                                                    <div class="badge bgg-yellow badge-pill unread-count"
+                                                         style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
                                                 </div>
+                                                <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -58px;margin-bottom: 25px;">
+                                                    <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
+                                                        <i class="fa fa-heart" style="color: red;"></i>
+                                                    </button>
+                                                    <button class="btn btn-link block-chat" title="Block" data-chat-id="{{ $chat->id }}">
+                                                        <i class="fa fa-ban" style="color: grey;"></i>
+                                                    </button>
+                                                </div>
+                                              
                                             </div>
+                                            <div class="last-chat-time block" style="margin-top: 26px;">{{ $chat->latest_message_recieved_time_diff }}</div>
                                         </a>
+                                        <!-- Add Favorite and Block Icons -->
+                                       
                                     @endforeach
                                 </div>
                             </div>
+                            
                         </div>
 
                         <div class="chat-cont-right">
@@ -306,6 +343,68 @@
     <script type="text/javascript">
 
         var api_url = "{{ env('API_URL') }}";
+$(document).ready(function() {
+    // Handle favorite button click
+    $('.favorite-chat').on('click', function() {
+        var $button = $(this); // Cache the button element
+        var itemId = $button.data('chat-id');
+        alert( itemId);
+        
+        // AJAX POST request for favoriting an item
+        $.post('/favorite-chat', { item_id: itemId })
+            .done(function(response) {
+                // Handle success
+                console.log('Item favorited:', response);
+                
+                // Change icon color to green
+                $button.find('i.fa-heart').css('color', 'green');
+                // Optionally add a class for future reference
+                $button.addClass('favorited');
+            })
+            .fail(function(error) {
+                // Handle error
+                console.log('Error favoriting item:', error);
+                // Display an error message to the user
+            });
+    });
+
+    // Handle block button click
+    $('.block-chat').on('click', function() {
+        var $button = $(this); // Cache the button element
+        var itemId = $button.data('chat-id');
+        alert( itemId);
+        // AJAX POST request for blocking an item
+        $.post('/block-chat', { item_id: itemId })
+            .done(function(response) {
+                // Handle success
+                console.log('Item blocked:', response);
+                // Optionally, you could remove the item from the list or mark it somehow
+            })
+            .fail(function(error) {
+                // Handle error
+                console.log('Error blocking item:', error);
+                // Display an error message to the user
+            });
+    });
+
+    //fiter dropdown
+
+    $('#filter-dropdown').on('change', function() {
+        var filterValue = $(this).val();
+
+        if (filterValue === 'favorites') {
+            $('.chat-item').hide(); // Hide all chats
+            $('.chat-item.favorited').show(); // Show only favorited chats
+        } else if (filterValue === 'blocked') {
+            $('.chat-item').hide(); // Hide all chats
+            $('.chat-item.blocked').show(); // Show only blocked chats
+        } else {
+            $('.chat-item').show(); // Show all chats
+        }
+    });
+
+});
+
 
         $(document).ready(function () {
 

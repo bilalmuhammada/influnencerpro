@@ -13926,6 +13926,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-right .chat-body .media.received .media-body .msg-box>div {
     /* background-color: #0504aa; */
+    gap:12px;
     background-color: #E8EFFF;
 }
 

@@ -2,6 +2,14 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @section('content')
     <style>
+        .lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
+}
+.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
+    width: 125px !important;
+    margin-right: 120px !important; 
+    text-align: center !important;
+}
         .switch {
             position: relative;
             display: inline-block;
@@ -267,13 +275,13 @@ width: 195px !important;
                                 
                                 
                                 @php
-                                $color = 'red';
-                                  $color1 = 'green';
+                                $color = 'white';
+                                  $color1 = 'white';
                                   
                                   if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
                                       if ($influencer->favourites[0]->influencer_id == $influencer->id) {
                                           if ($influencer->favourites[0]->fr_in == 1) {
-                                              $color = 'goldenrod';
+                                              $color = 'red';
                                           }
                                        
                                       }
@@ -283,7 +291,7 @@ width: 195px !important;
                                       if ($influencer->invented[0]->influencer_id == $influencer->id) {
                                           
                                           if ($influencer->invented[0]->fr_in == 2) {
-                                              $color1 = '#099ffc';
+                                              $color1 = 'green';
                                           }
                                       }
                                   }
@@ -407,8 +415,7 @@ width: 195px !important;
                                     <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                 <h5 style="font-size:12px;">
                                     Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                    &nbsp;&nbsp;Based
-                                    in: {{ $influencer->state ? $influencer->state->name : '' }}</h5>
+                                    &nbsp;&nbsp;City: {{ $influencer->state ? $influencer->state->name : '' }}</h5>
                             </div>
                         </div>
                     </div>

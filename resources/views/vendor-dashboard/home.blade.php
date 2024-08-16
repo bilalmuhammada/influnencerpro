@@ -852,13 +852,13 @@ width: 200px !important;
                                         
                                           
                     @php
-    $color = 'red';
-    $color1 = '#61de2a';
+    $color = 'white';
+    $color1 = 'white';
     
     if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
         if ($influencer->favourites[0]->influencer_id == $influencer->id) {
             if ($influencer->favourites[0]->fr_in == 1) {
-                $color = 'goldenrod';
+                $color = 'red';
             }
          
         }
@@ -868,7 +868,7 @@ width: 200px !important;
         if ($influencer->invented[0]->influencer_id == $influencer->id) {
             
             if ($influencer->invented[0]->fr_in == 2) {
-                $color1 = '#099ffc';
+                $color1 = 'green';
             }
         }
     }
@@ -994,8 +994,7 @@ width: 200px !important;
                                         <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                            {{-- &nbsp;&nbsp;Based
-                                            in: {{ $influencer->state ? $influencer->state->name : '' }} --}}
+                                            &nbsp;&nbsp;City: {{ $influencer->state ? $influencer->state->name : '' }}
                                         </h5>
                                     </div>
                                 </div>
