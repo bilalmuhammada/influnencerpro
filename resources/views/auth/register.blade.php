@@ -264,10 +264,10 @@
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="email" class="form-control floating"   pattern="\+?\d*" name="age">
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating"   pattern="\+?\d*" oninput="validateInput(this)" name="age">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid age.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Age</label>
                                             </div>
                                             <div class="form-group form-focus">
