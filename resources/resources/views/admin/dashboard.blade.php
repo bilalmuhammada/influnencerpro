@@ -60,6 +60,7 @@
                     <div class="card-header">
                         <h2 class="card-title">Profile Visit (Month wise count)</h2>
                     </div>
+                    
                     <div class="card-content">
                         <div id="barChart"></div>
                     </div>

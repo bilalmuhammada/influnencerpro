@@ -13,6 +13,9 @@ width: 212px !important;
 .apexcharts-legend {
     margin-right: 6pc !important;
 }
+.apexcharts-toolbar{
+    display: none !important;
+}
 </style>
 @section('content')
 
@@ -96,7 +99,7 @@ width: 212px !important;
             <div class="col-md-12" style="padding:10px;">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Analytics</h2>
+                        <h2 class="card-title" style="margin-left: -5px;">Profile Analytics</h2>
                     </div>
                     <div class="card-content">
                         <div id="barChart"></div>
@@ -292,7 +295,7 @@ $(function() {
                 },
                 yaxis: {
                     title: {
-                        text: '(Count)'
+                        // text: '(Count)'
                     }
                 },
                 fill: {
