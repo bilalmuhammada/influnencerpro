@@ -67,7 +67,7 @@
 
 
                 <li class="has-submenu {{ request()->is('subscriptions') || request()->is('reports/transaction-history') ? 'active' : '' }}">
-                    <a href="#">Subscriptions<i class="fas fa-chevron-down"></i></a>
+                    <a href="#">Subscription<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
                         <li class="has-submenu">
                             @if(session()->get('role') == 'influencer')

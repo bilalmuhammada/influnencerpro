@@ -770,9 +770,9 @@ display: none !important;
                                     <div class="col-md-8">
                                         <div class="form-group form-focus">
 
-                                             <input type="text" class="form-control floating" id="Priceinclude" name="price_include"
+                                            <textarea class="form-control floating" style="height:52px;" id="Priceinclude" name="price_include"
                                                    placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
-                                                   value="{{ $influencer_personal_info->price_include ?? ''  }}"/>
+                                                   value=""> {{ $influencer_personal_info->price_include ?? ''  }} </textarea>
                                             {{-- <select name="Priceinclude" id="Priceinclude" 
                                                     class="form-control floating " >
                                                 <option value="">Price Negotiable</option> 

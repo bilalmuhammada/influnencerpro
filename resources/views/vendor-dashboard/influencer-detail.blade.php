@@ -489,13 +489,13 @@ color: #0504aa !important;
                                     </div>
                                 </div>
                                
-                                <div class="col-md-6" >
+                                <div class="col-md-12" >
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{$influencer->personal_information->price_include ?? ''}}
+                                        <p style="text-align:justify;font-size:12px;" 
+                                            class="badge-skill">{{$influencer->personal_information->price_include ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
-                                        </span>
+                                        </p>
                                     </div>
                                 </div>
                                 
