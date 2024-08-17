@@ -1,10 +1,20 @@
 @extends('layout.master')
 @section('content')
     <style>
-        .invalid-feedback {
+
+.lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
+}
+.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
+    width: 125px !important;
+    margin-right: 120px !important; 
+    text-align: center !important;
+}
+
+ .invalid-feedback {
             margin-top: 0px !important;
-        }
-        .floating:focus {
+          }
+.floating:focus {
     border: 1px solid blue !important;
 }
 ::-webkit-scrollbar {

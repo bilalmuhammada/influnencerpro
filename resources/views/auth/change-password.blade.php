@@ -36,7 +36,7 @@
                                     <button class="btn-block btn-lg t-btn reset-btn" type="submit">Reset</button>
                                     <div class="row">
                                         <div class="col-6 text-end dont-have">Login <a
-                                                href="{{ env('BASE_URL') }}login">Click
+                                                href="{{ env('BASE_URL') }}/login">Click
                                                 here</a></div>
                                     </div>
                                 </form>

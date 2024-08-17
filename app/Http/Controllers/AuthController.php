@@ -933,7 +933,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Account Setting Update successfully',
+            'message' => 'Updated',
         ]);
     }
 
