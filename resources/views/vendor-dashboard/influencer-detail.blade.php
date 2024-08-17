@@ -153,7 +153,7 @@ color: #0504aa !important;
                             <!-- <lable>Book Talent<i class="fa fa-email"></i></lable> -->
                             <!-- <a href="javascript:void(0);">Clear All</a> -->
                         </div>
-                        <div class="card-body" style="background-color:#f2e49c;height: 974px;">
+                        <div class="card-body" style="background-color:#f2e49c;height: auto;">
 
                             <div class="filter-widget">
                                 <h4><b>Profile Info</b></h4>
