@@ -288,7 +288,7 @@ width: 195px !important;
                                       if ($influencer->invented[0]->influencer_id == $influencer->id) {
                                           
                                           if ($influencer->invented[0]->fr_in == 2) {
-                                              $color1 = 'green';
+                                              $color1 = '#61de2a';
                                           }
                                       }
                                   }
@@ -486,9 +486,9 @@ dateFormat: 'dd-mm-yy'
                 success: function (response) {
 
                     if(response.fr_in==2){
-                        $('.add-to-favourite').css('color', 'green');
+                        $('.add-to-invented').css('color', '#61de2a');
                       }else{
-                        $('.add-to-favourite').css('color', 'white');
+                        $('.add-to-invented').css('color', 'white');
 }
 
                     if (response.status) {

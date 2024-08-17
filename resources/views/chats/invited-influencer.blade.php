@@ -531,9 +531,9 @@ dateFormat: 'dd-mm-yy'
                 },
                 success: function (response) {
                     if(response.fr_in==2){
-                        $('.add-to-favourite').css('color', 'green');
+                        $('.add-to-invented').css('color', '#61de2a');
                       }else{
-                        $('.add-to-favourite').css('color', 'white');
+                        $('.add-to-invented').css('color', 'white');
 }
  
 
