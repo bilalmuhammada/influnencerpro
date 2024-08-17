@@ -101,7 +101,7 @@
 color: #0504aa !important;
 }
 .open-chat{
-    color: goldenrod !important;
+    color: 997045 !important;
 }
 
 .image-actions img {
