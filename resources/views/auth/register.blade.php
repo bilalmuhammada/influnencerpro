@@ -11,6 +11,9 @@
         .email::placeholder {
             color: red !important;
         }
+        input::placeholder {
+            font-size: 12px;
+        }
         .form-control:invalid ~ .invalid-feedback {
             display: block;
         }
