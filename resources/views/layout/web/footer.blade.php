@@ -182,7 +182,7 @@
                             </a>
                         </div>
                         <div class="copyright-text bilal-footer1" >
-                            <p class="mb-0">© InfluencerPro.org 2023. All Rights Reserved.</p>
+                            <p class="mb-0">© InfluencerPro.org 2024. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-4 right-text">
