@@ -740,7 +740,7 @@ width: 200px !important;
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">
-                                    <li class="@if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->facebook != 'on') active @endif">
+                                    <li class="@if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif">
                                         <a href="{{ env('BASE_URL') }}/vendor/dashboard">All
                                             Influencers</a></li>
                                     <li class="@if(request()->instagram == 'on') active @endif">
@@ -763,7 +763,7 @@ width: 200px !important;
                                             Chat</a>
                                     </li>
                                     <li class="@if(request()->pinterest == 'on') active @endif"><a
-                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?snapchat=on">Pinterest
+                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?pinterest=on">Pinterest
                                         </a>
                                 </li>
                                     <li class="@if(request()->website == 'on') active @endif"><a

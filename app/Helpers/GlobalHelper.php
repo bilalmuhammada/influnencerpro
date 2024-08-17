@@ -167,7 +167,7 @@ function getInfluencersByCategoryIdAndFilter($filter)
             $query->where('status', $filter->input('status'));
         });
 
-    $query = applySocialMediaFilter($query, $filter, ['instagram', 'facebook', 'tiktok', 'twitter', 'youtube', 'snapchat']);
+    $query = applySocialMediaFilter($query, $filter, ['instagram', 'facebook', 'tiktok', 'twitter', 'youtube', 'website','pinterest','snapchat']);
     $query = applyInfluencerFollowersFilter($query, $filter, ['nano', 'micro', 'small', 'medium', 'large', 'mega']);
     $query = applyNameFilter($query, $filter);
     $query = applyGenderFilter($query, $filter, ['MALE', 'FEMALE', 'OTHER']);
