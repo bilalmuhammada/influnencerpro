@@ -736,7 +736,7 @@ width: 200px !important;
                 </div>
 
                 <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="col-md-9 mx-auto text-center">
+                    <div class="col-md-10 mx-auto text-center">
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">
@@ -762,6 +762,10 @@ width: 200px !important;
                                             href="{{ env('BASE_URL') }}/vendor/influencers-filter?snapchat=on">Snap
                                             Chat</a>
                                     </li>
+                                    <li class="@if(request()->pinterest == 'on') active @endif"><a
+                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?snapchat=on">Pinterest
+                                        </a>
+                                </li>
                                     <li class="@if(request()->website == 'on') active @endif"><a
                                         href="{{ env('BASE_URL') }}/vendor/influencers-filter?website=on">Website</a>
                                 </li>
