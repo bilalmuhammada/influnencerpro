@@ -17,6 +17,9 @@
 .floating:focus {
     border: 1px solid blue !important;
 }
+input::placeholder {
+            font-size: 12px;
+        }
 ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }
