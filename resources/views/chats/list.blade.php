@@ -125,9 +125,9 @@ select::-ms-expand {
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-2 text-center ">
-                                            <input type="checkbox" class="hiddencheck" id="check-all">
+                                            <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 5px;margin-top: 14px;">
                                         </div>
-                                        <div class="col-md-10 hiddencheck">Select All</div>
+                                        <div class="col-md-10 hiddencheck" style="margin-top: 8px;">Select All</div>
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
@@ -168,7 +168,7 @@ select::-ms-expand {
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                        <input type="checkbox" style="position:relative;top:57px;right:250px;"
+                                        <input type="checkbox" style="position:relative;top:49px;right:244px;"
                                                value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"

@@ -105,21 +105,21 @@
                     </a>
      <div class="dropdown-menu notifications"
      style="width: 400px; margin-left: -240px; height: auto; overflow: auto;">
-    <div class="topnav-dropdown-header" style="white-space: nowrap; gap: 10pc; display: flex;">
+    <div class="topnav-dropdown-header" style="white-space: nowrap; gap: 171px; display: flex;">
         <span class="notification-title p-2">Notifications</span>
         <a href="javascript:void(0)" class="clear-noti p-2 read-all-notification" onclick="markAllAsRead()">Mark all as Read</a>
     </div>
     <div class="noti-content p-2" onclick="event.stopPropagation()">
         <ul class="notification-list">
             @forelse (getUnreadMessages() as $message)
-            <li class="notification-message" style="margin-bottom: 12px; position: relative;">
+            <li class="notification-message" style="margin-bottom: 5px; position: relative;">
                 <div style="display: contents;">
                     <div class="media d-flex" style="background-color: whitesmoke; position: relative;">
                         <span class="avatar avatar-sm flex-shrink-0" style="margin: 12px;">
                             <img class="avatar-img rounded-circle" alt src="{{ $message->receiver->image_url ?? asset('assets/img/user/avatar-2.jpg')}}">
                         </span>
                        
-                        <div class="media-body flex-grow-1" style="padding: 11px 0px 0px 0px; font-size: 12px;">
+                        <div class="media-body flex-grow-1" style="padding: 9px 0px 0px 11px; font-size: 12px;">
                             <p class="noti-details" style="font-weight:bolder ">
                                 <span class="noti-title">{{$message->receiver->name ?? '' }}</span>
                             </p>
@@ -130,7 +130,7 @@
                                 <span class="notification-time" style="font-weight: normal;">{{ $message->message_recieved_time_diff }}</span>
                             </p>
                         </div>
-                        <div class="notification-options" style="position: absolute; top: 12px; right: 12px;">
+                        <div class="notification-options" style="position: absolute; top: 0px; right: 12px;">
                             <button class="btn btn-link" onclick="toggleOptionsMenu(event)">
                                 <i class="fa fa-ellipsis-h"></i>
                             </button>
