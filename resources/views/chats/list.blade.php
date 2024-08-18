@@ -236,9 +236,29 @@ select::-ms-expand {
                                                         class="avatar-img rounded-circle">
                                                 </div>
                                             </div>
+                                            @php
+                                        $user_categories = DB::table('user_categories')
+    ->join('categories', 'user_categories.category_id', '=', 'categories.id')
+    ->where('user_categories.user_id', getSafeValueFromObject($chat->other_user, 'id'))
+    ->select('categories.name')
+    ->get();
+
+// dd($user_categories);
+
+$categoryNames = '';
+foreach ($user_categories as $key => $category) {
+    // Append the category name to the string
+    $categoryNames .= $category->name;
+
+    // Add a comma and space if it's not the last category
+    if ($key != $user_categories->count() - 1) {
+        $categoryNames .= ', ';
+    }
+}
+@endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
+                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
                                                 {{--                                            <div class="user-status">online</div>--}}
                                             </div>
                                         </div>

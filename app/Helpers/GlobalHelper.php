@@ -393,11 +393,14 @@ function getUnreadMessages()
 
 function getSafeValueFromObject($object, $index='', $default = '')
 {
+    
 
     // Check if the object is null or not an object
     if (empty($object) || !is_object($object)) {
         return $default;
     }
+
+    
 
 
     // Check if the index exists and is not null
