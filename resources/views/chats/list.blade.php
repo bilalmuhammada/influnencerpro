@@ -131,7 +131,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
-                                    <select class="form-select" id="filter-dropdown" style="width: 190%; border:transparent !important">
+                                    <select class="form-select" id="filter-dropdown" style="width: 177%; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favorites</option>
                                         <option value="blocked">Blocked</option>
@@ -139,7 +139,7 @@ select::-ms-expand {
                                 </div>
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 163px;">
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 169px;">
                                             <i class="fa fa-trash" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
@@ -198,7 +198,7 @@ select::-ms-expand {
                                                     <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-heart" style="color: red;"></i>
                                                     </button>
-                                                    <button class="btn btn-link block-chat" title="Block" data-chat-id="{{ $chat->id }}">
+                                                    <button class="btn btn-link block-chat" title="Block" style="padding: 2px;"  data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-ban" style="color: grey;"></i>
                                                     </button>
                                                 </div>
