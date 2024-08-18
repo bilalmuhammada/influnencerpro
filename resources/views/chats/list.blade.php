@@ -131,7 +131,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
-                                    <select class="form-select" id="filter-dropdown" style="width: 177%; border:transparent !important">
+                                    <select class="form-select" id="filter-dropdown" style="width: 177%; padding: 0; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favorites</option>
                                         <option value="blocked">Blocked</option>
@@ -139,7 +139,7 @@ select::-ms-expand {
                                 </div>
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 169px;">
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 175px;">
                                             <i class="fa fa-trash" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
