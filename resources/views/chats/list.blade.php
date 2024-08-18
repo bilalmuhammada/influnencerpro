@@ -168,7 +168,7 @@ select::-ms-expand {
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                        <input type="checkbox" style="position:relative;top:49px;right:244px;"
+                                        <input type="checkbox" style="position:relative;top:41px;right:251px;"
                                                value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
