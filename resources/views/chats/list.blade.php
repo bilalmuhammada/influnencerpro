@@ -133,7 +133,7 @@ select::-ms-expand {
                                 <div class="col-md-2" style="margin-left: -97px;">
                                     <select class="form-select" id="filter-dropdown" style="width: 152%; padding: 0; border:transparent !important">
                                         <option value="all">All Chats</option>
-                                        <option value="favorites">Favorites</option>
+                                        <option value="favorites">Favourites</option>
                                         <option value="blocked">Blocked</option>
                                     </select>
                                 </div>
@@ -168,13 +168,14 @@ select::-ms-expand {
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                        <input type="checkbox" style="position:relative;top:41px;right:251px;"
-                                               value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
+                                      
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;"
                                            id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
+                                           <input type="checkbox" style="width: 27 !important; margin-left:-14px; "
+                                           value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                             <div class="media-img-wrap flex-shrink-0">
                                                 <div class="avatar">
                                                     <img
@@ -196,10 +197,10 @@ select::-ms-expand {
                                                 </div>
                                                 <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -63px;margin-bottom: 25px;">
                                                     <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-heart" style="color: red;"></i>
+                                                        <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
                                                     <button class="btn btn-link block-chat" title="Block" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban" style="color: grey;"></i>
+                                                        <i class="fa fa-ban"  style="color: {{ $chat->is_blocked ? 'yellow' : 'grey' }};"></i>
                                                     </button>
                                                 </div>
                                               
@@ -366,47 +367,47 @@ foreach ($user_categories as $key => $category) {
 $(document).ready(function() {
     // Handle favorite button click
     $('.favorite-chat').on('click', function() {
-        var $button = $(this); // Cache the button element
-        var itemId = $button.data('chat-id');
-        alert( itemId);
-        
-        // AJAX POST request for favoriting an item
-        $.post('/favorite-chat', { item_id: itemId })
-            .done(function(response) {
-                // Handle success
-                console.log('Item favorited:', response);
-                
-                // Change icon color to green
-                $button.find('i.fa-heart').css('color', 'green');
-                // Optionally add a class for future reference
-                $button.addClass('favorited');
-            })
-            .fail(function(error) {
-                // Handle error
-                console.log('Error favoriting item:', error);
-                // Display an error message to the user
-            });
-    });
+            var button = $(this);
+            var chatId = button.data('chat-id');
 
-    // Handle block button click
-    $('.block-chat').on('click', function() {
-        var $button = $(this); // Cache the button element
-        var itemId = $button.data('chat-id');
-        alert( itemId);
-        // AJAX POST request for blocking an item
-        $.post('/block-chat', { item_id: itemId })
-            .done(function(response) {
-                // Handle success
-                console.log('Item blocked:', response);
-                // Optionally, you could remove the item from the list or mark it somehow
-            })
-            .fail(function(error) {
-                // Handle error
-                console.log('Error blocking item:', error);
-                // Display an error message to the user
+            $.ajax({
+                url: "{{ route('chat.favorite') }}",
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    chat_id: chatId
+                },
+                success: function(response) {
+                    if (response.is_favorite) {
+                        button.find('i').css('color', 'red');
+                    } else {
+                        button.find('i').css('color', 'grey');
+                    }
+                }
             });
-    });
+        });
 
+        // Toggle block
+        $('.block-chat').on('click', function() {
+            var button = $(this);
+            var chatId = button.data('chat-id');
+
+            $.ajax({
+                url: "{{ route('chat.block') }}",
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    chat_id: chatId
+                },
+                success: function(response) {
+                    if (response.is_blocked) {
+                        button.find('i').css('color', 'yellow');
+                    } else {
+                        button.find('i').css('color', 'grey');
+                    }
+                }
+            });
+        });
     //fiter dropdown
 
     $('#filter-dropdown').on('change', function() {

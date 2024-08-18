@@ -48,6 +48,24 @@ class ChatController extends Controller
             'login_user_id' => SiteHelper::getLoginUserId()
         ]);
     }
+    public function toggleFavorite(Request $request)
+    {
+        $chat = Chat::findOrFail($request->chat_id);
+        $chat->is_favorite = !$chat->is_favorite;
+        $chat->save();
+
+        return response()->json(['is_favorite' => $chat->is_favorite]);
+    }
+
+    public function toggleBlock(Request $request)
+    {
+        $chat = Chat::findOrFail($request->chat_id);
+        $chat->is_blocked = !$chat->is_blocked;
+        $chat->save();
+
+        return response()->json(['is_blocked' => $chat->is_blocked]);
+    }
+
 
     public function getAcceptedUserForChat(Request $request)
     {

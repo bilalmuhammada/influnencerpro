@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('chats/invited-influencers/', [\App\Http\Controllers\ChatController::class, 'invitedInfluencer']);
 Route::get('/chats/', [\App\Http\Controllers\ChatController::class, 'index']);
+Route::post('/chat/favorite',[\App\Http\Controllers\ChatController::class,'toggleFavorite'])->name('chat.favorite');
+Route::post('/chat/block', [\App\Http\Controllers\ChatController::class,'toggleBlock'])->name('chat.block');
+
 // Route::prefix('/auth')->group(function () {
 //     Route::post("/register", [AuthController::class, 'registerBackend']);
 //     Route::post("/login", [AuthController::class, 'loginBackend']);
