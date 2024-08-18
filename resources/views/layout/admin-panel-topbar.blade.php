@@ -126,7 +126,7 @@
                             <p class="noti-details">
                                 <span class="noti-title" style="font-weight: normal;">{{ $message->message }}</span>
                             </p>
-                            <p class="noti-time">
+                            <p class="noti-time" style="margin-top: 2px;">
                                 <span class="notification-time" style="font-weight: normal;">{{ $message->message_recieved_time_diff }}</span>
                             </p>
                         </div>
@@ -135,8 +135,8 @@
                                 <i class="fa fa-ellipsis-h"></i>
                             </button>
                             <div class="options-menu" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); z-index: 1000;">
-                                <a href="javascript:void(0)" class="dropdown-item" onclick="markAsRead('{{ $message->id }}')">Mark as Read</a>
-                                <a href="javascript:void(0)" class="dropdown-item" onclick="removeNotification('{{ $message->id }}')">Remove</a>
+                                <a href="javascript:void(0)" class="dropdown-item" style="font-weight:200;" onclick="markAsRead('{{ $message->id }}')">Mark as Read</a>
+                                <a href="javascript:void(0)" class="dropdown-item" style="font-weight:200;" onclick="removeNotification('{{ $message->id }}')">Remove</a>
                             </div>
                         </div>
                     </div>

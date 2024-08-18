@@ -258,7 +258,7 @@ foreach ($user_categories as $key => $category) {
 @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <b>{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</b></div>
+                                                    class="user-name"><b>{{ getSafeValueFromObject($chat->other_user, 'name') }} - <b>{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</b></div>
                                                 {{--                                            <div class="user-status">online</div>--}}
                                             </div>
                                         </div>
