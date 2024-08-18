@@ -194,7 +194,7 @@ select::-ms-expand {
                                                     <div class="badge bgg-yellow badge-pill unread-count"
                                                          style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
                                                 </div>
-                                                <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -58px;margin-bottom: 25px;">
+                                                <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -82px;margin-bottom: 25px;">
                                                     <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-heart" style="color: red;"></i>
                                                     </button>
@@ -258,7 +258,7 @@ foreach ($user_categories as $key => $category) {
 @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
+                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <b>{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</b></div>
                                                 {{--                                            <div class="user-status">online</div>--}}
                                             </div>
                                         </div>
