@@ -66,14 +66,14 @@ input::placeholder {
                                         <label class="focus-label">Name </label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="email" class="form-control floating" name="email" readonly value="{{ session()->get('User')['email'] }}">
+                                        <input type="email" class="form-control floating" name="email" placeholder="Please provide a valid email."  value="{{ session()->get('User')['email'] }}">
                                         <label class="focus-label">Email </label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="text" class="form-control floating" name="phone" value="{{ session()->get('User')['phone'] }}">
-                                        <div class="invalid-feedback">
+                                        <input type="text" class="form-control floating" name="phone" placeholder="Please enter a valid Mobile." value="{{ session()->get('User')['phone'] }}">
+                                        {{-- <div class="invalid-feedback">
                                             Please provide a valid Mobile.
-                                        </div>
+                                        </div> --}}
                                         <label class="focus-label">Mobile </label>
                                     </div>
                                    <div class="form-group form-focus">
