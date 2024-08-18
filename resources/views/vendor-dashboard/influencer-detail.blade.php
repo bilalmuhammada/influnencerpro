@@ -710,14 +710,14 @@ color: #0504aa !important;
                     @php
                     // dd($influencer->user_professional_detail);
                     @endphp
-                    <div class="details" style="margin-top:-15px;margin-bottom:8px;">
+                    <div class="details" style="margin-top:-5px;">
                         <div class="row">
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
                             @php
                             if($influencer->personal_information!=null){
                             $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
-                            $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
+                            $country =  DB::table('countries')->where('id',$influencer->personal_information->national_id)->first();
                             }
                               @endphp
                             <div class="col-md-3"><span

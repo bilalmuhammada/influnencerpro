@@ -245,11 +245,11 @@ display: none !important;
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus">
                                           
-                                            <select name="country_id" id="" class="form-control floating">
+                                            <select name="national_id" id="" class="form-control floating">
                                                 {{-- <option value="">Country</option> --}}
                                                 @foreach(getCountries() as $country)
                                                     <option
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->national_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
   <label for="" class="focus-label">Nationality</label>

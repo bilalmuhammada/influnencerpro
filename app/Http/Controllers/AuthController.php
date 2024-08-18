@@ -476,7 +476,7 @@ class AuthController extends Controller
 
             'willing_to_traval' => $request->willing_to_traval,
             'is_collaboration' => $request->is_collaboration,
-
+            'national_id' =>$request->national_id,
             'country_id' => $request->base_country_id,
             'city_id' => $request->base_city_id,
 

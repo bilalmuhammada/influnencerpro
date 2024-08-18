@@ -704,12 +704,12 @@ width: 200px !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Availability</label>
-                                            <input type="text" class="form-control datepicker" name="availability_from_date" placeholder=" Date" onchange="formatDate(this)"
+                                            <input type="text" class="form-control datepicker" name="availability_from_date" placeholder=" Date" 
                                                    value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">&nbsp;</label>
-                                            <input type="text" class="form-control datepicker" name="availability_to_date" placeholder=" Date" onchange="formatDate(this)"
+                                            <input type="text" class="form-control datepicker" name="availability_to_date" placeholder=" Date" 
                                                    value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                     </div>
@@ -1026,6 +1026,12 @@ width: 200px !important;
     <script src="{{ asset('assets/js/range.js') }}"></script>
     <script src="{{ asset('assets/js/skills.js') }}"></script>
     <script>
+         $(document).ready(function () {
+   
+   $('.datepicker').datepicker({
+       dateFormat: 'dd-mm-yy'
+   });
+});
         function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
     input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
@@ -1046,10 +1052,7 @@ width: 200px !important;
 
         $(document).ready(function () {
    
-            $('.datepicker').attr('readonly', 'readonly').datepicker({
-                dateFormat: 'dd-mm-yy'
-            });
-
+          
             
             $('.seletct2').select2();
        
