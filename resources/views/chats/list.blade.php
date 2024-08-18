@@ -198,7 +198,7 @@ select::-ms-expand {
                                                     <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-heart" style="color: red;"></i>
                                                     </button>
-                                                    <button class="btn btn-link block-chat" title="Block" style="padding: 2px;"  data-chat-id="{{ $chat->id }}">
+                                                    <button class="btn btn-link block-chat" title="Block" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-ban" style="color: grey;"></i>
                                                     </button>
                                                 </div>
@@ -266,7 +266,7 @@ foreach ($user_categories as $key => $category) {
                                     @if($chat->status == 'accepted')
                                         <div class="chat-body">
                                             <div class="chat-scroll">
-                                                <ul class="list-unstyled message-body">
+                                                <ul class="list-unstyled message-body" style="font-weight: 300;">
                                                     @foreach($chat->sorted_messages as $date => $sorted_messages)
                                                         <div class="text-center fw-bolds " style="font-size:12px;">{{ date("d-m-Y", strtotime($date))}}</div>
                                                         @foreach($sorted_messages as $date => $message)
