@@ -13681,8 +13681,8 @@ label.file-upload input[type="file"] {
 
 .chat-cont-left .chat-users-list a.media {
     background: #fff;
-    box-shadow: 0px 4px 4px #f5f8ff;
-    margin: 10px;
+    /* box-shadow: 0px 4px 4px #f5f8ff; */
+    /* margin: 10px; */
     padding: 10px 15px;
     transition: all 0.2s ease 0s;
 }
