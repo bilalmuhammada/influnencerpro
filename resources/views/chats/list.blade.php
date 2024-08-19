@@ -68,6 +68,10 @@
         color: #666;
         font-size: 14px;
     }
+    .emojionearea.emojionearea-inline {
+
+    border-radius: 25px !important;
+}
     
     .chat-info {
         display: flex;
