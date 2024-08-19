@@ -1662,11 +1662,11 @@
   
   
       <div class="marquee-item">
-          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: -39px; height: 132px; width: 123px;"  alt="">
+          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: 1px; height: 41; width: 51px;"  alt="">
       </div>
   
       <div class="marquee-item">
-          <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: 1px; height: 51px; width: 141px;"  alt="">
+          <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: -39px; height: 132px; width: 123px;"  alt="">
       </div>
   
     {{-- <div class="marquee-item">
