@@ -11,6 +11,16 @@
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
         filter: sepia(22%) saturate(904%) hue-rotate(12deg) !important;
     }
+    .emojionearea.emojionearea-inline>.emojionearea-button{
+        right: 15px !important;
+        top:7px !important;
+    }
+    .emojionearea.focused {
+    border-color: goldenrod !important;
+    outline: 0;
+  
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(242 189 14 / 60%)  !important;
+}
     
     .chat-scroll {
         padding-right: 10px;
@@ -185,7 +195,7 @@ select::-ms-expand {
                                            style="display: flex;"
                                            id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
-                                           <input type="checkbox" style="width: 27 !important; margin-left:-14px; "
+                                           <input type="checkbox" style="width: 27 !important; margin-left:-14px;position: relative; z-index: 10; pointer-events: auto; "
                                            value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                             <div class="media-img-wrap flex-shrink-0">
                                                 <div class="avatar">
@@ -377,7 +387,12 @@ foreach ($user_categories as $key => $category) {
     <script type="text/javascript">
 
         var api_url = "{{ env('API_URL') }}";
+        $(document).on('click', '.hiddencheck', function(e) {
+    e.stopPropagation();  // Prevent the click from triggering the anchor link
+});
 $(document).ready(function() {
+
+   
     // Handle favorite button click
     $('.favorite-chat').on('click', function() {
             var button = $(this);

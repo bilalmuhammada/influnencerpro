@@ -13963,7 +13963,9 @@ label.file-upload input[type="file"] {
     /* background-color: #E8EFFF; */
     background-color: #EEE;
     color: #000;
+    display: flex;
 }
+
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box>div p {
     color: #232323;
