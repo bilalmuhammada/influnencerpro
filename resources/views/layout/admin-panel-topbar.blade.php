@@ -136,6 +136,7 @@
                             </button>
                             <div class="options-menu" style="display: none; position: absolute; top: 30px; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); z-index: 1000;">
                                 <a href="javascript:void(0)" class="dropdown-item" style="font-weight:200;" onclick="markAsRead('{{ $message->id }}')">Mark as Read</a>
+                                <hr style="margin: 0;">
                                 <a href="javascript:void(0)" class="dropdown-item" style="font-weight:200;" onclick="removeNotification('{{ $message->id }}')">Remove</a>
                             </div>
                         </div>
