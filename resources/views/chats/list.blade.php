@@ -47,6 +47,13 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+    .chat-title:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
     
     .user-info {
         flex-grow: 1;
@@ -170,7 +177,7 @@ select::-ms-expand {
                                     @foreach($chats as $chat)
                                       
                                         <a href="javascript:void(0);"
-                                           class="media chat-title @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                           class="media chat-title @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;"
                                            id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
@@ -196,17 +203,19 @@ select::-ms-expand {
                                                          style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
                                                 </div>
                                                 <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -63px;margin-bottom: 25px;">
-                                                    <button class="btn btn-link favorite-chat" title="Favorite" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
+                                                    <button class="btn btn-link favorite-chat" title="{{ $chat->is_favorite ? 'Favourite ' : 'Unfavourites ' }}" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
-                                                    <button class="btn btn-link block-chat" title="Block" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban"  style="color: {{ $chat->is_blocked ? 'yellow' : 'grey' }};"></i>
+                                                    <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Block' : 'Unblock ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
+                                                        <i class="fa fa-ban"  style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"></i>
                                                     </button>
                                                 </div>
                                               
                                             </div>
                                             <div class="last-chat-time block" style="margin-top: 26px;">{{ $chat->latest_message_recieved_time_diff }}</div>
+                                          
                                         </a>
+                                      
                                         <!-- Add Favorite and Block Icons -->
                                        
                                     @endforeach
@@ -401,7 +410,7 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     if (response.is_blocked) {
-                        button.find('i').css('color', 'yellow');
+                        button.find('i').css('color', 'goldenrod');
                     } else {
                         button.find('i').css('color', 'grey');
                     }
@@ -410,19 +419,21 @@ $(document).ready(function() {
         });
     //fiter dropdown
 
+    
     $('#filter-dropdown').on('change', function() {
         var filterValue = $(this).val();
 
-        if (filterValue === 'favorites') {
-            $('.chat-item').hide(); // Hide all chats
-            $('.chat-item.favorited').show(); // Show only favorited chats
+        if (filterValue === 'all') {
+            $('.chat-title').show(); // Show all chats
+        } else if (filterValue === 'favorites') {
+            $('.chat-title').hide(); // Hide all chats
+            $('.favorite').show();   // Show only favorite chats
         } else if (filterValue === 'blocked') {
-            $('.chat-item').hide(); // Hide all chats
-            $('.chat-item.blocked').show(); // Show only blocked chats
-        } else {
-            $('.chat-item').show(); // Show all chats
+            $('.chat-title').hide(); // Hide all chats
+            $('.blocked').show();    // Show only blocked chats
         }
     });
+
 
 });
 
