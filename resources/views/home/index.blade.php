@@ -1662,7 +1662,7 @@
   
   
       <div class="marquee-item">
-          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: 1px; height: 41; width: 51px;"  alt="">
+          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: 1px; height: 51; width: 97px;"  alt="">
       </div>
   
       <div class="marquee-item">
