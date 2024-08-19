@@ -422,7 +422,7 @@ width: 195px !important;
                 @empty
 
                     <div class="col-12 text-center">
-                        <p>Nothing Found</p>
+                        <p>No Data</p>
                     </div>
 
                 @endforelse
@@ -507,7 +507,7 @@ dateFormat: 'dd-mm-yy'
                         show_success_message(response.message);
                         $(thisElem).hide();
                         $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
-                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'red');
                     } else {
                         show_error_message(response.message);
 
@@ -543,7 +543,7 @@ dateFormat: 'dd-mm-yy'
                         show_success_message(response.message);
                         $(thisElem).hide();
                         $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
-                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', '#61de2a');
                     } else {
                         show_error_message(response.message);
 
