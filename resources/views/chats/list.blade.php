@@ -203,10 +203,10 @@ select::-ms-expand {
                                                          style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
                                                 </div>
                                                 <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -63px;margin-bottom: 25px;">
-                                                    <button class="btn btn-link favorite-chat" title="{{ $chat->is_favorite ? 'Favourite ' : 'Unfavourites ' }}" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
+                                                    <button class="btn btn-link favorite-chat" title="{{ $chat->is_favorite ? 'Unfavourite ' : 'Favourite' }}" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
-                                                    <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Block' : 'Unblock ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
+                                                    <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-ban"  style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"></i>
                                                     </button>
                                                 </div>
