@@ -319,7 +319,7 @@ foreach ($user_categories as $key => $category) {
                                                 <div class="inputs"
                                                      style="width:96%;height:42px !important;">
                                                     <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
-                                                           {{-- id="emoji-trigger" --}}
+                                                           id="emoji-trigger"
                                                            placeholder="Reply..."
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                            data-chat-id="{{ $chat->id }}">
