@@ -182,9 +182,9 @@
 
 </footer>
 <script>
-    $('.popup-video').magnificPopup({
-        type: 'iframe'
-    });
+    // $('.popup-video').magnificPopup({
+    //     type: 'iframe'
+    // });
     var slideIndex = 0;
     carousel();
 
