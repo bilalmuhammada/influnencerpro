@@ -104,7 +104,7 @@
                         Notifications
                     </a>
      <div class="dropdown-menu notifications"
-     style="width: 400px; margin-left: -240px; height: auto; overflow: auto;">
+     style="width: 450px; margin-left: -240px; height: auto; overflow: auto;">
     <div class="topnav-dropdown-header" style="white-space: nowrap; gap: 171px; display: flex;">
         <span class="notification-title p-2">Notifications</span>
         <a href="javascript:void(0)" class="clear-noti p-2 read-all-notification" onclick="markAllAsRead()">Mark all as Read</a>
