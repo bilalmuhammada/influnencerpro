@@ -1651,9 +1651,9 @@
         <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -51px; height: 132px; width: 132px;"  alt="">
       </div>
   
-      <div class="marquee-item">
+      {{-- <div class="marquee-item">
         <img src="{{ asset('assets/img/company/comp9.png') }}" style="margin-top: -25px; height: 86px; width: 138px;"  alt="">
-      </div>
+      </div> --}}
   
       <div class="marquee-item">
         <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -39px; height: 132px; width: 123px;" alt="">
@@ -1672,9 +1672,9 @@
         <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -51px; height: 132px; width: 132px;"  alt="">
       </div>
   
-      <div class="marquee-item">
+      {{-- <div class="marquee-item">
         <img src="{{ asset('assets/img/company/comp9.png') }}" style="margin-top: -25px; height: 86px; width: 138px;"  alt="">
-      </div>
+      </div> --}}
       <div class="marquee-item">
         <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -39px; height: 132px; width: 123px;"  alt="">
       </div> 
