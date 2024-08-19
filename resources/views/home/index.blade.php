@@ -1640,7 +1640,7 @@
       </div>
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="">
+        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="" style="margin-top: 9px;"
       </div>
   
       {{-- <div class="marquee-item">
