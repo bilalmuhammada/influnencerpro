@@ -379,7 +379,8 @@ width: 212px !important;
                   
                     $('#datatable').DataTable({
         language: {
-            emptyTable: "No Data"
+            emptyTable: "No Data",
+            zeroRecords: "No Data"
         }
     });
 
@@ -478,10 +479,17 @@ width: 212px !important;
 
                                 $('.transBody').html(row);
                             } else {
+                                
+                    
                                 $('.transBody').html(row);
                             }
-
-                            $('#datatable').DataTable();
+                            $('#datatable').DataTable().clear().destroy();
+                             $('#datatable').DataTable({
+        language: {
+            emptyTable: "No Data"
+          
+        }
+    });
                         }
                     });
                 }

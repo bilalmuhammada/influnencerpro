@@ -698,7 +698,7 @@ color: #0504aa !important;
                             class="text-center"
                             style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
                 </li> &nbsp;
-        @endif
+                  @endif
                          <li style="display: inline-block;float: right; margin-right: -14px; margin-top: -14px;">
                             <a class="open-chat btn" style="font-size: 21px;"
                             href="{{ env('BASE_URL') }}/chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
@@ -710,7 +710,7 @@ color: #0504aa !important;
                     @php
                     // dd($influencer->user_professional_detail);
                     @endphp
-                    <div class="details" style="margin-top:-5px;">
+                    <div class="details" style="margin-top:4px;">
                         <div class="row">
                             <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
                             </div>
@@ -784,7 +784,7 @@ color: #0504aa !important;
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
                    
-                    <div class="row">
+                    <div class="row" style="margin-top: -9px;">
 
                 
 

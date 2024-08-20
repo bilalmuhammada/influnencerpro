@@ -412,7 +412,7 @@ width: 195px !important;
                                     <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                 <h5 style="font-size:12px;">
                                     Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                    &nbsp;&nbsp;City: {{ $influencer->state ? $influencer->state->name : '' }}</h5>
+                                    &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}</h5>
                             </div>
                         </div>
                     </div>
