@@ -5,7 +5,7 @@
         overflow-y: auto;
         max-height: 400px; /* Adjust as needed */
         padding: 10px;
-        border: 1px solid #ddd;
+        /* border: 1px solid #ddd; */
         border-radius: 5px;
     }
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
@@ -19,9 +19,12 @@
     border-color: goldenrod !important;
     outline: 0;
   
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(242 189 14 / 60%)  !important;
+    box-shadow: none  !important;
 }
+    .emojionearea.emojionearea-inline>.emojionearea-editor{
+    top: 5px !important;
     
+    }
     .chat-scroll {
         padding-right: 10px;
     }
@@ -392,6 +395,19 @@ foreach ($user_categories as $key => $category) {
 });
 $(document).ready(function() {
 
+ $('.hiddentrash .fa-trash').on('click', function() {
+        if (!$('input[type="checkbox"]').is(':checked')) {
+            // Code to return to edit mode or perform your specific action
+              $('.edit').show()
+            $('.hiddencheck').hide();
+            $('.hiddentrash').hide();
+            console.log('Edit mode activated');
+            // Your edit mode logic here
+        }else{
+        
+        alert('22');
+        }
+    });
    
     // Handle favorite button click
     $('.favorite-chat').on('click', function() {
