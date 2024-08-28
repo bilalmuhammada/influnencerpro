@@ -32,25 +32,25 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="29">
+            <input type='hidden' name="total" value="59">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         
     <span class="plan-h">Star</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
-    <h6 style="padding-top:10px;" ><b>$ 29</b></h6>
+    <h6 style="padding-top:10px;" ><b>$ 59</b></h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">1 Month</div>
     </div>
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check mx-auto" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: <b>30 Days</b></li>
+        <li><i class="fa fa-check-circle"></i>  Stay  Active: 30 Days</li>
         <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar</li>
+        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar</li>
        
         <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
@@ -73,14 +73,14 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="69">
+            <input type='hidden' name="total" value="149">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         <div style="text-align:center;">
         <span class="plan-h">Gold</span>
         </div>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
-    <h6 style="padding-top:10px;" id="payment"> <b>$ 69</b>
+    <h6 style="padding-top:10px;" id="payment"> <b>$ 149</b>
          {{-- <b>(Save 15%)</b> --}}
         </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">3 Months</div>
@@ -88,13 +88,13 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: <b>90 Days</b></li>
+        <li><i class="fa fa-check-circle"></i>  Stay  Active: 90 Days</li>
         <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms </li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar </li>
+        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar </li>
 
         <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
@@ -115,13 +115,13 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="119">
+            <input type='hidden' name="total" value="279">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
     <span class="plan-h">Pro</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
     <h6 style="padding-top:10px;">
-        <b>$ 119</b>
+        <b>$ 279</b>
         {{-- <b>(Save 20%)</b>  --}}
     </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">6 Months</div>
@@ -129,13 +129,13 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: <b>180 Days</b></li>
+        <li><i class="fa fa-check-circle"></i>  Stay  Active: 180 Days</li>
         <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
         <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
         <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
         <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
-        <li><i class="fa fa-check-circle"></i>  Manager your Availability-Calendar  </li>
+        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar  </li>
 
         <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
         <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
