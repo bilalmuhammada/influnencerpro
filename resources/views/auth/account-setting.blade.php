@@ -34,6 +34,13 @@ input::placeholder {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.fa-eye-slash {
+    position: absolute !important;
+    top: 28% !important;
+    right: 4% !important;
+    cursor: pointer !important;
+    /* color: lightgray !important; */
+    }
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
@@ -77,9 +84,10 @@ input::placeholder {
                                         <label class="focus-label">Mobile </label>
                                     </div>
                                    <div class="form-group form-focus">
-                                      <input type="text" class="form-control floating" name="password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
+                                      <input type="password" class="form-control floating" name="password" id="influencer_password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
                                       <i class="fa fa-eye" id="eye"
-                                      onclick="togglePassword('influencer_password')"></i>
+                                      onclick="togglePassword('influencer_password')"
+                                      ></i>
                                     
                                       <div class="invalid-feedback">
                                         Please provide a valid Password.
@@ -87,9 +95,10 @@ input::placeholder {
                               <label class="focus-label">Change Password </label>
                      </div>
                            <div class="form-group form-focus">
-                                  <input type="text" class="form-control floating" name="password" value="">
+                                  <input type="password" class="form-control floating" id="influencer_confirm_password"  name="password" value="">
                                   <i class="fa fa-eye" id="eye"
-                                  onclick="togglePassword('influencer_confirm_password')"></i>
+                                  onclick="togglePassword('influencer_confirm_password')"
+                                  ></i>
                                   <div class="invalid-feedback">                                           Please provide a valid Password.
                                     </div>
                                    <label class="focus-label">Confirm Password </label>
@@ -113,17 +122,30 @@ input::placeholder {
 
 @section('page_scripts')
     <script>
+        
+        function togglePassword(inputId, iconId) {
+            var passwordInput = document.getElementById(inputId);
+            // var toggleIcon = document.getElementById(iconId);
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/invisible.png';
+            } else {
+                passwordInput.type = 'password';
+                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/visible.png';
+            }
+        }
         $(document).ready(function () {
 
             var form = $('#account-setting-form')[0];
             var inputs = $(form).find('input');
 
-            $('#togglePassword').on('click', function() {
-            let input = $(this).siblings('input');
-            let type = input.attr('type') === 'password' ? 'text' : 'password';
-            input.attr('type', type);
-            $(this).toggleClass('fa-eye fa-eye-slash');
-        });
+        //     $('#eye').on('click', function() {
+        //     let input = $(this).siblings('input');
+        //     let type = input.attr('type') === 'password' ? 'text' : 'password';
+        //     input.attr('type', type);
+        //     $(this).toggleClass('fa-eye fa-eye-slash');
+        // });
             // remove_validation_on_input_change(inputs);
         });
 
