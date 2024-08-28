@@ -132,7 +132,7 @@ input[type="file"] {
 
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
-                                            <input type="file" class="form-control-file" id="attachmentInput" name="attachments">
+                                            <input type="file" class="form-control-file  floating" style="border-color: #997045 !important" id="attachmentInput" name="attachments">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
