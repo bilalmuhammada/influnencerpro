@@ -77,7 +77,7 @@ input::placeholder {
                                         <label class="focus-label">Email </label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="text" class="form-control floating" name="phone" placeholder="Please enter a valid Mobile." value="{{ session()->get('User')['phone'] }}">
+                                        <input type="text" class="form-control floating" name="phone" placeholder="Please enter a valid Mobile." value="{{ session()->get('User')['phone'] }}"  pattern="\+?\d*" oninput="validateInput(this)">
                                         {{-- <div class="invalid-feedback">
                                             Please provide a valid Mobile.
                                         </div> --}}
@@ -122,7 +122,11 @@ input::placeholder {
 
 @section('page_scripts')
     <script>
-        
+          function validateInput(input) {
+            
+            // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+            input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+        }
         function togglePassword(inputId, iconId) {
             var passwordInput = document.getElementById(inputId);
             // var toggleIcon = document.getElementById(iconId);
