@@ -102,11 +102,12 @@ input[type="file"] {
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
                                           <select name="iam" id="" class="form-control floating"> 
-                                          <option  selected value="">I'm a/an                                        </option>
+                                                                               
                                       
                                             <option value="brands">Brand</option>
                                             <option value="influncer">Influncer</option>
                                           </select>
+                                          <label class="focus-label">I'm a/an  </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

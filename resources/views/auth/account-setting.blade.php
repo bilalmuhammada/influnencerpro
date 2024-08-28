@@ -78,13 +78,18 @@ input::placeholder {
                                     </div>
                                    <div class="form-group form-focus">
                                       <input type="text" class="form-control floating" name="password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
-                                     <div class="invalid-feedback">
+                                      <i class="fa fa-eye" id="eye"
+                                      onclick="togglePassword('influencer_password')"></i>
+                                    
+                                      <div class="invalid-feedback">
                                         Please provide a valid Password.
                               </div>
                               <label class="focus-label">Change Password </label>
                      </div>
                            <div class="form-group form-focus">
                                   <input type="text" class="form-control floating" name="password" value="">
+                                  <i class="fa fa-eye" id="eye"
+                                  onclick="togglePassword('influencer_confirm_password')"></i>
                                   <div class="invalid-feedback">                                           Please provide a valid Password.
                                     </div>
                                    <label class="focus-label">Confirm Password </label>
@@ -109,9 +114,16 @@ input::placeholder {
 @section('page_scripts')
     <script>
         $(document).ready(function () {
+
             var form = $('#account-setting-form')[0];
             var inputs = $(form).find('input');
 
+            $('#togglePassword').on('click', function() {
+            let input = $(this).siblings('input');
+            let type = input.attr('type') === 'password' ? 'text' : 'password';
+            input.attr('type', type);
+            $(this).toggleClass('fa-eye fa-eye-slash');
+        });
             // remove_validation_on_input_change(inputs);
         });
 
