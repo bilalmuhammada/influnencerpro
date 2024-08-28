@@ -7,7 +7,10 @@
         .floating:focus {
     border: 1px solid blue !important;
 }
-        
+    
+input::placeholder{
+    font-size: 13px;
+}
 ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }
@@ -100,9 +103,9 @@ input[type="file"] {
                                         <div class="form-group form-focus">
                                           <select name="iam" id="" class="form-control floating"> 
                                           <option  selected value="">I'm a/an                                        </option>
-                                            <option value="influncer">Influncer</option>
+                                      
                                             <option value="brands">Brand</option>
-                                           
+                                            <option value="influncer">Influncer</option>
                                           </select>
                                         </div>
                                     </div>

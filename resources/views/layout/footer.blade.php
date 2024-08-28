@@ -61,7 +61,7 @@
                         <h2 class="footer-title">Pages</h2>
                         <ul>
                             <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>Home</a></li>
-                            <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>About Us</a></li>
+                            <li><a href="#"  data-bs-toggle="modal" data-bs-target="#aboutus" ><i class="fas fa-angle-right me-1"></i>About Us</a></li>
                             <li><a href="{{ env('BASE_URL') }}/contact-us"><i class="fas fa-angle-right me-1"></i>Contact
                                     Us</a></li>
                         @if(session()->missing('User'))

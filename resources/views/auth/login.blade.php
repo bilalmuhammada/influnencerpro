@@ -117,7 +117,7 @@
         });
 
         function login_call(form) {
-            alert(api_url);
+          
             var inputs = $(form).find('input');
             var allInputsValid = validate_inputs(form);
 

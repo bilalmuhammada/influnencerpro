@@ -21,6 +21,7 @@
   
     box-shadow: none  !important;
 }
+
     .emojionearea.emojionearea-inline>.emojionearea-editor{
     top: 5px !important;
     

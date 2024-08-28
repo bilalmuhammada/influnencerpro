@@ -59,10 +59,7 @@ class User extends Authenticatable
         return $this->hasMany(UserArt::class);
     }
 
-    public function personal_information()
-    {
-        return $this->hasOne(UserPersonalInformation::class, 'user_id', 'id');
-    }
+   
 
     public function features()
     {
