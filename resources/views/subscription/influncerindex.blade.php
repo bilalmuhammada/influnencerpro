@@ -32,13 +32,13 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="59">
+            <input type='hidden' name="total" value="49">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         
     <span class="plan-h">Star</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
-    <h6 style="padding-top:10px;" ><b>$ 59</b></h6>
+    <h6 style="padding-top:10px;" ><b>$ 49</b></h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">1 Month</div>
     </div>
     <hr>
@@ -73,14 +73,14 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="149">
+            <input type='hidden' name="total" value="129">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         <div style="text-align:center;">
         <span class="plan-h">Gold</span>
         </div>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
-    <h6 style="padding-top:10px;" id="payment"> <b>$ 149</b>
+    <h6 style="padding-top:10px;" id="payment"> <b>$ 129</b>
          {{-- <b>(Save 15%)</b> --}}
         </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">3 Months</div>
@@ -115,13 +115,13 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="279">
+            <input type='hidden' name="total" value="229">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
     <span class="plan-h">Pro</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
     <h6 style="padding-top:10px;">
-        <b>$ 279</b>
+        <b>$ 229</b>
         {{-- <b>(Save 20%)</b>  --}}
     </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">6 Months</div>

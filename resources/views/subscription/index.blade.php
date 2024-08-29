@@ -54,7 +54,7 @@
         <li><i class="fa fa-check-circle"></i>  Influencers & Talents Collaboration: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
     
-        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram,Twitter, Facebook,Pinterest,<br>Snapchat, Tik Tok,You Tube,Website </span></li>
+        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br> Snapchat, Tik Tok, You Tube, Website </span></li>
 </li>
         {{-- <li><i class="fa fa-times-circle text-danger"></i> Featured Days: <b>No</b></li> --}}
     </ul>
@@ -74,14 +74,14 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="759">
+            <input type='hidden' name="total" value="769">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         <div style="text-align:center;">
         <span class="plan-h">Gold</span>
         </div>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
-    <h6 style="padding-top:10px;"><b>$ 759</b>
+    <h6 style="padding-top:10px;"><b>$ 769</b>
          {{-- <b>(Save 15%)</b> --}}
         </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">3 Months</div>
@@ -97,7 +97,7 @@
         <li><i class="fa fa-check-circle"></i>  Hire Influencers & Talents: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
-        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram,Twitter, Facebook,Pinterest,<br>Snapchat, Tik Tok,You Tube,Website </span></li>
+        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br> Snapchat, Tik Tok, You Tube, Website </span></li>
 </li>
     </ul>
     </div>
@@ -116,13 +116,13 @@
     <div class="col-md-4 mx-auto mt-1" >
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type='hidden' name="total" value="1439">
+            <input type='hidden' name="total" value="1459">
     <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
     <span class="plan-h">Pro</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
     <h6 style="padding-top:10px;">
-        <b>$ 1,439</b> 
+        <b>$ 1,459</b> 
         {{-- <b>(Save 20%)</b>  --}}
     </h6>
     <div class="mx-auto text-muted" style="text-align:center;margin-top:-10px;">6 Months</div>
@@ -139,7 +139,7 @@
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
-        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram,Twitter, Facebook,Pinterest,<br>Snapchat, Tik Tok,You Tube,Website </span></li>
+        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br>Snapchat, Tik Tok, You Tube, Website </span></li>
 
     </ul>
     </div>
