@@ -12,6 +12,31 @@
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
     </div>
+    <div class="country" style="border:0px solid green;position:relative;left:-111px;">
+        <div class="mobile-country desktop-menu-right">
+            {{-- <label for="">Select</label> --}}
+            
+                {{-- <span style="color: #000;">Select languages</span> --}}
+                @php
+                // dd($countries[0]->image_url);
+               @endphp
+                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:150px;" id="country_dropdown" onchange="translateLanguage()">>
+                    @foreach(getCountries() as $country)
+                   
+                        <option
+                        {{ $country->id == request()->country ? 'selected' : '' }} 
+                        {{-- data-flag-url="{{ $country->image_url }}" --}}
+                        value="{{ $country->id }}"
+                        style="font-size:8px !important;">
+                        {{ $country->nice_name }}
+                           
+                        </option>
+                    @endforeach
+                </select>
+               
+        </div>
+        </span>
+</div>
     <div class="main-menu-wrapper">
         <div class="menu-header">
             <a href="{{ env('BASE_URL') }}" class="menu-logo">

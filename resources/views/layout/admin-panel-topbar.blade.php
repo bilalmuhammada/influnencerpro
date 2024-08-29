@@ -26,6 +26,7 @@
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" class="img-fluid" alt="Logo">
             </a>
         </div>
+    
         <div class="main-menu-wrapper">
             <div class="menu-header">
                 <a href="#" class="menu-logo">

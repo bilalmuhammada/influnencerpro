@@ -90,7 +90,7 @@
             @elseif(session()->get('role') != 'influencer')
                 <li>
                     <a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">
-                        <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon"> Logout
+                        <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon"> 2323Logout
                     </a>
                 </li>
             @endif

@@ -1,4 +1,47 @@
 <header class="header"  style="border-bottom:0px solid #eee;">
+    <style>
+        .VIpgJd-ZVi9od-ORHb{
+            display: none !important;        }
+    </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="text/javascript">
+        function translateLanguage() {
+            var dropdown = document.getElementById("country_dropdown");
+            alert(dropdown);
+         
+            var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
+             alert(selectedLanguage);
+            var languageMapping = {
+                '1': 'en',  // Example: Country ID 1 maps to English
+                '2': 'fr', // Example: Country ID 30 maps to French
+                '3': 'ar', // Example: Country ID 13 maps to Arabic
+                // Add your mappings here
+            };
+
+            var selectedLanguageCode = languageMapping[selectedLanguage];
+
+
+
+            if (selectedLanguageCode) {
+                var googleTranslateCombo = document.querySelector('.goog-te-combo');
+                if (googleTranslateCombo) {
+                    googleTranslateCombo.value = selectedLanguageCode;
+                    googleTranslateCombo.dispatchEvent(new Event('change'));
+                }
+                else{
+                    // alert('dd');
+                    // translateLanguage();
+                }
+            }
+
+        }
+    </script>  
 <nav class="navbar navbar-expand-lg header-nav">
     <div class="navbar-header">
         <a id="mobile_btn" href="javascript:void(0);">
@@ -12,6 +55,36 @@
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
     </div>
+
+
+    <div class="country" style="border:0px solid green;position:relative;right:545px;">
+        <div class="mobile-country desktop-menu-right">
+            {{-- <label for="">Select</label> --}}
+            
+                {{-- <span style="color: #000;">Select languages</span> --}}
+                @php
+                // dd($countries[0]->image_url);
+               @endphp
+                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:150px; background-color: transparent !important; border-color: transparent !important;" id="country_dropdown" onchange="translateLanguage()">>
+                    @foreach(getCountries() as $country)
+                   
+                        <option
+                        {{ $country->id == request()->country ? 'selected' : '' }} 
+                        {{-- data-flag-url="{{ $country->image_url }}" --}}
+                        value="{{ $country->id }}"
+                        style="font-size:8px !important;">
+                        {{ $country->name }}
+                           
+                        </option>
+                    @endforeach
+                </select>
+               
+        </div>
+        </span>
+</div>
+<div id="google_translate_element" style="display: none;"></div>
+
+
     <div class="main-menu-wrapper">
         <div class="menu-header">
             <a href="{{ env('BASE_URL') }}" class="menu-logo">
