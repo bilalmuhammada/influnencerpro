@@ -59,7 +59,7 @@
         {{-- <li><i class="fa fa-times-circle text-danger"></i> Featured Days: <b>No</b></li> --}}
     </ul>
     </div>
-    <div class="mx-auto" style="text-align:center;margin-top: 175px;">
+    <div class="mx-auto" style="text-align:center;margin-top: 130px;">
         <input type='hidden' name="productname" value="Star Plan">
     <a href="">
         <button class="btn bt-plan" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> SELECT PLAN</button>
@@ -101,7 +101,7 @@
 </li>
     </ul>
     </div>
-    <div class="mx-auto" style="text-align:center;margin-top: 175px;">
+    <div class="mx-auto" style="text-align:center;margin-top: 130px;">
         <input type='hidden' name="productname" value="Gold Plan">
         <a href="">
             <button class="btn bt-plan" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> SELECT PLAN</button>
@@ -139,12 +139,11 @@
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
-        <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
         <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram,Twitter, Facebook,Pinterest,<br>Snapchat, Tik Tok,You Tube,Website </span></li>
 
     </ul>
     </div>
-    <div class="mx-auto" style="text-align:center;margin-top: 175px;">
+    <div class="mx-auto" style="text-align:center;margin-top: 130px;">
         <input type='hidden' name="productname" value="Pro Plan">
         <a href="">
             <button class="btn bt-plan" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> SELECT PLAN</button>
