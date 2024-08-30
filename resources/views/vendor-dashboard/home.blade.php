@@ -894,7 +894,7 @@ width: 200px !important;
                                                 <i class="fas fa-check-circle   add-to-invented"
                                                    data-id="{{ $influencer->id }}"
                                                    data-fvt="2"
-                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -12px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 {{-- <i class="fas fa-check-circle remove-favourite"
                                                    data-id="{{ $influencer->id }}"
