@@ -98,7 +98,7 @@
                     <!-- Add more options as needed -->
                 </select> --}}
                 <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:160px;" id="country_dropdown" onchange="translateLanguage()">>
-                    <option value="null" selected style="color: blue;">language</option>
+                    <option value="null" selected style="color: blue;">Language</option>
                     @foreach(getlanguge() as $language)
                    
                         <option
