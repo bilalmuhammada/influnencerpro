@@ -33,6 +33,9 @@
                 width: 200px !important;
                 margin-left: 10px !important; 
             }
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                right: -10px !important;
+            }
     </style>
     
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -102,7 +105,7 @@
                     <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
                     <!-- Add more options as needed -->
                 </select> --}}
-                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:130px;" id="country_dropdown" onchange="translateLanguage()">>
+                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:142px;" id="country_dropdown" onchange="translateLanguage()">>
                     <option value="null" selected style="color: blue;">Language</option>
                     @foreach(getlanguge() as $language)
                    
@@ -238,9 +241,9 @@
         console.log('Flag URL:', flagUrl);
 
         if (flagUrl) {
-        return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 0px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 3px;" /> ' + option.text + '</span>');
     } else {
-        return $('<span style="font-size:18px;margin-left:34px;">' + option.text + '</span>');
+        return $('<span style="font-size:18px;margin-left:25px;font-weight:600; ">' + option.text + '</span>');
     }
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
