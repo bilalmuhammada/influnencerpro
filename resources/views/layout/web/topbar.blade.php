@@ -27,6 +27,7 @@
             }
             .select2-container--default .select2-selection--single .select2-selection__rendered{
                 color: blue !important;
+                margin-left: 10px !important; 
             }
     </style>
     
@@ -231,7 +232,13 @@
 
         var flagUrl = $(option.element).data('flag-url');
         console.log('Flag URL:', flagUrl);
+
+        if (flagUrl) {
         return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
+    } else {
+        return $('<span style="font-size:18px;margin-left:34px;">' + option.text + '</span>');
+    }
+        // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
 });
 });
