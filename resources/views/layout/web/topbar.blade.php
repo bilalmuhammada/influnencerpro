@@ -85,7 +85,7 @@
                     <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
                     <!-- Add more options as needed -->
                 </select> --}}
-                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:127px;" id="country_dropdown" onchange="translateLanguage()">>
+                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:160px;" id="country_dropdown" onchange="translateLanguage()">>
                     @foreach(getlanguge() as $language)
                    
                         <option
