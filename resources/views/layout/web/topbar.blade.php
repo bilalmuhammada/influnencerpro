@@ -16,6 +16,14 @@
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
             }
+            .register-btn, .log-btn{
+                color: #997045;
+
+            }
+            .register-btn:hover, .log-btn:hover{
+                color: blue;
+
+            }
     </style>
     
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -86,6 +94,7 @@
                     <!-- Add more options as needed -->
                 </select> --}}
                 <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:160px;" id="country_dropdown" onchange="translateLanguage()">>
+                    <option value="null" selected style="color: blue;">language</option>
                     @foreach(getlanguge() as $language)
                    
                         <option
@@ -168,8 +177,8 @@
             <li><a href="contact-us.php">Contact us</a></li> -->
             @if(session()->missing('User'))
                 <li class="has-submenu">
-                    <a href="{{ env('BASE_URL') . '/register?role=influencer' }}">Register<i
-                            class="fas fa-chevron-down"></i></a>
+                    <a href="{{ env('BASE_URL') . '/register?role=influencer' }}" class="register-btn">Register<i
+                            class="fas fa-chevron-down register-btn"></i></a>
                     <ul class="submenu">
                         <li class="has-submenu"></li>
                         <li><a href="{{ env('BASE_URL') . '/register?role=influencer' }}">As  Influencer</a></li>
@@ -218,7 +227,7 @@
 
         var flagUrl = $(option.element).data('flag-url');
         console.log('Flag URL:', flagUrl);
-        return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:18px;color:blue;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
 });
 });
