@@ -17,12 +17,16 @@
                 border: 0px solid !important ;
             }
             .register-btn, .log-btn{
-                color: #997045;
+                color: blue;
+               
 
             }
             .register-btn:hover, .log-btn:hover{
-                color: blue;
+                color: #997045 !important;
 
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                color: blue !important;
             }
     </style>
     
@@ -40,10 +44,10 @@
     <script type="text/javascript">
         function translateLanguage() {
             var dropdown = document.getElementById("country_dropdown");
-            alert(dropdown);
+            // alert(dropdown);
          
             var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
-             alert(selectedLanguage);
+            //  alert(selectedLanguage);
             
 
             // var selectedLanguageCode = languageMapping[selectedLanguage];
@@ -227,7 +231,7 @@
 
         var flagUrl = $(option.element).data('flag-url');
         console.log('Flag URL:', flagUrl);
-        return $('<span style="font-size:18px;color:blue;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
 });
 });
