@@ -115,15 +115,15 @@
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Socials</h2>
                         <ul style="margin-left: 14px;">
-                            <li><a href="#" class="icon" target="_blank"><img
+                            <li><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
                                         width="30"
                                         height="30"></a></li>
-                            <li><a href="#" class="icon" target="_blank"><img
+                            <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon" target="_blank"><img
                                         src="{{ asset('assets/icons/instagram.png') }}"
                                         alt="insta" width="30"
                                         height="30"></a></li>
-                            <li><a href="#" class="icon" target="_blank"><img
+                            <li><a href="https://x.com/influencerpro_" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                         alt="twitter"
                                         width="30" height="30"></a></li>
