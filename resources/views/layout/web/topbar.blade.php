@@ -30,6 +30,7 @@
             }
             .select2-container--default .select2-selection--single .select2-selection__rendered{
                 color: blue !important;
+                width: 200px !important;
                 margin-left: 10px !important; 
             }
     </style>
