@@ -243,10 +243,12 @@ select::-ms-expand {
                         </div>
 
                         <div class="chat-cont-right">
+                        
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                     style="{{ $key > 0 ? 'display: none' : '' }}" chat-id="{{ $chat->id }}"
+                                     {{-- style="{{ $key > 0 ? 'display: none' : '' }}"  --}}
+                                     chat-id="{{ $chat->id }}"
                                      user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
                                         <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
@@ -291,13 +293,16 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                     </div>
+                                
                                     @if($chat->status == 'accepted')
+                                   
                                         <div class="chat-body">
                                             <div class="chat-scroll">
                                                 <ul class="list-unstyled message-body" style="font-weight: 300;">
-                                                    @foreach($chat->sorted_messages as $date => $sorted_messages)
+                                                    @foreach($chat->sorted_messages as $date => $sorted_messagess)
                                                         <div class="text-center fw-bolds " style="font-size:12px;">{{ date("d-m-Y", strtotime($date))}}</div>
-                                                        @foreach($sorted_messages as $date => $message)
+                                                        @foreach($sorted_messagess as $date => $message)
+                                                      
                                                             <li class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
                                                                 <div class="avatar flex-shrink-0">
                                                                     <img

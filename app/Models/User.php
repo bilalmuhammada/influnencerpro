@@ -49,6 +49,10 @@ class User extends Authenticatable
         return $this->hasOne(UserProfessionDetail::class, 'user_id', 'id');
     }
 
+    public function personal_information()
+    {
+        return $this->hasOne(UserPersonalInformation::class, 'user_id', 'id');
+    }
     public function spoken_languages()
     {
         return $this->hasMany(UserSpokenLanguage::class, 'user_id');

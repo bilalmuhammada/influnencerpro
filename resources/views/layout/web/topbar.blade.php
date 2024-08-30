@@ -1,8 +1,27 @@
 <header class="header"  style="border-bottom:0px solid #eee;">
+
     <style>
         .VIpgJd-ZVi9od-ORHb{
             display: none !important;        }
+
+
+            .select2-container--default .select2-results>.select2-results__options{
+                overflow-x: hidden !important;
+                background-color: #000 !important;
+                color: white !important;
+            }
+            .select2-container--open .select2-dropdown--below{
+                background-color: #000 !important;
+            }
+            .select2-container--default .select2-selection--single{
+                border: 0px solid !important ;
+            }
     </style>
+    
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -17,16 +36,11 @@
          
             var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
              alert(selectedLanguage);
-            var languageMapping = {
-                '1': 'en',  // Example: Country ID 1 maps to English
-                '2': 'fr', // Example: Country ID 30 maps to French
-                '3': 'ar', // Example: Country ID 13 maps to Arabic
-                // Add your mappings here
-            };
+            
 
-            var selectedLanguageCode = languageMapping[selectedLanguage];
+            // var selectedLanguageCode = languageMapping[selectedLanguage];
 
-
+            var selectedLanguageCode =selectedLanguage;
 
             if (selectedLanguageCode) {
                 var googleTranslateCombo = document.querySelector('.goog-te-combo');
@@ -65,15 +79,23 @@
                 @php
                 // dd($countries[0]->image_url);
                @endphp
-                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:150px; background-color: transparent !important; border-color: transparent !important;" id="country_dropdown" onchange="translateLanguage()">>
-                    @foreach(getCountries() as $country)
+                {{-- <select class="form-control country_dropdown1" name="country_dropdown" id="country_dropdown">
+                    <!-- Ensure options are correctly placed here -->
+                    <option value="af" data-flag-url="https://flagcdn.com/w320/za.png">Afrikaans</option>
+                    <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
+                    <!-- Add more options as needed -->
+                </select> --}}
+                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:127px;" id="country_dropdown" onchange="translateLanguage()">>
+                    @foreach(getlanguge() as $language)
                    
                         <option
-                        {{ $country->id == request()->country ? 'selected' : '' }} 
-                        {{-- data-flag-url="{{ $country->image_url }}" --}}
-                        value="{{ $country->id }}"
-                        style="font-size:8px !important;">
-                        {{ $country->name }}
+                        {{-- {{ $country->id == request()->country ? 'selected' : '' }}  --}}
+                          value="{{ $language->prefix }}"
+                        data-flag-url="{{ $language->flag_image_url }}"
+                      
+                        {{-- style="font-size:8px !important;" --}}
+                        >
+                        {{ $language->name }}
                            
                         </option>
                     @endforeach
@@ -172,4 +194,33 @@
     </div>
 </nav>
 </header>
+<!-- Select2 CSS -->
+
+<script>
+    $(document).ready(function() {
+        // Initialize Select2
+        $(document).ready(function() {
+    console.log('Initializing Select2');
+    
+    $('#country_dropdown').select2({
+        width: 'resolve',
+        templateResult: function(option) {
+            console.log('Option:', option);
+            return formatOption(option);
+        },
+        templateSelection: formatOption,
+        escapeMarkup: function (markup) { return markup; }
+    });
+
+    function formatOption(option) {
+        if (!option.id) { return option.text; }
+
+        var flagUrl = $(option.element).data('flag-url');
+        console.log('Flag URL:', flagUrl);
+        return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
+    }
+});
+});
+</script>
+
 <!-- </header> -->

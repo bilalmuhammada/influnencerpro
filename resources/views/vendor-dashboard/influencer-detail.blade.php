@@ -700,10 +700,13 @@ color: #0504aa !important;
                 </li> &nbsp;
                   @endif
                          <li style="display: inline-block;float: right; margin-right: -14px; margin-top: -14px;">
+                           
                             <a class="open-chat btn" style="font-size: 21px;"
-                            href="{{ env('BASE_URL') }}/chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
-                                 Chat</b></a> 
-                            </li> 
+                                href="{{ env('BASE_URL') }}/chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
+                                 Chat
+                                </b>
+                            </a> 
+                         </li> 
                         </ul>
                         <!-- <span style="font-size: 14px;"><img src="assets/img/social-icon/insta.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/fb.png" alt="" width="30px">&nbsp;&nbsp;&nbsp;<img src="assets/img/social-icon/tiktok.png" alt="" width="30px"></span> -->
                     </div>

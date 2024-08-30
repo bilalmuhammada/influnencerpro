@@ -1840,10 +1840,19 @@ border: 1px solid #2d11e7;
 }
 
 .form-focus .select2-container .select2-selection--single {
-    border: 1px solid #e3e3e3;
+    /* border: 1px solid #e3e3e3; */
     height: 50px;
 }
 
+.select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+    border: none !important;
+    height: auto !important;
+}
+
+.select2-container--default .select2-results__option {
+    background-color: transparent !important;
+}
 .form-focus .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 48px;
     right: 7px;

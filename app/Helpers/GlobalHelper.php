@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 function getDropdownMenu($role)
 {
@@ -43,6 +44,12 @@ function getCountries()
     $Countries = \App\Models\Country::all();
 
     return $Countries;
+}
+function getlanguge()
+{
+    $languages = DB::table('languages')->get();
+
+    return $languages;
 }
 
 function getStateByCountryId($countryId)

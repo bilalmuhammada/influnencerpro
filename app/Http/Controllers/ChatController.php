@@ -13,11 +13,20 @@ class ChatController extends Controller
 {
     private $logged_in_user_id = 1;
 
-    public function index()
+    public function index( Request $request)
+
+
     {
+
+      
         $chats = Chat::with(['messages'])
             ->where('first_user_id', SiteHelper::getLoginUserId())
             ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+
+    //   dd();
+        if ($request->i) {
+                $chats = $chats->where('second_user_id', '=', $request->i);
+        } 
 
         if (session()->get('role') == 'vendor') {
             $chats = $chats->where('status', '=', 'accepted');
@@ -26,7 +35,7 @@ class ChatController extends Controller
         }
 
         $chats = $chats->get();
-
+    //    dd( $chats,session()->get('role'));
         foreach ($chats as $chat) {
             $groupedMessages = [];
             if ($chat->messages) {
@@ -41,6 +50,7 @@ class ChatController extends Controller
             }
         }
 
+        //  dd( $chat );
 //        dd($chats->toArray());
 
         return view('chats.list')->with([

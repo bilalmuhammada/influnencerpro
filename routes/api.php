@@ -71,7 +71,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("auth/update-password", [AuthController::class, 'updatePassword']);
 
     Route::prefix('/brands')->group(function () {
+        
         Route::post("/", [UserController::class, 'brands']);
+
         Route::post("/profile-edit", [AuthController::class, 'brandProfileEditBackend']);
     });
 
