@@ -76,17 +76,13 @@ class NewLanguagesTableSeeder extends Seeder
             ['name' => 'Kyrgyz', 'prefix' => 'ky', 'flag_image_url' => 'https://flagcdn.com/w320/kg.png'],
             ['name' => 'Lao', 'prefix' => 'lo', 'flag_image_url' => 'https://flagcdn.com/w320/la.png'],
             ['name' => 'Latvian', 'prefix' => 'lv', 'flag_image_url' => 'https://flagcdn.com/w320/lv.png'],
-            ['name' => 'Lingala', 'prefix' => 'ln', 'flag_image_url' => 'https://flagcdn.com/w320/cd.png'],
+           
             ['name' => 'Lithuanian', 'prefix' => 'lt', 'flag_image_url' => 'https://flagcdn.com/w320/lt.png'],
-            ['name' => 'Luganda', 'prefix' => 'lg', 'flag_image_url' => 'https://flagcdn.com/w320/ug.png'],
-            ['name' => 'Luxembourgish', 'prefix' => 'lb', 'flag_image_url' => 'https://flagcdn.com/w320/lu.png'],
+            
             ['name' => 'Macedonian', 'prefix' => 'mk', 'flag_image_url' => 'https://flagcdn.com/w320/mk.png'],
-            ['name' => 'Malagasy', 'prefix' => 'mg', 'flag_image_url' => 'https://flagcdn.com/w320/mg.png'],
+        
             ['name' => 'Malay', 'prefix' => 'ms', 'flag_image_url' => 'https://flagcdn.com/w320/my.png'],
-            ['name' => 'Malayalam', 'prefix' => 'ml', 'flag_image_url' => 'https://flagcdn.com/w320/in.png'],
-            ['name' => 'Maltese', 'prefix' => 'mt', 'flag_image_url' => 'https://flagcdn.com/w320/mt.png'],
-            ['name' => 'Mandarin', 'prefix' => 'zh', 'flag_image_url' => 'https://flagcdn.com/w320/cn.png'],
-            ['name' => 'Mandingo', 'prefix' => 'man', 'flag_image_url' => 'https://flagcdn.com/w320/gm.png'],
+            
             ['name' => 'Marathi', 'prefix' => 'mr', 'flag_image_url' => 'https://flagcdn.com/w320/in.png'],
             ['name' => 'Marshallese', 'prefix' => 'mh', 'flag_image_url' => 'https://flagcdn.com/w320/mh.png'],
             ['name' => 'Mende', 'prefix' => 'men', 'flag_image_url' => 'https://flagcdn.com/w320/sl.png'],
@@ -94,7 +90,7 @@ class NewLanguagesTableSeeder extends Seeder
             ['name' => 'Montenegrin', 'prefix' => 'cnr', 'flag_image_url' => 'https://flagcdn.com/w320/me.png'],
             ['name' => 'Nepali', 'prefix' => 'ne', 'flag_image_url' => 'https://flagcdn.com/w320/np.png'],
             ['name' => 'Norwegian', 'prefix' => 'no', 'flag_image_url' => 'https://flagcdn.com/w320/no.png'],
-            ['name' => 'Oriya', 'prefix' => 'or', 'flag_image_url' => 'https://flagcdn.com/w320/in.png'],
+           
             ['name' => 'Oromo', 'prefix' => 'om', 'flag_image_url' => 'https://flagcdn.com/w320/et.png'],
             ['name' => 'Pashto', 'prefix' => 'ps', 'flag_image_url' => 'https://flagcdn.com/w320/af.png'],
             ['name' => 'Polish', 'prefix' => 'pl', 'flag_image_url' => 'https://flagcdn.com/w320/pl.png'],
@@ -104,8 +100,7 @@ class NewLanguagesTableSeeder extends Seeder
             ['name' => 'Russian', 'prefix' => 'ru', 'flag_image_url' => 'https://flagcdn.com/w320/ru.png'],
             ['name' => 'Samoan', 'prefix' => 'sm', 'flag_image_url' => 'https://flagcdn.com/w320/ws.png'],
             ['name' => 'Serbian', 'prefix' => 'sr', 'flag_image_url' => 'https://flagcdn.com/w320/rs.png'],
-            ['name' => 'Shona', 'prefix' => 'sn', 'flag_image_url' => 'https://flagcdn.com/w320/zw.png'],
-            ['name' => 'Sindhi', 'prefix' => 'sd', 'flag_image_url' => 'https://flagcdn.com/w320/pk.png'],
+          
             ['name' => 'Sinhala', 'prefix' => 'si', 'flag_image_url' => 'https://flagcdn.com/w320/lk.png'],
             ['name' => 'Slovak', 'prefix' => 'sk', 'flag_image_url' => 'https://flagcdn.com/w320/sk.png'],
             ['name' => 'Slovenian', 'prefix' => 'sl', 'flag_image_url' => 'https://flagcdn.com/w320/si.png'],
@@ -125,12 +120,12 @@ class NewLanguagesTableSeeder extends Seeder
             ['name' => 'Twi', 'prefix' => 'tw', 'flag_image_url' => 'https://flagcdn.com/w320/gh.png'],
             ['name' => 'Ukrainian', 'prefix' => 'uk', 'flag_image_url' => 'https://flagcdn.com/w320/ua.png'],
             ['name' => 'Urdu', 'prefix' => 'ur', 'flag_image_url' => 'https://flagcdn.com/w320/pk.png'],
-            ['name' => 'Uyghur', 'prefix' => 'ug', 'flag_image_url' => 'https://flagcdn.com/w320/cn.png'],
+           
             ['name' => 'Uzbek', 'prefix' => 'uz', 'flag_image_url' => 'https://flagcdn.com/w320/uz.png'],
             ['name' => 'Vietnamese', 'prefix' => 'vi', 'flag_image_url' => 'https://flagcdn.com/w320/vn.png'],
-            ['name' => 'Visayan', 'prefix' => 'ceb', 'flag_image_url' => 'https://flagcdn.com/w320/ph.png'],
+            
             ['name' => 'Wolof', 'prefix' => 'wo', 'flag_image_url' => 'https://flagcdn.com/w320/sn.png'],
-            ['name' => 'Xhosa', 'prefix' => 'xh', 'flag_image_url' => 'https://flagcdn.com/w3200/za.png'],
+           
             ['name' => 'Yoruba', 'prefix' => 'yo', 'flag_image_url' => 'https://flagcdn.com/w32000/ng.png'],
             ['name' => 'Zulu', 'prefix' => 'zu', 'flag_image_url' => 'https://flagcdn.com/w32000/za.png'],
         ];
