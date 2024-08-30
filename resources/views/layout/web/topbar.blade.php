@@ -176,9 +176,10 @@
                         <li><a href="{{ env('BASE_URL') . '/register?role=brand' }}">As  Brand</a></li>
                     </ul>
                 </li>
-                <li>
+                <li style="margin-right: 14px;margin-left: -10px;">
                     <a href="{{ url('login') }}" class="log-btn">
-                        <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon"> Login
+                        {{-- <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon">  --}}
+                        Login
                     </a>
                 </li>
 
