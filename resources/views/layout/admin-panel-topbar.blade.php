@@ -1,5 +1,7 @@
 
 
+<header class="header header-bg">
+    
 <style>
     .noti-details{
         margin-bottom: 0px !important;
@@ -11,8 +13,96 @@
         .main-nav li a.show {
     color: #0504aa !important;
 }
+
+.VIpgJd-ZVi9od-ORHb{
+            display: none !important;}
+
+           
+ .select2-container--default .select2-results > .select2-results__options {
+    min-height: 120px; /* Set minimum height */
+          }
+          .select2-selection__arrow{
+            display: none;
+          }
+          .select2-selection .select2-selection--single{
+            /* margin-left: -12px !important; */
+          }
+          .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+            /* margin-left: -10px !important; */
+          }
+         
+            .select2-container--default .select2-results>.select2-results__options{
+                overflow-x: hidden !important;
+                min-height: 120px !important;
+                background-color: #000 !important;
+                color: white !important;
+            }
+
+            .select2-container--open .select2-dropdown--below{
+                background-color: #000 !important;
+            }
+            .select2-container--default .select2-selection--single{
+                border: 0px solid !important ;
+            }
+            .register-btn, .log-btn{
+                color: blue;
+               
+
+            }
+            .select2-dropdown .select2-dropdown--below{
+                width: 144px !important;
+            }
+            .register-btn:hover, .log-btn:hover{
+                color: #997045 !important;
+
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                color: blue !important;
+                width: 200px !important;
+                margin-left: 10px !important; 
+            }
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                /* right: -15px !important; */
+            }
 </style>
-<header class="header header-bg">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="text/javascript">
+        function translateLanguage() {
+            var dropdown = document.getElementById("country_dropdown");
+            // alert(dropdown);
+         
+            var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
+            //  alert(selectedLanguage);
+            
+
+            // var selectedLanguageCode = languageMapping[selectedLanguage];
+
+            var selectedLanguageCode =selectedLanguage;
+
+            if (selectedLanguageCode) {
+                var googleTranslateCombo = document.querySelector('.goog-te-combo');
+                if (googleTranslateCombo) {
+                    googleTranslateCombo.value = selectedLanguageCode;
+                    googleTranslateCombo.dispatchEvent(new Event('change'));
+                }
+                else{
+                    // alert('dd');
+                    // translateLanguage();
+                }
+            }
+
+        }
+    </script>  
     <nav class="navbar navbar-expand-lg header-nav">
         <div class="navbar-header">
             <a id="mobile_btn" href="javascript:void(0);">
@@ -26,6 +116,42 @@
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" class="img-fluid" alt="Logo">
             </a>
         </div>
+
+        <div class="country" style="border:0px solid green;position:relative;right:545px;">
+            <div class="mobile-country desktop-menu-right">
+                {{-- <label for="">Select</label> --}}
+                
+                    {{-- <span style="color: #000;">Select languages</span> --}}
+                    @php
+                    // dd($countries[0]->image_url);
+                   @endphp
+                    {{-- <select class="form-control country_dropdown1" name="country_dropdown" id="country_dropdown">
+                        <!-- Ensure options are correctly placed here -->
+                        <option value="af" data-flag-url="https://flagcdn.com/w320/za.png">Afrikaans</option>
+                        <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
+                        <!-- Add more options as needed -->
+                    </select> --}}
+                    <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
+                        <option value="null" selected style="color: blue;">Language</option>
+                        @foreach(getlanguge() as $language)
+                       
+                            <option
+                            {{-- {{ $country->id == request()->country ? 'selected' : '' }}  --}}
+                              value="{{ $language->prefix }}"
+                            data-flag-url="{{ $language->flag_image_url }}"
+                          
+                            {{-- style="font-size:8px !important;" --}}
+                            >
+                            {{ $language->name }}
+                               
+                            </option>
+                        @endforeach
+                    </select>
+                   
+            </div>
+            </span>
+    </div>
+    <div id="google_translate_element" style="display: none;"></div>
     
         <div class="main-menu-wrapper">
             <div class="menu-header">
@@ -200,6 +326,44 @@
 </header>
 
 <script>
+
+
+
+    $(document).ready(function() {
+        // Initialize Select2
+        $(document).ready(function() {
+    console.log('Initializing Select2');
+    
+    $('#country_dropdown').select2({
+        width: 'resolve',
+        templateResult: function(option) {
+            console.log('Option:', option);
+            return formatOption(option);
+        },
+        templateSelection: formatOption,
+        escapeMarkup: function (markup) { return markup; }
+    });
+
+    function formatOption(option) {
+        if (!option.id) { return option.text; }
+
+        var flagUrl = $(option.element).data('flag-url');
+        console.log('Flag URL:', flagUrl);
+
+        if (flagUrl) {
+        return $('<span style="font-size:14px;font-weight:bold;  white-space: nowrap;  padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text + '</span>');
+    } else {
+        // return $('<span style="font-size:18px;margin-left:25px;font-weight:600; "><img src="'   '" class="img-flag" style="width: 20px; height:14px; margin-right: 3px;" /> ' + option.text + '</span>');
+    
+        return $('<span style="font-size:14px;font-weight:bold;    white-space: nowrap; padding:8px;">' +
+    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:18px; margin-right: 5px;" /> ' +
+    option.text + 
+    '</span>');}
+        // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
+    }
+});
+});
+
     function toggleOptionsMenu(event) {
     // Prevent event from propagating to parent elements
     event.stopPropagation();
