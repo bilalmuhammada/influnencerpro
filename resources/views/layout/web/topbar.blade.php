@@ -2,16 +2,23 @@
 
     <style>
         .VIpgJd-ZVi9od-ORHb{
-            display: none !important;        }
+            display: none !important;}
 
            
-
+ .select2-container--default .select2-results > .select2-results__options {
+    min-height: 120px; /* Set minimum height */
+          }
+          .select2-selection__arrow{
+            display: none;
+          }
+         
             .select2-container--default .select2-results>.select2-results__options{
                 overflow-x: hidden !important;
                 min-height: 120px !important;
                 background-color: #000 !important;
                 color: white !important;
             }
+
             .select2-container--open .select2-dropdown--below{
                 background-color: #000 !important;
             }
