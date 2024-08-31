@@ -1169,7 +1169,7 @@
                                     </div> --}}
                                 </div>
                                 <div class="review-content" style="font-size: 15px;line-height: 25px;height: 200px;">
-                                    <p>I feel like an elevated Pro-Influencer in InfluencerPro and already receiving lots of Paid-Collaborations from Brands….</p>
+                                    <p>I feel like an elevated Pro-Influencer in InfluencerPro and already receiving lots of Paid-Collaborations from Brands.</p>
                                 </div>
                             </div>
                         </div>
@@ -1297,7 +1297,7 @@
                                     </div> --}}
                                 </div>
                                 <div class="review-content" style=" font-size: 15px;line-height: 25px; height: 200px;">
-                                    <p>I’ve loved using it, simple and easy profile creation and Brand collaborations are via just a direct chat. Recommend to all Influencers!!.</p>
+                                    <p>I’ve loved using it, simple and easy profile creation and Brand collaborations are via just a direct chat. Recommend to all Influencers!.</p>
                                 </div>
                             </div>
                         </div>
