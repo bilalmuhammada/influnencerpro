@@ -60,7 +60,7 @@ class UserController extends Controller
     ->where('favourites.user_id', SiteHelper::getLoginUserId())
     ->orderBy('favourites.created_at', 'desc') // Order by the 'created_at' column in 'favourites'
     ->select('users.*') // Ensures you get only user columns
-    ->get()
+    ->get();
         // ->join('favourites', 'users.id', '=', 'favourites.user_id')
         // ->where('favourites.user_id', SiteHelper::getLoginUserId())
         // ->orderBy('favourites.id', 'desc')
