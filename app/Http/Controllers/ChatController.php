@@ -214,7 +214,12 @@ class ChatController extends Controller
             })->when($request->to_date, function ($fav) use ($request) {
                 $fav->whereDate('created_at', '<=', $request->to_date);
             });
-        })->orderBy('created_at',"DESC")->get();
+        }) ->join('favourites', 'users.id', '=', 'favourites.influencer_id')  // Assuming the relationship uses 'influencer_id'
+        ->where('favourites.user_id', SiteHelper::getLoginUserId())
+        ->where('favourites.fr_in', 2)
+        ->orderBy('favourites.created_at', 'desc') // Order by the 'created_at' column in 'favourites'
+        ->select('users.*') // Ensures you get only user columns
+        ->get();
         // $Chats = Chat::with('first_user', 'second_user')->when($role == 'vendor', function ($Chat) {
         //     $Chat->where('first_user_id', SiteHelper::getLoginUserId());
         // })->when($role == 'influencer', function ($Chat) {

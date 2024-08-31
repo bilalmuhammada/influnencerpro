@@ -58,6 +58,7 @@ class UserController extends Controller
         })
         ->join('favourites', 'users.id', '=', 'favourites.influencer_id')  // Assuming the relationship uses 'influencer_id'
     ->where('favourites.user_id', SiteHelper::getLoginUserId())
+    ->where('favourites.fr_in', 1)
     ->orderBy('favourites.created_at', 'desc') // Order by the 'created_at' column in 'favourites'
     ->select('users.*') // Ensures you get only user columns
     ->get();
