@@ -98,10 +98,11 @@
     display: flex; /* Show when hovering over the gallery container */
 }
 .open-chat:hover{
-color: #0504aa !important;
+    
+color: #997045 !important;
 }
 .open-chat{
-    color: #997045 !important;
+    color: #0504aa !important;
 }
 
 .image-actions img {
