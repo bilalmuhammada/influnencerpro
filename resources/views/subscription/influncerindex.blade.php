@@ -25,7 +25,7 @@
     color: blue;
 }
 .plan-h{
-    color: #997045; 
+    color: goldenrod; 
 }
 .plan-h:hover{
     color: blue; 
