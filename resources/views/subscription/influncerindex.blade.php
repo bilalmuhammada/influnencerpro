@@ -21,6 +21,15 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.terms-h{
+    color: blue;
+}
+.plan-h{
+    color: #997045; 
+}
+.plan-h:hover{
+    color: blue; 
+}
     </style>
 @section('content')
 <div class="content">

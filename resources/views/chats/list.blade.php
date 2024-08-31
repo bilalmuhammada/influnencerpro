@@ -247,7 +247,7 @@ select::-ms-expand {
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                     {{-- style="{{ $key > 0 ? 'display: none' : '' }}"  --}}
+                                     style="{{ $key > 0 ? 'display: none' : '' }}" 
                                      chat-id="{{ $chat->id }}"
                                      user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
@@ -496,7 +496,7 @@ $(document).ready(function() {
         });
         $(document).ready(function () {
             @if(request()->i)
-            // $('.chat-body-div').css('display', 'none');
+            $('.chat-body-div').css('display', 'none');
             $('.chat-with-user-{{ request()->i }}').click();
             @endif
             ajax_setup();
@@ -580,7 +580,7 @@ $(document).ready(function() {
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 
             var chat_body_selector = "#" + $(this).attr('id') + "-chat-body-div";
-            // $('.chat-body-div').css('display', 'none');
+            $('.chat-body-div').css('display', 'none');
             $(chat_body_selector).css('display', 'block');
         });
 
@@ -631,7 +631,7 @@ $(document).ready(function() {
                         $(message).val('');
                         $('.emojionearea-editor').html('');
                     }
-                    // $(selector).find('.unread-count').css('display', 'none');
+                    $(selector).find('.unread-count').css('display', 'none');
                 },
                 error: function (response) {
                     console.log('error');

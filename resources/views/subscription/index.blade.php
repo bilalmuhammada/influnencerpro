@@ -21,6 +21,15 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.terms-h{
+    color: blue;
+}
+.plan-h{
+    color: #997045; 
+}
+.plan-h:hover{
+    color: blue; 
+}
     </style>
 @section('content')
 <div class="content">
@@ -51,8 +60,8 @@
         <li><i class="fa fa-check-circle"></i>  Travel Calendars: Worldwide</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers & Talents: Globally</li>
         <li><i class="fa fa-check-circle"></i>  Hire Influencers & Talents: Unlimited</li>
-        <li><i class="fa fa-check-circle"></i>  Influencers & Talents Collaboration: Unlimited</li>
-        <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
+        <li ><i class="fa fa-check-circle"></i>  Influencers & Talents Collaboration: Unlimited</li>
+        <li style="white-space: nowrap;"><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
     
         <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br> Snapchat, Tik Tok, You Tube, Website </span></li>
 </li>
@@ -96,7 +105,7 @@
         <li><i class="fa fa-check-circle"></i>  View Influencers & Talents: Globally</li>
         <li><i class="fa fa-check-circle"></i>  Hire Influencers & Talents: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
-        <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
+        <li style="white-space: nowrap;"><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
         <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br> Snapchat, Tik Tok, You Tube, Website </span></li>
 </li>
     </ul>
@@ -137,7 +146,7 @@
         <li><i class="fa fa-check-circle"></i>  View Influencers & Talents: Globally</li>
         <li><i class="fa fa-check-circle"></i>  Hire Influencers & Talents: Unlimited <li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
-        <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
+        <li style="white-space: nowrap;"><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
         {{-- <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li> --}}
         <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br>Snapchat, Tik Tok, You Tube, Website </span></li>
 
