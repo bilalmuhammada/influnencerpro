@@ -50,10 +50,31 @@ width: 200px !important;
     margin-bottom: -0.5rem !important;
 
   }
+  .nationality_id{
+    border-color: #997045;
+
+  }
+  .nationality_id:hover{
+    border-color: blue;
+
+  }
+ 
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;
   border-radius: 34px;
+}
+.form-control{
+    border-color: #997045 !important;
+}
+.form-control:hover{
+    border-color: blue !important;
+}
+.select2-container{
+    border-color: #997045 !important; 
+}
+.select2-container:hover{
+    border-color: blue !important; 
 }
 
 /* Define the scrollbar track */
