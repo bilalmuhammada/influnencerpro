@@ -55,7 +55,7 @@ class UserController extends Controller
             })->when($request->to_date, function ($fav) use ($request) {
                 $fav->whereDate('created_at', '<=', $request->to_date);
             });
-        })->orderBy('id','DESC')
+        })->orderBy('created_at','DESC')
         // ->join('favourites', 'users.id', '=', 'favourites.user_id')
         // ->where('favourites.user_id', SiteHelper::getLoginUserId())
         // ->orderBy('favourites.id', 'desc')

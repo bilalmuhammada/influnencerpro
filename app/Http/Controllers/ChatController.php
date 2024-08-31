@@ -214,7 +214,7 @@ class ChatController extends Controller
             })->when($request->to_date, function ($fav) use ($request) {
                 $fav->whereDate('created_at', '<=', $request->to_date);
             });
-        })->orderBy('id',"DESC")->get();
+        })->orderBy('created_at',"DESC")->get();
         // $Chats = Chat::with('first_user', 'second_user')->when($role == 'vendor', function ($Chat) {
         //     $Chat->where('first_user_id', SiteHelper::getLoginUserId());
         // })->when($role == 'influencer', function ($Chat) {
