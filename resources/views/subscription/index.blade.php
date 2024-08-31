@@ -63,7 +63,7 @@
         <li ><i class="fa fa-check-circle"></i>  Influencers & Talents Collaboration: Unlimited</li>
         <li style="white-space: nowrap;"><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
     
-        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br>  &nbsp; Snapchat, Tik Tok, You Tube, Website </span></li>
+        <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br>  &nbsp;Snapchat, Tik Tok, You Tube, Website </span></li>
 </li>
         {{-- <li><i class="fa fa-times-circle text-danger"></i> Featured Days: <b>No</b></li> --}}
     </ul>
