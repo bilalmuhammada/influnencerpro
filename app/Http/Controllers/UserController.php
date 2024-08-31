@@ -56,11 +56,16 @@ class UserController extends Controller
                 $fav->whereDate('created_at', '<=', $request->to_date);
             })->orderBy('created_at','DESC');
         })
+        ->join('favourites', 'users.id', '=', 'favourites.influencer_id')  // Assuming the relationship uses 'influencer_id'
+    ->where('favourites.user_id', SiteHelper::getLoginUserId())
+    ->orderBy('favourites.created_at', 'desc') // Order by the 'created_at' column in 'favourites'
+    ->select('users.*') // Ensures you get only user columns
+    ->get()
         // ->join('favourites', 'users.id', '=', 'favourites.user_id')
         // ->where('favourites.user_id', SiteHelper::getLoginUserId())
         // ->orderBy('favourites.id', 'desc')
         // ->select('users.*') // Ensures you get only user columns
-        ->get();
+        // ->get();
 
         return view('vendor-dashboard.saved-influencers')->with(['view_type' => 'influencer', 'influencers' => $influencers]);
     }
