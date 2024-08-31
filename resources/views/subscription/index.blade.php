@@ -49,7 +49,7 @@ background: goldenrod; !important
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type='hidden' name="total" value="299">
-    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
+    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:17px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
        
     <span class="plan-h">Star</span>
@@ -90,7 +90,7 @@ background: goldenrod; !important
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type='hidden' name="total" value="769">
-    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
+    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:17px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
         <div style="text-align:center;">
         <span class="plan-h">Gold</span>
@@ -132,7 +132,7 @@ background: goldenrod; !important
         <form action="/session" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type='hidden' name="total" value="1459">
-    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:10px;background:;border-radius:5px;">
+    <div class="mx-auto" style="border:2px solid #A17A4E;padding:0px;padding-bottom:17px;background:;border-radius:5px;">
     <div  class="mx-auto text-center p-2">
     <span class="plan-h">Pro</span>
     <div class="mx-auto" style="border:2px solid #A17A4E;width:40px;text-align:center;margin-top:-10px;"></div>
