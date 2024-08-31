@@ -3,6 +3,15 @@
 @section('content')
     {{--    @dd(request()->all())--}}
     <style>
+        .select2-container--default .select2-selection--single{
+            background-color: #fff !important;
+    border: 1px solid #aaa !important;
+    border-radius: 4px !important;
+    color: black !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered{
+            color: #aaa !important;
+        }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
         }
