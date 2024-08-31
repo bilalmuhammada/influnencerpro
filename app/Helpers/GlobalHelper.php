@@ -47,7 +47,7 @@ function getCountries()
 }
 function getlanguge()
 {
-    $languages = DB::table('languages')->get();
+    $languages = DB::table('languages')->orderBy("name",'ASC')->get();
 
     return $languages;
 }
