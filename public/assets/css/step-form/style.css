@@ -16,6 +16,7 @@ p {
     background: #fff;
     width: 150px;
     font-size: 25px;
+    padding: 7px;
     font-weight: bold;
 }
 ul.circle-check li i {
