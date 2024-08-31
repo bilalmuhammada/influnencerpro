@@ -30,6 +30,12 @@
 .plan-h:hover{
     color: blue; 
 }
+.bt-plan{
+background-color: goldenrod
+}
+.mb-4{
+    margin-bottom: 2.5rem !important;
+}
     </style>
 @section('content')
 <div class="content">

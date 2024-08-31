@@ -24,11 +24,17 @@
 .terms-h{
     color: blue;
 }
+.bt-plan{
+background-color: goldenrod
+}
 .plan-h{
     color: goldenrod; 
 }
 .plan-h:hover{
     color: blue; 
+}
+.mb-4{
+    margin-bottom: 2.5rem !important;
 }
     </style>
 @section('content')
