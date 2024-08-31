@@ -25,7 +25,7 @@
     color: blue;
 }
 .bt-plan{
-background-color: goldenrod
+background-color: goldenrod !important;
 }
 .plan-h{
     color: goldenrod; 
