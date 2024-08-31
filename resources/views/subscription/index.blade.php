@@ -138,7 +138,7 @@
         <li><i class="fa fa-check-circle"></i>  Hire Influencers & Talents: Unlimited <li>
         <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
         <li><i class="fa fa-check-circle"></i>  View Influencers: Verified, 50M+ Followers, Celebrities</li>
-        <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li>
+        {{-- <li><i class="fa fa-check-circle"></i>  Influencer & Talent Collaborations: Unlimited</li> --}}
         <li style="display:ruby-text;"><i class="fa fa-check-circle"></i>  Access Socials: <span style="display: inline-flex;">Instagram, Twitter, Facebook, Pinterest,<br>Snapchat, Tik Tok, You Tube, Website </span></li>
 
     </ul>
