@@ -992,14 +992,18 @@ width: 200px !important;
     }
 }
 
+                            if($influencer->personal_information!=null){
+                            $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
+                            // $country =  DB::table('countries')->where('id',$influencer->personal_information->national_id)->first();
+                            }
+                            
 
                                             // dd($influencer->categories);
                                             @endphp
                                         <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                            &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}
-                                        </h5>
+                                            &nbsp;&nbsp;City: {{$city->name ?? ''}}
                                     </div>
                                 </div>
                             {{--                                dsf--}}
