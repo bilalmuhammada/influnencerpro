@@ -496,7 +496,7 @@ $(document).ready(function() {
         });
         $(document).ready(function () {
             @if(request()->i)
-            $('.chat-body-div').css('display', 'none');
+            // $('.chat-body-div').css('display', 'none');
             $('.chat-with-user-{{ request()->i }}').click();
             @endif
             ajax_setup();
@@ -580,7 +580,7 @@ $(document).ready(function() {
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 
             var chat_body_selector = "#" + $(this).attr('id') + "-chat-body-div";
-            $('.chat-body-div').css('display', 'none');
+            // $('.chat-body-div').css('display', 'none');
             $(chat_body_selector).css('display', 'block');
         });
 
