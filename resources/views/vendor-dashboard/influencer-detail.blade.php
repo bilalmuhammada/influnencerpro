@@ -590,7 +590,7 @@ color: #997045 !important;
                     <div class="row">
                         <div class="col-md-6">
                             <strong>
-                        <span style="font-size:30px;padding-left:3px; display: flex;">
+                        <span style="font-size:30px;padding-left:3px; display: flex; margin-top: -12px;">
                             {{ $influencer ? $influencer->full_name : ''}}
                              <a href="javascript:void(0)" style="margin: 9px 6px 0px 10px;" class="share-link" onclick="shareLink()">
                                         <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
@@ -630,7 +630,7 @@ color: #997045 !important;
                         $web = getInfluencerSocialMediaProfileByTypeAndId('web', $influencer->id);
             //    dd( , isset($instagram->followers) );
                   @endphp
-                    <div class="details" style=" margin-top:45px;hight:auto;padding:7px 3px;">
+                    <div class="details" style=" margin-top:57px;hight:auto;padding:7px 3px;">
                        
                         <ul style="list-style-type: none;">
                             @if($instagram && isset($instagram->followers))
@@ -665,14 +665,14 @@ color: #997045 !important;
                                                 width="30px"></a> <div
                                             class="text-center"
                                             style="font-size:11px;">{{ $tiktok ? $tiktok->followers : 0 }}</div></span>
-                                </li> &nbsp;&nbsp;
+                                </li> &nbsp; &nbsp;
                             @endif
                             @if($facebook && isset($facebook->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                                 src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="30px"></a> <div
                                             class="text-center"
                                             style="font-size:11px;">{{ $facebook ? $facebook->followers : 0 }}</div></span>
-                                </li>  &nbsp;&nbsp;
+                                </li> &nbsp; &nbsp;
                             @endif
                             @if($snapchat && isset($snapchat->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
@@ -682,7 +682,7 @@ color: #997045 !important;
                                             style="font-size:11px;">
                                             {{ 
                                             $snapchat ? $snapchat->followers : 0 }}</div></span>
-                                </li>  &nbsp;&nbsp;
+                                </li> &nbsp; &nbsp;
                         @endif
                         @if($pinterestProfiles && isset($pinterestProfiles->followers))
                         <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
@@ -690,7 +690,7 @@ color: #997045 !important;
                                         width="30px"></a> <div
                                     class="text-center"
                                     style="font-size:11px;">{{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}</div></span>
-                        </li>  &nbsp;&nbsp;
+                        </li> &nbsp; &nbsp;
                 @endif
                 @if($web && isset($web->followers))
                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
