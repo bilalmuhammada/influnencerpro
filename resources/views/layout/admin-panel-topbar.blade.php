@@ -1,6 +1,6 @@
 
 
-<header class="header header-bg">
+<header class="header">
     
 <style>
     .noti-details{
@@ -78,7 +78,7 @@
 
     <script type="text/javascript">
         function translateLanguage() {
-            var dropdown = document.getElementById("country_dropdown");
+            var dropdown = document.getElementById("langauge_dropdown");
             // alert(dropdown);
          
             var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
@@ -117,21 +117,10 @@
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:545px;">
+        <div class="country" style="border:0px solid green;position:relative;right:224px;">
             <div class="mobile-country desktop-menu-right">
-                {{-- <label for="">Select</label> --}}
                 
-                    {{-- <span style="color: #000;">Select languages</span> --}}
-                    @php
-                    // dd($countries[0]->image_url);
-                   @endphp
-                    {{-- <select class="form-control country_dropdown1" name="country_dropdown" id="country_dropdown">
-                        <!-- Ensure options are correctly placed here -->
-                        <option value="af" data-flag-url="https://flagcdn.com/w320/za.png">Afrikaans</option>
-                        <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
-                        <!-- Add more options as needed -->
-                    </select> --}}
-                    <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
+                    <select class="form-control language_dropdown " name="language_dropdown"  style="display: none; width:157px;" id="language_dropdown" onchange="translateLanguage()">>
                         <option value="null" selected style="color: blue;">Language</option>
                         @foreach(getlanguge() as $language)
                        
@@ -153,6 +142,7 @@
     </div>
     <div id="google_translate_element" style="display: none;"></div>
     
+
         <div class="main-menu-wrapper">
             <div class="menu-header">
                 <a href="#" class="menu-logo">
@@ -243,15 +233,37 @@
                 <div style="display: contents;">
                     <div class="media d-flex" style="background-color: whitesmoke; position: relative;">
                         <span class="avatar avatar-sm flex-shrink-0" style="margin: 12px;">
-                            <img class="avatar-img rounded-circle" alt src="{{ $message->receiver->image_url ?? asset('assets/img/user/avatar-2.jpg')}}">
+                            <img class="avatar-img rounded-circle" alt src="{{ $message->sender->image_url ?? asset('assets/img/user/avatar-2.jpg')}}">
                         </span>
-                       
+                        @php
+                        $user_categories = DB::table('user_categories')
+->join('categories', 'user_categories.category_id', '=', 'categories.id')
+->where('user_categories.user_id', getSafeValueFromObject($message->sender, 'id'))
+->select('categories.name')
+->get();
+
+// dd($user_categories);
+
+$categoryNames = '';
+foreach ($user_categories as $key => $category) {
+// Append the category name to the string
+$categoryNames .= $category->name;
+
+// Add a comma and space if it's not the last category
+if ($key != $user_categories->count() - 1) {
+$categoryNames .= ', ';
+}
+}
+
+
+@endphp
                         <div class="media-body flex-grow-1" style="padding: 9px 0px 0px 11px; font-size: 12px;">
                             <p class="noti-details" style="font-weight:bolder ">
-                                <span class="noti-title">{{$message->receiver->name ?? '' }}</span>
+                                <span class="noti-title">{{$message->sender->name ?? '' }} - {{$categoryNames ?? ''}} {{ getSafeValueFromObject($message->sender, 'company_name') ?? ''}}</span>
                             </p>
                             <p class="noti-details">
-                                <span class="noti-title" style="font-weight: normal;">{{ $message->message }}</span>
+
+                                <span class="noti-title" style="font-weight: normal;">{{Str::words($message->message, 50, '...')}}</span>
                             </p>
                             <p class="noti-time" style="margin-top: 2px;">
                                 <span class="notification-time" style="font-weight: normal;">{{ $message->message_recieved_time_diff }}</span>
@@ -329,12 +341,12 @@
 
 
 
-    $(document).ready(function() {
+    
         // Initialize Select2
         $(document).ready(function() {
     console.log('Initializing Select2');
     
-    $('#country_dropdown').select2({
+    $('#language_dropdown').select2({
         width: 'resolve',
         templateResult: function(option) {
             console.log('Option:', option);
@@ -362,7 +374,7 @@
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
 });
-});
+
 
     function toggleOptionsMenu(event) {
     // Prevent event from propagating to parent elements

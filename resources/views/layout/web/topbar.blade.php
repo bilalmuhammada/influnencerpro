@@ -18,15 +18,18 @@
             margin-left: -10px !important;
           }
          
+          .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+            color: blue !important;
+          }
             .select2-container--default .select2-results>.select2-results__options{
                 overflow-x: hidden !important;
                 min-height: 120px !important;
-                background-color: #000 !important;
-                color: white !important;
+                background-color: #ffffff !important;
+                color: rgb(0, 0, 0) !important;
             }
 
             .select2-container--open .select2-dropdown--below{
-                background-color: #000 !important;
+                background-color: #ffffff !important;
             }
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
