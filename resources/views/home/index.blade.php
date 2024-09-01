@@ -120,7 +120,7 @@ color:#997045 !important;
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
                                    
-                                    <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                    <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                         hire for Business Brands Marketing Worldwide!
                                         </p>
                                 </div>
@@ -179,7 +179,7 @@ color:#997045 !important;
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span class="orange-text"><br>Brands</span></h1>
-                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                            <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
                                 </div>
@@ -241,7 +241,7 @@ color:#997045 !important;
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                            <p  class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
                                 </div>
@@ -302,7 +302,7 @@ color:#997045 !important;
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                            <p  class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
                                 </div>
@@ -363,7 +363,7 @@ color:#997045 !important;
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                            <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
                                 </div>
@@ -423,7 +423,7 @@ color:#997045 !important;
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h1>
-                                            <p style="color:rgb(169, 128, 25);white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
+                                            <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
                                 </div>
