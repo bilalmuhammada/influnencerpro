@@ -13,7 +13,7 @@
 color:#997045;
     }
     .orange-text{
-color:blue !important;
+color:#997045 !important;
     }
     ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
@@ -31,7 +31,7 @@ color:blue !important;
 }
 /* Default text style */
 .responsive-text {
-    color: rgb(169, 128, 25) !important;
+    color: blue !important;
     /* font-size: 1.5rem; Use responsive units like rem */
     line-height: 1.5; /* Adjust line height for readability */
     /* text-align: center; Center the text for better visibility */
@@ -88,7 +88,7 @@ color:blue !important;
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influencers</span></h1>
+                                        <span class="orange-text" ><br>Influencers</span></h1>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
