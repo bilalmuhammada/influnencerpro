@@ -13,7 +13,7 @@
 color:#997045;
     }
     .orange-text{
-color:#997045 !important;
+color:goldenrod !important;
     }
     ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
