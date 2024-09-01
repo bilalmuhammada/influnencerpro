@@ -31,7 +31,7 @@
     color: blue; 
 }
 .bt-plan{
-background: goldenrod; !important
+background: #A17A4E; !important
 }
 .mb-4{
     margin-bottom: 2.5rem !important;
