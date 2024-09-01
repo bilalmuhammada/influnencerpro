@@ -40,7 +40,7 @@
 
             }
             .img-fluid{
-                width: 50vh !important;
+                width: 42vh !important;
             }
             .select2-dropdown .select2-dropdown--below{
                 width: 144px !important;
@@ -112,7 +112,7 @@
     </div>
 
 
-    <div class="country" style="border:0px solid green;position:relative;right:545px;">
+    <div class="country" style="border:0px solid green;position:relative;right:533px;">
         <div class="mobile-country desktop-menu-right">
             {{-- <label for="">Select</label> --}}
             
