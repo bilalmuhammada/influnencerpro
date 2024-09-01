@@ -23,6 +23,7 @@
 }
 .terms-h{
     color: blue;
+    margin-bottom: 2.5rem !important;
 }
 .plan-h{
     color: goldenrod; 
@@ -33,14 +34,12 @@
 .bt-plan{
 background: #A17A4E; !important
 }
-.mb-4{
-    margin-bottom: 2.5rem !important;
-}
+
     </style>
 @section('content')
 <div class="content">
 <div class="container"  style="margin-top: 60px;border-top:1px solid #eee;padding-top:30px;">
-<h2 class="terms-h text-center mb-4">Select Your Plan</h2>
+<h2 class="terms-h text-center ">Select Your Plan</h2>
 <!------->
 <div class="col-md-12">
     
