@@ -39,9 +39,7 @@
                
 
             }
-            .img-fluid{
-                width: 42vh !important;
-            }
+           
             .select2-dropdown .select2-dropdown--below{
                 width: 144px !important;
             }
