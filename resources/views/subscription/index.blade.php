@@ -31,9 +31,6 @@
 .plan-h:hover{
     color: blue; 
 }
-.bt-plan{
-background: #A17A4E; !important
-}
 
     </style>
 @section('content')

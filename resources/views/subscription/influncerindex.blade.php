@@ -25,9 +25,6 @@
     color: blue;
     margin-bottom: 2.5rem !important;
 }
-.bt-plan{
-background: #A17A4E !important;
-}
 .plan-h{
     color: goldenrod; 
 }

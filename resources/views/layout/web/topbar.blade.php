@@ -39,7 +39,9 @@
                
 
             }
-           
+            .select2-dropdown {
+                border: 0px solid !important;
+            }
             .select2-dropdown .select2-dropdown--below{
                 width: 144px !important;
             }
@@ -104,7 +106,7 @@
 <span></span>
 </span>
         </a>
-        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 44px;">
+        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 47px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
     </div>
