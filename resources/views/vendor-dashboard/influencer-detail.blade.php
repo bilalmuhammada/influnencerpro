@@ -592,7 +592,7 @@ color: #997045 !important;
                             <strong>
                         <span style="font-size:30px;padding-left:3px; display: flex; margin-top: -12px;">
                             {{ $influencer ? $influencer->full_name : ''}}
-                             <a href="javascript:void(0)" style="margin: 9px 16px 0px 10px;" class="share-link" onclick="shareLink()">
+                             <a href="javascript:void(0)" style="margin: 9px 10px 0px 18px;" class="share-link" onclick="shareLink()">
                                         <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
                                     </a>
                                 <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;">

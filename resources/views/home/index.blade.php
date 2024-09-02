@@ -6,8 +6,11 @@
     font-weight: bolder;
     color: goldenrod;
     }
-    .changeColor:hover{
+    .changeColor{
         color: goldenrod;
+    }
+    .changeColor:hover{
+        color: blue;
     }
     .orange-text:hover{
 color:#997045;
