@@ -206,7 +206,7 @@ display: none !important;
                                                         value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('category_id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
-                                         <label for="" class="focus-label">Influencer Category</label>
+                                         <label for="" style="top: -18px;" class="focus-label">Influencer Category</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
