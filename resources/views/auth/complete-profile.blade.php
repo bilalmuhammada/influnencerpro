@@ -12,6 +12,10 @@
   .dz-image {
     position: relative;
   }
+  .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    color: #ffffff !important;
+    background-color: #6161e4 !important;
+  }
 
   .dz-preview {
             position: relative;

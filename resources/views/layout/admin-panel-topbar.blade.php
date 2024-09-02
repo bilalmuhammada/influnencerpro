@@ -31,15 +31,15 @@
             /* margin-left: -10px !important; */
           }
          
-            .select2-container--default .select2-results>.select2-results__options{
-                overflow-x: hidden !important;
+           .select2-container--default .select2-results>.select2-results__options{
+               /*   overflow-x: hidden !important;
                 min-height: 120px !important;
-                background-color: #000 !important;
-                color: white !important;
-            }
+                background-color: #000 !important; */
+ color: rgb(0, 0, 0) !important;
+            } */
 
             .select2-container--open .select2-dropdown--below{
-                background-color: #000 !important;
+                color: #000000 !important;
             }
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
@@ -78,7 +78,7 @@
 
     <script type="text/javascript">
         function translateLanguage() {
-            var dropdown = document.getElementById("langauge_dropdown");
+            var dropdown = document.getElementById("language_dropdown");
             // alert(dropdown);
          
             var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
@@ -117,7 +117,7 @@
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:224px;">
+        <div class="country" style="border:0px solid green;position:relative;right:196px;">
             <div class="mobile-country desktop-menu-right">
                 
                     <select class="form-control language_dropdown " name="language_dropdown"  style="display: none; width:157px;" id="language_dropdown" onchange="translateLanguage()">>
