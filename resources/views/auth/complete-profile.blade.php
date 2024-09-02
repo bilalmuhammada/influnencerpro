@@ -17,7 +17,9 @@
     font-weight: 600 !important;
     /* background-color: #6161e4 !important; */
   }
-
+  .select2-dropdown {
+border: 0px !important;
+  }
   .dz-preview {
             position: relative;
         }
