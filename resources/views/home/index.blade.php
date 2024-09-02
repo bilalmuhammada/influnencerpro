@@ -74,9 +74,9 @@ color:goldenrod !important;
             <div class="col-md-12 col-lg-12">
                 <div class="row">
                     
-                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:140px;height:550px; background-size: cover; background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
                        
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
