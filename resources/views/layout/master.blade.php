@@ -20,7 +20,7 @@
     @endif
 
     @yield('content')
-    @include('layout.web.footer')
+    @include('layout.footer')
 </div>
 </body>
 </html>

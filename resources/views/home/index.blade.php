@@ -7,10 +7,10 @@
     color: goldenrod;
     }
     .changeColor{
-        color: goldenrod;
+        color: blue;
     }
     .changeColor:hover{
-        color: blue;
+        color: goldenrod;
     }
     .orange-text:hover{
 color:#997045;
@@ -74,9 +74,9 @@ color:goldenrod !important;
             <div class="col-md-12 col-lg-12">
                 <div class="row">
                     
-                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px; background-size: cover; background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:150px;height:550px;background-size: cover;background-image:url({{ asset('assets/banner-image/sebimg1.JPEG') }});">
                        
-                        <div class="row"  style="margin-bottom: 12px;">
+                        <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
@@ -1016,8 +1016,8 @@ color:goldenrod !important;
         </div>
     </section>
 
-    <section class="section app-version" style="border:0px solid red;">
-        <div class="container">
+    <section class="section1 app-version1" >
+        <div class="container1">
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
@@ -1028,13 +1028,14 @@ color:goldenrod !important;
 
                     <div class="row justify-content-center">
                         <!-- &nbsp; -->
+                    
                         <div class="col-xl-2 col-md-6" style="width:235px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
-                                        <h1 class="text-center numberstyle">1</h1>
+                                        <h1 class="text-center numberstyle">12</h1>
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">

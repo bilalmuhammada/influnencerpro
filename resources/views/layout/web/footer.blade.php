@@ -217,27 +217,24 @@
     }
 </script>
 </div>
-
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>
 </button>
-{{-- <script src="assets/js/feather.min.js"></script> --}}
+<script src="assets/js/feather.min.js"></script>
 {{--<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>--}}
 
-{{-- <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
 <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 
 <script src="{{ asset('assets/js/jquery.waypoints.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
 
-<script src="{{ asset('assets/plugins/aos/aos.js') }}"></script> --}}
+<script src="{{ asset('assets/plugins/aos/aos.js') }}"></script>
 
-<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+{{--<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-{{-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
 <script src="{{ asset('assets/js/slick.js') }}"></script>
 
 <script src="{{ asset('assets/js/script.js') }}"></script>
@@ -265,13 +262,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 <script>
-    
     $(document).ready(function () {
-
-    
-   
-
-
         ajax_setup();
         $('.select2').select2();
 
