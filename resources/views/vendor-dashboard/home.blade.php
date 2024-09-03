@@ -78,10 +78,10 @@ width: 200px !important;
     background-color: #e4e4e4 !important;
 }
 .changecolor{
-color: goldenrod !important; 
+color: blue !important; 
 }
 .changecolor:hover{
-    color: blue !important; 
+    color: goldenrod !important; 
 }
 .select2-container:hover{
     border-color: blue !important; 
