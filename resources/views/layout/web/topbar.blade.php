@@ -52,7 +52,7 @@
             .select2-container--default .select2-selection--single .select2-selection__rendered{
                 color: blue !important;
                 width: 200px !important;
-                margin-left: 10px !important; 
+                margin-left: 8px !important; 
             }
             .select2-container--default .select2-selection--single .select2-selection__arrow {
                 right: -15px !important;

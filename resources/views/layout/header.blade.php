@@ -7,6 +7,9 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png" type="image/x-icon') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+ 
 
    {{-- start --}}
   
@@ -44,6 +47,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.18.3/tagify.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png" type="image/x-icon') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
     @if(!isset($view_type))
         <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
@@ -70,7 +85,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"/>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script> --}}
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script> --}}
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     {{-- <script src="{{ asset('assets/js/slick.js') }}"></script> --}}
    <script>
@@ -211,9 +227,9 @@
             /* .btn-primary:hover {
                 background-color:#0504aa !important;
             } */
-            .select2-container .select2-selection--single {
+            /* .select2-container .select2-selection--single {
                 height: 44px !important;
-            }
+            } */
             .emojionearea.emojionearea-inline{
                 height:44px !important;
             }

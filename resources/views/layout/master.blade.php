@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('layout.header')
+ @include('layout.header')
 @include('modal.privacy-policy')
 @include('modal.terms')
 @include('modal.about-us')
@@ -20,7 +20,7 @@
     @endif
 
     @yield('content')
-    @include('layout.footer')
+    @include('layout.web.footer')
 </div>
 </body>
 </html>

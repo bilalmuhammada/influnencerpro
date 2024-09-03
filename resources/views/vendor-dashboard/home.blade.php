@@ -5,12 +5,12 @@
     <style>
         .select2-container--default .select2-selection--single{
             background-color: #fff !important;
-    border: 1px solid #aaa !important;
+    /* border: 1px solid #aaa !important; */
     border-radius: 4px !important;
     color: black !important;
         }
         .select2-container--default .select2-selection--single .select2-selection__rendered{
-            color: #aaa !important;
+            color: blue !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
@@ -23,9 +23,9 @@
         }
         .datepicker {
             padding-left: 10px !important;}
-        .select2-container--default.select2-container--focus .select2-selection--multiple:focus{
+        /* .select2-container--default.select2-container--focus .select2-selection--multiple:focus{
             border: 1px solid blue !important;
-        }
+        } */
 
         .tagify__tag {
             width: 47% !important;
@@ -94,15 +94,18 @@ color: goldenrod !important;
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    color: blue !important
+}
     </style>
     <section style="border-top:2px solid #eee;">
         <br/>
-        <div class="row">
+        <div class="row" style="display: none;">
             <div class="col-md-12 ">
                 <div class="input-box text-center mx-auto"
                      style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
                     <input type="text" class="middle-search" placeholder=" Search..."
-                           style="border:none;height:50px;width:500px;"><i class="fa fa-search"></i>
+                           style="border:none;height:50px;width:500px; display: none;" ><i class="fa fa-search"></i>
                 </div>
             </div>
         </div>

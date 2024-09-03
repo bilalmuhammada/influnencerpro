@@ -1,8 +1,64 @@
 
 
-<header class="header">
+<header class="header"  style="border-bottom:0px solid #eee;">
     
 <style>
+    .VIpgJd-ZVi9od-ORHb{
+            display: none !important;}
+
+           
+ .select2-container--default .select2-results > .select2-results__options {
+    min-height: 120px; /* Set minimum height */
+          }
+          .select2-selection__arrow{
+            display: none;
+          }
+          .select2-selection .select2-selection--single{
+            margin-left: -12px !important;
+          }
+          .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+            margin-left: -10px !important;
+          }
+         
+          .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+            color: blue !important;
+          }
+            .select2-container--default .select2-results>.select2-results__options{
+                overflow-x: hidden !important;
+                min-height: 120px !important;
+                background-color: #ffffff !important;
+                color: rgb(0, 0, 0) !important;
+            }
+
+            .select2-container--open .select2-dropdown--below{
+                background-color: #ffffff !important;
+            }
+            .select2-container--default .select2-selection--single{
+                border: 0px solid !important ;
+            }
+            .register-btn, .log-btn{
+                color: blue;
+               
+
+            }
+            .select2-dropdown {
+                border: 0px solid !important;
+            }
+            .select2-dropdown .select2-dropdown--below{
+                width: 144px !important;
+            }
+            .register-btn:hover, .log-btn:hover{
+                color: #997045 !important;
+
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                color: blue !important;
+                width: 200px !important;
+                margin-left: 8px !important; 
+            }
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                right: -15px !important;
+            } 
     .noti-details{
         margin-bottom: 0px !important;
 
@@ -65,9 +121,9 @@
                 /* right: -15px !important; */
             }
 </style>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
+
+    
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -120,7 +176,7 @@
         <div class="country" style="border:0px solid green;position:relative;right:196px;">
             <div class="mobile-country desktop-menu-right">
                 
-                    <select class="form-control language_dropdown " name="language_dropdown"  style="display: none; width:157px;" id="language_dropdown" onchange="translateLanguage()">>
+                    <select class="form-control country_dropdown select2 " name="language_dropdown"  style=" width:157px;" id="language_dropdown" onchange="translateLanguage()">>
                         <option value="null" selected style="color: blue;">Language</option>
                         @foreach(getlanguge() as $language)
                        
@@ -336,17 +392,12 @@ $categoryNames .= ', ';
         </div>
     </nav>
 </header>
-
 <script>
 
-
-
-    
+$(document).ready(function() {
         // Initialize Select2
         $(document).ready(function() {
-    console.log('Initializing Select2');
-    
-    $('#language_dropdown').select2({
+     $('#language_dropdown').select2({
         width: 'resolve',
         templateResult: function(option) {
             console.log('Option:', option);
@@ -373,7 +424,6 @@ $categoryNames .= ', ';
     '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
-});
 
 
     function toggleOptionsMenu(event) {
@@ -394,4 +444,6 @@ $categoryNames .= ', ';
     // Toggle the current menu
     optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'none' : 'block';
 }
+});
+});
 </script>
