@@ -7,10 +7,10 @@
     color: goldenrod;
     }
     .changeColor{
-        color: blue;
+        color: goldenrod;
     }
     .changeColor:hover{
-        color: goldenrod;
+        color: blue;
     }
     .orange-text:hover{
 color:#997045;
