@@ -70,6 +70,13 @@ width: 200px !important;
 .form-control:hover{
     border-color: blue !important;
 }
+.select2-container--default .select2-selection--multiple {
+    border-color: #997045 !important; 
+}
+
+.select2-container--default .select2-selection--multiple:focus {
+    border-color: blue !important; 
+}
 .select2-container{
     border-color: #997045 !important; 
 }
@@ -137,7 +144,7 @@ color: blue !important;
                                     <input type="text" class="form-control" placeholder="Search..." name="">
                                     <label for="" class="font_label">Country</label>
                                     @php $countries = getCountries(); @endphp
-                                    <select class="form-control select2 nationality_id" id="nationality_id" 
+                                    <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
                                         {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                         @forelse($countries as $country)

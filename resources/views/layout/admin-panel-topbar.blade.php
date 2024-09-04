@@ -16,9 +16,7 @@
           .select2-selection .select2-selection--single{
             margin-left: -12px !important;
           }
-          .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
-            margin-left: -10px !important;
-          }
+         
          
           .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
             color: blue !important;
