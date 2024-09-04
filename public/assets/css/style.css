@@ -8891,7 +8891,7 @@ div#global-loader {
 
 .search-filter .select2-container .select2-selection--single,
 .search-filter:focus .form-control:focus {
-    border: 1px solid blue !important;
+    /* border: 1px solid blue !important; */
     border-radius: 6px;
 }
 

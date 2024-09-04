@@ -74,11 +74,21 @@ width: 200px !important;
     border-color: #997045 !important; 
 }
 
-.select2-container--default .select2-selection--multiple:focus {
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    color: black !important;
+}
+.select2-container--default .select2-selection--multiple:hover {
     border-color: blue !important; 
 }
 .select2-container{
     border-color: #997045 !important; 
+}
+.select2-container:focus{
+    border-color: blue !important; 
+}
+
+.select2-results__options{
+padding-left: 12px !important;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
     border: 0px solid !important;
@@ -101,9 +111,9 @@ color: blue !important;
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
-.select2-container--default .select2-results__option--highlighted[aria-selected]{
+/* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
-}
+} */
     </style>
     <section style="border-top:2px solid #eee;">
         <br/>
@@ -601,7 +611,7 @@ color: blue !important;
                                     {{-- <input name='hair_types' class='form-control'
                                            placeholder='write some hair types'
                                            value="{{$hair_type}}"> --}}
-                                                                       <select name="hair_types[]" class="form-control seletct2" multiple id="">
+                                                                       <select name="hair_types[]" class="form-control seletct2"  id="">
                                                                         {{-- @foreach($hair_type1 as $hair)  
                                                                         
                                                                         <option value="{{$hair}}">{{$hair}}</option>
@@ -633,7 +643,7 @@ color: blue !important;
                                     @endphp
                                     <label class="font_label">Hair Color</label>
                                     <!-- <div class="form-group"> -->
-                                        <select name="hair_color[]" class="form-control seletct2" multiple id="">
+                                        <select name="hair_color[]" class="form-control seletct2"  id="">
                                             {{-- @foreach($hair_color1 as $hcolor)  
                                             
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
@@ -662,7 +672,7 @@ color: blue !important;
                                         $eye_color1 = explode(",", $eye_color);
                                     @endphp
                                     <label class="font_label">Eye Color</label>
-                                    <select name="eye_color[]" class="form-control seletct2" multiple id="">
+                                    <select name="eye_color[]" class="form-control seletct2"  id="">
                                         {{-- @foreach($eye_color1 as $ecolor)  
                                         
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
