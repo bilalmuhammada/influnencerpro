@@ -103,7 +103,9 @@ color: #0504aa !important;
 .select2-container:hover{
     border-color: #0504aa !important; 
 }
-
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display{
+    margin-left: 11px !important;
+}
 /* Define the scrollbar track */
 ::-webkit-scrollbar-track {
   background: transparent;
