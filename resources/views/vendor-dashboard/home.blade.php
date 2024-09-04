@@ -95,13 +95,13 @@ padding-left: 12px !important;
     background-color: #e4e4e4 !important;
 }
 .changecolor{
-color: blue !important; 
+color: #0504aa !important; 
 }
 .changecolor:hover{
     color: goldenrod !important; 
 }
 .select2-container:hover{
-    border-color: blue !important; 
+    border-color: #0504aa !important; 
 }
 
 /* Define the scrollbar track */
