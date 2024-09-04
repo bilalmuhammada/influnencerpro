@@ -158,7 +158,7 @@ color: #0504aa !important;
                                     @php $countries = getCountries(); @endphp
                                     <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
-                                        {{-- <option value="">&nbsp;&nbsp;</option> --}}
+                                        <option value="">&nbsp;&nbsp;</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -619,7 +619,7 @@ color: #0504aa !important;
                                                                         <option value="{{$hair}}">{{$hair}}</option>
                                                                          
                                                                            @endforeach --}}
-                                                                           {{-- <option selected value="">Select Hair Type</option> --}}
+                                                                           <option selected value="">&nbsp;&nbsp;</option>
                                                                            <option value="short">Short</option>
                                                                            <option value="long">Long</option>
                                                                             <option value="curly">Curly</option>
@@ -651,7 +651,7 @@ color: #0504aa !important;
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
                                              
                                                @endforeach --}}
-                                               {{-- <option selected value="">Hair color</option> --}}
+                                               <option selected value="">&nbsp;&nbsp;</option>
                                                <option value="grey">Grey</option>
                                                <option value="black">Black</option>
                                                <option value="blonde">Blonde</option>
@@ -680,7 +680,7 @@ color: #0504aa !important;
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
                                          
                                            @endforeach --}}
-                                           {{-- <option selected value="">Eye Color</option> --}}
+                                           <option selected value="">&nbsp;&nbsp;</option>
                                            <option value="amber">Amber</option>
                                            <option value="black">Black</option>
                                            <option value="brown">Brown</option>
@@ -717,7 +717,7 @@ color: #0504aa !important;
                                                    {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} 
                                                    <select name="clothsize" id=""
                                                    class="form-control available-country floating">
-                                             
+                                                   <option selected value="">&nbsp;&nbsp;</option>
                                                <option value="XS">XS</option>
                                                <option value="S">S</option>
                                                <option value="M">M</option>
@@ -1065,7 +1065,7 @@ color: #0504aa !important;
                                         <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                            &nbsp;&nbsp;City: {{$city->name ?? ''}}
+                                            City: {{$city->name ?? ''}}
                                     </div>
                                 </div>
                             {{--                                dsf--}}
