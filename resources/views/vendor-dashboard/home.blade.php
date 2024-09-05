@@ -1065,7 +1065,7 @@ color: #0504aa !important;
                                         <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City &nbsp;: &nbsp; {{$city->name ?? ''}}
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City:&nbsp;{{$city->name ?? ''}}
                                     </div>
                                 </div>
                             {{--                                dsf--}}
