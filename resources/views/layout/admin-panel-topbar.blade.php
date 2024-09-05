@@ -167,11 +167,11 @@
 </span>
             </a>
             <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
-                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" class="img-fluid" alt="Logo">
+                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" style="margin-left: 62px;" class="img-fluid" alt="Logo">
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:196px;">
+        <div class="country" style="border:0px solid green;position:relative;right:224px;">
             <div class="mobile-country desktop-menu-right">
                 
                     <select class="form-control country_dropdown select2 " name="language_dropdown"  style=" width:157px;" id="language_dropdown" onchange="translateLanguage()">>

@@ -62,7 +62,7 @@ class SiteHelper
     public static function reformatReadableDate($dateStr)
     {
         if (!empty($dateStr)) {
-            return Carbon::createFromFormat('Y-m-d H:i:s', "{$dateStr} 00:00:00")->format('d-M-Y');
+            return Carbon::createFromFormat('Y-m-d H:i:s', "{$dateStr} 00:00:00")->format('d-m-Y');
         } else {
             return NULL;
         }

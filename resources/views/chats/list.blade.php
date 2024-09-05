@@ -244,10 +244,13 @@ select::-ms-expand {
 
                         <div class="chat-cont-right">
                         
+                            @php
+                            // dd($chats);
+                            @endphp
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                     style="{{ $key > 0 ? 'display: none' : '' }}" 
+                                     {{-- style="{{ $key > 0 ? 'display: none' : '' }}"  --}}
                                      chat-id="{{ $chat->id }}"
                                      user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
@@ -390,6 +393,9 @@ foreach ($user_categories as $key => $category) {
             </div>
         </div>
     </div>
+    @php
+    // dd(request()->i);
+    @endphp
 @endsection
 
 @section('page_scripts')
@@ -399,6 +405,21 @@ foreach ($user_categories as $key => $category) {
         $(document).on('click', '.hiddencheck', function(e) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
+$(document).ready(function () {
+        // alert('ssss');
+            @if(request()->i)
+            // $('.chat-body-div').css('display', 'none');
+            $('.chat-with-user-{{ request()->i }}').click();
+            @endif
+            ajax_setup();
+
+
+            $('#emoji-trigger').emojioneArea({
+                pickerPosition: "bottom",
+            });
+        });
+
+
 $(document).ready(function() {
 
  $('.hiddentrash .fa-trash').on('click', function() {
@@ -494,18 +515,7 @@ $(document).ready(function() {
         });
 
         });
-        $(document).ready(function () {
-            @if(request()->i)
-            $('.chat-body-div').css('display', 'none');
-            $('.chat-with-user-{{ request()->i }}').click();
-            @endif
-            ajax_setup();
-
-
-            $('#emoji-trigger').emojioneArea({
-                pickerPosition: "bottom",
-            });
-        });
+        
 
         $(document).on('change', '#check-all', function () {
 // Get the checked state of the toggle checkbox
@@ -565,7 +575,7 @@ $(document).ready(function() {
                     id: id
                 },
                 success: function (response) {
-                    $(selector).find('.unread-count').css('display', 'none');
+                    // $(selector).find('.unread-count').css('display', 'none');
                 },
                 error: function (response) {
                     console.log('error');
@@ -640,6 +650,8 @@ $(document).ready(function() {
         }
 
         setInterval(function () {
+
+            // alert('sss');
             $.ajax({
                 url: api_url + 'chats/get-new-messages',
                 method: 'GET',

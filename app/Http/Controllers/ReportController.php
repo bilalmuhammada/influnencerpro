@@ -46,15 +46,16 @@ class ReportController extends Controller
     {
         $from_date = $request->from_date;
         $payment_method = $request->payment_method;
-
-        $transactions = Transaction::where('user_id', session()->get('User')->id)->when($from_date, function ($Transaction) use ($from_date) {
-            $Transaction->where('date', '>=', $from_date);
+// dd( date('Y-m-d',strtotime($request->from_date)));
+        $transactions = Transaction::where('user_id', 2)->when($from_date, function ($Transaction) use ($from_date) {
+            $Transaction->where('date', '>=',date('Y-m-d',strtotime($from_date)));
         })->when($request->to_date, function ($Transaction) use ($request) {
-            $Transaction->where('date', '<=', $request->to_date);
-        })->when($payment_method, function ($Transaction) use ($payment_method) {
-            $Transaction->where('payment_method', $payment_method);
-        })->get();
+            $Transaction->where('date', '<=',date('Y-m-d',strtotime($request->to_date)));
+        // })->when($payment_method, function ($Transaction) use ($payment_method) {
+        //     $Transaction->where('payment_method', $payment_method);
+         })->get();
 
+        // dd(  $transactions,$payment_method );
         return response()->json([
             'status' => true,
             'data' => $transactions

@@ -336,7 +336,7 @@ width: 212px !important;
                             <table class="table table-center table-hover mb-0" id="datatable">
                                 <thead>
                                 <tr>
-                                    <th><input type="checkbox" id="selectAll"></th>
+                                    <th><input type="checkbox" style="margin-left: 10px;" id="selectAll"></th>
                                     <th>Transaction Date</th>
                                     <th>Invoice #</th>
                                     <th>Subscription Plan</th>
@@ -344,7 +344,7 @@ width: 212px !important;
                                     <th class="text-end">Actions</th>
                                 </tr>
                                 </thead>
-                                <tbody class="transBody">
+                                <tbody id="transBody" class="transBody">
 
                                 </tbody>
                             </table>
@@ -463,33 +463,38 @@ width: 212px !important;
                         },
                         success: function (response) {
                             var row = '';
+                        
+                            
                             if (response.data.length > 0) {
+                                
                                 $(response.data).each(function (index, value) {
+
+                                    console.log(value.date_formatted);
                                     row += `<tr>
-                                    <td><input type="checkbox" class="transaction-checkbox" trans-id="${value.id}"></td>
-                                    <td>${value.date_formatted}</td>
-                                    <td><a href="#">#${value.invoice_number}</a></td>
-                                    <td>xyz-${value.id}</td>
-                                    <td>$ ${40.44 + Number(value.id)}</td>
-                                    <td class="text-end subscription-end">
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" trans-id="${value.id}"><i class="far fa-trash-alt"></i></a>
-                                    </td>
-                                </tr>`;
+                <td><input type="checkbox" class="transaction-checkbox" trans-id="${value.id}"></td>
+                <td>${value.date_formatted}</td>
+                <td><a href="#">#${value.invoice_number}</a></td>
+                <td>xyz-${value.id}</td>
+                <td>${(40.44 + Number(value.id)).toFixed(2)}</td> <!-- Correct formatting -->
+                <td class="text-end subscription-end">
+                    <a href="javascript:void(0);" class=" delete" trans-id="${value.id}"><i style="font-size:30px;color:blue;" class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>`;
                                 });
 
-                                $('.transBody').html(row);
+                                $('#transBody').html(row);
                             } else {
                                 
                     
                                 $('.transBody').html(row);
                             }
-                            $('#datatable').DataTable().clear().destroy();
-                             $('#datatable').DataTable({
-        language: {
-            emptyTable: "No Data"
+                            // $('#datatable').DataTable().clear().destroy();
+    //                          $('#datatable').DataTable({
+    //     language: {
+    //         emptyTable: "No Data"
           
-        }
-    });
+    //     }
+    // });
                         }
                     });
                 }
