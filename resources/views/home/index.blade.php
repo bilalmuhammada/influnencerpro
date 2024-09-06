@@ -1035,7 +1035,7 @@ color:goldenrod !important;
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
-                                        <h1 class="text-center numberstyle">12</h1>
+                                        <h1 class="text-center numberstyle">1</h1>
                                     {{-- </button> --}}
 
                                     <div class="feature-content course-count">
