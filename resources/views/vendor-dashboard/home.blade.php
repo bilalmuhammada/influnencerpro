@@ -103,9 +103,7 @@ color: #0504aa !important;
 .select2-container:hover{
     border-color: #0504aa !important; 
 }
-.select2-container--default .select2-selection--multiple .select2-selection__choice__display{
-    margin-left: 11px !important;
-}
+
 /* Define the scrollbar track */
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -113,6 +111,13 @@ color: #0504aa !important;
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
+.select2-container--default .select2-selection--multiple{
+    border: 1px solid #997045 !important;
+    border-radius: 6px;
+    height: 45px !important;
+    padding: 6px 0px 3px 9px;
+}
+
 /* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
 } */
@@ -156,9 +161,9 @@ color: #0504aa !important;
                                     <input type="text" class="form-control" placeholder="Search..." name="">
                                     <label for="" class="font_label">Country</label>
                                     @php $countries = getCountries(); @endphp
-                                    <select class="form-control  nationality_id" id="nationality_id" 
+                                    <select class="form-control select2  nationality_id" id="nationality_id" 
                                             name="country_id">
-                                        <option value="">&nbsp;&nbsp;</option>
+                                        {{-- <option value="">&nbsp;</option> --}}
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -464,7 +469,7 @@ color: #0504aa !important;
                                         <label class="font_label">Languages</label>
                                         <!-- <div class="form-group"> -->
                                         @php $spoken_languages = getSpokenLanguages(); @endphp
-                                        <select class="form-control select2" name="spoken_language_ids[]" multiple>
+                                        <select class="form-control select2" name="spoken_language_ids[]"  multiple="multiple">
                                             {{-- <option value="">&nbsp;&nbsp;</option> --}}
                                             @forelse($spoken_languages as $language)
                                                 <option value="{{ $language->id }}"
@@ -494,8 +499,8 @@ color: #0504aa !important;
                                         <label class="font_label">Nationality</label>
                                         <!-- <div class="form-group"> -->
                                         @php $countries = getCountries(); @endphp
-                                        <select class="form-control  select2 nationality_id" 
-                                                name="country_id" multiple>
+                                        <select class="form-control seletct2 nationality_id" 
+                                                name="country_id" multiple="multiple">
                                             {{-- <option value="">&nbsp;&nbsp;</option>  --}}
                                             @forelse($countries as $country)
                                                 <option value="{{ $country->id }}"
@@ -613,7 +618,7 @@ color: #0504aa !important;
                                     {{-- <input name='hair_types' class='form-control'
                                            placeholder='write some hair types'
                                            value="{{$hair_type}}"> --}}
-                                                                       <select name="hair_types[]" class="form-control seletct2"  id="">
+                                                                       <select name="hair_types[]" class="form-control"  id="">
                                                                         {{-- @foreach($hair_type1 as $hair)  
                                                                         
                                                                         <option value="{{$hair}}">{{$hair}}</option>
@@ -645,7 +650,7 @@ color: #0504aa !important;
                                     @endphp
                                     <label class="font_label">Hair Color</label>
                                     <!-- <div class="form-group"> -->
-                                        <select name="hair_color[]" class="form-control seletct2"  id="">
+                                        <select name="hair_color[]" class="form-control "  id="">
                                             {{-- @foreach($hair_color1 as $hcolor)  
                                             
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
@@ -674,7 +679,7 @@ color: #0504aa !important;
                                         $eye_color1 = explode(",", $eye_color);
                                     @endphp
                                     <label class="font_label">Eye Color</label>
-                                    <select name="eye_color[]" class="form-control seletct2"  id="">
+                                    <select name="eye_color[]" class="form-control "  id="">
                                         {{-- @foreach($eye_color1 as $ecolor)  
                                         
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
@@ -1086,18 +1091,9 @@ color: #0504aa !important;
 @endsection
 
 @section('page_scripts')
-<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
 
-    {{-- <script src="{{ asset('assets/js/range.js') }}"></script>
-    <script src="{{ asset('assets/js/skills.js') }}"></script> --}}
     <script>
-         $(document).ready(function () {
-   
-   $('.datepicker').datepicker({
-       dateFormat: 'dd-mm-yy'
-   });
-});
+     
         function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
     input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
@@ -1118,7 +1114,19 @@ color: #0504aa !important;
 
         $(document).ready(function () {
    
-          
+   
+    $('.select2').select2({
+        // placeholder: "Select spoken languages",  // Set placeholder text
+        allowClear: true,                        // Enable clearing selection
+        width: '100%',                           // Ensure full width for the dropdown
+        minimumInputLength: 0                   // Set minimum input to trigger search
+    });
+    $('.datepicker').datepicker({
+       dateFormat: 'dd-mm-yy'
+   });
+
+
+    
             
             $('.seletct2').select2();
        
@@ -1190,8 +1198,9 @@ color: #0504aa !important;
                     success: function (response) {
                         if (response.data.length > 0) {
                             var states = response.data;
+
                             $("#city_id").empty();
-                            $("#city_id").append('<option value="">Select Region</option>');
+                            // $("#city_id").append('<option value="">Select Region</option>');
 
                             if (states) {
                                 $.each(states, function (index, value) {

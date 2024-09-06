@@ -250,7 +250,7 @@ select::-ms-expand {
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                     {{-- style="{{ $key > 0 ? 'display: none' : '' }}"  --}}
+                                     style="{{ $key > 0 ? 'display: none' : '' }}" 
                                      chat-id="{{ $chat->id }}"
                                      user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
@@ -408,7 +408,7 @@ foreach ($user_categories as $key => $category) {
 $(document).ready(function () {
         // alert('ssss');
             @if(request()->i)
-            // $('.chat-body-div').css('display', 'none');
+            $('.chat-body-div').css('display', 'none');
             $('.chat-with-user-{{ request()->i }}').click();
             @endif
             ajax_setup();

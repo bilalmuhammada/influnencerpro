@@ -80,10 +80,10 @@ class StaticDatabase extends Model
                 'key' => 'climbing',
                 'name' => 'Climbing',
             ],
-            (object)[
-                'key' => 'other',
-                'name' => 'Other',
-            ]
+            // (object)[
+            //     'key' => 'other',
+            //     'name' => 'Other',
+            // ]
         ]);
     }
 

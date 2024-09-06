@@ -99,7 +99,7 @@
 }
 .open-chat:hover{
     
-color: #997045 !important;
+color: goldenrod !important;
 }
 .open-chat{
     color: #0504aa !important;
@@ -315,7 +315,7 @@ color: #997045 !important;
                                     @php
                                     if($influencer->personal_information !=null){
                                         $main_available_from_date=  $influencer->personal_information->main_available_from_date;   
-                                  $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
+                                       $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
                                     }
                                    @endphp
                                     <div class="form-group">

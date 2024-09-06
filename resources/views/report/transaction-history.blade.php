@@ -10,6 +10,12 @@
             height: 10px;
 
         }
+        .form-control{
+            border-color: #997045 !important;
+        }
+        .form-control:focus{
+            border-color: blue !important;
+        }
 
         .ui-state-default  {
         border: 0px !important;
@@ -381,8 +387,18 @@ width: 212px !important;
         language: {
             emptyTable: "No Data",
             zeroRecords: "No Data"
+        },
+        initComplete: function () {
+            // Remove the label text "Search:" and set the placeholder for the search input
+            $('#datatable_filter label').contents().filter(function() {
+                return this.nodeType === 3; // Remove the text node
+            }).remove();
+
+            // Set the placeholder text for the search input
+            $('#datatable_filter input').attr('placeholder', 'Search...');
         }
     });
+  
 
 });
                 $(document).ready(function () {

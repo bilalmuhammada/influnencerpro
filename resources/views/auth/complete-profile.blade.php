@@ -20,6 +20,12 @@
   .select2-dropdown {
 border: 0px !important;
   }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    border-right:0px solid !important;
+  }
+  .select2-selection__choice__display{
+    margin-left: -5px !important;
+  }
   .dz-preview {
             position: relative;
         }
