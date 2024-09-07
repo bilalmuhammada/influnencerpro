@@ -19,6 +19,9 @@
         .font_label {
             padding-top: 0px !important;
         }
+        .select2-search__field{
+            padding-left: 13px !important;
+        }
         .select2-search--inline{
             display: none;
         }
