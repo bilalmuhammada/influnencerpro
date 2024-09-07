@@ -102,7 +102,7 @@
 color: goldenrod !important;
 }
 .open-chat{
-    color: #0504aa !important;
+    color: blue !important;
 }
 
 .image-actions img {
