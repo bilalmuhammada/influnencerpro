@@ -117,6 +117,13 @@ color: #0504aa !important;
     height: 45px !important;
     padding: 6px 0px 3px 9px;
 }
+.select2-selection__choice__display{
+ margin-left: -6px !important;
+}
+.select2-selection--multiple{
+    overflow-y: overlay !important;
+}
+
 
 /* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
@@ -161,7 +168,7 @@ color: #0504aa !important;
                                     <input type="text" class="form-control" placeholder="Search..." name="">
                                     <label for="" class="font_label">Country</label>
                                     @php $countries = getCountries(); @endphp
-                                    <select class="form-control select2  nationality_id" id="nationality_id" 
+                                    <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
                                         {{-- <option value="">&nbsp;</option> --}}
                                         @forelse($countries as $country)
@@ -1115,7 +1122,7 @@ color: #0504aa !important;
         $(document).ready(function () {
    
    
-    $('.select2').select2({
+    $('#nationality_id').select2({
         // placeholder: "Select spoken languages",  // Set placeholder text
         allowClear: true,                        // Enable clearing selection
         width: '100%',                           // Ensure full width for the dropdown

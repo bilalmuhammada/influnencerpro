@@ -118,6 +118,22 @@
             .select2-container--default .select2-selection--single .select2-selection__arrow {
                 /* right: -15px !important; */
             }
+
+
+            ::-webkit-scrollbar {
+  width: 12px; /* You can adjust this value based on your preference */
+}
+
+/* Define the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #997045;
+  border-radius: 34px;
+}
+
+/* Define the scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 </style>
 
 
@@ -412,11 +428,11 @@ $(document).ready(function() {
         console.log('Flag URL:', flagUrl);
 
         if (flagUrl) {
-        return $('<span style="font-size:14px;font-weight:bold;  white-space: nowrap;  padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:14px;font-weight:bold;  white-space: nowrap;padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text + '</span>');
     } else {
-        // return $('<span style="font-size:18px;margin-left:25px;font-weight:600; "><img src="'   '" class="img-flag" style="width: 20px; height:14px; margin-right: 3px;" /> ' + option.text + '</span>');
+
     
-        return $('<span style="font-size:14px;font-weight:bold;    white-space: nowrap; padding:8px;">' +
+        return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:8px;"">' +
     '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:18px; margin-right: 5px;" /> ' +
     option.text + 
     '</span>');}

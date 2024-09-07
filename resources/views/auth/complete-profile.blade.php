@@ -147,12 +147,12 @@ display: none !important;
 .select2-container--default .select2-selection--multiple.select2-selection--clearable{
     overflow: auto !important;
 }
-.select2-selection__rendered{
+/* .select2-selection__rendered{
     position: absolute;
     top: 12px;
-    height: 12px;
+    /* height: 12px; */
 
-}
+/* } */ 
 .select2-container--default:focus .select2-selection--multiple:focus{
     border: 1px solid blue !important;
 }

@@ -3,7 +3,20 @@
     <style>
         .VIpgJd-ZVi9od-ORHb{
             display: none !important;}
+            ::-webkit-scrollbar {
+  width: 12px; /* You can adjust this value based on your preference */
+}
 
+/* Define the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #997045;
+  border-radius: 34px;
+}
+
+/* Define the scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
            
  .select2-container--default .select2-results > .select2-results__options {
     min-height: 120px; /* Set minimum height */

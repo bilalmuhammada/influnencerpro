@@ -244,9 +244,7 @@ select::-ms-expand {
 
                         <div class="chat-cont-right">
                         
-                            @php
-                            // dd($chats);
-                            @endphp
+                           
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
