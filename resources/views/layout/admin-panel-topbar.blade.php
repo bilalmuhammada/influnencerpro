@@ -185,7 +185,7 @@
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:286px;">
+        <div class="country" style="border:0px solid green;position:relative;right:244px;">
             <div class="mobile-country desktop-menu-right">
                 
                     <select class="form-control country_dropdown select2 " name="language_dropdown"  style=" width:27px;" id="language_dropdown" onchange="translateLanguage()">>
