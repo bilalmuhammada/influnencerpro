@@ -42,9 +42,7 @@
             .select2-dropdown {
                 border: 0px solid !important;
             }
-            .select2-dropdown .select2-dropdown--below{
-                width: 144px !important;
-            }
+            
             .register-btn:hover, .log-btn:hover{
                 color: #997045 !important;
 
@@ -104,7 +102,7 @@
 
             }
             .select2-dropdown .select2-dropdown--below{
-                width: 144px !important;
+                width: 160px !important;
             }
             .register-btn:hover, .log-btn:hover{
                 color: #997045 !important;
@@ -183,14 +181,14 @@
 </span>
             </a>
             <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
-                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" style="margin-left: 62px;" class="img-fluid" alt="Logo">
+                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" style="margin-left: 57px;" class="img-fluid" alt="Logo">
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:224px;">
+        <div class="country" style="border:0px solid green;position:relative;right:286px;">
             <div class="mobile-country desktop-menu-right">
                 
-                    <select class="form-control country_dropdown select2 " name="language_dropdown"  style=" width:157px;" id="language_dropdown" onchange="translateLanguage()">>
+                    <select class="form-control country_dropdown select2 " name="language_dropdown"  style=" width:27px;" id="language_dropdown" onchange="translateLanguage()">>
                         <option value="null" selected style="color: blue;">Language</option>
                         @foreach(getlanguge() as $language)
                        
