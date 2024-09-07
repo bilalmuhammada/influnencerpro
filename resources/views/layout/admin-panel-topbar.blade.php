@@ -181,7 +181,7 @@
 </span>
             </a>
             <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
-                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" style="margin-left: 57px;" class="img-fluid" alt="Logo">
+                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png')}}" class="img-fluid" alt="Logo">
             </a>
         </div>
 
