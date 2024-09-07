@@ -493,7 +493,7 @@ width: 212px !important;
                 <td>xyz-${value.id}</td>
                 <td>${(40.44 + Number(value.id)).toFixed(2)}</td> <!-- Correct formatting -->
                 <td class="text-end subscription-end">
-                    <a href="javascript:void(0);" class=" delete" trans-id="${value.id}"><i style="font-size:30px;color:blue;" class="far fa-trash-alt"></i></a>
+                    <a href="javascript:void(0);" class=" delete" trans-id="${value.id}"><i style="font-size:20px;color:blue;" class="far fa-trash-alt"></i></a>
                 </td>
             </tr>`;
                                 });

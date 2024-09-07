@@ -440,7 +440,7 @@ table.table td h2 span {
 
 .table tr td:last-child,
 .table tr th:last-child {
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .table-striped thead tr {
