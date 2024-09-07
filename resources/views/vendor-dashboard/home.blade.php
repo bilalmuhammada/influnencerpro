@@ -10,6 +10,9 @@
     color: black !important;
         }
         .select2-container--default .select2-selection--single .select2-selection__rendered{
+            color: blue !important;
+        }
+        select2-selection__rendered{
             color: rgb(0, 0, 0) !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
