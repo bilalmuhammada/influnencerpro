@@ -10,6 +10,14 @@
     color: black !important;
         }
       
+.dropdowndecoration:hover {
+        border: 1px solid blue!important;
+}
+
+ .dropdowndecoration {
+    border-radius: 3%;
+    border: 1px solid #997045!important;
+}
         #select2-nationality_id-container{
             color: rgb(129, 125, 125) !important;
         }
@@ -628,7 +636,7 @@ color: #0504aa !important;
                                     {{-- <input name='hair_types' class='form-control'
                                            placeholder='write some hair types'
                                            value="{{$hair_type}}"> --}}
-                                                                       <select name="hair_types[]" class="form-control"  id="">
+                                                                       <select name="hair_types[]" class="form-control select2"  id="">
                                                                         {{-- @foreach($hair_type1 as $hair)  
                                                                         
                                                                         <option value="{{$hair}}">{{$hair}}</option>
@@ -660,7 +668,7 @@ color: #0504aa !important;
                                     @endphp
                                     <label class="font_label">Hair Color</label>
                                     <!-- <div class="form-group"> -->
-                                        <select name="hair_color[]" class="form-control "  id="">
+                                        <select name="hair_color[]" class="form-control select2 "  id="">
                                             {{-- @foreach($hair_color1 as $hcolor)  
                                             
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
@@ -689,7 +697,7 @@ color: #0504aa !important;
                                         $eye_color1 = explode(",", $eye_color);
                                     @endphp
                                     <label class="font_label">Eye Color</label>
-                                    <select name="eye_color[]" class="form-control "  id="">
+                                    <select name="eye_color[]" class="form-control select2 "  id="">
                                         {{-- @foreach($eye_color1 as $ecolor)  
                                         
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
@@ -731,7 +739,7 @@ color: #0504aa !important;
                                                    {{-- placeholder=" Cloth Size..." --}}
                                                    {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} 
                                                    <select name="clothsize" id=""
-                                                   class="form-control available-country floating">
+                                                   class="form-control available-country select2 floating">
                                                    <option selected value="">&nbsp;&nbsp;</option>
                                                <option value="XS">XS</option>
                                                <option value="S">S</option>
@@ -745,7 +753,7 @@ color: #0504aa !important;
                                         <div class="col-md-6">
                                             {{-- select2 --}}
                                             <label class="font_label">Tattoo</label>
-                                            <select class="form-control  tattoo" name="tattoo">
+                                            <select class="form-control  tattoo select2" name="tattoo">
                                                 <!-- <option value="" readonly="">Select</option> -->
                                                 <option value="yes"
                                                         @if(isset(request()->tattoo) && request()->tattoo == 'yes') selected @endif>
@@ -760,7 +768,7 @@ color: #0504aa !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control" id="">
+                                            <select name="is_collaboration" class="form-control select2" id="">
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
                                                 </option>
@@ -1124,7 +1132,8 @@ color: #0504aa !important;
 
         $(document).ready(function () {
    
-   
+    $('.selectdropdown').select2();
+
     $('#nationality_id').select2({
         // placeholder: "Select spoken languages",  // Set placeholder text
         allowClear: true,                        // Enable clearing selection
