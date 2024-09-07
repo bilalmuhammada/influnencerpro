@@ -74,9 +74,7 @@ width: 200px !important;
     border-color: #997045 !important; 
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered{
-    color: black !important;
-}
+
 .select2-container--default .select2-selection--multiple:hover {
     border-color: blue !important; 
 }
