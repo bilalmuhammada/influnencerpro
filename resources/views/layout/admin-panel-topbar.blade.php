@@ -52,6 +52,10 @@
             /* margin-left: 8px !important; */
         }
 
+        .select2-container .select2-selection--single .select2-selection__rendered{
+            padding-left: 26px;
+        }
+
         ::-webkit-scrollbar {
             width: 12px;
         }
