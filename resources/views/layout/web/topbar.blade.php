@@ -59,7 +59,7 @@
                 width: 144px !important;
             }
             .register-btn:hover, .log-btn:hover{
-                color: #997045 !important;
+                color:goldenrod !important;
 
             }
             .select2-container--default .select2-selection--single .select2-selection__rendered{
