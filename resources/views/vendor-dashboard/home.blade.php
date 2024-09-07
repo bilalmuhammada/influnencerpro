@@ -11,7 +11,7 @@
         }
       
         #select2-nationality_id-container{
-            color: rgb(0, 0, 0) !important;
+            color: rgb(129, 125, 125) !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
