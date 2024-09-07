@@ -3,6 +3,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>   
+
+
 .dropzone-container {
     border: 2px solid #ccc;
     padding: 20px;
@@ -12,6 +14,16 @@
   .dz-image {
     position: relative;
   }
+
+  .dropdowndecoration:hover {
+        border: 1px solid blue!important;
+}
+
+ .dropdowndecoration {
+    border-radius: 3%;
+    border: 1px solid #997045!important;
+}
+
   .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
     color:blue !important;
     font-weight: 600 !important;
@@ -53,6 +65,10 @@ border: 0px !important;
   .dz-image img{
 width: 200px;
 height: 200px;
+  }
+
+  #select2--container{
+  color: #0b0b0b !important;
   }
   .dz-success-mark{
     display: none;
@@ -140,6 +156,7 @@ width: 200px !important;
 .dz-error-mark{
 display: none !important;
 }
+
 
 .select2-container--default.select2-container--focus .select2-selection--multiple{
     overflow: auto !important;
@@ -256,23 +273,23 @@ display: none !important;
                                 <div class="row" style="margin-top:3px;">
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus">
+                                            <div class="form-group form-focus dropdowndecoration" >
                                           
-                                            <select name="national_id" id="" class="form-control floating">
+                                            <select name="national_id" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Country</option> --}}
                                                 @foreach(getCountries() as $country)
-                                                    <option
+                                                    <option 
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->national_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
-  <label for="" class="focus-label">Nationality</label>
+                                            <label for="" class="focus-label">Nationality</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus">
+                                            <div class="form-group form-focus dropdowndecoration">
                                            
-                                            <select name="ethnicity_id" id="" class="form-control floating">
+                                            <select name="ethnicity_id" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Ethnicity</option> --}}
                                                 @foreach(getEthnicity() as $ethnicity)
                                                     <option
@@ -283,10 +300,10 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                         {{-- <div class="input-container">
                                             --}}
-                                            <select name="gender" id="" class="form-control floating"
+                                            <select name="gender" id="" class="form-control selectdropdown floating"
                                                     value="{{ $influencer_personal_info ? $influencer_personal_info->gender : '' }}">
                                                 {{-- <option value="">--Select Gender--</option> --}}
                                                 <option
@@ -318,11 +335,11 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                         {{-- <div class="input-container"> --}}
                                            
                                             <select name="hair_type" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown floating">
                                         {{-- <option value="">Hair Typess</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -340,10 +357,10 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="hair_color" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown floating">
                                         {{-- <option value="">Hair Color</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -366,10 +383,10 @@ display: none !important;
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="eye_color" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown  floating">
                                         {{-- <option value="">Eye Type</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -418,12 +435,12 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             {{-- <input type="text" class="form-control floating" name="clothsize" 
                                          
                                             value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
                                             <select name="clothsize" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown floating">
                                       
                                         <option value="XS">XS</option>
                                         <option value="S">S</option>
@@ -449,10 +466,10 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="base_country_id" id=""
-                                                    class="form-control available-country floating">
+                                                    class="form-control available-country selectdropdown floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -462,9 +479,9 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration ">
                                             
-                                            <select name="base_city_id" id="" class="form-control city_id floating">
+                                            <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
 
@@ -506,10 +523,10 @@ display: none !important;
                             
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="travlling_one_country_id" id=""
-                                                    class="form-control available-country floating">
+                                                    class="form-control available-country selectdropdown floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option
@@ -520,9 +537,9 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
-                                            <select name="travlling_one_city_id" id="" class="form-control city_id floating">
+                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown city_id floating">
                                                 <option value="null">&nbsp;&nbsp;</option>
                                                 @php
                                                 if($influencer_personal_info && isset($influencer_personal_info->travlling_one_country_id)){
@@ -553,9 +570,9 @@ display: none !important;
 
                                     </div>
                                     <div class="col-md-2">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus ">
                                          
-                                            <input type="text" class="form-control datepicker floating"
+                                            <input type="text" class="form-control datepicker  floating"
                                                    name="travlling_one_from_date"
                                                    {{--                                               onfocus="(this.type='date')"--}}
                                                    {{--                                               onblur="(this.type='text')"--}}
@@ -581,11 +598,11 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                            
                                           
                                             <select name="travlling_two_country_id" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown floating">
                                         <option value="null">&nbsp;&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
@@ -596,9 +613,9 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                           
-                                            <select name="travlling_two_city_id" id="" class="form-control city_id floating">
+                                            <select name="travlling_two_city_id" id="" class="form-control city_id selectdropdown floating">
                                                 @php
                                                     if($availabilities && count($availabilities) > 0){
                                                         $states_ids = getStateByCountryId($availabilities[0]['country_id'])->pluck('id')->toArray();
@@ -645,7 +662,7 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                          
                                             {{-- <select name="travlling_three_country_id" id=""
                                                     class="form-control available-country  floating">
@@ -656,7 +673,7 @@ display: none !important;
                                                 @endforeach
                                             </select> --}}
                                             <select name="travlling_three_country_id" id=""
-                                            class="form-control available-country floating">
+                                            class="form-control available-country selectdropdown floating">
                                         <option value="null">&nbsp;&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
@@ -667,9 +684,9 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                         
-                                            <select name="travlling_three_city_id" id="" class="form-control city_id floating">
+                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown city_id floating">
 
                                                 @php
                                                     if($availabilities && count($availabilities) >= 2){
@@ -721,9 +738,9 @@ display: none !important;
 
                                 <div class="row" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                             
-                                            <select name="willing_to_traval" id="" class="form-control floating">
+                                            <select name="willing_to_traval" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Willing To Traval</option> --}}
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
@@ -739,9 +756,9 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                        
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus dropdowndecoration">
                                           
-                                            <select name="is_collaboration" id="" class="form-control floating">
+                                            <select name="is_collaboration" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">--Collaboration--</option> --}}
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
@@ -756,10 +773,10 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus focus-label">
+                                        <div class="form-group form-focus dropdowndecoration focus-label">
                                            
                                             <select name="price_negotion" id=""
-                                                    class="form-control floating available-country">
+                                                    class="form-control floating selectdropdown available-country">
                                                 {{-- <option value="">Price Negotiable</option> --}}
                                                 
                                                     <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
@@ -1410,7 +1427,7 @@ $(document).on('click', '.submit-btn', function () {
                 }
             });
             // $('.feature-select2').select2();
-            // $('.category_id').select2();
+             $('.selectdropdown').select2();
 
           
            
