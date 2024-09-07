@@ -10,7 +10,7 @@
     color: black !important;
         }
       
-        .select2-selection__rendered{
+        #select2-nationality_id-container{
             color: rgb(0, 0, 0) !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
