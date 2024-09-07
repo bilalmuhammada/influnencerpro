@@ -53,7 +53,7 @@
         }
 
         .select2-container .select2-selection--single .select2-selection__rendered{
-            padding-left: 26px;
+            padding-left: 8px;
         }
 
         ::-webkit-scrollbar {
