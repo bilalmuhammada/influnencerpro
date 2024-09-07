@@ -173,6 +173,7 @@ color: #0504aa !important;
                                     <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
                                         {{-- <option value="">&nbsp;</option> --}}
+                                        <option value="" disabled selected>&nbsp;</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
