@@ -12,6 +12,12 @@
 .select2-search__field:hover{
     border-color: blue !important;
 }
+.select2-container--default .select2-selection--single{
+                border: 0px solid !important ;
+            }
+            .select2-dropdown {
+                border: 0px solid !important;
+            }
 
         .select2-container--default .select2-results > .select2-results__options {
             min-height: 120px;

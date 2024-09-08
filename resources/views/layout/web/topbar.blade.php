@@ -54,14 +54,15 @@
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
             }
+            .select2-dropdown {
+                border: 0px solid !important;
+            }
             .register-btn, .log-btn{
                 color: blue;
                
 
             }
-            .select2-dropdown {
-                border: 0px solid !important;
-            }
+            
             .select2-dropdown .select2-dropdown--below{
                 width: 144px !important;
             }
