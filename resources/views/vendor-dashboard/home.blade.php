@@ -781,7 +781,7 @@ color: #0504aa !important;
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
                                                 </option>
-                                                <option value="0" @if(request()->is_collaboration == 0) selected @endif>
+                                                <option value="0" @if(request()->is_collaboration == 0)  @endif>
                                                     No
                                                 </option>
                                             </select>
