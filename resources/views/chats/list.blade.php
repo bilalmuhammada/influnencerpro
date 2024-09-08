@@ -190,10 +190,11 @@ select::-ms-expand {
                                 </form>
                             </div> -->
 
+                           
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                      
+                                   
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;"
@@ -248,7 +249,7 @@ select::-ms-expand {
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
                                      id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                     style="{{ $key > 0 ? 'display: none' : '' }}" 
+                                     style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}" 
                                      chat-id="{{ $chat->id }}"
                                      user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
@@ -566,6 +567,7 @@ $(document).ready(function() {
 
 
         function markMessageAsReaded(id, selector) {
+            alert();
             $.ajax({
                 url: api_url + 'chats/mark-as-read',
                 method: 'POST',
@@ -573,7 +575,7 @@ $(document).ready(function() {
                     id: id
                 },
                 success: function (response) {
-                    // $(selector).find('.unread-count').css('display', 'none');
+                    $(selector).find('.unread-count').css('display', 'none');
                 },
                 error: function (response) {
                     console.log('error');
@@ -583,7 +585,7 @@ $(document).ready(function() {
 
         $(document).on('click', '.chat-title', function (e) {
             e.preventDefault();
-
+      alert('chat-title');
             //calling function to mark messages as readed
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 

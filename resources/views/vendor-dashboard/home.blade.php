@@ -133,7 +133,9 @@ color: #0504aa !important;
 .select2-selection--multiple{
     overflow-y: overlay !important;
 }
-
+.select2-selection__clear{
+    display:none; 
+}
 
 /* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
@@ -636,13 +638,13 @@ color: #0504aa !important;
                                     {{-- <input name='hair_types' class='form-control'
                                            placeholder='write some hair types'
                                            value="{{$hair_type}}"> --}}
-                                                                       <select name="hair_types[]" class="form-control select2"  id="">
+                                                                       <select name="hair_types[]" class="form-control select2" multiple  id="">
                                                                         {{-- @foreach($hair_type1 as $hair)  
                                                                         
                                                                         <option value="{{$hair}}">{{$hair}}</option>
                                                                          
                                                                            @endforeach --}}
-                                                                           <option selected value="">&nbsp;&nbsp;</option>
+                                                                           {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                                                            <option value="short">Short</option>
                                                                            <option value="long">Long</option>
                                                                             <option value="curly">Curly</option>
@@ -668,13 +670,13 @@ color: #0504aa !important;
                                     @endphp
                                     <label class="font_label">Hair Color</label>
                                     <!-- <div class="form-group"> -->
-                                        <select name="hair_color[]" class="form-control select2 "  id="">
+                                        <select name="hair_color[]" class="form-control select2 " multiple  id="">
                                             {{-- @foreach($hair_color1 as $hcolor)  
                                             
                                             <option value="{{$hcolor}}">{{$hcolor}}</option>
                                              
                                                @endforeach --}}
-                                               <option selected value="">&nbsp;&nbsp;</option>
+                                               {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                                <option value="grey">Grey</option>
                                                <option value="black">Black</option>
                                                <option value="blonde">Blonde</option>
@@ -697,13 +699,13 @@ color: #0504aa !important;
                                         $eye_color1 = explode(",", $eye_color);
                                     @endphp
                                     <label class="font_label">Eye Color</label>
-                                    <select name="eye_color[]" class="form-control select2 "  id="">
+                                    <select name="eye_color[]" class="form-control select2 " multiple  id="">
                                         {{-- @foreach($eye_color1 as $ecolor)  
                                         
                                         <option value="{{$ecolor}}">{{$ecolor}}</option>
                                          
                                            @endforeach --}}
-                                           <option selected value="">&nbsp;&nbsp;</option>
+                                           {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                            <option value="amber">Amber</option>
                                            <option value="black">Black</option>
                                            <option value="brown">Brown</option>
@@ -753,8 +755,8 @@ color: #0504aa !important;
                                         <div class="col-md-6">
                                             {{-- select2 --}}
                                             <label class="font_label">Tattoo</label>
-                                            <select class="form-control  tattoo select2" name="tattoo">
-                                                <!-- <option value="" readonly="">Select</option> -->
+                                            <select class="form-control  tattoo " name="tattoo">
+                                                <option selected value="">&nbsp;&nbsp;</option>
                                                 <option value="yes"
                                                         @if(isset(request()->tattoo) && request()->tattoo == 'yes') selected @endif>
                                                     Yes
@@ -768,7 +770,8 @@ color: #0504aa !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control select2" id="">
+                                            <select name="is_collaboration" class="form-control  " id="">
+                                                <option selected value="">&nbsp;&nbsp;</option>
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
                                                 </option>
@@ -821,7 +824,7 @@ color: #0504aa !important;
                 </div>
 
                 <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="col-md-10 mx-auto text-center">
+                    <div class="col-md-10 mx-auto text-center" style="margin-top: -15px;">
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">
