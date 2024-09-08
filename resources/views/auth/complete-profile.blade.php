@@ -94,9 +94,11 @@ font-weight: bold;
   .inputbg:focus,.floating:focus {
     border: 1px solid blue !important;
 }
-.inputbg::placeholder{
 
-}
+
+
+.select2-results__option {
+    padding: 6px 0px 0px 14px !important;}
 .dropzone .dz-preview .dz-image {
     border-radius: 0px !important;}
 
@@ -156,7 +158,9 @@ width: 200px !important;
 .dz-error-mark{
 display: none !important;
 }
-
+#select2-mySelect-container{
+   color:  #0b0b0b !important;
+}
 
 .select2-container--default.select2-container--focus .select2-selection--multiple{
     overflow: auto !important;
@@ -289,7 +293,7 @@ display: none !important;
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus dropdowndecoration">
                                            
-                                            <select name="ethnicity_id" id="" class="form-control selectdropdown floating">
+                                            <select name="ethnicity_id" id="mySelect" class="form-control mySelect floating">
                                                 {{-- <option value="">Ethnicity</option> --}}
                                                 @foreach(getEthnicity() as $ethnicity)
                                                     <option
@@ -301,13 +305,12 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration">
-                                        {{-- <div class="input-container">
-                                            --}}
-                                            <select name="gender" id="" class="form-control selectdropdown floating"
+                                       
+                                            <select name="gender" id="" class="form-control mySelect floating"
                                                     value="{{ $influencer_personal_info ? $influencer_personal_info->gender : '' }}">
-                                                {{-- <option value="">--Select Gender--</option> --}}
+                                               
                                                 <option
-                                                    value="Male" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'Male' ? 'selected' : '' }}>
+                                                  value="Male" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'Male' ? 'selected' : '' }}>
                                                     Male
                                                 </option>
                                                 <option
@@ -339,7 +342,7 @@ display: none !important;
                                         {{-- <div class="input-container"> --}}
                                            
                                             <select name="hair_type" id=""
-                                            class="form-control available-country selectdropdown floating">
+                                            class="form-control available-country mySelect floating">
                                         {{-- <option value="">Hair Typess</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -360,7 +363,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="hair_color" id=""
-                                            class="form-control available-country selectdropdown floating">
+                                            class="form-control available-country mySelect floating">
                                         {{-- <option value="">Hair Color</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -386,7 +389,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="eye_color" id=""
-                                            class="form-control available-country selectdropdown  floating">
+                                            class="form-control available-country  mySelect  floating">
                                         {{-- <option value="">Eye Type</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -440,7 +443,7 @@ display: none !important;
                                          
                                             value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
                                             <select name="clothsize" id=""
-                                            class="form-control available-country selectdropdown floating">
+                                            class="form-control available-country mySelect  floating">
                                       
                                         <option value="XS">XS</option>
                                         <option value="S">S</option>
@@ -740,7 +743,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration">
                                             
-                                            <select name="willing_to_traval" id="" class="form-control selectdropdown floating">
+                                            <select name="willing_to_traval" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">Willing To Traval</option> --}}
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
@@ -758,7 +761,7 @@ display: none !important;
                                        
                                         <div class="form-group form-focus dropdowndecoration">
                                           
-                                            <select name="is_collaboration" id="" class="form-control selectdropdown floating">
+                                            <select name="is_collaboration" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">--Collaboration--</option> --}}
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
@@ -776,7 +779,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration focus-label">
                                            
                                             <select name="price_negotion" id=""
-                                                    class="form-control floating selectdropdown available-country">
+                                                    class="form-control floating mySelect available-country">
                                                 {{-- <option value="">Price Negotiable</option> --}}
                                                 
                                                     <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
@@ -1429,8 +1432,10 @@ $(document).on('click', '.submit-btn', function () {
             // $('.feature-select2').select2();
              $('.selectdropdown').select2();
 
-          
-           
+            
+             $('.mySelect').select2({
+    minimumResultsForSearch: Infinity // Disables the search box
+  });
             $('#spoken_language_ids').select2({
                 //  placeholder: "Select Spoken",
                 allowClear: true

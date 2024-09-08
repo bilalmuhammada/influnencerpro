@@ -761,7 +761,7 @@ color: #0504aa !important;
                                         <div class="col-md-6">
                                             {{-- select2 --}}
                                             <label class="font_label">Tattoo</label>
-                                            <select class="form-control  tattoo " name="tattoo">
+                                            <select class="form-control mySelect tattoo " name="tattoo">
                                                 <option selected value="">&nbsp;&nbsp;</option>
                                                 <option value="yes"
                                                         @if(isset(request()->tattoo) && request()->tattoo == 'yes') selected @endif>
@@ -776,7 +776,7 @@ color: #0504aa !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control  " id="">
+                                            <select name="is_collaboration" class="form-control mySelect " id="">
                                                 <option selected value="">&nbsp;&nbsp;</option>
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
@@ -1157,7 +1157,9 @@ color: #0504aa !important;
     
             
             $('.seletct2').select2();
-       
+            $('.mySelect').select2({
+    minimumResultsForSearch: Infinity // Disables the search box
+  });
             var age_input = document.querySelector('input[name="age"]');
             var hair_types_input = document.querySelector('input[name="hair_types"]');
             var eye_color_input = document.querySelector('input[name="eye_color"]');
