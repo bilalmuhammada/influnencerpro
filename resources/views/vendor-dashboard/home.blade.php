@@ -19,7 +19,7 @@
     border: 1px solid #997045!important;
 }
         #select2-nationality_id-container{
-            color: rgb(129, 125, 125) !important;
+            color: rgb(6, 6, 6) !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
@@ -189,7 +189,7 @@ color: #0504aa !important;
                                     <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
                                         {{-- <option value="">&nbsp;</option> --}}
-                                        <option value="" disabled selected>&nbsp;</option>
+                                        <option value="" disabled hidden selected>&nbsp;</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
@@ -747,7 +747,7 @@ color: #0504aa !important;
                                                    {{-- placeholder=" Cloth Size..." --}}
                                                    {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} 
                                                    <select name="clothsize" id=""
-                                                   class="form-control available-country select2 floating">
+                                                   class="form-control available-country mySelect floating">
                                                    <option selected value="">&nbsp;&nbsp;</option>
                                                <option value="XS">XS</option>
                                                <option value="S">S</option>
@@ -777,7 +777,7 @@ color: #0504aa !important;
                                         <div class="col-md-6">
                                             <label class="font_label">Collaboration</label>
                                             <select name="is_collaboration" class="form-control mySelect " id="">
-                                                <option selected value="">&nbsp;&nbsp;</option>
+                                                <option disabled selected hidden value="">&nbsp;&nbsp;</option>
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes
                                                 </option>
@@ -1144,7 +1144,7 @@ color: #0504aa !important;
     $('.selectdropdown').select2();
 
     $('#nationality_id').select2({
-        // placeholder: "Select spoken languages",  // Set placeholder text
+         placeholder: " ",  // Set placeholder text
         allowClear: true,                        // Enable clearing selection
         width: '100%',                           // Ensure full width for the dropdown
         minimumInputLength: 0                   // Set minimum input to trigger search
@@ -1156,8 +1156,13 @@ color: #0504aa !important;
 
     
             
-            $('.seletct2').select2();
+            $('.seletct2').select2({
+                placeholder: " ", // Sets the placeholder text
+                allowClear: true,
+            });
             $('.mySelect').select2({
+                placeholder: " ", // Sets the placeholder text
+                allowClear: true, 
     minimumResultsForSearch: Infinity // Disables the search box
   });
             var age_input = document.querySelector('input[name="age"]');

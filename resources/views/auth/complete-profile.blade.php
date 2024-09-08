@@ -59,6 +59,9 @@ border: 0px !important;
     line-height: 18px;
         }
 
+        .select2-selection__clear{
+    display:none; 
+}
   .floating {
     padding-top: 20px !important;
   }
@@ -67,6 +70,12 @@ width: 200px;
 height: 200px;
   }
 
+  .select2-search__field{
+    border-color: #997045 !important;
+  }
+  .select2-search__field:focus{
+    border-color: blue !important;
+  }
   #select2--container{
   color: #0b0b0b !important;
   }
@@ -281,6 +290,7 @@ display: none !important;
                                           
                                             <select name="national_id" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Country</option> --}}
+                                                <option value="" disabled selected hidden></option>
                                                 @foreach(getCountries() as $country)
                                                     <option 
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->national_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -473,7 +483,7 @@ display: none !important;
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdown floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
+                                                    <option value="" disabled hidden selected>&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -485,7 +495,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration ">
                                             
                                             <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
+                                                <option value="" disabled hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
 
                                                 <option  value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }} > {{ $city->name }} </option>
@@ -530,7 +540,7 @@ display: none !important;
                                             
                                             <select name="travlling_one_country_id" id=""
                                                     class="form-control available-country selectdropdown floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
+             <option value="" disabled hidden selected>&nbsp;</option> 
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -543,7 +553,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration">
                                             
                                             <select name="travlling_one_city_id" id="" class="form-control selectdropdown city_id floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
+                                                <option value="" disabled hidden selected>&nbsp;</option>
                                                 @php
                                                 if($influencer_personal_info && isset($influencer_personal_info->travlling_one_country_id)){
 
@@ -606,7 +616,7 @@ display: none !important;
                                           
                                             <select name="travlling_two_country_id" id=""
                                             class="form-control available-country selectdropdown floating">
-                                        <option value="null">&nbsp;&nbsp;</option>
+                                        <option value="" disabled hidden selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -627,7 +637,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="null">&nbsp;&nbsp;</option>
+                                                <option value="" disabled hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -677,7 +687,7 @@ display: none !important;
                                             </select> --}}
                                             <select name="travlling_three_country_id" id=""
                                             class="form-control available-country selectdropdown floating">
-                                        <option value="null">&nbsp;&nbsp;</option>
+                                            <option value="" disabled hidden selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -699,7 +709,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="null">&nbsp;&nbsp;</option>
+                                                <option value="" disabled hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -1430,7 +1440,10 @@ $(document).on('click', '.submit-btn', function () {
                 }
             });
             // $('.feature-select2').select2();
-             $('.selectdropdown').select2();
+             $('.selectdropdown').select2({
+                   placeholder: "",
+                  allowClear: true
+             });
 
             
              $('.mySelect').select2({
