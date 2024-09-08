@@ -43,8 +43,8 @@
             width: 47% !important;
         }
         ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
-}
+              width: 12px; /* You can adjust this value based on your preference */
+           }
 .ui-state-default  {
     border: 0px !important;
     background-color: white !important; /* Change this to the desired color */
@@ -97,9 +97,9 @@ width: 200px !important;
     border-color: blue !important; 
 }
 
-.select2-results__options{
+#select2-nationality_id-results{
 padding-left: 12px !important;
-}
+} 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
     border: 0px solid !important;
     background-color: #e4e4e4 !important;

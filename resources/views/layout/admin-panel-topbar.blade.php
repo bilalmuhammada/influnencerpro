@@ -6,6 +6,13 @@
             display: none !important;
         }
 
+        .select2-search__field{
+    border-color: #997045 !important;
+}
+.select2-search__field:hover{
+    border-color: blue !important;
+}
+
         .select2-container--default .select2-results > .select2-results__options {
             min-height: 120px;
         }
