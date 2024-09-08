@@ -110,6 +110,12 @@ color: #0504aa !important;
 .changecolor:hover{
     color: goldenrod !important; 
 }
+.clearall{
+    color: #0504aa !important;
+}
+.clearall:hover{
+    color: goldenrod !important;
+}
 .select2-container:hover{
     border-color: #0504aa !important; 
 }
@@ -163,7 +169,7 @@ color: #0504aa !important;
                             <div class="card-header d-flex justify-content-between"
                                  style="background:#f2e49c  !important;">
                                 <h4 class="card-title mb-0">FILTERS</h4>
-                                <a href="{{ env('BASE_URL') }}/vendor/dashboard">Clear All</a>
+                                <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="clearall">Clear All</a>
                             </div>
                             <div class="card-body" style="background:#f2e49c  !important;">
                                 {{--                                <div class="filter-widget">--}}
