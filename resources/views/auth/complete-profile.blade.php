@@ -502,7 +502,7 @@ display: none !important;
                                                 
                                                 @endforeach
                                             </select>
-                                        <label for="username" class="focus-label">Based City</label>
+                                        <label for="username" class="focus-label"  style="margin-top:-15px;">Based City</label>
                                         </div>
 
                                     </div>
@@ -578,7 +578,7 @@ display: none !important;
                                             @php
                                             //    dd($static,$states_ids,getCityByStateId(1));
                                             @endphp
-                                        <label for="username" class="focus-label">Traveling City</label>
+                                        <label for="username" class="focus-label"  style="margin-top:-15px;">Traveling City</label>
                                         </div>
 
                                     </div>
@@ -643,7 +643,7 @@ display: none !important;
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="username" class="focus-label">Traveling City</label>
+                                            <label for="username" class="focus-label"  style="margin-top:-15px;">Traveling City</label>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -715,7 +715,7 @@ display: none !important;
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-                                                <label for="username" class="focus-label">Traveling City</label>
+                                                <label for="username" class="focus-label" style="margin-top:-15px;">Traveling City</label>
 
                                         </div>
                                     </div>
