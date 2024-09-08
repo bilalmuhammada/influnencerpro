@@ -567,7 +567,7 @@ $(document).ready(function() {
 
 
         function markMessageAsReaded(id, selector) {
-            alert();
+            
             $.ajax({
                 url: api_url + 'chats/mark-as-read',
                 method: 'POST',
@@ -585,7 +585,7 @@ $(document).ready(function() {
 
         $(document).on('click', '.chat-title', function (e) {
             e.preventDefault();
-      alert('chat-title');
+    
             //calling function to mark messages as readed
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 

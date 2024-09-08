@@ -17,6 +17,10 @@ class ChatController extends Controller
 
 
     {
+        Chat::updateOrCreate(
+            ['second_user_id'=>$request->i],
+            ['first_user_id'=>session()->get('User')['id'],'initiated_by'=>session()->get('User')['id']]
+        );
 
       
         $chats = Chat::with(['messages'])
@@ -27,6 +31,7 @@ class ChatController extends Controller
         if ($request->i) {
                 $chats = $chats->where('second_user_id', '=', $request->i);
         } 
+        // dd( $chats );
 
         if (session()->get('role') == 'vendor') {
             $chats = $chats->where('status', '=', 'accepted');
@@ -50,7 +55,7 @@ class ChatController extends Controller
             }
         }
 
-        //  dd( $chat );
+       
 //        dd($chats->toArray());
 
         return view('chats.list')->with([
