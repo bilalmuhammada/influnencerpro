@@ -276,12 +276,13 @@ select::-ms-expand {
                                         // dd($chat);
                                         @endphp
                                         <div class="media d-flex">
-                                            <div class="media-img-wrap flex-shrink-0">
+                                            <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
                                                 <div class="avatar">
+                                                    <a href="">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="UserImage"
-                                                        class="avatar-img rounded-circle">
+                                                        class="avatar-img rounded-circle"></a>
                                                 </div>
                                             </div>
                                             @php
@@ -421,6 +422,15 @@ foreach ($user_categories as $key => $category) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
 $(document).ready(function () {
+   
+            $('.gallerys').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enable: true
+                }
+            });
+        
         // alert('ssss');
             @if(request()->i)
             $('.chat-body-div').css('display', 'none');
