@@ -93,11 +93,11 @@
     border-radius: 25px !important;
 }
 .mgn-send-color{
-color: blue;
+color: blue !important;
 }
     
 .mgn-send-color:hover{
-color: goldenrod;
+color: goldenrod !important;
 }
     .chat-info {
         display: flex;
