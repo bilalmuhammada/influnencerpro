@@ -125,7 +125,9 @@ color: goldenrod !important;
         border-radius: 10px;
     }
 
-
+    .emojionearea, .emojionearea.form-control{
+        width: 99%;
+    }
     /* Professional Dropdown Styling */
 
 
