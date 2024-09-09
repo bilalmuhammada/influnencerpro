@@ -345,7 +345,7 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left:15px; ">
+                                            <div class="input-group" style="margin-left:13px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
 
                                                     <img
@@ -354,7 +354,7 @@ foreach ($user_categories as $key => $category) {
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:96%;height:42px !important;">
+                                                     style="width:91%;height:42px !important;">
                                                     <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
                                                            {{-- placeholder="Reply..." --}}
@@ -376,7 +376,7 @@ foreach ($user_categories as $key => $category) {
                                                         data-chat-id="{{ $chat->id }}"
                                                         style="margin-top: 6px;  background-color: transparent !important;"><i
                                                         class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
-                                                        style="font-size:30px;background-color:none !important;"></i>
+                                                        style="font-size:37px;background-color:none !important;"></i>
                                                 </button>
                                             </div>
                                         </div>
