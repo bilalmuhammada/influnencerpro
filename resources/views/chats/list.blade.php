@@ -198,7 +198,7 @@ select::-ms-expand {
                                         <a href="javascript:void(0);"
                                            class="media chat-title @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;"
-                                           id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
+                                           id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
                                            <input type="checkbox" style="width: 27 !important; margin-left:-14px;position: relative; z-index: 10; pointer-events: auto; "
                                            value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
@@ -585,6 +585,7 @@ $(document).ready(function() {
 
         $(document).on('click', '.chat-title', function (e) {
             e.preventDefault();
+    
     
             //calling function to mark messages as readed
             markMessageAsReaded($(this).attr('chat-id'), $(this));
