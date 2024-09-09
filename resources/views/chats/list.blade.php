@@ -16,6 +16,12 @@
         top:7px !important;
     }
     .emojionearea.focused {
+    border-color: blue !important;
+    outline: 0;
+  
+    box-shadow: none  !important;
+}
+    .emojionearea {
     border-color: goldenrod !important;
     outline: 0;
   
@@ -86,7 +92,13 @@
 
     border-radius: 25px !important;
 }
+.mgn-send-color{
+color: blue;
+}
     
+.mgn-send-color:hover{
+color: goldenrod;
+}
     .chat-info {
         display: flex;
         flex-direction: column;
@@ -333,7 +345,7 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group">
+                                            <div class="input-group" style="padding-left:26px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
 
                                                     <img
@@ -342,10 +354,10 @@ foreach ($user_categories as $key => $category) {
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:96%;height:42px !important;">
+                                                     style="width:90%;height:42px !important;">
                                                     <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
-                                                           placeholder="Reply..."
+                                                           {{-- placeholder="Reply..." --}}
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                            data-chat-id="{{ $chat->id }}">
                                                     {{--                                    <div class="btn-file btn">--}}
@@ -363,8 +375,8 @@ foreach ($user_categories as $key => $category) {
                                                         data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                         data-chat-id="{{ $chat->id }}"
                                                         style="margin-top: 6px;  background-color: transparent !important;"><i
-                                                        class="fa fa-paper-plane" aria-hidden="true"
-                                                        style="color:#0504aa;font-size:30px;background-color:none !important;"></i>
+                                                        class="fa fa-paper-plane mgn-send-color" aria-hidden="true"
+                                                        style="font-size:30px;background-color:none !important;"></i>
                                                 </button>
                                             </div>
                                         </div>
