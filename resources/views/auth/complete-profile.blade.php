@@ -83,6 +83,9 @@ height: 200px;
     padding-top: 16px;
   color: #0b0b0b !important;
   }
+  #select2-mySelect-container{
+    padding-top: 16px;
+  }
   .dz-success-mark{
     display: none;
   }
