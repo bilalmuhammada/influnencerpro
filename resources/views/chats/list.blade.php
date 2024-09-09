@@ -345,7 +345,7 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="padding-left:26px; ">
+                                            <div class="input-group" style="margin-left:66px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
 
                                                     <img
@@ -354,7 +354,7 @@ foreach ($user_categories as $key => $category) {
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:90%;height:42px !important;">
+                                                     style="width:96%;height:42px !important;">
                                                     <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
                                                            {{-- placeholder="Reply..." --}}
