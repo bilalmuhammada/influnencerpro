@@ -13943,7 +13943,7 @@ label.file-upload input[type="file"] {
 .chat-cont-right .chat-body .media.received .media-body .msg-box>div {
     /* background-color: #0504aa; */
     gap:12px;
-    background-color: #daf7fe;
+    background-color: #d8f9ff;
 }
 
 .chat-cont-right .chat-body .media.sent {
@@ -14144,8 +14144,8 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.received .media-body .msg-box:first-child:before {
-    border-bottom: 15px solid #daf7fe;
-    border-right: 15px solid #daf7fe;
+    border-bottom: 15px solid #FAF9D0;
+    border-right: 15px solid #FAF9D0;
     border-top: 15px solid transparent;
     border-left: 15px solid transparent;
     content: "";
@@ -14163,8 +14163,8 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box:first-child:before {
-    border-bottom: 15px solid #FAF9D0;
-    border-left: 15px solid #FAF9D0;
+    border-bottom: 15px solid #d8f9ff;
+    border-left: 15px solid #d8f9ff;
     border-top: 15px solid transparent;
     border-right: 15px solid transparent;
     content: "";
