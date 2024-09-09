@@ -13933,6 +13933,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-right .chat-body .media.received {
     margin-bottom: 20px;
+    margin-left: 10px;
     position: relative;
 }
 
@@ -13943,7 +13944,7 @@ label.file-upload input[type="file"] {
 .chat-cont-right .chat-body .media.received .media-body .msg-box>div {
     /* background-color: #0504aa; */
     gap:12px;
-    background-color: #d8f9ff;
+    background-color: #FAF9D0;
 }
 
 .chat-cont-right .chat-body .media.sent {
@@ -13978,7 +13979,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box>div {
     /* background-color: #E8EFFF; */
-    background-color: #FAF9D0;
+    background-color: #d8f9ff;
     color: #000;
     display: flex;
 }
