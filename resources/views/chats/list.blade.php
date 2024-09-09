@@ -248,10 +248,10 @@ select::-ms-expand {
                            
                             @foreach($chats as $key => $chat)
                                 <div class="chat-body-div"
-                                     id="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
+                                     id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
                                      style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}" 
                                      chat-id="{{ $chat->id }}"
-                                     user="{{ getSafeValueFromObject($chat->other_user, 'name') . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
+                                     user="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                     <div class="chat-header">
                                         <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
                                             <i class="material-icons">chevron_left</i>
