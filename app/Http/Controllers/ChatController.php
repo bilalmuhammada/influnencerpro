@@ -17,11 +17,12 @@ class ChatController extends Controller
 
 
     {
+        if($request->i){
         Chat::updateOrCreate(
             ['second_user_id'=>$request->i],
             ['first_user_id'=>session()->get('User')['id'],'status'=> 'accepted', 'initiated_by'=>session()->get('User')['id']]
         );
-
+    }
       
         $chats = Chat::with(['messages'])
             ->where('first_user_id', SiteHelper::getLoginUserId())
