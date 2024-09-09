@@ -70,7 +70,14 @@ width: 200px !important;
     border-color: blue;
 
   }
+  .select2-results__options{
+    min-height: 70px !important;
+  }
  
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: black !important;
+}
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;
@@ -761,8 +768,8 @@ color: #0504aa !important;
                                         <div class="col-md-6">
                                             {{-- select2 --}}
                                             <label class="font_label">Tattoo</label>
-                                            <select class="form-control mySelect tattoo " name="tattoo">
-                                                <option selected value="">&nbsp;&nbsp;</option>
+                                            <select  name="tattoo" class="form-control mySelect tattoo ">
+                                                <option disabled selected hidden value="">&nbsp;&nbsp;</option>
                                                 <option value="yes"
                                                         @if(isset(request()->tattoo) && request()->tattoo == 'yes') selected @endif>
                                                     Yes
@@ -776,7 +783,7 @@ color: #0504aa !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control mySelect " id="">
+                                            <select name="is_collaboration" class="form-control mySelect is_collaboration " id="">
                                                 <option disabled selected hidden value="">&nbsp;&nbsp;</option>
                                                 <option value="1" @if(request()->is_collaboration == 1) selected @endif>
                                                     Yes

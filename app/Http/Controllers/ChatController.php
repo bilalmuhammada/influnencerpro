@@ -19,7 +19,7 @@ class ChatController extends Controller
     {
         Chat::updateOrCreate(
             ['second_user_id'=>$request->i],
-            ['first_user_id'=>session()->get('User')['id'],'initiated_by'=>session()->get('User')['id']]
+            ['first_user_id'=>session()->get('User')['id'],'status'=> 'accepted', 'initiated_by'=>session()->get('User')['id']]
         );
 
       

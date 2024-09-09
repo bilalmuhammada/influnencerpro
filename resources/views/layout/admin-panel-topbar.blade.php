@@ -252,12 +252,12 @@ $(document).ready(function() {
         console.log('Flag URL:', flagUrl);
 
         if (flagUrl) {
-        return $('<span style="font-size:14px;font-weight:bold;  white-space: nowrap;padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:14px; Color:blue; font-weight:bold;  white-space: nowrap;padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;margin-bottom: 6px;" /> ' + option.text + '</span>');
     } else {
 
     
-        return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:8px;"">' +
-    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:18px; margin-right: 5px;" /> ' +
+        return $('<span style="font-size:14px;Color:blue;font-weight:bold;white-space: nowrap;padding:8px;"">' +
+    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:18px; margin-right: 5px;margin-bottom: 6px;" /> ' +
     option.text + 
     '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
