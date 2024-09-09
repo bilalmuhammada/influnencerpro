@@ -39,7 +39,7 @@ class ChatController extends Controller
             $chats = $chats->where('status', '!=', 'rejected');
         }
 
-        $chats = $chats->get();
+        $chats = $chats->orderBy('created_at','desc')->get();
     //    dd( $chats,session()->get('role'));
         foreach ($chats as $chat) {
             $groupedMessages = [];
