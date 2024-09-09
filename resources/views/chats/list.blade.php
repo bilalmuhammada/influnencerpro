@@ -127,7 +127,9 @@ color: goldenrod !important;
     .input-msg-send{
         width: 99% !important;
     }
-    
+    .emojionearea-editor{
+        left: 22px !important;
+    }
     /* Professional Dropdown Styling */
 
 
