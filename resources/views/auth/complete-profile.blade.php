@@ -80,6 +80,7 @@ height: 200px;
     border-color: blue !important;
   }
   #select2--container{
+    padding-top: 16px;
   color: #0b0b0b !important;
   }
   .dz-success-mark{
@@ -543,7 +544,7 @@ display: none !important;
                                             
                                             <select name="travlling_one_country_id" id=""
                                                     class="form-control available-country selectdropdown floating">
-             <option value="" disabled hidden selected>&nbsp;</option> 
+                                                        <option value="" disabled hidden selected>&nbsp;</option> 
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -618,7 +619,7 @@ display: none !important;
                                            
                                           
                                             <select name="travlling_two_country_id" id=""
-                                            class="form-control available-country selectdropdown floating">
+                                            class="form-control available-country  floating">
                                         <option value="" disabled hidden selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
