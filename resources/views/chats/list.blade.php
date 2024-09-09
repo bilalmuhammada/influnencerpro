@@ -277,12 +277,11 @@ select::-ms-expand {
                                         @endphp
                                         <div class="media d-flex">
                                             <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
-                                                <div class="avatar gallerys">
-                                                    <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}">
+                                                <div class="avatar">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="UserImage"
-                                                        class="avatar-img rounded-circle"></a>
+                                                        class="avatar-img rounded-circle">
                                                 </div>
                                             </div>
                                             @php
@@ -422,7 +421,17 @@ foreach ($user_categories as $key => $category) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
 $(document).ready(function () {
-   
+
+            console.log('hello');
+            // $(".influencer").mouseover(function () {
+            //     $(".influencerdetail").show();
+            //     $(".influencer").hide();
+            // });
+            // $(".influencer").mouseout(function () {
+            //     $(".influencerdetail").hide();
+            //     $(".influencer").show();
+            // });
+
             $('.gallerys').magnificPopup({
                 type: 'image',
                 delegate: 'a',

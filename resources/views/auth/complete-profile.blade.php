@@ -15,6 +15,9 @@
     position: relative;
   }
 
+  #select2--results{
+min-height: 70px !important;
+  }
   .dropdowndecoration:hover {
         border: 1px solid blue!important;
 }
