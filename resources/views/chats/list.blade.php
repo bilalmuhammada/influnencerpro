@@ -124,10 +124,10 @@ color: goldenrod !important;
         padding: 3px 8px;
         border-radius: 10px;
     }
-
-    .emojionearea, .emojionearea.form-control{
-        width: 99%;
+    .input-msg-send{
+        width: 99% !important;
     }
+    
     /* Professional Dropdown Styling */
 
 
