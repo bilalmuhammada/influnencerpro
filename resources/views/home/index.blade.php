@@ -512,7 +512,8 @@ color:goldenrod !important;
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>Influencers Market</h2> --}}
-                        <p>Influencer Marketing has emerged as the most powerful form of social media marketing worldwide, driving over 75% of Business Revenue Growth and generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their professional domains. </p>
+                        <p>
+                            Influencer Marketing has emerged as the most powerful form of Social Media Marketing worldwide, driving over 75% of Business Revenue Growth & generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their professional domains. </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <!-- <br/>
                         <div class="col-md-8 align-items-center">
@@ -552,7 +553,7 @@ color:goldenrod !important;
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>Business Marketing</h2> --}}
-                        <p>Influencer Marketing has emerged as the most powerful form of Social Media Marketing worldwide, driving over 75% of Business Revenue Growth & generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their professional domains.
+                        <p>In today’s globalized & highly competitive environment, Businesses are crucial to global economic growth by fostering innovation and providing goods and services. Further, they contribute significantly to societal advancement by supporting communities and fostering social and economic development. To remain successful, Businesses must adapt to changing Social Business Marketing Trends and stay aware of the Latest-Trends.
                              </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                     </div>
@@ -586,7 +587,8 @@ color:goldenrod !important;
                 <div class="col-md-6 d-flex align-items-center">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>InfluencerPro</h2> --}}
-                        <p>InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across 50+ Business Categories. Business Brands can easily Filter & Chat with Nano, Macro, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their Marketing Budgets. 
+                        <p>
+                            InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across 50+ Business Categories. Business Brands can easily Filter & Chat with Nano, Macro, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their Marketing Budgets.
                              </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                     </div>
