@@ -18,8 +18,7 @@
        {{-- <h3 class="text-center" style="margin-top: -14px;">  About Us</h3>   --}}
       
        <p style="text-align:start;    font-size: 18px;">
-        InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across more than 30 business categories. Business Brands can easily Filter & Chat with Micro, Nano, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their marketing budgets.
-          
+        InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across 50+ Business Categories. Business Brands can easily Filter & Chat with Nano, Macro, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their Marketing Budgets.
         </p>
         <div>&nbsp;</div> 
       </div>
