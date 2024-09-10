@@ -8819,8 +8819,8 @@ div#global-loader {
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
-    padding-right: 30px;
-    padding-left: 15px;
+    /* padding-right: 30px; */
+    padding-left: 27px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
