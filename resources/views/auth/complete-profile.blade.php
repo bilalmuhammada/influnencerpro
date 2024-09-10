@@ -293,7 +293,7 @@ display: none !important;
                                 <div class="row" style="margin-top:3px;">
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus dropdowndecoration" >
+                                            <div class="form-group form-focus dropdowndecoration" style="height:50px;" >
                                           
                                             <select name="national_id" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Country</option> --}}
@@ -308,7 +308,7 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus dropdowndecoration">
+                                            <div class="form-group form-focus dropdowndecoration"  style="height:50px;">
                                            
                                             <select name="ethnicity_id" id="mySelect" class="form-control mySelect floating">
                                                 {{-- <option value="">Ethnicity</option> --}}
@@ -321,7 +321,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 50px" >
                                        
                                             <select name="gender" id="" class="form-control mySelect floating"
                                                     value="{{ $influencer_personal_info ? $influencer_personal_info->gender : '' }}">
@@ -344,7 +344,7 @@ display: none !important;
                                    
                                 </div>
 
-                                <div class="row" style="">
+                                <div class="row" style="margin-top: 12px;">
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
                                             <div class="form-group form-focus">
@@ -355,7 +355,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 53px;">
                                         {{-- <div class="input-container"> --}}
                                            
                                             <select name="hair_type" id=""
@@ -377,7 +377,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 53px;">
                                             
                                             <select name="hair_color" id=""
                                             class="form-control available-country mySelect floating">
@@ -403,7 +403,7 @@ display: none !important;
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 50px;">
                                             
                                             <select name="eye_color" id=""
                                             class="form-control available-country  mySelect  floating">
@@ -455,7 +455,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             {{-- <input type="text" class="form-control floating" name="clothsize" 
                                          
                                             value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
@@ -486,7 +486,7 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdown floating">
@@ -499,7 +499,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration ">
+                                        <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
                                             
                                             <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
                                                 <option value="" disabled hidden selected>&nbsp;</option>
@@ -543,7 +543,7 @@ display: none !important;
                             
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
                                             <select name="travlling_one_country_id" id=""
                                                     class="form-control available-country selectdropdown floating">
@@ -557,7 +557,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
                                             <select name="travlling_one_city_id" id="" class="form-control selectdropdown city_id floating">
                                                 <option value="" disabled hidden selected>&nbsp;</option>
@@ -618,11 +618,11 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                            
                                           
                                             <select name="travlling_two_country_id" id=""
-                                            class="form-control available-country  floating">
+                                            class="form-control available-country selectdropdown  floating">
                                         <option value="" disabled hidden selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
@@ -633,7 +633,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                           
                                             <select name="travlling_two_city_id" id="" class="form-control city_id selectdropdown floating">
                                                 @php
@@ -682,7 +682,7 @@ display: none !important;
                                 </div>
                                 <div class="row available-box" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                          
                                             {{-- <select name="travlling_three_country_id" id=""
                                                     class="form-control available-country  floating">
@@ -704,7 +704,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                         
                                             <select name="travlling_three_city_id" id="" class="form-control selectdropdown city_id floating">
 
@@ -758,7 +758,7 @@ display: none !important;
 
                                 <div class="row" style="">
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
                                             <select name="willing_to_traval" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">Willing To Traval</option> --}}
@@ -776,7 +776,7 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                        
-                                        <div class="form-group form-focus dropdowndecoration">
+                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                           
                                             <select name="is_collaboration" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">--Collaboration--</option> --}}
@@ -793,7 +793,7 @@ display: none !important;
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration focus-label">
+                                        <div class="form-group form-focus dropdowndecoration focus-label" style="height: 52px;">
                                            
                                             <select name="price_negotion" id=""
                                                     class="form-control floating mySelect available-country">
