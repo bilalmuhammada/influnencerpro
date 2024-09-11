@@ -507,7 +507,7 @@ display: none !important;
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
-                                                    <option value="" selected>&nbsp;</option>
+                                                    <option value="0" selected>&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -564,7 +564,7 @@ display: none !important;
                                             
                                             <select name="travlling_one_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
-                                                <option value=""  selected>&nbsp;</option> 
+                                                <option value="0"  selected>&nbsp;</option> 
                                                 @foreach(getCountries() as $country)
                                                     <option
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -640,7 +640,7 @@ display: none !important;
                                           
                                             <select name="travlling_two_country_id" id=""
                                             class="form-control available-country selectdropdownforcountry  floating">
-                                        <option value=""  selected>&nbsp;</option>
+                                        <option value="0"  selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -711,7 +711,7 @@ display: none !important;
                                             </select> --}}
                                             <select name="travlling_three_country_id" id=""
                                             class="form-control available-country selectdropdownforcountry floating">
-                                            <option value="" selected>&nbsp;</option>
+                                            <option value="0" selected>&nbsp;</option>
                                         @foreach(getCountries() as $country)
                                             <option
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
@@ -1421,7 +1421,6 @@ $(document).on('click', '.submit-btn', function () {
         $(document).on('change', '.available-country', function () {
             var country_id = $(this).val();
             var thisElem = $(this);
-
             if (country_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
@@ -1431,6 +1430,7 @@ $(document).on('click', '.submit-btn', function () {
                         "nationality_id": country_id
                     },
                     success: function (response) {
+                      
                         if (response.data.length > 0) {
                             var states = response.data;
                             $(thisElem).parents('.available-box').find(".city_id").empty();
