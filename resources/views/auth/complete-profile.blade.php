@@ -276,7 +276,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                             <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control floating" multiple>
-                                                @foreach(getSpokenLanguages() as $language)
+                                                @foreach(getlanguge() as $language)
                                                     <option value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>
                                                         {{ $language->name }}
                                                     </option>
