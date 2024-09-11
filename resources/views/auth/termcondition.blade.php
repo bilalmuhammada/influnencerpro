@@ -410,11 +410,11 @@ In accordance with the DMCA, we’ve adopted the policy below toward copyright i
                                                                                 <li>  A statement that the notifier has a good faith belief that the material identified in (1)(c) is not authorized by the copyright owner, its agent, or the law; and </li>
                                                                                     <li> A statement made under penalty of perjury that the information provided is accurate and the notifying party is authorized to make the complaint on behalf of the copyright owner. </li>
                                                                                         <li>  Once Proper Bona Fide Infringement Notification is Received by the Designated Agent. Upon receipt of a proper notice of copyright infringement, we reserve the right to: </li>
-                                                                                            <li> remove or disable access to the infringing material; </li>
-                                                                                                <li> notify the content provider who is accused of infringement that we have removed or disabled access to the applicable material; and </li>
-                                                                                                    <li class="bilal-termcondition"> terminate such content provider's access to the Services if he or she is a repeat offender. </li>
-                                                                                                         Please contact InfluencerPro’s Designated Agent at the following address 
-                                                                                                         support@influencerpro.org 
+                                                                                           <span> - remove or disable access to the infringing material; </span><br>
+                                                                                           <span>    - notify the content provider who is accused of infringement that we have removed or disabled access to the applicable material; and</span> <br>
+                                                                                           <span> - terminate such content provider's access to the Services if he or she is a repeat offender.</span> <br>
+                                                                                                        <span style="margin-left:12px"> Please contact InfluencerPro’s Designated Agent at the following address 
+                                                                                                         support@influencerpro.org </span>
 
                                                             </p>
 

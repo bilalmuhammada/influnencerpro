@@ -52,8 +52,8 @@
                             <div class="login-right">
                                 <div class="login-header text-center">
                                     <!-- <img src="assets/img/logo/Influencers Pro-01-01.png" class="img-fluid" alt="Logo"> -->
-                                    <h3> <span class="rgt">Register </span> InfluencerPro</h3>
-                                    <p class="changetext">Gain access to millions of Influencers’ Database!</p>
+                                    <h3> <span class="rgt">Join</span> InfluencerPro</h3>
+                                    <p class="changetext">Make the best of your Professional Life!</p>
                                 </div>
                                 <nav class="user-tabs mb-4">
                                     <ul role="tablist" class="nav nav-pills nav-justified">
@@ -410,11 +410,11 @@ function validateInput(input) {
             @endif
 
         });
-
         function checkRole(thisElem) {
             var role = $(thisElem).attr('role');
-// alert( role );
-          if(role=='brand'){
+        
+         
+          if(role=='brand' ){
         
             $('.rgt').text('Register');
             $('.changetext').text('Gain access to millions of Influencers’ Database!');
@@ -425,6 +425,23 @@ function validateInput(input) {
           }
             
         }
+
+        $(document).ready(function () {
+               var role1= "{{ request('role') }}";
+              
+               if(role1=='brand'){
+        
+        $('.rgt').text('Register');
+        $('.changetext').text('Gain access to millions of Influencers’ Database!');
+
+      }else{
+        $('.rgt').text('Join');
+        $('.changetext').text('Make the best of your Professional Life!');
+      }
+               
+        });
+        
+    
 
         $(document).on('click', '.influencer-register', function (e) {
             e.preventDefault();

@@ -513,7 +513,7 @@ color:goldenrod !important;
                     <div class="app-version-blk aos" data-aos="fade-up">
                         {{-- <h2>Influencers Market</h2> --}}
                         <p>
-                            Influencer Marketing has emerged as the most powerful form of Social Media Marketing worldwide, driving over 75% of Business Revenue Growth & generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their professional domains. </p>
+                            Influencer Marketing has emerged as the most powerful form of Social Media Marketing worldwide, driving over 75% of Business Revenue Growth & generating 82% of Business Leads notably in 2023. Pro-influencers excel at delivering Brand Messages & Affirmations to Target Audiences quickly, leveraging their perceived Trend Awareness & Influential Social Impact within their Professional Domains. </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <!-- <br/>
                         <div class="col-md-8 align-items-center">

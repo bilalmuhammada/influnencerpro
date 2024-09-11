@@ -659,7 +659,10 @@ color: #0504aa !important;
                                                                            @endforeach --}}
                                                                            {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                                                            <option value="short">Short</option>
+                                                                           <option value="afro">Afro</option>
                                                                            <option value="long">Long</option>
+                                                                           <option value="straight">Straight</option>
+                                                                           <option value="thick">Thick</option>
                                                                             <option value="curly">Curly</option>
                                                                             <option value="wavy">Wavy</option>
                                                                             <option value="blad">Bald</option>
@@ -690,6 +693,13 @@ color: #0504aa !important;
                                              
                                                @endforeach --}}
                                                {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
+                                               <option value="balayage">Balayage</option> 
+                                               <option value="dark">Dark</option>
+                                               <option value="ginger">Ginger</option>
+                                               <option value="gold">Gold</option>
+                                               <option value="green">Green</option>
+                                               <option value="mixed">Mixed</option>
+
                                                <option value="grey">Grey</option>
                                                <option value="black">Black</option>
                                                <option value="blonde">Blonde</option>
@@ -719,6 +729,13 @@ color: #0504aa !important;
                                          
                                            @endforeach --}}
                                            {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
+                                           <option value="azure">Azure</option>
+                                           <option value="Agate">Agate</option>
+                                           <option value="blue">Blue</option>
+                                           <option value="nordic">Nordic</option>
+                                           <option value="Serene ">Serene </option>
+                                           <option value="mixed">Mixed</option>
+   
                                            <option value="amber">Amber</option>
                                            <option value="black">Black</option>
                                            <option value="brown">Brown</option>
