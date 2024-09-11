@@ -107,7 +107,7 @@
                                             <div class="form-group form-focus">
                                                 
                                                 <select name="gender" class="form-control floating" id="gender">
-                                                    {{-- <option selected value=" "> select Gender</option> --}}
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
@@ -258,7 +258,7 @@
                                             <div class="form-group form-focus">
                                                 
                                                 <select name="gender" class="form-control floating" id="gender">
-                                                    {{-- <option selected value=" "> select Gender</option> --}}
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
