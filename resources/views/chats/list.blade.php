@@ -410,9 +410,6 @@ foreach ($user_categories as $key => $category) {
             </div>
         </div>
     </div>
-    @php
-    // dd(request()->i);
-    @endphp
 @endsection
 
 @section('page_scripts')
@@ -423,16 +420,18 @@ foreach ($user_categories as $key => $category) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
 $(document).ready(function () {
+    
+    $('.msg-send-btn').prop('disabled', true);
 
-            console.log('hello');
-            // $(".influencer").mouseover(function () {
-            //     $(".influencerdetail").show();
-            //     $(".influencer").hide();
-            // });
-            // $(".influencer").mouseout(function () {
-            //     $(".influencerdetail").hide();
-            //     $(".influencer").show();
-            // });
+    // Enable/Disable button based on input field
+    $('.input-msg-send').on('input', function() {
+        var inputMessage = $(this).val();
+        if (inputMessage.trim() === '') {
+            $('.msg-send-btn').prop('disabled', true);
+        } else {
+            $('.msg-send-btn').prop('disabled', false);
+        }
+    });
 
             $('.gallerys').magnificPopup({
                 type: 'image',
