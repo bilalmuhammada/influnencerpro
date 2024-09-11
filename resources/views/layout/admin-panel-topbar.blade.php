@@ -68,6 +68,9 @@
         .select2-container .select2-selection--single .select2-selection__rendered{
             padding-left: 8px;
         }
+        #select2-language_dropdown-container{
+            color: blue !important
+        }
 
         ::-webkit-scrollbar {
             width: 12px;
@@ -154,7 +157,7 @@
             </a>
         </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:280px;">
+        <div class="country" style="border:0px solid green;position:relative;right:182px;">
             <div class="mobile-country desktop-menu-right">
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     <option value="null" selected style="color: blue;">Language</option>
@@ -178,13 +181,17 @@
                     <i class="fas fa-times"></i>
                 </a>
             </div>
-            <ul class="main-nav nav">
+            <ul class="main-nav nav" style="margin-right: 32px;">
                 @if(session()->get('role') == 'vendor')
                 <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/vendor/dashboard' }}">Influencers</a>
                 </li>
+              
                 <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourite Influencers</a>
+                </li>
+                <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
+                    <a href="{{ env('BASE_URL') . 'chats/invited-influencers' }}">Invited Influencers</a>
                 </li>
                 @else
                 <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}">Dashboard</a></li>

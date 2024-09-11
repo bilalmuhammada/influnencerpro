@@ -159,7 +159,7 @@ color: goldenrod !important;
                             <div class="filter-widget">
                                 <h4><b>Profile Info</b></h4>
                             </div>
-                            <div class="row">
+                            <div class="row" style="line-height: 1;">
                                 {{-- <div class="col-md-6" style="height:65px;margin-bottom:9px;">
                                     <label class="font-label">Category</label>
                                     <div class="form-group">

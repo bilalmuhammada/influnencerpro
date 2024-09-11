@@ -62,6 +62,15 @@ width: 200px !important;
     margin-bottom: -0.5rem !important;
 
   }
+  .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
+    color: black !important;
+    padding-left: 0px !important;
+}
+
+  #select2--container,.select2-selection__rendered{
+ color: black !important;
+ padding-left: 0px !important;
+  }
   .nationality_id{
     border-color: #997045;
 
@@ -75,7 +84,7 @@ width: 200px !important;
   }
  
 
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
+  .select2-container--default .select2-selection--single {
     color: blue !important;
 }
 /* Define the scrollbar thumb */

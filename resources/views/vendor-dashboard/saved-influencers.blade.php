@@ -149,6 +149,14 @@
             border: 0;
             height: 45px;
         }
+        .filter{
+            color: white;
+          background-color: #997045;
+        }
+        .filter:hover{
+            color: white;
+          background-color: blue;
+        }
 
         .select-group .form-select:focus {
             box-shadow: none;
@@ -245,8 +253,8 @@ width: 195px !important;
                             <div class="col-lg-2 col-md-6">
                                 <input type="text" class="form-control datepicker to_date" name="to_date" style="width:115%;margin-left: 14px;" placeholder="Date">
                             </div>
-                            <div class="col-lg-2 col-md-6" style="margin-top:5px;     margin-left: 31px;"  >                          
-                                <button class="btn btn-primary filter" type="submit">Filter</button>
+                            <div class="col-lg-2 col-md-6" style="margin-top:5px;margin-left: 31px;"  >                          
+                                <button class="btn  filter" type="submit">Filter</button>
                             </div>
                         </div>
                     </form>
