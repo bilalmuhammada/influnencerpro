@@ -124,7 +124,8 @@
                                                 <label class="focus-label">Age</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <select name="country_id" class="form-control floating" id="country_id">
+                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     @foreach(getCountries() as $country)
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                     @endforeach
@@ -135,8 +136,8 @@
                                                 <label class="focus-label">Country </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <select name="city_id" class="form-control floating" id="city_id">
-                                                    <option value="">Select City</option>
+                                                <select name="city_id" class="form-control  floating" id="city_id">
+                                                    {{-- <option value="">Select City</option> --}}
                                                 </select>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid City.
@@ -275,7 +276,8 @@
                                             </div>
                                             <div class="form-group form-focus">
                                                 {{--    <input type="text" class="form-control floating" name="country">--}}
-                                                <select name="country_id" class="form-control floating" id="country_id">
+                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     @foreach(getCountries() as $country)
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                     @endforeach
@@ -286,8 +288,8 @@
                                                 <label class="focus-label">Country </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <select name="city_id" class="form-control floating" id="brand_city_id">
-                                                    <option value="">Select City</option>
+                                                <select name="city_id" class="form-control floating " id="brand_city_id">
+                                                    {{-- <option value="">Select City</option> --}}
 
                                                 </select>
                                                 <div class="invalid-feedback">
@@ -296,7 +298,7 @@
                                                 <label class="focus-label">City </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="password" class="form-control floating" name="password"
+                                                <input type="password" class="form-control floating " name="password"
                                                        id="brand" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special">
                                                 <i class="fa-solid fa-eye" id="eye"
                                                    onclick="togglePassword('brand')"></i>
@@ -399,6 +401,13 @@ function validateInput(input) {
         }
 
         $(document).ready(function () {
+
+            $('.mySelect').select2({
+                placeholder: " ", // Sets the placeholder text
+                allowClear: true, 
+    minimumResultsForSearch: Infinity // Disables the search box
+  });
+
 
                 @if(request()->role == 'influencer')
             var form = $('#influencer-register-form')[0];
