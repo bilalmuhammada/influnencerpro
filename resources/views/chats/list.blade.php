@@ -278,10 +278,12 @@ select::-ms-expand {
                                         <div class="media d-flex">
                                             <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
                                                 <div class="avatar">
+                                                    <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                                        alt="UserImage"
+                                                        alt="UserImage"  width="50px" height="50px"
                                                         class="avatar-img rounded-circle">
+                                                    </a>
                                                 </div>
                                             </div>
                                             @php
