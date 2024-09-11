@@ -76,7 +76,7 @@ width: 200px !important;
  
 
   .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: black !important;
+    color: blue !important;
 }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
