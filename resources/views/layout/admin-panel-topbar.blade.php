@@ -191,7 +191,7 @@
                     <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourite Influencers</a>
                 </li>
                 <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
-                    <a href="{{ env('BASE_URL') . 'chats/invited-influencers' }}">Invited Influencers</a>
+                    <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
                 </li>
                 @else
                 <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}">Dashboard</a></li>
