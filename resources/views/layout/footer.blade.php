@@ -127,7 +127,7 @@
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                         alt="twitter"
                                         width="30" height="30"></a></li>
-                            <li><a href="#" class="icon" target="_blank"><img
+                            <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"
                                         width="30"
                                         height="30"></a></li>

@@ -194,7 +194,7 @@ color: goldenrod !important;
                                             @endforeach</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Ethnicity</label>
                                     <div class="form-group">
                                         <span
@@ -208,14 +208,14 @@ color: goldenrod !important;
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->country, 'name') }}</span>
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Gender</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ ucfirst(getSafeValueFromObject($influencer->personal_information, 'gender')) }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Age</label>
                                     <div class="form-group">
                                         <span
@@ -223,63 +223,63 @@ color: goldenrod !important;
                                     </div>
                                 </div>
                                
-                                <div class="col-md-6" style="margin-top: 6px;" >
+                                <div class="col-md-6" style="margin-top: 8px;" >
                                     <label class="font-label">Hair Type</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->hair_type : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;" >
+                                <div class="col-md-6" style="margin-top: 8px;" >
                                     <label class="font-label">Hair color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->hair_color : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Eye color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'eye_color') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Height-CM</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'height') }} </span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Weight-KG</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'weight') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;" >
+                                <div class="col-md-6" style="margin-top: 8px;" >
                                     <label class="font-label">Shoes Size-EU</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'shoes_size') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6"  style="margin-top: 6px;">
+                                <div class="col-md-6"  style="margin-top: 8px;">
                                     <label class="font-label">Cloth Size-EU</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'shoes_size') }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Tattoo</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->tattoes : '' }}</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Willing to Travel</label>
                                     <div class="form-group">
                                         <span
@@ -310,7 +310,7 @@ color: goldenrod !important;
                                         @endforeach
                                 </div> -->
                                 <!-- </div> -->
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Based City</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -331,7 +331,7 @@ color: goldenrod !important;
                                       </span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Based Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -353,7 +353,7 @@ color: goldenrod !important;
                                       </span>
                                       </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -373,7 +373,7 @@ color: goldenrod !important;
                                       </span>
                                     </div>
                                 </div>
-                                    <div class="col-md-6" style="margin-top: 6px;">
+                                    <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -393,7 +393,7 @@ color: goldenrod !important;
                                       </span>
                                       </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -413,7 +413,7 @@ color: goldenrod !important;
                                     </span>
                                     </div>
                                 </div>
-                                    <div class="col-md-6" style="margin-top: 6px;">
+                                    <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -433,7 +433,7 @@ color: goldenrod !important;
                                       </span>
                                       </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -453,7 +453,7 @@ color: goldenrod !important;
                                     </span>
                                     </div>
                                 </div>
-                                    <div class="col-md-6" style="margin-top: 6px;">
+                                    <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling Country</label>
                                     @php
                                     if($influencer->personal_information !=null){
@@ -473,7 +473,7 @@ color: goldenrod !important;
                                       </span>
                                       </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Price Negotiable</label>
                                     <div class="form-group">
                                         <span
@@ -482,7 +482,7 @@ color: goldenrod !important;
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-md-6" style="margin-top: 6px;">
+                                <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label"> Collaboration</label>
                                     <div class="form-group">
                                         <span
@@ -490,7 +490,7 @@ color: goldenrod !important;
                                     </div>
                                 </div>
                                
-                                <div class="col-md-12" style="margin-top: 6px;" >
+                                <div class="col-md-12" style="margin-top: 8px;" >
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
                                         <p style="text-align:justify;font-size:12px;" 
@@ -566,7 +566,7 @@ color: goldenrod !important;
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
                              
-                                <div class="col-md-12" style="margin-top: 6px;">
+                                <div class="col-md-12" style="margin-top: 8px;">
                                     <label class="font-label">Bio</label>
                                    
                                     <div class="form-group">
