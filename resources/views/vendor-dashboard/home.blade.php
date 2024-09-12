@@ -159,6 +159,9 @@ color: #0504aa !important;
 .select2-selection__clear{
     display:none; 
 }
+.select2-container--default .select2-results__option{
+    padding-left: 9px !important;
+}
 
 /* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
