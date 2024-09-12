@@ -155,7 +155,7 @@
         }
         .filter:hover{
             color: white;
-          background-color: blue;
+          background-color: #0504aa;
         }
 
         .select-group .form-select:focus {
