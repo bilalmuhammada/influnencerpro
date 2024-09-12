@@ -28,7 +28,7 @@
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header text-center">
-                                <h3> Service Terms & Conditions</h3> 
+                                <h3>Terms & Conditions</h3> 
                                
                                 
                             </div>
@@ -350,15 +350,17 @@ Your privacy and the protection of personal data about You are very important to
                                                             <p style="text-align: justify;width:110%">
                                                                 We’re constantly trying to improve our Service, so we may need to change this Privacy Policy from time to time as well, but we will alert you to changes by placing a notice on https://influencerpro.org/, by sending you an email, and/or by some other means. Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), those legal notices will still govern your use of the Service, and you are still responsible for reading and understanding them. If you use the Service after any changes to the Privacy Policy have been posted, that means you agree to all of the changes. 
                                                             </p>   
+                                                            <li style="text-align: justify">(a) Information that InfluencerPro collects from You:</li> 
                                                             <p style="text-align: justify;width:110%">
-                                                               <li style="text-align: justify">(a) Information that InfluencerPro collects from You:</li> 
+                                                               
                                                                We receive and store any information you knowingly provide to us. For example, if you sign up for an Influencer account, we may collect Personal Information such as your first and last name, email address, phone number, location, gender, date of birth, ethnicity, household income, education level, marital status and parental status. Please note that providing some of this information is optional, but it is not all required to sign up for an account. 
                                                             </p>   
                                                             <p style="text-align: justify;width:110%">
                                                                 We may also communicate with you if you’ve provided us the means to do so. For example, if you’ve given us your email address, we may send you emails about the Service, even if you do not sign up to become an Influencer or Brand. If you do not want to receive communications from us, please indicate your preference by clicking the unsubscribe button in the email.
-                                                            </p>   
+                                                            </p> 
+                                                            <li  style="text-align: justify">  (b) Information that InfluencerPro automatically collects:</li>  
                                                             <p style="text-align: justify;width:110%">
-                                                              <li  style="text-align: justify">  (b) Information that InfluencerPro automatically collects:</li>
+                                                             
 Whenever you interact with our Services, we automatically receive and record information on our server logs from your browser or device, which may include your IP address, geolocation data, device identification, “cookie” information, the type of browser and/or device you’re using to access our Services, and the page or feature you requested. “Cookies” are identifiers we transfer to your browser or device that allow us to recognize your browser or device and tell us how and when pages and features in our Services are visited and by how many people. You may be able to change the preferences on your browser or device to prevent or limit your device’s acceptance of cookies, but this may prevent you from taking advantage of some of our features.
 
                                                             </p>       
@@ -368,50 +370,57 @@ Whenever you interact with our Services, we automatically receive and record inf
                                                             <p style="text-align: justify;width:110%">
                                                                 We may use this automatically collected data to customize content for you that we think you might like, based on your usage patterns. We may also use it to improve the Service – for example, this data can tell us how often users use a particular feature of the Service, and we can use that knowledge to make the Services interesting to as many users as possible.
                                                             </p>   
+                                                            <li  style="text-align: justify;">(c) Information that InfluencerPro shares with third parties:</li>
                                                             <p style="text-align: justify;width:110%">
-                                                                <li  style="text-align: justify;">(c) Information that InfluencerPro shares with third parties:</li>
+                                                                
 We do not rent or sell your Personal Information in personally identifiable form to anyone. We may, however, share your Personal Information with third parties as described in this section:
 
-                                                            </p>   
+                                                            </p> 
+                                                            <h6  style="text-align: justify;"> 1. Information that’s been de-identified.</h6>  
                                                             <p style="text-align: justify;width:110%">
-                                                               <h6  style="text-align: justify;"> 1. Information that’s been de-identified.</h6>  We may de-identify your Personal Information so that you are not identified as an individual, and provide that information to our partners. We may also provide aggregate usage information to our partners (or allow partners to collect that information from you), who may use such information to understand how often and in what ways people use our Services, so that they, too, can provide you with an optimal online experience. However, we never disclose aggregate usage or de-identified information to a partner (or allow a partner to collect such information) in a manner that would identify you as an individual person.
-                                                            </p>   
-                                                            <p style="text-align: justify;width:110%">
-                                                                <h6  style="text-align: justify;">  2. Affiliated Businesses:</h6>  In certain situations, businesses or third party websites we’re affiliated with may sell or provide products or services to you through or in connection with the Service (either alone or jointly with us). You can recognize when an affiliated business is associated with such a transaction or service, and we will share your Personal Information with that affiliated business only to the extent that it is related to such transaction or service.
+                                                                 We may de-identify your Personal Information so that you are not identified as an individual, and provide that information to our partners. We may also provide aggregate usage information to our partners (or allow partners to collect that information from you), who may use such information to understand how often and in what ways people use our Services, so that they, too, can provide you with an optimal online experience. However, we never disclose aggregate usage or de-identified information to a partner (or allow a partner to collect such information) in a manner that would identify you as an individual person.
                                                             </p>  
-                                                            
+                                                            <h6  style="text-align: justify;">  2. Affiliated Businesses:</h6> 
                                                             <p style="text-align: justify;width:110%">
-                                                                <h6>  3. Agents:</h6>  We employ other companies and people to perform tasks on our behalf and need to share your information with them to provide products or services to you. Unless we tell you differently, our agents do not have any right to use the Personal Information we share with them beyond what is necessary to assist us.
+                                                                 In certain situations, businesses or third party websites we’re affiliated with may sell or provide products or services to you through or in connection with the Service (either alone or jointly with us). You can recognize when an affiliated business is associated with such a transaction or service, and we will share your Personal Information with that affiliated business only to the extent that it is related to such transaction or service.
+                                                            </p>  
+                                                            <h6>  3. Agents:</h6> 
+                                                            <p style="text-align: justify;width:110%">
+                                                                We employ other companies and people to perform tasks on our behalf and need to share your information with them to provide products or services to you. Unless we tell you differently, our agents do not have any right to use the Personal Information we share with them beyond what is necessary to assist us.
                                                             </p>
-
+                                                            <h6> 4. Influencer Profiles:</h6>
                                                             <p style="text-align: justify;width:110%">
-                                                                <h6> 4. Influencer Profiles:</h6>  Certain Influencer profile information, including your name, location, and any other information you choose to provide when you sign up for an account may be shared with our customers in connection with any Campaigns. Customers may not use or share this information except in connection with the services that InfluencerPro provides to such customers.
+                                                                 Certain Influencer profile information, including your name, location, and any other information you choose to provide when you sign up for an account may be shared with our customers in connection with any Campaigns. Customers may not use or share this information except in connection with the services that InfluencerPro provides to such customers.
                                                             </p>
-
+                                                            <h6>  5. Business Transfers:</h6>
                                                             <p style="text-align: justify;width:110%">
-                                                                <h6>  5. Business Transfers:</h6> We may choose to buy or sell assets, and may share and/or transfer customer information in connection with the evaluation of and entry into such transactions. Also, if we (or our assets) are acquired, or if we go out of business, enter bankruptcy, or go through some other change of control, Personal Information could be one of the assets transferred to or acquired by a third party.
+                                                                We may choose to buy or sell assets, and may share and/or transfer customer information in connection with the evaluation of and entry into such transactions. Also, if we (or our assets) are acquired, or if we go out of business, enter bankruptcy, or go through some other change of control, Personal Information could be one of the assets transferred to or acquired by a third party.
                                                             </p>
+                                                            <h6> 6. Protection of Activate and Others:</h6>
                                                             <p style="text-align: justify;width:110%">
-                                                                <h6> 6. Protection of Activate and Others:</h6> We reserve the right to access, read, preserve, and disclose any information that we believe is necessary to comply with law or court order; enforce or apply this Agreement; or protect the rights, property, or safety of InfluencerPro, our employees, our users, or others.
+                                                                 We reserve the right to access, read, preserve, and disclose any information that we believe is necessary to comply with law or court order; enforce or apply this Agreement; or protect the rights, property, or safety of InfluencerPro, our employees, our users, or others.
                                                             </p>
+                                                            <h2> (d) Security of Your Personal Information:</h2>
                                                             <p style="text-align: justify;width:110%">
-                                                               <h2> (d) Security of Your Personal Information:</h2>
+                                                               
 Your account is protected by a password for your privacy and security. You must prevent unauthorized access to your account and Personal Information by selecting and protecting your password and limiting access to your computer or device and browser by signing off after you have finished accessing your account. 
 
                                                             </p>
                                                             <p style="text-align: justify;width:110%">
                                                                 We endeavor to protect the privacy of your account and other Personal Information we hold in our records, but unfortunately, we cannot guarantee complete security. Unauthorized entry or use, hardware or software failure, and other factors, may compromise the security of user information at any time.
                                                             </p>
+                                                            <h2>(e) No obligation to disclose Personal Information:</h2>
                                                             <p style="text-align: justify;width:110%">
-                                                                <h2>(e) No obligation to disclose Personal Information:</h2>
+                                                               
 You can always opt not to disclose information to us, but keep in mind some information may be needed to register with us as an Influencer or to take advantage of some of our features.
 
                                                             </p>
                                                             <p style="text-align: justify;width:110%">
                                                                 You may be able to add, update, or delete information. When you update information, however, we may maintain a copy of the unrevised information in our records. You may request deletion of your account by You may request deletion of your account by visiting the account settings page and clicking the "Delete My Account" button. Some information may remain in our records after your deletion of such information from your account. We may use any aggregated data derived from or incorporating your Personal Information after you update or delete it, but not in a manner that would identify you personally.
                                                             </p>
+                                                            <h3> 26. Copyright Dispute Policy.</h3>
                                                             <p style="text-align: justify;width:110%">
-                                                               <h3> 26. Copyright Dispute Policy.</h3>
+                                                               
 In accordance with the DMCA, we’ve adopted the policy below toward copyright infringement. We reserve the right to (1) block access to or remove material that we believe in good faith to be copyrighted material that has been illegally copied and distributed by any of our advertisers, affiliates, content providers, members or users and (2) remove and discontinue service to repeat offenders.
 <br>Remember that your use of InfluencerPro’s Service is at all times subject to this Agreements, which incorporates this Copyright Dispute Policy.
                                                             </p>

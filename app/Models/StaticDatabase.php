@@ -8,37 +8,48 @@ use Illuminate\Database\Eloquent\Model;
 class StaticDatabase extends Model
 {
     use HasFactory;
-
     public static function getArts()
     {
         return collect([
-            // (object)[
-            //     'key' => 'not_applicable',
-            //     'name' => 'Not Applicable',
-            // ],
             (object)[
-                'key' => 'actor',
-                'name' => 'Actor',
+                'key' => 'ai',
+                'name' => 'AI',
             ],
             (object)[
-                'key' => 'model',
-                'name' => 'Model',
+                'key' => 'acting',
+                'name' => 'Acting',
             ],
             (object)[
-                'key' => 'dance',
-                'name' => 'Dance',
+                'key' => 'action',
+                'name' => 'Action',
             ],
             (object)[
-                'key' => 'singing',
-                'name' => 'Singing',
+                'key' => 'admin',
+                'name' => 'Admin',
             ],
             (object)[
-                'key' => 'magician',
-                'name' => 'Magician',
+                'key' => 'bouncing',
+                'name' => 'Bouncing',
             ],
             (object)[
-                'key' => 'bounce',
-                'name' => 'Bounce',
+                'key' => 'climbing',
+                'name' => 'Climbing',
+            ],
+            (object)[
+                'key' => 'cycling',
+                'name' => 'Cycling',
+            ],
+            (object)[
+                'key' => 'dancing',
+                'name' => 'Dancing',
+            ],
+            (object)[
+                'key' => 'drifting',
+                'name' => 'Drifting',
+            ],
+            (object)[
+                'key' => 'fighting',
+                'name' => 'Fighting',
             ],
             (object)[
                 'key' => 'fire_play',
@@ -49,42 +60,103 @@ class StaticDatabase extends Model
                 'name' => 'Fitness',
             ],
             (object)[
-                'key' => 'running',
-                'name' => 'Running',
+                'key' => 'gaming',
+                'name' => 'Gaming',
             ],
             (object)[
-                'key' => 'cycling',
-                'name' => 'Cycling',
+                'key' => 'heavy_lifting',
+                'name' => 'Heavy-Lifting',
             ],
             (object)[
-                'key' => 'parachuting',
-                'name' => 'Parachuting',
+                'key' => 'high_jumping',
+                'name' => 'High-Jumping',
             ],
             (object)[
-                'key' => 'dj',
-                'name' => 'DJ',
+                'key' => 'hr',
+                'name' => 'HR',
             ],
             (object)[
                 'key' => 'instrumental',
                 'name' => 'Instrumental',
             ],
             (object)[
-                'key' => 'drifting',
-                'name' => 'Drifting',
+                'key' => 'interviewing',
+                'name' => 'Interviewing',
             ],
             (object)[
                 'key' => 'iq',
                 'name' => 'IQ',
             ],
             (object)[
-                'key' => 'climbing',
-                'name' => 'Climbing',
+                'key' => 'leadership',
+                'name' => 'Leadership',
             ],
-            // (object)[
-            //     'key' => 'other',
-            //     'name' => 'Other',
-            // ]
+            (object)[
+                'key' => 'magician',
+                'name' => 'Magician',
+            ],
+            (object)[
+                'key' => 'management',
+                'name' => 'Management',
+            ],
+            (object)[
+                'key' => 'marketing',
+                'name' => 'Marketing',
+            ],
+            (object)[
+                'key' => 'model',
+                'name' => 'Model',
+            ],
+            (object)[
+                'key' => 'painting',
+                'name' => 'Painting',
+            ],
+            (object)[
+                'key' => 'parenting',
+                'name' => 'Parenting',
+            ],
+            (object)[
+                'key' => 'parachuting',
+                'name' => 'Parachuting',
+            ],
+            (object)[
+                'key' => 'photographing',
+                'name' => 'Photographing',
+            ],
+            (object)[
+                'key' => 'pr',
+                'name' => 'PR',
+            ],
+            (object)[
+                'key' => 'rapping',
+                'name' => 'Rapping',
+            ],
+            (object)[
+                'key' => 'racing',
+                'name' => 'Racing',
+            ],
+            (object)[
+                'key' => 'robotic',
+                'name' => 'Robotic',
+            ],
+            (object)[
+                'key' => 'running',
+                'name' => 'Running',
+            ],
+            (object)[
+                'key' => 'singing',
+                'name' => 'Singing',
+            ],
+            (object)[
+                'key' => 'public_speaking',
+                'name' => 'Public Speaking',
+            ],
+            (object)[
+                'key' => 'b2b',
+                'name' => 'B2B',
+            ],
         ]);
     }
+    
 
 }
