@@ -34,7 +34,7 @@ function getSpokenLanguages()
 
 function getEthnicity()
 {
-    $Ethnicity = \App\Models\Ethnicity::orderBy('name', 'asc')->all();
+    $Ethnicity = \App\Models\Ethnicity::orderBy('name', 'asc')->get();
 
     return $Ethnicity;
 }
