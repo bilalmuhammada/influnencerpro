@@ -169,7 +169,7 @@
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
                                                 <span style="margin-left: 15px;font-size: 14x;">
-                                                    I agree to the influencerPro
+                                                    I agree to the InfluencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                 </span>
@@ -323,7 +323,7 @@
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
                                                     <span style="margin-left: 15px;font-size: 14x;">
-                                                    I agree to the influencerPro
+                                                    I agree to the InfluencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     </span>
