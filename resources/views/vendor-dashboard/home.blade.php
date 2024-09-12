@@ -23,6 +23,7 @@
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
+            /* margin-left: 0px !important; */
         }
         .font_label {
             padding-top: 0px !important;
@@ -667,15 +668,20 @@ color: #0504aa !important;
                                                                          
                                                                            @endforeach --}}
                                                                            {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
-                                                                           <option value="short">Short</option>
                                                                            <option value="afro">Afro</option>
+                                                                           <option value="blad">Bald</option>
+                                                                           <option value="curly">Curly</option>
+                                                                           <option value="coily">Coily</option>
+                                                                         
+                                                                          
                                                                            <option value="long">Long</option>
+                                                                           <option value="short">Short</option>
                                                                            <option value="straight">Straight</option>
                                                                            <option value="thick">Thick</option>
-                                                                            <option value="curly">Curly</option>
+                                                                           
                                                                             <option value="wavy">Wavy</option>
-                                                                            <option value="blad">Bald</option>
-                                                                            <option value="coily">Coily</option>
+                                                                           
+                                                                           
                                                                   </select> 
 
 
@@ -703,18 +709,20 @@ color: #0504aa !important;
                                                @endforeach --}}
                                                {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                                <option value="balayage">Balayage</option> 
+                                               <option value="black">Black</option>
+                                               <option value="blonde">Blonde</option>
+                                               <option value="brown">Brown</option>
                                                <option value="dark">Dark</option>
                                                <option value="ginger">Ginger</option>
                                                <option value="gold">Gold</option>
                                                <option value="green">Green</option>
+                                               <option value="grey">Grey</option>
                                                <option value="mixed">Mixed</option>
 
-                                               <option value="grey">Grey</option>
-                                               <option value="black">Black</option>
-                                               <option value="blonde">Blonde</option>
-                                               <option value="brown">Brown</option>
-                                               <option value="white">White</option>
+                                              
                                                <option value="red">Red</option>
+                                               <option value="white">White</option>
+                                              
                                       </select> 
                                     <!-- </div> -->
 
@@ -740,18 +748,24 @@ color: #0504aa !important;
                                            {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
                                            <option value="azure">Azure</option>
                                            <option value="Agate">Agate</option>
-                                           <option value="blue">Blue</option>
-                                           <option value="nordic">Nordic</option>
-                                           <option value="Serene ">Serene </option>
-                                           <option value="mixed">Mixed</option>
-   
                                            <option value="amber">Amber</option>
+                                           <option value="blue">Blue</option>
                                            <option value="black">Black</option>
                                            <option value="brown">Brown</option>
-                                            <option value="grey">Gray</option> 
-                                            <option value="green">Green</option>
-                                            <option value="hazel">Hazel</option>
-                                            <option value="red">Red</option>
+                                           <option value="grey">Gray</option> 
+                                           <option value="green">Green</option>
+                                           <option value="hazel">Hazel</option>
+                                           <option value="mixed">Mixed</option>
+                                           <option value="nordic">Nordic</option>
+                                          
+                                           <option value="red">Red</option>
+                                           <option value="Serene ">Serene </option>
+                                          
+   
+                                          
+                                        
+                                          
+                                          
 
                                   </select> 
                                     

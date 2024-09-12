@@ -168,9 +168,11 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
+                                                <span style="margin-left: 15px;font-size: 14x;">
                                                     I agree to the influencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
+                                                </span>
                                                     <div class="invalid-feedback">
                                                         Please Check this.
                                                     </div>
@@ -320,9 +322,11 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
+                                                    <span style="margin-left: 15px;font-size: 14x;">
                                                     I agree to the influencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
+                                                    </span>
                                                     <div class="invalid-feedback">
                                                         Please Check this.
                                                     </div>

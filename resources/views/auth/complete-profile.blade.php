@@ -366,15 +366,18 @@ display: none !important;
                                                 value="{{ $userinfo->id }}" >{{ $userinfo->hairtype }}</option>
                                         @endforeach --}}
                                         {{-- <option selected value="">Select Hair Type</option> --}}
-                                        <option value="short">Short</option>
                                         <option value="afro">Afro</option>
-                                        <option value="long">Long</option>
-                                        <option value="straight">Straight</option>
-                                        <option value="thick">Thick</option>
-                                         <option value="curly">Curly</option>
-                                         <option value="wavy">Wavy</option>
-                                         <option value="blad">Bald</option>
-                                         <option value="coily">Coily</option>
+                                                                           <option value="blad">Bald</option>
+                                                                           <option value="curly">Curly</option>
+                                                                           <option value="coily">Coily</option>
+                                                                         
+                                                                          
+                                                                           <option value="long">Long</option>
+                                                                           <option value="short">Short</option>
+                                                                           <option value="straight">Straight</option>
+                                                                           <option value="thick">Thick</option>
+                                                                           
+                                                                            <option value="wavy">Wavy</option>
                                     </select>
                                       <label for="username" class="focus-label">Hair Type</label>
                                         </div>
@@ -391,18 +394,19 @@ display: none !important;
                                         @endforeach --}}
                                         {{-- <option selected value="">Hair color</option> --}}
                                         <option value="balayage">Balayage</option> 
+                                        <option value="black">Black</option>
+                                        <option value="blonde">Blonde</option>
+                                        <option value="brown">Brown</option>
                                         <option value="dark">Dark</option>
                                         <option value="ginger">Ginger</option>
                                         <option value="gold">Gold</option>
                                         <option value="green">Green</option>
+                                        <option value="grey">Grey</option>
                                         <option value="mixed">Mixed</option>
 
-                                        <option value="grey">Grey</option>
-                                        <option value="black">Black</option>
-                                        <option value="blonde">Blonde</option>
-                                        <option value="brown">Brown</option>
-                                        <option value="white">White</option>
+                                       
                                         <option value="red">Red</option>
+                                        <option value="white">White</option>
                                     </select>
                                     <label for="username" class="focus-label">Hair Color</label>
                                         </div>
@@ -424,19 +428,19 @@ display: none !important;
                                         @endforeach --}}
                                         {{-- <option selected value="">Eye Color</option> --}}
                                         <option value="azure">Azure</option>
-                                        <option value="Agate">Agate</option>
-                                        <option value="blue">Blue</option>
-                                        <option value="nordic">Nordic</option>
-                                        <option value="Serene ">Serene </option>
-                                        <option value="mixed">Mixed</option>
-
-                                        <option value="amber">Amber</option>
-                                        <option value="black">Black</option>
-                                        <option value="brown">Brown</option>
-                                         <option value="grey">Gray</option> 
-                                         <option value="green">Green</option>
-                                         <option value="hazel">Hazel</option>
-                                         <option value="red">Red</option>
+                                           <option value="Agate">Agate</option>
+                                           <option value="amber">Amber</option>
+                                           <option value="blue">Blue</option>
+                                           <option value="black">Black</option>
+                                           <option value="brown">Brown</option>
+                                           <option value="grey">Gray</option> 
+                                           <option value="green">Green</option>
+                                           <option value="hazel">Hazel</option>
+                                           <option value="mixed">Mixed</option>
+                                           <option value="nordic">Nordic</option>
+                                          
+                                           <option value="red">Red</option>
+                                           <option value="Serene ">Serene </option>
                                     </select>
                                     <label for="username" class="focus-label">Eye Color</label>
                                         </div>
