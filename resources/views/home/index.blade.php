@@ -477,7 +477,7 @@ color:goldenrod !important;
     <section class="section projects">
         <div class="container-fluid">
             <div class="col-lg-8 col-md-12 col-12 mx-auto" style="border:0px solid red;">
-                @php $categories = getCategories(); @endphp
+                @php $categories = getCategoriesforlandingpage(); @endphp
                 <div class="row mx-auto">
                     @foreach($categories as $category)
                         <div class="col-lg-2 col-md-6 col-sm-6 mx-auto" style="border:0px solid red;width:170px;border:0px solid red;">
