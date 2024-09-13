@@ -101,6 +101,7 @@ class User extends Authenticatable
     {
         // Get the first related influencer profile image
         $image = $this->influencer_profile_images()->first();
+        // dd($image);
 
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;

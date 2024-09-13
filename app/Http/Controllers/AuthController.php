@@ -875,6 +875,8 @@ class AuthController extends Controller
 
     public function accountSettingUpdate(Request $request)
     {
+
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
@@ -905,14 +907,14 @@ class AuthController extends Controller
         ]);
 
         $logo = $request->file('image');
-        // dd($logo);
+        //  dd($logo);
         if ($logo) {
             if ($User->attachment && File::exists(public_path('uploads/users/' . $User->attachment->name))) {
                 unlink(public_path('uploads/users/' . $User->attachment->name));
             }
 
             $logo_name = $logo->getClientOriginalName() . Auth::id() . '.' . $logo->getClientOriginalExtension();
-            // dd( $logo->move(public_path('uploads/users'), $logo_name));
+            
             $logo->move(public_path('uploads/users'), $logo_name);
 
             
@@ -923,7 +925,7 @@ class AuthController extends Controller
                 'type' => $logo->getClientOriginalExtension(),
                 'object' => 'User',
                 'object_id' => $User->id,
-                'context' => 'user-image'
+                'context' => 'influencer-profile-image'
             ]);
 
             SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $logo_name);
@@ -939,9 +941,11 @@ class AuthController extends Controller
 
     public function vendorAccountSettingUpdateBackend(Request $request)
     {
+        
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
+     
 
         if ($validator->fails()) {
             return response()->json([

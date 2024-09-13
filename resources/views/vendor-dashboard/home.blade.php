@@ -1061,7 +1061,7 @@ color: #0504aa !important;
                                                @endphp
                                                 &nbsp;
                                                 @if($instagram && isset($instagram->followers))
-                                                    <li style=" display: inline-block;color:#fff;margin-left: 9px; "><span
+                                                    <li style=" display: inline-block;color:#fff;margin-left: 11px; "><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/insta.png') }}"
                                                                     alt=""
