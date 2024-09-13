@@ -1440,7 +1440,7 @@ $(document).on('click', '.submit-btn', function () {
                             $(thisElem).parents('.available-box').find(".city_id").empty();
                             if (states) {
                                 $.each(states, function (index, value) {
-                                    $(thisElem).parents('.available-box').find(".city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $(thisElem).parents('.available-box').find(".city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
                                 });
                             }
                         } else {
