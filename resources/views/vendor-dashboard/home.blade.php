@@ -221,11 +221,11 @@ color: #0504aa !important;
                                     <select name="city_id[]" class="form-control select2" multiple id="city_id">
 
                                     </select>
-                                    @php $categories = getCategories();  @endphp
+                                    @php $categories = getCategories()->sortBy('name');  @endphp
                                     <div class="form-group">
                                         <label for="" class="font_label">Category</label>
                                         <select class="form-control select2" name="category_id[]" multiple>
-                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
+                                           
                                             @forelse($categories as $category)
                                                 <option
                                                     value="{{ $category->id }}"
