@@ -538,7 +538,7 @@ function validateInput(input) {
 
                             if (states) {
                                 $.each(states, function (index, value) {
-                                    $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
                                     $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                 });
                             }
