@@ -351,7 +351,7 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left:13px; ">
+                                            <div class="input-group" style="margin-left:9px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
 
                                                     <img
@@ -360,8 +360,8 @@ foreach ($user_categories as $key => $category) {
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:91%;height:42px !important;">
-                                                    <input type="text" class="input-msg-send form-controls" style="border-radius: 30px;"
+                                                     style="width:93%;height:42px !important;">
+                                                    <input type="text" class="input-msg-send emoji-trigger form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
                                                            {{-- placeholder="Reply..." --}}
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
@@ -420,7 +420,9 @@ foreach ($user_categories as $key => $category) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
 $(document).ready(function () {
-    
+    $('.emoji-trigger').emojioneArea({
+                pickerPosition: "bottom",
+            });
     $('.msg-send-btn').prop('disabled', true);
 
     // Enable/Disable button based on input field
@@ -449,9 +451,7 @@ $(document).ready(function () {
             ajax_setup();
 
 
-            $('#emoji-trigger').emojioneArea({
-                pickerPosition: "bottom",
-            });
+           
         });
 
 

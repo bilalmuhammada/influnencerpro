@@ -359,7 +359,7 @@ display: none !important;
                                         {{-- <div class="input-container"> --}}
                                            
                                             <select name="hair_type" id=""
-                                            class="form-control available-country mySelect floating">
+                                            class="form-control  mySelect floating">
                                         {{-- <option value="">Hair Typess</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -386,7 +386,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration" style="height: 53px;">
                                             
                                             <select name="hair_color" id=""
-                                            class="form-control available-country mySelect floating">
+                                            class="form-control mySelect floating">
                                         {{-- <option value="">Hair Color</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -420,7 +420,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration" style="height: 50px;">
                                             
                                             <select name="eye_color" id=""
-                                            class="form-control available-country  mySelect  floating">
+                                            class="form-control  mySelect  floating">
                                         {{-- <option value="">Eye Type</option> --}}
                                         {{-- @foreach( $userInformation as $userinfo)
                                             <option
@@ -481,7 +481,7 @@ display: none !important;
                                          
                                             value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
                                             <select name="clothsize" id=""
-                                            class="form-control available-country mySelect  floating">
+                                            class="form-control  mySelect  floating">
                                       
                                         <option value="XS">XS</option>
                                         <option value="S">S</option>
@@ -511,7 +511,7 @@ display: none !important;
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
-                                                    <option value="0" selected>&nbsp;</option>
+                                                    {{-- <option value="0" selected>&nbsp;</option> --}}
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -523,6 +523,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
                                             
                                             <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
+                                                {{-- <option value=""  hidden selected></option> --}}
                                                 <option value="" disabled hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateId(1) as $city)
 
@@ -530,7 +531,7 @@ display: none !important;
                                                 
                                                 @endforeach
                                             </select>
-                                        <label for="username" class="focus-label"  style="margin-top:-15px;">Based City</label>
+                                        <label for="username" class="focus-label" style="margin-top:-15px;">Based City</label>
                                         </div>
 
                                     </div>
@@ -737,7 +738,7 @@ display: none !important;
                                                     }
                                                 @endphp
 
-                                                <option value="" disabled hidden selected>&nbsp;</option>
+                                              <option value=""  hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -1425,6 +1426,7 @@ $(document).on('click', '.submit-btn', function () {
         $(document).on('change', '.available-country', function () {
             var country_id = $(this).val();
             var thisElem = $(this);
+            // alert(country_id);
             if (country_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
@@ -1435,17 +1437,24 @@ $(document).on('click', '.submit-btn', function () {
                     },
                     success: function (response) {
                       
-                        if (response.data.length > 0) {
-                            var states = response.data;
-                            // $(thisElem).parents('.available-box').find(".city_id").empty();
-                            if (states) {
-                                $.each(states, function (index, value) {
-                                    $(thisElem).parents('.available-box').find(".city_id").append('<option value="" disabled hidden selected>&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
-                                });
-                            }
-                        } else {
-                            $(thisElem).parents('.available-box').find(".city_id").empty();
-                        }
+                        var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
+
+// Always clear the dropdown and add an empty option
+// cityDropdown.empty().append('<option value="">Select City </option>');
+
+if (response.data.length > 0) {
+    var states = response.data;
+
+    // Append other options if states data is available
+    if (states) {
+        $.each(states, function (index, value) {
+            cityDropdown.append('<option value="' + value.id + '">' + value.name + '</option>');
+        });
+    }
+} else {
+    // If no data, the dropdown will only have the empty "Select City" option
+    cityDropdown.append('<option value="">No Cities Available</option>');
+}
                     }
                 });
             }
@@ -1469,7 +1478,7 @@ $(document).on('click', '.submit-btn', function () {
             });
             // $('.feature-select2').select2();
              $('.selectdropdown').select2({
-                   placeholder: "",
+                //    placeholder: "",
                   allowClear: true
              });
              $('.selectdropdownforcountry').select2({
