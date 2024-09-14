@@ -334,13 +334,13 @@ width: 195px !important;
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp;
+                                            <li style=" display: inline-block;color:#fff;margin-left: 11px;">&nbsp;&nbsp;
                                                 <span
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
                                                             src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                             width="20px"></a> <br> <div class="text-center"
-                                                                                        style="font-size:11px; margin-left: 9px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
+                                                                                        style="font-size:11px; ">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
                                         @if($twitter && isset($twitter->followers))
