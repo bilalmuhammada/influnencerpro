@@ -144,7 +144,7 @@
     </script>
 
     <nav class="navbar navbar-expand-lg header-nav" style="background-color: white;">
-        <div class="navbar-header">
+        <div class="navbar-header" style="display: flex;">
             <a id="mobile_btn" href="javascript:void(0);">
                 <span class="bar-icon">
                     <span></span>
@@ -155,10 +155,8 @@
             <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 57px;">
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
             </a>
-        </div>
 
-        <div class="country" style="border:0px solid green;position:relative;right:182px;">
-            <div class="mobile-country desktop-menu-right">
+            <div class="mobile-country desktop-menu-right" style="margin-top: 13px;">
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     <option value="null" selected style="color: blue;">Language</option>
                     @foreach(getlanguge() as $language)
@@ -169,6 +167,10 @@
                 </select>
             </div>
         </div>
+
+        {{-- <div class="country" style="border:0px solid green;position:relative;right:182px;"> --}}
+           
+        {{-- </div> --}}
 
         <div id="google_translate_element" style="display: none;"></div>
 
