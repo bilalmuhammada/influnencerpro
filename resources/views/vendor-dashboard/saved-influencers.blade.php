@@ -339,7 +339,7 @@ width: 195px !important;
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;margin-left: 6px; ">&nbsp;&nbsp;
+                                            <li style=" display: inline-block;color:#fff;margin-left: 8px; ">&nbsp;&nbsp;
                                                 <span
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
