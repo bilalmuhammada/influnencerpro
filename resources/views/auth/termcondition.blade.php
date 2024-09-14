@@ -182,25 +182,25 @@ InfluencerPro is under no obligation to monitor the Influencer for compliance wi
                                                               
                                                                 Endorsements and advertising play an integral role in InfluencerPro’s business structure. While engaging in endorsements is encouraged by InfluencerPro, as a corporate entity we must adhere to a set of guidelines when endorsing or advertising products and services through InfluencerPro. The following policy outlines the parameters InfluencerPro and Influencers and Brands must observe when engaging in endorsements in connection with Campaigns with InfluencerPro. Violation of this policy may result in disciplinary action of varying degrees, up to and including immediate termination.
                                                                 
-                                                                {{-- <li style="text-align: justify;">  --}}
+                                                                {{-- <li style="text-align: justify;">  --}} <br>
                                                                     I. Endorsements and Advertising. From time to time, InfluencerPro’s business involves the endorsement, advertisement, or evaluation of products and services. An endorsement means “any advertising message (including verbal statements, demonstrations, or depictions of a name, signature, likeness or other identifying personal characteristics of an individual or the name or seal of an organization) that consumers are likely to believe reflects the opinions, beliefs, findings or experiences of a party other than the sponsoring advertiser, even if the view expressed by that party are identical to those of the sponsoring advertiser.” As a general rule of thumb, when discussing a product or service, be honest to InfluencerPro’s 
                                                                     readers and consumers. You should never post material in any medium (including those statements made on social media) that could be viewed as deceptive advertising. This means, when you post endorsements,
                                                                      these statements should:
                                                                     {{-- </li> --}}
                                                                 {{-- <li style="text-align: justify;"> --}}
-                                                                    a. Reflect your honest opinions, findings, beliefs and experiences; 
+                                                                 <br>   a. Reflect your honest opinions, findings, beliefs and experiences; 
                                                                 {{-- </li> --}}
                                                                     {{-- <li style="text-align: justify;"> --}}
-                                                                        b. When representing that you use the endorsed product,
+                                                                      <br>  b. When representing that you use the endorsed product,
                                                                          you should actually be a bona fide user of it at the time the endorsement was given;
                                                                         {{-- </li> --}}
                                                                         {{-- <li style="text-align: justify;">  --}}
-                                                                            c. Not include any statements about products or its
+                                                                        <br>    c. Not include any statements about products or its
                                                                              services that the creator of such products or services could not make directly
                                                                               (because unsubstantiated or otherwise false, misleading, presented out of context, or distorted); and
                                                                             {{-- </li> --}}
                                                                             {{-- <li style="text-align: justify;">  --}}
-                                                                                d. Clearly and conspicuously disclose, if true,
+                                                                           <br>     d. Clearly and conspicuously disclose, if true,
                                                                                  that you have received or will receive compensation (or other benefit)
                                                                                   in exchange for your online statements. All disclosures must be FTC compliant.
                                                                                    Examples of benefits that you must disclose include, for example, cash, gift cards, 
