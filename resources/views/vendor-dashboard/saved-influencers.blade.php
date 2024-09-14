@@ -344,7 +344,7 @@ width: 195px !important;
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
                                                             src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
-                                                            width="20px"></a> <br> <div class="text-center"
+                                                            width="25px"></a> <br> <div class="text-center"
                                                                                         style="font-size:11px; margin-left: 12px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
@@ -353,7 +353,7 @@ width: 195px !important;
                                                     style="font-size: 12px;text-align:center;"><a href=""><img
                                                             src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                                             alt=""
-                                                            width="20px"></a> <div class="text-center"
+                                                            width="25px"></a> <div class="text-center"
                                                                                    style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
@@ -362,7 +362,7 @@ width: 195px !important;
                                                     style="font-size: 12px;text-align:center;"><a href=""><img
                                                             src="{{ asset('assets/img/social-icon/youtube.png') }}"
                                                             alt=""
-                                                            width="20px"></a> <div class="text-center"
+                                                            width="25px"></a> <div class="text-center"
                                                                                    style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
@@ -372,7 +372,7 @@ width: 195px !important;
                                                         href=""><img
                                                             src="{{ asset('assets/img/social-icon/tiktok.png') }}"
                                                             alt=""
-                                                            width="20px"></a> <div class="text-center"
+                                                            width="25px"></a> <div class="text-center"
                                                                                    style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
                                             </li>&nbsp;
                                         @endif
@@ -381,7 +381,7 @@ width: 195px !important;
                                             <li style=" display: inline-block;color:#fff;"><span
                                                     style="font-size: 12px;"><a href=""><img
                                                             src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                            alt="" width="20px"></a> <div class="text-center"
+                                                            alt="" width="25px"></a> <div class="text-center"
                                                                                           style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
@@ -389,7 +389,7 @@ width: 195px !important;
                                             <li style=" display: inline-block;color:#fff;"><span
                                                     style="font-size: 12px;"><a href=""><img
                                                             src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                            alt="" width="20px"></a> <div class="text-center"
+                                                            alt="" width="25px"></a> <div class="text-center"
                                                                                           style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
                                             </li>&nbsp;
                                         @endif
