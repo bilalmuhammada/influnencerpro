@@ -1029,7 +1029,7 @@ color: #0504aa !important;
 
                                        
                                         <div class="influencerdetail" id="">
-                                            <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;">
+                                            <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:222px;">
 
                                                  <i class="fa-solid fa-heart  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
