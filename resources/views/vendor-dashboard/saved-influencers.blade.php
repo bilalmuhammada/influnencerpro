@@ -307,7 +307,7 @@ width: 195px !important;
                               @endphp
                                
                                 <div class="influencerdetail" id="">
-                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;margin-left:-11px">
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:220px;margin-left:-18px">
 
                                         <i class="fa-solid fa-heart  add-to-favourite"
                                         data-id="{{ $influencer->id }}"
@@ -339,13 +339,13 @@ width: 195px !important;
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;margin-left: 11px; ">&nbsp;&nbsp;
+                                            <li style=" display: inline-block;color:#fff;margin-left: 6px; ">&nbsp;&nbsp;
                                                 <span
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
                                                             src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                             width="20px"></a> <br> <div class="text-center"
-                                                                                        style="font-size:11px; margin-left: 9px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
+                                                                                        style="font-size:11px; margin-left: 12px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
                                             </li> &nbsp;
                                         @endif
                                         @if($twitter && isset($twitter->followers))
