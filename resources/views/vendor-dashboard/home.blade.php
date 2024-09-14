@@ -19,7 +19,8 @@
     border: 1px solid #997045!important;
 }
         #select2-nationality_id-container{
-            color: rgb(6, 6, 6) !important;
+            color:rgb(6 6 6 / 74%)!important;
+            margin-left: 12px;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
