@@ -840,7 +840,7 @@ color: #0504aa !important;
                                         <div class="col-md-12">
                                             <label class="font_label">Art</label>
                                             <select type="text" class="form-control select2" name="art[]" multiple>
-                                                @foreach(getArts() as $art)
+                                                @foreach(getArts()->sortBy('name') as $art)
                                                     <option
                                                         value="{{ $art->key }}"
                                                         @if(in_array($art->key, request()->art ?? [])) selected @endif>{{ $art->name }}</option>
