@@ -359,7 +359,7 @@ foreach ($user_categories as $key => $category) {
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:92%;height:42px !important;">
+                                                     style="width:91%;height:42px !important;">
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
                                                            {{-- placeholder="Reply..." --}}
