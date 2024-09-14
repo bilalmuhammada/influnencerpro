@@ -264,7 +264,7 @@ display: none !important;
                                             class="form-control floating"     multiple>
                                            
                                                 {{-- <option value="">--Select Art--</option> --}}
-                                                @foreach(getArts() as $art)
+                                                @foreach(getArts()->sortBy('name')  as $art)
                                                     <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
                                                 @endforeach
                                             </select>
