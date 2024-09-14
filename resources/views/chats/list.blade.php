@@ -351,16 +351,15 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left:9px; ">
+                                            <div class="input-group" style="margin-left:12px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
-
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
                                                 <div class="inputs"
-                                                     style="width:93%;height:42px !important;">
+                                                     style="width:92%;height:42px !important;">
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls" style="border-radius: 30px;"
                                                            id="emoji-trigger"
                                                            {{-- placeholder="Reply..." --}}
