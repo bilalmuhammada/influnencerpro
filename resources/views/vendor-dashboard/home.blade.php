@@ -206,7 +206,7 @@ color: #0504aa !important;
                                 <div class="filter-widget">
                                     <input type="text" class="form-control" placeholder="Search..." name="">
                                     <label for="" class="font_label">Country</label>
-                                    @php $countries = getCountries(); @endphp
+                                    @php $countries = getCountries()->sortBy('name'); @endphp
                                     <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
                                         {{-- <option value="">&nbsp;</option> --}}
