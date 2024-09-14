@@ -291,7 +291,7 @@ width: 195px !important;
                                       if ($influencer->invented[0]->influencer_id == $influencer->id) {
                                           
                                           if ($influencer->invented[0]->fr_in == 2) {
-                                              $color1 = 'green';
+                                              $color1 = '#61de2a';
                                           }
                                       }
                                   }
