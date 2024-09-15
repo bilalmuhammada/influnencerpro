@@ -300,7 +300,7 @@ display: none !important;
                                             <select name="national_id" id="" class="form-control selectdropdown floating">
                                                 {{-- <option value="">Country</option> --}}
                                                 <option value="" disabled selected hidden></option>
-                                                @foreach(getCountries() as $country)
+                                                @foreach(nationality() as $country)
                                                     <option 
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->national_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach

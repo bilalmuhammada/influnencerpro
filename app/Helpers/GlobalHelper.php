@@ -18,6 +18,12 @@ function getCategories()
 
     return $Categories;
 }
+function getnationality()
+{
+    $nationality = DB::table('nationality')->orderBy("name",'ASC')->get();
+
+    return $nationality;
+}
 
 function getCategoriesforlandingpage()
 {
