@@ -1120,7 +1120,7 @@ color: #0504aa !important;
                                         <img src="{{ $influencer ? $influencer->image_url : '' }}" class="influencer"
                                              alt="author" width="100%" height="200px">
                                     </a>
-                                    <div class="influencer-dev" style="margin:10px;padding:3px;">
+                                    <div class="influencer-dev" style="margin:10px;padding: 3px 0px 0px 9px;">
                                         <h5 style="font-size:12px;"
                                             class="influencer-name bilal-list-influencer">{{ $influencer ? $influencer->full_name : '' }}</h5>
 

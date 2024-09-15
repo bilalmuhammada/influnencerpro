@@ -409,7 +409,7 @@ width: 195px !important;
 
                             // dd($influencer->categories);
                             @endphp
-                            <div class="influencer-dev" style="margin:10px;padding:3px;">
+                            <div class="influencer-dev" style="margin:10px;padding: 3px 0px 0px 9px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
                                     <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
