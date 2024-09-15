@@ -545,7 +545,7 @@ color: #0504aa !important;
                                         <!-- <div class="filter-widget"> -->
                                         <label class="font_label">Nationality</label>
                                         <!-- <div class="form-group"> -->
-                                        @php $countries = getCountries(); @endphp
+                                        @php $countries = getnationality(); @endphp
                                         <select class="form-control seletct2 nationality_id" 
                                                 name="country_id" multiple="multiple">
                                             {{-- <option value="">&nbsp;&nbsp;</option>  --}}
