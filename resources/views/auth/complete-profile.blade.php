@@ -1453,7 +1453,7 @@ if (response.data.length > 0) {
     }
 } else {
     // If no data, the dropdown will only have the empty "Select City" option
-    cityDropdown.append('<option value="">No Cities Available</option>');
+    cityDropdown.empty();
 }
                     }
                 });
