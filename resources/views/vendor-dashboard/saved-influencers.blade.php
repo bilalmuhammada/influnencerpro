@@ -339,7 +339,7 @@ width: 195px !important;
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;margin-left: 8px; ">&nbsp;&nbsp;
+                                            <li style=" display: inline-block;color:#fff;margin-left: 5px; ">&nbsp;&nbsp;
                                                 <span
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
@@ -414,7 +414,7 @@ width: 195px !important;
 
                             // dd($influencer->categories);
                             @endphp
-                            <div class="influencer-dev" style="margin:10px;padding: 3px 0px 0px 9px;">
+                            <div class="influencer-dev" style="margin:10px;padding: 3px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
                                     <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
