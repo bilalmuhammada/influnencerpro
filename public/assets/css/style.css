@@ -13914,7 +13914,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media .media-body .msg-box>div {
-    padding: 10px 15px;
+    padding: 4px 15px;
     border-radius: 15px;
     display: inline-block;
     position: relative;
@@ -14145,7 +14145,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.received .media-body .msg-box:first-child:before {
-    border-bottom: 15px solid #FAF9D0;
+    border-bottom: 1px solid #FAF9D0;
     border-right: 15px solid #FAF9D0;
     border-top: 15px solid transparent;
     border-left: 15px solid transparent;
@@ -14164,7 +14164,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box:first-child:before {
-    border-bottom: 15px solid #d8f9ff;
+    border-bottom: 1px solid #d8f9ff;
     border-left: 15px solid #d8f9ff;
     border-top: 15px solid transparent;
     border-right: 15px solid transparent;
