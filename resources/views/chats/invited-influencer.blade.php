@@ -312,7 +312,7 @@ width: 195px !important;
                                        <i class="fas fa-check-circle   add-to-invented"
                                           data-id="{{ $influencer->id }}"
                                           data-fvt="2"
-                                          style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                          style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
     
                                        {{-- <i class="fas fa-check-circle remove-favourite"
                                           data-id="{{ $influencer->id }}"
@@ -334,7 +334,7 @@ width: 195px !important;
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;margin-left: 8px;">&nbsp;&nbsp;
+                                            <li style=" display: inline-block;color:#fff;margin-left: 2px;">&nbsp;&nbsp;
                                                 <span
                                                     style="font-size: 12px;text-align:center;"><a
                                                         href=""><img
@@ -409,7 +409,7 @@ width: 195px !important;
 
                             // dd($influencer->categories);
                             @endphp
-                            <div class="influencer-dev" style="margin:10px;padding: 3px 0px 0px 9px;">
+                            <div class="influencer-dev" style="margin:10px;padding: 3px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
                                     <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
