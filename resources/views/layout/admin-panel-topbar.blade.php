@@ -156,7 +156,7 @@
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
             </a>
 
-            <div class="mobile-country desktop-menu-right" style="margin-top: 13px;">
+            <div class="mobile-country desktop-menu-right" style="margin-top: 17px;">
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     <option value="null" selected style="color: blue;">Language</option>
                     @foreach(getlanguge() as $language)
