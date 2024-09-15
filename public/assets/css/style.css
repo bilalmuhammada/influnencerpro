@@ -13932,7 +13932,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.received {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     margin-left: 10px;
     position: relative;
 }
@@ -13948,7 +13948,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.sent {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     width: 974px;
     position: relative;
 }
