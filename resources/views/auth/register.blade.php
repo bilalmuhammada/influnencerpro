@@ -168,7 +168,7 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
-                                                <span style="margin-left: 15px;font-size: 14x;">
+                                                <span style="margin-left: 15px;font-size: 14px;">
                                                     I agree to the InfluencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
@@ -322,7 +322,7 @@
                                                     <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    <span style="margin-left: 15px;font-size: 14x;">
+                                                    <span style="margin-left: 15px;font-size: 14px;">
                                                     I agree to the InfluencerPro
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
@@ -539,7 +539,8 @@ function validateInput(input) {
                             if (states) {
                                 $.each(states, function (index, value) {
                                     $("#city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
-                                    $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    // $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
                                 });
                             }
                         } else {
