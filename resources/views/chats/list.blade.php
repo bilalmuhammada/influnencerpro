@@ -351,7 +351,7 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left:22px; ">
+                                            <div class="input-group" style="margin-left:17px; ">
                                                 {{-- <div class="avatar" style="padding:4px;">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
