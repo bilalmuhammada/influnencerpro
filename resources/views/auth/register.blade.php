@@ -181,7 +181,7 @@
                                             <div class="invalid-feedback" style="display: none">
 
                                             </div>
-                                            <div class="btn-join text-center">
+                                            <div class="btn-join text-center" style="margin-top: 10px;">
                                                 <button class="t-btn influencer-register" type="button">
                                                     Register
                                                 </button>
@@ -337,7 +337,7 @@
                                             <div class="invalid-feedback term-invalid" style="display: none">
 
                                             </div>
-                                            <div class="btn-join text-center">
+                                            <div class="btn-join text-center" style="margin-top: 10px;">
                                                 <button class="t-btn brand-register" type="button">
                                                   Register
                                                 </button>
