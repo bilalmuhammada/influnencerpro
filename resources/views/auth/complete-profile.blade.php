@@ -3,8 +3,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>   
-
-
+.select2-container--default .select2-selection--multiple {
+        max-height: 52px; /* Adjust selected items container height */
+        overflow-y: auto;
+    }
 .dropzone-container {
     border: 2px solid #ccc;
     padding: 20px;
@@ -244,7 +246,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="category_ids[]" id="category_ids"   class="form-control floating  category_ids"
+                                            <select name="category_ids[]" id="category_ids"   class="form-control floating select2  category_ids"
                                             multiple >
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories()->sortBy('name') as $category)
@@ -275,7 +277,7 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
-                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control floating" multiple>
+                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control select2 floating" multiple>
                                                 @foreach(getlanguge() as $language)
                                                     <option value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>
                                                         {{ $language->name }}
@@ -1491,7 +1493,7 @@ if (response.data.length > 0) {
              $('.mySelect').select2({
     minimumResultsForSearch: Infinity // Disables the search box
   });
-            $('#spoken_language_ids').select2({
+            $('.select2').select2({
                 //  placeholder: "Select Spoken",
                 allowClear: true
             }).on('select2:select', function (e) {
