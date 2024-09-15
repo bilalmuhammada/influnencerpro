@@ -246,7 +246,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
-                                            <select name="category_ids[]" id="category_ids"   class="form-control floating select2  category_ids"
+                                            <select name="category_ids[]" id="category_ids"   class="form-control floating   category_ids"
                                             multiple >
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories()->sortBy('name') as $category)
@@ -277,7 +277,7 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
-                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control select2 floating" multiple>
+                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control  floating" multiple>
                                                 @foreach(getlanguge() as $language)
                                                     <option value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>
                                                         {{ $language->name }}
@@ -513,7 +513,7 @@ display: none !important;
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
-                                                    {{-- <option value="0" selected>&nbsp;</option> --}}
+                                                    <option value=" " selected>&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -1480,7 +1480,7 @@ if (response.data.length > 0) {
             });
             // $('.feature-select2').select2();
              $('.selectdropdown').select2({
-                //    placeholder: "",
+                //    placeholder: " ",
                   allowClear: true
              });
              $('.selectdropdownforcountry').select2({
@@ -1493,8 +1493,8 @@ if (response.data.length > 0) {
              $('.mySelect').select2({
     minimumResultsForSearch: Infinity // Disables the search box
   });
-            $('.select2').select2({
-                //  placeholder: "Select Spoken",
+            $('#category_ids').select2({
+                  placeholder: "Select Spoken",
                 allowClear: true
             }).on('select2:select', function (e) {
                 var maxSelection = 3;
