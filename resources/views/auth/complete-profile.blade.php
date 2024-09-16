@@ -301,7 +301,7 @@ display: none !important;
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <label for="spoken_language_ids" style="margin-top: -15px;" class="focus-label">Languages</label>
+                                            <label for="spoken_language_ids"  class="focus-label">Languages</label>
                                         </div>
                                         </div>
                                     
