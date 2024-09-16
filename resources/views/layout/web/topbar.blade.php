@@ -168,7 +168,7 @@
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
                 {{-- <li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
-                <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li>
+                {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
                     <a href="#">Influencers<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu">
@@ -190,23 +190,23 @@
             @endif
 
             @if(session()->get('role') == 'influencer')
-                    <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li>
-                    <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li>
-                <li class="has-submenu">
+                    {{-- <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li> --}}
+                    {{-- <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li> --}}
+                {{-- <li class="has-submenu">
                     <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img
                             src="{{ session()->has('User') ? session()->get('User')->image_url : asset('assets/img/user.png')}}" alt="img" width="40" height="40"
-                            style="border-radius:20px;margin-top:-10px;"></a>
-                    <ul class="submenu">
+                            style="border-radius:20px;margin-top:-10px;"></a> --}}
+                    {{-- <ul class="submenu">
                         <li class="has-submenu"></li>
                         <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Settings</a></li>
                         <li>
                             <a href="{{ env('BASE_URL') . 'influencer/complete-profile' }}" class="logout-btn">
                                 Profile
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li><a href="{{ env('BASE_URL') . 'influencer/change-old-password  ' }}">Change Password</a></li> --}}
-                        <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">Sign Out</a></li>
-                    </ul>
+                        {{-- <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">Sign Out</a></li> --}}
+                    {{-- </ul> --}}
                 </li>
             @endif
         <!-- <li><a href="about-us.php">About us</a></li>
@@ -228,7 +228,8 @@
                     </a>
                 </li>
 
-            @elseif(session()->get('role') != 'influencer')
+            @else
+            {{-- if(session()->get('role') != 'influencer') --}}
                 <li>
                     <a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">
                         <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon"> Logout
