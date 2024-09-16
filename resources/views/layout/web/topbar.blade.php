@@ -167,6 +167,7 @@
         @endphp
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
+               {{-- <li><a href="{{ env('BASE_URL') . 'vendor/dashboard' }}">Dashboard</a></li> --}}
                 {{-- <li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
                 {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
@@ -228,8 +229,7 @@
                     </a>
                 </li>
 
-            @else
-            {{-- if(session()->get('role') != 'influencer') --}}
+            @elseif(session()->get('role') != 'influencer' &&  session()->get('role') != 'vendor')
                 <li>
                     <a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">
                         <img src="{{ asset('assets/img/icon/lock-icon.svg') }}" class="me-1" alt="icon"> Logout
