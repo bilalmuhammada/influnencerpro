@@ -182,15 +182,18 @@ display: none !important;
 #select2-arts-container{
     display: inherit !important;
     padding-top: 13px !important;
+    max-height: 10px !important;
 
 }
 #select2-category_ids-container{
     display: inherit !important;
     padding-top: 13px !important;
+    max-height: 10px !important;
 }
 #select2-spoken_language_ids-container{
     display: inherit !important;
     padding-top: 13px !important;   
+    max-height: 10px !important;
 }
 
 
