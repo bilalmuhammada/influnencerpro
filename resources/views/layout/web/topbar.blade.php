@@ -118,8 +118,8 @@
 
         }
     </script>  
-<nav class="navbar navbar-expand-lg header-nav">
-    <div class="navbar-header">
+<nav class="navbar navbar-expand-lg header-nav" >
+    <div class="navbar-header" style="display: flex;">
         <a id="mobile_btn" href="javascript:void(0);">
 <span class="bar-icon">
 <span></span>
@@ -127,46 +127,28 @@
 <span></span>
 </span>
         </a>
-        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 47px;">
+        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 41px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
+        <div class="mobile-country desktop-menu-right" style="margin-top: 15px;">
+        
+            <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
+                <option value="null" selected style="color: blue;">Language</option>
+                @foreach(getlanguge() as $language)
+                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}"   >
+                    {{ $language->name }}     
+                    </option>
+                @endforeach
+            </select>
+           
+    </div>
     </div>
 
 
-    <div class="country" style="border:0px solid green;position:relative;right:544px;">
-        <div class="mobile-country desktop-menu-right">
-            {{-- <label for="">Select</label> --}}
-            
-                {{-- <span style="color: #000;">Select languages</span> --}}
-                @php
-                // dd($countries[0]->image_url);
-               @endphp
-                {{-- <select class="form-control country_dropdown1" name="country_dropdown" id="country_dropdown">
-                    <!-- Ensure options are correctly placed here -->
-                    <option value="af" data-flag-url="https://flagcdn.com/w320/za.png">Afrikaans</option>
-                    <option value="sq" data-flag-url="https://flagcdn.com/w320/al.png">Albanian</option>
-                    <!-- Add more options as needed -->
-                </select> --}}
-                <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
-                    <option value="null" selected style="color: blue;">Language</option>
-                    @foreach(getlanguge() as $language)
-                   
-                        <option
-                        {{-- {{ $country->id == request()->country ? 'selected' : '' }}  --}}
-                          value="{{ $language->prefix }}"
-                        data-flag-url="{{ $language->flag_image_url }}"
-                      
-                        {{-- style="font-size:8px !important;" --}}
-                        >
-                        {{ $language->name }}
-                           
-                        </option>
-                    @endforeach
-                </select>
-               
-        </div>
+    {{-- <div class="country" style="border:0px solid green;position:relative;right:544px;"> --}}
+       
         </span>
-</div>
+{{-- </div> --}}
 <div id="google_translate_element" style="display: none;"></div>
 
 
