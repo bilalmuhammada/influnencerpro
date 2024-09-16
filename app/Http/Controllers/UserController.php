@@ -129,7 +129,7 @@ class UserController extends Controller
     public function filter(Request $request)
     {
         $influencers = getInfluencersByCategoryIdAndFilter($request);
-
+// dd(  $influencers);
         return view('vendor-dashboard.home')->with(['view_type' => 'influencer', 'influencers' => $influencers, 'total_influencers' => $influencers->count()]);
     }
 

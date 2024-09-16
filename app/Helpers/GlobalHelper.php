@@ -156,6 +156,7 @@ function getInfluencerSocialMediaProfileByTypeAndId($type, $userId)
 
 function getInfluencersByCategoryIdAndFilter($filter)
 {
+    
     $categoryId = $filter->id;
     $query = User::with(['role', 'user_professional_detail', 'personal_information', 'features', 'social_media_profiles'])
         ->whereHas('role', function ($role) {
@@ -187,7 +188,10 @@ function getInfluencersByCategoryIdAndFilter($filter)
         });
 
     $query = applySocialMediaFilter($query, $filter, ['instagram', 'facebook', 'tiktok', 'twitter', 'youtube', 'website','pinterest','snapchat']);
+    
+  
     $query = applyInfluencerFollowersFilter($query, $filter, ['nano', 'micro', 'small', 'medium', 'large', 'mega']);
+  
     $query = applyNameFilter($query, $filter);
     $query = applyGenderFilter($query, $filter, ['MALE', 'FEMALE', 'OTHER']);
 
@@ -196,9 +200,9 @@ function getInfluencersByCategoryIdAndFilter($filter)
     } else {
         $query = applyAdditionalCriteriaFilter($query, $filter);
     }
-
+  
     $influencers = $query->get();
-
+    // dd($influencers );
     return $influencers;
 }
 

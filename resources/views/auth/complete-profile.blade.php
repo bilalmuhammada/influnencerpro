@@ -179,6 +179,20 @@ display: none !important;
 #select2-mySelect-container{
    color:  #0b0b0b !important;
 }
+#select2-arts-container{
+    display: inherit !important;
+    padding-top: 13px !important;
+
+}
+#select2-category_ids-container{
+    display: inherit !important;
+    padding-top: 13px !important;
+}
+#select2-spoken_language_ids-container{
+    display: inherit !important;
+    padding-top: 13px !important;   
+}
+
 
 .select2-container--default.select2-container--focus .select2-selection--multiple{
     overflow: auto !important;
@@ -284,7 +298,7 @@ display: none !important;
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            <label for="spoken_language_ids" class="focus-label">Languages</label>
+                                            <label for="spoken_language_ids" style="margin-top: -15px;" class="focus-label">Languages</label>
                                         </div>
                                         </div>
                                     
@@ -513,7 +527,7 @@ display: none !important;
                                             
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
-                                                    <option value=" " selected>&nbsp;</option>
+                                                    {{-- <option value=" " selected>&nbsp;</option> --}}
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -526,14 +540,14 @@ display: none !important;
                                             
                                             <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
                                                 {{-- <option value=""  hidden selected></option> --}}
-                                                <option value="" disabled hidden selected>&nbsp;</option>
+                                                {{-- <option value="" disabled hidden selected>&nbsp;</option> --}}
                                                 @foreach(getCityByStateId(1) as $city)
 
                                                 <option  value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }} > {{ $city->name }} </option>
                                                 
                                                 @endforeach
                                             </select>
-                                        <label for="username" class="focus-label" style="margin-top:-15px;">Based City</label>
+                                        <label for="username" class="focus-label" >Based City</label>
                                         </div>
 
                                     </div>
@@ -1494,7 +1508,7 @@ if (response.data.length > 0) {
     minimumResultsForSearch: Infinity // Disables the search box
   });
             $('#category_ids').select2({
-                  placeholder: "Select Spoken",
+                //   placeholder: "Select Spoken",
                 allowClear: true
             }).on('select2:select', function (e) {
                 var maxSelection = 3;
@@ -1510,7 +1524,7 @@ if (response.data.length > 0) {
                 // Enable all options
                 $(this).find('option').prop('disabled', false);
             });
-            $('#category_ids').select2({
+            $('#spoken_language_ids').select2({
                 // placeholder: "Select Spoken Languages",
                 allowClear: true,
                  width: '100%'

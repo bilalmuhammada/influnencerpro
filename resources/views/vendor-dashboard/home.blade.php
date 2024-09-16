@@ -911,7 +911,7 @@ color: #0504aa !important;
                                         href="{{ env('BASE_URL') }}/vendor/influencers-filter?pinterest=on" class="changecolor">Pinterest
                                         </a>
                                 </li>
-                                    <li class="@if(request()->website == 'on') active @endif "><a
+                                    <li class="@if(request()->website== 'on') active @endif "><a
                                         href="{{ env('BASE_URL') }}/vendor/influencers-filter?website=on" class="changecolor">Website</a>
                                 </li>
                                 <!-- <li class="has-submenu">
@@ -982,12 +982,10 @@ color: #0504aa !important;
                     {{--                                    class="fas fa-times"></i></span></span>--}}
                     {{--                    </div>--}}
 
-                 
+                    
                     <div class="row" id="infulecer-show">
                         @forelse($influencers as $influencer)
-                        @php
-                        //  dd($influencer,$influencer->id );
-                        @endphp
+                       
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                                 <div class="card avatar-one"
                                      style="width:100%;box-shadow:1px 1px 1px 1px #eee;">

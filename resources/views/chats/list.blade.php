@@ -426,7 +426,9 @@ $(document).ready(function () {
 
     // Enable/Disable button based on input field
     $('.input-msg-send').on('input', function() {
-        var inputMessage = $(this).val();
+      
+         var inputMessage = $(this).val();
+        // alert(inputMessage);
         if (inputMessage.trim() === '') {
             $('.msg-send-btn').prop('disabled', true);
         } else {
