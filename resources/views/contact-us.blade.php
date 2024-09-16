@@ -77,6 +77,7 @@ input[type="file"] {
                                         <div class="form-group form-focus">
                                             {{--    <input type="text" class="form-control floating" name="country">--}}
                                             <select name="country_id" class="form-control floating" id="country_id">
+                                                <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                 @endforeach
@@ -90,7 +91,7 @@ input[type="file"] {
                                     <div class="col-md-6">
                                         <div class="form-group form-focus">
                                             <select name="city_id" class="form-control floating" id="brand_city_id">
-                                                <option value="">Select City</option>
+                                                {{-- <option value="">Select City</option> --}}
 
                                             </select>
                                             <div class="invalid-feedback">
