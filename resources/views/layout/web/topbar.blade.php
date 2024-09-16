@@ -70,6 +70,12 @@
                 color:goldenrod !important;
 
             }
+        .colorchange{
+            color: blue;
+        }
+        .colorchange:hover{
+            color: goldenrod !important; 
+        }
             .select2-container--default .select2-selection--single .select2-selection__rendered{
                 color: blue !important;
                 width: 200px !important;
@@ -167,7 +173,7 @@
         @endphp
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
-               {{-- <li><a href="{{ env('BASE_URL') . 'vendor/dashboard' }}">Dashboard</a></li> --}}
+               <li><a href="{{ env('BASE_URL') . 'vendor/dashboard' }}" class="colorchange">Dashboard</a></li>
                 {{-- <li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
                 {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
@@ -191,7 +197,7 @@
             @endif
 
             @if(session()->get('role') == 'influencer')
-                    {{-- <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li> --}}
+                    <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}" class="colorchange">Dashboard</a></li>
                     {{-- <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
                     <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img
