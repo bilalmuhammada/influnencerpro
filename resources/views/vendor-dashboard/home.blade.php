@@ -513,7 +513,7 @@ color: #0504aa !important;
                                         <!-- </div> -->
 
                                         <!-- <div class="filter-widget"> -->
-                                        <label class="font_label">Languages</label>
+                                        <label class="font_label">Language</label>
                                         <!-- <div class="form-group"> -->
                                         @php $spoken_languages = getlanguge(); @endphp
                                         <select class="form-control select2" name="spoken_language_ids[]"  multiple="multiple">
