@@ -191,7 +191,7 @@
                                                     <a class="forgot-link" style="color: blue;"  href="{{ url('forgot-password') }}">Forgot
                                                         Password?</a>
                                                 </div>
-                                                <div class="col-6 text-end dont-have">Already on InfluencerPro <a
+                                                <div class="col-6 text-end dont-have">Already on InfluencerPro?&nbsp;&nbsp; <a
                                                         href="{{ url('login') }}">Click here</a></div>
                                             </div>
                                         </form>
@@ -349,7 +349,7 @@
                                                     <a class="forgot-link" style="color: blue;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                         Password?</a>
                                                 </div>
-                                                <div class="col-6 text-end dont-have">Already on influencerPro 
+                                                <div class="col-6 text-end dont-have">Already on influencerPro? &nbsp;&nbsp;
                                                     <a href="{{env('BASE_URL').'/login'}}">Click here</a></div>
                                             </div>
                                         </form>
