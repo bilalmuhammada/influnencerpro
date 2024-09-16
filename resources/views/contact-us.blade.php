@@ -247,7 +247,9 @@ input[type="file"] {
                             if (states) {
                                 $.each(states, function (index, value) {
                                     $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    
                                     $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").click();
                                 });
                             }
                         } else {
