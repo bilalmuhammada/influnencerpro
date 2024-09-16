@@ -64,7 +64,7 @@
                                             <a class="forgot-link" href="{{ env('BASE_URL') }}/forgot-password" style="color:#0504aa;">Forgot
                                                 Password?</a>
                                         </div>
-                                        <div class="col-6 text-end dont-have" style="margin-top: 34px !important;">New to InfluencerPro? <a
+                                        <div class="col-6 text-end dont-have" style="margin-top: 33px !important;">New to InfluencerPro? <a
                                                 href="{{ env('BASE_URL') }}/register?role=influencer" style="color:#0504aa;">Click
                                                 here</a></div>
                                     </div>

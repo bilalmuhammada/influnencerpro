@@ -34,7 +34,7 @@ input[type="file"] {
         } */
     </style>
    <div class="content">
-    <div class="container" style="margin-top: 60px;">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="account-content">
