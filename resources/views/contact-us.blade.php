@@ -89,7 +89,7 @@ input[type="file"] {
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group form-focus">
+                                        <div class="form-group form-focus label">
                                             <select name="city_id" class="form-control floating" id="brand_city_id">
                                                 {{-- <option value="">Select City</option> --}}
 
@@ -97,7 +97,7 @@ input[type="file"] {
                                             <div class="invalid-feedback">
                                                 Please provide a valid City.
                                             </div>
-                                            <label class="focus-label">City </label>
+                                            <label class="focus-label" id="citylable">City </label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -249,7 +249,8 @@ input[type="file"] {
                                     $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                     
                                     $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
-                                    $("#brand_city_id").click();
+                                    // $("#citylable").css('margin-top', '-15px');
+                                    $('.label').addClass('focused');
                                 });
                             }
                         } else {
