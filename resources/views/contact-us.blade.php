@@ -92,6 +92,7 @@ input[type="file"] {
                                         <div class="form-group form-focus label">
                                             <select name="city_id" class="form-control floating" id="brand_city_id">
                                                 {{-- <option value="">Select City</option> --}}
+                                                <option selected hidden disabled value="">&nbsp;&nbsp;</option>
 
                                             </select>
                                             <div class="invalid-feedback">
