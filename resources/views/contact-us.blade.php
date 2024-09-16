@@ -92,7 +92,7 @@ input[type="file"] {
                                         <div class="form-group form-focus label">
                                             <select name="city_id" class="form-control floating" id="brand_city_id">
                                                 {{-- <option value="">Select City</option> --}}
-                                                <option selected hidden disabled value="">&nbsp;&nbsp;</option>
+                                                {{-- <option selected hidden disabled value="">&nbsp;&nbsp;</option> --}}
 
                                             </select>
                                             <div class="invalid-feedback">
@@ -250,7 +250,7 @@ input[type="file"] {
                                 $.each(states, function (index, value) {
                                     $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                     
-                                    $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
                                     // $("#citylable").css('margin-top', '-15px');
                                     $('.label').addClass('focused');
                                 });
