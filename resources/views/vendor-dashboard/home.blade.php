@@ -220,7 +220,7 @@ color: #0504aa !important;
                                             <option value="{{ $country->id }}"
                                                     @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
                                         @empty
-                                            <option value="">No Result Found</option>
+                                            <option value="">No Data</option>
                                         @endforelse
                                     </select>
                                     <label for="" class="font_label">City</label>
