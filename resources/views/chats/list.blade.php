@@ -21,6 +21,7 @@
   
     box-shadow: none  !important;
 }
+
     .emojionearea {
     border-color: goldenrod !important;
     outline: 0;
@@ -93,7 +94,7 @@
     border-radius: 25px !important;
 }
 .mgn-send-color{
-color: blue !important;
+color:#1889E6 !important;
 }
     
 .mgn-send-color:hover{
@@ -412,13 +413,16 @@ $(document).ready(function () {
                 pickerPosition: "bottom",
             });
     $('.msg-send-btn').prop('disabled', true);
-
+    $(document).on('click', '.msg-send-btn', function(e) {
+        $('.msg-send-btn').prop('disabled', true);
+     });
     // Enable/Disable button based on input field
-    $('.input-msg-send').on('input', function() {
-      
-         var inputMessage = $(this).val();
-        // alert(inputMessage);
-        if (inputMessage.trim() === '') {
+    // $('.emojionearea-editor').on('input', function() {
+        $(document).on('input keyup', '.emojionearea-editor', function(e) { 
+         var inputMessage = $('.emojionearea-editor').text().trim();
+     
+        if (inputMessage === '') {
+            // alert('Message cannot be empty!');
             $('.msg-send-btn').prop('disabled', true);
         } else {
             $('.msg-send-btn').prop('disabled', false);

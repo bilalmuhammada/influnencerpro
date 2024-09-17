@@ -126,20 +126,31 @@ class ChatController extends Controller
     public function sendMessage(Request $request)
     {
         // dd($request->all());
-        $Message = Message::create([
-            'sender_id' => SiteHelper::getLoginUserId(),
-            'receiver_id' => 22,
-            'message' => $request->message,
-            'chat_id' => $request->chat_id,
-            'is_readed' => 0,
-            'sended_at' => Carbon::now()
-        ]);
 
+        // if( $request->message !='null'){
+            $Message = Message::create([
+                'sender_id' => SiteHelper::getLoginUserId(),
+                'receiver_id' => 22,
+                'message' => $request->message,
+                'chat_id' => $request->chat_id,
+                'is_readed' => 0,
+                'sended_at' => Carbon::now()
+            ]);
+            
         return response()->json([
             'status' => true,
             'message' => "Message Sent Successfully",
             'data' => $Message
         ]);
+        // }else{
+       
+        //     return response()->json([
+        //         'status' => false,
+        //         'message' => "Message Not Sent Successfully",
+        //         // 'data' => $Message
+        //     ]);
+        // }
+      
     }
 
     public function markMessagesAsRead(Request $request)
