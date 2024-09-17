@@ -173,7 +173,7 @@
         @endphp
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
-               <li><a href="{{ env('BASE_URL') . 'vendor/dashboard' }}" class="colorchange">Dashboard</a></li>
+               <li><a href="{{ env('BASE_URL') . 'vendor/dashboard' }}" class="colorchange" style="margin-right: 76px;">Dashboard</a></li>
                 {{-- <li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
                 {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
@@ -197,7 +197,7 @@
             @endif
 
             @if(session()->get('role') == 'influencer')
-                    <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}" class="colorchange">Dashboard</a></li>
+                    <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}" class="colorchange"  style="margin-right: 76px;">Dashboard</a></li>
                     {{-- <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
                     <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img
