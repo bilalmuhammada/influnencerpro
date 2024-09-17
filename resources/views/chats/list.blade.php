@@ -94,7 +94,7 @@
     border-radius: 25px !important;
 }
 .mgn-send-color{
-color:#1889E6 !important;
+color:#0686ee !important;
 }
     
 .mgn-send-color:hover{
