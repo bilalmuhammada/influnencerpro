@@ -239,7 +239,7 @@ color: #0504aa !important;
                                                     selected
                                                     @endif>{{ $category->name }}</option>
                                             @empty
-                                                <option value="">No Result Found</option>
+                                                {{-- <option value="">No Data</option> --}}
                                             @endforelse
                                         </select>
                                     </div>
