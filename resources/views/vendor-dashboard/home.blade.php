@@ -118,6 +118,7 @@ width: 200px !important;
  text-align: center !important;
 }
 #select2-city_id-results{
+    display: none !important;
     min-height: 40px !important;
 }
 #select2-nationality_id-results{
