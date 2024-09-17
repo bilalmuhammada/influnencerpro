@@ -197,7 +197,7 @@
             @endif
 
             @if(session()->get('role') == 'influencer')
-                    <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}" class="colorchange"  style="margin-right: 76px;">Dashboard</a></li>
+                    <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}" class="colorchange"  style="margin-right: 76px;">Dashboard</a></li>
                     {{-- <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li> --}}
                 {{-- <li class="has-submenu">
                     <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img
