@@ -351,38 +351,29 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left:17px; ">
+                                            <div class="input-group" >
                                                 {{-- <div class="avatar" style="padding:4px;">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
-                                                <div class="inputs"
-                                                     style="width:91%;height:42px !important;">
-                                                    <input type="text" class="input-msg-send emoji-trigger form-controls" style="border-radius: 30px;"
+                                                <div class="input-group" style="position: relative; width: 95%; height: 42px;">
+                                                    <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger"
-                                                           {{-- placeholder="Reply..." --}}
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                                           data-chat-id="{{ $chat->id }}">
-                                                    {{--                                    <div class="btn-file btn">--}}
-                                                    {{--                                        <i class="far fa-grin fa-1x"></i>--}}
-                                                    {{--                                    </div>--}}
-                                                    {{--                                    <div class="btn-file btn">--}}
-                                                    {{--                                        <i class="fa fa-paperclip"></i>--}}
-                                                    {{--                                        <input type="file">--}}
-                                                    {{--                                    </div>--}}
-                                                    {{--                                                    <div class="btn-file btn" id="emoji-trigger">--}}
-                                                    {{--                                                        <i class="far fa-grin fa-1x"></i>--}}
-                                                    {{--                                                    </div>--}}
+                                                           data-chat-id="{{ $chat->id }}"
+                                                           style="border-radius: 30px; width: 100%; padding-right: 50px;">
+                                                   
                                                 </div>
+                                                        
                                                 <button type="button" class="btn btn-primary msg-send-btn"
-                                                        data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                                        data-chat-id="{{ $chat->id }}"
-                                                        style="margin-top: 6px;  background-color: transparent !important;"><i
-                                                        class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
-                                                        style="font-size:37px;background-color:none !important;"></i>
-                                                </button>
+                                                data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
+                                                data-chat-id="{{ $chat->id }}"
+                                                style="position: absolute; right: 29px; top: 12px; background-color: transparent; border: none;">
+                                            <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
+                                               style="font-size: 30px; background-color: none;"></i>
+                                        </button>
                                             </div>
                                         </div>
                                     @else

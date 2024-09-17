@@ -13947,20 +13947,13 @@ label.file-upload input[type="file"] {
     background-color: #FAF9D0;
 }
 
-/* .chat-cont-right .chat-body .media.sent {
-    margin-bottom: 6px;
-    width: 971px;
-    position: relative;
-} */
-
 .chat-cont-right .chat-body .media.sent {
     margin-bottom: 6px;
-    width: 100%; /* Full width of the container */
-    max-width: 971px; /* Maximum width constraint */
+    width: 100%;
     position: relative;
-    box-sizing: border-box; /* Include padding and border in the width */
-    padding: 10px; /* Add some padding for inner spacing */
 }
+
+
 
 @media (max-width: 600px) {
     .chat-cont-right .chat-body .media.sent {
