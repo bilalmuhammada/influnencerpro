@@ -272,9 +272,7 @@ select::-ms-expand {
                                         <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
                                             <i class="material-icons">chevron_left</i>
                                         </a>
-                                        @php
-                                        // dd($chat);
-                                        @endphp
+                                        
                                         <div class="media d-flex">
                                             <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
                                                 <div class="avatar">
@@ -351,14 +349,14 @@ foreach ($user_categories as $key => $category) {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" >
+                                            <div class="input-group" style="margin-left: 12px;" >
                                                 {{-- <div class="avatar" style="padding:4px;">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
-                                                <div class="input-group" style="position: relative; width: 95%; height: 42px;">
+                                                <div class="input-group" style="position: relative; width: 93%; height: 42px;">
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger"
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
@@ -370,7 +368,7 @@ foreach ($user_categories as $key => $category) {
                                                 <button type="button" class="btn btn-primary msg-send-btn"
                                                 data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                 data-chat-id="{{ $chat->id }}"
-                                                style="position: absolute; right: 29px; top: 12px; background-color: transparent; border: none;">
+                                                style="position: absolute; right: 39px; top: 12px; background-color: transparent; border: none;">
                                             <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
                                                style="font-size: 30px; background-color: none;"></i>
                                         </button>
