@@ -368,7 +368,7 @@ foreach ($user_categories as $key => $category) {
                                                 <button type="button" class="btn btn-primary msg-send-btn"
                                                 data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                 data-chat-id="{{ $chat->id }}"
-                                                style="position: absolute; right: 39px; top: 12px; background-color: transparent; border: none;">
+                                                style="position: absolute; right: 41px; top: 12px; background-color: transparent; border: none;">
                                             <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
                                                style="font-size: 30px; background-color: none;"></i>
                                         </button>
