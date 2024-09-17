@@ -239,7 +239,7 @@ color: #0504aa !important;
                                                     selected
                                                     @endif>{{ $category->name }}</option>
                                             @empty
-                                                {{-- <option value="">No Data</option> --}}
+                                                <option value="">No Data</option>
                                             @endforelse
                                         </select>
                                     </div>
@@ -1297,7 +1297,8 @@ color: #0504aa !important;
                                 });
                             }
                         } else {
-                            $("#city_id").empty();
+                     $("#city_id").append('<option value="">No Data</option>');
+                            // $("#city_id").empty();
                         }
                     }
                 });
