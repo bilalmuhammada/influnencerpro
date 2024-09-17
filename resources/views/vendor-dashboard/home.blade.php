@@ -117,7 +117,9 @@ width: 200px !important;
 .select2-results__message{
  text-align: center !important;
 }
-
+#select2-city_id-results{
+    min-height: 40px !important;
+}
 #select2-nationality_id-results{
 padding-left: 12px !important;
 } 
