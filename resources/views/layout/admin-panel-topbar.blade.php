@@ -7,6 +7,7 @@
         }
 
         .select2-search__field{
+            padding-left: 12px;
     border-color: #997045 !important;
 }
 .select2-search__field:hover{
