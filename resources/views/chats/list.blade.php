@@ -287,10 +287,10 @@ select::-ms-expand {
                                             </div>
                                             @php
                                         $user_categories = DB::table('user_categories')
-    ->join('categories', 'user_categories.category_id', '=', 'categories.id')
-    ->where('user_categories.user_id', getSafeValueFromObject($chat->other_user, 'id'))
-    ->select('categories.name')
-    ->get();
+                                        ->join('categories', 'user_categories.category_id', '=', 'categories.id')
+                                        ->where('user_categories.user_id', getSafeValueFromObject($chat->other_user, 'id'))
+                                        ->select('categories.name')
+                                        ->get();
 
 // dd($user_categories);
 
@@ -366,7 +366,7 @@ foreach ($user_categories as $key => $category) {
                                                    
                                                 </div>
                                                         
-                                                <button type="button" class="btn btn-primary msg-send-btn"
+                                                <button type="button" id="msg-send-btn" class="btn btn-primary msg-send-btn"
                                                 data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                 data-chat-id="{{ $chat->id }}"
                                                 style="position: absolute; right: 41px; top: 12px; background-color: transparent; border: none;">
@@ -416,6 +416,18 @@ $(document).ready(function () {
                 checkInput();
                 console.log('emoji');
             },
+         
+            keydown: function (editor, event) {
+                checkInput();
+                if (event.which == 13) {
+                    console.log('enter');
+                 
+               
+                    $('#msg-send-btn').click();  
+                }
+                
+            },
+            
             change: function (editor, event) {
                 checkInput();
                 console.log('emoji');
@@ -656,10 +668,13 @@ $(document).ready(function() {
             $('.chat-body-div').css('display', 'none');
             $(chat_body_selector).css('display', 'block');
         });
+       
 
         $(document).on('click', '.msg-send-btn', function () {
             thisElem = $(this);
+          
             var message = $(thisElem).parents('.chat-footer').find('.input-msg-send');
+        //   alert(message);
             send_new_message(message, thisElem);
         });
 
@@ -679,18 +694,19 @@ $(document).ready(function() {
         //
         //     }
         // });
-        $(document).on('keydown', '.emojionearea-editor', function (e) {
-            // Check if the pressed key is Enter (keyCode 13)
-            // var inputMessage = $('.emojionearea-editor').text().trim();
-            
-            if (e.keyCode === 13 ) {
-                $(this).blur()
-                send_new_message($('.input-msg-send'), $('.input-msg-send'));
-                $(this).focus()
-            }
-        });
+        // $(document).on('keydown', '.emojionearea-editor', function (e) {
+        //     // Check if the pressed key is Enter (keyCode 13)
+        //  var inputMessage = $('.emojionearea-editor').text().trim();
+        
+        //     if (e.keyCode === 13  &&  inputMessage !='') {
+        //         $(this).blur()
+        //         send_new_message($('.input-msg-send'), $('.input-msg-send'));
+        //         $(this).focus()
+        //     }
+        // });
 
         function send_new_message(message, thisElem) {
+            // alert($(message).val());
             $.ajax({
                 url: api_url + 'chats/send-message',
                 method: 'POST',
