@@ -46,6 +46,7 @@
         }
 
         .select2-container--open .select2-dropdown--below {
+            margin-left: 15px !important;
             background-color: #ffffff !important;
         }
 
