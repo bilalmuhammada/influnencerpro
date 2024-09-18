@@ -129,7 +129,7 @@ color: goldenrod !important;
         width: 99% !important;
     }
     .emojionearea-editor{
-        left: 22px !important;
+        left: 19px !important;
     }
     /* Professional Dropdown Styling */
 
