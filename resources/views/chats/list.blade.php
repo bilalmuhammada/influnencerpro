@@ -411,25 +411,55 @@ foreach ($user_categories as $key => $category) {
 $(document).ready(function () {
     $('.emoji-trigger').emojioneArea({
                 pickerPosition: "bottom",
+                events: {
+            keyup: function (editor, event) {
+                checkInput();
+                console.log('emoji');
+            },
+            change: function (editor, event) {
+                checkInput();
+                console.log('emoji');
+            },
+            paste: function (editor, event) {
+                checkInput();
+                console.log('emoji');
+            }
+            
+        }
+
             });
+        
+
+    function checkInput() {
+        var inputMessage = $('.emojionearea-editor').text().trim();
+       var hasImg = $('.emojionearea-editor').find('img').length > 0;
+    // var hasImg = emojioneAreaInstance.editor.find('img').length > 0;
+    
+    // alert(hasImg);
+    if (inputMessage === '' && !hasImg) {
+        $('.msg-send-btn').prop('disabled', true);
+    } else {
+        $('.msg-send-btn').prop('disabled', false);
+    }
+}
     $('.msg-send-btn').prop('disabled', true);
     $(document).on('click', '.msg-send-btn', function(e) {
         $('.msg-send-btn').prop('disabled', true);
      });
-    // Enable/Disable button based on input field
-    // $('.emojionearea-editor').on('input', function() {
-        $(document).on('input keyup click ', '.emojionearea-editor', function(e) { 
-         var inputMessage = $('.emojionearea-editor').text().trim();
-         var hasImg = $('.emojionearea-editor').find('img').length > 0;
-         
-     alert(hasImg);
-        if (inputMessage === '') {
-            // alert('Message cannot be empty!');
-            $('.msg-send-btn').prop('disabled', true);
-        } else {
-            $('.msg-send-btn').prop('disabled', false);
-        }
-    });
+    
+     
+//         $(document).on('input keyup emoji-trigger.change', '.emojionearea-editor', function(e) { 
+//     var inputMessage = $('.emojionearea-editor').text().trim();
+//     var hasImg = $('.emojionearea-editor').find('img').length > 0;
+
+//     if (inputMessage === '' && !hasImg) {
+//         // If there's no text and no emojis
+//         $('.msg-send-btn').prop('disabled', true);
+//     } else {
+//         $('.msg-send-btn').prop('disabled', false);
+//     }
+// });
+
 
             $('.gallerys').magnificPopup({
                 type: 'image',
