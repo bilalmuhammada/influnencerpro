@@ -18,7 +18,7 @@
   background: transparent;
 }
 .select2-search__field{
-    padding-left: 12px !important;
+    padding-left: 10px !important;
     border-color: #997045 !important;
 }
 .select2-search__field:hover{

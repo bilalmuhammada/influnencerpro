@@ -318,9 +318,9 @@ foreach ($user_categories as $key => $category) {
                                         <div class="chat-body">
                                             <div class="chat-scroll">
                                                 <ul class="list-unstyled message-body" style="font-weight: 300;">
-                                                    @foreach($chat->sorted_messages as $date => $sorted_messagess)
-                                                        <div class="text-center fw-bolds " style="font-size:12px;">{{ date("d-m-Y", strtotime($date))}}</div>
-                                                        @foreach($sorted_messagess as $date => $message)
+                                                    @foreach($chat->sorted_messages as $date => $sorted_messages)
+                                                        <div class="text-center fw-bolds " style="font-size:12px;">{{ $date}}</div>
+                                                        @foreach($sorted_messages as $date => $message)
                                                       
                                                             <li class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
                                                                 <div class="avatar flex-shrink-0">
@@ -418,9 +418,11 @@ $(document).ready(function () {
      });
     // Enable/Disable button based on input field
     // $('.emojionearea-editor').on('input', function() {
-        $(document).on('input keyup', '.emojionearea-editor', function(e) { 
+        $(document).on('input keyup click ', '.emojionearea-editor', function(e) { 
          var inputMessage = $('.emojionearea-editor').text().trim();
-     
+         var hasImg = $('.emojionearea-editor').find('img').length > 0;
+         
+     alert(hasImg);
         if (inputMessage === '') {
             // alert('Message cannot be empty!');
             $('.msg-send-btn').prop('disabled', true);
@@ -649,7 +651,9 @@ $(document).ready(function() {
         // });
         $(document).on('keydown', '.emojionearea-editor', function (e) {
             // Check if the pressed key is Enter (keyCode 13)
-            if (e.keyCode === 13) {
+            // var inputMessage = $('.emojionearea-editor').text().trim();
+            
+            if (e.keyCode === 13 ) {
                 $(this).blur()
                 send_new_message($('.input-msg-send'), $('.input-msg-send'));
                 $(this).focus()

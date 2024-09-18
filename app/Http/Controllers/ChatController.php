@@ -40,19 +40,24 @@ class ChatController extends Controller
             $chats = $chats->where('status', '!=', 'rejected');
         }
 
-        $chats = $chats->orderBy('created_at','desc')->get();
+        $chats = $chats->orderBy('created_at','desc')
+        ->get();
     //    dd( $chats,session()->get('role'));
         foreach ($chats as $chat) {
             $groupedMessages = [];
             if ($chat->messages) {
                 foreach ($chat->messages as $message) {
-                    $groupedMessages[Carbon::parse($message->sended_at)->format('d/M/Y')][] = $message;
+                    $dateKey = Carbon::parse($message->sended_at)->format('d-m-Y');
+                    // Log the date key for debugging
+                    \Log::info('Date Key: ' . $dateKey);
+                    $groupedMessages[$dateKey][] = $message;
                     $message->update(['is_delivered' => true]);
                 }
-
-                // Sort the messages by sended_at
+        
+                // Sort the messages by the date key
                 ksort($groupedMessages);
                 $chat->sorted_messages = $groupedMessages;
+        
             }
         }
 
