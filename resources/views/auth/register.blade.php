@@ -8,6 +8,9 @@
         input:focus {
             border: 1px solid blue !important;
         }
+        #select2-country_dropdown-container{
+margin-left: -9px !important;
+        }
         .email::placeholder {
             color: red !important;
         }

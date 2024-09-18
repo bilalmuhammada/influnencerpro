@@ -77,10 +77,14 @@
         .colorchange:hover{
             color: goldenrod !important; 
         }
+
+        #select2-country_dropdown-container{
+            margin-left: -9px !important;
+        }
             .select2-container--default .select2-selection--single .select2-selection__rendered{
                 color: blue !important;
                 width: 200px !important;
-                margin-left: 10px !important; 
+              
             }
             .select2-container--default .select2-selection--single .select2-selection__arrow {
                 right: -15px !important;
