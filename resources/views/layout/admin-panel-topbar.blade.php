@@ -10,6 +10,9 @@
             padding-left: 10px !important;
     border-color: #997045 !important;
 }
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+    margin-left: -10px !important;
+}
 .select2-search__field:hover{
     border-color: blue !important;
 }

@@ -128,11 +128,7 @@
 <nav class="navbar navbar-expand-lg header-nav" >
     <div class="navbar-header" style="display: flex;">
         <a id="mobile_btn" href="javascript:void(0);">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
+
         </a>
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 41px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
