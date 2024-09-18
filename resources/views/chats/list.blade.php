@@ -193,21 +193,7 @@ select::-ms-expand {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- <div class="chat-header">
-                                <form class="chat-search">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <i class="fas fa-search icon-circle"></i>
-                                        </div>
-                                        <input type="text" class="form-control rounded-pill search" id="search"
-                                               placeholder="Search">
-                                    </div>
-                                </form>
-                            </div> -->
-
-                           
+                            </div>                      
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)

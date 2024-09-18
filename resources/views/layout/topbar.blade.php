@@ -3,9 +3,7 @@
     <div class="navbar-header">
         <a id="mobile_btn" href="javascript:void(0);">
 <span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
+
 </span>
         </a>
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
