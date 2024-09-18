@@ -154,6 +154,9 @@ font-weight: bold;
   .select2-container--open .select2-dropdown--below {
     margin-left: 15px !important;
   }
+  #select2-language_dropdown-container {
+    margin-left: -15px !important;
+}
   #ui-datepicker-div{
 width: 200px !important;
   }

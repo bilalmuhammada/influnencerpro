@@ -74,7 +74,7 @@
             padding-left: 8px;
         }
         #select2-language_dropdown-container{
-            margin-left: 4px;
+           
             color: blue !important
         }
 
