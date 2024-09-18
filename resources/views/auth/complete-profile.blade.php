@@ -151,6 +151,9 @@ font-weight: bold;
         border: 0px !important;
     background-color: white !important; /* Change this to the desired color */
   }
+  .select2-container--open .select2-dropdown--below {
+    margin-left: 15px !important;
+  }
   #ui-datepicker-div{
 width: 200px !important;
   }

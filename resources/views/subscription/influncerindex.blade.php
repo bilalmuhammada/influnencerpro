@@ -7,6 +7,9 @@
         margin-right: 9px !important;
 
     }
+    #select2-language_dropdown-container {
+            margin-left: -22px !important;
+        }
     ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }

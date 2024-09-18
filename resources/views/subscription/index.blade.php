@@ -17,6 +17,9 @@
   background-color: #997045;
   border-radius: 34px;
 }
+#select2-language_dropdown-container {
+            margin-left: -22px !important;
+        }
 
 /* Define the scrollbar track */
 ::-webkit-scrollbar-track {

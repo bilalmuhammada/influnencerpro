@@ -46,7 +46,7 @@
         }
 
         .select2-container--open .select2-dropdown--below {
-            margin-left: 6px !important;
+            margin-left: 0px !important;
             background-color: #ffffff !important;
         }
 
@@ -74,6 +74,7 @@
             padding-left: 8px;
         }
         #select2-language_dropdown-container{
+            margin-left: 4px;
             color: blue !important
         }
 

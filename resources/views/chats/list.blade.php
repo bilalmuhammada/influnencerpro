@@ -100,6 +100,9 @@ color:#0686ee !important;
 .mgn-send-color:hover{
 color: goldenrod !important;
 }
+#select2-language_dropdown-container {
+    margin-left: -22px !important;
+}
     .chat-info {
         display: flex;
         flex-direction: column;

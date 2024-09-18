@@ -34,6 +34,9 @@
             -webkit-transition: .4s;
             transition: .4s;
         }
+        #select2-language_dropdown-container {
+            margin-left: -22px !important;
+        }
 
         .slider:before {
             position: absolute;

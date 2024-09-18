@@ -219,6 +219,10 @@ width: 212px !important;
 }
 .datepicker {
     padding: 12px;}
+
+    #select2-language_dropdown-container {
+            margin-left: -22px !important;
+        }
     </style>
 
     <div class="main-wrapper">
