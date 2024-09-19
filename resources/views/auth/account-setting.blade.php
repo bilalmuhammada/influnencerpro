@@ -10,7 +10,9 @@
     margin-right: 120px !important; 
     text-align: center !important;
 }
-
+#select2-language_dropdown-container{
+    margin-left: -21px !important;
+}
  .invalid-feedback {
             margin-top: 0px !important;
           }
