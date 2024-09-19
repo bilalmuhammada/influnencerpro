@@ -11,7 +11,7 @@
     text-align: center !important;
 }
 #select2-language_dropdown-container{
-    margin-left: -21px !important;
+    margin-left: -22px !important;
 }
  .invalid-feedback {
             margin-top: 0px !important;
