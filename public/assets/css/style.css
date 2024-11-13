@@ -1241,9 +1241,9 @@ label {
     margin-bottom: 0.25rem;
 }
 
-.form-check {
+/* .form-check {
     margin-bottom: 1.25rem;
-}
+} */
 
 .slider-btn {
     background: #09e5ab;
@@ -1840,7 +1840,7 @@ border: 1px solid #2d11e7;
 }
 
 .form-focus .select2-container .select2-selection--single {
-    /* border: 1px solid #e3e3e3; */
+    
     height: 50px;
 }
 
@@ -1943,7 +1943,7 @@ border: 1px solid #2d11e7;
 }
 
 .modal-body {
-    padding: 30px;
+    padding: 10px;
 }
 
 .custom-modal .modal-content {
@@ -2155,9 +2155,22 @@ border: 1px solid #2d11e7;
     color: #0504aa;
 }
 
+/* calender code */
+.ui-widget.ui-widget-content {
+    border: 1px solid #fff !important;
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    width: 80% !important;
+    border: transparent !important;
+}
+
+/* end calendar code */
+
+
 .main-nav>li .submenu li a {
     display: block;
-    padding: 10px 15px;
+    padding: 4px 10px 4px 10px;
     clear: both;
     white-space: nowrap;
     font-size: 15px;
@@ -3419,7 +3432,7 @@ html.menu-opened body header:before {
     font-weight: bold;
     position: relative;
     /* margin-bottom: 10px; */
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .section-header h5 {
@@ -8362,7 +8375,7 @@ div#global-loader {
 }
 
 .login-header {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 
 .login-header img {
@@ -14701,17 +14714,6 @@ label.file-upload input[type="file"] {
     flex-direction: column;
 }
 
-.modal-header .close {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    padding: 0px;
-    background: #fff;
-    color: #0504aa;
-    border: 1px solid #0504aa;
-    border-radius: 50%;
-    margin: -1rem -1rem -1rem auto;
-}
 
 .modal-header .close:hover {
     opacity: .75;
@@ -16551,8 +16553,9 @@ ul {
 }
 
 .modal label {
-    font-weight: 500;
-    color: #161c2d;
+    margin:0;
+    font-weight: 600;
+    color: #000;
 }
 
 .rating-text {
@@ -16813,7 +16816,7 @@ ul {
 }
 
 .footer-top {
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .footer .footer-widget .footer-about-content p {
@@ -16828,9 +16831,9 @@ ul {
     color: #101828;
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     position: relative;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 h2.footer-title:after {
@@ -16860,7 +16863,8 @@ h2.footer-title:before {
 }
 
 .footer .footer-menu ul li {
-    margin-bottom: 10px;
+    color: #000;
+    /* margin-bottom: 10px; */
 }
 
 .footer .footer-menu ul li:last-child {
@@ -17135,8 +17139,8 @@ h2.footer-title:before {
 }
 
 .copyright {
-    padding: 30px 0;
-    border-top: 1px solid #EBEBEB;
+    /* padding: 30px 0;
+    border-top: 1px solid #EBEBEB; */
 }
 
 .copyright-text p,
@@ -17787,9 +17791,14 @@ h2.footer-title:before {
 .iconx3 i{
     color: rgb(0, 227, 150) !important;
 }
-.iconx3 i:hover{
+.iconx3:hover i:hover{
     color:#0504aa !important;
 }
+.inner-div:hover .icon i, 
+  .inner-div:hover .total_click, 
+  .inner-div:hover span {
+    color: blue !important; /* Change the icon, text, and span color */
+  }
 .sort-tab {
     background-color: #edeef3;
     padding: 3px 25px;
@@ -18206,7 +18215,9 @@ button.scroll-top:focus {
 .scroll-top.open {
     bottom: 30px;
 }
-
+.scroll-top:hover{
+    background: blue;
+}
 .scroll-top {
     width: 50px;
     height: 50px;
@@ -18219,7 +18230,7 @@ button.scroll-top:focus {
     color: #ffffff;
     text-align: center;
     cursor: pointer;
-    background: #0504aa;
+    background: goldenrod;
     transition: 1s ease;
     border: none;
     display: -webkit-box;
@@ -20974,8 +20985,8 @@ button.scroll-top:focus {
     }
     .main-nav>li .submenu li a:hover,
     .header-three .main-nav>li .submenu li a:hover {
-        background-color: #0504aa;
-        color: #fff;
+        background-color: #ffff;
+        color: blue;
         border-color: transparent;
     }
     .main-nav>.has-submenu>.submenu>.has-submenu>.submenu::before {
@@ -21773,7 +21784,7 @@ button.scroll-top:focus {
         margin-bottom: 40px;
     }
     .footer-top {
-        padding: 60px 0 0 0;
+        padding: 30px 0 0 0;
     }
     .footer-widget {
         margin-bottom: 25px;

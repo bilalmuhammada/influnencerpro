@@ -63,6 +63,10 @@ border: 0px !important;
     text-align: center;
     line-height: 18px;
         }
+        .dz-preview .dz-remove:hover {
+            color: blue;
+
+        }
 
         .select2-selection__clear{
     display:none; 
@@ -1291,7 +1295,11 @@ function validateInput(input) {
             $(document).ready(function() {
          
             $('.datepicker').datepicker({
-                dateFormat: 'dd-mm-yy'
+                dateFormat: 'dd-mm-yy',
+                changeMonth: true,
+                changeYear: true,
+
+
             });
             $('#price').on('input', function() {
                 let value = $(this).val();

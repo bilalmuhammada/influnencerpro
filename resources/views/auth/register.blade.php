@@ -21,7 +21,7 @@ margin-left: -9px !important;
             display: block;
         }
         ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
@@ -34,8 +34,12 @@ margin-left: -9px !important;
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-.form-group {
-            /* margin-bottom: 1.5rem; */
+.toggle-password {
+            position: absolute;
+            right: 23px;
+            top: 43%;
+            transform: translateY(-50%);
+            cursor: pointer;
         }
         /* .invalid-feedback {
             display: none;
@@ -124,7 +128,19 @@ margin-left: -9px !important;
                                                 {{-- <div class="invalid-feedback">
                                                     {{-- Please provide a valid Age. --}}
                                                 {{-- </div>  --}}
-                                                <label class="focus-label">Age</label>
+                                                <label class="focus-label">Date of Birth</label>
+                                            </div>
+
+
+                                            <div class="form-group form-focus">
+                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
+                                                    @foreach(getCountries() as $country)
+                                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                               
+                                                <label class="focus-label">Nationality </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <select name="country_id" class="form-control  floating" id="country_id">
@@ -149,18 +165,20 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="password" class="form-control floating" name="password"
-                                                       id="influencer_password"
+                                                       id="password"
                                                 placeholder="8 Characters - 1 Capital, 1 Number, 1 Special" >
-                                                <i class="fa-solid fa-eye" id="eye"
-                                                   onclick="togglePassword('influencer_password')"></i>
+                                                <div class="input-group-append">
+                                                    <span class="toggle-password" onclick="togglePassword('password')" style="cursor: pointer;">👁️</span>
+                                                </div>
 
                                                 <label class="focus-label">Password</label>
                                             </div>
                                             <div class="form-group form-focus mb-0">
                                                 <input type="password" class="form-control floating"
-                                                       name="confirm_password" id="influencer_confirm_password">
-                                                <i class="fa-solid fa-eye" id="eye"
-                                                   onclick="togglePassword('influencer_confirm_password')"></i>
+                                                       name="confirm_password" id="confirm_password">
+                                                       <div class="input-group-append">
+                                                        <span class="toggle-password" onclick="togglePassword('confirm_password')" style="cursor: pointer;">👁️</span>
+                                                    </div>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Confirm Password.
                                                 </div>
@@ -172,7 +190,7 @@ margin-left: -9px !important;
                                                 >
                                                     {{-- <span class="checkmark"></span> --}}
                                                 <span style="margin-left: 15px;font-size: 14px;">
-                                                    I agree to the InfluencerPro
+                                                    By registering i agree to the 
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                 </span>
@@ -304,17 +322,19 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="password" class="form-control floating " name="password"
-                                                       id="brand" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special">
-                                                <i class="fa-solid fa-eye" id="eye"
-                                                   onclick="togglePassword('brand')"></i>
+                                                       id="password_brand" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special">
+                                                       <div class="input-group-append">
+                                                        <span class="toggle-password" onclick="togglePassword_brand('password_brand')" style="cursor: pointer;">👁️</span>
+                                                    </div>
                                                 
                                                 <label class="inner_label focus-label bilal-register">Password</label>
                                             </div>
                                             <div class="form-group form-focus mb-0">
                                                 <input type="password" class="form-control floating"
-                                                       name="confirm_password" id="brand_confirm_password">
-                                                <i class="fa-solid fa-eye" id="eye"
-                                                   onclick="togglePassword('brand_confirm_password')"></i>
+                                                       name="confirm_password" id="confirm_password_brand">
+                                                       <div class="input-group-append">
+                                                        <span class="toggle-password" onclick="togglePassword_brand('confirm_password_brand')" style="cursor: pointer;">👁️</span>
+                                                    </div>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid Confirm Password.
                                                 </div>
@@ -371,7 +391,34 @@ margin-left: -9px !important;
 
 @section('page_scripts')
     <script>
+ function togglePassword_brand(fieldId) {
 
+
+const passwordField = document.getElementById(fieldId);
+const icon = passwordField.nextElementSibling.querySelector(".toggle-password");
+
+if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.textContent = "🙈"; // Change the icon to "hide"
+} else {
+    passwordField.type = "password";
+    icon.textContent = "👁️"; // Change the icon to "show"
+}
+}
+  function togglePassword(fieldId) {
+
+  
+    const passwordField = document.getElementById(fieldId);
+    const icon = passwordField.nextElementSibling.querySelector(".toggle-password");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        icon.textContent = "🙈"; // Change the icon to "hide"
+    } else {
+        passwordField.type = "password";
+        icon.textContent = "👁️"; // Change the icon to "show"
+    }
+}
 
 function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
@@ -394,18 +441,7 @@ function validateInput(input) {
     });
 
 
-        function togglePassword(inputId, iconId) {
-            var passwordInput = document.getElementById(inputId);
-            // var toggleIcon = document.getElementById(iconId);
-
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/invisible.png';
-            } else {
-                passwordInput.type = 'password';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/visible.png';
-            }
-        }
+  
 
         $(document).ready(function () {
 

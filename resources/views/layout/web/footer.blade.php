@@ -20,6 +20,12 @@
         </div>
     </div>
 </section> -->
+
+<style>
+    .changeColor:hover{
+     color: blue !important;
+    }
+</style>
 <footer class="footer" style="border:0px solid red;">
     <div class="container mb-30">
         <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red;">
@@ -58,26 +64,33 @@
                         <img src="assets/img/logo/Influencers Pro-01-01.png" class="img-fluid" alt="Logo">
                         </a>
                         </div> -->
-                        <h2 class="footer-title">Company</h2>
+                        <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Company</h5>
                         <ul>
                             {{-- <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>Home</a></li> --}}
-                            <li><a href="#"  data-bs-toggle="modal" data-bs-target="#aboutus" ><i class="fas fa-angle-right me-1"></i>About Us</a></li>
-                            <li><a href="{{ env('BASE_URL') }}/contact-us"><i class="fas fa-angle-right me-1"></i>Contact
+                            <li><a href="#"  data-bs-toggle="modal" data-bs-target="#aboutus"  class="changeColor">
+                                {{-- <i class="fas fa-angle-right me-1"></i> --}}
+                                
+                                About Us</a></li>
+                            <li><a href="{{ env('BASE_URL') }}/contact-us" class="changeColor"> 
+                                {{-- <i class="fas fa-angle-right me-1"></i> --}}
+                                Contact
                                     Us</a></li>
                             @if(session()->missing('User'))
                                 <!-- <li><a href="{{ url('login') }}"><i class="fas fa-angle-right me-1"></i>Login</a></li> -->
                                 <!-- <li><a href="{{ env('BASE_URL') . 'register' }}"><i class="fas fa-angle-right me-1"></i>Register</a> -->
                                 </li>
                             @endif
-                            <li><a href="{{ env('BASE_URL') }}/termcondition"
+                            <li><a href="{{ env('BASE_URL') }}/termcondition" class="changeColor"
                                  {{-- data-bs-toggle="modal" data-bs-target="#termsModal" --}}
-                                 ><i
-                                        class="fas fa-angle-right me-1"></i>Terms & Conditions</a>
+                                 >
+                                 {{-- <i class="fas fa-angle-right me-1"></i> --}}
+                                        Terms of Use</a>
                             </li>
-                            <li><a href="{{ env('BASE_URL') }}/privacy-policy"
+                            <li><a href="{{ env('BASE_URL') }}/privacy-policy" class="changeColor"
                                  {{-- data-bs-toggle="modal" data-bs-target="#privacyModal" --}}
-                                 ><i
-                                        class="fas fa-angle-right me-1"></i>Privacy Policy</a>
+                                 >
+                                 {{-- <i class="fas fa-angle-right me-1"></i> --}}
+                                 Privacy Policy</a>
                             </li>
                             <!-- <li><a href="{{ env('BASE_URL') }}subscriptions"><i class="fas fa-angle-right me-1"></i>Subscription</a>
                             </li> -->
@@ -113,24 +126,24 @@
                 </div> -->
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">Socials</h2>
+                        <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Socials</h5>
                         <ul style="margin-left: 14px;">
-                            <li><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
+                            <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
-                                        width="30"
-                                        height="30"></a></li>
+                                        width="25" style="margin-bottom: 3px;"
+                                        height="25"></a></li>
                             <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon" target="_blank"><img
                                         src="{{ asset('assets/icons/instagram.png') }}"
-                                        alt="insta" width="30"
-                                        height="30"></a></li>
+                                        alt="insta" width="25" style="margin-bottom: 3px;"
+                                        height="25"></a></li>
                             <li><a href="https://x.com/influencerpro_" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                        alt="twitter"
-                                        width="30" height="30"></a></li>
-                            <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
+                                        alt="twitter"    style="margin-bottom: 3px;"
+                                        width="25" height="25"></a></li>
+                            {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"
                                         width="30"
-                                        height="30"></a></li>
+                                        height="30"></a></li> --}}
                         </ul>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
             margin-top: 0px !important;
         }
         ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
@@ -28,7 +28,7 @@
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header text-center">
-                                <h3>Terms & Conditions</h3> 
+                                <h3>Terms of Use</h3> 
                                
                                 
                             </div>

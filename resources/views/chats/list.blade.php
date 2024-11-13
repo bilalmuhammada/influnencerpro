@@ -8,6 +8,11 @@
         /* border: 1px solid #ddd; */
         border-radius: 5px;
     }
+    .dropdown-item:focus, .dropdown-item:hover {
+    color: blue !important;
+    background-color: #ffffff !important;
+
+}
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
         filter: sepia(22%) saturate(904%) hue-rotate(12deg) !important;
     }
@@ -40,6 +45,11 @@
     .chat-item {
         margin-bottom: 15px;
     }
+    .dropdown-menu.show{
+        display: block;
+        min-width: 12px;
+        margin-left: -7rem;
+    }
     
     .chat-title {
         text-decoration: none;
@@ -55,7 +65,7 @@
         background-color: #f0f0f0;
     }
     ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
@@ -69,8 +79,8 @@
   background: transparent;
 }
 
-    .chat-title:not(:last-child) {
-        border-bottom: 1px solid #ddd;
+    .chat-title {
+        border-bottom: 1px solid #ddd !important;
         padding-bottom: 10px;
         margin-bottom: 10px;
     }
@@ -176,7 +186,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
-                                    <select class="form-select" id="filter-dropdown" style="width: 164%; padding: 0; border:transparent !important">
+                                    <select class="form-select chat" id="filter-dropdown" style="width: 164%; padding: 0; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favourites</option>
                                         <option value="blocked">Blocked</option>
@@ -296,6 +306,18 @@ select::-ms-expand {
                                                 {{--                                            <div class="user-status">online</div>--}}
                                             </div>
                                         </div>
+
+                                        <div class="dropdown">
+                                            <button class="btn btn-link p-0" type="button" id="userOptionsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </button>
+                                            
+                                            <!-- Dropdown menu options -->
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
+                                                <a class="dropdown-item" href="#" onclick="blockUser()">Block User</a>
+                                                <a class="dropdown-item report-user-btn" data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 
                                     @if($chat->status == 'accepted')
@@ -393,7 +415,23 @@ select::-ms-expand {
         $(document).on('click', '.hiddencheck', function(e) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
+
+
+$(document).on("click", "#userOptionsMenu", function() {
+
+  $(".dropdown-menu-right").toggleClass("show");
+});
+
+
 $(document).ready(function () {
+
+    $(".chat").select2({
+           
+           minimumResultsForSearch: -1
+       });
+ 
+
+
     $('.emoji-trigger').emojioneArea({
                 pickerPosition: "bottom",
                 events: {
@@ -489,8 +527,7 @@ $(document).ready(function() {
             console.log('Edit mode activated');
             // Your edit mode logic here
         }else{
-        
-        alert('22');
+       
         }
     });
    
@@ -645,7 +682,7 @@ $(document).ready(function() {
         $(document).on('click', '.chat-title', function (e) {
             e.preventDefault();
     
-    
+  
             //calling function to mark messages as readed
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 

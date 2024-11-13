@@ -10,6 +10,13 @@
 ::-webkit-scrollbar {
   width: 12px; /* You can adjust this value based on your preference */
 }
+.toggle-password {
+            position: absolute;
+            right: 23px;
+            top: 43%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
 
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -43,7 +50,9 @@
                                     </div>
                                     <div class="form-group form-focus" style="margin-top:14px;">
                                         <input type="password" class="form-control floating password" name="password" id="password">
-                                        <i class="fa-solid fa-eye" id="eye" onclick="togglePassword()"></i>
+                                        <div class="input-group-append">
+                                            <span class="toggle-password" onclick="togglePassword('password')" style="cursor: pointer;">👁️</span>
+                                        </div>
                                         <div class="invalid-feedback">
                                             Please provide a correct password.
                                         </div>
@@ -53,7 +62,7 @@
                                         <label class="custom_check">
                                             <input type="checkbox" name="rem_password" style="margin-left: -86px !important;">
                                             {{-- <span class="checkmark"></span>  --}}
-                                            Remember password
+                                            Remember Password
                                         </label>
                                     </div>
                                     <div class="text-center">
@@ -89,18 +98,20 @@
         
         var api_url = "{{ env('API_URL') }}";
         
-        function togglePassword() {
-            var passwordInput = document.getElementById('password');
-            // var toggleIcon = document.getElementById('toggleIcon');
+        function togglePassword(fieldId) {
 
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/invisible.png';
-            } else {
-                passwordInput.type = 'password';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/visible.png';
-            }
-        }
+
+const passwordField = document.getElementById(fieldId);
+const icon = passwordField.nextElementSibling.querySelector(".toggle-password");
+
+if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.textContent = "🙈"; // Change the icon to "hide"
+} else {
+    passwordField.type = "password";
+    icon.textContent = "👁️"; // Change the icon to "show"
+}
+}
 
         $(document).ready(function () {
             var form = $('#login-form')[0];

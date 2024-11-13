@@ -79,7 +79,7 @@
         }
 
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 6px;
         }
 
         ::-webkit-scrollbar-thumb {

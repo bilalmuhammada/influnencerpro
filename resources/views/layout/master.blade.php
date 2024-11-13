@@ -3,6 +3,8 @@
  @include('layout.header')
 @include('modal.privacy-policy')
 @include('modal.terms')
+
+@include('modal.report_user')
 @include('modal.about-us')
 <body class="home-page bg-one">
 <!-- <div id="global-loader">

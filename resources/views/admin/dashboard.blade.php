@@ -20,6 +20,8 @@ width: 212px !important;
 .apexcharts-toolbar{
     display: none !important;
 }
+
+
 </style>
 @section('content')
 
@@ -121,6 +123,9 @@ width: 212px !important;
 $(function() {
     $('#from_datepicker, #to_datepicker').datepicker({
         dateFormat: 'dd-mm-yy',
+         changeMonth: true,
+          changeYear: true,
+
         beforeShow: function(input, inst) {
         inst.dpDiv.addClass('custom-datepicker');
       }

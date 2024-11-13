@@ -1,6 +1,22 @@
 @extends('layout.web.master')
 <style>
 
+.shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .shaking:hover {
+    animation: shake 1.5s linear infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
     .numberstyle{
         font-size: 55px;
     font-weight: bolder;
@@ -19,7 +35,7 @@ color:#997045;
 color:goldenrod !important;
     }
     ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
@@ -454,21 +470,21 @@ color:goldenrod !important;
         <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title">Multi Categories</h1>
+                        <h1 class="header-title">Multi Socials</h1>
                     </div>
                 </div>
             </div>
             <div class="row mx-auto">
                 <div class="col-12 col-md-12 mx-auto mb-3">
                     <div class="section-header text-center aos">
-                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;">
-                        <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="60px" height="60px"style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="" width="60px" height="60px"  style="margin-right: 10px;">
-                        <img src="{{ asset('assets/img/social-icon/twitter.png') }}" alt="" width="60px" height="60px"style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt="" width="70px" height="70px" style="margin-right: 10px; border-radius: 2px;">
-                        <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="" width="60px" height="60px" style="margin-right: 10px;" >
+                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" alt="" class="shaking" width="60px" height="60px" style="margin-right: 10px;">
+                        <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt=""  class="shaking" width="60px" height="60px"style="margin-right: 10px;" >
+                        <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""   class="shaking" width="60px" height="60px" style="margin-right: 10px;" >
+                        <img src="{{ asset('assets/img/social-icon/youtube.png') }}" alt=""  class="shaking" width="60px" height="60px"  style="margin-right: 10px;">
+                        <img src="{{ asset('assets/img/social-icon/twitter.png') }}" alt=""  class="shaking" width="60px" height="60px"style="margin-right: 10px;" >
+                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""  class="shaking" width="70px" height="70px" style="margin-right: 10px; border-radius: 2px;">
+                        <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt=""   class="shaking" width="60px" height="60px" style="margin-right: 10px;" >
+                        <img src="{{ asset('assets/img/social-icon/web.png') }}" alt=""  class="shaking" width="60px" height="60px" style="margin-right: 10px;" >
                     </div>
                 </div>
             </div>
@@ -1023,7 +1039,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title" style="margin-top: -40px">How it Works - Brands</h1>
+                        <h1 class="header-title" style="margin-top: -25px">How it Works - Brands</h1>
                     </div>
                 </div>
                 <div class="col-xl-12 col-md-12 mx-auto">
@@ -1142,8 +1158,8 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title" style="margin-top: -23px">
-                            Influencer Reviews</h1>
+                        <h4 class="header-title" style="margin-top: -23px">
+                            Influencer Reviews</h4>
                     </div>
                 </div>
             </div>
@@ -1159,7 +1175,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image3.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1191,7 +1207,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image8.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1223,7 +1239,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image6.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1255,7 +1271,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image5.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1319,7 +1335,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image2.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1367,7 +1383,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title" style="margin-top: -31px;">Brand Reviews  </h1>
+                        <h4 class="header-title" style="margin-top: -31px;">Brand Reviews  </h4>
                     </div>
                 </div>
             </div>
@@ -1380,7 +1396,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/img1.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1412,7 +1428,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/2.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1445,7 +1461,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag3.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1478,7 +1494,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag4.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1512,7 +1528,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag5.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1545,7 +1561,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag6.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  #997045;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1607,7 +1623,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title">Brands</h1>
+                        <h4 class="header-title">Brands</h1>
                     </div>
                 </div>
             </div>

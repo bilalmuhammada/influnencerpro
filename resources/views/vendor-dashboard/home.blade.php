@@ -45,7 +45,7 @@
             width: 47% !important;
         }
         ::-webkit-scrollbar {
-              width: 12px; /* You can adjust this value based on your preference */
+              width: 6px; /* You can adjust this value based on your preference */
            }
 .ui-state-default  {
     border: 0px !important;
