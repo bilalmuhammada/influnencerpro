@@ -124,10 +124,8 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating" name="age"   pattern="\+?\d*" oninput="validateInput(this)">
-                                                {{-- <div class="invalid-feedback">
-                                                    {{-- Please provide a valid Age. --}}
-                                                {{-- </div>  --}}
+                                                <input type="text" class="form-control datepicker floating" name="age"   pattern="\+?\d*" >
+                                             
                                                 <label class="focus-label">Date of Birth</label>
                                             </div>
 
@@ -186,11 +184,11 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="dont-have">
                                                 <span class="custom_check">
-                                                    <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
-                                                >
+                                                    {{-- <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
+                                                > --}}
                                                     {{-- <span class="checkmark"></span> --}}
-                                                <span style="margin-left: 15px;font-size: 14px;">
-                                                    By registering i agree to the 
+                                                <span style="font-size: 14px;">
+                                                By registering I agree to the 
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                 </span>
@@ -291,11 +289,11 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating"   pattern="\+?\d*" oninput="validateInput(this)" name="age">
+                                                <input type="text" class="form-control datepicker floating"   name="age">
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid age.
                                                 </div> --}}
-                                                <label class="focus-label">Age</label>
+                                                <label class="focus-label">Date of Birth</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 {{--    <input type="text" class="form-control floating" name="country">--}}
@@ -342,11 +340,11 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="dont-have">
                                                 <span class="custom_check">
-                                                    <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
-                                                >
+                                                    {{-- <input type="checkbox" name="agreed_to_terms" class="agreed_to_terms"  style="width: 20px;height: 20px;"   
+                                                > --}}
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    <span style="margin-left: 15px;font-size: 14px;">
-                                                    I agree to the InfluencerPro
+                                                    <span style="font-size: 14px;">
+                                                        By registering I agree to the 
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     </span>
@@ -388,9 +386,22 @@ margin-left: -9px !important;
         </div>
     </div>
 @endsection
+<!-- jQuery -->
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<!-- Load jQuery UI (for datepicker) -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- Load Select2 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 @section('page_scripts')
     <script>
+
+        
  function togglePassword_brand(fieldId) {
 
 
@@ -444,12 +455,18 @@ function validateInput(input) {
   
 
         $(document).ready(function () {
+            
+            $(".datepicker").datepicker({
+             dateFormat: 'dd-mm-yy',
+             changeMonth: true,
+             changeYear: true,
+         });
 
             $('.mySelect').select2({
                 placeholder: " ", // Sets the placeholder text
                 allowClear: true, 
-    minimumResultsForSearch: Infinity // Disables the search box
-  });
+                minimumResultsForSearch: Infinity // Disables the search box
+        });
 
 
                 @if(request()->role == 'influencer')

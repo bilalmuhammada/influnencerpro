@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <h3>
-                        Join Us & Discover more.<br/>
+                        Join Us & Discover More.<br/>
                         <div style="color:#0000FF;"><b>Download our App now!</b></div>
                     </h3>
                 </div>

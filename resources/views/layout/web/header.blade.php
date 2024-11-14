@@ -40,8 +40,19 @@
         <script src="{{ asset('assets/js/slick-custom.js') }}"></script>
     @endif
 
+ 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/css/lobibox.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/js/emojionearea-master/dist/emojionearea.min.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"/>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script> --}}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script> --}}
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    
     <script>
         base_url = "{{ env('BASE_URL') }}";
         api_url = "{{ env("API_URL") }}";

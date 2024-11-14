@@ -59,8 +59,8 @@
                                         <label class="focus-label">Password</label>
                                     </div>
                                     <div class="form-group" style="margin-top: 15px;">
-                                        <label class="custom_check">
-                                            <input type="checkbox" name="rem_password" style="margin-left: -86px !important;">
+                                        <label class="custom_check" style="margin-left: 20px;">
+                                            <input type="checkbox" name="rem_password" style="margin-left: -71px !important;">
                                             {{-- <span class="checkmark"></span>  --}}
                                             Remember Password
                                         </label>

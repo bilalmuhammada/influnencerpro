@@ -9114,7 +9114,7 @@ label.file-upload.image-btn {
     position: relative;
     font-size: 14px;
     font-size: .9375rem;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     margin-bottom: 10px;
     cursor: pointer;
     -webkit-user-select: none;
@@ -17777,7 +17777,7 @@ h2.footer-title:before {
     color: #fff;
 }
 .iconx i{
-    color:#997045 !important;
+    color:rgb(254, 176, 25)  !important;
 }
 .iconx i:hover{
     color:#0504aa !important;
@@ -18250,7 +18250,7 @@ button.scroll-top:focus {
 }
 
 .scroll-top:hover {
-    background: #131135;
+    background: blue;
     transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

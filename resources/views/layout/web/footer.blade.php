@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <h3>
-                        Join Us & Discover more.<br/>
+                        Join Us & Discover More.<br/>
                         <div style="color:#0000FF;"><b>Download our App now!</b></div>
                     </h3>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
                         <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Socials</h5>
-                        <ul style="margin-left: 14px;">
+                        <ul style="margin-left: 14px;margin-top:14px;">
                             <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
                                         width="25" style="margin-bottom: 3px;"

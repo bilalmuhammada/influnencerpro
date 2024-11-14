@@ -1,14 +1,14 @@
 @extends('layout.web.master')
 <style>
 
-.shaking {
+   .shaking {
     display: inline-block;
     transition: transform 0.2s ease-in-out;
-  }
+   }
 
   .shaking:hover {
     animation: shake 1.5s linear infinite;
-  }
+   }
 
   @keyframes shake {
     0% { transform: translateX(0); }
@@ -18,7 +18,7 @@
     100% { transform: translateX(0); }
   }
     .numberstyle{
-        font-size: 55px;
+    font-size: 55px;
     font-weight: bolder;
     color: goldenrod;
     }

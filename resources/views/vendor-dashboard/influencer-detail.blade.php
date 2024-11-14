@@ -6,6 +6,14 @@
     padding: 20px;
     border-radius: 10px;
 }
+.font-change{
+    color: blue;
+
+}
+.font-change:hover{
+    color: goldenrod;
+
+}
 .form-group::first-letter {
     text-transform: uppercase !important;
 } 
@@ -126,6 +134,23 @@ color: goldenrod !important;
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+
+  .shaking:hover {
+    animation: shake 1.5s linear infinite;
+   }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
 </style>
 @section('content')
 
@@ -595,11 +620,11 @@ color: goldenrod !important;
                         <span style="font-size:30px;padding-left:3px; display: flex; margin-top: -12px;">
                             {{ $influencer ? $influencer->full_name : ''}}
                              <a href="javascript:void(0)" style="margin: 9px 10px 0px 18px;" class="share-link" onclick="shareLink()">
-                                        <img src="{{ asset('assets/img/icons/share.png') }}" alt="" width="30px">
+                                        <img src="{{ asset('assets/img/icons/share.png') }}" alt=""  class="shaking" width="30px">
                                     </a>
                                 <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;">
                                     {{-- <i class="fas fa-download" style="color: blue;"></i> --}}
-                                    <img src="{{ asset('assets/img/icons/dwnld.png') }}" alt="" width="30px">
+                                    <img src="{{ asset('assets/img/icons/dwnld.png') }}"  class="shaking" alt="" width="30px">
                                 </a>
                                    
                                     <div class="text-center" style="font-size: 11px;">&nbsp;</div>
@@ -637,8 +662,8 @@ color: goldenrod !important;
                         <ul style="list-style-type: none;">
                             @if($instagram && isset($instagram->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
-                                            href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
-                                                         width="30px"></a> <div class="text-center"
+                                            href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt=""
+                                                         width="30px"></a> <div class="text-center font-change"
                                                                                 style="font-size:11px;">{{ $instagram ? $instagram->followers :  0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
@@ -647,8 +672,8 @@ color: goldenrod !important;
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img
                                                 src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                alt=""
-                                                width="30px"></a> <div class="text-center"
+                                                alt=""  class="shaking"
+                                                width="30px"></a> <div class="text-center font-change"
                                                                        style="font-size:11px;">{{ $twitter ? $twitter->followers :  0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
@@ -656,31 +681,31 @@ color: goldenrod !important;
                                 <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                             href=""><img
                                                 src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                alt="" style="margin-left: -4px"
-                                                width="30px"></a> <div class="text-center"
+                                                alt=""  class="shaking" style="margin-left: -4px"
+                                                width="30px"></a> <div class="text-center font-change"
                                                                        style="font-size:11px;">{{ $youtube ? $youtube->followers :  0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
                             @if($tiktok && isset($tiktok->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""
+                                                src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt="" class="shaking"
                                                 width="30px"></a> <div
-                                            class="text-center"
+                                            class="text-center font-change"
                                             style="font-size:11px;">{{ $tiktok ? $tiktok->followers : 0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
                             @if($facebook && isset($facebook->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="30px"></a> <div
-                                            class="text-center"
+                                                src="{{ asset('assets/img/social-icon/fb.png') }}" alt=""  class="shaking" width="30px"></a> <div
+                                            class="text-center font-change"
                                             style="font-size:11px;">{{ $facebook ? $facebook->followers : 0 }}</div></span>
                                 </li> &nbsp; &nbsp;
                             @endif
                             @if($snapchat && isset($snapchat->followers))
                                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""
-                                                width="33px"></a> <div
-                                            class="text-center"
+                                                src="{{ asset('assets/img/social-icon/snapchat.png') }}"  class="shaking" alt=""
+                                                width="33px" class="shaking"></a> <div
+                                            class="text-center font-change"
                                             style="font-size:11px;">
                                             {{ 
                                             $snapchat ? $snapchat->followers : 0 }}</div></span>
@@ -688,17 +713,17 @@ color: goldenrod !important;
                         @endif
                         @if($pinterestProfiles && isset($pinterestProfiles->followers))
                         <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                        src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt=""
+                                        src="{{ asset('assets/img/social-icon/pinterest.png') }}"  class="shaking" alt=""
                                         width="30px"></a> <div
-                                    class="text-center"
+                                    class="text-center font-change"
                                     style="font-size:11px;">{{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}</div></span>
                         </li> &nbsp; &nbsp;
                 @endif
                 @if($web && isset($web->followers))
                 <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                src="{{ asset('assets/img/social-icon/web.png') }}" alt=""
+                                src="{{ asset('assets/img/social-icon/web.png') }}"  class="shaking" alt=""
                                 width="30px"></a> <div
-                            class="text-center"
+                            class="text-center font-change"
                             style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
                 </li> &nbsp;
                   @endif

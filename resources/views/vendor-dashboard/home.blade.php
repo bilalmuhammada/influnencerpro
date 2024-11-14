@@ -258,7 +258,7 @@ color: #0504aa !important;
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/insta.png')}}" alt="insta"
-                                                     width="20">
+                                                     width="20" class="shaking">
                                                 Instagram</span> <input type="checkbox" name="instagram"
                                                                         <?php
 
@@ -274,7 +274,7 @@ color: #0504aa !important;
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/fb.png')}}" alt="insta"
-                                                     width="20">
+                                                     width="20" class="shaking">
                                                      Facebook</span> <input type="checkbox" name="facebook"
                                                                             <?php
 

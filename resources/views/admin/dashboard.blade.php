@@ -275,7 +275,7 @@ $(function() {
                 }, {
                     name: '',
                     data: data.chat_count,
-                    color: '#997045'
+                    color: 'rgb(254, 176, 25)'
                 }],
                 chart: {
                     type: 'bar',
