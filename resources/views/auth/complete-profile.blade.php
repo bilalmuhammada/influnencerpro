@@ -162,8 +162,12 @@ font-weight: bold;
     margin-left: -15px !important;
 }
   #ui-datepicker-div{
-width: 200px !important;
+width: 210px !important;
   }
+  #msform .select2-container .select2-selection--single .select2-selection__rendered {
+    /* padding-right: 30px; */
+    padding-left: 12px !important;
+}
   .from_date:focus, .to_date:focus {
     border: 1px solid blue !important;
 }
@@ -1298,6 +1302,7 @@ function validateInput(input) {
                 dateFormat: 'dd-mm-yy',
                 changeMonth: true,
                 changeYear: true,
+             yearRange: "1980:+0",
 
 
             });

@@ -43,7 +43,7 @@
                     <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 44px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;">
                     <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
@@ -209,25 +209,25 @@
 
 </footer>
 <script>
-    // $('.popup-video').magnificPopup({
-    //     type: 'iframe'
-    // });
-    var slideIndex = 0;
-    carousel();
+    // // $('.popup-video').magnificPopup({
+    // //     type: 'iframe'
+    // // });3333
+    // var slideIndex = 0;
+    // carousel();
 
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > x.length) {
-            slideIndex = 1
-        }
-        x[slideIndex - 1].style.display = "block";
-        setTimeout(carousel, 10000);
-    }
+    // function carousel() {
+    //     var i;
+    //     var x = document.getElementsByClassName("mySlides");
+    //     for (i = 0; i < x.length; i++) {
+    //         x[i].style.display = "none";
+    //     }
+    //     slideIndex++;
+    //     if (slideIndex > x.length) {
+    //         slideIndex = 1
+    //     }
+    //     x[slideIndex - 1].style.display = "block";
+    //     setTimeout(carousel, 10000);
+    // }
 </script>
 </div>
 <button class="scroll-top scroll-to-target" data-target="html">

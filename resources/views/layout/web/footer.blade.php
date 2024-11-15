@@ -208,10 +208,10 @@
     </div>
 
 </footer>
-<script>
+{{-- <script>
     // $('.popup-video').magnificPopup({
     //     type: 'iframe'
-    // });
+    // });33434
     var slideIndex = 0;
     carousel();
 
@@ -228,7 +228,7 @@
         x[slideIndex - 1].style.display = "block";
         setTimeout(carousel, 10000);
     }
-</script>
+</script> --}}
 </div>
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>
@@ -262,14 +262,7 @@
 <script src="{{ asset('assets/js/footer.js?v=') . date('ymdhis') }}"></script>
 
 
-{{--<script src="{{ asset('assets/plugins/c3-chart/d3.v5.min.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/c3-chart/c3.min.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/c3-chart/chart-data.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>--}}
-{{--<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>--}}
-{{--<script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}"></script>--}}
 
-{{--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/js/lobibox.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

@@ -9,7 +9,28 @@
     border-radius: 4px !important;
     color: black !important;
         }
-      
+        .shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+
+  .shaking:hover {
+    animation: shake 1.5s linear infinite;
+   }
+
+   .changetogold{
+  color: blue;
+   }
+   .changetogold:hover{
+  color: blue;
+   }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
 .dropdowndecoration:hover {
         border: 1px solid blue!important;
 }
@@ -1072,9 +1093,9 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;margin-left: 5px; "><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                                    alt=""
-                                                                    width="25px"></a> <div class="text-center"
-                                                                                           style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
+                                                                    alt="" class="shaking"
+                                                                    width="25px"></a> <div class="text-center changetogold"
+                                                                                           style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}33</div></span>
                                                     </li> &nbsp;
                                                 @endif
 
@@ -1082,8 +1103,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                                    alt=""
-                                                                    width="25px"></a> <div class="text-center"
+                                                                    alt="" class="shaking"
+                                                                    width="25px"></a> <div class="text-center changetogold"
                                                                                            style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1092,8 +1113,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                                    alt=""
-                                                                    width="25px"></a> <div class="text-center"
+                                                                    alt="" class="shaking"
+                                                                    width="25px"></a> <div class="text-center changetogold"  
                                                                                            style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1101,8 +1122,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                                    alt=""
-                                                                    width="25px"></a> <div class="text-center"
+                                                                    alt="" class="shaking"
+                                                                    width="25px"></a> <div class="text-center changetogold"
                                                                                            style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1110,7 +1131,7 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                                    alt="" width="25px"></a> <div class="text-center"
+                                                                    alt="" width="25px"></a> <div class="text-center changetogold"
                                                                                                   style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1118,7 +1139,7 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                                    alt="" width="25px"></a> <div class="text-center"
+                                                                    alt="" class="shaking" width="25px"></a> <div class="text-center changetogold"
                                                                                                   style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
                                                     </li>&nbsp;
                                                 @endif
@@ -1208,7 +1229,9 @@ color: #0504aa !important;
         minimumInputLength: 0                   // Set minimum input to trigger search
     });
     $('.datepicker').datepicker({
-       dateFormat: 'dd-mm-yy'
+       dateFormat: 'dd-mm-yy',
+       changeMonth: true,
+       changeYear: true,
    });
 
 

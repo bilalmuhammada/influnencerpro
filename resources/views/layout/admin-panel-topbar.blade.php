@@ -169,7 +169,7 @@ color: goldenrod !important;
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
             </a>
 
-            <div class="mobile-country desktop-menu-right" style="margin-top: 17px;">
+            <div class="mobile-country desktop-menu-right" style="margin-top: 14px;">
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     <option value="null" selected class="colorchange">Language</option>
                     @foreach(getlanguge() as $language)

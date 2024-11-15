@@ -90,18 +90,14 @@
                 right: -15px !important;
             }
     </style>
-    
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
-
+   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+ 
     <script type="text/javascript">
         function translateLanguage() {
             var dropdown = document.getElementById("country_dropdown");
@@ -137,7 +133,7 @@
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 41px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
-        <div class="mobile-country desktop-menu-right" style="margin-top: 15px;">
+        <div class="mobile-country desktop-menu-right" style="margin-top: 14px;">
         
             <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
                 <option value="null" selected style="color: blue;">Language</option>

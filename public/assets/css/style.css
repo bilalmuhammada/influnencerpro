@@ -1941,9 +1941,12 @@ border: 1px solid #2d11e7;
     padding: 20px 30px;
     align-items: center;
 }
+#reportUserModal .modal-body {
+    padding: 10px;
+}
 
 .modal-body {
-    padding: 10px;
+    padding: 26px;
 }
 
 .custom-modal .modal-content {
@@ -16554,7 +16557,7 @@ ul {
 
 .modal label {
     margin:0;
-    font-weight: 600;
+    font-weight: 300;
     color: #000;
 }
 

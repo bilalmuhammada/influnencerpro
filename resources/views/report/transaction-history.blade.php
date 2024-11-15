@@ -408,6 +408,8 @@ width: 212px !important;
                 $(document).ready(function () {
                     $('.datepicker').datepicker({
                         dateFormat: 'dd-mm-yy',
+                        changeMonth: true,
+                        changeYear: true,
                        
     // Wait for the document to be ready
    

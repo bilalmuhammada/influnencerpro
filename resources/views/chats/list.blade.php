@@ -13,6 +13,11 @@
     background-color: #ffffff !important;
 
 }
+.select2-results__option{
+    padding: 0px !important;
+    margin-left: 4px !important;
+
+}
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
         filter: sepia(22%) saturate(904%) hue-rotate(12deg) !important;
     }
@@ -157,6 +162,13 @@ color: goldenrod !important;
     border-color: #80bdff;
 }
 
+.select2-container--open .select2-dropdown {
+    left: 25px !important;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    min-height: 0px !important;
+}
 /* Customize the dropdown arrow */
 select::-ms-expand {
     display: none;
@@ -186,7 +198,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
-                                    <select class="form-select chat" id="filter-dropdown" style="width: 164%; padding: 0; border:transparent !important">
+                                    <select class="form-select chat" id="filter-dropdown" style="width: 130%; padding: 0; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favourites</option>
                                         <option value="blocked">Blocked</option>
@@ -409,7 +421,7 @@ select::-ms-expand {
 @endsection
 
 @section('page_scripts')
-    <script type="text/javascript">
+<script type="text/javascript">
 
         var api_url = "{{ env('API_URL') }}";
         $(document).on('click', '.hiddencheck', function(e) {
@@ -422,8 +434,9 @@ $(document).on("click", "#userOptionsMenu", function() {
   $(".dropdown-menu-right").toggleClass("show");
 });
 
-
-$(document).ready(function () {
+// jQuery.noConflict();
+// jQuery(document).ready(function($) {
+ $(document).ready(function () {
 
     $(".chat").select2({
            

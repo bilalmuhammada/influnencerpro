@@ -11,6 +11,11 @@
 
 #report-ad-form1 input{
     padding: 7px;
+    position: absolute;
+    width: 16px;
+    margin-left: -19px;
+    padding: 7px;
+    z-index: 999;
 }
 .report-ad-form {
             width: 60rem;
@@ -78,40 +83,40 @@
                     <input type="hidden" name="ad_id" class="ad-id" id="ad-id">
                     <!-- Default radio -->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason1" value="Scam"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason1" value="Scam"/>
                         <label class="form-check-label" for="reason1"> Scam </label>
                     </div>
 
                     <!-- Defaul radio -->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason2" value="Disturbing"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason2" value="Disturbing"/>
                         <label class="form-check-label" for="reason2"> Disturbing </label>
                     </div>
 
                     <!-- Defaul radio -->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason3" value=" Fake Profile"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason3" value=" Fake Profile"/>
                         <label class="form-check-label" for="reason3"> Fake Profile </label>
                     </div>
 
                     <!-- Defaul radio -->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason4" value="Disrespectful"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason4" value="Disrespectful"/>
                         <label class="form-check-label" for="reason4"> Disrespectful </label>
                     </div>
 
                     <!-- Defaul radio -->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason5" value="Privacy Violation"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason5" value="Privacy Violation"/>
                         <label class="form-check-label" for="reason5">Privacy Violation </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason5" value="Abusive Behavoir "/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason5" value="Abusive Behavoir "/>
                         <label class="form-check-label" for="reason5">Abusive Behavoir </label>
                     </div>
                     
                     <div class="form-check" style="margin-bottom: 12px;">
-                        <input class="form-check-input" type="radio" name="report_reason" id="reason5" value="other"/>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason5" value="other"/>
                         <label class="form-check-label" for="reason5">Other </label>
                     </div>
                     <!-- textarea -->

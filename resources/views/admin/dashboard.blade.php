@@ -125,6 +125,9 @@ $(function() {
         dateFormat: 'dd-mm-yy',
          changeMonth: true,
           changeYear: true,
+          
+             yearRange: "1980:+0",
+
 
         beforeShow: function(input, inst) {
         inst.dpDiv.addClass('custom-datepicker');

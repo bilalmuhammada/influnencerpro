@@ -124,7 +124,7 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control datepicker floating" name="age"   pattern="\+?\d*" >
+                                                <input type="text" class="form-control datepicker1 floating" name="age"   id="datepicker1" >
                                              
                                                 <label class="focus-label">Date of Birth</label>
                                             </div>
@@ -289,7 +289,7 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control datepicker floating"   name="age">
+                                                <input type="text" class="form-control datepicker2 floating"  id="datepicker2"  name="age">
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid age.
                                                 </div> --}}
@@ -386,20 +386,9 @@ margin-left: -9px !important;
         </div>
     </div>
 @endsection
-<!-- jQuery -->
-<!-- Load jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-
-<!-- Load jQuery UI (for datepicker) -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<!-- Load Select2 -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 @section('page_scripts')
-    <script>
+    <script type="text/javascript" >
 
         
  function togglePassword_brand(fieldId) {
@@ -453,14 +442,15 @@ function validateInput(input) {
 
 
   
+    jQuery(document).ready(function($) {
 
-        $(document).ready(function () {
+        // $(document).ready(function () {
             
-            $(".datepicker").datepicker({
-             dateFormat: 'dd-mm-yy',
-             changeMonth: true,
-             changeYear: true,
-         });
+        //     $(".datepicker").datepicker({
+        //      dateFormat: 'dd-mm-yy',
+        //      changeMonth: true,
+        //      changeYear: true,
+        //  });
 
             $('.mySelect').select2({
                 placeholder: " ", // Sets the placeholder text
