@@ -138,21 +138,6 @@ $(function() {
        
     });
 });
-//         $(document).ready(function () {
-
-
-//     // Get the date string from the <span> element
-//     var dateString = $('.from_date').text();
-
-//     // Parse the date string using Moment.js
-//     var date = moment(dateString);
-
-//     // Format the date in dd-mm-yyyy format
-//     var formattedDate = date.format('DD-MM-YYYY');
-
-//     // Update the content of the <span> element with the formatted date
-//     $('.from_date').text(formattedDate);
-// });
     $(document).ready(function () {
         renderDashboard();
         });
@@ -271,15 +256,18 @@ $(function() {
         function create_bar_chart(data) {
             var options = {
                 series: [{
-                    name: '',
-                    data: data.profile_visit_count,
+                    name: 'Profile Views',
+                    //  data:[1,2,4,5,6,7,8,9],
+                    data:      data.profile_visit_count,
                     color: '#00e396'
                 }, {
-                    name: '',
-                    data: data.favourite_count,
+                    name: 'Favourites',
+                    // data:[1,2,4,5,6,7,8,9],
+                     data: data.favourite_count,
                     color: '#008ffb'
                 }, {
-                    name: '',
+                    name: 'Chats',
+                    // data:[1,2,4,5,6,7,8,9],
                     data: data.chat_count,
                     color: 'rgb(254, 176, 25)'
                 }],
@@ -290,18 +278,14 @@ $(function() {
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '55%',
+                        columnWidth: '35%',
                         endingShape: 'rounded'
                     },
                 },
                 dataLabels: {
                     enabled: false
                 },
-                stroke: {
-                    show: true,
-                    width: 2,
-                    colors: ['transparent']
-                },
+                
                 xaxis: {
                     categories: data.months,
                 },

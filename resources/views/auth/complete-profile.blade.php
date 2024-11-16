@@ -1217,20 +1217,7 @@ display: none !important;
                         <fieldset>
                             <div class="form-card">
                                 <div class="row">
-                                    {{--                                    <div class="col-md-4">--}}
-                                    {{--                                        <input type="file" name="pic" accept="image/*">--}}
-                                    {{--                                        <div class="col-md-6">--}}
-                                    {{--                                            <div class="col-md-12">--}}
-                                    {{--                                                <img--}}
-                                    {{--                                                    src="{{ $influencer ? $influencer->image_url : asset('assets/img/img.png')}}"--}}
-                                    {{--                                                    id="image" alt=""--}}
-                                    {{--                                                    style="width: 200px; border: 1px solid #000; height: 180px">--}}
-                                    {{--                                                <input type="file" class="form-control" id="logo" name="logo"--}}
-                                    {{--                                                       onchange=""--}}
-                                    {{--                                                       style="width: 200px; background-color: #e9ecef" accept="image/*">--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                    </div>--}}
+                                   
                                     <div class="col-md-12">
                                         <label for="" style="color:#0504aa;font-weight:bold;"> Instagram URL</label>
                                         <input type="text"
