@@ -219,13 +219,13 @@ display: none !important;
 }
 .shaking {
     display: inline-block;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 1s ease-in-out;
    }
 
   .shaking:hover {
    /* Change to your desired hover color */
  
-    animation: shake 1.5s linear infinite;
+    animation: shake 6s linear infinite;
    }
 
   @keyframes shake {
@@ -1301,7 +1301,7 @@ function validateInput(input) {
                 dateFormat: 'dd-mm-yy',
                 changeMonth: true,
                 changeYear: true,
-             yearRange: "1980:+0",
+             yearRange: "1950:+0",
 
 
             });

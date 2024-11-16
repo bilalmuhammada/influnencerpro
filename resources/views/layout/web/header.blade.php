@@ -66,7 +66,7 @@
              dateFormat: 'dd-mm-yy',
              changeMonth: true,
              changeYear: true,
-             yearRange: "1980:+0",
+             yearRange: "1950:+0",
             //  minDate: new Date(1980, 0, 1)
          });
          $(".datepicker1").change(function() {
@@ -79,7 +79,7 @@
              dateFormat: 'dd-mm-yy',
              changeMonth: true,
              changeYear: true,
-             yearRange: "1980:+0",
+             yearRange: "1950:+0",
             //  minDate: new Date(1980, 0, 1)
          });
          $(".datepicker2").change(function() {

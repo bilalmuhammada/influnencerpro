@@ -13,7 +13,9 @@
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-
+   .social-wrapper:hover .followers-count {
+    color:goldenrod; /* Change to your desired hover color */
+}
   .shaking:hover {
     animation: shake 1.5s linear infinite;
    }
@@ -1094,58 +1096,91 @@ color: #0504aa !important;
                                                @endphp
                                                 &nbsp;
                                                 @if($instagram && isset($instagram->followers))
-                                                    <li style=" display: inline-block;color:#fff;margin-left: 5px; "><span
-                                                            style="font-size: 12px;text-align:center;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
-                                                                    width="25px"></a> <div class="text-center "
-                                                                                           style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
-                                                    </li> &nbsp;
+
+
+
+                                <li style="display: inline-block;;color:#fff;">
+                                <div class="social-wrapper" style="text-align: center; margin-left:6px;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                    </a>
+                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                        {{ $instagram ? $instagram->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li>  &nbsp;
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
-                                                    <li style=" display: inline-block;color:#fff;"><span
-                                                            style="font-size: 12px;text-align:center;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
-                                                                    width="25px"></a> <div class="text-center "
-                                                                                           style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
-                                                    </li> &nbsp;
+                                                <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
+                                                        <a href="">
+                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $twitter ? $twitter->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                    
                                                 @endif
 
                                                 @if($youtube && isset($youtube->followers))
-                                                    <li style=" display: inline-block;color:#fff;"><span
-                                                            style="font-size: 12px;text-align:center;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
-                                                                    width="25px"></a> <div class="text-center "  
-                                                                                           style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
-                                                    </li> &nbsp;
+                                                <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
+                                                        <a href="">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $youtube ? $youtube->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                &nbsp;
+                                                    
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
-                                                    <li style=" display: inline-block;color:#fff;"><span
-                                                            style="font-size: 12px;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
-                                                                    width="25px"></a> <div class="text-center "
-                                                                                           style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
-                                                    </li> &nbsp;
+                                                <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
+                                                        <a href="">
+                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $tiktok ? $tiktok->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                &nbsp;
+                                                  
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
-                                                    <li style=" display: inline-block;color:#fff;"><span
-                                                            style="font-size: 12px;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                                    alt="" width="25px" class="shaking" style="margin-bottom: 6px;"></a> <div class="text-center "
-                                                                                                  style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
-                                                    </li> &nbsp;
+                                                <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
+                                                        <a href="">
+                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $facebook ? $facebook->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                &nbsp;
+                                                    
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
-                                                    <li style=" display: inline-block;color:#fff;"><span
-                                                            style="font-size: 12px;"><a href=""><img
-                                                                    src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                                    alt="" class="shaking" style="margin-bottom: 6px;" width="25px"></a> <div class="text-center "
-                                                                                                  style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
-                                                    </li>&nbsp;
+                                                <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
+                                                        <a href="">
+                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $snapchat ? $snapchat->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                &nbsp;
+                                                   
                                                 @endif
                                             </ul>
                                         </div>
@@ -1236,6 +1271,7 @@ color: #0504aa !important;
        dateFormat: 'dd-mm-yy',
        changeMonth: true,
        changeYear: true,
+       yearRange: "1950:+0",
    });
 
 

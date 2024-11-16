@@ -133,7 +133,7 @@
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 41px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
-        <div class="mobile-country desktop-menu-right" style="margin-top: 14px;">
+        <div class="mobile-country desktop-menu-right" style="margin-top: 13px;">
         
             <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
                 <option value="null" selected style="color: blue;">Language</option>

@@ -410,6 +410,7 @@ width: 212px !important;
                         dateFormat: 'dd-mm-yy',
                         changeMonth: true,
                         changeYear: true,
+                        yearRange: "1950:+0",
                        
     // Wait for the document to be ready
    

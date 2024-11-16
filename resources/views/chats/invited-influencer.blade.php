@@ -68,6 +68,24 @@
             border-radius: 34px;
         }
 
+        .shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+
+  .shaking:hover {
+   /* Change to your desired hover color */
+ 
+    animation: shake 1.5s linear infinite;
+   }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
         .slider.round:before {
             border-radius: 50%;
         }
@@ -212,6 +230,9 @@ width: 195px !important;
 .datepicker {
     padding-left: 18px !important;
 }
+.social-wrapper:hover .followers-count {
+    color:goldenrod; /* Change to your desired hover color */
+}
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;
@@ -335,61 +356,93 @@ width: 195px !important;
                                             $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
-                                        @if($instagram && isset($instagram->followers))
-                                            <li style=" display: inline-block;color:#fff;margin-left: 2px;">&nbsp;&nbsp;
-                                                <span
-                                                    style="font-size: 12px;text-align:center;"><a
-                                                        href=""><img
-                                                            src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
-                                                            width="25px"></a> <br> <div class="text-center"
-                                                                                        style="font-size:11px;margin-left: 12px; ">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
-                                            </li> &nbsp;
-                                        @endif
-                                        @if($twitter && isset($twitter->followers))
-                                            <li style=" display: inline-block;color:#fff;"><span
-                                                    style="font-size: 12px;text-align:center;"><a href=""><img
-                                                            src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                            alt=""
-                                                            width="25px"></a> <div class="text-center"
-                                                                                   style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
-                                            </li> &nbsp;
-                                        @endif
-                                        @if($youtube && isset($youtube->followers))
-                                            <li style=" display: inline-block;color:#fff;"><span
-                                                    style="font-size: 12px;text-align:center;"><a href=""><img
-                                                            src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                            alt=""
-                                                            width="25px"></a> <div class="text-center"
-                                                                                   style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
-                                            </li> &nbsp;
-                                        @endif
-                                        @if($tiktok && isset($tiktok->followers))
-                                            <li style=" display: inline-block;color:#fff;"><span
-                                                    style="font-size: 12px;"><a
-                                                        href=""><img
-                                                            src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                            alt=""
-                                                            width="25px"></a> <div class="text-center"
-                                                                                   style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
-                                            </li>&nbsp;
-                                        @endif
+                                         @if($instagram && isset($instagram->followers))
 
-                                        @if($facebook && isset($facebook->followers))
-                                            <li style=" display: inline-block;color:#fff;"><span
-                                                    style="font-size: 12px;"><a href=""><img
-                                                            src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                            alt="" width="25px"></a> <div class="text-center"
-                                                                                          style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
-                                            </li> &nbsp;
-                                        @endif
-                                        @if($snapchat && isset($snapchat->followers))
-                                            <li style=" display: inline-block;color:#fff;"><span
-                                                    style="font-size: 12px;"><a href=""><img
-                                                            src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                            alt="" width="25px"></a> <div class="text-center"
-                                                                                          style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
-                                            </li>&nbsp;
-                                        @endif
+
+
+                                         <li style="display: inline-block;;color:#fff;">
+                                         <div class="social-wrapper" style="text-align: center; margin-left:14px;">
+                                             <a href="">
+                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                             </a>
+                                             <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                 {{ $instagram ? $instagram->followers : 0 }}
+                                             </div>
+                                         </div>
+                                     </li>  &nbsp;
+                                                         @endif
+         
+                                                         @if($twitter  && isset($twitter->followers))
+                                                         <li style="display: inline-block;;color:#fff;">
+                                                             <div class="social-wrapper" style="text-align: center;">
+                                                                 <a href="">
+                                                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                 </a>
+                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                     {{ $twitter ? $twitter->followers : 0 }}
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+         
+                                                             
+                                                         @endif
+         
+                                                         @if($youtube && isset($youtube->followers))
+                                                         <li style="display: inline-block;;color:#fff;">
+                                                             <div class="social-wrapper" style="text-align: center;">
+                                                                 <a href="">
+                                                                     <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                 </a>
+                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                     {{ $youtube ? $youtube->followers : 0 }}
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         &nbsp;
+                                                             
+                                                         @endif
+                                                         @if($tiktok && isset($tiktok->followers))
+                                                         <li style="display: inline-block;;color:#fff;">
+                                                             <div class="social-wrapper" style="text-align: center;">
+                                                                 <a href="">
+                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                 </a>
+                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                     {{ $tiktok ? $tiktok->followers : 0 }}
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         &nbsp;
+                                                           
+                                                         @endif
+                                                         @if($facebook && isset($facebook->followers))
+                                                         <li style="display: inline-block;;color:#fff;">
+                                                             <div class="social-wrapper" style="text-align: center;">
+                                                                 <a href="">
+                                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                 </a>
+                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                     {{ $facebook ? $facebook->followers : 0 }}
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         &nbsp;
+                                                             
+                                                         @endif
+                                                         @if($snapchat && isset($snapchat->followers))
+                                                         <li style="display: inline-block;;color:#fff;">
+                                                             <div class="social-wrapper" style="text-align: center;">
+                                                                 <a href="">
+                                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                 </a>
+                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                     {{ $snapchat ? $snapchat->followers : 0 }}
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         &nbsp;
+                                                            
+                                                         @endif
                                     </ul>
                                 </div>
                                 <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"

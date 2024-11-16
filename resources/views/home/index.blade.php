@@ -1023,7 +1023,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h1 class="header-title" style="margin-top: -25px">How it Works - Brands</h1>
+                        <h1 class="header-title" style="margin-top: -25px;margin-bottom:16px;">How it Works - Brands</h1>
                     </div>
                 </div>
                 <div class="col-xl-12 col-md-12 mx-auto">
@@ -1142,7 +1142,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h4 class="header-title" style="margin-top: -23px">
+                        <h4 class="header-title" style="margin-top: -23px;">
                             Influencer Reviews</h4>
                     </div>
                 </div>
@@ -1603,7 +1603,7 @@ color:goldenrod !important;
     </section>
     <!-------------------->
     <section class="section app-version">
-        <div class="container">
+        <div class="container" style="margin-top:-40px;">
             <div class="row">
                 <div class="col-12">
                     <div class="section-header text-center aos">
@@ -1634,7 +1634,7 @@ color:goldenrod !important;
     </div> 
 
     <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -39px; height: 132px; width: 123px;" alt="">
+      <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -39px; height: 122px; width: 123px;" alt="">
     </div>
 
 
@@ -1647,7 +1647,7 @@ color:goldenrod !important;
         <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: -39px; height: 72px; width: 123px;"  alt="">
     </div> --}}
     <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp6.png') }}"  style="margin-top: 5px; height: 42px;  width: 123px;;" alt="">
+        <img src="{{ asset('assets/img/company/comp6.png') }}"  style="margin-top: 5px; height: 35px;  width: 123px;;" alt="">
       </div>
   
       <div class="marquee-item">
@@ -1667,7 +1667,7 @@ color:goldenrod !important;
       </div> --}}
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -39px; height: 132px; width: 123px;" alt="">
+        <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -39px; height: 122px; width: 123px;" alt="">
       </div>
   
   

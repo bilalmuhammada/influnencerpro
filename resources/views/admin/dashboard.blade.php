@@ -129,7 +129,7 @@ $(function() {
          changeMonth: true,
           changeYear: true,
           
-             yearRange: "1980:+0",
+             yearRange: "1950:+0",
 
 
         beforeShow: function(input, inst) {
