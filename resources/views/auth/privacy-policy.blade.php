@@ -8,6 +8,10 @@
   width: 6px; /* You can adjust this value based on your preference */
 }
 
+p{
+        font-size: 18px;
+        color: #000;
+    }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;

@@ -179,7 +179,7 @@ animation: scroll 40% linear infinite
         position: absolute;
     left: 130px;
     /* margin: 0px auto; */
-    top: 17px;
+    top: 0px;
     border-width: 3px;
     border-color: #fff;
     width: 90px;

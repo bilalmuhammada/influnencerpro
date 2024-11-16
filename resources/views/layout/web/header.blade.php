@@ -69,6 +69,12 @@
              yearRange: "1980:+0",
             //  minDate: new Date(1980, 0, 1)
          });
+         $(".datepicker1").change(function() {
+    var input = $(this); // Store reference to `this`
+    setTimeout(function() {
+        input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
+    }, 10);
+});
          $(".datepicker2").datepicker({
              dateFormat: 'dd-mm-yy',
              changeMonth: true,
@@ -76,6 +82,12 @@
              yearRange: "1980:+0",
             //  minDate: new Date(1980, 0, 1)
          });
+         $(".datepicker2").change(function() {
+    var input = $(this); // Store reference to `this`
+    setTimeout(function() {
+        input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
+    }, 10);
+});
         });
         base_url = "{{ env('BASE_URL') }}";
         api_url = "{{ env("API_URL") }}";

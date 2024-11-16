@@ -26,9 +26,9 @@
    }
   @keyframes shake {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
     100% { transform: translateX(0); }
   }
 .dropdowndecoration:hover {
@@ -194,6 +194,11 @@ color: #0504aa !important;
     padding-left: 9px !important;
 }
 
+.select2-container--open .select2-dropdown--below{
+    width: 300px !important;
+    left: 3px;
+}
+
 /* .select2-container--default .select2-results__option--highlighted[aria-selected]{
     color: blue !important
 } */
@@ -214,7 +219,7 @@ color: #0504aa !important;
         <div class="container" style="max-width: 1440px !important;">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar" style="border:0px solid red;">
-                    <form action="{{ env('BASE_URL') }}vendor/influencers-filter">
+                    <form action="{{ env('BASE_URL') }}vendor/influencers-filter" id="fiter-infl">
                         <input type="hidden" name="source" value="web">
                         <div class="card search-filter" style="border:0px solid red;">
                             <div class="card-header d-flex justify-content-between"
@@ -239,7 +244,6 @@ color: #0504aa !important;
                                     @php $countries = getCountries()->sortBy('name'); @endphp
                                     <select class="form-control  nationality_id" id="nationality_id" 
                                             name="country_id">
-                                        {{-- <option value="">&nbsp;</option> --}}
                                         <option value="" disabled hidden selected>&nbsp;</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
@@ -310,7 +314,7 @@ color: #0504aa !important;
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/youtube.png')}}" alt="insta"
-                                                     width="20">
+                                                     width="20" class="shaking">
                                                      Youtube &nbsp;&nbsp; </span> <input type="checkbox" name="youtube"
                                                                                          <?php
 
@@ -326,7 +330,7 @@ color: #0504aa !important;
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/tiktok.png')}}" alt="insta"
-                                                     width="20">
+                                                     width="20" class="shaking">
                                                      Tiktok &nbsp; &nbsp; &nbsp; </span> <input type="checkbox"
                                                                                                 name="tiktok"
                                                                                                 <?php
@@ -345,7 +349,7 @@ color: #0504aa !important;
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/twitter.png')}}"
                                                     alt="insta"
-                                                    width="20">
+                                                    width="20" class="shaking">
                                                      Twitter &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -365,7 +369,7 @@ color: #0504aa !important;
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/pinterest.png')}}"
                                                     alt="insta"
-                                                    width="20">
+                                                    width="20" class="shaking">
                                                     Pinterest &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -383,7 +387,7 @@ color: #0504aa !important;
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/snapchat.png')}}"
-                                                    alt="insta"
+                                                    alt="insta" class="shaking"
                                                     style="margin-left: -3px; height: 23px;width: 23px;">
                                                     Snapchat &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
@@ -403,7 +407,7 @@ color: #0504aa !important;
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/web.png')}}"
                                                     alt="insta"
-                                                    width="20">
+                                                    width="20" class="shaking">
                                                     Website &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -1093,9 +1097,9 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;margin-left: 5px; "><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                                    alt="" class="shaking"
-                                                                    width="25px"></a> <div class="text-center changetogold"
-                                                                                           style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}33</div></span>
+                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
+                                                                    width="25px"></a> <div class="text-center "
+                                                                                           style="font-size:11px;">{{ formatNumber($instagram ? $instagram->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
 
@@ -1103,8 +1107,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                                    alt="" class="shaking"
-                                                                    width="25px"></a> <div class="text-center changetogold"
+                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
+                                                                    width="25px"></a> <div class="text-center "
                                                                                            style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1113,8 +1117,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;text-align:center;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                                    alt="" class="shaking"
-                                                                    width="25px"></a> <div class="text-center changetogold"  
+                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
+                                                                    width="25px"></a> <div class="text-center "  
                                                                                            style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1122,8 +1126,8 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                                    alt="" class="shaking"
-                                                                    width="25px"></a> <div class="text-center changetogold"
+                                                                    alt="" class="shaking" style="margin-bottom: 6px;"
+                                                                    width="25px"></a> <div class="text-center "
                                                                                            style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1131,7 +1135,7 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/fb.png') }}"
-                                                                    alt="" width="25px"></a> <div class="text-center changetogold"
+                                                                    alt="" width="25px" class="shaking" style="margin-bottom: 6px;"></a> <div class="text-center "
                                                                                                   style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                                                     </li> &nbsp;
                                                 @endif
@@ -1139,7 +1143,7 @@ color: #0504aa !important;
                                                     <li style=" display: inline-block;color:#fff;"><span
                                                             style="font-size: 12px;"><a href=""><img
                                                                     src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                                    alt="" class="shaking" width="25px"></a> <div class="text-center changetogold"
+                                                                    alt="" class="shaking" style="margin-bottom: 6px;" width="25px"></a> <div class="text-center "
                                                                                                   style="font-size:11px;">{{ formatNumber($snapchat ? $snapchat->followers : 0) }}</div></span>
                                                     </li>&nbsp;
                                                 @endif

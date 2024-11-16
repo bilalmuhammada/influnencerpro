@@ -7,13 +7,12 @@
     border-radius: 10px;
 }
 .font-change{
+    margin-top: 7px;
+    font-size: 13px;
     color: blue;
 
 }
-.font-change:hover{
-    color: goldenrod;
 
-}
 .form-group::first-letter {
     text-transform: uppercase !important;
 } 
@@ -59,7 +58,9 @@
 .profile .job-description {
     margin-bottom: 20px;
 }
-
+.social-wrapper:hover .followers-count {
+    color:goldenrod; /* Change to your desired hover color */
+}
 
 
 
@@ -141,6 +142,8 @@ color: goldenrod !important;
    }
 
   .shaking:hover {
+   /* Change to your desired hover color */
+ 
     animation: shake 1.5s linear infinite;
    }
 
@@ -171,7 +174,7 @@ color: goldenrod !important;
                     <div class="card search-filter" style="border:0px solid red;">
                         <!-- <div class="card-header d-flex justify-content-between"> -->
                         <div class="card-header__">
-                            <div class="influencer" id="influencer">
+                            <div class="influencer project-img" id="influencer">
                                 <a href="{{ $influencer ? $influencer->image_url : '' }}">
                                 <img class="card-title mb-0" src="{{ $influencer ? $influencer->image_url : '' }}"
                                      alt="author"
@@ -520,7 +523,7 @@ color: goldenrod !important;
                                 <div class="col-md-12" style="margin-top: 8px;" >
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
-                                        <p style="text-align:justify;font-size:12px;" 
+                                        <p style="text-align:justify;line-height: 1.2rem !important;" 
                                             class="badge-skill">{{$influencer->personal_information->price_include ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
                                         </p>
@@ -528,76 +531,12 @@ color: goldenrod !important;
                                 </div>
                                 
                               
-                                {{-- <div class="col-md-6" style="height:65px;margin-top:-8px;">
-                                    <label class="font-label">&nbsp;</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{ $main_availability ? formatDateToread($main_availability->availability_to_date)  : '' }}</span>
-                                    </div>
-                                </div> --}}
-                                {{-- @foreach($availabilities as $availability)
-                                    <div class="col-md-6" >
-                                        <label class="font-label">Other City</label>
-                                        <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($availability->city, 'name') }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" >
-                                        <label class="font-label"> Other Country</label>
-                                        <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($availability->country, 'name') }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" style="height:65px;margin-top:-8px;">
-                                        <label class="font-label">Availability</label>
-                                        <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{ formatDateToread(getSafeValueFromObject($availability, 'availability_from_date')) }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" style="height:65px;margin-top:-8px;">
-                                        <label class="font-label">&nbsp;</label>
-                                        <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill"
-                                            style="width:100%;">{{ formatDateToread(getSafeValueFromObject($availability, 'availability_to_date')) }}</span>
-                                        </div>
-                                    </div>
-                                @endforeach --}}
-                               
-                                {{-- <div class="col-md-6" >
-                                    <label class="font-label">Price<br/> &nbsp;</label>
-                                    <div class="form-group">
-                                        <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
-                                    </div>
-                                </div> --}}
-
-                             
-
-
-                                {{--                                <div class="col-md-6">--}}
-                                {{--                                    <label class="font-label">Price Negotiable</label>--}}
-                                {{--                                    <div class="form-group">--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">....</span>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-                                {{--                                <div class="col-md-6">--}}
-                                {{--                                    <label class="font-label">Price Includes</label>--}}
-                                {{--                                    <div class="form-group">--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">art...</span>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-                             
+                              
                                 <div class="col-md-12" style="margin-top: 8px;">
                                     <label class="font-label">Bio</label>
                                    
                                     <div class="form-group">
-                                    <p style="text-align:justify;font-size:12px;" class="badge-skill">
+                                    <p style="text-align:justify;line-height: 1.2rem !important;" class="badge-skill">
                                     {{ getSafeValueFromObject($influencer->personal_information, 'bio') }}"
                                      </p>
                                         <!-- <div
@@ -661,70 +600,103 @@ color: goldenrod !important;
                        
                         <ul style="list-style-type: none;">
                             @if($instagram && isset($instagram->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
-                                            href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt=""
-                                                         width="30px"></a> <div class="text-center font-change"
-                                                                                style="font-size:11px;">{{ $instagram ? $instagram->followers :  0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $instagram ? $instagram->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                             @endif
-
+                            
                             @if($twitter  && isset($twitter->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
-                                            href=""><img
-                                                src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                alt=""  class="shaking"
-                                                width="30px"></a> <div class="text-center font-change"
-                                                                       style="font-size:11px;">{{ $twitter ? $twitter->followers :  0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $instagram ? $instagram->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                             @endif
+                            
                             @if($youtube && isset($youtube->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
-                                            href=""><img
-                                                src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                alt=""  class="shaking" style="margin-left: -4px"
-                                                width="30px"></a> <div class="text-center font-change"
-                                                                       style="font-size:11px;">{{ $youtube ? $youtube->followers :  0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $youtube ? $youtube->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                             @endif
                             @if($tiktok && isset($tiktok->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt="" class="shaking"
-                                                width="30px"></a> <div
-                                            class="text-center font-change"
-                                            style="font-size:11px;">{{ $tiktok ? $tiktok->followers : 0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $tiktok ? $tiktok->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                             @endif
                             @if($facebook && isset($facebook->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/fb.png') }}" alt=""  class="shaking" width="30px"></a> <div
-                                            class="text-center font-change"
-                                            style="font-size:11px;">{{ $facebook ? $facebook->followers : 0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $facebook ? $facebook->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                             @endif
+                            
                             @if($snapchat && isset($snapchat->followers))
-                                <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                                src="{{ asset('assets/img/social-icon/snapchat.png') }}"  class="shaking" alt=""
-                                                width="33px" class="shaking"></a> <div
-                                            class="text-center font-change"
-                                            style="font-size:11px;">
-                                            {{ 
-                                            $snapchat ? $snapchat->followers : 0 }}</div></span>
-                                </li> &nbsp; &nbsp;
+                            <li style="display: inline-block;">
+                                <div class="social-wrapper" style="text-align: center;">
+                                    <a href="">
+                                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt="" width="30px">
+                                    </a>
+                                    <div class="text-center font-change followers-count">
+                                        {{ $snapchat ? $snapchat->followers : 0 }}
+                                    </div>
+                                </div>
+                            </li> &nbsp; &nbsp;
                         @endif
+                        
                         @if($pinterestProfiles && isset($pinterestProfiles->followers))
-                        <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                        src="{{ asset('assets/img/social-icon/pinterest.png') }}"  class="shaking" alt=""
-                                        width="30px"></a> <div
-                                    class="text-center font-change"
-                                    style="font-size:11px;">{{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}</div></span>
+                        <li style="display: inline-block;">
+                            <div class="social-wrapper" style="text-align: center;">
+                                <a href="">
+                                    <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" class="shaking" alt="" width="30px">
+                                </a>
+                                <div class="text-center font-change followers-count">
+                                    {{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}
+                                </div>
+                            </div>
                         </li> &nbsp; &nbsp;
                 @endif
                 @if($web && isset($web->followers))
-                <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
-                                src="{{ asset('assets/img/social-icon/web.png') }}"  class="shaking" alt=""
-                                width="30px"></a> <div
-                            class="text-center font-change"
-                            style="font-size:11px;">{{$web ? $web->followers : 0 }}</div></span>
+                <li style="display: inline-block;">
+                    <div class="social-wrapper" style="text-align: center;">
+                        <a href="">
+                            <img src="{{ asset('assets/img/social-icon/web.png') }}" class="shaking" alt="" width="30px">
+                        </a>
+                        <div class="text-center font-change followers-count">
+                            {{ $web ? $web->followers : 0 }}
+                        </div>
+                    </div>
                 </li> &nbsp;
                   @endif
                          <li style="display: inline-block;float: right; margin-right: -14px; margin-top: -14px;">
@@ -821,7 +793,7 @@ color: goldenrod !important;
 
                         @forelse($influencer->influencer_profile_images as $image)
 <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
-    <div class="avatar-one" style="width:100%;">
+    <div class="avatar-one project-img" style="width:100%;">
         <a href="{{ $image->file_name_url }}">
             <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
         </a>

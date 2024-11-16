@@ -217,6 +217,24 @@ display: none !important;
 .select2-container--default .select2-selection--multiple.select2-selection--clearable{
     overflow: auto !important;
 }
+.shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+
+  .shaking:hover {
+   /* Change to your desired hover color */
+ 
+    animation: shake 1.5s linear infinite;
+   }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
 /* .select2-selection__rendered{
     position: absolute;
     top: 12px;
@@ -942,19 +960,13 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                         alt="insta" width="40" style="margin-left: 24px;">
+                                                         alt="insta" width="40" style="margin-left: 24px;" class="shaking">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="instagram_username"
-                                                           placeholder="Username"
-                                                           value="{{ $instagramProfiles ? $instagramProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="instagram_url"
-                                                           placeholder="URL" value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
+                                                           placeholder="URwL" value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
                                                            <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Instagram</label>
                                                         </div>
                                                     </div>
@@ -973,7 +985,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="insta"
-                                                         width="40" style="margin-left: 24px;">
+                                                         width="40" style="margin-left: 24px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1004,7 +1016,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center " style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                         alt="insta" width="40" style="margin-left:24px;">
+                                                         alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1036,7 +1048,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/youtube.png') }}"
-                                                        alt="insta" width="40" style="margin-left:24px;">
+                                                        alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1068,7 +1080,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                        alt="insta" width="40" style="margin-left:24px;">
+                                                        alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1100,7 +1112,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
                                                          alt="insta"
-                                                         width="44px" height="44px" style="margin-left:20px;">
+                                                         width="44px" height="44px" style="margin-left:20px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1132,7 +1144,7 @@ display: none !important;
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}"
                                                          alt="insta"
-                                                         width="40" style="margin-left:21px;">
+                                                         width="40" style="margin-left:21px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""
@@ -1163,7 +1175,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
-                                                         width="40" style="margin-left:21px;">
+                                                         width="40" style="margin-left:21px;" class="shaking">
                                                 </div>
                                                 {{-- <div class="col-md-3">
                                                     <input type="text" id=""

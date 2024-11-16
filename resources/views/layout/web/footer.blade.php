@@ -31,10 +31,10 @@
         <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <h3>
+                    <h5>
                         Join Us & Discover More.<br/>
                         <div style="color:#0000FF;"><b>Download our App now!</b></div>
-                    </h3>
+                    </h5>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;">
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " height="80px" width="140px">
@@ -181,13 +181,7 @@
                     <div class="col-md-4"></div>
                  
                     <div class="col-md-4 text-center">
-                        <!-- <ul class="nav footer-bottom-nav">
-                        <li><a href="#">Chat</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        </ul> -->
+                       
                         <div class="footer-bottom-logo">
                             <a href="{{ env('BASE_URL') }}" class="menu-logo">
                                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid"
@@ -208,7 +202,7 @@
     </div>
 
 </footer>
-{{-- <script>
+<script>
     // $('.popup-video').magnificPopup({
     //     type: 'iframe'
     // });33434
@@ -228,7 +222,7 @@
         x[slideIndex - 1].style.display = "block";
         setTimeout(carousel, 10000);
     }
-</script> --}}
+</script>
 </div>
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>

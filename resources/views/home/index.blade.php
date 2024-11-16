@@ -96,15 +96,7 @@ color:goldenrod !important;
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
-                                    {{-- <div class="rating d-flex" style="border:0px solid red;">
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
-                                    </div> --}}
-                                    <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
+                                
                                     <h1 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text" ><br>Influencers</span></h1>
@@ -125,15 +117,7 @@ color:goldenrod !important;
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
-                                    {{-- <div class="rating d-flex" style="border:0px solid red;">
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
-                                    </div> --}}
-                                    <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
+                                    
                                     <h1 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
@@ -1175,7 +1159,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image3.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1207,7 +1191,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image8.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1239,7 +1223,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image6.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1271,7 +1255,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image5.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1303,7 +1287,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image1.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1335,7 +1319,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/icon/icons/image2.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1383,7 +1367,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h4 class="header-title" style="margin-top: -31px;">Brand Reviews  </h4>
+                        <h4 class="header-title" style="margin-top: -50px;">Brand Reviews  </h4>
                     </div>
                 </div>
             </div>
@@ -1396,7 +1380,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/img1.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1428,7 +1412,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/2.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1461,7 +1445,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag3.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1494,7 +1478,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag4.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1528,7 +1512,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag5.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>
@@ -1561,7 +1545,7 @@ color:goldenrod !important;
                                 <div class="circleThumb"
                                      style="background-image:url({{ asset('assets/img/profiles/imag6.jpg')}});"></div>
                             </div>
-                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:50px;padding:10px;">
+                            <div class="itmax" style="border:1px solid  goldenrod;margin-top:23px;padding:10px;">
                                 <div class="review-top d-flex align-items-center" style="">
                                     <div class="review-img">
                                     </div>

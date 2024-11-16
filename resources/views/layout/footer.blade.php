@@ -31,10 +31,10 @@
         <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <h3>
+                    <h5>
                         Join Us & Discover More.<br/>
                         <div style="color:#0000FF;"><b>Download our App now!</b></div>
-                    </h3>
+                    </h5>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;">
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " height="80px" width="140px">
@@ -209,25 +209,25 @@
 
 </footer>
 <script>
-    // // $('.popup-video').magnificPopup({
-    // //     type: 'iframe'
-    // // });3333
-    // var slideIndex = 0;
-    // carousel();
+    // $('.popup-video').magnificPopup({
+    //     type: 'iframe'
+    // });
+    var slideIndex = 0;
+    carousel();
 
-    // function carousel() {
-    //     var i;
-    //     var x = document.getElementsByClassName("mySlides");
-    //     for (i = 0; i < x.length; i++) {
-    //         x[i].style.display = "none";
-    //     }
-    //     slideIndex++;
-    //     if (slideIndex > x.length) {
-    //         slideIndex = 1
-    //     }
-    //     x[slideIndex - 1].style.display = "block";
-    //     setTimeout(carousel, 10000);
-    // }
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+            slideIndex = 1
+        }
+        x[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 10000);
+    }
 </script>
 </div>
 <button class="scroll-top scroll-to-target" data-target="html">

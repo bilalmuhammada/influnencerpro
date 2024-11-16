@@ -102,6 +102,9 @@
     border: 1px solid blue !important;
 }
 
+
+
+
             .switch input {
                 opacity: 0;
                 width: 0;

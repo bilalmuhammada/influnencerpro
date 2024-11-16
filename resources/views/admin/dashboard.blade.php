@@ -20,6 +20,9 @@ width: 212px !important;
 .apexcharts-toolbar{
     display: none !important;
 }
+.fa-user{
+margin-bottom: 13px;
+}
 
 
 </style>
@@ -47,9 +50,9 @@ width: 212px !important;
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx3"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <!-- <h1 class="total_click">{{ formatNumber($influencer->total_clicks) }}</h1> -->
-                                <h1 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h1>
+                                <h5 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h5>
                                 <!-- <span><b>Clicks</b></span> -->
-                                <span><b>Profile Views</b></span>
+                                <span><b style="font-size: 14px">Profile Views</b></span>
                             </div>
                         </a>
                     </div>
@@ -58,9 +61,9 @@ width: 212px !important;
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx2"><i class="fa fa-user" style="font-size:50px;"></i></div>
-                                <h1 class="total_view">{{ formatNumber($influencer->favourites_count) }}</h1>
+                                <h5 class="total_view">{{ formatNumber($influencer->favourites_count) }}</h5>
                                 <!-- <span><b>Views</b></span> -->
-                                <span><b>Favourites</b></span>
+                                <span><b style="font-size: 14px">Favourites</b></span>
                             </div>
                         </a>
                     </div>
@@ -69,8 +72,8 @@ width: 212px !important;
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx"><i class="fa fa-user" style="font-size:50px;"></i></div>
-                                <h1 class="favourite_count">-----</h1>
-                                <span><b>Chats</b></span>
+                                <h5 class="favourite_count">-----</h5>
+                                <span><b style="font-size: 14px">Chats</b></span>
                             </div>
                         </a>
                     </div>
