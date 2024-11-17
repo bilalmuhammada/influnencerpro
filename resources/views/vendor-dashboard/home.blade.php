@@ -197,7 +197,7 @@ color: #0504aa !important;
 }
 
 .select2-container--open .select2-dropdown--below{
-    width: 300px !important;
+    /* width: 300px !important; */
     left: 3px;
 }
 
