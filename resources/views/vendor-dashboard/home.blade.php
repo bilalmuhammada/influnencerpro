@@ -1121,7 +1121,7 @@ color: #0504aa !important;
                                                             {{ $twitter ? $twitter->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li>&nbsp;
 
                                                     
                                                 @endif

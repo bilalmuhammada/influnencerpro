@@ -528,7 +528,7 @@ color: goldenrod !important;
                                 <div class="col-md-12" style="margin-top: 8px;" >
                                     <label class="font-label">Price Include</label>
                                     <div class="form-group">
-                                        <p style="text-align:justify;line-height: 1.2rem !important;" 
+                                        <p style="text-align:justify;line-height: 1.5rem !important;" 
                                             class="badge-skill">{{$influencer->personal_information->price_include ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
                                         </p>
@@ -541,7 +541,7 @@ color: goldenrod !important;
                                     <label class="font-label">Bio</label>
                                    
                                     <div class="form-group">
-                                    <p style="text-align:justify;line-height: 1.2rem !important;" class="badge-skill">
+                                    <p style="text-align:justify;line-height: 1.5rem !important;" class="badge-skill">
                                     {{ getSafeValueFromObject($influencer->personal_information, 'bio') }}"
                                      </p>
                                         <!-- <div
