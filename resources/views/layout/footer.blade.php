@@ -130,15 +130,15 @@
                         <ul style="margin-left: 14px;">
                             <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
-                                        width="25" style="margin-bottom: 3px;"
+                                        width="25" style="margin-bottom: 5px;"
                                         height="25"></a></li>
                             <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon" target="_blank"><img
                                         src="{{ asset('assets/icons/instagram.png') }}"
-                                        alt="insta" width="25" style="margin-bottom: 3px;"
+                                        alt="insta" width="25" style="margin-bottom: 5px;"
                                         height="25"></a></li>
                             <li><a href="https://x.com/influencerpro_" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                        alt="twitter"    style="margin-bottom: 3px;"
+                                        alt="twitter"    style="margin-bottom: 5px;"
                                         width="25" height="25"></a></li>
                             {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"

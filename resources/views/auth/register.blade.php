@@ -131,16 +131,17 @@ margin-left: -9px !important;
 
 
                                             <div class="form-group form-focus">
-                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                <select name="national_id" class="form-control  floating" id="national_id">
                                                     <option selected hidden disabled value="">&nbsp;&nbsp;</option>
-                                                    @foreach(getCountries() as $country)
-                                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                                    @foreach(getnationality() as $nationality)
+                                                        <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
                                                     @endforeach
                                                 </select>
                                                
                                                 <label class="focus-label">Nationality </label>
                                             </div>
                                             <div class="form-group form-focus">
+                                               
                                                 <select name="country_id" class="form-control  floating" id="country_id">
                                                     <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     @foreach(getCountries() as $country)
@@ -294,6 +295,16 @@ margin-left: -9px !important;
                                                     Please provide a valid age.
                                                 </div> --}}
                                                 <label class="focus-label">Date of Birth</label>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <select name="national_id" class="form-control  floating" id="national_id">
+                                                    <option selected hidden disabled value="">&nbsp;&nbsp;</option>
+                                                    @foreach(getnationality() as $nationality)
+                                                        <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                               
+                                                <label class="focus-label">Nationality </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 {{--    <input type="text" class="form-control floating" name="country">--}}

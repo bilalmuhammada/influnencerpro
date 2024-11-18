@@ -1617,47 +1617,38 @@ color:goldenrod !important;
                     </div>
                 </div>
             </div>
-        <div class="marquee" style="margin-top:5px">
+        <div class="marquee" style="margin-top:-2px">
   <div class="marquee-content">
     <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/comp1.png') }}"   style="margin-top: -39px; height: 132px; width: 100px;" alt="">
+      <img src="{{ asset('assets/img/company/comp1.png') }}"   style="margin-top: -24px; height: 100px; width: 100px;" alt="">
     </div>
 
     <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="">
+      <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="" style="margin-top: 10px; height: 24px;">
     </div>
 
     <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+      <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -36px; height: 128px; width: 100px;"  alt="">
     </div> 
 
      <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/comp3.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+      <img src="{{ asset('assets/img/company/comp3.png') }}" style="margin-top: -36px; height: 100px; width: 100px;"  alt="">
     </div>
 {{--  --}}
     <div class="marquee-item">
-      <img src="{{ asset('assets/img/company/comp4.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+      <img src="{{ asset('assets/img/company/comp4.png') }}" style="margin-top: -20px; height: 85px; width: 100px;"  alt="">
     </div> 
 
     <div class="marquee-item">
       <img src="{{ asset('assets/img/company/mark.webp') }}" style="margin-top: -11px; height: 69px; width: 100px;" alt="">
     </div>
 
-
-
-    {{-- <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp5.png') }}" style="margin-top: -39px; height: 132px; width: 123px;"  alt="">
-    </div> --}}
-
-    {{-- <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: -39px; height: 72px; width: 123px;"  alt="">
-    </div> --}}
     <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp6.png') }}"  style="margin-top: 5px; height: 35px;  width: 100px;;" alt="">
+        <img src="{{ asset('assets/img/company/comp6.png') }}"  style="margin-top: 13px; height:24px;  width: 100px;;" alt="">
       </div>
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="" style="margin-top: 9px;">
+        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="" style="margin-top: 10px;height: 25px;">
       </div>
   
       {{-- <div class="marquee-item">
@@ -1665,7 +1656,7 @@ color:goldenrod !important;
       </div> --}}
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -51px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -44px; height: 132px; width: 100px;"  alt="">
       </div>
   
       {{-- <div class="marquee-item">
@@ -1679,96 +1670,43 @@ color:goldenrod !important;
   
   
       <div class="marquee-item">
-          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: 1px; height: 51; width: 97px;"  alt="">
+          <img src="{{ asset('assets/img/company/comp10.png') }}" style="margin-top: 11px; height: 29; width: 97px;"  alt="">
       </div>
   
       <div class="marquee-item">
-          <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+          <img src="{{ asset('assets/img/company/company5.png') }}" style="margin-top: -22px; height: 94px; width: 100px;"  alt="">
       </div>
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -51px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp8.png') }}" style="margin-top: -44px; height: 132px; width: 100px;"  alt="">
       </div>
   
       {{-- <div class="marquee-item">
         <img src="{{ asset('assets/img/company/comp9.png') }}" style="margin-top: -25px; height: 86px; width: 138px;"  alt="">
       </div> --}}
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -36px; height: 128px; width: 100px;"  alt="">
       </div> 
   
        <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp3.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp3.png') }}" style="margin-top: -26px; height: 100px; width: 100px;"  alt="">
       </div>
   {{--  --}}
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp4.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp4.png') }}" style="margin-top: -20px; height: 85px; width: 100px;"  alt="">
       </div> 
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp1.png') }}"  style="margin-top: -39px; height: 132px; width: 100px;" alt="">
+        <img src="{{ asset('assets/img/company/comp1.png') }}"  style="margin-top: -24px; height: 100px; width: 100px;" alt="">
       </div>
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="">
+        <img src="{{ asset('assets/img/company/Celine.svg') }}" alt="" style="margin-top: 10px;height: 24px;">
       </div>
   
       <div class="marquee-item">
-        <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -39px; height: 132px; width: 100px;"  alt="">
+        <img src="{{ asset('assets/img/company/comp2.png') }}" style="margin-top: -36px; height: 128px; width: 100px;"  alt="">
       </div> 
   
-    {{-- <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-02.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-03.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-04.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-02.svg') }}" alt="">
-    </div>
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-03.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-04.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-01.svg') }}" alt="">
-    </div>
-
-    <div class="marquee-item">
-      <img src="{{ asset('assets/img/company-logo-02.svg') }}" alt="">
-    </div> --}}
+    
 
 
 

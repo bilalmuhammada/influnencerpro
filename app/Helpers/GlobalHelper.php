@@ -57,6 +57,7 @@ function getCountries()
 
     return $Countries;
 }
+
 function getlanguge()
 {
     $languages = DB::table('languages')->orderBy("name",'ASC')->get();
@@ -144,8 +145,13 @@ function formatNumber($number, $precision = 1)
         }
     }
 
-    return number_format($number);}
+    return number_format($number);
+
 }
+}
+
+
+
 
 function getInfluencerSocialMediaProfileByTypeAndId($type, $userId)
 {
