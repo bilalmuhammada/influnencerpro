@@ -1108,7 +1108,7 @@ color: #0504aa !important;
                                         {{ $instagram ? $instagram->followers : 0 }}
                                     </div>
                                 </div>
-                            </li>  &nbsp;
+                            </li>&nbsp;
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
