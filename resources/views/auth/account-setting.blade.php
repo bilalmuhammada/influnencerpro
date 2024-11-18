@@ -36,13 +36,13 @@ input::placeholder {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-.fa-eye-slash {
-    position: absolute !important;
-    top: 28% !important;
-    right: 4% !important;
-    cursor: pointer !important;
-    /* color: lightgray !important; */
-    }
+.toggle-password {
+            position: absolute;
+            right: 23px;
+            top: 43%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
@@ -87,22 +87,18 @@ input::placeholder {
                                     </div>
                                    <div class="form-group form-focus">
                                       <input type="password" class="form-control floating" name="password" id="influencer_password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
-                                      <i class="fa fa-eye" id="eye"
-                                      onclick="togglePassword('influencer_password')"
-                                      ></i>
-                                    
-                                      <div class="invalid-feedback">
-                                        Please provide a valid Password.
-                              </div>
+                                      <div class="input-group-append">
+                                        <span class="toggle-password" onclick="togglePassword('influencer_password')" style="cursor: pointer;">👁️</span>
+                                    </div>
                               <label class="focus-label">Change Password </label>
                      </div>
                            <div class="form-group form-focus">
                                   <input type="password" class="form-control floating" id="influencer_confirm_password"  name="password" value="">
-                                  <i class="fa fa-eye" id="eye"
-                                  onclick="togglePassword('influencer_confirm_password')"
-                                  ></i>
-                                  <div class="invalid-feedback">                                           Please provide a valid Password.
-                                    </div>
+                                  <div class="input-group-append">
+                                    <span class="toggle-password" onclick="togglePassword('influencer_confirm_password')" style="cursor: pointer;">👁️</span>
+                                </div>
+                            
+                                  
                                    <label class="focus-label">Confirm Password </label>
                                     </div> 
                                     <div class="text-center">
@@ -129,30 +125,25 @@ input::placeholder {
             // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
             input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
         }
-        function togglePassword(inputId, iconId) {
-            var passwordInput = document.getElementById(inputId);
-            // var toggleIcon = document.getElementById(iconId);
+        function togglePassword(fieldId) {
+    const passwordField = document.getElementById(fieldId);
+    const icon = passwordField.nextElementSibling.querySelector(".toggle-password");
 
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/invisible.png';
-            } else {
-                passwordInput.type = 'password';
-                // toggleIcon.src = 'https://img.icons8.com/material-outlined/24/000000/visible.png';
-            }
-        }
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        icon.textContent = "🙈"; // Change the icon to "hide"
+    } else {
+        passwordField.type = "password";
+        icon.textContent = "👁️"; // Change the icon to "show"
+    }
+}
+       
         $(document).ready(function () {
 
             var form = $('#account-setting-form')[0];
             var inputs = $(form).find('input');
 
-        //     $('#eye').on('click', function() {
-        //     let input = $(this).siblings('input');
-        //     let type = input.attr('type') === 'password' ? 'text' : 'password';
-        //     input.attr('type', type);
-        //     $(this).toggleClass('fa-eye fa-eye-slash');
-        // });
-            // remove_validation_on_input_change(inputs);
+       
         });
 
         $(document).on('click', '.account-setting-update', function (e) {
