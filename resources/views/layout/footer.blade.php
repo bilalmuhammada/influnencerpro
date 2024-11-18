@@ -28,7 +28,7 @@
 </style>
 <footer class="footer" style="border:0px solid red;">
     <div class="container mb-30">
-        <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red;">
+        <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red; margin-top:30px;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <h5>

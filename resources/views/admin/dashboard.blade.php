@@ -23,6 +23,15 @@ width: 212px !important;
 .fa-user{
 margin-bottom: 13px;
 }
+.apexcharts-legend-text{
+    color: blue !important;
+}
+.apexcharts-legend-text:hover{
+    color: goldenrod !important;
+}
+[seriesname="Favourites"] {
+    margin: 4px 10px !important;
+}
 
 
 </style>
