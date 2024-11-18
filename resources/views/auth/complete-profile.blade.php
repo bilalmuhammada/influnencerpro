@@ -1477,7 +1477,7 @@ $(document).on('click', '.submit-btn', function () {
                         var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
 
 // Always clear the dropdown and add an empty option
-// cityDropdown.empty().append('<option value="">Select City </option>');
+cityDropdown.empty().append('<option value="" disabled hidden selected> &nbsp;&nbsp;</option>');
 
 if (response.data.length > 0) {
     var states = response.data;

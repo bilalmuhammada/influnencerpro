@@ -447,6 +447,26 @@ function getArts()
 {
     return \App\Models\StaticDatabase::getArts();
 }
+function formatDateToShowread($date)
+{
+    // dd(    gettype($date) );
+  
+    if ($date) {
+        try {
+            // Create a Carbon instance from the given format
+            $carbonDate =  Carbon::createFromFormat('Y-m-d', $date);
+
+           
+            // Format the date as 'd-M-Y'
+            return $carbonDate->format('d-M-Y');
+        } catch (\Exception $e) {
+            // Handle exception if the format is incorrect
+            return 'Invalid date';
+        }
+    } else {
+        return '';
+    }
+}
 
 function formatDateToread($date)
 {

@@ -13,7 +13,7 @@
 
 }
 .linespace{
-    line-height: 1.4;
+    line-height: 1.6;
 
 }
 
@@ -207,7 +207,7 @@ color: goldenrod !important;
                                 </div> --}}
                                 <div class="col-md-6" >
                                     <label class="font-label">Art</label>
-                                    <div class="form-group">
+                                    <div class="form-group linespace">
                                         <span
                                             class="badge badge-pill badge-skill">
                                             @foreach($influencer->arts as $art)
@@ -219,7 +219,7 @@ color: goldenrod !important;
                                 </div>
                                 <div class="col-md-6">
                                     <label class="font-label">Languages</label>
-                                    <div class="form-group">
+                                    <div class="form-group linespace">
                                         <span
                                        
                                             class="badge badge-pill badge-skill">@foreach ($influencer->spoken_languages as $spokenLanguage)
@@ -360,7 +360,7 @@ color: goldenrod !important;
                                         <br>
                                         
                                           <span
-                                          class="badge badge-pill badge-skill">{{formatDateToread($main_available_from_date ?? '')}}
+                                          class="badge badge-pill badge-skill">{{   formatDateToShowread($main_available_from_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                     </div>
@@ -382,7 +382,7 @@ color: goldenrod !important;
                                           <br> 
                                           <span
                                         
-                                          class="badge badge-pill badge-skill">{{formatDateToread($base_date ?? '')}}
+                                          class="badge badge-pill badge-skill">{{formatDateToShowread($base_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                       </div>
@@ -402,13 +402,13 @@ color: goldenrod !important;
                                         </span>
                                         <br>
                                           <span
-                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_one_from_date ?? '')}}
+                                          class="badge badge-pill badge-skill">{{formatDateToShowread($travlling_one_from_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Traveling Country</label>
+                                    <label class="font-label">Traveling Country  &nbsp;&nbsp; 1</label>
                                     @php
                                     if($influencer->personal_information !=null){
                                         $travlling_one_to_date= $influencer->personal_information->travlling_one_to_date;
@@ -422,13 +422,13 @@ color: goldenrod !important;
                                           </span>
                                           <br>
                                           <span
-                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_one_to_date ?? '')}}
+                                          class="badge badge-pill badge-skill">{{formatDateToShowread($travlling_one_to_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                       </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Traveling City</label>
+                                    <label class="font-label">Traveling City </label>
                                     @php
                                     if($influencer->personal_information !=null){
                                         $travlling_two_from_date=  $influencer->personal_information->travlling_two_from_date;
@@ -442,13 +442,13 @@ color: goldenrod !important;
                                         </span>
                                         <br>
                                         <span
-                                        class="badge badge-pill badge-skill">{{formatDateToread($travlling_two_from_date ?? '')}}
+                                        class="badge badge-pill badge-skill">{{formatDateToShowread($travlling_two_from_date ?? '')}}
                                         {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                     </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Traveling Country</label>
+                                    <label class="font-label">Traveling Country &nbsp;&nbsp;2</label>
                                     @php
                                     if($influencer->personal_information !=null){
                                         $travlling_two_to_date=  $influencer->personal_information->travlling_two_to_date;
@@ -462,7 +462,7 @@ color: goldenrod !important;
                                           </span>
                                           <br>
                                           <span
-                                          class="badge badge-pill badge-skill">{{formatDateToread($travlling_two_to_date ?? '')}}
+                                          class="badge badge-pill badge-skill">{{formatDateToShowread($travlling_two_to_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                       </div>
@@ -482,13 +482,13 @@ color: goldenrod !important;
                                         </span>
                                         <br>
                                         <span
-                                        class="badge badge-pill badge-skill">{{formatDateToread($travlling_three_from_date ?? '')}}
+                                        class="badge badge-pill badge-skill">{{formatDateToShowread($travlling_three_from_date ?? '')}}
                                         {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                     </span>
                                     </div>
                                 </div>
                                     <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Traveling Country</label>
+                                    <label class="font-label">Traveling Country &nbsp;&nbsp;3</label>
                                     @php
                                     if($influencer->personal_information !=null){
                                          $travlling_three_to_date=  $influencer->personal_information->travlling_three_to_date;
@@ -503,7 +503,7 @@ color: goldenrod !important;
                                           <br>
                                         
                                           <span
-                                          class="badge badge-pill badge-skill" >{{formatDateToread($travlling_three_to_date ?? '')}}
+                                          class="badge badge-pill badge-skill" >{{formatDateToShowread($travlling_three_to_date ?? '')}}
                                           {{-- {{ getSafeValueFromObject($influencer->personal_information, 'name') }} --}}
                                       </span>
                                       </div>
