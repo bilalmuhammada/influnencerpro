@@ -1136,8 +1136,7 @@ color: #0504aa !important;
                                                             {{ $youtube ? $youtube->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>
-                                                &nbsp;
+                                                </li>&nbsp;
                                                     
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
@@ -1150,8 +1149,7 @@ color: #0504aa !important;
                                                             {{ $tiktok ? $tiktok->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>
-                                                &nbsp;
+                                                </li>&nbsp;
                                                   
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
@@ -1164,8 +1162,7 @@ color: #0504aa !important;
                                                             {{ $facebook ? $facebook->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>
-                                                &nbsp;
+                                                </li>&nbsp;
                                                     
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
@@ -1178,8 +1175,7 @@ color: #0504aa !important;
                                                             {{ $snapchat ? $snapchat->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>
-                                                &nbsp;
+                                                </li>&nbsp;
                                                    
                                                 @endif
                                             </ul>
