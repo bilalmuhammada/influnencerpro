@@ -369,7 +369,7 @@ width: 195px !important;
                                                  {{ $instagram ? $instagram->followers : 0 }}
                                              </div>
                                          </div>
-                                     </li>  &nbsp;
+                                     </li>&nbsp;
                                                          @endif
          
                                                          @if($twitter  && isset($twitter->followers))
@@ -382,7 +382,7 @@ width: 195px !important;
                                                                      {{ $twitter ? $twitter->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>
+                                                         </li>&nbsp;
          
                                                              
                                                          @endif
@@ -397,8 +397,8 @@ width: 195px !important;
                                                                      {{ $youtube ? $youtube->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>
-                                                         &nbsp;
+                                                         </li>&nbsp;
+                                                         
                                                              
                                                          @endif
                                                          @if($tiktok && isset($tiktok->followers))
@@ -411,8 +411,8 @@ width: 195px !important;
                                                                      {{ $tiktok ? $tiktok->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>
-                                                         &nbsp;
+                                                         </li>&nbsp;
+                                                        
                                                            
                                                          @endif
                                                          @if($facebook && isset($facebook->followers))
@@ -425,8 +425,8 @@ width: 195px !important;
                                                                      {{ $facebook ? $facebook->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>
-                                                         &nbsp;
+                                                         </li>&nbsp;
+                                                         
                                                              
                                                          @endif
                                                          @if($snapchat && isset($snapchat->followers))
@@ -439,8 +439,8 @@ width: 195px !important;
                                                                      {{ $snapchat ? $snapchat->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>
-                                                         &nbsp;
+                                                         </li>&nbsp;
+                                                       
                                                             
                                                          @endif
                                     </ul>
