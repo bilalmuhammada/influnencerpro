@@ -42,7 +42,7 @@ input::placeholder {
             top: 43%;
             transform: translateY(-50%);
             cursor: pointer;
-        }
+}
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
