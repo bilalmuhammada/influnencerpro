@@ -171,46 +171,12 @@
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
                <li><a href="{{ env('BASE_URL') . '/vendor/dashboard' }}" class="colorchange" style="margin-right: 76px;">Dashboard</a></li>
-                {{-- <li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
-                {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li> --}}
-                {{-- <li class="has-submenu">
-                    <a href="#">Influencers<i class="fas fa-chevron-down"></i></a>
-                    <ul class="submenu">
-                        <li class="has-submenu">
-                        @foreach($influencers as $influencer)
-                            <li><a href="#">{{ $influencer->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </li> --}}
-                {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}account-setting">Setting</a></li> --}}
-                {{--                <li class="has-submenu">--}}
-{{--                    <a href="#">Brands<i class="fas fa-chevron-down"></i></a>--}}
-{{--                    <ul class="submenu">--}}
-{{--                        @foreach($brands as $brand)--}}
-{{--                            <li><a href="#">{{ $brand->brand_name }}</a></li>--}}
-{{--                        @endforeach--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+               
             @endif
 
             @if(session()->get('role') == 'influencer')
                     <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}" class="colorchange"  style="margin-right: 76px;">Dashboard</a></li>
-                    {{-- <li><a href="{{ env('BASE_URL') . 'chats' }}">Chat</a></li> --}}
-                {{-- <li class="has-submenu">
-                    <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img
-                            src="{{ session()->has('User') ? session()->get('User')->image_url : asset('assets/img/user.png')}}" alt="img" width="40" height="40"
-                            style="border-radius:20px;margin-top:-10px;"></a> --}}
-                    {{-- <ul class="submenu">
-                        <li class="has-submenu"></li>
-                        <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Settings</a></li>
-                        <li>
-                            <a href="{{ env('BASE_URL') . 'influencer/complete-profile' }}" class="logout-btn">
-                                Profile
-                            </a>
-                        </li> --}}
-                        {{-- <li><a href="{{ env('BASE_URL') . 'influencer/change-old-password  ' }}">Change Password</a></li> --}}
-                        {{-- <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">Sign Out</a></li> --}}
-                    {{-- </ul> --}}
+                 
                 </li>
             @endif
         <!-- <li><a href="about-us.php">About us</a></li>
@@ -274,7 +240,7 @@
         // return $('<span style="font-size:18px;margin-left:25px;font-weight:600; "><img src="'   '" class="img-flag" style="width: 20px; height:14px; margin-right: 3px;" /> ' + option.text + '</span>');
     
         return $('<span style="font-size:14px;font-weight:bold;    white-space: nowrap; padding:8px;">' +
-    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 18px; height:18px;  margin-right: 5px;margin-bottom: 6px;" /> ' +
+    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 18px; height:18px;  margin-right: 5px;margin-bottom: 7px;" /> ' +
     option.text + 
     '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');

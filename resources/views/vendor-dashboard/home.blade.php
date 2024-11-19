@@ -83,7 +83,7 @@
 width: 200px !important;
   }
   .font_label{
-    /* padding-top: 12px !important; */
+    padding-top: 8px !important;
     margin-bottom: -0.5rem !important;
 
   }
@@ -195,15 +195,6 @@ color: #0504aa !important;
 .select2-container--default .select2-results__option{
     padding-left: 9px !important;
 }
-
-.select2-container--open .select2-dropdown--below{
-    /* width: 300px !important; */
-    left: 3px;
-}
-
-/* .select2-container--default .select2-results__option--highlighted[aria-selected]{
-    color: blue !important
-} */
     </style>
     <section style="border-top:2px solid #eee;">
         <br/>
@@ -448,7 +439,7 @@ color: #0504aa !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:20px; margin-left: 10px;">
+                                                               style="width:20px;height:20px; margin-left: 5px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -483,7 +474,7 @@ color: #0504aa !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:20px;height:20px  ;  margin-left:6px;">
+                                                               ?> style="width:20px;height:20px  ;  margin-left:5px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -500,7 +491,7 @@ color: #0504aa !important;
                                                                } else {
                                                                    echo "";
                                                                }
-                                                               ?> style="width:20px;height:19px; margin-left: 8px;">
+                                                               ?> style="width:20px;height:19px; margin-left: 5px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -519,7 +510,7 @@ color: #0504aa !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:21px;margin-left: 8px;">
+                                                               style="width:20px;height:21px;margin-left: 5px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -538,7 +529,7 @@ color: #0504aa !important;
                                                                    echo "";
                                                                }
                                                                ?>
-                                                               style="width:20px;height:19px; margin-left: 8px;">
+                                                               style="width:20px;height:19px; margin-left: 5px;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1108,7 +1099,7 @@ color: #0504aa !important;
                                         {{ $instagram ? $instagram->followers : 0 }}
                                     </div>
                                 </div>
-                            </li>&nbsp;
+                            </li>&nbsp;&nbsp;
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
@@ -1121,7 +1112,7 @@ color: #0504aa !important;
                                                             {{ $twitter ? $twitter->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;
+                                                </li>&nbsp;&nbsp;
 
                                                     
                                                 @endif
@@ -1136,7 +1127,7 @@ color: #0504aa !important;
                                                             {{ $youtube ? $youtube->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;
+                                                </li>&nbsp;&nbsp;
                                                     
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
@@ -1149,7 +1140,7 @@ color: #0504aa !important;
                                                             {{ $tiktok ? $tiktok->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;
+                                                </li>&nbsp;&nbsp;
                                                   
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
@@ -1162,7 +1153,7 @@ color: #0504aa !important;
                                                             {{ $facebook ? $facebook->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;
+                                                </li>&nbsp;&nbsp;
                                                     
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
@@ -1175,7 +1166,7 @@ color: #0504aa !important;
                                                             {{ $snapchat ? $snapchat->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;
+                                                </li>&nbsp;&nbsp;
                                                    
                                                 @endif
                                             </ul>

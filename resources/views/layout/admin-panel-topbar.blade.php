@@ -10,9 +10,9 @@
             padding-left: 10px !important;
     border-color: #997045 !important;
 }
-.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+/* .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
     margin-left: 3px !important;
-}
+} */
 .select2-search__field:hover{
     border-color: blue !important;
 }
@@ -280,7 +280,7 @@ $(document).ready(function() {
 
     
         return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:8px;"">' +
-    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:20px; margin-right: 5px;margin-bottom: 6px;" /> ' +
+    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:20px; margin-right: 5px;margin-bottom: 11px;" /> ' +
     option.text + 
     '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');

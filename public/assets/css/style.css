@@ -2181,7 +2181,7 @@ border: 1px solid #2d11e7;
     -webkit-transition: all .35s ease;
     transition: all .35s ease;
     width: 100%;
-    border-top: 1px solid #f0f0f0;
+    /* border-top: 1px solid #f0f0f0; */
 }
 
 .main-nav>li .submenu>li.has-submenu>a::after {

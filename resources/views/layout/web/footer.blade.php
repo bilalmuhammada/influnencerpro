@@ -22,6 +22,21 @@
 </section> -->
 
 <style>
+    .shaking {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+      .shaking:hover {
+    animation: shake 6s linear infinite;
+   }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
     .changeColor:hover{
      color: blue !important;
     }
@@ -128,15 +143,15 @@
                     <div class="footer-widget footer-menu">
                         <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Socials</h5>
                         <ul style="margin-left: 14px;margin-top:14px;">
-                            <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon" target="_blank"><img
+                            <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
                                         width="25" style="margin-bottom: 8px;"
                                         height="25"></a></li>
-                            <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon" target="_blank"><img
+                            <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/icons/instagram.png') }}"
                                         alt="insta" width="25" style="margin-bottom: 8px;"
                                         height="25"></a></li>
-                            <li><a href="https://x.com/influencerpro_" class="icon" target="_blank"><img
+                            <li><a href="https://x.com/influencerpro_" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                         alt="twitter"    style="margin-bottom: 8px;"
                                         width="25" height="25"></a></li>
