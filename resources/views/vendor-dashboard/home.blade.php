@@ -1255,10 +1255,10 @@ color: #0504aa !important;
         minimumInputLength: 0                   // Set minimum input to trigger search
     });
     $('.datepicker').datepicker({
-       dateFormat: 'dd-mm-yy',
+       dateFormat: 'dd-M-yy',
        changeMonth: true,
        changeYear: true,
-       yearRange: "1950:+0",
+       yearRange: "2024:+0",
    });
 
 

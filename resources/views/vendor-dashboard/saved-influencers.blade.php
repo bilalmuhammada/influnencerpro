@@ -496,10 +496,10 @@ width: 195px !important;
     $(document).ready(function () {
 
 $('.datepicker').datepicker({
-dateFormat: 'dd-mm-yy',
+dateFormat: 'dd-M-yy',
 changeMonth: true,
 changeYear: true,
-yearRange: "1950:+0",
+yearRange: "2024+0",
 });
  });
 

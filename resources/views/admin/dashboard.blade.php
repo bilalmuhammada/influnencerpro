@@ -138,7 +138,7 @@ $(function() {
          changeMonth: true,
           changeYear: true,
           
-             yearRange: "1950:+0",
+             yearRange: "2024:+0",
 
 
         beforeShow: function(input, inst) {

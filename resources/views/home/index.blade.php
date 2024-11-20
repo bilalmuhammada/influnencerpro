@@ -3,7 +3,7 @@
 
    .shaking {
     display: inline-block;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out;
    }
    .img {
   width: 200px; /* Adjust the width as needed */
@@ -13,14 +13,14 @@
 
 
   .shaking:hover {
-    animation: shake 6s linear infinite;
+    animation: shake 1s linear infinite;
    }
 
   @keyframes shake {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
+    25% { transform: translateX(-50px); }
+    50% { transform: translateX(50px); }
+    75% { transform: translateX(-50px); }
     100% { transform: translateX(0); }
   }
     .numberstyle{

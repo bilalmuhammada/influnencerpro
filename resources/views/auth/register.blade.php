@@ -124,7 +124,7 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control datepicker1 floating" name="age"   id="datepicker1" >
+                                                <input type="text" class="form-control datepicker11 floating" name="age"   id="datepicker11" >
                                              
                                                 <label class="focus-label">Date of Birth</label>
                                             </div>
@@ -290,7 +290,7 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control datepicker2 floating"  id="datepicker2"  name="age">
+                                                <input type="text" class="form-control datepicker22 floating"  id="datepicker22"  name="age">
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid age.
                                                 </div> --}}
@@ -455,14 +455,7 @@ function validateInput(input) {
   
     jQuery(document).ready(function($) {
 
-        // $(document).ready(function () {
-            
-        //     $(".datepicker").datepicker({
-        //      dateFormat: 'dd-mm-yy',
-        //      changeMonth: true,
-        //      changeYear: true,
-        //  });
-
+       
       
             $('.mySelect').select2({
                 placeholder: " ", // Sets the placeholder text

@@ -26,7 +26,7 @@ input::placeholder{
   background: transparent;
 }
 input[type="file"] {
-            color: transparent;
+            color: #000;
         }
 
         /* input[type="file"]::-webkit-file-upload-button {

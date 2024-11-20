@@ -62,11 +62,24 @@
 
           $(document).ready(function () {
             // alert('dd');
-            $(".datepicker1").datepicker({
-             dateFormat: 'dd-mm-yy',
+            $(".datepicker11").datepicker({
+             dateFormat: 'dd-M-yy',
              changeMonth: true,
              changeYear: true,
              yearRange: "1950:+0",
+            //  minDate: new Date(1980, 0, 1)
+         });
+         $(".datepicker11").change(function() {
+    var input = $(this); // Store reference to `this`
+    setTimeout(function() {
+        input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
+    }, 10);
+});
+$(".datepicker1").datepicker({
+             dateFormat: 'dd-M-yy',
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "2024:+0",
             //  minDate: new Date(1980, 0, 1)
          });
          $(".datepicker1").change(function() {
@@ -75,11 +88,24 @@
         input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
     }, 10);
 });
-         $(".datepicker2").datepicker({
-             dateFormat: 'dd-mm-yy',
+         $(".datepicker22").datepicker({
+             dateFormat: 'dd-M-yy',
              changeMonth: true,
              changeYear: true,
              yearRange: "1950:+0",
+            //  minDate: new Date(1980, 0, 1)
+         });
+         $(".datepicker22").change(function() {
+    var input = $(this); // Store reference to `this`
+    setTimeout(function() {
+        input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
+    }, 10);
+});
+$(".datepicker2").datepicker({
+             dateFormat: 'dd-M-yy',
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "2024:+0",
             //  minDate: new Date(1980, 0, 1)
          });
          $(".datepicker2").change(function() {
