@@ -2114,6 +2114,7 @@ border: 1px solid #2d11e7;
 }
 
 .header-nav {
+    height: 3.8rem;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: right;
@@ -2988,7 +2989,7 @@ html.menu-opened body header:before {
 }
 
 .banner-content p {
-    font-size: 20px;
+    font-size: 16px;
     color: #2B2B2B;
     font-weight: 600;
 }
@@ -21207,7 +21208,7 @@ button.scroll-top:focus {
         font-size: 38px;
     }
     .banner-content p {
-        font-size: 18px;
+        font-size: 16px;
     }
     .work-content {
         padding: 70px 50px 50px 60px;
@@ -21488,7 +21489,7 @@ button.scroll-top:focus {
         line-height: 39px;
     }
     .banner-content p {
-        font-size: 19px;
+        font-size: 16px;
     }
     .courses-btn,
     .get-btn {
@@ -22297,7 +22298,7 @@ button.scroll-top:focus {
         line-height: 29px;
     }
     .banner-content p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 20px;
     }
     .banner-img {

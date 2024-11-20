@@ -95,16 +95,16 @@ color:goldenrod !important;
             <div class="col-md-12 col-lg-12">
                 <div class="row">
                     
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo1.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo1.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                 
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         
-                                        <span class="orange-text" ><br>Influencers</span></h1>
+                                        <span class="orange-text" ><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
@@ -112,17 +112,17 @@ color:goldenrod !important;
                             
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo2.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo2.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                     
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brands</span></h1>
+                                            class="orange-text"><br>Brands</span></h4>
                                    
                                     <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                         hire for Business Brands Marketing Worldwide!
@@ -132,14 +132,14 @@ color:goldenrod !important;
                             
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo3.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo3.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
                                 <div class="banner-content aos" data-aos="fade-up"
                                      style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
                                   
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -149,7 +149,7 @@ color:goldenrod !important;
                             
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo4.jpg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo4.jpg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -164,9 +164,9 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
-                                        <span class="orange-text"><br>Brands</span></h1>
+                                        <span class="orange-text"><br>Brands</span></h4>
                                             <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
@@ -181,7 +181,7 @@ color:goldenrod !important;
                     </div>
                    
                     
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo1.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo1.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -196,9 +196,9 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influencers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
@@ -210,7 +210,7 @@ color:goldenrod !important;
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo2.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo2.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -225,10 +225,10 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brands</span></h1>
+                                            class="orange-text"><br>Brands</span></h4>
                                             <p  class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
@@ -242,7 +242,7 @@ color:goldenrod !important;
                         </div>
                     </div>
                  
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo3.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo3.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -257,9 +257,9 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influencers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
@@ -271,7 +271,7 @@ color:goldenrod !important;
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo4.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo4.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -286,10 +286,10 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brands</span></h1>
+                                            class="orange-text"><br>Brands</span></h4>
                                             <p  class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
@@ -303,7 +303,7 @@ color:goldenrod !important;
                         </div>
                     </div>
                   
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo5.jpg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo5.jpg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -318,9 +318,9 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influencers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
@@ -332,7 +332,7 @@ color:goldenrod !important;
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo6.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo6.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -347,10 +347,10 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brands</span></h1>
+                                            class="orange-text"><br>Brands</span></h4>
                                             <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
@@ -363,7 +363,7 @@ color:goldenrod !important;
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo7.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo7.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -378,9 +378,9 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Empowering Business --}}
-                                        <span class="orange-text"><br>Influencers</span></h1>
+                                        <span class="orange-text"><br>Influencers</span></h4>
                                <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
                             
                                 </div>
@@ -392,7 +392,7 @@ color:goldenrod !important;
                             </div> -->
                         </div>
                     </div>
-                    <div class="banner-imgs mySlides" style="padding-top:80px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo6.jpeg') }});">
+                    <div class="banner-imgs mySlides" style="padding-top:100px;height:400px;background-size: cover;background-image:url({{ asset('assets/banner-image/Photo6.jpeg') }});">
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
@@ -407,10 +407,10 @@ color:goldenrod !important;
                                         <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h1 style="color:#fff;">
+                                    <h4 style="color:#fff;">
                                         {{-- Get the perfect  --}}
                                         <span
-                                            class="orange-text"><br>Brands</span></h1>
+                                            class="orange-text"><br>Brands</span></h4>
                                             <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
                                                 hire for Business Brands Marketing Worldwide!
                                                 </p>
