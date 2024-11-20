@@ -1,20 +1,19 @@
 @extends('layout.web.master')
 <style>
 
-   .shaking {
-    display: inline-block;
-    transition: transform 0.1s ease-in-out;
-   }
-   .img {
+.img {
   width: 200px; /* Adjust the width as needed */
   height: 200px; /* Adjust the height as needed */
   object-fit: cover; /* Ensures the image is scaled without distortion */
 }
+.shaking {
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
 
-
-  .shaking:hover {
-    animation: shake 1s linear infinite;
-   }
+.shaking:hover {
+  animation: shake 0.2s linear infinite; /* Reduced duration for faster shaking */
+}
 
   @keyframes shake {
     0% { transform: translateX(0); }
