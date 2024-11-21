@@ -6,21 +6,12 @@
   height: 200px; /* Adjust the height as needed */
   object-fit: cover; /* Ensures the image is scaled without distortion */
 }
-.shaking {
-  display: inline-block;
-  transition: transform 0.1s ease-in-out;
-}
 
-.shaking:hover {
-  animation: shake 0.2s linear infinite; /* Reduced duration for faster shaking */
-}
-
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-50px); }
-    50% { transform: translateX(50px); }
-    75% { transform: translateX(-50px); }
-    100% { transform: translateX(0); }
+  .headingstyle{
+    padding:2%;
+    border-radius:2%;
+    width:100%;
+    margin-left:46px;
   }
     .numberstyle{
     font-size: 55px;
@@ -99,10 +90,10 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                     >
                                 
-                                    <h4 style="color:#fff;">
+                                    <h4 class="mb-2">
                                         
                                         <span class="orange-text" ><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -116,10 +107,10 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     
-                                    <h4 style="color:#fff;">
+                                    <h4 class="mb-2">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -136,10 +127,10 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                   
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -153,18 +144,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Get the perfect  --}}
                                         <span class="orange-text"><br>Brands</span></h4>
                                             <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
@@ -185,18 +176,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -214,18 +205,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -246,18 +237,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -275,18 +266,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -307,18 +298,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -336,18 +327,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -367,18 +358,18 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4 style="color:#fff;">
+                                    <h4  class="mb-2">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -396,15 +387,15 @@ color:goldenrod !important;
                        
                         <div class="row">
                             <div class="col-md-8 col-lg-7">
-                                <div class="banner-content aos" data-aos="fade-up"
-                                     style="padding:2%;border-radius:2%;width:100%;margin-left:50px;">
+                                <div class="banner-content aos headingstyle" data-aos="fade-up"
+                                      >
                                     {{-- <div class="rating d-flex" style="border:0px solid red;">
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
                                         <i class="fas fa-star checked"></i>
-                                        <h5 style="color:#fff;">Trusted by over 2M+ users</h5>
+                                        <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
                                     <h4 style="color:#fff;">

@@ -24,11 +24,12 @@
 <style>
     
    .shaking {
+    
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
       .shaking:hover {
-    animation: shake 6s linear infinite;
+    animation: shake 4s linear infinite;
    }
 
   @keyframes shake {

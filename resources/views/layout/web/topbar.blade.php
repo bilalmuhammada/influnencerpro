@@ -133,7 +133,7 @@
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 41px;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
-        <div class="mobile-country desktop-menu-right" style="margin-top: 13px;">
+        <div class="mobile-country desktop-menu-right" style="margin-top: 15px;">
         
             <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
                 <option value="null" selected style="color: blue;">Language</option>
@@ -240,7 +240,7 @@
         // return $('<span style="font-size:18px;margin-left:25px;font-weight:600; "><img src="'   '" class="img-flag" style="width: 20px; height:14px; margin-right: 3px;" /> ' + option.text + '</span>');
     
         return $('<span style="font-size:14px;font-weight:bold;    white-space: nowrap; padding:8px;">' +
-    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 18px; height:18px;  margin-right: 5px;margin-bottom: 6px;" /> ' +
+    '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 18px; height:18px;  margin-right: 5px;margin-bottom: 5px;" /> ' +
     option.text + 
     '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');

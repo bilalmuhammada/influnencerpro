@@ -276,7 +276,8 @@ color: #0504aa !important;
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/insta.png')}}" alt="insta"
-                                                     width="20" class="shaking">
+                                                     width="20" class="shaking" style=" margin-right: 3px;"
+                                                 >
                                                 Instagram</span> <input type="checkbox" name="instagram"
                                                                         <?php
 
@@ -287,12 +288,12 @@ color: #0504aa !important;
                                                                             echo "";
                                                                         }
                                                                         ?>
-                                                                        style="width:20px;height:20px">
+                                                                        style="width:20px;height:20px; margin-left: 4px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/fb.png')}}" alt="insta"
-                                                     width="20" class="shaking">
+                                                     width="20" class="shaking" style=" margin-right: 3px;">
                                                      Facebook</span> <input type="checkbox" name="facebook"
                                                                             <?php
 
@@ -302,12 +303,12 @@ color: #0504aa !important;
                                                                                 echo "";
                                                                             }
                                                                             ?>
-                                                                            style="width:20px;height:20px">
+                                                                            style="width:20px;height:20px; margin-left: 4px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/youtube.png')}}" alt="insta"
-                                                     width="20" class="shaking">
+                                                     width="20" class="shaking" style=" margin-right: 5px;">
                                                      Youtube &nbsp;&nbsp; </span> <input type="checkbox" name="youtube"
                                                                                          <?php
 
@@ -318,12 +319,12 @@ color: #0504aa !important;
                                                                                              echo "";
                                                                                          }
                                                                                          ?>
-                                                                                         style="width:20px;height:20px;">
+                                                                                         style="width:20px;height:20px; margin-left: 4px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img src="{{ asset('assets/img/social-icon/tiktok.png')}}" alt="insta"
-                                                     width="20" class="shaking">
+                                                     width="20" class="shaking" style=" margin-right: 3px;">
                                                      Tiktok &nbsp; &nbsp; &nbsp; </span> <input type="checkbox"
                                                                                                 name="tiktok"
                                                                                                 <?php
@@ -335,14 +336,14 @@ color: #0504aa !important;
                                                                                                     echo "";
                                                                                                 }
                                                                                                 ?>
-                                                                                                style="width:20px;height:20px;">
+                                                                                                style="width:20px;height:20px; margin-left: 3px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/twitter.png')}}"
                                                     alt="insta"
-                                                    width="20" class="shaking">
+                                                    width="20" class="shaking" style=" margin-right: 3px;">
                                                      Twitter &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -354,7 +355,7 @@ color: #0504aa !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:20px;height:20px;">
+                                                                                               style="width:20px;height:20px; margin-left: 4px;">
                                             </div>
 
                                             <div class="col-md-6">
@@ -362,7 +363,7 @@ color: #0504aa !important;
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/pinterest.png')}}"
                                                     alt="insta"
-                                                    width="20" class="shaking">
+                                                    width="20" class="shaking" style=" margin-right: 3px;">
                                                     Pinterest &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -374,14 +375,14 @@ color: #0504aa !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:20px;height:20px; margin-left: -14px;">
+                                                                                               style="width:20px;height:20px; margin-left: -10px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/snapchat.png')}}"
                                                     alt="insta" class="shaking"
-                                                    style="margin-left: -3px; height: 23px;width: 23px;">
+                                                    style="margin-left: -3px; margin-right: 4px; height: 23px;width: 23px;">
                                                     Snapchat &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -393,14 +394,14 @@ color: #0504aa !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:20px;height:20px;margin-left: -14px;">
+                                                                                               style="width:20px;height:20px;margin-left: -10px;">
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
                                                 <img
                                                     src="{{ asset('assets/img/social-icon/web.png')}}"
                                                     alt="insta"
-                                                    width="20" class="shaking">
+                                                    width="20" class="shaking" style="margin-right: 4px;">
                                                     Website &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
                                                                                                name="twitter"
                                                                                                <?php
@@ -412,7 +413,7 @@ color: #0504aa !important;
                                                                                                    echo "";
                                                                                                }
                                                                                                ?>
-                                                                                               style="width:20px;height:20px ;margin-left: -9px;">
+                                                                                               style="width:20px;height:20px ;margin-left: -8px;">
                                             </div>
                                         </div>
                                     </div>
@@ -1092,7 +1093,7 @@ color: #0504aa !important;
 
                                 <li style="display: inline-block;;color:#fff;">
                                 <div class="social-wrapper" style="text-align: center; margin-left:6px;">
-                                    <a href="">
+                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                         <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                     </a>
                                     <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -1105,7 +1106,7 @@ color: #0504aa !important;
                                                 @if($twitter  && isset($twitter->followers))
                                                 <li style="display: inline-block;;color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
-                                                        <a href="">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -1120,7 +1121,7 @@ color: #0504aa !important;
                                                 @if($youtube && isset($youtube->followers))
                                                 <li style="display: inline-block;;color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
-                                                        <a href="">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -1133,7 +1134,7 @@ color: #0504aa !important;
                                                 @if($tiktok && isset($tiktok->followers))
                                                 <li style="display: inline-block;;color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
-                                                        <a href="">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -1146,7 +1147,7 @@ color: #0504aa !important;
                                                 @if($facebook && isset($facebook->followers))
                                                 <li style="display: inline-block;;color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
-                                                        <a href="">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -1159,7 +1160,7 @@ color: #0504aa !important;
                                                 @if($snapchat && isset($snapchat->followers))
                                                 <li style="display: inline-block;;color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
-                                                        <a href="">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
