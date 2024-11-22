@@ -27,7 +27,7 @@
     transition: transform 0.2s ease-in-out;
    }
       .shaking:hover {
-    animation: shake 1s linear infinite;
+    animation: shake 1.5s linear infinite;
    }
 
   @keyframes shake {
