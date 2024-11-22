@@ -1,25 +1,4 @@
-<!-- <section class="section job-register" style="background: #997045;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="register-job-blk">
-                    <div class="job-content-blk aos">
-                        <h1>Find Your Next Great Job Opportunity!</h1>
-                        <p>
-                            Quisque pretium dolor turpis, quis blandit turpis semper ut. Nam malesuada eros nec luctus
-                            laoreet.
-                        </p>
-                    </div>
-                    @if(session()->missing('User'))
-                        <div class="see-all mt-0 aos">
-                            <a href="{{ env('BASE_URL') . 'register' }}" class="btn all-btn">Register Now</a>
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
+
 
 <style>
     
@@ -29,7 +8,7 @@
     transition: transform 0.2s ease-in-out;
    }
       .shaking:hover {
-    animation: shake 4s linear infinite;
+    animation: shake 1s linear infinite;
    }
 
   @keyframes shake {
@@ -279,14 +258,7 @@
 <script src="{{ asset('assets/js/footer.js?v=') . date('ymdhis') }}"></script>
 
 
-{{--<script src="{{ asset('assets/plugins/c3-chart/d3.v5.min.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/c3-chart/c3.min.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/c3-chart/chart-data.js')}}"></script>--}}
-{{--<script src="{{ asset('assets/plugins/apexchart/apexcharts.min.js') }}"></script>--}}
-{{--<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>--}}
-{{--<script src="{{ asset('assets/plugins/apexchart/chart-data.js') }}"></script>--}}
 
-{{--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/lobibox@1.2.7/dist/js/lobibox.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">

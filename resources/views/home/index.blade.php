@@ -93,7 +93,7 @@ color:goldenrod !important;
                                 <div class="banner-content aos headingstyle" data-aos="fade-up"
                                      >
                                 
-                                    <h4 class="mb-2">
+                                    <h4 class="mb-3">
                                         
                                         <span class="orange-text" ><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -110,7 +110,7 @@ color:goldenrod !important;
                                 <div class="banner-content aos headingstyle" data-aos="fade-up"
                                       >
                                     
-                                    <h4 class="mb-2">
+                                    <h4 class="mb-3">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -130,7 +130,7 @@ color:goldenrod !important;
                                 <div class="banner-content aos headingstyle" data-aos="fade-up"
                                       >
                                   
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h1>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -155,7 +155,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Get the perfect  --}}
                                         <span class="orange-text"><br>Brands</span></h4>
                                             <p class="responsive-text" style="white-space: nowrap;">Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace <br> to    
@@ -187,7 +187,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -216,7 +216,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -248,7 +248,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -277,7 +277,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -309,7 +309,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                         <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>
@@ -338,7 +338,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Get the perfect  --}}
                                         <span
                                             class="orange-text"><br>Brands</span></h4>
@@ -369,7 +369,7 @@ color:goldenrod !important;
                                         <h5  class="mb">Trusted by over 2M+ users</h5>
                                     </div> --}}
                                     <!-- <img src="assets/img/location/location-02.JPG" alt="image"> -->
-                                    <h4  class="mb-2">
+                                    <h4  class="mb-3">
                                         {{-- Empowering Business --}}
                                         <span class="orange-text"><br>Influencers</span></h4>
                                <p class="responsive-text">World’s Best Celebrity & Pro-Influencers, Media Artists & Talents Marketplace to Join!</p>

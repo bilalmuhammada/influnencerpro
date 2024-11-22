@@ -285,7 +285,7 @@ width: 212px !important;
 
                 <div class="project-download" style="padding-top:60px;">
                     <div class="title-group d-flex bilal-transc">
-                        <h2>Transaction History</h2>
+                        <h4>Transaction History</h4>
                         <div class="down-load">
                             <a href="#" class="btn-primary" id="deleteSelected" style="margin-right: 20px">
                                 {{-- <i class="fas fa-trash-alt"></i> --}}

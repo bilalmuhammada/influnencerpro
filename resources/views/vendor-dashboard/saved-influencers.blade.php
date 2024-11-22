@@ -1,4 +1,5 @@
 @extends('layout.master')
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @section('content')
     <style>
           .lobibox-notify.notify-mini .lobibox-notify-body {
@@ -492,14 +493,16 @@ width: 195px !important;
     </div>
 @endsection
 @section('page_scripts')
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script>
     $(document).ready(function () {
+
 
 $('.datepicker').datepicker({
 dateFormat: 'dd-M-yy',
 changeMonth: true,
 changeYear: true,
-yearRange: "2024+0",
+yearRange: "2024:+0",
 });
  });
 

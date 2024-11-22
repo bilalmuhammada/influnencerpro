@@ -99,8 +99,8 @@
 
             }
             input:focus {
-    border: 1px solid blue !important;
-}
+            border: 1px solid blue !important;
+            }
 
 
 
