@@ -48,7 +48,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <h5>
                         Join Us & Discover More.<br/>
-                        <div style="color:#0000FF; margin-top: 10px;"><b>Download our App now!</b></div>
+                        <div style="color:#0000FF; margin-top: 6px;"><b>Download our App now!</b></div>
                     </h5>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;">

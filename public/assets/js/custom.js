@@ -163,7 +163,7 @@ jQuery(document).ready(function ($) {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        // autoplay: true,
+         autoplay: true,
         autoplaySpeed: 2000,
         arrows: true,
         responsive: [{
@@ -184,23 +184,7 @@ jQuery(document).ready(function ($) {
     });
 });
 
-// Slick Slider Script -- Provided by https://kenwheeler.github.io/slick/
-/*
-   _ _      _       _
-___| (_) ___| | __  (_)___
-/ __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
-|___/_|_|\___|_|\_(_)/ |___/
-                 |__/
 
-Version: 1.5.7
-Author: Ken Wheeler
-Website: https://kenwheeler.github.io
-  Docs: https://kenwheeler.github.io/slick
-  Repo: https://github.com/kenwheeler/slick
-Issues: https://github.com/kenwheeler/slick/issues
-
-*/
 !function (a) {
     "use strict";
     "function" == typeof define && define.amd ? define(["jquery"], a) : "undefined" != typeof exports ? module.exports = a(require("jquery")) : a(jQuery)

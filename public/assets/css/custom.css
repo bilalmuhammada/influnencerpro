@@ -1166,7 +1166,7 @@ button.slick-prev, button.slick-prev:hover {
     
     .marquee-content {
       display: flex;
-      animation: scrolling 60s linear infinite;
+      animation: scrolling 80s linear infinite;
     }
     
     .marquee-item {
