@@ -995,63 +995,48 @@ color: #0504aa !important;
                             </div>
                         </div>
                     </div>
-                    {{--                    <div class="bootstrap-tags text-start pl-0">--}}
-                    {{--                        <span class="badge badge-pill badge-skills">Influencer <span class="tag-close"--}}
-                    {{--                                                                                     data-role="remove"><i--}}
-                    {{--                                    class="fas fa-times"></i></span></span>--}}
-                    {{--                        <span class="badge badge-pill badge-skills">USA <span class="tag-close" data-role="remove"><i--}}
-                    {{--                                    class="fas fa-times"></i></span></span>--}}
-                    {{--                        <span class="badge badge-pill badge-skills">Hourly <span class="tag-close" data-role="remove"><i--}}
-                    {{--                                    class="fas fa-times"></i></span></span>--}}
-                    {{--                        <span class="badge badge-pill badge-skills">0-1 years <span class="tag-close"--}}
-                    {{--                                                                                    data-role="remove"><i--}}
-                    {{--                                    class="fas fa-times"></i></span></span>--}}
-                    {{--                        <span class="badge badge-pill badge-skills">USD <span class="tag-close" data-role="remove"><i--}}
-                    {{--                                    class="fas fa-times"></i></span></span>--}}
-                    {{--                    </div>--}}
-
-                    
+                 
                     <div class="row" id="infulecer-show">
                         @forelse($influencers as $influencer)
                        
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
-                                <div class="card avatar-one"
-                                     style="width:100%;box-shadow:1px 1px 1px 1px #eee;">
-                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                
+                                <div  onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"  class="card avatar-one" style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
+                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail"   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; text-decoration: none;">
                                         <div class="start"
                                              style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:100%;">
-                                            {{-- <i class="fas fa-check-circle main-icon"
-                                               style="background-color:;padding:7px;margin:2px;border-radius:50%; color: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'green' : '#999' }} !important;"></i> --}}
+                                          
+                                             &nbsp;  &nbsp;  &nbsp;  &nbsp;
 
                                         </div>
                                         
-                                          
-                    @php
-    $color = 'white';
-    $color1 = 'white';
-    
-    if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
-        if ($influencer->favourites[0]->influencer_id == $influencer->id) {
-            if ($influencer->favourites[0]->fr_in == 1) {
-                $color = 'red';
-            }
-         
-        }
-    }
+                                    </a>
+                                    @php
+                                    $color = 'white';
+                                    $color1 = 'white';
+                                    
+                                    if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
+                                        if ($influencer->favourites[0]->influencer_id == $influencer->id) {
+                                            if ($influencer->favourites[0]->fr_in == 1) {
+                                                $color = 'red';
+                                            }
+                                        
+                                        }
+                                    }
 
-    if (isset($influencer->invented) && count($influencer->invented) > 0) {
-        if ($influencer->invented[0]->influencer_id == $influencer->id) {
-            
-            if ($influencer->invented[0]->fr_in == 2) {
-                $color1 = '#61de2a';
-            }
-        }
-    }
+                                    if (isset($influencer->invented) && count($influencer->invented) > 0) {
+                                        if ($influencer->invented[0]->influencer_id == $influencer->id) {
+                                            
+                                            if ($influencer->invented[0]->fr_in == 2) {
+                                                $color1 = '#61de2a';
+                                            }
+                                        }
+                                    }
     
   
  
   
-@endphp
+                                     @endphp
 
                                        
                                         <div class="influencerdetail" id="">
@@ -1091,16 +1076,16 @@ color: #0504aa !important;
 
 
 
-                                <li style="display: inline-block;;color:#fff;">
-                                <div class="social-wrapper" style="text-align: center; margin-left:6px;">
-                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
-                                    </a>
-                                    <div class="text-center font-change followers-count" style="font-size:11px;">
-                                        {{ $instagram ? $instagram->followers : 0 }}
-                                    </div>
-                                </div>
-                            </li>&nbsp;&nbsp;
+                                                    <li style="display: inline-block;;color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center; margin-left:6px;">
+                                                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                        </a>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ $instagram ? $instagram->followers : 0 }}
+                                                        </div>
+                                                    </div>
+                                                </li>&nbsp;&nbsp;
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
@@ -1174,7 +1159,7 @@ color: #0504aa !important;
                                         </div>
                                         <img src="{{ $influencer ? $influencer->image_url : '' }}" class="influencer"
                                              alt="author" width="100%" height="200px">
-                                    </a>
+                                    {{-- </a> --}}
                                     <div class="influencer-dev" style="margin:10px;padding: 3px;">
                                         <h5 style="font-size:12px;"
                                             class="influencer-name bilal-list-influencer">{{ $influencer ? $influencer->full_name : '' }}</h5>
