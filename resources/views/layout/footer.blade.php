@@ -69,8 +69,8 @@
                                 About Us</a></li>
                             <li><a href="{{ env('BASE_URL') }}/contact-us" class="changeColor"> 
                                 {{-- <i class="fas fa-angle-right me-1"></i> --}}
-                                Contact
-                                    Us</a></li>
+                                Contact Us</a>
+                                </li>
                             @if(session()->missing('User'))
                                 <!-- <li><a href="{{ url('login') }}"><i class="fas fa-angle-right me-1"></i>Login</a></li> -->
                                 <!-- <li><a href="{{ env('BASE_URL') . 'register' }}"><i class="fas fa-angle-right me-1"></i>Register</a> -->
@@ -79,7 +79,7 @@
                             <li><a href="{{ env('BASE_URL') }}/termcondition" class="changeColor"
                                  {{-- data-bs-toggle="modal" data-bs-target="#termsModal" --}}
                                  >
-                                 {{-- <i class="fas fa-angle-right me-1"></i> --}}
+                                 
                                         Terms of Use</a>
                             </li>
                             <li><a href="{{ env('BASE_URL') }}/privacy-policy" class="changeColor"
