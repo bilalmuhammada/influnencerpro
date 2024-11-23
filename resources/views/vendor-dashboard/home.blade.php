@@ -20,6 +20,14 @@
     animation: shake 1.5s linear infinite;
    }
 
+   .card .icon-container {
+    pointer-events: none; /* Disable clicks for the container of the icons */
+}
+
+.card .icon-container > i {
+    pointer-events: auto; /* Enable clicks only for the icons themselves */
+}
+
    .changetogold{
   color: blue;
    }
@@ -1001,16 +1009,13 @@ color: #0504aa !important;
                        
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                                 
-                                <div  onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"  class="card avatar-one" style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
-                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail"   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; text-decoration: none;">
-                                        <div class="start"
-                                             style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:100%;">
-                                          
-                                             &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                                <div class="card avatar-one" 
+                                     
+                                   style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
+                        
+                                   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
 
-                                        </div>
-                                        
-                                    </a>
+                            
                                     @php
                                     $color = 'white';
                                     $color1 = 'white';
@@ -1032,30 +1037,25 @@ color: #0504aa !important;
                                             }
                                         }
                                     }
-    
-  
- 
-  
                                      @endphp
 
                                        
-                                        <div class="influencerdetail" id="">
+                                        <div  class="influencerdetail">
                                             <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:222px;">
 
                                                  <i class="fa-solid fa-heart  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
                                                  data-fvt="1"
-                                                 style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                  
+                                                 style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px;  display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 <i class="fas fa-check-circle   add-to-invented"
                                                    data-id="{{ $influencer->id }}"
                                                    data-fvt="2"
-                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -6px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                 
+                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -6px;display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
-                                                {{-- <i class="fas fa-check-circle remove-favourite"
-                                                   data-id="{{ $influencer->id }}"
-                                                   style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i> --}}
-
+                    
                                             </div>
                                             <br>
                                             <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}} -->
@@ -1157,10 +1157,10 @@ color: #0504aa !important;
                                                 @endif
                                             </ul>
                                         </div>
-                                        <img src="{{ $influencer ? $influencer->image_url : '' }}" class="influencer"
+                                        <img src="{{ $influencer ? $influencer->image_url : '' }}" onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" class="influencer"
                                              alt="author" width="100%" height="200px">
                                     {{-- </a> --}}
-                                    <div class="influencer-dev" style="margin:10px;padding: 3px;">
+                                    <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">
                                         <h5 style="font-size:12px;"
                                             class="influencer-name bilal-list-influencer">{{ $influencer ? $influencer->full_name : '' }}</h5>
 
@@ -1211,7 +1211,8 @@ color: #0504aa !important;
 @section('page_scripts')
 
     <script>
-     
+
+    
         function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
     input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
@@ -1231,6 +1232,17 @@ color: #0504aa !important;
 
 
         $(document).ready(function () {
+
+            $('.start').on('click', function (e) {
+              
+        // Redirect to the desired URL
+        const influencerId = $(this).data('id'); // Assume data-id is set for each `.start`
+        const baseUrl = "{{ env('BASE_URL') }}"; // Replace with your actual base URL if needed
+        window.location.href = `${baseUrl}/influencers/${influencerId}/detail`;
+    
+              //  onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+      
+    });
    
     $('.selectdropdown').select2();
 
@@ -1346,8 +1358,11 @@ color: #0504aa !important;
         });
 
         $(document).on('click', '.add-to-favourite', function (e) {
-            e.preventDefault();
-            thisElem = $(this);
+            e.preventDefault(); // Prevent the default action (link click).
+            e.stopImmediatePropagation();
+          
+
+
             let influencerId = thisElem.data('id');
             let fvt = thisElem.data('fvt');
             
@@ -1378,7 +1393,9 @@ color: #0504aa !important;
             });
         });
         $(document).on('click', '.add-to-invented', function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent the default action (link click).
+            e.stopImmediatePropagation();
+            // e.preventDefault();
             thisElem = $(this);
             let influencerId = thisElem.data('id');
             let fvt = thisElem.data('fvt');

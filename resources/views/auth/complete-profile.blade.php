@@ -16,7 +16,14 @@
   .dz-image {
     position: relative;
   }
+.fileInput{
+    color:#0504aa !important;
+}
 
+
+.fileInput:hover{
+    color:goldenrod !important;
+}
   #select2--results{
 min-height: 70px !important;
   }
@@ -1226,17 +1233,20 @@ display: none !important;
                                                style="border:0px solid #1A237E;!important"/>
                                     </div>
                                 </div>
-                                <div style="left: 41%;  position: absolute;">
-                                    <label style="color:#0504aa;font-weight:bold;">Or Upload & Drop Images Here</label>
+                                <div style="left: 41%; position: absolute;">
+                                    <label for="fileInput" class="fileInput" style=" font-weight:bold; cursor: pointer;">
+                                        Or Upload & Drop Images Here
+                                    </label>
                                 </div>
-                               
-                                {{-- <div class="row" > --}}
-                                                                               
-                                   
-                                      <div class="dropzone-container dz-message "  id="my-Dropzone"  style="border: white;color: blue; font-weight: bold;">
-                                        {{-- <span>or Upload & Drop Images Here</span> --}}
-                                      </div>
-                                     
+                                
+                                <!-- Hidden file input -->
+                                <input type="file" id="fileInput" style="display: none;" accept="image/*">
+                                
+                                <!-- Dropzone Container -->
+                                <div class="dropzone-container dz-message" id="my-Dropzone" style="border: white; color: blue; font-weight: bold;">
+                                    <!-- Dropzone message or content -->
+                                </div>
+                                
                                        
                                     {{-- </div> --}}
                               {{-- </div> --}}
