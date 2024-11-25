@@ -1008,6 +1008,7 @@ color: #0504aa !important;
                         @forelse($influencers as $influencer)
                        
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
+                        <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" >
                                 
                                 <div class="card avatar-one" 
                                      
@@ -1039,9 +1040,8 @@ color: #0504aa !important;
                                     }
                                      @endphp
 
-                                       
-                                        <div  class="influencerdetail">
-                                            <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:222px;">
+                                            <div  class="influencerdetail">
+                                            <div style="position:absolute;text-align:right;border:0px solid red;width:222px;">
 
                                                  <i class="fa-solid fa-heart  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
@@ -1060,7 +1060,10 @@ color: #0504aa !important;
                                             <br>
                                             <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}} -->
                                              {{-- <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span> --}}
-                                            <ul style="list-style-type: none;margin-top:7rem;">
+                                            <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                          
+                                             <ul onclick="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" style="list-style-type: none;     height: 100%;">
+
                                                 @php
                                                 
                                                     $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
@@ -1076,7 +1079,7 @@ color: #0504aa !important;
 
 
 
-                                                    <li style="display: inline-block;;color:#fff;">
+                                                    <li style="display: inline-block;;color:#fff; margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center; margin-left:6px;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1089,7 +1092,7 @@ color: #0504aa !important;
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
-                                                <li style="display: inline-block;;color:#fff;">
+                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1104,7 +1107,7 @@ color: #0504aa !important;
                                                 @endif
 
                                                 @if($youtube && isset($youtube->followers))
-                                                <li style="display: inline-block;;color:#fff;">
+                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1117,7 +1120,7 @@ color: #0504aa !important;
                                                     
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
-                                                <li style="display: inline-block;;color:#fff;">
+                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1130,7 +1133,7 @@ color: #0504aa !important;
                                                   
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
-                                                <li style="display: inline-block;;color:#fff;">
+                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1143,7 +1146,7 @@ color: #0504aa !important;
                                                     
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
-                                                <li style="display: inline-block;;color:#fff;">
+                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
@@ -1156,6 +1159,8 @@ color: #0504aa !important;
                                                    
                                                 @endif
                                             </ul>
+                                    </a>
+
                                         </div>
                                         <img src="{{ $influencer ? $influencer->image_url : '' }}" onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" class="influencer"
                                              alt="author" width="100%" height="200px">
@@ -1193,6 +1198,8 @@ color: #0504aa !important;
                                 </div>
                             {{--                                dsf--}}
                             <!----------->
+                        </a>
+
                             </div>
                         @empty
                             <div class="col-12 text-center">
@@ -1235,6 +1242,8 @@ color: #0504aa !important;
 
             $('.start').on('click', function (e) {
               
+                console.log(e);
+                return false;
         // Redirect to the desired URL
         const influencerId = $(this).data('id'); // Assume data-id is set for each `.start`
         const baseUrl = "{{ env('BASE_URL') }}"; // Replace with your actual base URL if needed
