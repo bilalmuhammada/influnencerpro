@@ -9,17 +9,26 @@
     border-radius: 4px !important;
     color: black !important;
         }
+
+        .social-wrapper:hover .followers-count {
+    color:goldenrod; /* Change to your desired hover color */
+}
         .shaking {
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-   .social-wrapper:hover .followers-count {
-    color:goldenrod; /* Change to your desired hover color */
-}
+ 
   .shaking:hover {
     animation: shake 1.5s linear infinite;
    }
 
+   @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+  }
    .card .icon-container {
     pointer-events: none; /* Disable clicks for the container of the icons */
 }
@@ -34,13 +43,7 @@
    .changetogold:hover{
   color: blue;
    }
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-  }
+
 .dropdowndecoration:hover {
         border: 1px solid blue!important;
 }
@@ -1011,7 +1014,7 @@ color: #0504aa !important;
                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" >
                                 
                                 <div class="card avatar-one" 
-                                     
+                                     onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
                                    style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
@@ -1160,7 +1163,7 @@ color: #0504aa !important;
                                             </ul>
 
                                         </div>
-                                        <img src="{{ $influencer ? $influencer->image_url : '' }}" onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" class="influencer"
+                                        <img src="{{ $influencer ? $influencer->image_url : '' }}" class="influencer"
                                              alt="author" width="100%" height="200px">
                                     {{-- </a> --}}
                                     <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">

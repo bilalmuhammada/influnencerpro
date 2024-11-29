@@ -29,9 +29,7 @@
  .select2-container--default .select2-results > .select2-results__options {
     min-height: 120px; /* Set minimum height */
           }
-          .select2-selection__arrow{
-            display: none;
-          }
+          
           .select2-selection .select2-selection--single{
             margin-left: -12px !important;
           }
@@ -87,7 +85,7 @@
               
             }
             .select2-container--default .select2-selection--single .select2-selection__arrow {
-                right: -15px !important;
+                right: 12px !important;
             }
     </style>
    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

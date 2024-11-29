@@ -46,7 +46,7 @@
         <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red; margin-top:30px;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <h5>
+                    <h6>
                         Join Us & Discover More.<br/>
                         <div style="color:#0000FF; margin-top: 6px;"><b>Download our App now!</b></div>
                     </h5>
@@ -203,7 +203,7 @@
                                      alt="Logo">
                             </a>
                         </div>
-                        <div class="copyright-text bilal-footer1"  style="    margin-bottom: 8px;">
+                        <div class="copyright-text bilal-footer1"  style="    margin-top: -14px;">
                             <p class="mb-0">© InfluencerPro.org 2024, All Rights Reserved.</p>
                         </div>
                     </div>

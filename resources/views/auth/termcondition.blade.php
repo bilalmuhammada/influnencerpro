@@ -31,494 +31,237 @@ p{
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
-                            <div class="login-header text-center">
-                                <h3>Terms of Use</h3> 
+                            <div class="login-header ">
+                                <h3 class="text-center">Terms of Use</h3> 
                                
                                 
-                            </div>
-                         <p style="text-align: justify;
-                         width: 110%;"> 
-                           
-
-                           THESE TERMS OF SERVICE (“AGREEMENT”) GOVERN YOUR USE OF OUR WEBSITE, AS WELL AS ANY INTERACTION WITH IFLUENCERPRO (“WE”, “US” OR “OUR”) IN RELATION TO ANY ACTIVITY AND/OR SERIES OF ACTIVITIES ON BEHALF OF INFLUENCERPRO AND/OR INFLUENCERPRO’S CUSTOMER(S) (defined as the party engaging You through InfluencerPro) OR THEIR CLIENTS (defined as the sponsoring advertiser) (A "CAMPAIGN") AND/OR OTHERWISE, AS WELL AS YOUR UTILIZATION OF ANY INFLUENCERPRO PRODUCTS AND SERVICES, INCLUDING WITHOUT LIMITATION ANY INFLUENCERPRO TECHNOLOGY (AS DEFINED BELOW) (COLLECTIVELY WITH THE WEBSITE, THE “SERVICE").
-                          </p>
-                          <p style="text-align: justify;
-                         width: 110%;"> 
-                         BY ACCESSING OUR WEBSITE AT https://influencerpro.org/ OR OTHERWISE SIGNING UP TO BE AN “INFLUENCER” or “BRAND” BY PROVIDING YOUR NAME, EMAIL ADDRESS AND PASSWORD, OR BY EXECUTING ANY DOCUMENT THAT REFERENCES THIS AGREEMENT, YOU ARE UNCONDITIONALLY CONSENTING TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF YOUR EMPLOYER, A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY AND ITS AFFILIATES TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS "YOU" OR "YOUR" OR "INFLUENCER" OR “BRAND” SHALL REFER TO SUCH ENTITY AND ITS AFFILIATES. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT ACCESS OUR WEBSITE OR OTHERWISE USE THE SERVICE. If the terms OF THIS AGREEMENT are considered an offer, acceptance is expressly limited to these terms.
-                         NOTICE: Please read these Terms carefully. They cover important information about the Services. These Terms include information about future changes to these Terms, limitations of liability, a class action waiver, and resolution of disputes by arbitration instead of in court.
-                         
-                          </p>
-                          <p style="text-align: justify;
-                         width: 110%;"> 
-                         You may not access the Service if You are InfluencerPro’s direct competitor, except with InfluencerPro’s prior written consent, which may be withheld in InfluencerPro’s sole discretion. In addition, You may not access the Service for purposes of monitoring its availability, performance or functionality, or for any other benchmarking or competitive purposes, or permit any other party to do any of the foregoing. For the purposes of this Agreement, “InfluencerPro Technology” means any software owned, developed, acquired and/or licensed by or on behalf of InfluencerPro, any trademarks of InfluencerPro, certain documents, software and other works of authorship, other technology (including without limitation any interfaces utilized to connect to the Service), software, hardware, products, processes, algorithms, user interfaces, know-how and other trade secrets, techniques, designs, inventions and other tangible or intangible technical material or information, and any other data, information and/or material provided by or on behalf of InfluencerPro to You in the course of Your interaction with InfluencerPro under a Campaign and/or otherwise, including without limitation Your use of the Service.
-                          </p>
-                          
-                          <p style="text-align: justify;
-                         width: 110%;"> 
-                         From time to time, we may modify or amend this Agreement. If we do so, we will post any such modifications or changes on the website or otherwise contact You at the email address You have provided to InfluencerPro. If You continue to use the Service following such a posting, You accept any such change or modification.
-                        </p>
-
-                            <p style="text-align: justify;
-                            width: 110%;"> 
-                            The Service (including use of InfluencerPro’s website) is intended solely for persons who are 18 years of age or older. Any access to or use of the Service by anyone under 18 is expressly prohibited, unless with approval and involvement by a parent or guardian. By accessing or using the InfluencerPro you represent and warrant that you are 18 or older, or have approval and involvement by a parent or guardian. By using the Service, you represent and warrant that you will use the Service in compliance with any and all applicable laws and regulations.
-                    </p>
 
 
-                                <p style="text-align: justify;
-                                width: 110%;"> 
-                                In order to use certain portions or functionalities of the Service or to become an “Influencer” or “Brand”, You are required to register with the Service and provide your first and last name, email address and password, as well as any other information that InfluencerPro may request. We reserve the right to deny You the ability to create an Influencer or Brand account if the registration information provided is incomplete or otherwise inadequate. Also, your registration as an Influencer or Brand are to void where prohibited by law. Passwords are user-specific and should not be given to third parties. You are responsible for the use of the Service with Your Influencer account. You must protect any passwords or other credentials associated with Your account for the Service, and take full responsibility for any use of the account under Your password. If Your username or password becomes compromised, You must inform InfluencerPro of this as soon as possible in order to limit your liability. If You register as an Influencer or Brand, certain additional terms in this Agreement will apply to You. 
-                </p>
-
-                <h3>1. Campaigns</h3> 
-                                    <p style="text-align: justify;
-                                    width: 110%;"> 
-                                
-                                    By applying to a Campaign, or accepting an invitation to join a Campaign, you agree, that you are able and willing to perform the work outlined in the collaboration brief as documented and displayed on the platform. If you are chosen to participate in the Campaign, any and all compensation for participation is contingent upon successful and complete execution of the instructions outlined in the brief as presented to you at the time you are hired, and upon supplying all requested metrics for content that you distribute on social media platforms in connection with the Campaign. This may include but is not limited to: producing original content within any guidelines, providing materials requested on or before any stated deadlines (including both drafts for approval and final content), requesting and receiving approval prior to posting content on social media platforms, posting content on social media platforms on or before any stated deadlines, abiding by any stated exclusivity clauses for the stated periods of time, abiding by the terms of this agreement, and any additional requirements that are stated in the Campaign brief.
-                                    
+                                <p style="text-align: justify; width: 110%;"> 
+                                    These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”), and Collabstr Ventures Inc. ("Company", “we”, “us”, or “our”), concerning your access to and use of the collabstr.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). The Site provides an online marketplace for the following goods, products, and/or services: marketing influence via social media platforms (the “Marketplace Offerings”). In order to help make the Site a secure environment for the purchase and sale of Marketplace Offerings, all users are required to accept and comply with these Terms of Use, including the User Agreement posted on the Site, which are incorporated into these Terms of Use. You agree that by accessing the Site and/or the Marketplace Offerings, you have read, understood, and agree to be bound by all of these Terms of Use. If you do not agree with all of these terms of use, then you are expressly prohibited from using the site and/or the marketplace offerings and you must discontinue use immediately.
                                 </p>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms of Use at any time and for any reason. We will alert you about any changes by updating the “Last updated” date of these Terms of Use, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Terms of Use to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms of Use by your continued use of the Site after the date such revised Terms of Use are posted.
+                                </p>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    The information provided on the Site is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Site from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
+                                </p>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    The Site is not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be subjected to such laws, you may not use this Site. You may not use the Site in a way that would violate the Gramm-Leach-Bliley Act (GLBA).
+                                </p>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    The Site is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the Site or use the Marketplace Offerings.
+                                </p>
+                                
+                                <h3>Intellectual Property Rights</h3>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    Unless otherwise indicated, the Site and the Marketplace Offerings are our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws of the United States, international copyright laws, and international conventions. The Content and the Marks are provided on the Site “AS IS” for your information and personal use only. Except as expressly provided in these Terms of Use, no part of the Site or the Marketplace Offerings and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.
+                                </p>
+                                
+                                <p style="text-align: justify; width: 110%;"> 
+                                    Provided that you are eligible to use the Site, you are granted a limited license to access and use the Site and to download or print a copy of any portion of the Content to which you have properly gained access solely for your personal, non-commercial use. We reserve all rights not expressly granted to you in and to the Site, the Content, and the Marks.
+                                </p>
+                                
 
 
-                                        <p style="text-align: justify;
-                                        width: 110%;"> 
-                                        If You register as an Influencer or Brand, You will conduct any efforts in relation to a Campaign, including without limitation the creation of Content (as defined below), through InfluencerPro (unless directed otherwise by InfluencerPro and the Service using the highest industry standards which meet or surpass all local, State and Federal laws for advertising. In the performance of your efforts in relation to a Campaign, You may provide certain information and materials, including text, narrative, images, photos, graphs, videos, designs, logos, trademarks, URL links and data (all collectively “Content”).You represent and warrant that the Content and any social media network and/or website provided by You or on your behalf for Campaign(s) to InfluencerPro, including through the Service, shall not contain, or contain links to, improper or illegal content and will comply with the Editorial Standards below. InfluencerPro reserves the right to remove or reject any Content provided by You or on your behalf, or any URL link embodied within a Campaign at any time. Content is accepted upon the representation and warranty that You have the right to publish the Content, without infringing any rights of third parties (including InfluencerPro’s). We will not, under any circumstance, be liable in any way for any Content, including, but not limited to, any errors or omissions in any Content, or any loss or damage of any kind that You incur as a result of Your use of, or Your acting in reliance on, any Content posted, e-mailed, transmitted, or otherwise made available in the Service.
-                            </p>
-
-                            <h3>2. Editorial Standards; Prohibited Activities</h3> 
-                                            <p style="text-align: justify;
-                                            width: 110%;"> 
-                                          
-                                            This Section 2 includes an illustrative and non-exclusive list of the editorial standards for Content if You register as an Influencer. The list of standards specified below, however, is not a comprehensive listing of prohibited conduct by the Influencer or Brand. You remain fully and solely responsible for ongoing monitoring of Content on Your website(s), social channel(s), and/or any related sites with which You are associated that may or may not be directly linked to Your InfluencerPro account. This includes all information, text, images, photographs, graphics, e-mail addresses, web pages, comments and reviews, discussion board postings and other materials contained in Your Account or linked to the Influencer or Brand. 
-                                            
-                        </p>
-
-
-                        <h6> The Editorial Standards include the following:</h6> 
-                                                <p style="text-align: justify;
-                                                width: 110%;"> 
-                                              
-                                               <br> I. Unacceptable Content as defined as Content that: 
-                                                <br> a. Is lewd, profane, obscene, or indecent, including any content that is violent or pornographic or that contains nudity, explicit violent or sexual material, or depictions of violent or sexual acts; 
-                                          
-                                                   <br>  b. Is harassing, threatening abusive, inflammatory or otherwise objectionable, including content used to harass, stalk or threaten a person;  
-                                                       <br>  c. Is unlawful or that could facilitate the violation of any applicable law, regulation or governmental policy;  
-                                                           <br>  d. Offers or disseminates any fraudulent goods, services, schemes or promotions, including any make-money-fast schemes, chain letters, or pyramid schemes.  
-                                                               <br>    e. Is libelous, defamatory, knowingly false or misrepresents another person, brand or campaign you are working with;  
-                                                                   <br>      f. Infringes upon the intellectual property rights of any third party (including InfluencerPro’s), including the copyrights, trademarks, trade names, trade secrets or patents of such third party;  
-                                                                       <br>     g. Is harmful to InfluencerPro or any other party’s systems and networks, including any transmissions which may damage, interfere with, surreptitiously intercept, or expropriate any system, program, data or personal information;  
-                                                                           <br>       h. Violates any obligation of confidentiality;  
-                                                                               <br>        i. Violates the privacy, publicity, moral or any other right of any third party; and  
-                                                                                   <br>        j. Consists of any other Content that InfluencerPro in its sole discretion deems to be Unacceptable Content.  
-                                                                                       <br>       II. Editorial Consistency. You must also:  
-                                                                                           <br>    a. Ensure that all Content must be original material created by You, or if not the original material of You, ensure that express permission of the owner(s) of such material has been obtained; and  
-                                                                                               <br>    b. Ensure that all opinions and statements are representative of the Influencer’s honest views. InfluencerPro, in its sole discretion, will determine what constitutes Unacceptable Content under these Editorial Standards.  
-                                                                                                   <br>     c. Ensure professionalism and responsiveness during a collaboration. If an Influencer goes unresponsive for two or more campaigns in a calendar year, InfluencerPro, in its sole discretion, reserve the right to flag and terminate the account  
-                                                Ensure 
-                                               <br>      III. Fraudulent Activity  
-                                                   <br>   a. Influencer agrees not to engage in deceptive or fraudulent practices in relation to the performance of the Services and to the Content created for the Client, including but not limited to the purchase of social media followers and website visits or clicks or submission of fraudulent metrics. Any activity of that kind for which there is reasonable proof will result in the immediate termination of the Agreement, and cancellation of any outstanding payment for Services due to the Influencer or Brand.  
-                                                
-                                                                                                    </p>
-
-
-                                                    <p style="text-align: justify;
-                                                    width: 110%;"> 
-
-InfluencerPro is under no obligation to monitor the Influencer for compliance with these Editorial Standards. InfluencerPro may change the Editorial Standards at any time and InfluencerPro reserves the right to terminate this Agreement without prior notice and without payment of Services in the event that, in InfluencerPro’s judgment, Influencer or Brand have violated the Editorial Standards or the other requirements for the Influencer set forth in this Agreement.
-                                                                                                </p>
-
-
-                                                        <p style="text-align: justify;
-                                                        width: 110%;"> 
-                                                        Regardless of whether You register as an Influencer or Brand, Talent Manager or are just accessing the website, the following behaviors are prohibited in the Service:
-                                                   <br> Impersonating another person or entity; 
-                                                   <br> Stalking and other types of harassment or harmful, fraudulent, deceptive, threatening, defamatory, obscene, or otherwise objectionable behavior; 
-                                                     Engaging in unauthorized collection of users' content or information, and/or otherwise accessing the Service by automated means (including, but not limited to, so-called bots or scrapers) without an authorization from us; 
-                                                      Transmission of viruses, malware, or other malicious code in the Service; 
-                                                     Modification, reverse-engineering, decompiling, or other manipulation of the Service; 
-                                                     Using the Service to offer, display, distribute, transmit, route, provide connections to or store any material that infringes copyrighted works or otherwise violates or promotes the violation of the intellectual property rights of any third party (including InfluencerPro); 
-                                                       Attempting, in any manner, to obtain the password, account, or other security information from any other user; 
-                                                       Going unresponsive on two or more campaigns in a calendar year; 
-                                                      <br> Submission of fraudulent metrics;  
-                                                      <br> Jeopardizing the security of your Influencer account or anyone else’s (such as allowing someone else to log in to the Service as you); 
-                                                      <br> Using the Service in a manner that violates any law or regulation, including, without limitation, any applicable export control laws;  
-                                                      <br> Interfering with, or disrupting, the Service; 
-                                                      <br> Copies or stores any significant portion of any content You access through the Service (including on the website);  
-                                                      <br> Violating the security of any computer network, or cracks any passwords or security encryption codes. 
-                                                        
-                                                       
-                                                    </p>
-
-                                                    <h3> 3. Usage and Storage of Content and Data; Intellectual Property Rights</h3>  
-                                                            <p style="text-align: justify;
-                                                            width: 110%;"> 
-                                                        
-                                                         Unless otherwise stated in the Usage Section of InfluencerPro campaign collaboration briefs, InfluencerPro will have an exclusive, worldwide, perpetual, irrevocable and transferable right and license, with the right to sublicense through multiple tiers, to use, distribute, reproduce, copy, display, perform, store, modify, create derivative works based upon, promote and otherwise commercialize and fully exploit the Content (or any portion thereof) for any commercial or non-commercial purpose and in all forms and all media whether now known or hereafter created. Influencer or BRAND acknowledge and agrees that InfluencerPro has sole rights to any revenue and income derived from its use of Content. Notwithstanding the foregoing, any usage stated in individual campaign collaboration briefs on the InfluencerPro platform will supersede the aforementioned license and usage rights in the event of a conflict; provided, however, that InfluencerPro will retain the right to store, display and modify Content on the InfluencerPro platform.
-                                                        </p>
-
-                                      <p style="text-align: justify; width:110%">
-                                        InfluencerPro will only use the personal data provided by you or on your behalf in connection with the Service. Personal data includes name, age, household income, ethnicity, parental status, gender, location, marital status, and education. InfluencerPro’s platform uses this personal data to provide the Influencer with campaign opportunities to promote branded content. More specifically, each Influencer’s personal data is used to ensure that we are matching the influencer with the correct opportunity.
-                                                            </p>
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                InfluencerPro’s data is stored and processed in both Europe, the United States Asia, Middle East and other countries. InfluencerPro ensures the safe storage of your personal data through physical security at our data centers and encrypted daily backups. In the case of a major outage, we have a comprehensive recovery plan and backup web services. All users can request a copy of their personal data any time by writing to the support team at help@influencerpro.
-                                                            </p>
-
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                All users have the right to delete their InfluencerPro account anytime by contacting support at help@influencerpro. Upon request for account deletion, InfluencerPro will remove all personal data provided by the influencer or Brand.
-                                                            </p>
-
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                This Agreement confers only the right to use the Service, and it does not convey any rights of ownership in or to the Service. All right, title and interest, including without limitation any copyright, patent, trade secret or other intellectual property right in the Service will remain Activate’s sole property. Any services provided to You under this Agreement, and other data or materials that are prepared in the performance of such services hereunder, and all right, title and interest in the foregoing, will belong to InfluencerPro.
-                                                            </p>
-
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                The Service contains links to websites owned and/or operated by third parties. We are not responsible for any such third party websites and do not have control over any materials or content made available therein. Our inclusion of a link to a third party website in the Service does not in any way imply our endorsement, advertising, or promotion of such websites or any materials or content made available therein. By accessing a third party website You accept that we do not exercise any control over such websites or their content. We have no responsibility of the content of any third-party website, and You acknowledge and agree that we have no liability to You or any third party for any harm, injuries or losses suffered as a result of Your access to, reliance on or use of such third party websites or their content. We encourage You to familiarize yourself with the terms of service applicable to any third-party website You may access. You acknowledge sole responsibility for and assume all risk arising from Your access to, use of or reliance upon any third party websites and any materials or content made available therein.
-                                                            </p>
-
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                You may have heard of the Digital Millennium Copyright Act (the “DMCA”), as it relates to online service providers, like InfluencerPro, being asked to remove material that allegedly violates someone’s copyright. We respect others’ intellectual property rights, and we reserve the right to delete or disable any content alleged to be infringing, and to terminate the accounts of repeat alleged infringers. Please review our complete Copyright Dispute Policy in Section 26 and learn how to report potentially infringing content. 
-                                                            </p>
-
-                                                            <h3>4. FTC Endorsement Compliance and Online Publishing Policy</h3> 
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-                                                                Endorsements and advertising play an integral role in InfluencerPro’s business structure. While engaging in endorsements is encouraged by InfluencerPro, as a corporate entity we must adhere to a set of guidelines when endorsing or advertising products and services through InfluencerPro. The following policy outlines the parameters InfluencerPro and Influencers and Brands must observe when engaging in endorsements in connection with Campaigns with InfluencerPro. Violation of this policy may result in disciplinary action of varying degrees, up to and including immediate termination.
-                                                                
-                                                                {{-- <li style="text-align: justify;">  --}} <br>
-                                                                    I. Endorsements and Advertising. From time to time, InfluencerPro’s business involves the endorsement, advertisement, or evaluation of products and services. An endorsement means “any advertising message (including verbal statements, demonstrations, or depictions of a name, signature, likeness or other identifying personal characteristics of an individual or the name or seal of an organization) that consumers are likely to believe reflects the opinions, beliefs, findings or experiences of a party other than the sponsoring advertiser, even if the view expressed by that party are identical to those of the sponsoring advertiser.” As a general rule of thumb, when discussing a product or service, be honest to InfluencerPro’s 
-                                                                    readers and consumers. You should never post material in any medium (including those statements made on social media) that could be viewed as deceptive advertising. This means, when you post endorsements,
-                                                                     these statements should:
-                                                                    {{-- </li> --}}
-                                                                {{-- <li style="text-align: justify;"> --}}
-                                                                 <br>   a. Reflect your honest opinions, findings, beliefs and experiences; 
-                                                                {{-- </li> --}}
-                                                                    {{-- <li style="text-align: justify;"> --}}
-                                                                      <br>  b. When representing that you use the endorsed product,
-                                                                         you should actually be a bona fide user of it at the time the endorsement was given;
-                                                                        {{-- </li> --}}
-                                                                        {{-- <li style="text-align: justify;">  --}}
-                                                                        <br>    c. Not include any statements about products or its
-                                                                             services that the creator of such products or services could not make directly
-                                                                              (because unsubstantiated or otherwise false, misleading, presented out of context, or distorted); and
-                                                                            {{-- </li> --}}
-                                                                            {{-- <li style="text-align: justify;">  --}}
-                                                                           <br>     d. Clearly and conspicuously disclose, if true,
-                                                                                 that you have received or will receive compensation (or other benefit)
-                                                                                  in exchange for your online statements. All disclosures must be FTC compliant.
-                                                                                   Examples of benefits that you must disclose include, for example, cash, gift cards, 
-                                                                                   discounts, free products and/or services, loaner products, special access or other privileges,
-                                                                                    and/or employment. Please note that these are only given as examples and do not cover the range 
-                                                                                    of what InfluencerPro considers a benefit. Don’t try to trick the reader—the disclosure 
-                                                                                    should be in easy to understand wording and typeface, prominently visible and placed adjacent to your statement that triggered the disclosure. For example, this disclosure could include terms such as “Ad,” “Advertisement,” “Paid Advertisement,” 
-                                                                                    “Sponsored Advertising Content,” or some variation thereof. Disclosures should also appear as close as possible to the content to which they relate. Anything different to the above must be approved by InfluencerPro.
-                                                                                {{-- </li> --}}
-                                                                
-                                                            
-                                                            
-                                                            
-                                                            </p>
-
-
-
-                                                            <p style="text-align: justify; width:110%">
-                                                                You agree that InfluencerPro shall not be liable, under any circumstances, for any errors, omissions, losses, or damages claimed or incurred due to any of your online postings. InfluencerPro reserves the right to suspend, modify, or withdraw this policy, and you are responsible for regularly reviewing the terms of this policy.
-                                                            </p>
-
-                                                            <h3>5. Warranty; Disclaimer</h3>  
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-You warrant that the performance of Your services hereunder and any Content, if any, will be performed in a workmanlike manner and will conform to specifications, as directed by InfluencerPro and/or InfluencerPro's customer(s). Neither InfluencerPro nor its licensors or suppliers make any representations or warranties concerning any Content or other materials contained in or accessed through the Services, and we will not be responsible or liable for the accuracy, copyright compliance, legality, or decency of Content or other material contained in or accessed through the Services. We (and our licensors and suppliers) make no representations or warranties regarding suggestions or recommendations of services or products offered or purchased through any Campaigns or by InfluencerPro’s customers. Products and services purchased or offered (whether or not following such recommendations and suggestions) through any Campaigns or by InfluencerPro’s customers are provided “AS IS” and without any warranty of any kind from Company or others (unless, with respect to such others only, provided expressly and unambiguously in writing by a designated third party for a specific product or service). The Service is provided to you on an "AS IS" and "AS AVAILABLE" basis. EXCEPT AS EXPRESSLY SET FORTH HEREIN, ACTIVATE AND ITS LICENSORS HEREBY DISCLAIM ALL REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO ANY SUBJECT MATTER OF THIS AGREEMENT, INCLUDING WITHOUT LIMITATION, ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, RESULT, OUTCOME AND/OR ANY REPRESENTATION OR WARRANTY THAT THE OPERATION OF ACTIVATE’S SERVICE WILL BE UNINTERRUPTED OR ERROR FREE. SOME STATES DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
-
-                                                            </p>
-
-                                                            <h3>6. Payment for Services for Influencers</h3>  
-                                                            <p style="text-align: justify; width:110%">
-                                                            
-{{-- <li style="text-align: justify;">  --}} <br>
-    I. Subject to the terms and conditions of this Agreement, as full compensation for performance of Your services under a Campaign, InfluencerPro, on behalf of its customer, or InfluencerPro's customer, in accordance with the following, will pay You on a net sixty (60) payment schedule at the end of the applicable Campaign and on the 15th of the month, as determined by InfluencerPro. The applicable fees will be paid upon the acceptance of Your undisputed services by InfluencerPro's customer in relation to the applicable Campaign, in accordance with InfluencerPro's policies, provided that You provide InfluencerPro with correct payment information. If an InfluencerPro customer indicates that it will pay You directly, such customer will make payments directly to You in accordance with any Campaign description and InfluencerPro’s payment policies, and InfluencerPro will have no liability for any disputes that arise between you and the InfluencerPro customer. In the event that InfluencerPro is paying You on behalf of InfluencerPro's customer, You acknowledge and agree that InfluencerPro will pay You only upon receipt by InfluencerPro of funds from the applicable customer for Your services. For the avoidance of doubt, You acknowledge that InfluencerPro's customers, and not InfluencerPro, are liable for the payment of all fees to You, unless a InfluencerPro customer has made the applicable payment to InfluencerPro in accordance with this Section.
-{{-- </li><li style="text-align: justify;"> --}}
-   <br> II. Influencer agrees to keep strictly confidential the amount of the payment under this Agreement, and shall not disclose such information to any other person or entity, unless required by applicable securities or other laws, or disclosed in confidence to Influencer’s attorneys or accountants.
-{{-- </li><li style="text-align: justify;">  --}}
-   <br> III. If You have not registered as an Influencer or Brand (for example, if You are just visiting our website), the provisions of this Section 6 will not apply to you.
-{{-- </li> --}}
-<h3>7. Period of Performance for Influencers </h3>
-
-The period for performing services shall begin and end on the date specified on the applicable Campaign description.
-
-                                                            </p>
-
-                                                            <h3>  8. Relationship of Parties for Influencers</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                             
-It is agreed that You are an independent contractor and that You shall perform the services hereunder under the direction of InfluencerPro and/or InfluencerPro's customer as to the result of such activity, but that You shall determine the manner and means by which such services are accomplished, subject to the express condition that You shall at all times comply with applicable law. It is expressly understood that neither You nor Your employees, agents, and/or subcontractors, if any, are agents or employees of InfluencerPro, and have no authority to bind InfluencerPro by contract or otherwise. You shall ensure that Your employees, agents and/or subcontractors, if any, are bound in writing by the terms and conditions of this Agreement. You will remain directly liable and responsible to InfluencerPro and its customer(s) for any performance of Your and/or Your employees’, agents’ and/or subcontractors’, if any, obligations under this Agreement.
-
-                                                            </p>
-                                                            <h3> 9. Employment Taxes and Benefits for Influencers</h3>  
-                                                            <p style="text-align: justify; width:110%">
-                                                           
-Since You are an independent contractor, InfluencerPro will not withhold any amounts from any sums due to You under this Agreement. It is agreed that it is the obligation of You to report as self-employment income all compensation received by You pursuant to this Agreement, whether by InfluencerPro, on behalf of its customers, or directly by InfluencerPro's customers. You shall indemnify InfluencerPro and its customers and hold them harmless to the extent of any obligation imposed by law upon InfluencerPro and/or its customers to pay any federal, state or local withholding taxes, social security, medical, dental, workers compensation, disability insurance, pension, retirement or similar items in connection with any payments made to You by InfluencerPro, on behalf of its customers, or directly by InfluencerPro's customers, pursuant to this Agreement on account of You or Your agents, employees and/or subcontractors, if any. Neither You nor Your employees, agents and/or subcontractors, if any, shall be entitled to participate in any plans, arrangements or distributions by InfluencerPro pertaining to any bonus, stock option, profit sharing, insurance or similar benefits for InfluencerPro employees.
-
-                                                            </p>
-                                                            <h3> 10. Insurance for Influencers</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-During the period of performance and for three years thereafter, You will maintain sufficient insurance to protect Yourself from (a) claims made pursuant to workers compensation or state disability acts; (b) claims for damages because of bodily injury, sickness or death of any of Your employees, agents and/or subcontractors or any other person which arises out of any negligent act or omission of You or Your employees, agents and/or subcontractors; (c) claims for damages because of injury to or destruction of tangible property including loss of use resulting therefrom which arise from any negligent act or omission of You or Your employees, agents and/or subcontractors; and (d) claims subject to any of Your indemnification obligations hereunder.
-
-                                                            </p>
-                                                            <h3> 11. Conflict of Interest</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-You represent and warrant, for Yourself, Your employees, agents and subcontractors, that there exist no actual or potential conflict of interests concerning the services to be performed under this Agreement. You represent and warrant, for Yourself, Your employees, agents and subcontractors, that neither You nor Your employees, agents and/or subcontractors, if any, is under any preexisting obligation inconsistent with the provisions of this Agreement and that performance of the services hereunder does not require the breach of any obligation to keep in confidence the proprietary information of another party. You and Your employees, agents and/or subcontractors, has not brought and will not bring to InfluencerPro and/or InfluencerPro's customers or use in the performance of the services hereunder any Content, materials or documents of another party considered confidential unless it has first obtained written authorization from such party for the possession and use of such Content and materials and has received InfluencerPro's prior written consent to use of such Content and materials.
-
-                                                            </p>
-                                                            <h3> 12. Proprietary Rights</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                           
-                                                               {{-- <li style="text-align: justify; "> --}} <br>
-                                                                 I. All things of value, including, but not limited to, Content, results of services, Feedback (as defined below), software, documentation, inventions (patentable or unpatentable), trade secrets, designs, modules, customer lists, contacts and relationships, sales plans, marketing plans and methodology, copyrights and any modifications and/or derivatives, as defined pursuant to the United States Copyright Act, thereof developed and/or made and/or implemented by You and Your employees, agents and/or subcontractors, if any, under this Agreement shall be considered a "Work Made for Hire" under the United States Copyright Act and the copyright, any other proprietary rights, any such materials and all rights, title and interest therein shall belong to InfluencerPro. Notwithstanding the foregoing, should copyright and any other intellectual property and/or proprietary rights in any of the foregoing material be determined by a court of law to remain with You, Your employees, agents and/or subcontractors, You, and Your employees, agents and/or subcontractors, hereby assign all right, title and interest including Your copyright to InfluencerPro and waive any and all moral rights to such material. You agree to cooperate with InfluencerPro and to execute and cause Your employees, agents and/or subcontractors to execute all documents reasonably necessary for InfluencerPro to secure copyright protection and other intellectual property and/or proprietary rights for and in material produced under this Agreement. You agree that all papers, design notes, records and other materials prepared or produced by You, Your employees, agents and/or subcontractors, in the performance of services hereunder are the sole and exclusive property of InfluencerPro and may be examined by InfluencerPro upon request. Notwithstanding the above, InfluencerPro acknowledges that the services hereunder may contain general know-how and prior intellectual property created by You prior to and outside the scope of this Agreement (“Influencer Intellectual Property”). Accordingly, InfluencerPro agrees that You may use Influencer Intellectual Property in connection with the provision of products and services to others, provided that You continue to abide by the terms and conditions of this Agreement and that none of InfluencerPro’s intellectual property, InfluencerPro Technology, the Service, InfluencerPro Proprietary Information or InfluencerPro’s Confidential Information is utilized in any manner with regards to the provision of products and services to others. All rights in Influencer Intellectual Property, including but not limited to utility routines, generalized interfaces, algorithms, ideas, techniques, concepts, proprietary processes, tools, methodologies, and improvements thereon shall continue to vest in You. For the purposes of this Agreement, "Feedback"means any suggestions, enhancement requests, recommendations or other feedback provided by You relating to the operation of the Service. 
-                                                                {{-- </li> --}}
-                                                                {{-- <li style="text-align: justify; "> --}} <br>
-                                                                    II. Unless otherwise stated in the usage section of InfluencerPro campaign collaboration briefs, you hereby grant to InfluencerPro an irrevocable, perpetual, non-exclusive, transferable, assignable, royalty-free, fully paid-up, world-wide license to use, copy, modify, sub-license, distribute (through itself or its subsidiaries and/or third party distributors or resellers), perform and display Influencer Intellectual Property included as part of, and/or for use of, the services hereunder and/or any Content hereunder for InfluencerPro’s and/or InfluencerPro's customers' business purposes. As stated in Section 3, any usage indicated in individual campaign collaboration briefs will supersede the aforementioned usage in the event of a conflict.
-                                                                 {{-- </li> --}}
-   {{-- <li style="text-align: justify;"> --}}
-   <br>  III. You acknowledge that You will acquire knowledge and information about InfluencerPro and its Customers, and their Clients, their respective products, their respective programming techniques, their respective experimental work, their respective clients and/or their respective suppliers and that all such knowledge and information and related materials shall remain the trade secret and confidential and proprietary information of InfluencerPro ("InfluencerPro Proprietary Information"). You shall hold such InfluencerPro Proprietary Information in strict confidence, not disclose it to others or use it in any way, commercially or otherwise, and shall not allow any unauthorized person access to it, either before or after termination of this Agreement, except in connection with Your performance of the services for InfluencerPro and InfluencerPro’s customers. You shall take all action reasonably necessary and satisfactory to InfluencerPro to protect the confidentiality of the InfluencerPro Proprietary Information including, without limitation, implementation and enforcement of operating procedures that minimize the possibility of unauthorized use or copying of the InfluencerPro Proprietary Information, including limiting access to such InfluencerPro Proprietary Information only to Your employees, agents and/or subcontractors, if any, that have a need to know who (a) have been approved in advance by InfluencerPro; (b) have been advised of the confidential nature thereof; and (c) are under an express written obligation to maintain such confidentiality. You agree that the Service, all Activate Technology, software and documentation furnished to You under this Agreement is InfluencerPro Proprietary Information. You will not duplicate any InfluencerPro Technology, software or documentation unless necessary to implement this Agreement and shall not decompile, disassemble, reverse engineer or otherwise reduce any such InfluencerPro Technology and/or software code to a human readable form. All software, documentation and other InfluencerPro Proprietary Information provided to You shall remain the sole and exclusive property of InfluencerPro. All InfluencerPro Proprietary Information and any copies thereof shall be delivered to InfluencerPro upon expiration or termination of this Agreement.
-     {{-- </li> --}}
-    {{-- <li style="text-align: justify;">  --}}
-       <br> IV. You shall not (a) permit any third party to access the Service except as permitted herein or as directed by InfluencerPro in writing, (b) create derivative works based on the Service, (c) copy, frame or mirror any part or content of the Service, (d) reverse engineer the Service, or (e) access the Service in order to (1) build a competitive product or service, or (2) copy any features, functions or graphics of the Service. 
-
-    {{-- </li> --}}
+                                <h3>User Representations</h3>
+<p style="text-align: justify; width: 110%;">
+    By using the Site or the Marketplace Subscriptions & Offerings, you represent and warrant that:
 </p>
-<h3>13. Indemnification</h3>
-    <p style="text-align: justify; width:110%">
+<ul style="text-align: justify; width: 110%;list-style-type: none;">
+    <li>(1) all registration information you submit will be true, accurate, current, and complete;</li>
+    <li>(2) you will maintain the accuracy of such information and promptly update such registration information as necessary;</li>
+    <li>(3) you have the legal capacity and you agree to comply with these Terms of Use;</li>
+    <li>(4) you are not a minor in the jurisdiction in which you reside;</li>
+    <li>(5) you will not access the Site or the Marketplace Offerings through automated or non-human means, whether through a bot, script or otherwise;</li>
+    <li>(6) you will not use the Site for any illegal or unauthorized purpose;</li>
+    <li>(7) your use of the Site or the Marketplace Offerings will not violate any applicable law or regulation.</li>
+</ul>
+<p style="text-align: justify; width: 110%;">
+    If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site (or any portion thereof).
+</p>
+<p style="text-align: justify; width: 110%;">
+    You may not use the Site or the Marketplace Offerings for any illegal or unauthorized purpose nor may you, in the use of Marketplace Offerings, violate any laws. Among unauthorized Marketplace Offerings are the following: intoxicants of any sort; illegal drugs or other illegal products; alcoholic beverages; games of chance; and pornography or graphic adult content, images, or other adult products. Postings of any unauthorized products or content may result in immediate termination of your account and a lifetime ban from use of the Site.
+</p>
+<p style="text-align: justify; width: 110%;">
+    We are a service provider and make no representations as to the safety, effectiveness, adequacy, accuracy, availability, prices, ratings, reviews, or legality of any of the information contained on the Site or the Marketplace Offerings displayed or offered through the Site. You understand and agree that the content of the Site does not contain or constitute representations to be reasonably relied upon, and you agree to hold us harmless from any errors, omissions, or misrepresentations contained within the Site’s content. We do not endorse or recommend any Marketplace Offerings and the Site is provided for informational and advertising purposes only.
+</p>
 
+<h3>User Registration</h3>
+<p style="text-align: justify; width: 110%;">
+    You may be required to register with the Site in order to access the Marketplace Offerings. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene, or otherwise objectionable.
+</p>
+
+<h3>Marketplace Subscriptions & Offerings</h3>
+<p style="text-align: justify; width: 110%;">
+    We reserve the right to limit the quantities of the Marketplace Subscriptions & Offerings offered or available on the Site. All descriptions or pricing of the Marketplace Offerings are subject to change at any time without notice, at our sole discretion. We reserve the right to discontinue any Marketplace Subscriptions & Offerings at any time for any reason. We do not warrant that the quality of any of the Marketplace Subscriptions & Offerings purchased by you will meet your expectations or that any errors in the Site will be corrected.
+</p>
+
+<h3>Purchases & Payment</h3>
+<p style="text-align: justify; width: 110%;">
+    You agree to provide current, complete, and accurate purchase and account information for all purchases of the Marketplace Subscriptions & Offerings made via the Site. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that we can complete your transactions and contact you as needed. Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in U.S. dollars.
+</p>
+<p style="text-align: justify; width: 110%;">
+    You agree to pay all charges at the prices then in effect for your purchases and any applicable shipping fees, and you authorize us to charge your chosen payment provider for any such amounts upon placing your order. If your order is subject to recurring charges, then you consent to our charging your payment method on a recurring basis without requiring your prior approval for each recurring charge, until such time as you cancel the applicable order. We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment.
+</p>
+<p style="text-align: justify; width: 110%;">
+    We reserve the right to refuse any order placed through the Site. We may, in our sole discretion, limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same payment method, and/or orders that use the same billing or shipping address. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers, or distributors.
+</p>
+
+<h3>Refund Policy</h3>
+<p style="text-align: justify; width: 110%;">
+    All amounts posted are final and will not be refunded once payment is made.
+</p>
+
+<h3>Prohibited Activities</h3>
+<p style="text-align: justify; width: 110%;">
+    You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
+</p>
+
+<p style="text-align: justify; width: 110%;">
+    As a user of the Site, you agree not to:
+</p>
+
+<ul style="text-align: justify; width: 110%;list-style-type: none;">
+    <li><strong>1.</strong> Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
+    <li><strong>2.</strong> Make any unauthorized use of the Marketplace Subscriptions & Offerings, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
+    <li><strong>3.</strong> Circumvent, disable, or otherwise interfere with security-related features of the Site, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the Site and/or the Content contained therein.</li>
+    <li><strong>4.</strong> Engage in unauthorized framing of or linking to the Site.</li>
+    <li><strong>5.</strong> Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</li>
+    <li><strong>6.</strong> Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+    <li><strong>7.</strong> Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</li>
+    <li><strong>8.</strong> Interfere with, disrupt, or create an undue burden on the Site or the networks or services connected to the Site.</li>
+    <li><strong>9.</strong> Attempt to impersonate another user or person or use the username of another user.</li>
+    <li><strong>10.</strong> Sell or otherwise transfer your profile.</li>
+    <li><strong>11.</strong> Use any information obtained from the Site in order to harass, abuse, or harm another person.</li>
+    <li><strong>12.</strong> Decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Site.</li>
+    <li><strong>13.</strong> Attempt to bypass any measures of the Site designed to prevent or restrict access to the Site, or any portion of the Site.</li>
+    <li><strong>14.</strong> Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Marketplace Subscriptions & Offerings to you.</li>
+    <li><strong>15.</strong> Copy or adapt the Site’s software, including but not limited to Flash, PHP, HTML, JavaScript or other code.</li>
+
+
+    <li><strong>16.</strong> Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party’s uninterrupted use and enjoyment of the Site or modifies, impairs, disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of the Marketplace Subscriptions & Offerings.</li>
+    <li><strong>17.</strong> Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats (“gifs”), 1×1 pixels, web bugs, cookies, or other similar devices (sometimes referred to as “spyware” or “passive collection mechanisms” or “pcms”).</li>
+    <li><strong>18.</strong> Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that accesses the Site, or using or launching any unauthorized script or other software.</li>
+    <li><strong>19.</strong> Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</li>
+    <li><strong>20.</strong> Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
+</ul>
+
+
+<ul style="text-align: justify; width: 110%;">
+    <li><b>User Generated Contributions</b><br>
+        The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
+    </li>
+    <li><b>When you create or make available any Contributions, you thereby represent and warrant that:</b></li>
+    <ul style="list-style-type: none;">
+        <li>1. The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
+        <li>2. You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
+        <li>3. You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
+        <li>4. Your Contributions are not false, inaccurate, or misleading.</li>
+        <li>5. Your Contributions are not unsolicited or unauthorized advertising, promotional materials, pyramid schemes, chain letters, spam, mass mailings, or other forms of solicitation.</li>
+        <li>6. Your Contributions are not obscene, lewd, lascivious, filthy, violent, harassing, libelous, slanderous, or otherwise objectionable (as determined by us).</li>
+        <li>7. Your Contributions do not ridicule, mock, disparage, intimidate, or abuse anyone.</li>
+        <li>8. Your Contributions do not advocate the violent overthrow of any government or incite, encourage, or threaten physical harm against another.</li>
+        <li>9. Your Contributions do not violate any applicable law, regulation, or rule.</li>
+        <li>10. Your Contributions do not violate the privacy or publicity rights of any third party.</li>
+        <li>11. Your Contributions do not contain any material that solicits personal information from anyone under the age of 18 or exploits people under the age of 18 in a sexual or violent manner.</li>
+        <li>12. Your Contributions do not violate any applicable law concerning child pornography, or otherwise intended to protect the health or well-being of minors.</li>
+        <li>13. Your Contributions do not include any offensive comments that are connected to race, national origin, gender, sexual preference, or physical handicap.</li>
+        <li>14. Your Contributions do not otherwise violate, or link to material that violates, any provision of these Terms of Use, or any applicable law or regulation.</li>
+    </ul>
+    <li>Any use of the Site or the Marketplace Subscriptions & Offerings in violation of the foregoing violates these Terms of Use and may result in, among other things, termination or suspension of your rights to use the Site and the Marketplace Offerings.</li>
+    
+    <li><b>Contribution License</b><br>
+        By posting your Contributions to any part of the Site or making Contributions accessible to the Site by linking your account from the Site to any of your social networking accounts, you automatically grant, and you represent and warrant that you have the right to grant, to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and license to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt (in whole or in part), and distribute such Contributions (including, without limitation, your image and voice) for any purpose, commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, such Contributions, and grant and authorize sublicenses of the foregoing. The use and distribution may occur in any media formats and through any media channels.</li>
+    <li>This license will apply to any form, media, or technology now known or hereafter developed, and includes our use of your name, company name, and franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and personal and commercial images you provide. You waive all moral rights in your Contributions, and you warrant that moral rights have not otherwise been asserted in your Contributions.</li>
+    <li>We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights or other proprietary rights associated with your Contributions. We are not liable for any statements or representations in your Contributions provided by you in any area on the Site. You are solely responsible for your Contributions to the Site and you expressly agree to exonerate us from any and all responsibility and to refrain from any legal action against us regarding your Contributions.</li>
+    <li>We have the right, in our sole and absolute discretion:
+        <ul style="list-style-type: none;">
+            <li>(1) to edit, redact, or otherwise change any Contributions;</li>
+            <li>(2) to re-categorize any Contributions to place them in more appropriate locations on the Site;</li>
+            <li>(3) to pre-screen or delete any Contributions at any time and for any reason, without notice.</li>
+        </ul>
+    </li>
+    <li>We have no obligation to monitor your Contributions.</li>
+
+    <li><b>Guidelines for Reviews</b><br>
+        We may provide you areas on the Site to leave reviews or ratings. When posting a review, you must comply with the following criteria:
+        <ul style="list-style-type: none;">
+            <li>(1) you should have firsthand experience with the person/entity being reviewed;</li>
+            <li>(2) your reviews should not contain offensive profanity, or abusive, racist, offensive, or hate language;</li>
+            <li>(3) your reviews should not contain discriminatory references based on religion, race, gender, national origin, age, marital status, sexual orientation, or disability;</li>
+            <li>(4) your reviews should not contain references to illegal activity;</li>
+            <li>(5) you should not be affiliated with competitors if posting negative reviews;</li>
+            <li>(6) you should not make any conclusions as to the legality of conduct;</li>
+            <li>(7) you may not post any false or misleading statements;</li>
+            <li>(8) you may not organize a campaign encouraging others to post reviews, whether positive or negative.</li>
+        </ul>
+        We may accept, reject, or remove reviews in our sole discretion. We have absolutely no obligation to screen reviews or to delete reviews, even if anyone considers reviews objectionable or inaccurate. Reviews are not endorsed by us, and do not necessarily represent our opinions or the views of any of our affiliates or partners. We do not assume liability for any review or for any claims, liabilities, or losses resulting from any review. By posting a review, you hereby grant to us a perpetual, non-exclusive, worldwide, royalty-free, fully-paid, assignable, and sublicensable right and license to reproduce, modify, translate, transmit by any means, display, perform, and/or distribute all content relating to reviews.</li>
+
+    <li><b>Mobile Application License</b><br>
+        <b>Use License</b><br>
+        If you access the Marketplace Offerings via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license contained in these Terms of Use.
+    </li>
+    <li>You shall not:
+        <ul style="list-style-type: none;">
+            <li>(1) decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the application;</li>
+            <li>(2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the application;</li>
+            <li>(3) violate any applicable laws, rules, or regulations in connection with your access or use of the application;</li>
+            <li>(4) remove, alter, or obscure any proprietary notice (including any notice of copyright or trademark) posted by us or the licensors of the application;</li>
+            <li>(5) use the application for any revenue-generating endeavor, commercial enterprise, or other purpose for which it is not designed or intended;</li>
+            <li>(6) make the application available over a network or other environment permitting access or use by multiple devices or users at the same time;</li>
+            <li>(7) use the application for creating a product, service, or software that is, directly or indirectly, competitive with or in any way a substitute for the application.</li>
+            <li>(8) use the application to send automated queries to any website or to send any unsolicited commercial e-mail; or</li>
+    <li>(9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications, accessories, or devices for use with the application.</li>
+        </ul>
+    </li>
+   
+</ul>
+
+<h3>Apple & Android Devices</h3>
+
+<p>The following terms apply when you use a mobile application obtained from either the Apple Store or Google Play (each an “App Distributor”) to access the Marketplace Subscriptions & Offerings:</p>
+
+<ul style="list-style-type: none;">
+    <li>(1) The license granted to you for our mobile application is limited to a non-transferable license to use the application on a device that utilizes the Apple iOS or Android operating systems, as applicable, and in accordance with the usage rules set forth in the applicable App Distributor’s terms of service;</li>
+    <li>(2) We are responsible for providing any maintenance and support services with respect to the mobile application as specified in the terms and conditions of this mobile application license contained in these Terms of Use or as otherwise required under applicable law, and you acknowledge that each App Distributor has no obligation whatsoever to furnish any maintenance and support services with respect to the mobile application;</li>
+    <li>(3) In the event of any failure of the mobile application to conform to any applicable warranty, you may notify the applicable App Distributor, and the App Distributor, in accordance with its terms and policies, may refund the purchase price, if any, paid for the mobile application, and to the maximum extent permitted by applicable law, the App Distributor will have no other warranty obligation whatsoever with respect to the mobile application;</li>
+    <li>(4) You represent and warrant that (i) you are not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S. government as a “terrorist supporting” country and (ii) you are not listed on any U.S. government list of prohibited or restricted parties;</li>
+    <li>(5) You must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;</li>
+    <li>(6) You acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms of Use, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms of Use against you as a third-party beneficiary thereof.</li>
+</ul>
+
+<h3>Social Media</h3>
+
+<p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
+
+<ul style="list-style-type: none;">
+    <li>(1) providing your Third-Party Account login information through the Site; or</li>
+    <li>(2) allowing us to access your Third-Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third-Party Account. You represent and warrant that you are entitled to disclose your Third-Party Account login information to us and/or grant us access to your Third-Party Account, without breach by you of any of the terms and conditions that govern your use of the applicable Third-Party Account, and without obligating us to pay any fees or making us subject to any usage limitations imposed by the third-party service provider of the Third-Party Account.</li>
+    <li>By granting us access to any Third-Party Accounts, you understand that:</li>
+    <ul style="list-style-type: none;">
+        <li>(1) We may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account (the “Social Network Content”) so that it is available on and through the Site via your account, including without limitation any friend lists;</li>
+        <li>(2) We may submit to and receive from your Third-Party Account additional information to the extent you are notified when you link your account with the Third-Party Account.</li>
+    </ul>
+    <li>Depending on the Third-Party Accounts you choose and subject to the privacy settings that you have set in such Third-Party Accounts, personally identifiable information that you post to your Third-Party Accounts may be available on and through your account on the Site.</li>
+    <li>Please note that if a Third-Party Account or associated service becomes unavailable or our access to such Third-Party Account is terminated by the third-party service provider, then Social Network Content may no longer be available on and through the Site. You will have the ability to disable the connection between your account on the Site and your Third-Party Accounts at any time.</li>
+    <li>PLEASE NOTE THAT YOUR RELATIONSHIP WITH THE THIRD-PARTY SERVICE PROVIDERS ASSOCIATED WITH YOUR THIRD-PARTY ACCOUNTS IS GOVERNED SOLELY BY YOUR AGREEMENT(S) WITH SUCH THIRD-PARTY SERVICE PROVIDERS.</li>
+    <li>We make no effort to review any Social Network Content for any purpose, including but not limited to, for accuracy, legality, or non-infringement, and we are not responsible for any Social Network Content. You acknowledge and agree that we may access your email address book associated with a Third-Party Account and your contacts list stored on your mobile device or tablet computer solely for purposes of identifying and informing you of those contacts who have also registered to use the Site.</li>
   
-You shall indemnify InfluencerPro and its Customers, their Clients, and each of their directors, officers, employees, consultants, subcontractors, affiliates and agents and hold them harmless from and against all claims, damages (actual and consequential), demands, judgments, liabilities, losses, causes of action and expenses, including attorneys' fees, arising out of or resulting from:
- {{-- </li> --}}
-{{-- <li style="text-align: justify;"> --}}
-   <br>  I. Any action by a third party against InfluencerPro and/or its Customers, their Clients, or each of their directors, officers, employees, consultants, subcontractors, affiliates and agents that is based on any claim that any services performed under this Agreement, the results thereof, or any Content infringes a patent, copyright, trademark or other proprietary right of any third party or violates a trade secret right of any person or entity; 
-{{-- </li> --}}
-    {{-- <li style="text-align: justify;">  --}}
-        <br> II. The performance of the services hereunder caused by any negligent act or omission, fraud or willful conduct of You or Your employees, agents and/or subcontractors, if any, and which result in (a) any bodily injury, sickness, disease or death, or (b) any injury or destruction to tangible or intangible property (including computer programs and data) or any loss of use resulting therefrom;
-     {{-- </li> --}}
-    {{-- <li style="text-align: justify;">  --}}
-       <br>  III. Any (a) violation of any statute, ordinance, or regulation by You or Your employees, agents and/or subcontractors; (b) any breach of any representation, warranty or other obligation under this agreement; and (c) any act or omission by You and/or Your employees, agents and/or subcontractors which is inconsistent with the terms and conditions of this Agreement. Legal counsel for the defense of any third party claim of infringement shall be selected by mutual agreement of You and Activate. In addition to the foregoing, You agree to indemnify and hold InfluencerPro
-        and InfluencerPro’s employees, directors, officers, consultants, subcontractors, customers and affiliates (collectively “Representatives”) harmless against any and all expenses and losses of any kind (including reasonable attorneys’ 
-        fees and costs) incurred by InfluencerPro or its Representatives in connection with any claim for libel, defamation, false or deceptive advertising (including violations of InfluencerPro’s FTC Endorsement Compliance and Online Publishing Policy) or sales practices arising from use of the Content and/or results of services hereunder. 
-    {{-- </li> --}}
 
-                                                            </p>
 
-                                                            <h3>  14. Limitation of Liability</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                           
-TO THE FULLEST EXTENT ALLOWED BY APPLICABLE LAW, THE LIABILITY OF INFLUENCERPRO AND ITS CUSTOMERS OR THEIR CLIENTS AND ITS LICENSORS IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR ANY MATERIALS OR SERVICES FURNISHED HEREUNDER SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNT OF ANY FEES WHICH ARE DUE PURSUANT TO SECTION 6 FOR THE PARTICULAR SERVICE THAT GAVE RISE TO ANY CLAIM AND WHICH ARE UNPAID AND (B) $100. IN NO EVENT SHALL INFLUENCERPRO OR ITS LICENSORS BE LIABLE FOR (I) SPECIAL, INDIRECT, INCIDENTAL, TORT (INCLUDING NEGLIGENCE), EXEMPLARY, RELIANCE OR CONSEQUENTIAL DAMAGES (INCLUDING ANY DAMAGES RESULTING FROM LOSS OF GOODWILL, LOSS OF USE, LOSS OF DATA, LOSS OF PROFITS, LOSS OF BUSINESS, OR COMPUTER FAILURE OR MALFUNCTION) ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR ANY CONTENT, MATERIALS OR SERVICES (INCLUDING INFLUENCERPRO’S WEBSITE) FURNISHED HEREUNDER, OR (II) ANY MATTER BEYOND INFLUENCERPRO’S OR ITS LICENSORS’ REASONABLE CONTROL, EVEN IF INFLUENCERPRO OR ITS LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ 
+</ul>
 
-                                                            </p>
-                                                            <h3>15. Confidential Information</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                                
 
-{{-- <li style="text-align: justify;"> --}}
- <br>   I. Obligations. InfluencerPro and Influencer or Brand agree to maintain in confidence any non-public information of the other party, whether written or otherwise, disclosed by the other party in the course of performance of this Agreement that a party knows or reasonably should know is considered confidential by the disclosing party (“Confidential Information”). The receiving party shall not disclose, use, transmit, inform or make available to any entity, person or body any of the Confidential Information, except as a necessary part of performing its obligations hereunder, and shall take all such actions as are 
-    reasonably necessary and appropriate to preserve and protect the Confidential 
-    Information and the parties’ respective rights therein, at all times exercising at least a reasonable level of care. Each party agrees to restrict access to the 
-    Confidential Information of the other party to those employees or agents who require access in order to perform hereunder, and, except as otherwise provided, neither party shall make Confidential Information available to any other person or entity without the prior written consent of the other party.
-{{-- </li> --}}
-{{-- <li style="text-align: justify;">  --}}
-  <br>  II. Exclusions. Confidential Information shall not include any information that is (a) already known to the receiving party at the time of the disclosure; (b) publicly known at the time of the disclosure or becomes publicly known through no wrongful act or failure of the receiving party; (c) subsequently disclosed to the receiving party on a non-confidential basis by a third party not having a confidential relationship with the other party hereto that rightfully acquired such information; or (d) communicated to a third party by the receiving party with the express written consent of the other party hereto. A disclosure of Confidential Information that is legally compelled to be disclosed pursuant to a subpoena, summons, order or other judicial or governmental process shall not be considered a breach of this Agreement; provided the receiving party provides prompt notice of any such subpoena, order, or the like to the other party so that such party will have the opportunity to obtain a protective order or otherwise oppose the disclosure.</li>
-
-                                                            </p>
-                                                            <h3>16. Termination</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                               
-The obligations and liabilities of InfluencerPro and You may be terminated as follows:
-{{-- <li style="text-align: justify;">  --}}
- <br>   I. Either party may terminate this Agreement in the event of a breach by the other party of any of the covenants or terms or conditions contained herein if such breach continues uncured for a period of twenty (20) days after written notice of such breach; and
-{{-- </li> --}}
-{{-- <li style="text-align: justify;"> --}}
-   <br> II. InfluencerPro may, by giving You written notice of termination, terminate this Agreement and/or any Campaign hereunder (partially or in full) with or without cause, effective upon receipt of such notice without need of intervention of any court or other authority.
-{{-- </li> --}}
-{{-- <li style="text-align: justify;"> --}}
-    III. InfluencerPro has the right to disable your account and/or terminate this Agreement with no notice either with or without participation of a Campaign. InfluencerPro will have the sole right to disable your account and/or terminate this Agreement with or 
-    without cause at any time and without notice.
-{{-- </li> --}}
-
-                                                            </p>
-                                                            <h3>17. Effect of Termination</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-Upon the expiration or termination of this Agreement for any reason, each party shall be released from all obligations and liabilities to the other occurring or arising after the date of such termination, except that Sections 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 17, 19, 20, 21, 22, 23, 24 and 26 shall survive any termination or expiration of this Agreement, and any such termination shall not relieve You or InfluencerPro from any liability arising from any breach of this Agreement. In the event of any earlier termination of a Campaign hereunder, InfluencerPro’s only responsibility to You shall be the payment for fees received by InfluencerPro from InfluencerPro's customer for the undisputed services delivered by You to InfluencerPro and/or its customer and accepted by InfluencerPro's customer, up until the date of termination. Notwithstanding the foregoing or anything to the contrary, in the event of any termination by InfluencerPro under Section 16(I), InfluencerPro and/or its customer shall have no further liability and/or obligations to You, including without limitation the payment of any fees hereunder and You shall immediately refund to InfluencerPro any and all fees paid by InfluencerPro and/or its customer to You hereunder.
-
-                                                            </p>
-                                                            <h3>  18. Assignment</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-This Agreement is for personal services and neither the Agreement nor the services to be performed hereunder may be assigned by You (including by operation of law or otherwise), without InfluencerPro’s prior written consent. We may transfer, assign, or delegate this Agreement and our rights and obligations without consent.
-
-                                                            </p>
-                                                            <h3> 19. Governing Law </h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                             
-This Agreement shall be construed in accordance with the laws of the State of New York, without reference to its choice of law provision. The parties agree that the jurisdiction and venue of any action with respect to this Agreement shall be in a court of competent subject matter jurisdiction.
-
-                                                            </p>
-                                                            <h3> 20. Entire Agreement</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-This Agreement constitutes the entire agreement between the parties and supersedes all previous agreements, or representations, written or oral, with respect to the subject matter hereof. No alterations or variations of its terms will be valid unless made in writing and signed by both parties.
-
-                                                            </p>
-                                                            <h3> 21. Severability</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                              
-Wherever possible, each provision of this Agreement shall be interpreted in such manner as to be effective and valid under applicable law, but if any provision of this Agreement shall be prohibited by or invalid under applicable law, such provision shall be ineffective only to the extent of such prohibition or invalidity without invalidating the remainder of such provision or the remaining provisions of this Agreement.
-
-                                                            </p>
-                                                            <h3> 22. Notices</h3>
-                                                            <p style="text-align: justify; width:110%">
-                                                               
-Any notices required or permitted hereunder shall be deemed sufficient if sent via email or given in writing.
-<h3> 23. Waiver.</h3>
-<p style="text-align: justify; width:110%">
-The waiver of either party of a breach or violation of any provision of this Agreement or the failure of either party to enforce its rights under this Agreement at any time for any period shall not operate as or be construed to be a waiver of any subsequent breach or violation.
-</p>
-<h3>24. Arbitration Agreement.</h3>
-<p style="text-align: justify; width:110%">
-Please read the following ARBITRATION AGREEMENT carefully because it requires you to arbitrate certain disputes and claims with INFLUENCERPRO and limits the manner in which you can seek relief from us. Both You and InfluencerPro acknowledge and agree that for the purposes of any dispute arising out of or relating to the subject matter of this Agreement, InfluencerPro’s officers, directors, employees and independent contractors (“Personnel”) are third party beneficiaries of this Agreement, and that upon your acceptance of this Agreement, Personnel will have the right (and will be deemed to have accepted the right) to enforce this Agreement against you as the third party beneficiary hereof.
-
-                                                            </p>
-
-                                                            <p style="text-align: justify;width:110%">
-                                                               <br> (a) Arbitration Rules; Applicability of Arbitration Agreement. Any dispute arising out of or relating to the subject matter of this Agreement shall be finally settled by binding arbitration in New York County, New York. The arbitration will proceed in the English language, in accordance with the Streamlined Arbitration Rules and Procedures (“Rules”) in effect, by one commercial arbitrator with substantial experience in resolving intellectual property and commercial contract disputes, who shall be selected from the appropriate list of arbitrators in accordance with such Rules. Judgment upon the award rendered by such arbitrator may be entered in any court of competent jurisdiction. Notwithstanding the foregoing obligation to arbitrate disputes, each party shall have the right to pursue injunctive or other equitable relief at any time, from any court of competent jurisdiction. 
-                                                               <br>    (b) Small Claims Court. Furthermore, either You or InfluencerPro may assert claims, if they qualify, in small claims court in New York County, New York or any United States county where you live or work. 
-                                                               <br> (c) Waiver of Jury Trial. YOU AND ACTIVATE WAIVE ANY CONSTITUTIONAL AND STATUTORY RIGHTS TO GO TO COURT AND HAVE A TRIAL IN FRONT OF A JUDGE OR JURY. You and Activate are instead choosing to have claims and disputes resolved by arbitration. Arbitration procedures are typically more limited, more efficient, and less costly than rules applicable in court and are subject to very limited review by a court. In any litigation between you and Activate over whether to vacate or enforce an arbitration award, YOU AND INFLUENCERPRO WAIVE ALL RIGHTS TO A JURY TRIAL, and elect instead to have the dispute be resolved by a judge.
-                                                               <br> (d) Waiver of Class or Consolidated Actions. ALL CLAIMS AND DISPUTES WITHIN THE SCOPE OF THIS ARBITRATION AGREEMENT MUST BE ARBITRATED OR LITIGATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS. CLAIMS OF MORE THAN USER CANNOT BE ARBITRATED OR LITIGATED JOINTLY OR CONSOLIDATED WITH THOSE OF ANY OTHER USER. If however, this waiver of class or consolidated actions is deemed invalid or unenforceable, neither You nor we are entitled to arbitration; instead all claims and disputes will be resolved in a court as set forth in (g) below.
-                                                               <br> (e) Opt-out. You have the right to opt out of the provisions of this Section by sending written notice of your decision to opt out to the following address: New York, postmarked within 30 days of first accepting this Agreement. You must include (1) your name and residence address; (2) the email address and/or telephone number associated with your account; and (3) a clear statement that you want to opt out of these Terms’ arbitration agreement.
-                                                               <br> (f) Exclusive Venue. If you send the opt-out notice in (f), and/or in any circumstances where the foregoing arbitration agreement permits either you or InfluencerPro to litigate any dispute arising out of or relating to the subject matter of these Terms in court, then the foregoing arbitration agreement will not apply to either party and both you and Activate agree that any judicial proceeding (other than small claims actions) will be brought in the state or federal courts located in, respectively, New York County, New York, or the Southern District of New York.
-
-                                                            </p>
-                                                            <h3> 25. Privacy Policy.</h3>
-                                                            <p style="text-align: justify;width:110%">
-                                                            
-Your privacy and the protection of personal data about You are very important to us. By using or accessing the Services in any manner, you acknowledge that you accept the practices and policies outlined in this Privacy Policy, and you hereby consent that we will collect, use, and share your information in the following ways.
-
-                                                            </p> 
-                                                            <p style="text-align: justify;width:110%">
-                                                                This Privacy Policy covers our treatment of personally identifiable information ("Personal Information") that we gather when you are accessing or using our Service, but not to the practices of companies we don’t own or control, or people that we don’t manage. We gather various types of Personal Information from our users and Influencers, as explained in more detail below, and we use this Personal Information internally in connection with our Services, including to personalize, provide, and improve our Services, to allow you to set up an Influencer account and profile, to contact you in connection with Campaigns, and to analyze how you use the Services. In certain cases, we may also share some Personal Information with third parties, but only as described below.
-                                                            </p>       
-
-                                                            <p style="text-align: justify;width:110%">
-                                                                We’re constantly trying to improve our Service, so we may need to change this Privacy Policy from time to time as well, but we will alert you to changes by placing a notice on https://influencerpro.org/, by sending you an email, and/or by some other means. Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), those legal notices will still govern your use of the Service, and you are still responsible for reading and understanding them. If you use the Service after any changes to the Privacy Policy have been posted, that means you agree to all of the changes. 
-                                                            </p>   
-                                                            <li style="text-align: justify">(a) Information that InfluencerPro collects from You:</li> 
-                                                            <p style="text-align: justify;width:110%">
-                                                               
-                                                               We receive and store any information you knowingly provide to us. For example, if you sign up for an Influencer account, we may collect Personal Information such as your first and last name, email address, phone number, location, gender, date of birth, ethnicity, household income, education level, marital status and parental status. Please note that providing some of this information is optional, but it is not all required to sign up for an account. 
-                                                            </p>   
-                                                            <p style="text-align: justify;width:110%">
-                                                                We may also communicate with you if you’ve provided us the means to do so. For example, if you’ve given us your email address, we may send you emails about the Service, even if you do not sign up to become an Influencer or Brand. If you do not want to receive communications from us, please indicate your preference by clicking the unsubscribe button in the email.
-                                                            </p> 
-                                                            <li  style="text-align: justify">  (b) Information that InfluencerPro automatically collects:</li>  
-                                                            <p style="text-align: justify;width:110%">
-                                                             
-Whenever you interact with our Services, we automatically receive and record information on our server logs from your browser or device, which may include your IP address, geolocation data, device identification, “cookie” information, the type of browser and/or device you’re using to access our Services, and the page or feature you requested. “Cookies” are identifiers we transfer to your browser or device that allow us to recognize your browser or device and tell us how and when pages and features in our Services are visited and by how many people. You may be able to change the preferences on your browser or device to prevent or limit your device’s acceptance of cookies, but this may prevent you from taking advantage of some of our features.
-
-                                                            </p>       
-                                                            <p style="text-align: justify;width:110%">
-                                                                If you click on a link to a third party website, a third party may also transmit cookies to you. Again, this Privacy Policy does not cover the use of cookies by any third parties, and we aren’t responsible for their privacy policies and practices. Please be aware that cookies placed by third parties may continue to track your activities online even after you have left our Service, and those third parties may not honor “Do Not Track” requests you have set using your browser or device.
-                                                            </p>   
-                                                            <p style="text-align: justify;width:110%">
-                                                                We may use this automatically collected data to customize content for you that we think you might like, based on your usage patterns. We may also use it to improve the Service – for example, this data can tell us how often users use a particular feature of the Service, and we can use that knowledge to make the Services interesting to as many users as possible.
-                                                            </p>   
-                                                            <li  style="text-align: justify;">(c) Information that InfluencerPro shares with third parties:</li>
-                                                            <p style="text-align: justify;width:110%">
-                                                                
-We do not rent or sell your Personal Information in personally identifiable form to anyone. We may, however, share your Personal Information with third parties as described in this section:
-
-                                                            </p> 
-                                                            <h6  style="text-align: justify;"> 1. Information that’s been de-identified.</h6>  
-                                                            <p style="text-align: justify;width:110%">
-                                                                 We may de-identify your Personal Information so that you are not identified as an individual, and provide that information to our partners. We may also provide aggregate usage information to our partners (or allow partners to collect that information from you), who may use such information to understand how often and in what ways people use our Services, so that they, too, can provide you with an optimal online experience. However, we never disclose aggregate usage or de-identified information to a partner (or allow a partner to collect such information) in a manner that would identify you as an individual person.
-                                                            </p>  
-                                                            <h6  style="text-align: justify;">  2. Affiliated Businesses:</h6> 
-                                                            <p style="text-align: justify;width:110%">
-                                                                 In certain situations, businesses or third party websites we’re affiliated with may sell or provide products or services to you through or in connection with the Service (either alone or jointly with us). You can recognize when an affiliated business is associated with such a transaction or service, and we will share your Personal Information with that affiliated business only to the extent that it is related to such transaction or service.
-                                                            </p>  
-                                                            <h6>  3. Agents:</h6> 
-                                                            <p style="text-align: justify;width:110%">
-                                                                We employ other companies and people to perform tasks on our behalf and need to share your information with them to provide products or services to you. Unless we tell you differently, our agents do not have any right to use the Personal Information we share with them beyond what is necessary to assist us.
-                                                            </p>
-                                                            <h6> 4. Influencer Profiles:</h6>
-                                                            <p style="text-align: justify;width:110%">
-                                                                 Certain Influencer profile information, including your name, location, and any other information you choose to provide when you sign up for an account may be shared with our customers in connection with any Campaigns. Customers may not use or share this information except in connection with the services that InfluencerPro provides to such customers.
-                                                            </p>
-                                                            <h6>  5. Business Transfers:</h6>
-                                                            <p style="text-align: justify;width:110%">
-                                                                We may choose to buy or sell assets, and may share and/or transfer customer information in connection with the evaluation of and entry into such transactions. Also, if we (or our assets) are acquired, or if we go out of business, enter bankruptcy, or go through some other change of control, Personal Information could be one of the assets transferred to or acquired by a third party.
-                                                            </p>
-                                                            <h6> 6. Protection of Activate and Others:</h6>
-                                                            <p style="text-align: justify;width:110%">
-                                                                 We reserve the right to access, read, preserve, and disclose any information that we believe is necessary to comply with law or court order; enforce or apply this Agreement; or protect the rights, property, or safety of InfluencerPro, our employees, our users, or others.
-                                                            </p>
-                                                            <h2> (d) Security of Your Personal Information:</h2>
-                                                            <p style="text-align: justify;width:110%">
-                                                               
-Your account is protected by a password for your privacy and security. You must prevent unauthorized access to your account and Personal Information by selecting and protecting your password and limiting access to your computer or device and browser by signing off after you have finished accessing your account. 
-
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                                We endeavor to protect the privacy of your account and other Personal Information we hold in our records, but unfortunately, we cannot guarantee complete security. Unauthorized entry or use, hardware or software failure, and other factors, may compromise the security of user information at any time.
-                                                            </p>
-                                                            <h2>(e) No obligation to disclose Personal Information:</h2>
-                                                            <p style="text-align: justify;width:110%">
-                                                               
-You can always opt not to disclose information to us, but keep in mind some information may be needed to register with us as an Influencer or to take advantage of some of our features.
-
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                                You may be able to add, update, or delete information. When you update information, however, we may maintain a copy of the unrevised information in our records. You may request deletion of your account by You may request deletion of your account by visiting the account settings page and clicking the "Delete My Account" button. Some information may remain in our records after your deletion of such information from your account. We may use any aggregated data derived from or incorporating your Personal Information after you update or delete it, but not in a manner that would identify you personally.
-                                                            </p>
-                                                            <h3> 26. Copyright Dispute Policy.</h3>
-                                                            <p style="text-align: justify;width:110%">
-                                                               
-In accordance with the DMCA, we’ve adopted the policy below toward copyright infringement. We reserve the right to (1) block access to or remove material that we believe in good faith to be copyrighted material that has been illegally copied and distributed by any of our advertisers, affiliates, content providers, members or users and (2) remove and discontinue service to repeat offenders.
-<br>Remember that your use of InfluencerPro’s Service is at all times subject to this Agreements, which incorporates this Copyright Dispute Policy.
-                                                            </p>
-
-                                                            <p style="text-align: justify;width:110%">
-                                                               <br> a. A physical or electronic signature of a person authorized to act on behalf of the owner of the copyright that has been allegedly infringed; 
-                                                                   <br> b. Identification of works or materials being infringed; </li>
-                                                                       <br> c. Identification of the material that is claimed to be infringing including information regarding the location of the infringing materials that the copyright owner seeks to have removed, with sufficient detail so that InfluencerPro is capable of finding and verifying its existence; 
-                                                                           <br> d. Contact information about the notifier including address, telephone number and, if available, email address;
-                                                                               <br> e. A statement that the notifier has a good faith belief that the material identified in (1)(c) is not authorized by the copyright owner, its agent, or the law; and 
-                                                                                   <br>f. A statement made under penalty of perjury that the information provided is accurate and the notifying party is authorized to make the complaint on behalf of the copyright owner.
-                                                                                       <br>g.  Once Proper Bona Fide Infringement Notification is Received by the Designated Agent. Upon receipt of a proper notice of copyright infringement, we reserve the right to:
-                                                                                          <br> <span style="margin-left:25px"> - remove or disable access to the infringing material; </span><br>
-                                                                                           <span style="margin-left:25px">    - notify the content provider who is accused of infringement that we have removed or disabled access to the applicable material; and</span> <br>
-                                                                                           <span style="margin-left:25px"> - terminate such content provider's access to the Services if he or she is a repeat offender.</span> <br>
-                                                                                                        <span style="margin-left:35px"> Please contact InfluencerPro’s Designated Agent at the following address 
-                                                                                                         support@influencerpro.org </span>
-
-                                                            </p>
-
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>  <p style="text-align: justify;width:110%">
-                                                            </p>
-                                                            <p style="text-align: justify;width:110%">
-                                                            </p>
+                            </div>
+                        
+                                         
 
       </div>
                         </div>

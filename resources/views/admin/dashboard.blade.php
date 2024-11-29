@@ -59,7 +59,7 @@ margin-bottom: 13px;
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx3"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <!-- <h1 class="total_click">{{ formatNumber($influencer->total_clicks) }}</h1> -->
-                                <h6 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h6>
+                                <h5 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h5>
                                 <!-- <span><b>Clicks</b></span> -->
                                 <span><b style="font-size: 14px">Profile Views</b></span>
                             </div>
