@@ -7,10 +7,24 @@
         ::-webkit-scrollbar {
   width: 6px; /* You can adjust this value based on your preference */
 }
-p{
-    font-size: 18px;
-    color: #000;
+/* ul {
+    color: #333;
+  list-style-position: inside;
+  padding-left: 0; 
+} */
+
+/* li {
+    text-align: justify; 
+    color: #333;
+  margin-left: 20px; 
+} */
+a{
+    color: blue;
 }
+p{
+    text-align: justify; 
+    color: #333;
+    }
 
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -152,12 +166,13 @@ p{
     <li><strong>20.</strong> Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
 </ul>
 
-
+<h3>User Generated Contributions</h3>
 <ul style="text-align: justify; width: 110%;">
-    <li><b>User Generated Contributions</b><br>
+    <li>
         The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
     </li>
     <li><b>When you create or make available any Contributions, you thereby represent and warrant that:</b></li>
+</ul>
     <ul style="list-style-type: none;">
         <li>1. The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
         <li>2. You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
@@ -173,10 +188,11 @@ p{
         <li>12. Your Contributions do not violate any applicable law concerning child pornography, or otherwise intended to protect the health or well-being of minors.</li>
         <li>13. Your Contributions do not include any offensive comments that are connected to race, national origin, gender, sexual preference, or physical handicap.</li>
         <li>14. Your Contributions do not otherwise violate, or link to material that violates, any provision of these Terms of Use, or any applicable law or regulation.</li>
-    </ul>
+  
     <li>Any use of the Site or the Marketplace Subscriptions & Offerings in violation of the foregoing violates these Terms of Use and may result in, among other things, termination or suspension of your rights to use the Site and the Marketplace Offerings.</li>
     
-    <li><b>Contribution License</b><br>
+   <h4>Contribution License</h4>
+   <li>
         By posting your Contributions to any part of the Site or making Contributions accessible to the Site by linking your account from the Site to any of your social networking accounts, you automatically grant, and you represent and warrant that you have the right to grant, to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and license to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt (in whole or in part), and distribute such Contributions (including, without limitation, your image and voice) for any purpose, commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, such Contributions, and grant and authorize sublicenses of the foregoing. The use and distribution may occur in any media formats and through any media channels.</li>
     <li>This license will apply to any form, media, or technology now known or hereafter developed, and includes our use of your name, company name, and franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and personal and commercial images you provide. You waive all moral rights in your Contributions, and you warrant that moral rights have not otherwise been asserted in your Contributions.</li>
     <li>We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights or other proprietary rights associated with your Contributions. We are not liable for any statements or representations in your Contributions provided by you in any area on the Site. You are solely responsible for your Contributions to the Site and you expressly agree to exonerate us from any and all responsibility and to refrain from any legal action against us regarding your Contributions.</li>
@@ -188,8 +204,8 @@ p{
         </ul>
     </li>
     <li>We have no obligation to monitor your Contributions.</li>
-
-    <li><b>Guidelines for Reviews</b><br>
+    <h4>Guidelines for Reviews</h4>
+    <li>
         We may provide you areas on the Site to leave reviews or ratings. When posting a review, you must comply with the following criteria:
         <ul style="list-style-type: none;">
             <li>(1) you should have firsthand experience with the person/entity being reviewed;</li>
@@ -202,9 +218,9 @@ p{
             <li>(8) you may not organize a campaign encouraging others to post reviews, whether positive or negative.</li>
         </ul>
         We may accept, reject, or remove reviews in our sole discretion. We have absolutely no obligation to screen reviews or to delete reviews, even if anyone considers reviews objectionable or inaccurate. Reviews are not endorsed by us, and do not necessarily represent our opinions or the views of any of our affiliates or partners. We do not assume liability for any review or for any claims, liabilities, or losses resulting from any review. By posting a review, you hereby grant to us a perpetual, non-exclusive, worldwide, royalty-free, fully-paid, assignable, and sublicensable right and license to reproduce, modify, translate, transmit by any means, display, perform, and/or distribute all content relating to reviews.</li>
-
-    <li><b>Mobile Application License</b><br>
-        <b>Use License</b><br>
+        <h4>Mobile Application License</h4>
+        <h4>Use License</h4>
+    <li>
         If you access the Marketplace Offerings via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license contained in these Terms of Use.
     </li>
     <li>You shall not:
@@ -251,12 +267,204 @@ p{
     <li>Depending on the Third-Party Accounts you choose and subject to the privacy settings that you have set in such Third-Party Accounts, personally identifiable information that you post to your Third-Party Accounts may be available on and through your account on the Site.</li>
     <li>Please note that if a Third-Party Account or associated service becomes unavailable or our access to such Third-Party Account is terminated by the third-party service provider, then Social Network Content may no longer be available on and through the Site. You will have the ability to disable the connection between your account on the Site and your Third-Party Accounts at any time.</li>
     <li>PLEASE NOTE THAT YOUR RELATIONSHIP WITH THE THIRD-PARTY SERVICE PROVIDERS ASSOCIATED WITH YOUR THIRD-PARTY ACCOUNTS IS GOVERNED SOLELY BY YOUR AGREEMENT(S) WITH SUCH THIRD-PARTY SERVICE PROVIDERS.</li>
-    <li>We make no effort to review any Social Network Content for any purpose, including but not limited to, for accuracy, legality, or non-infringement, and we are not responsible for any Social Network Content. You acknowledge and agree that we may access your email address book associated with a Third-Party Account and your contacts list stored on your mobile device or tablet computer solely for purposes of identifying and informing you of those contacts who have also registered to use the Site.</li>
+    <li>We make no effort to review any Social Network Content for any purpose, including but not limited to, for accuracy, legality, or non-infringement, and we are not responsible for any Social Network Content. You acknowledge and agree that we may access your email address book associated with a Third-Party Account and your contacts list stored on your mobile device or tablet computer solely for purposes of identifying and informing you of those contacts who have also registered to use the Site.
+
+        You can deactivate the connection between the Site and your Third-Party Account by contacting us using the contact information below or through your account settings (if applicable). We will attempt to delete any information stored on our servers that was obtained through such Third-Party Account, except the username and profile picture that become associated with your account.
+    </li>
   
 
 
  
 </ul>
+
+
+<h3>Submissions</h3>
+<p>
+    You acknowledge and agree that any questions, comments, suggestions, ideas, feedback, or other information regarding the Site or the Marketplace Subscriptions & Offerings ("Submissions") provided by you to us are non-confidential and shall become our sole property. 
+    We shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these Submissions for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you. 
+    You hereby waive all moral rights to any such Submissions, and you hereby warrant that any such Submissions are original with you or that you have the right to submit such Submissions. 
+    You agree there shall be no recourse against us for any alleged or actual infringement or misappropriation of any proprietary right in your Submissions.
+</p>
+
+<h3>Third-Party Websites and Content</h3>
+<p>
+    The Site may contain (or you may be sent via the Site or the Marketplace Offerings) links to other websites ("Third-Party Websites") as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties ("Third-Party Content"). 
+    Such Third-Party Websites and Third-Party Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Site or any Third-Party Content posted on, available through, or installed from the Site, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the Third-Party Websites or the Third-Party Content. 
+</p>
+<p>
+    Inclusion of, linking to, or permitting the use or installation of any Third-Party Websites or any Third-Party Content does not imply approval or endorsement thereof by us. 
+    If you decide to leave the Site and access the Third-Party Websites or to use or install any Third-Party Content, you do so at your own risk, and you should be aware these Terms of Use no longer govern. 
+    You should review the applicable terms and policies, including privacy and data gathering practices, of any website to which you navigate from the Site or relating to any applications you use or install from the Site.
+</p>
+<p>
+    Any purchases you make through Third-Party Websites will be through other websites and from other companies, and we take no responsibility whatsoever in relation to such purchases which are exclusively between you and the applicable third party. 
+    You agree and acknowledge that we do not endorse the products or services offered on Third-Party Websites and you shall hold us harmless from any harm caused by your purchase of such products or services. 
+    Additionally, you shall hold us harmless from any losses sustained by you or harm caused to you relating to or resulting in any way from any Third-Party Content or any contact with Third-Party Websites.
+</p>
+
+
+<h3>Advertisers</h3>
+<p>
+    We allow advertisers to display their advertisements and other information in certain areas of the Site, such as sidebar advertisements or banner advertisements. If you are an advertiser, you shall take full responsibility for any advertisements you place on the Site and any services provided on the Site or products sold through those advertisements. 
+    Further, as an advertiser, you warrant and represent that you possess all rights and authority to place advertisements on the Site, including, but not limited to, intellectual property rights, publicity rights, and contractual rights. 
+    As an advertiser, you agree that such advertisements are subject to our Digital Millennium Copyright Act (“DMCA”) Notice and Policy provisions as described below, and you understand and agree there will be no refund or other compensation for DMCA takedown-related issues. We simply provide the space to place such advertisements, and we have no other relationship with advertisers.
+</p>
+
+<h3>Site Management</h3>
+<p>
+    We reserve the right, but not the obligation, to:
+</p>
+<ul>
+    <li>(1) monitor the Site for violations of these Terms of Use;</li>
+    <li>(2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Use, including without limitation, reporting such user to law enforcement authorities;</li>
+    <li>(3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;</li>
+    <li>(4) in our sole discretion and without limitation, notice, or liability, to remove from the Site or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems;</li>
+    <li>(5) otherwise manage the Site in a manner designed to protect our rights and property and to facilitate the proper functioning of the Site and the Marketplace Subscriptions & Offerings.</li>
+</ul>
+
+<h3>Privacy Policy</h3>
+<p>
+    We care about data privacy and security. Please review our <a href="https://influencerpro.org/privacy" target="_blank">Privacy Policy</a>. By using the Site or the Marketplace Subscriptions & Offerings, you agree to be bound by our Privacy Policy, which is incorporated into these Terms of Use. 
+    Please be advised the Site and the Marketplace Offerings are hosted in the United States. If you access the Site or the Marketplace Offerings from any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in the residing country, then through your continued use of the Site, you are transferring your data to the residing country, and you agree to have your data transferred to and processed in the residing country.
+</p>
+
+<h3>Digital Millenium Copyright Act (DMCA) Notice and Policy Notifications</h3>
+<p>
+    We respect the intellectual property rights of others. If you believe that any material available on or through the Site infringes upon any copyright you own or control, please immediately notify our Designated Copyright Agent using the contact information provided below (a “Notification”). A copy of your Notification will be sent to the person who posted or stored the material addressed in the Notification. 
+    Please be advised that pursuant to federal law you may be held liable for damages if you make material misrepresentations in a Notification. Thus, if you are not sure that material located on or linked to by the Site infringes your copyright, you should consider first contacting an attorney.
+</p>
+<p>
+    All Notifications should meet the requirements of DMCA 17 U.S.C. § 512(c)(3) and include the following information:
+</p>
+<ul>
+    <li>(1) A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
+    <li>(2) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Site are covered by the Notification, a representative list of such works on the Site;</li>
+    <li>(3) identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material;</li>
+    <li>(4) information reasonably sufficient to permit us to contact the complaining party, such as an address, telephone number, and, if available, an email address at which the complaining party may be contacted;</li>
+    <li>(5) a statement that the complaining party has a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law;</li>
+    <li>(6) a statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed upon.</li>
+</ul>
+
+<h3>Counter Notification</h3>
+<p>
+    If you believe your own copyrighted material has been removed from the Site as a result of a mistake or misidentification, you may submit a written counter notification to [us/our Designated Copyright Agent] using the contact information provided below (a “Counter Notification”).
+</p>
+<p>
+    To be an effective Counter Notification under the DMCA, your Counter Notification must include substantially the following:
+</p>
+<ul>
+    <li>(1) identification of the material that has been removed or disabled and the location at which the material appeared before it was removed or disabled;</li>
+    <li>(2) a statement that you consent to the jurisdiction of the Federal District Court in which your address is located, for any judicial district in which we are located;</li>
+    <li>(3) a statement that you will accept service of process from the party that filed the Notification or the party's agent;</li>
+    <li>(4) your name, address, and telephone number;</li>
+    <li>(5) a statement under penalty of perjury that you have a good faith belief that the material in question was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled;</li>
+    <li>(6) your physical or electronic signature.</li>
+</ul>
+<p>
+    If you send us a valid, written Counter Notification meeting the requirements described above, we will restore your removed or disabled material, unless we first receive notice from the party filing the Notification informing us that such party has filed a court action to restrain you from engaging in infringing activity related to the material in question. Please note that if you materially misrepresent that the disabled or removed content was removed by mistake or misidentification, you may be liable for damages, including costs and attorney's fees. Filing a false Counter Notification constitutes perjury.
+</p>
+
+
+<h3>Term and Termination</h3>
+<p>
+    These Terms of Use shall remain in full force and effect while you use the Site.
+    Without limiting any other provision of these terms of use, we reserve the right to, in our sole discretion and without notice or liability, deny access to and use of the site and the marketplace subscriptions & offerings (including blocking certain IP addresses), to any person for any reason or for no reason, including without limitation for breach of any representation, warranty, or covenant contained in these terms of use or of any applicable law or regulation. We may terminate your use or participation in the site and the marketplace offerings or delete your account and any content or information that you posted at any time, without warning, in our sole discretion.
+</p>
+
+<p>
+    If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.
+</p>
+
+<h3>Modifications & Interruptions</h3>
+<p>
+    We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site. We also reserve the right to modify or discontinue all or part of the Marketplace Offerings without notice at any time. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Site or the Marketplace Subscriptions & Offerings.
+</p>
+<p>
+    We cannot guarantee the Site and the Marketplace Offerings will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Site, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Site or the Marketplace Offerings at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Site or the Marketplace Offerings during any downtime or discontinuance of the Site or the Marketplace Offerings. Nothing in these Terms of Use will be construed to obligate us to maintain and support the Site or the Marketplace Offerings or to supply any corrections, updates, or releases in connection therewith.
+</p>
+
+<h3>Restrictions</h3>
+<p>
+    The Parties agree that any arbitration shall be limited to the Dispute between the Parties individually.
+</p>
+<p>
+    To the full extent permitted by law:
+</p>
+<ul>
+    <li>(a) no arbitration shall be joined with any other proceeding;</li>
+    <li>(b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures;</li>
+    <li>(c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</li>
+</ul>
+
+
+<h3>Exceptions to Arbitration</h3>
+<p>
+    The Parties agree that the following Disputes are not subject to the above provisions concerning binding arbitration:
+</p>
+<ul>
+    <li>(a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party;</li>
+    <li>(b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use;</li>
+    <li>(c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</li>
+</ul>
+
+<h3>Corrections</h3>
+<p>
+    There may be information on the Site that contains typographical errors, inaccuracies, or omissions that may relate to the Marketplace Subscriptions & Offerings, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Site at any time, without prior notice.
+</p>
+
+<h3>Disclaimer</h3>
+<p>
+    The site and the marketplace Subscriptions & offerings are provided on an as-is and as-available basis. You agree that your use of the site and our services will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the site and the marketplace offerings and your use thereof, including, without limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the site’s content or the content of any websites linked to the site and we will assume no liability or responsibility for any:
+</p>
+<ul>
+    <li>(1) errors, mistakes, or inaccuracies of content and materials,</li>
+    <li>(2) personal injury or property damage, of any nature whatsoever, resulting from your access to and use of the site,</li>
+    <li>(3) any unauthorized access to or use of our secure servers and/or any and all personal information and/or financial information stored therein,</li>
+    <li>(4) any interruption or cessation of transmission to or from the site or the marketplace offerings,</li>
+    <li>(5) any bugs, viruses, trojan horses, or the like which may be transmitted to or through the site by any third party, and/or</li>
+    <li>(6) any errors or omissions in any content and materials or for any loss or damage of any kind incurred as a result of the use of any content posted, transmitted, or otherwise made available via the site.</li>
+</ul>
+<p>
+    We do not warrant, endorse, guarantee, or assume responsibility for any product or service advertised or offered by a third party through the site, any hyperlinked website, or any website or mobile application featured in any banner or other advertising, and we will not be a party to or in any way be responsible for monitoring any transaction between you and any third-party providers of products or services. As with the purchase of a product or service through any medium or in any environment, you should use your best judgment and exercise caution where appropriate.
+</p>
+
+<h3>Limitations of Liability</h3>
+<p>
+    In no event will we or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, physical damage or other damages arising from your use of the site or the marketplace offerings, even if we have been advised of the possibility of such damages. Notwithstanding anything to the contrary contained herein, our liability to you for any cause whatsoever and regardless of the form of the action, will at all times be limited to the amount paid, if any, by you to us during the six (6) month period prior to any cause of action arising. Certain US state laws and international laws do not allow limitations on implied warranties or the exclusion or limitation of certain damages. If these laws apply to you, some or all of the above disclaimers or limitations may not apply to you, and you may have additional rights.
+</p>
+
+<h3>Indemnification</h3>
+<p>
+    You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of:
+</p>
+<ul>
+    <li>(1) your Contributions;</li>
+    <li>(2) use of the Marketplace Offerings;</li>
+    <li>(3) breach of these Terms of Use;</li>
+    <li>(4) any breach of your representations and warranties set forth in these Terms of Use;</li>
+    <li>(5) your violation of the rights of a third party, including but not limited to intellectual property rights;</li>
+    <li>(6) any overt harmful act toward any other user of the Site or the Marketplace Subscriptions & Offerings with whom you connected via the Site.</li>
+</ul>
+<p>
+    Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.
+</p>
+
+<h3>User Data</h3>
+<p>
+    We will maintain certain data that you transmit to the Site for the purpose of managing the performance of the Marketplace Offerings, as well as data relating to your use of the Marketplace Offerings. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Marketplace Offerings. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.
+</p>
+<h3>Electronic Communications, Transactions, and Signature</h3>
+<p>
+    Visiting the Site, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Site, satisfy any legal requirement that such communication be in writing. You hereby agree to the use of electronic signatures, contracts, orders, and other records, and to electronic delivery of notices, policies, and records of transactions initiated or completed by us or via the site. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.
+</p>
+
+<h3>Miscellaneous</h3>
+<p>
+    These Terms of Use and any policies or operating rules posted by us on the Site or in respect to the Marketplace Offerings constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. These Terms of Use operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Use and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms of Use or use of the Marketplace Offerings. You agree that these Terms of Use will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms of Use.
+</p>
+
+<p><strong>Last Revised Date:</strong> December 1, 2024</p>
+
 
 
                             </div>

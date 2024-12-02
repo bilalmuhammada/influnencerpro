@@ -8,9 +8,13 @@
   width: 6px; /* You can adjust this value based on your preference */
 }
 
+
+a{
+    color: blue;
+}
 p{
-        font-size: 18px;
-        color: #000;
+    text-align: justify; 
+    color: #333;
     }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -22,6 +26,16 @@ p{
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+h5{
+    color: #000;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+
+
+
     </style>
     <div class="content">
         <div class="container" style="margin-top: 30px;">
@@ -31,84 +45,178 @@ p{
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
-                            <div class="login-header text-center">
-                                <h3>Privacy & Policy</h3>
+                            <div class="login-header ">
+                                <h3 class="text-center">Privacy & Policy</h3>
                                
                                 
+
+                                <h5 >Introduction</h5>
+                                <p>This privacy policy (“Policy”) describes how InfluencerPro (“InfluencerPro,” “we,” and “our”) processes, collects, uses, and shares personal data when using this website <a href="https://influencerpro.org">https://influencerpro.org</a> (the “Website”). Please read the following information carefully to understand our practices regarding your personal data and how we will process data.</p>
+
+
+<h5>Purposes of Processing</h5>
+
+<h6>What is personal data?</h6>
+<p>
+    We collect information about you in a range of forms, including personal data. As used in this Policy, “personal data” is as defined in the General Data Protection Regulation, this includes any information which, either alone or in combination with other information we process about you, identifies you as an individual, including, for example, your name, postal address, email address, and telephone number.
+</p>
+
+<h6>Why do we need your personal data?</h6>
+<p>
+    We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website.
+</p>
+
+<h5>Collecting Your Personal Data</h5>
+<p>We collect information about you in the following ways:</p>
+<h6>Information You Give Us</h6>
+        <ul>
+            <li>The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password, and demographic information (such as your gender);</li>
+            <li>The personal data that may be contained in any video, comment, or other submission you upload or post to the website;</li>
+            <li>The personal data you provide in connection with our rewards program and other promotions we run on the website;</li>
+            <li>The personal data you provide when you report a problem with our website or when we provide you with customer support;</li>
+            <li>The personal data you provide when you make a purchase through our website;</li>
+            <li>The personal data you provide when you correspond with us by phone, email, or otherwise.</li>
+        </ul>
+
+
+
+<h5>Information from Social Networking Websites</h5>
+<p>
+    Our website includes interfaces that allow you to connect with social networking sites (each a “SNS”). If you connect to a SNS through our website, you authorize us to access, use, and store the information that you agreed the SNS could provide to us based on your settings on that SNS. We will access, use, and store that information in accordance with this Policy. You can revoke our access to the information you provide in this way at any time by amending the appropriate settings from within your account settings on the applicable SNS.
+</p>
+
+<h5>Information Automatically Collected</h5>
+<p>
+    We automatically log information about you and your computer or mobile device when you access our website. For example, when visiting our website, we log your computer or mobile device operating system name and version, manufacturer and model, browser type, browser language, screen resolution, the website you visited before browsing to our website, pages you viewed, how long you spent on a page, access times and information about your use of and actions on our website. We collect this information about you using cookies.
+</p>
+
+<h5>Automated Decision Making and Profiling</h5>
+<p>
+    We do not use your personal data for the purposes of automated decision-making. However, we may do so in order to fulfill obligations imposed by law, in which case we will inform you of any such processing and provide you with an opportunity to object.
+</p>
+
+<h5>User Profiles and Submissions</h5>
+<p>
+    Certain user profile information, including your name, location, and any video or image content that such user has uploaded to the Services, may be displayed to other users to facilitate user interaction within the Services or address your request for our services. Your account privacy settings may allow you to limit the other users who can see the Personal Information in your user profile and/or what information in your user profile is visible to others. Please remember that any content you upload to your public user profile, along with any Personal Information or content that you voluntarily disclose online in a manner other users can view (on discussion boards, in messages and chat areas, etc.) becomes publicly available, and can be collected and used by anyone. Your user name may also be displayed to other users if and when you send messages or comments or upload images or videos through the Services and other users can contact you through messages and comments. Additionally, if you sign into the Services through a third party social networking site or service, your list of “friends” from that site or service may be automatically imported to the Services, and such “friends,” if they are also registered users of the Services, may be able to access certain non-public information you have entered in your Services user profile. Again, we do not control the policies and practices of any other third party site or service.
+</p>
+
+<h5>Cookies</h5>
+
+<h6>What are cookies?</h6>
+<p>
+    We may collect information using “cookies.” Cookies are small data files stored on the hard drive of your computer or mobile device by a website. We may use both session cookies (which expire once you close your web browser) and persistent cookies (which stay on your computer or mobile device until you delete them) to provide you with a more personal and interactive experience on our website.
+</p>
+
+<p>
+    We use two broad categories of cookies: 
+    <ol>
+        <li>First-party cookies, served directly by us to your computer or mobile device, which are used only by us to recognize your computer or mobile device when it revisits our website;</li>
+        <li>Third-party cookies, which are served by service providers on our website, and can be used by such service providers to recognize your computer or mobile device when it visits other websites.</li>
+    </ol>
+</p>
+
+<h6>Cookies We Use</h6>
+<p>Our website uses the following types of cookies for the purposes set out below:</p>
+<ul>
+    <li><strong>Essential Cookies</strong> - These cookies are essential to provide you with services available through our website and to enable you to use some of its features. For example, they allow you to log in to secure areas of our website and help the content of the pages you request load quickly. Without these cookies, the services that you have asked for cannot be provided, and we only use these cookies to provide you with those services.</li>
+    <li><strong>Functionality Cookies</strong> - These cookies allow our website to remember choices you make when you use our website, such as remembering your language preferences, remembering your login details, and remembering the changes you make to other parts of our website which you can customize. The purpose of these cookies is to provide you with a more personal experience and to avoid you having to re-enter your preferences every time you visit our website.</li>
+    <li><strong>Analytics and Performance Cookies</strong> - These cookies are used to collect information about traffic to our website and how users use our website. The information gathered does not identify any individual visitor. It includes the number of visitors to our website, the websites that referred them to our website, the pages they visited on our website, what time of day they visited our website, whether they have visited our website before, and other similar information. We use this information to help operate our website more efficiently, to gather broad demographic information and to monitor the level of activity on our website. We use Google Analytics for this purpose. Google Analytics uses its own cookies. It is only used to improve how our website works. You can find out more information about Google Analytics cookies <a href="https://developers.google.com/analytics" target="_blank">here</a>. You can find out more about how Google protects your data <a href="https://policies.google.com/privacy" target="_blank">here</a>. You can prevent the use of Google Analytics relating to your use of our website by downloading and installing the browser plugin available via this link: <a href="http://tools.google.com/dlpage/gaoptout?hl=en-GB" target="_blank">Google Analytics Opt-Out</a>.</li>
+    <li><strong>Targeted and Advertising Cookies</strong> - These cookies track your browsing habits to enable us to show advertising which is more likely to be of interest to you. These cookies use information about your browsing history to group you with other users who have similar interests. Based on that information, and with our permission, third-party advertisers can place cookies to enable them to show adverts which we think will be relevant to your interests while you are on third-party websites. You can disable cookies which remember your browsing habits and target advertising at you by visiting <a href="http://www.youronlinechoices.com/uk/your-ad-choices" target="_blank">Your Online Choices</a>.</li>
+    <li><strong>Social Media Cookies</strong> - These cookies are used when you share information using a social media sharing button or “like” button on our website or you link your account or engage with our content on or through a social networking website such as Facebook, Twitter, or Google+. The social network will record that you have done this.</li>
+</ul>
+
+<h6>Disabling Cookies</h6>
+<p>
+    You can typically remove or reject cookies via your browser settings. In order to do this, follow the instructions provided by your browser (usually located within the “settings,” “help,” “tools,” or “edit” facility). Many browsers are set to accept cookies until you change your settings. If you do not accept our cookies, you may experience some inconvenience in your use of our website. For example, we may not be able to recognize your computer or mobile device and you may need to log in every time you visit our website.
+</p>
+
+
+<h5>Advertising</h5>
+<p>
+    We may use other companies to serve third-party advertisements when you visit and use the website. These companies may collect and use click stream information, browser type, time and date, subject of advertisements clicked or scrolled over during your visits to the website and other websites in order to provide advertisements about goods and services likely to be of interest to you. These companies typically use tracking technologies to collect this information. Other companies' use of their tracking technologies is subject to their own privacy policies.
+</p>
+
+<h5>Using Your Personal Data</h5>
+<p>We may use your personal data as follows:</p>
+<ul>
+    <li>To operate, maintain, and improve our website, products, and services;</li>
+    <li>To manage your account, including to communicate with you regarding your account, if you have an account on our website;</li>
+    <li>To operate and administer our rewards program and other promotions you participate in on our website;</li>
+    <li>To respond to your comments and questions and to provide customer service;</li>
+    <li>To send information including technical notices, updates, security alerts, and support and administrative messages;</li>
+    <li>With your consent, to send you marketing e-mails about upcoming promotions, and other news, including information about products and services offered by us and our affiliates. You may opt-out of receiving such information at any time: such marketing emails tell you how to “opt-out.” Please note, even if you opt out of receiving marketing emails, we may still send you non-marketing emails. Non-marketing emails include emails about your account with us (if you have one) and our business dealings with you;</li>
+    <li>To process payments you make via our website;</li>
+    <li>As we believe necessary or appropriate (a) to comply with applicable laws; (b) to comply with lawful requests and legal process, including to respond to requests from public and government authorities; (c) to enforce our Policy; and (d) to protect our rights, privacy, safety or property, and/or that of you or others;</li>
+    <li>For analysis and study services;</li>
+    <li>As described in the “Sharing of your Personal Data” section below.</li>
+</ul>
+
+<h5>Sharing Your Personal Data</h5>
+<p>We may share your personal data as follows:</p>
+<ul>
+    <li><strong>Third Parties Designated by You:</strong> We may share your personal data with third parties where you have provided your consent to do so.</li>
+    <li><strong>Our Third Party Service Providers:</strong> We may share your personal data with our third party service providers who provide services such as data analysis, payment processing, information technology and related infrastructure provision, customer service, email delivery, auditing and other similar services.</li>
+    <li><strong>Third Party Sites:</strong> Our website may contain links to third party websites and features. This Policy does not cover the privacy practices of such third parties. These third parties have their own privacy policies and we do not accept any responsibility or liability for their websites, features or policies. Please read their privacy policies before you submit any data to them.</li>
+</ul>
+
+<h5>User Generated Content</h5>
+<p>
+    You may share personal data with us when you submit user generated content to our website, including via our rewards program, forums, message boards, and blogs on our website. Please note that any information you post or disclose on our website will become public information, and will be available to other users of our website and to the general public. We urge you to be very careful when deciding to disclose your personal data, or any other information, on our website. Such personal data and other information will not be private or confidential once it is published on our website.
+</p>
+<p>
+    If you provide feedback to us, we may use and disclose such feedback on our website, provided we do not associate such feedback with your personal data. If you have provided your consent to do so, we may post your first and last name along with your feedback on our website. We will collect any information contained in such feedback and will treat the personal data in it in accordance with this Policy.
+</p>
+
+
+<h5>International Data Transfer</h5>
+<p>
+    Your information, including personal data that we collect from you, may be transferred to, stored at and processed by us outside the country in which you reside, where data protection and privacy regulations may not offer the same level of protection as in other parts of the world. By accepting this Policy, you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Policy.
+</p>
+
+<h5>Security</h5>
+<p>
+    We seek to use reasonable organizational, technical and administrative measures to protect personal data within our organization. Unfortunately, no transmission or storage system can be guaranteed to be completely secure, and transmission of information via the Internet is not completely secure. If you have reason to believe that your interaction with us is no longer secure (for example, if you feel that the security of any account you might have with us has been compromised), please immediately notify us of the problem by contacting us.
+</p>
+
+<h5>Retention</h5>
+<p>
+    We will only retain your personal data as long reasonably required for you to use the website until you close your account/cancel your subscription unless a longer retention period is required or permitted by law (for example for regulatory purposes).
+</p>
+
+<h5>Our Policy on Children</h5>
+<p>
+    Our website is/are not directed to children under 18. If a parent or guardian becomes aware that his or her child has provided us with information without their consent, he or she should contact us. We will delete such information from our files as soon as reasonably practicable.
+</p>
+
+<h5>Your Rights</h5>
+<ul>
+    <li><strong>Opt-out:</strong> You may contact us anytime to opt-out of: (i) direct marketing communications; (ii) automated decision-making and/or profiling; (iii) our collection of sensitive personal data; (iv) any new processing of your personal data that we may carry out beyond the original purpose; or (v) the transfer of your personal data outside the EEA. Please note that your use of some of the website may be ineffective upon opt-out.</li>
+    <li><strong>Access:</strong> You may access the information we hold about you at any time via your profile/account or by contacting us directly.</li>
+    <li><strong>Amend:</strong> You can also contact us to update or correct any inaccuracies in your personal data.</li>
+    <li><strong>Move:</strong> Your personal data is portable – i.e. you have the flexibility to move your data to other service providers as you wish.</li>
+    <li><strong>Erase and forget:</strong> In certain situations, for example when the information we hold about you is no longer relevant or is incorrect, you can request that we erase your data.</li>
+</ul>
+<p>
+    If you wish to exercise any of these rights, please contact us. In your request, please make clear: (i) what personal data is concerned; and (ii) which of the above rights you would like to enforce. For your protection, we may only implement requests with respect to the personal data associated with the particular email address that you use to send us your request, and we may need to verify your identity before implementing your request. We will try to comply with your request as soon as reasonably practicable and in any event, within one month of your request. Please note that we may need to retain certain information for recordkeeping purposes and/or to complete any transactions that you began prior to requesting such change or deletion.
+</p>
+
+<h5>Complaints</h5>
+<p>
+    We are committed to resolving any complaints about our collection or use of your personal data. If you would like to make a complaint regarding this Policy or our practices in relation to your personal data, please contact us through the information listed on our website. We will reply to your complaint as soon as we can and in any event, within 30 days. We hope to resolve any complaint brought to our attention, however, if you feel that your complaint has not been adequately resolved, you reserve the right to contact your local data protection supervisory authority.
+</p>
+
+<h5>Contact Information</h5>
+<p>
+    We welcome your comments or questions about this Policy. You may contact us at <a href="mailto:support@influencerpro.org">support@influencerpro.org</a>.
+</p>
+
+<p><strong>Last Revised Date: December 1, 2024</strong></p>
+
+
+
                             </div>
-        <h4>1. Introduction</h4> 
-        <p class="text-justify" style="text-align: justify;
-        width: 110%;">
-        
-       InfluencerPro ("we, "us") is committed to protecting and respecting your privacy. This Privacy Policy (together with our Terms of Use and any other documents referred to in it) applies to www.InfluencerPro.org (the "Service") and sets out the basis on which any personal data we collect from you, or that you provide to us, will be handled by us. In this Privacy Policy, the term "personal data" means information that relates to an identified or identifiable natural person. We know that you, the user of the Service, are concerned about how we use and disclose personal data. We are dedicated to openness regarding the ways in which we use and disclose personal data, and we are committed to complying with data protection and privacy laws that apply to us. Importantly, we want to give you control over personal data that we process about you when you use the Service. We wish to remind you that this Privacy Policy applies to personal data that we process when you use the Service. It does not apply to any links to third parties' websites and/or services that you may encounter when you use the Service. We encourage you to carefully familiarize yourself with privacy policies applicable to any websites and/or services operated by third parties. Please be aware that we are not responsible for the privacy practices of any third parties, such as the Zendesk-provided "Contact Support" and the Hyperwallet-provided “Contact Support” functionality accessible through the Service. Please be aware that other users of the Service may be able to see certain personal data you have submitted to the Service. Therefore, please be careful when sharing personal data about you generally in the Service and with other users of the Service. If you register with the Service, you will create a publicly visible user profile under your username. The profile allows other users of the Service to see for instance your name, location, your picture/avatar and profile text (if such data is provided to us by you) and any social networks you have connected to the Service. Such data may be shown on your profile page. Additional metrics will be privately displayed to you on your profile and can be shared to other organizations if authorized via Social Handshake. BY USING THE SERVICE, YOU ACCEPT THE PRIVACY PRACTICES DESCRIBED IN THIS PRIVACY POLICY.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h3>2. The Data We Collect</h3>
-        <p style="text-align: justify;  width: 110%;">
-          	
-         In this Section 2 we describe the personal data we collect. (i) Personal data you provide to the Service We may collect the following information from our users that may, in certain circumstances, alone or in connection with other data, constitute personal data: Full name Date of Birth E-mail address Password Location User picture or avatar (provided that you give this information) User profile text (provided that you give this information) Blogs owned by you Information on your interactions with other users of the Service, such as information on which users you follow in the Service Data from third party services, such as your user ID, name, e-mail address, profile picture/avatar, posts and associated metrics that are available in your public profile with the third party service you connect to the Service. (ii) Data Collected Automatically When you use the Service, we automatically collect data that may in certain circumstances constitute personal data: We may place a "cookie" on the hard drive of the device that you use to access the Service. Cookies are text files that are saved on the hard drive of your device by means of your browser, enabling us to recognize your browser for purposes such as automatically authenticating you and logging you in to the Service, saving your preferences and directing relevant content to you. Most of the currently available browsers give you the option of managing cookies by, for example, disabling them entirely, accepting them individually, and deleting saved cookies from your hard drive. We would like to remind you that if you completely disable cookies on your browser, you might not be able to use some features of the Service. We may also place tracking pixels in the Service. A tracking pixel is a transparent graphic image that is placed on a web page and, in combination with a cookie, allows for the collection of information regarding the use of the web page that contains the tracking pixel. We use API keys of third-party software to authenticate the user to us. Google Analytics is an element of the Service. By using cookies, Google Analytics collects and stores data such as time of visit, pages visited, time spent on each page of the website, the Internet Protocol address, and the type of operating system used in the devices used to access the Service. By using a browser plugin http://www.google.com/ads/preferences/plugin/ provided by Google, you can opt out of Google Analytics. We also use the analytics software service providers to provide us with statistical information related to your use of the Service, including, but not limited to, Splunk. The Service uses YouTube API services, where the permissions and access can be managed in Google's security settings. The use and transfer to any other app of information received from Google APIs will adhere to Google API Services User Data Policy, including the Limited Use requirements.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h4>3. The Purposes for Which We Use the Data</h4>
-        <p style="text-align: justify;    width: 110%;">
-        	
-            We use the data we collect for the following purposes: a) Personal data you provide to the Service: We may use the personal data you provide to the Service for the following purposes: To set up and maintain your registration with the Service; To communicate with you, including sending you an optional digest of new campaigns. You can manage your preferences regarding the digests on the "Settings" page of the Service; To provide features available in the Service; To develop, improve, and protect the Service; For direct marketing and market research, including for example reading recommendations and targeted marketing, in accordance with applicable law; To prevent and investigate fraud and other misuses; and To protect our rights and/or our property. b) Data collected automatically: We may use the data collected automatically for the following purposes: To manage the Service; To provide features available in the Service; To personalize the Service. For example, which social platforms you have connected to your account. We use this information to provide you with tailored collaboration opportunities; To develop, improve, and protect the Service; For market research and data analysis, including for example reading recommendations and behavioral targeting and targeted marketing, in accordance with applicable law; To audit and analyze the Service; and To ensure the technical functionality and security of the Service.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h4>4. How We Disclose Data</h4> 
-        <p style="text-align: justify;    width: 110%;">
-          
-            The data collected in the Service may be disclosed in the following manner: a) Personal data you provide to the Service: We may disclose personal data you provide to the Service with the following categories of third parties: To other users of the Service in accordance with this Privacy Policy; To our advertising partners in compliance with applicable laws; To service providers, such as email communications providers, customer support tools and feedback service providers; To public authorities, such as law enforcement, if we are legally required to so or if we need to protect our rights or the rights of third parties; and To our subsidiaries and affiliates; or a subsequent owner, co-owner or operator of the Service and their advisors in connection with a corporate merger, consolidation, restructuring, or the sale of substantially all of our stock and/or assets or other corporate reorganization, in accordance with this Privacy Policy. b) Data collected automatically: The data collected automatically in the Service may be disclosed to the following categories of third parties: To service providers, such as data analysis companies; To our advertising partners in compliance with applicable laws; To public authorities, such as law enforcement, if we are legally required to do so or if we need to protect our rights or the rights of third parties; and To our subsidiaries and affiliates; or a subsequent owner, co-owner or operator of the Service and their advisors in connection with a corporate merger, consolidation, restructuring, or the sale of substantially all of our stock and/or assets or other corporate reorganization, in accordance with this Privacy Policy. Moreover, we may disclose information to third parties in an aggregate format that does not constitute personal data and does not allow the identification of individual users.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h4>5. Your Rights</h4>
-        <p style="text-align: justify;    width: 110%;">
-          
-            You have the following rights with respect to the personal data we hold about you: The right to know what data we hold about you: If you have registered with the Service, the easiest way to review the personal data you have provided to the Service is to access your profile and account settings on the "Settings" page of the Service. On your settings page you can also make changes to the personal data we hold about you. If you have additional questions regarding the personal data we hold about you, please contact us at support@influencerpro.org. We seek to swiftly respond to your inquiry. We may charge a small processing fee if less than twelve (12) months has passed since your last inquiry relating to personal data we hold about you. The right to have incomplete, incorrect, outdated, or unnecessary personal data corrected, deleted, or updated. The easiest way to correct, delete, or update the personal data you have provided to the Service is to access your profile settings and enter the necessary changes there. If you have additional questions regarding the correction, deletion, or updating of the personal data we hold about you, please contact us at support@influencerpro.org. The right to opt out of receiving electronic direct marketing communications from us: All electronic direct marketing communications that you may receive from us, such as e-mail messages, give you an option of not receiving such communications from us in the future. If you have any additional questions about electronic direct marketing received from us, please contact us at support@influencerpro.org.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h4>6. Data Security</h4>
-        <p style="text-align: justify;    width: 110%;">
-         
-            The security of personal data is important to us. For example, your user account is protected by a password, the servers we use are secured and protected by a firewall, and we restrict access to personal data to employees, contractors and agents who need to know such personal data in order to operate, develop or improve the Service. Even so, we cannot guarantee that your personal data are always secure because data security measures in use from time to time may be vulnerable. Consequently, please be mindful of the risks that personal data about you may be exposed to when you use the Service.
-          
-        </p>
-        <div>&nbsp;</div> 
-        <h4>7. International Transfers of Personal Data</h4>
-        <p style="text-align: justify;    width: 110%;">
-         
-            If you are located in the European Union, please note that some of the servers where the Service is hosted may be located in countries outside the European Union. The laws applicable to the protection of personal data in such countries may be different from your home country. By registering with the Service, you consent to personal data about you being transferred outside the European Union.
-
-      
-        </p>
-        <div>&nbsp;</div> 
-        <h4>8. Children's Privacy</h4>
-        <p style="text-align: justify;    width: 110%;">
-          
-            The Service is not intended for users younger than thirteen (13) years of age. We do not intend to collect any personal data from children under thirteen (13) years of age.
-
-        </p>
-        <div>&nbsp;</div> 
-        <h4>9. Changes to the Privacy Policy</h4>
-        <p style="text-align: justify;    width: 110%;">
-          
-            From time to time we may change this Privacy Policy. If we materially change the ways in which we use and disclose personal data, we will post a notice in the Service and send an e-mail to our registered users. Your continued use of the Service following any changes to this Privacy Policy constitutes your acceptance of any such changes made.
-
-        </p>
-        <div>&nbsp;</div> 
-        <h4>10. Questions or Concerns?</h4>
-        <p style="text-align: justify;    width: 110%;">
-          
-            Should you have any questions regarding this Privacy Policy, your privacy as it relates to the use of the Service, or the protection of the personal data we hold about you, please contact us at support@influencerpro.org. We seek to swiftly resolve any concerns you may have.
-
-        </p>
-        <div>&nbsp;</div> 
-      </div>
+       
+                         </div>
                         </div>
 
                     </div>
