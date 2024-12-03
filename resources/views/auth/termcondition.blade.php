@@ -18,6 +18,14 @@
     color: #333;
   margin-left: 20px; 
 } */
+
+
+ul, ol{
+    color: #000;
+    /* font-weight: 900;
+    font-size: 18px; */
+}
+
 a{
     color: blue;
 }

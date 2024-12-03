@@ -30,9 +30,14 @@ p{
 h5{
     color: #000;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 18px;
 }
 
+ul, ol{
+    color: #000;
+    /* font-weight: 900;
+    font-size: 18px; */
+}
 
 
 
@@ -50,11 +55,11 @@ h5{
                                
                                 
 
-                                <h5 >Introduction</h5>
+                                <h4 >Introduction</h4>
                                 <p>This privacy policy (“Policy”) describes how InfluencerPro (“InfluencerPro,” “we,” and “our”) processes, collects, uses, and shares personal data when using this website <a href="https://influencerpro.org">https://influencerpro.org</a> (the “Website”). Please read the following information carefully to understand our practices regarding your personal data and how we will process data.</p>
 
 
-<h5>Purposes of Processing</h5>
+<h4>Purposes of Processing</h4>
 
 <h6>What is personal data?</h6>
 <p>
@@ -66,7 +71,7 @@ h5{
     We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website.
 </p>
 
-<h5>Collecting Your Personal Data</h5>
+<h4>Collecting Your Personal Data</h4>
 <p>We collect information about you in the following ways:</p>
 <h6>Information You Give Us</h6>
         <ul>
