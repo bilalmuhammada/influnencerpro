@@ -63,9 +63,7 @@ p{
                                     The information provided on the Site is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Site from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
                                 </p>
                                 
-                                <p style="text-align: justify; width: 110%;"> 
-                                    The Site is not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be subjected to such laws, you may not use this Site. You may not use the Site in a way that would violate the Gramm-Leach-Bliley Act (GLBA).
-                                </p>
+                           
                                 
                                 <p style="text-align: justify; width: 110%;"> 
                                     The Site is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the Site or use the Marketplace Offerings.
@@ -141,7 +139,7 @@ p{
     As a user of the Site, you agree not to:
 </p>
 
-<ul style="text-align: justify; width: 110%;list-style-type: none;">
+<ul style="text-align: justify;margin-bottom:7px; width: 110%;list-style-type: none;">
     <li><strong>1.</strong> Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
     <li><strong>2.</strong> Make any unauthorized use of the Marketplace Subscriptions & Offerings, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
     <li><strong>3.</strong> Circumvent, disable, or otherwise interfere with security-related features of the Site, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the Site and/or the Content contained therein.</li>
@@ -165,14 +163,11 @@ p{
     <li><strong>19.</strong> Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</li>
     <li><strong>20.</strong> Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
 </ul>
+<h4>User Generated Contributions</h4>
+     The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
+    
+        <br ><h6 style="margin-top:10px; font-weight: bolder;">When you create or make available any Contributions, you thereby represent and warrant that: </h6>
 
-<h3>User Generated Contributions</h3>
-<ul style="text-align: justify; width: 110%;">
-    <li>
-        The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
-    </li>
-    <li><b>When you create or make available any Contributions, you thereby represent and warrant that:</b></li>
-</ul>
     <ul style="list-style-type: none;">
         <li>1. The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
         <li>2. You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
@@ -191,7 +186,7 @@ p{
   
     <li>Any use of the Site or the Marketplace Subscriptions & Offerings in violation of the foregoing violates these Terms of Use and may result in, among other things, termination or suspension of your rights to use the Site and the Marketplace Offerings.</li>
     
-   <h4>Contribution License</h4>
+   <h4 style="margin-top:6px; margin-bottom:6px;">Contribution License</h4>
    <li>
         By posting your Contributions to any part of the Site or making Contributions accessible to the Site by linking your account from the Site to any of your social networking accounts, you automatically grant, and you represent and warrant that you have the right to grant, to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and license to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt (in whole or in part), and distribute such Contributions (including, without limitation, your image and voice) for any purpose, commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, such Contributions, and grant and authorize sublicenses of the foregoing. The use and distribution may occur in any media formats and through any media channels.</li>
     <li>This license will apply to any form, media, or technology now known or hereafter developed, and includes our use of your name, company name, and franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and personal and commercial images you provide. You waive all moral rights in your Contributions, and you warrant that moral rights have not otherwise been asserted in your Contributions.</li>
@@ -204,7 +199,7 @@ p{
         </ul>
     </li>
     <li>We have no obligation to monitor your Contributions.</li>
-    <h4>Guidelines for Reviews</h4>
+    <h4  style="margin-top:6px; margin-bottom:6px;">Guidelines for Reviews</h4>
     <li>
         We may provide you areas on the Site to leave reviews or ratings. When posting a review, you must comply with the following criteria:
         <ul style="list-style-type: none;">
@@ -218,8 +213,8 @@ p{
             <li>(8) you may not organize a campaign encouraging others to post reviews, whether positive or negative.</li>
         </ul>
         We may accept, reject, or remove reviews in our sole discretion. We have absolutely no obligation to screen reviews or to delete reviews, even if anyone considers reviews objectionable or inaccurate. Reviews are not endorsed by us, and do not necessarily represent our opinions or the views of any of our affiliates or partners. We do not assume liability for any review or for any claims, liabilities, or losses resulting from any review. By posting a review, you hereby grant to us a perpetual, non-exclusive, worldwide, royalty-free, fully-paid, assignable, and sublicensable right and license to reproduce, modify, translate, transmit by any means, display, perform, and/or distribute all content relating to reviews.</li>
-        <h4>Mobile Application License</h4>
-        <h4>Use License</h4>
+        <h4  style="margin-top:2px; margin-bottom:2px;">Mobile Application License</h4>
+        <h4  style="margin-top:2px; margin-bottom:2px;">Use License</h4>
     <li>
         If you access the Marketplace Offerings via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license contained in these Terms of Use.
     </li>
@@ -243,17 +238,15 @@ p{
 
 <p>The following terms apply when you use a mobile application obtained from either the Apple Store or Google Play (each an “App Distributor”) to access the Marketplace Subscriptions & Offerings:</p>
 
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; margin-bottom:6px;">
     <li>(1) The license granted to you for our mobile application is limited to a non-transferable license to use the application on a device that utilizes the Apple iOS or Android operating systems, as applicable, and in accordance with the usage rules set forth in the applicable App Distributor’s terms of service;</li>
     <li>(2) We are responsible for providing any maintenance and support services with respect to the mobile application as specified in the terms and conditions of this mobile application license contained in these Terms of Use or as otherwise required under applicable law, and you acknowledge that each App Distributor has no obligation whatsoever to furnish any maintenance and support services with respect to the mobile application;</li>
     <li>(3) In the event of any failure of the mobile application to conform to any applicable warranty, you may notify the applicable App Distributor, and the App Distributor, in accordance with its terms and policies, may refund the purchase price, if any, paid for the mobile application, and to the maximum extent permitted by applicable law, the App Distributor will have no other warranty obligation whatsoever with respect to the mobile application;</li>
-    <li>(4) You represent and warrant that (i) you are not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S. government as a “terrorist supporting” country and (ii) you are not listed on any U.S. government list of prohibited or restricted parties;</li>
-    <li>(5) You must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;</li>
-    <li>(6) You acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms of Use, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms of Use against you as a third-party beneficiary thereof.</li>
+    {{-- <li>(4) You represent and warrant that (i) you are not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S. government as a “terrorist supporting” country and (ii) you are not listed on any U.S. government list of prohibited or restricted parties;</li> --}}
+    <li>(4) You must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;</li>
+    <li>(5) You acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms of Use, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms of Use against you as a third-party beneficiary thereof.</li>
 </ul>
-
-<h3>Social Media</h3>
-
+<h4 style="argin-top:6px; margin-bottom:6px;">Social Media</h4>
 <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
 
 <ul style="list-style-type: none;">
@@ -459,11 +452,11 @@ p{
 </p>
 
 <h3>Miscellaneous</h3>
-<p>
+<p style="margin-bottom: 35px !important;">
     These Terms of Use and any policies or operating rules posted by us on the Site or in respect to the Marketplace Offerings constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. These Terms of Use operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Use and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms of Use or use of the Marketplace Offerings. You agree that these Terms of Use will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms of Use.
 </p>
 
-<p><strong>Last Revised Date:</strong> December 1, 2024</p>
+<p>Last Revised Date: <strong>December 1, 2024</strong></p>
 
 
 

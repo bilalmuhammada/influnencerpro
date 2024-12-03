@@ -46,7 +46,7 @@ h5{
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header ">
-                                <h3 class="text-center">Privacy & Policy</h3>
+                                <h3 class="text-center blueGold">Privacy & Policy</h3>
                                
                                 
 
@@ -206,11 +206,11 @@ h5{
 </p>
 
 <h5>Contact Information</h5>
-<p>
+<p style="margin-bottom: 35px !important;">
     We welcome your comments or questions about this Policy. You may contact us at <a href="mailto:support@influencerpro.org">support@influencerpro.org</a>.
 </p>
 
-<p><strong>Last Revised Date: December 1, 2024</strong></p>
+<p>Last Revised Date:<strong> December 1, 2024</strong></p>
 
 
 
