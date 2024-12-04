@@ -21,7 +21,9 @@
 
 
 ul, ol{
+    width: 110%;
     color: #000;
+    text-align: justify;
     /* font-weight: 900;
     font-size: 18px; */
 }
@@ -30,6 +32,7 @@ a{
     color: blue;
 }
 p{
+    width: 110%;
     text-align: justify; 
     color: #333;
     }
@@ -46,7 +49,7 @@ p{
 }
     </style>
     <div class="content">
-        <div class="container" style="margin-top: 30px;">
+        <div class="container" style="margin-top: 0px;">
             <div class="row">
                 <div class="col-md-11">
 
@@ -171,12 +174,12 @@ p{
     <li><strong>19.</strong> Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Site.</li>
     <li><strong>20.</strong> Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
 </ul>
-<h4>User Generated Contributions</h4>
-     The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
-    
-        <br ><h6 style="margin-top:10px; font-weight: bolder;">When you create or make available any Contributions, you thereby represent and warrant that: </h6>
+<h3 style="margin-top:18px;margin-bottom: 18px">User Generated Contributions</h3>
+    <p style="text-align: justify; width: 110%;">The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
+    </p> 
+      <h6 style="margin-top:10px; font-weight: bolder;">When you create or make available any Contributions, you thereby represent and warrant that: </h6>
 
-    <ul style="list-style-type: none;">
+    <ul style="list-style-type: none;text-align: justify; width: 110%;">
         <li>1. The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
         <li>2. You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
         <li>3. You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
@@ -194,7 +197,7 @@ p{
   
     <li>Any use of the Site or the Marketplace Subscriptions & Offerings in violation of the foregoing violates these Terms of Use and may result in, among other things, termination or suspension of your rights to use the Site and the Marketplace Offerings.</li>
     
-   <h4 style="margin-top:6px; margin-bottom:6px;">Contribution License</h4>
+    <h3 style="margin-top:18px;margin-bottom: 18px">Contribution License</h3>
    <li>
         By posting your Contributions to any part of the Site or making Contributions accessible to the Site by linking your account from the Site to any of your social networking accounts, you automatically grant, and you represent and warrant that you have the right to grant, to us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right, and license to host, use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt (in whole or in part), and distribute such Contributions (including, without limitation, your image and voice) for any purpose, commercial, advertising, or otherwise, and to prepare derivative works of, or incorporate into other works, such Contributions, and grant and authorize sublicenses of the foregoing. The use and distribution may occur in any media formats and through any media channels.</li>
     <li>This license will apply to any form, media, or technology now known or hereafter developed, and includes our use of your name, company name, and franchise name, as applicable, and any of the trademarks, service marks, trade names, logos, and personal and commercial images you provide. You waive all moral rights in your Contributions, and you warrant that moral rights have not otherwise been asserted in your Contributions.</li>
@@ -207,7 +210,7 @@ p{
         </ul>
     </li>
     <li>We have no obligation to monitor your Contributions.</li>
-    <h4  style="margin-top:6px; margin-bottom:6px;">Guidelines for Reviews</h4>
+    <h3 style="margin-top:18px;margin-bottom: 18px">Guidelines for Reviews</h3>
     <li>
         We may provide you areas on the Site to leave reviews or ratings. When posting a review, you must comply with the following criteria:
         <ul style="list-style-type: none;">
@@ -221,13 +224,13 @@ p{
             <li>(8) you may not organize a campaign encouraging others to post reviews, whether positive or negative.</li>
         </ul>
         We may accept, reject, or remove reviews in our sole discretion. We have absolutely no obligation to screen reviews or to delete reviews, even if anyone considers reviews objectionable or inaccurate. Reviews are not endorsed by us, and do not necessarily represent our opinions or the views of any of our affiliates or partners. We do not assume liability for any review or for any claims, liabilities, or losses resulting from any review. By posting a review, you hereby grant to us a perpetual, non-exclusive, worldwide, royalty-free, fully-paid, assignable, and sublicensable right and license to reproduce, modify, translate, transmit by any means, display, perform, and/or distribute all content relating to reviews.</li>
-        <h4  style="margin-top:2px; margin-bottom:2px;">Mobile Application License</h4>
-        <h4  style="margin-top:2px; margin-bottom:2px;">Use License</h4>
+        <h3 style="margin-top:18px;margin-bottom: 18px">Mobile Application License</h3>
+            <h4 style="margin-top:6px;margin-bottom: 8px">Use License</h4>
     <li>
         If you access the Marketplace Offerings via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license contained in these Terms of Use.
     </li>
     <li>You shall not:
-        <ul style="list-style-type: none;">
+        <ul style="list-style-type: none; text-align: justify; width: 110%;">
             <li>(1) decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the application;</li>
             <li>(2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the application;</li>
             <li>(3) violate any applicable laws, rules, or regulations in connection with your access or use of the application;</li>
@@ -236,7 +239,8 @@ p{
             <li>(6) make the application available over a network or other environment permitting access or use by multiple devices or users at the same time;</li>
             <li>(7) use the application for creating a product, service, or software that is, directly or indirectly, competitive with or in any way a substitute for the application.</li>
             <li>(8) use the application to send automated queries to any website or to send any unsolicited commercial e-mail; or</li>
-    <li>(9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications, accessories, or devices for use with the application.</li>
+    <li style=" width: 91%;">(9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications,
+     accessories, or devices for use with the application.</li>
         </ul>
     </li>
    
@@ -254,7 +258,7 @@ p{
     <li>(4) You must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;</li>
     <li>(5) You acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms of Use, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms of Use against you as a third-party beneficiary thereof.</li>
 </ul>
-<h4 style="argin-top:6px; margin-bottom:6px;">Social Media</h4>
+<h3 style="margin-top:18px;margin-bottom: 18px">Social Media</h3>
 <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
 
 <ul style="list-style-type: none;">
@@ -262,7 +266,7 @@ p{
     <li>(2) allowing us to access your Third-Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third-Party Account. You represent and warrant that you are entitled to disclose your Third-Party Account login information to us and/or grant us access to your Third-Party Account, without breach by you of any of the terms and conditions that govern your use of the applicable Third-Party Account, and without obligating us to pay any fees or making us subject to any usage limitations imposed by the third-party service provider of the Third-Party Account.</li>
     <li>By granting us access to any Third-Party Accounts, you understand that:</li>
     <ul style="list-style-type: none;">
-        <li>(1) We may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account (the “Social Network Content”) so that it is available on and through the Site via your account, including without limitation any friend lists;</li>
+        <li style="width: 91%;">(1) We may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account (the “Social Network Content”) so that it is available on and through the Site via your account, including without limitation any friend lists;</li>
         <li>(2) We may submit to and receive from your Third-Party Account additional information to the extent you are notified when you link your account with the Third-Party Account.</li>
     </ul>
     <li>Depending on the Third-Party Accounts you choose and subject to the privacy settings that you have set in such Third-Party Accounts, personally identifiable information that you post to your Third-Party Accounts may be available on and through your account on the Site.</li>
@@ -315,7 +319,7 @@ p{
 <p>
     We reserve the right, but not the obligation, to:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(1) monitor the Site for violations of these Terms of Use;</li>
     <li>(2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Use, including without limitation, reporting such user to law enforcement authorities;</li>
     <li>(3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;</li>
@@ -337,7 +341,7 @@ p{
 <p>
     All Notifications should meet the requirements of DMCA 17 U.S.C. § 512(c)(3) and include the following information:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(1) A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
     <li>(2) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Site are covered by the Notification, a representative list of such works on the Site;</li>
     <li>(3) identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material;</li>
@@ -353,7 +357,7 @@ p{
 <p>
     To be an effective Counter Notification under the DMCA, your Counter Notification must include substantially the following:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(1) identification of the material that has been removed or disabled and the location at which the material appeared before it was removed or disabled;</li>
     <li>(2) a statement that you consent to the jurisdiction of the Federal District Court in which your address is located, for any judicial district in which we are located;</li>
     <li>(3) a statement that you will accept service of process from the party that filed the Notification or the party's agent;</li>
@@ -391,7 +395,7 @@ p{
 <p>
     To the full extent permitted by law:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(a) no arbitration shall be joined with any other proceeding;</li>
     <li>(b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures;</li>
     <li>(c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</li>
@@ -402,7 +406,7 @@ p{
 <p>
     The Parties agree that the following Disputes are not subject to the above provisions concerning binding arbitration:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party;</li>
     <li>(b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use;</li>
     <li>(c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</li>
@@ -417,7 +421,7 @@ p{
 <p>
     The site and the marketplace Subscriptions & offerings are provided on an as-is and as-available basis. You agree that your use of the site and our services will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the site and the marketplace offerings and your use thereof, including, without limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the site’s content or the content of any websites linked to the site and we will assume no liability or responsibility for any:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(1) errors, mistakes, or inaccuracies of content and materials,</li>
     <li>(2) personal injury or property damage, of any nature whatsoever, resulting from your access to and use of the site,</li>
     <li>(3) any unauthorized access to or use of our secure servers and/or any and all personal information and/or financial information stored therein,</li>
@@ -438,7 +442,7 @@ p{
 <p>
     You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of:
 </p>
-<ul>
+<ul style="list-style-type: none;">
     <li>(1) your Contributions;</li>
     <li>(2) use of the Marketplace Offerings;</li>
     <li>(3) breach of these Terms of Use;</li>
