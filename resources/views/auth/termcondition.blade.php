@@ -21,9 +21,9 @@
 
 
 ul, ol{
-    width: 110%;
+    /* width: 110%; */
     color: #000;
-    text-align: justify;
+    /* text-align: justify; */
     /* font-weight: 900;
     font-size: 18px; */
 }
@@ -261,7 +261,7 @@ p{
 <h3 style="margin-top:18px;margin-bottom: 18px">Social Media</h3>
 <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
 
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none;text-align: justify; width: 110%;"> 
     <li>(1) providing your Third-Party Account login information through the Site; or</li>
     <li>(2) allowing us to access your Third-Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third-Party Account. You represent and warrant that you are entitled to disclose your Third-Party Account login information to us and/or grant us access to your Third-Party Account, without breach by you of any of the terms and conditions that govern your use of the applicable Third-Party Account, and without obligating us to pay any fees or making us subject to any usage limitations imposed by the third-party service provider of the Third-Party Account.</li>
     <li>By granting us access to any Third-Party Accounts, you understand that:</li>
@@ -319,7 +319,7 @@ p{
 <p>
     We reserve the right, but not the obligation, to:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(1) monitor the Site for violations of these Terms of Use;</li>
     <li>(2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Use, including without limitation, reporting such user to law enforcement authorities;</li>
     <li>(3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;</li>
@@ -341,7 +341,7 @@ p{
 <p>
     All Notifications should meet the requirements of DMCA 17 U.S.C. § 512(c)(3) and include the following information:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(1) A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
     <li>(2) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Site are covered by the Notification, a representative list of such works on the Site;</li>
     <li>(3) identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material;</li>
@@ -357,7 +357,7 @@ p{
 <p>
     To be an effective Counter Notification under the DMCA, your Counter Notification must include substantially the following:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(1) identification of the material that has been removed or disabled and the location at which the material appeared before it was removed or disabled;</li>
     <li>(2) a statement that you consent to the jurisdiction of the Federal District Court in which your address is located, for any judicial district in which we are located;</li>
     <li>(3) a statement that you will accept service of process from the party that filed the Notification or the party's agent;</li>
@@ -395,7 +395,7 @@ p{
 <p>
     To the full extent permitted by law:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(a) no arbitration shall be joined with any other proceeding;</li>
     <li>(b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures;</li>
     <li>(c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</li>
@@ -406,7 +406,7 @@ p{
 <p>
     The Parties agree that the following Disputes are not subject to the above provisions concerning binding arbitration:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party;</li>
     <li>(b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use;</li>
     <li>(c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</li>
@@ -421,7 +421,7 @@ p{
 <p>
     The site and the marketplace Subscriptions & offerings are provided on an as-is and as-available basis. You agree that your use of the site and our services will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the site and the marketplace offerings and your use thereof, including, without limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the site’s content or the content of any websites linked to the site and we will assume no liability or responsibility for any:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; text-align: justify; width: 110%;">
     <li>(1) errors, mistakes, or inaccuracies of content and materials,</li>
     <li>(2) personal injury or property damage, of any nature whatsoever, resulting from your access to and use of the site,</li>
     <li>(3) any unauthorized access to or use of our secure servers and/or any and all personal information and/or financial information stored therein,</li>
@@ -442,7 +442,7 @@ p{
 <p>
     You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of:
 </p>
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none;  text-align: justify; width: 110%;">
     <li>(1) your Contributions;</li>
     <li>(2) use of the Marketplace Offerings;</li>
     <li>(3) breach of these Terms of Use;</li>
