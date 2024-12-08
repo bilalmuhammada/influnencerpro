@@ -52,24 +52,7 @@
             @if(session()->has('User') && session()->get('role') == 'vendor')
                 {{-- ?<li class="active has-submenu"><a href="{{ env('BASE_URL') }}">Home</a></li> --}}
                 <li class="has-submenu"><a href="{{ env('BASE_URL') }}chats">Chat</a></li>
-                {{-- <li class="has-submenu">
-                    <a href="#">Influencers<i class="fas fa-chevron-down"></i></a>
-                    <ul class="submenu">
-                        <li class="has-submenu">
-                        @foreach($influencers as $influencer)
-                            <li><a href="#">{{ $influencer->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </li> --}}
-                {{-- <li class="has-submenu"><a href="{{ env('BASE_URL') }}account-setting">Setting</a></li> --}}
-                {{--                <li class="has-submenu">--}}
-{{--                    <a href="#">Brands<i class="fas fa-chevron-down"></i></a>--}}
-{{--                    <ul class="submenu">--}}
-{{--                        @foreach($brands as $brand)--}}
-{{--                            <li><a href="#">{{ $brand->brand_name }}</a></li>--}}
-{{--                        @endforeach--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+              
             @endif
 
             @if(session()->get('role') == 'influencer')

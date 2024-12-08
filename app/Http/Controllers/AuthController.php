@@ -1028,7 +1028,7 @@ class AuthController extends Controller
         $admin = User::find(session()->get('user')['id']);
 
       
-        return view('auth.edit-profile')->with('admin', $admin);
+        return view('admin_dashboards.auth.edit-profile')->with('admin', $admin);
     }
 
     public function loginAdmin(Request $request)
@@ -1076,7 +1076,7 @@ class AuthController extends Controller
 
     public function resetPasswordAdmin()
     {
-        return view('auth.change-password')->with(['menu' => 'change-password']);
+        return view('admin_dashboards.auth.change-password')->with(['menu' => 'change-password']);
     }
 
     public function updatePasswordAdmin(Request $request)

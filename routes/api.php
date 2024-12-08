@@ -126,13 +126,15 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
 // admin api
 Route::prefix('/admins-dashboard')->group(function () {
+    
 Route::post('/login', [AuthController::class, 'loginAdmin']);
 Route::post('/generate-password-email', [AuthController::class, 'generateForgotPasswordEmail']);
 Route::post('/reset-password', [AuthController::class, 'storeNewPassword']);
 Route::post('users/upload-file', [UserController::class, 'uploadFile']);
 Route::post('edit-profile', [AuthController::class, 'editProfileBackend']);
 });
-Route::middleware('checkLogin')->group(function () {
+
+Route::middleware('auth_check')->group(function () {
     Route::post('/get-states-by-country', [UserController::class, 'getStatesByCountry']);
     Route::post('/get-cities-by-state', [UserController::class, 'getCitiesByState']);
     Route::post('/get-cities-by-country', [UserController::class, 'getCitiesByCountry']);

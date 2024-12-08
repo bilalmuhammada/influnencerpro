@@ -72,7 +72,7 @@ $(document).on('click', '.logout-btn', function () {
         dataType: "JSON",
         success: function (response) {
             if (response.status) {
-                window.location.assign(base_url + '/login');
+                window.location.assign(base_url + '/admins-dashboard/login');
             } else {
                 Swal.fire({
                     title: 'Problem!',

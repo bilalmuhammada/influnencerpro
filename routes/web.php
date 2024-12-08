@@ -26,10 +26,7 @@ Route::get('/chats/', [\App\Http\Controllers\ChatController::class, 'index']);
 Route::post('/chat/favorite',[\App\Http\Controllers\ChatController::class,'toggleFavorite'])->name('chat.favorite');
 Route::post('/chat/block', [\App\Http\Controllers\ChatController::class,'toggleBlock'])->name('chat.block');
 
-// Route::prefix('/auth')->group(function () {
-//     Route::post("/register", [AuthController::class, 'registerBackend']);
-//     Route::post("/login", [AuthController::class, 'loginBackend']);
-// });
+
 Route::get('/register', [UserAuthController::class, 'register']);
 Route::get('/login', [UserAuthController::class, 'login'])->name('login');
 Route::get('/subscriptions', [\App\Http\Controllers\GeneralController::class, 'subscription']);
@@ -75,14 +72,11 @@ Route::prefix('/reports')->middleware(['checkUser:vendor,influencer', 'checkLogi
     Route::get('/influencer-earning', [\App\Http\Controllers\ReportController::class, 'influencerEarning']);
 });
 
+
 Route::get('/download-csv', [\App\Http\Controllers\CsvController::class, 'downloadCsv']);
 Route::get('/download-csv-favourite-influencer', [\App\Http\Controllers\CsvController::class, 'downloadCsvFavouriteInfluencer']);
 
 Route::get('/contracts', [\App\Http\Controllers\ContractController::class, 'index']);
-
-/*
- * VENDOR ROUTES START HERE
- */
 
 Route::prefix('/vendor')->middleware(['checkUser:vendor', 'checkLogin'])->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\UserController::class, 'index']);
@@ -186,38 +180,39 @@ Route::get('/contact-us', [\App\Http\Controllers\Usercontroller::class, 'contact
 Route::get('/termcondition', function () {
     return view('auth.termcondition');
 });
-Route::middleware('checkLogin')->group(function () {
+
+
+Route::middleware('auth_check')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::prefix('/admins')->group(function () {
         Route::get('/', [AdminController::class, 'indexadmin']);
         Route::get('/create', [AdminController::class, 'create']);
     });
-
-    Route::prefix('/categories')->group(function () {
+ Route::prefix('/categories')->group(function () {
          Route::get('/', [CategoryController::class, 'index']);
          
-    });
+});
 
-    Route::prefix('/vendors')->group(function () {
+Route::prefix('/vendors')->group(function () {
         Route::get('/', [VendorController::class, 'index']);
         Route::get('/create', [VendorController::class, 'create']);
         Route::get('/transactions', [VendorController::class, 'transactions']);
         Route::get('/reviews', [VendorController::class, 'reviews']);
-    });
+ });
 
-    Route::prefix('/influencers')->group(function () {
+Route::prefix('/influencers')->group(function () {
         Route::get('/', [InfluencerController::class, 'index']);
         Route::get('/create', [InfluencerController::class, 'create']);
         Route::get('/transactions', [InfluencerController::class, 'transactions']);
         Route::get('/reviews', [InfluencerController::class, 'reviews']);
-    });
+});
 
-    Route::get('/faqs', function () {
+Route::get('/faqs', function () {
         return view('faq')->with(['menu' => 'faqs']);
-    });
+});
 
-    Route::get('/change-password', [UserAuthController::class, 'resetPassword']);
+ Route::get('/change-password', [UserAuthController::class, 'resetPassword']);
 });
 });
 

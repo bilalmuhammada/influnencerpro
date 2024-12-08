@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('admin_dashboards.layout.master')
 <style>
     .form-control::placeholder{
     color: blue !important;
