@@ -203,6 +203,7 @@ class AuthController extends Controller
 
     public function logout()
     {
+    //    dd('sss');
         Session::flush();
         return response()->json([
             'status' => true,

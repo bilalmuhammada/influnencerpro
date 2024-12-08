@@ -138,7 +138,7 @@ Route::middleware('auth_check')->group(function () {
     Route::post('/get-states-by-country', [UserController::class, 'getStatesByCountry']);
     Route::post('/get-cities-by-state', [UserController::class, 'getCitiesByState']);
     Route::post('/get-cities-by-country', [UserController::class, 'getCitiesByCountry']);
-    Route::post('/logout', [AuthController::class, 'logout']);
+    // Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/update-password', [AuthController::class, 'updatePassword']);
 
     Route::post('/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
