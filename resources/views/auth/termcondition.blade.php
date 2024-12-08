@@ -7,25 +7,12 @@
         ::-webkit-scrollbar {
   width: 6px; /* You can adjust this value based on your preference */
 }
-/* ul {
-    color: #333;
-  list-style-position: inside;
-  padding-left: 0; 
-} */
-
-/* li {
-    text-align: justify; 
-    color: #333;
-  margin-left: 20px; 
-} */
 
 
 ul, ol{
     /* width: 110%; */
     color: #000;
-    /* text-align: justify; */
-    /* font-weight: 900;
-    font-size: 18px; */
+   
 }
 
 a{

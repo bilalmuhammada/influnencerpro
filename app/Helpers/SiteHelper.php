@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Models\Country;
 use App\Models\Customer;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -28,8 +29,34 @@ class SiteHelper
             return NULL;
         }
     }
+    public static function getCurrency()
+    {
+        
+        $currency = Country::orderBy('currency_symbol')->get();
+       
+        
+       
+    
+        return $currency;
+    }
 
+    public static function reformatDate($date)
+    {
+        if (!empty($date)) {
+            return Carbon::createFromFormat('Y-m-d H:i:s', "{$date} 00:00:00");
+        } else {
+            return NULL;
+        }
+    }
+    public static function reformatToDateString($datetimeStr)
+    {
+        if (!empty($datetimeStr)) {
+            return Carbon::parse( $datetimeStr)->toFormattedDateString();
+        } else {
+            return NULL;
+        }
 
+    }
     public static function reformatDbTime($timeStr)
     {
         if (!empty($timeStr)) {

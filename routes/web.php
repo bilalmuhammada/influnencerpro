@@ -1,6 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController as UserAuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InfluencerController;
+use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +30,8 @@ Route::post('/chat/block', [\App\Http\Controllers\ChatController::class,'toggleB
 //     Route::post("/register", [AuthController::class, 'registerBackend']);
 //     Route::post("/login", [AuthController::class, 'loginBackend']);
 // });
-Route::get('/register', [\App\Http\Controllers\AuthController::class, 'register']);
-Route::get('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
+Route::get('/register', [UserAuthController::class, 'register']);
+Route::get('/login', [UserAuthController::class, 'login'])->name('login');
 Route::get('/subscriptions', [\App\Http\Controllers\GeneralController::class, 'subscription']);
 Route::get('/influncersubscriptions', [\App\Http\Controllers\GeneralController::class, 'influncersubscription']);
 
@@ -34,12 +40,12 @@ Route::get('/checkout',  [\App\Http\Controllers\GeneralController::class,'checko
 Route::post('/session',  [\App\Http\Controllers\GeneralController::class,'session'])->name('session');
 Route::get('/success',  [\App\Http\Controllers\GeneralController::class,'success'])->name('success');
 
-Route::get('/forgot-password', [\App\Http\Controllers\AuthController::class, 'forgotPassword']);
-Route::get('/reset/{reset_password_token}', [\App\Http\Controllers\AuthController::class, 'reset']);
+Route::get('/forgot-password', [UserAuthController::class, 'forgotPassword']);
+Route::get('/reset/{reset_password_token}', [UserAuthController::class, 'reset']);
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->middleware('checkUser');
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->middleware('checkUser');
-Route::get('/account-setting', [\App\Http\Controllers\AuthController::class, 'vendorAccountSetting'])->middleware('checkUser:vendor,influencer');
+Route::get('/account-setting', [UserAuthController::class, 'vendorAccountSetting'])->middleware('checkUser:vendor,influencer');
 Route::get('/contact-us', [\App\Http\Controllers\ContactUsController::class, 'index']);
 
 Route::prefix('/category')->group(function () {
@@ -48,10 +54,10 @@ Route::prefix('/category')->group(function () {
 
 Route::prefix('/influencer')->middleware(['checkLogin'])->group(function () {
     Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->middleware('checkUser:influencer');
-    Route::get('/account-setting', [\App\Http\Controllers\AuthController::class, 'accountSetting'])->middleware('checkUser:vendor,influencer');
+    Route::get('/account-setting', [UserAuthController::class, 'accountSetting'])->middleware('checkUser:vendor,influencer');
     Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->middleware('checkUser:influencer');
-    Route::get('/complete-profile', [\App\Http\Controllers\AuthController::class, 'completeProfile'])->middleware('checkUser:influencer');
-    Route::get('/change-old-password', [\App\Http\Controllers\AuthController::class, 'changeOldPassword'])->middleware('checkUser:vendor,influencer');
+    Route::get('/complete-profile', [UserAuthController::class, 'completeProfile'])->middleware('checkUser:influencer');
+    Route::get('/change-old-password', [UserAuthController::class, 'changeOldPassword'])->middleware('checkUser:vendor,influencer');
    
     
 });
@@ -159,3 +165,60 @@ Route::get('/dashboard-influencer-profile', function () {
 });
 
 
+
+// admin route
+
+
+Route::prefix('/admins-dashboard')->group(function () {
+     Route::get('/', [UserAuthController::class, 'index']);
+
+Route::get('/login', [UserAuthController::class, 'index']);
+Route::get('/edit-profile', [UserAuthController::class, 'editProfile']);
+Route::get('/forgot-password', [UserAuthController::class, 'forgotPassword']);
+Route::get('/reset/{password_reset_code}', [UserAuthController::class, 'checkForgotPasswordCode']);
+
+Route::get('/privacy-policy', function () {
+    return view('auth.privacy-policy');
+});
+
+Route::get('/contact-us', [\App\Http\Controllers\Usercontroller::class, 'contactForm']);
+
+Route::get('/termcondition', function () {
+    return view('auth.termcondition');
+});
+Route::middleware('checkLogin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+
+    Route::prefix('/admins')->group(function () {
+        Route::get('/', [AdminController::class, 'indexadmin']);
+        Route::get('/create', [AdminController::class, 'create']);
+    });
+
+    Route::prefix('/categories')->group(function () {
+         Route::get('/', [CategoryController::class, 'index']);
+         
+    });
+
+    Route::prefix('/vendors')->group(function () {
+        Route::get('/', [VendorController::class, 'index']);
+        Route::get('/create', [VendorController::class, 'create']);
+        Route::get('/transactions', [VendorController::class, 'transactions']);
+        Route::get('/reviews', [VendorController::class, 'reviews']);
+    });
+
+    Route::prefix('/influencers')->group(function () {
+        Route::get('/', [InfluencerController::class, 'index']);
+        Route::get('/create', [InfluencerController::class, 'create']);
+        Route::get('/transactions', [InfluencerController::class, 'transactions']);
+        Route::get('/reviews', [InfluencerController::class, 'reviews']);
+    });
+
+    Route::get('/faqs', function () {
+        return view('faq')->with(['menu' => 'faqs']);
+    });
+
+    Route::get('/change-password', [UserAuthController::class, 'resetPassword']);
+});
+});
+
+// end route

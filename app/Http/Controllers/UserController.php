@@ -7,6 +7,8 @@ use App\Models\Attachment;
 use App\Models\Chat;
 use App\Models\Favourite;
 use App\Models\ProfileVisit;
+use App\Models\Review;
+use App\Models\Role;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -28,6 +30,41 @@ class UserController extends Controller
 
     
         return view('vendor-dashboard.home')->with(['view_type' => 'influencer', 'influencers' => $influencers->paginate(20), 'total_influencers' => $influencers->count()]);
+    }
+
+    public function all(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'role' => 'required|exists:roles,code',
+        ]);
+        // dd('dd');
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => FALSE,
+                'message' => $validator->errors()->first()
+            ]);
+        }
+        $role = $request->role;
+
+        $Users = User::with(['subscription','personal_information', 'plan'])->whereHas('role', function ($Role) use ($role) {
+            $Role->where('code', $role);
+        })->when($request->status, function ($User, $status) {
+            $User->where('status', $status);
+        })->latest()->get();
+// dd(  $Users);
+        if ($Users->isNotEmpty()) {
+            return response()->json([
+                'status' => true,
+                'message' => '',
+                'data' => $Users
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'No Record Found'
+        ]);
     }
 
     public function getPaginatedInfluencers(Request $request)
@@ -325,6 +362,63 @@ class UserController extends Controller
         return response()->json([
             'status' => true,
             'data' => $chat = Chat::where(['second_user_id' => $request->id, 'first_user_id' => SiteHelper::getLoginUserId()])->first()->status
+        ]);
+    }
+
+
+
+    public function reviews(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'role' => 'required|exists:roles,code',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => FALSE,
+                'message' => $validator->errors()->first()
+            ]);
+        }
+        $role_id = Role::where('code', $request->role)->first()->id;
+
+        $Reviews = Review::with(['user', 'category'] )->whereHas('user', function ($User) use ($role_id) {
+            $User->where('role_id', $role_id);
+        })->get();
+
+        //  dd($Reviews);
+        if ($Reviews->isNotEmpty()) {
+            return response()->json([
+                'status' => true,
+                'data' => $Reviews
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'No Record Found'
+        ]);
+    }
+
+    public function deleteReview($id)
+    {
+        $rules = [
+            'id' => 'required|exists:reviews,id',
+        ];
+
+        $validator = Validator::make(['id' => $id], $rules);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => FALSE,
+                'message' => $validator->errors()->first()
+            ]);
+        }
+
+        Review::where('id', $id)->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Review Deleted Successfully'
         ]);
     }
 }

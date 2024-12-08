@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Helpers\SiteHelper;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,7 +19,35 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
-    protected $appends = ['full_name','image_url', 'is_favourite_influencer', 'instagram_followers', 'tiktok_followers', 'facebook_followers', 'country_name', 'user_arts'];
+    protected $appends = ['full_name',
+    'image_url', 
+    'is_favourite_influencer', 
+    'instagram_followers', 
+    'tiktok_followers',
+     'facebook_followers',
+      'country_name',
+       'user_arts',
+    
+    
+    
+       'age',
+        'created_at_formatted',
+        'status_formatted',
+       
+        'member_since',
+        'number_of_outlets',
+        'number_of_deals',
+        'pending_deals',
+        'cancelled_deals',
+        'amount_received',
+        'amount_paid',
+        'rating_influencer_pro',
+        'rating_by_vendor',
+        'submitted_files',
+        'vendor_user_person_name',
+        'country_name',
+        'city_name'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,6 +71,23 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+    public function getMemberSinceAttribute()
+    {
+        return SiteHelper::reformatReadableDateTime($this->created_at);
+    }
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->dob)->age;
+    }
+
+    public function getCreatedAtFormattedAttribute()
+    {
+        return SiteHelper::reformatToDateString($this->created_at);
+    }
+    public function getStatusFormattedAttribute()
+    {
+        return ucfirst(strtolower($this->status));
     }
 
     public function user_professional_detail()
@@ -95,6 +141,49 @@ class User extends Authenticatable
         return $this->hasMany(Attachment::class,'object_id')
         ->where('object', 'User')
         ->where('context', '=', 'influencer-profile-image');
+    }
+    public function getNumberOfDealsAttribute()
+    {
+        return 10;
+    }
+
+    public function getSubmittedFilesAttribute()
+    {
+        return '20';
+    }
+
+    public function getNumberOfOutletsAttribute()
+    {
+        return '20';
+    }
+    
+
+    public function getCancelledDealsAttribute()
+    {
+        return 7;
+    }
+
+    public function getAmountPaidAttribute()
+    {
+        return '$3000';
+    }
+
+    public function getVendorUserPersonNameAttribute()
+    {
+        return 'vendor name';
+    }
+
+     
+    public function getAmountReceivedAttribute()
+    {
+        if ($this->subscription)
+            return $this->subscription->amount_paid;
+        else
+            return 0;
+    }
+    public function getPendingDealsAttribute()
+    {
+        return 3;
     }
 
     public function getImageUrlAttribute()
@@ -166,6 +255,15 @@ class User extends Authenticatable
 
         return 0;
     }
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class)->where('status', '=', 'active');
+    }
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
 
     public function getTiktokFollowersAttribute()
     {
@@ -201,6 +299,26 @@ class User extends Authenticatable
     {
         if ($this->arts)
             return implode(', ', $this->arts->pluck('art_name')->toArray());
+        else
+            return '';
+    }
+
+
+
+    public function getRatingInfluencerProAttribute()
+    {
+        return '3.5';
+    }
+
+    public function getRatingByVendorAttribute()
+    {
+        return '2.0';
+    }
+
+    public function getCityNameAttribute()
+    {
+        if ($this->city)
+            return $this->city->name;
         else
             return '';
     }
