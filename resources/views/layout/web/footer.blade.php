@@ -51,18 +51,18 @@
                         <div style="color:#0000FF; margin-top: 6px;"><b>Download our App now!</b></div>
                     </h5>
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;margin-top: -30px;">
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " height="80px" width="140px">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 44px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 44px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.svg') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>

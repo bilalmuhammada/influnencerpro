@@ -39,7 +39,7 @@
     </style>
 @section('content')
 <div class="content">
-<div class="container"  style="margin-top: 60px;border-top:1px solid #eee;padding-top:30px;">
+<div class="container"  style="padding-top:30px;">
 <h2 class="terms-h text-center ">Select Your Plan</h2>
 <!------->
 <div class="col-md-12">

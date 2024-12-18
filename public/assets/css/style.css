@@ -1946,7 +1946,7 @@ border: 1px solid #2d11e7;
 }
 
 .modal-body {
-    padding: 26px;
+    padding: 0px 26px 0px 26px;
 }
 
 .custom-modal .modal-content {
@@ -20935,7 +20935,7 @@ button.scroll-top:focus {
         position: relative;
     }
     .main-nav>li>a {
-        padding: 30px 0;
+        padding: 3px 0;
     }
     .main-nav>li>a>i {
         font-size: 10px;

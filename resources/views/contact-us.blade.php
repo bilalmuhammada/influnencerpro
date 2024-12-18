@@ -41,7 +41,7 @@ input[type="file"] {
                     <div class="align-items-center justify-content-center">
                         <div class="login-right">
                             <div class="login-header text-center">
-                                <a href="{{ env('BASE_URL') }}"><img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="logo" class="img-fluid"></a>
+                                {{-- <a href="{{ env('BASE_URL') }}"><img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="logo" class="img-fluid"></a> --}}
                                 <h3>Contact Us</h3>
                                 <p>Share your mind with us!</p>
                             </div>

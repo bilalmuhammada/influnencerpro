@@ -23,27 +23,27 @@
     }
 </style>
 <footer class="footer" style="border:0px solid red;">
-    <div class="container mb-30">
-        <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red; margin-top:30px;">
+    <div class="container mb-30" style="margin-top: 50px;">
+        <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red; margin-top:0px;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
-                    <h5>
+                    <h6>
                         Join Us & Discover More.<br/>
                         <div style="color:#0000FF;margin-top:6px;"><b>Download our App now!</b></div>
-                    </h5>
+                    </h6>
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;margin-top: -30px;">
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " height="80px" width="140px">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;">
+                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.svg') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
@@ -61,7 +61,7 @@
                         </a>
                         </div> -->
                         <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Company</h5>
-                        <ul>
+                        <ul >
                             {{-- <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>Home</a></li> --}}
                             <li><a href="#"  data-bs-toggle="modal" data-bs-target="#aboutus"  class="changeColor">
                                 {{-- <i class="fas fa-angle-right me-1"></i> --}}
@@ -123,18 +123,18 @@
                 <div class="col-xl-2 col-md-6">
                     <div class="footer-widget footer-menu">
                         <h5  style="font-size:15px;font-weight: bold;" class="footer-title">Socials</h5>
-                        <ul style="margin-left: 14px;">
+                        <ul style="margin-left: 14px;margin-top: 14px;">
                             <li ><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
-                                        width="25" style="margin-bottom: 5px;"
+                                        width="25" style="margin-bottom: 8px;"
                                         height="25"></a></li>
                             <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/icons/instagram.png') }}"
-                                        alt="insta" width="25" style="margin-bottom: 5px;"
+                                        alt="insta" width="25" style="margin-bottom: 8px;"
                                         height="25"></a></li>
                             <li><a href="https://x.com/influencerpro_" class="icon shaking" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                        alt="twitter"    style="margin-bottom: 5px;"
+                                        alt="twitter"    style="margin-bottom: 8px;"
                                         width="25" height="25"></a></li>
                             {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
                                         src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"

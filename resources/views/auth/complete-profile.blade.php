@@ -130,23 +130,20 @@ font-weight: bold;
     padding: 6px 0px 0px 14px !important;}
 .dropzone .dz-preview .dz-image {
     border-radius: 0px !important;}
-
-
-    /* Define the scrollbar track */
-::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
-}
-
-
-.form-control{
-    color: black !important;
-
-}
 #Priceinclude::placeholder {
             font-size: 14px !important; /* Change font size */
             /* color: black !important;   */
             /* font-weight: bold  !important; Change color */
         }
+.form-control{
+    color: black !important;
+
+}
+    /* Define the scrollbar track */
+::-webkit-scrollbar {
+  width: 12px; /* You can adjust this value based on your preference */
+}
+
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;

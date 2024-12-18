@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-
+   
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -82,11 +82,13 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script> --}}
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     {{-- <script src="{{ asset('assets/js/slick.js') }}"></script> --}}
+
    <script>
        var  base_url = "{{ env('BASE_URL') }}";
        var  api_url = "{{ env('API_URL') }}";
         
         token = localStorage.getItem('user_token');
+       
     </script>
 
     @if(isset($view_type) && $view_type == 'influencer')

@@ -23,9 +23,9 @@
             margin-top: 20px;
         }
         .modal-header {
-            padding: 0.5rem 1rem 0.2rem 1rem;
+            padding: 0rem 1rem 0rem 1rem;
         }
-        .modal-title{
+        .modal-title_report{
             margin-left: 33px !important;
             color: blue;
             font-size: 20px;
@@ -65,7 +65,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Report User</h4>
+                <h4 class="modal-title_report">Report User</h4>
                 <button type="button" class="close btn closebtn" data-dismiss="modal" style="margin-top: -2px;font-size: 20px">×</button>
             </div>
 
