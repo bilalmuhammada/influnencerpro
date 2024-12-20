@@ -170,8 +170,8 @@
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of use</a></li>
                         </ul> -->
-                        <div class="copyright-text">
-                            <p class="mb-0">Copyright 2023 © InfluencerPro. All right reserved.</p>
+                        <div class="copyright-text bilal-footer1"   style="    margin-bottom: 8px;">
+                            <p class="mb-0" tyle="color:#00498e;font-weight: 500;font-size:12px; margin-top: -10px;">© InfluencerPro.org 2024, All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>

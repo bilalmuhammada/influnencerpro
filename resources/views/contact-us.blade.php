@@ -33,8 +33,11 @@ input[type="file"] {
             visibility: hidden;
         } */
     </style>
-   <div class="content">
+   <div class="content" style="padding: 17px 0 30px;">
     <div class="container">
+        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-top: -1rem;">
+            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
+        </a>
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="account-content">
@@ -250,7 +253,7 @@ input[type="file"] {
                                 $.each(states, function (index, value) {
                                     $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                     
-                                    $("#brand_city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                     // $("#citylable").css('margin-top', '-15px');
                                     $('.label').addClass('focused');
                                 });

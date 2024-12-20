@@ -240,7 +240,7 @@ color: goldenrod !important;
                     <a href="{{ env('BASE_URL') . '#' }}">
                         <img src="{{ session()->has('User') ? session()->get('User')->image_url : asset('assets/img/user.png') }}" alt="img" width="40" height="40" style="border-radius:20px;margin-top:-10px;">
                     </a>
-                    <ul class="submenu" style="margin-left: -56px;">
+                    <ul class="submenu" style="margin-left: -25px;">
                         <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}">Edit Profile</a></li>
                         <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">Logout</a></li>
                     </ul>

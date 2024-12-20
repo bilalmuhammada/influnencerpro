@@ -52,7 +52,7 @@
     </div>
     <div class="footer-top aos" style="border:0px solid red;">
         <div class="container" style="border:0px solid red;margin-top:-25px;">
-            <div class="row">
+            <div class="row" style="margin-top: 20px;">
                 <div class="col-xl-3 col-md-6">
                     <div class="footer-widget footer-menu">
                     <!-- <div class="footer-bottom-logo">
@@ -190,8 +190,8 @@
                                      alt="Logo">
                             </a>
                         </div>
-                        <div class="copyright-text bilal-footer1"   style="    margin-bottom: 8px;">
-                            <p class="mb-0">© InfluencerPro.org 2024, All Rights Reserved.</p>
+                        <div class="copyright-text bilal-footer1"   style="margin-bottom: 22px;">
+                            <p class="mb-0" style="color:#00498e;font-weight: 500;font-size:12px; margin-top: -16px;">© InfluencerPro.org 2024, All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-4 right-text">

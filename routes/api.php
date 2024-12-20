@@ -133,11 +133,11 @@ Route::post('/reset-password', [AuthController::class, 'storeNewPassword']);
 Route::post('users/upload-file', [UserController::class, 'uploadFile']);
 Route::post('edit-profile', [AuthController::class, 'editProfileBackend']);
 });
-
+Route::post('/get-cities-by-country', [UserController::class, 'getCitiesByCountry']);
 Route::middleware('auth_check')->group(function () {
     Route::post('/get-states-by-country', [UserController::class, 'getStatesByCountry']);
     Route::post('/get-cities-by-state', [UserController::class, 'getCitiesByState']);
-    Route::post('/get-cities-by-country', [UserController::class, 'getCitiesByCountry']);
+   
     // Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/update-password', [AuthController::class, 'updatePassword']);
 
@@ -164,7 +164,7 @@ Route::middleware('auth_check')->group(function () {
         Route::post('transactions', [UserController::class, 'transactions']);
         Route::post('{id}/delete-transaction', [UserController::class, 'deleteTransaction']);
     });
-    Route::post("/get-cities-by-country", \App\Http\Controllers\UserController::class . '@getCitiesByCountry');
+    // Route::post("/get-cities-by-country", \App\Http\Controllers\UserController::class . '@getCitiesByCountry');
     Route::prefix('/categories')->group(function () {
         Route::get('/list', [CategoryController::class, 'all']);
         Route::post('/change-status', [CategoryController::class, 'changeStatus']);

@@ -106,6 +106,8 @@ class GeneralController extends Controller
     public function getCitiesByCountry(Request $request)
     {
         $state_ids = getStateByCountryId($request->nationality_id)->pluck('id');
+
+        dd( $state_ids);
         $cities = getCityByStateIds($state_ids);
 
         return response()->json([

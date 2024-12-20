@@ -74,14 +74,14 @@ function getStateByCountryId($countryId)
 
 function getCityByStateId($stateId)
 {
-    $Cities = \App\Models\City::where('state_id', $stateId)->get();
+    $Cities = \App\Models\City::where('country_id', $stateId)->get();
 
     return $Cities;
 }
 
 function getCityByStateIds($stateId)
 {
-    $Cities = \App\Models\City::whereIn('state_id', $stateId)->get();
+    $Cities = \App\Models\City::whereIn('country_id', $stateId)->get();
 
     return $Cities;
 }

@@ -1938,7 +1938,7 @@ border: 1px solid #2d11e7;
 }
 
 .modal-header {
-    padding: 20px 30px;
+    padding: 4px 30px;
     align-items: center;
 }
 #reportUserModal .modal-body {
@@ -1946,7 +1946,7 @@ border: 1px solid #2d11e7;
 }
 
 .modal-body {
-    padding: 0px 26px 0px 26px;
+    padding: 10px 26px 0px 26px;
 }
 
 .custom-modal .modal-content {
@@ -2174,7 +2174,7 @@ border: 1px solid #2d11e7;
 
 .main-nav>li .submenu li a {
     display: block;
-    padding: 4px 10px 4px 10px;
+    padding: 4px 10px 4px 4px;
     clear: both;
     white-space: nowrap;
     font-size: 15px;
@@ -20935,7 +20935,7 @@ button.scroll-top:focus {
         position: relative;
     }
     .main-nav>li>a {
-        padding: 3px 0;
+        padding: 10px 0;
     }
     .main-nav>li>a>i {
         font-size: 10px;

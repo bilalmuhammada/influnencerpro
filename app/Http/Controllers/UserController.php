@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\SiteHelper;
 use App\Models\Attachment;
 use App\Models\Chat;
+use App\Models\Country;
 use App\Models\Favourite;
 use App\Models\ProfileVisit;
 use App\Models\Review;
@@ -13,6 +14,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -67,6 +69,15 @@ class UserController extends Controller
         ]);
     }
 
+    public function getCitiesByCountry(Request $request){
+        $cities=   DB::table('cities')->where('country_id',$request->nationality_id)->get();
+       
+    //    dd($cities);
+        return response()->json([
+            'data' => $cities,
+             'status'=>true
+        ]);  
+    }
     public function getPaginatedInfluencers(Request $request)
     {
         $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail', 'favourites'])->whereHas('role', function ($Role) {
