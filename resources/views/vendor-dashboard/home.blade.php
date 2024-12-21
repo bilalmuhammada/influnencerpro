@@ -1083,7 +1083,7 @@ color: #0504aa !important;
                                                     <li style="display: inline-block;;color:#fff; margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center; margin-left:6px;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                             {{ $instagram ? $instagram->followers : 0 }}
@@ -1096,7 +1096,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                             {{ $twitter ? $twitter->followers : 0 }}
@@ -1111,7 +1111,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                             {{ $youtube ? $youtube->followers : 0 }}
@@ -1124,7 +1124,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                             {{ $tiktok ? $tiktok->followers : 0 }}
@@ -1137,7 +1137,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                             {{ $facebook ? $facebook->followers : 0 }}
@@ -1174,7 +1174,7 @@ color: #0504aa !important;
                                             $categoryNames = '';
                                            foreach ($influencer->categories as $key => $category) {
     // Append the category name to the string
-    $categoryNames .= $category->name;
+    $categoryNames .= '#'.$category->name;
 
     // Add a comma and space if it's not the last category
     if ($key != $influencer->categories->count() - 1) {

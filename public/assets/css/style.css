@@ -2114,7 +2114,7 @@ border: 1px solid #2d11e7;
 }
 
 .header-nav {
-    height: 3.8rem;
+    height: 3.2rem;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: right;
@@ -20946,7 +20946,7 @@ button.scroll-top:focus {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
         display: block;
         font-size: 14px;
-        left: 0;
+        left: -4;
         margin: 0;
         /* min-width: 200px; */
         opacity: 0;
@@ -23090,6 +23090,9 @@ button.scroll-top:focus {
     .footer-bottom-logo {
         text-align: center;
     }
+    .footer-bottom-logo {
+        height: 60px;
+    }
     .app-version-blk h2 {
         font-size: 20px;
     }
@@ -23890,3 +23893,7 @@ button.scroll-top:focus {
         width: 296px !important;
     }
 }
+
+span:hover .icon-hover {
+    color: #a39656; /* Hover color */
+  }

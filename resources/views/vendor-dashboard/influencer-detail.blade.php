@@ -720,7 +720,9 @@ color: goldenrod !important;
                     @endphp
                     <div class="details" style="margin-top:4px;">
                         <div class="row">
-                            <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Model, Actress, Influencer</span>
+                            <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">
+                                {{ $influencer->categories->map(fn($category) => '#' . $category->name)->join(', ') }}
+                            </span>
                             </div>
                             @php
                             if($influencer->personal_information!=null){
@@ -729,20 +731,21 @@ color: goldenrod !important;
                             }
                               @endphp
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Nationality: {{ $country->name ?? '' }}
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span style="color: blue;">Nationality:</span> {{ $country->name ?? '' }}
                                     {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }} --}}
                                 </span>
                             </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">City: {{$city->name ?? ''}}
+                                style="font-size: 14px;font-weight:bold;padding:0px 3px;"><span style="color: blue;">Price:</span> {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
+                                {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
+                            </span>
+                        </div>
+                            <div class="col-md-3"><span
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span style="color: blue;">City:</span> {{ $city->name ?? '' }}
                                     {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
                                 </span>
                             </div>
-                            <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;">Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} 
-                                    {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
-                                </span>
-                            </div>
+                      
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>
                     </div>

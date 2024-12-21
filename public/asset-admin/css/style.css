@@ -20904,7 +20904,7 @@ button.scroll-top:focus {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
         display: block;
         font-size: 14px;
-        left: 0;
+        left: -4;
         margin: 0;
         /* min-width: 200px; */
         opacity: 0;
@@ -23047,6 +23047,9 @@ button.scroll-top:focus {
     .copyright-text,
     .footer-bottom-logo {
         text-align: center;
+    }
+    .footer-bottom-logo {
+        height: 60px;
     }
     .app-version-blk h2 {
         font-size: 20px;
