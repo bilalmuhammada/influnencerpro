@@ -745,7 +745,8 @@ color: goldenrod !important;
                                     {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
                                 </span>
                             </div>
-                      
+                       
+                            
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>
                     </div>
