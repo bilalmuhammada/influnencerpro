@@ -203,7 +203,7 @@
                                      alt="Logo">
                             </a>
                         </div>
-                        <div class="copyright-text bilal-footer1"  style="margin-top: -14px;margin-left: 5rem;">
+                        <div class="copyright-text bilal-footer1"  style="margin-top: -14px;">
                             <p class="mb-0" style="color:#00498e;font-weight: 500;font-size:12px; margin-top: -10px;">© InfluencerPro.org 2024, All Rights Reserved.</p>
                         </div>
                     </div>
