@@ -1009,12 +1009,11 @@ color: #0504aa !important;
                  
                     <div class="row" id="infulecer-show">
                         @forelse($influencers as $influencer)
-                       
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                         {{-- <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" > --}}
                                 
                                 <div class="card avatar-one" 
-                                     onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+                                     {{-- onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" --}}
                                    style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>

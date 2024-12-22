@@ -23897,3 +23897,6 @@ button.scroll-top:focus {
 span:hover .icon-hover {
     color: #a39656; /* Hover color */
   }
+.lobibox-notify.notify-mini .lobibox-notify-msg{
+    line-height: unset;
+}

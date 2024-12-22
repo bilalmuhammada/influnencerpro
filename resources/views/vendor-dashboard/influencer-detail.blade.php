@@ -121,8 +121,8 @@ color: goldenrod !important;
 }
 
 .image-actions img {
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
 }
 ::-webkit-scrollbar {
@@ -182,7 +182,7 @@ color: goldenrod !important;
                                 <a href="{{ $influencer ? $influencer->image_url : '' }}">
                                 <img class="card-title mb-0" src="{{ $influencer ? $influencer->image_url : '' }}"
                                      alt="author"
-                                     width="100%" height="200px">
+                                     width="100%" height="208px">
                                 </a><br/>
                             </div>
                             <!-- <lable>Book Talent<i class="fa fa-email"></i></lable> -->
@@ -408,7 +408,7 @@ color: goldenrod !important;
                                     </div>
                                 </div>
                                     <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Traveling Country  &nbsp;&nbsp; 1</label>
+                                    <label class="font-label">Traveling Country  &nbsp;&nbsp;1</label>
                                     @php
                                     if($influencer->personal_information !=null){
                                         $travlling_one_to_date= $influencer->personal_information->travlling_one_to_date;
@@ -720,10 +720,16 @@ color: goldenrod !important;
                     @endphp
                     <div class="details" style="margin-top:4px;">
                         <div class="row">
-                            <div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">
-                                {{ $influencer->categories->map(fn($category) => '#' . $category->name)->join(', ') }}
-                            </span>
+                            <div class="col-md-3">
+                                <span style="font-size: 14px; font-weight: bold; padding: 0px 3px; color: blue;">
+                                    {!! $influencer->categories->map(function($category, $index) {
+                                        return ($index === 0 
+                                        ? '<span style="color: black; font-style: italic;">#</span> ' 
+                                            : '') . $category->name;
+                                    })->join(',&nbsp;') !!}
+                                </span>
                             </div>
+                            
                             @php
                             if($influencer->personal_information!=null){
                             $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id)->first();
@@ -731,22 +737,26 @@ color: goldenrod !important;
                             }
                               @endphp
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span style="color: blue;">Nationality:</span> {{ $country->name ?? '' }}
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span >Nationality: </span>
+                                    <span style="color: blue;"> {{ $country->name ?? '' }}</span>
                                     {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }} --}}
                                 </span>
                             </div>
                             <div class="col-md-3"><span
-                                style="font-size: 14px;font-weight:bold;padding:0px 3px;"><span style="color: blue;">Price:</span> {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
+                                style="font-size: 14px;font-weight:bold;padding:0px 3px;"><span >Price: </span> 
+                                <span style="color: blue;">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
                                 {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
                             </span>
                         </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span style="color: blue;">City:</span> {{ $city->name ?? '' }}
+                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span >City: </span> 
+                                    <span style="color: blue;">
+                                        {{ $city->name ?? '' }}
+                                        </span>
                                     {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
                                 </span>
                             </div>
                        
-                            
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>
                     </div>
@@ -844,7 +854,8 @@ color: goldenrod !important;
     $(document).ready(function() {
         // Handle delete icon click
         $('.delete-icon').on('click', function() {
-
+            show_success_message("Deleteded!");
+            return
             var url = $(this).data('url');
             var imageElement = $(this).closest('.gallerys');
             if (confirm('Are you sure you want to delete this image?')) {
