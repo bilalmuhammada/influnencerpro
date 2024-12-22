@@ -369,7 +369,7 @@ width: 195px !important;
                                                  {{ $instagram ? $instagram->followers : 0 }}
                                              </div>
                                          </div>
-                                     </li>&nbsp;
+                                     </li>&nbsp;&nbsp;
                                                          @endif
          
                                                          @if($twitter  && isset($twitter->followers))
@@ -382,7 +382,7 @@ width: 195px !important;
                                                                      {{ $twitter ? $twitter->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>&nbsp;
+                                                         </li>&nbsp;&nbsp;
          
                                                              
                                                          @endif
@@ -397,7 +397,7 @@ width: 195px !important;
                                                                      {{ $youtube ? $youtube->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>&nbsp;
+                                                         </li>&nbsp;&nbsp;
                                                          
                                                              
                                                          @endif
@@ -411,7 +411,7 @@ width: 195px !important;
                                                                      {{ $tiktok ? $tiktok->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>&nbsp;
+                                                         </li>&nbsp;&nbsp;
                                                         
                                                            
                                                          @endif
@@ -425,7 +425,7 @@ width: 195px !important;
                                                                      {{ $facebook ? $facebook->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>&nbsp;
+                                                         </li>&nbsp;&nbsp;
                                                          
                                                              
                                                          @endif
@@ -439,7 +439,7 @@ width: 195px !important;
                                                                      {{ $snapchat ? $snapchat->followers : 0 }}
                                                                  </div>
                                                              </div>
-                                                         </li>&nbsp;
+                                                         </li>&nbsp;&nbsp;
                                                        
                                                             
                                                          @endif
@@ -467,7 +467,7 @@ width: 195px !important;
                             <div class="influencer-dev" style="margin:10px;padding: 3px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                                    <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
+                                    <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}777</h5>
                                 <h5 style="font-size:12px;">
                                     Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
                                     &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}</h5>
