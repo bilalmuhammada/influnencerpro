@@ -854,8 +854,7 @@ color: goldenrod !important;
     $(document).ready(function() {
         // Handle delete icon click
         $('.delete-icon').on('click', function() {
-            show_success_message("Deleteded!");
-            return
+           
             var url = $(this).data('url');
             var imageElement = $(this).closest('.gallerys');
             if (confirm('Are you sure you want to delete this image?')) {
