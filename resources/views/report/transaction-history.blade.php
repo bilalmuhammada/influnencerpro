@@ -299,10 +299,10 @@ width: 212px !important;
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
                                 <input type="text" class="form-control datepicker  from_date" name="from_date"
-                                       placeholder=" Date">
+                                       placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder=" Date">
+                                <input type="text" class="form-control  datepicker to_date" name="to_date" placeholder="Date">
                             </div>
                         {{--                            <div class="col-lg-2 col-md-6">--}}
                         {{--                                <select class="form-select">--}}
@@ -347,9 +347,13 @@ width: 212px !important;
                                 <thead>
                                 <tr>
                                     <th><input type="checkbox" style="margin-left: 10px;" id="selectAll"></th>
+                                    <th>Invoice #</th>  
                                     <th>Transaction Date</th>
-                                    <th>Invoice #</th>
+                                    
                                     <th>Subscription Plan</th>
+                                    <th>Status</th>
+                                    <th>Expire in</th>
+                                    <th>Renew</th>
                                     <th>Amount</th>
                                     <th class="text-end">Actions</th>
                                 </tr>
@@ -495,9 +499,12 @@ width: 212px !important;
                                     console.log(value.date_formatted);
                                     row += `<tr>
                 <td><input type="checkbox" class="transaction-checkbox" trans-id="${value.id}"></td>
-                <td>${value.date_formatted}</td>
                 <td><a href="#">#${value.invoice_number}</a></td>
-                <td>xyz-${value.id}</td>
+                <td>${value.date_formatted}</td>
+                <td>${'Star'}</td>
+                <td>${'Live'}</td>
+                <td>${value.date_formatted}</td>
+                 <td>${'renew'}</td>
                 <td>${(40.44 + Number(value.id)).toFixed(2)}</td> <!-- Correct formatting -->
                 <td class="text-end subscription-end">
                     <a href="javascript:void(0);" class=" delete" trans-id="${value.id}"><i style="font-size:20px;color:blue;" class="far fa-trash-alt"></i></a>

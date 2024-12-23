@@ -28,9 +28,9 @@
     margin: 7px 1px 0px 0px !important;
 }
 .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 135px !important;
+    width: 100px !important;
     margin-right: 110px !important; 
-    text-align: center !important;
+    /* text-align: center !important; */
 }
 .profile h1 {
     margin-top: 160px;

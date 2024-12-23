@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
-    <title>InfluencersPro</title>
+    <title>InfluencerPro</title>
 
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png" type="image/x-icon') }}">
 

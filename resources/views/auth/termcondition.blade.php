@@ -44,7 +44,7 @@ p{
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header ">
-                                <h3 class="text-center">Terms of Use</h3> 
+                                <h3 class="text-center" style=" margin-left: 7rem;">Terms of Use</h3> 
                                
                                 
 

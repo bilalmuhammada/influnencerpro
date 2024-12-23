@@ -6,9 +6,9 @@
     margin: 7px 1px 0px 0px !important;
 }
 .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 125px !important;
+    width: 100px !important;
     margin-right: 120px !important; 
-    text-align: center !important;
+    /* text-align: center !important; */
 }
         .switch {
             position: relative;
@@ -369,7 +369,7 @@ width: 195px !important;
                                         <li style="display: inline-block;;color:#fff;">
                                         <div class="social-wrapper" style="text-align: center; margin-left:14px;">
                                             <a href="">
-                                                <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                             </a>
                                             <div class="text-center font-change followers-count" style="font-size:11px;">
                                                 {{ $instagram ? $instagram->followers : 0 }}
@@ -382,7 +382,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="">
-                                                                    <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $twitter ? $twitter->followers : 0 }}
@@ -397,7 +397,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="">
-                                                                    <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $youtube ? $youtube->followers : 0 }}
@@ -411,7 +411,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="">
-                                                                    <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $tiktok ? $tiktok->followers : 0 }}
@@ -425,7 +425,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="">
-                                                                    <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $facebook ? $facebook->followers : 0 }}
@@ -439,7 +439,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="">
-                                                                    <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 6px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $snapchat ? $snapchat->followers : 0 }}
@@ -457,15 +457,17 @@ width: 195px !important;
                             </a>
                             @php
                             $categoryNames = '';
-                           foreach ($influencer->categories as $key => $category) {
-// Append the category name to the string
-                $categoryNames .= $category->name;
-
-// Add a comma and space if it's not the last category
-           if ($key != $influencer->categories->count() - 1) {
-                            $categoryNames .= ', ';
-                       }
-                 }
+                            
+                            $categoryNames = '';
+                            foreach ($influencer->categories as $key => $category) {
+        // Format the first category with # and italic style
+        if ($key == 0) {
+            $categoryNames .= "<span style='font-style: italic;'># " . '</span>'.$category->name ;
+        } else {
+            // Append other categories without # and italic style
+            $categoryNames .= ', ' . $category->name;
+        }
+    }
 
 
                             // dd($influencer->categories);
@@ -473,7 +475,7 @@ width: 195px !important;
                             <div class="influencer-dev" style="margin:10px;padding: 3px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                                    <h5 style="font-size:12px;">{{ $categoryNames ?? '' }}</h5>
+                                    <h5 style="font-size:12px;">{!! $categoryNames ?? ''!!}</h5>
                                 <h5 style="font-size:12px;">
                                     Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
                                     &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}</h5>

@@ -2194,9 +2194,17 @@ border: 1px solid #2d11e7;
     top: 12px;
     font-size: 13px;
 }
+.lobibox-close{
+    top:4px !important;
+}
 
+.lobibox-notify.notify-mini .lobibox-notify-msg {
+    padding-left: 7px;
+    line-height: 9px;
+}
 .main-nav>li .submenu li {
     position: relative;
+   
 }
 
 .main-nav li a {

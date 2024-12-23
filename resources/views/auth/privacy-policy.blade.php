@@ -61,7 +61,7 @@ ul, ol{
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body">
                             <div class="login-header ">
-                                <h3 class="text-center blueGold">Privacy & Policy</h3>
+                                <h3 class="text-center blueGold" style="margin-left: 7rem;">Privacy & Policy</h3>
                                
                                 
 
