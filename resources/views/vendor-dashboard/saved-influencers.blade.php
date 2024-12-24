@@ -87,7 +87,7 @@
         }
 
         .avatar-one:hover .influencerdetail {
-            top: -10px;
+            top: -8px;
             opacity: 1;
             visibility: visible;
             height: 100%
@@ -101,7 +101,7 @@
             /* padding-left:3px; */
             /* padding-right:3px; */
             z-index: 1;
-            height: 200px;
+            height: 10px;
             /* display: flex; */
             justify-content: center;
             align-items: center;
@@ -114,11 +114,11 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 0;
+            top: 12px;
             content: "";
-            height: 200px;
+            height: 195px;
             width: 100%;
-            /* background: #000; */
+            background: #000;
             z-index: -1;
             /* border-radius: 15px; */
             opacity: 0.8;

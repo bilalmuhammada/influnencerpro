@@ -99,7 +99,7 @@
         }
 
         .avatar-one:hover .influencerdetail {
-            top: -10px;
+            top: -8px;
             opacity: 1;
             visibility: visible;
             height: 100%
@@ -128,11 +128,11 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 0;
+            top: 12;
             content: "";
-            height: 200px;
+            height: 195px;
             width: 100%;
-            /* background: #000; */
+            background: #000;
             z-index: -1;
             /* border-radius: 15px; */
             opacity: 0.8;
