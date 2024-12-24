@@ -6,7 +6,14 @@
             ::-webkit-scrollbar {
   width: 6px; /* You can adjust this value based on your preference */
 }
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
 
+    border-color:blue  transparent transparent transparent !important; 
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b:hover {
+
+border-color:goldenrod !important; 
+}
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: #997045;

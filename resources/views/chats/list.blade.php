@@ -13,6 +13,10 @@
     background-color: #ffffff !important;
 
 }
+.dropdown-item{
+    padding: 0rem 0.3rem !important;
+}
+
 .select2-results__option{
     padding: 0px !important;
     margin-left: 4px !important;

@@ -26,11 +26,18 @@
         .select2-container--default .select2-results > .select2-results__options {
             min-height: 120px;
         }
-
+/* 
         .select2-selection__arrow {
             display: none;
-        }
+        } */
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
 
+border-color:blue  transparent transparent transparent !important; 
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b:hover {
+
+border-color:goldenrod transparent transparent transparent  !important; 
+}
         .select2-selection .select2-selection--single {
             margin-left: -12px !important;
         }
@@ -282,7 +289,7 @@ $(document).ready(function() {
         return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:8px;"">' +
     // '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:20px; margin-right: 5px;margin-bottom: 11px;" />  +
     option.text + 
-    ' <i class="fa fa-caret-down  icon-hover"></i> </span>');}
+    '</span>');}
         // return $('<span style="font-size:18px;"><img src="' + flagUrl + '" class="img-flag" style="width: 30px; height: 20px; margin-right: 0px;" /> ' + option.text + '</span>');
     }
 

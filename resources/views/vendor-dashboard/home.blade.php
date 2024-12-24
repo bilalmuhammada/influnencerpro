@@ -888,12 +888,12 @@ color: #0504aa !important;
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">Availability</label>
-                                            <input type="text" class="form-control datepicker1" name="availability_from_date" placeholder=" Date" 
+                                            <input type="text" class="form-control datepicker1" name="availability_from_date" placeholder="Date" 
                                                    value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font_label">&nbsp;</label>
-                                            <input type="text" class="form-control datepicker1" name="availability_to_date" placeholder=" Date" 
+                                            <input type="text" class="form-control datepicker1" name="availability_to_date" placeholder="Date" 
                                                    value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style=" background-color: white;">
                                         </div>
                                     </div>

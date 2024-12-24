@@ -352,9 +352,9 @@ width: 212px !important;
                                     
                                     <th>Subscription Plan</th>
                                     <th>Status</th>
-                                    <th>Expire in</th>
+                                    <th>Expires in</th>
                                     <th>Renew</th>
-                                    <th>Amount</th>
+                                    <th>Amount $</th>
                                     <th class="text-end">Actions</th>
                                 </tr>
                                 </thead>
@@ -503,7 +503,7 @@ width: 212px !important;
                 <td>${value.date_formatted}</td>
                 <td>${'Star'}</td>
                 <td>${'Live'}</td>
-                <td>${value.date_formatted}</td>
+                <td>${'15 days'}</td>
                  <td>${'renew'}</td>
                 <td>${(40.44 + Number(value.id)).toFixed(2)}</td> <!-- Correct formatting -->
                 <td class="text-end subscription-end">

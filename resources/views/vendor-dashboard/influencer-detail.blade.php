@@ -736,26 +736,27 @@ color: goldenrod !important;
                             $country =  DB::table('countries')->where('id',$influencer->personal_information->national_id)->first();
                             }
                               @endphp
+                              <div class="col-md-3"><span
+                                style="font-size: 14px;padding:0px 3px;"> <span style="font-weight:bold;" >City: </span> 
+                                <span style="color: blue;">
+                                    {{ $city->name ?? '' }}
+                                    </span>
+                                {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
+                            </span>
+                        </div>
                             <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span >Nationality: </span>
+                                    style="font-size: 14px;padding:0px 3px;"> <span style="font-weight:bold;" >Nationality: </span>
                                     <span style="color: blue;"> {{ $country->name ?? '' }}</span>
                                     {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'name') }} --}}
                                 </span>
                             </div>
                             <div class="col-md-3"><span
-                                style="font-size: 14px;font-weight:bold;padding:0px 3px;"><span >Price: </span> 
+                                style="font-size: 14px;padding:0px 3px;"><span style="font-weight:bold;">Price: </span> 
                                 <span style="color: blue;">{{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}</span>
                                 {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
                             </span>
                         </div>
-                            <div class="col-md-3"><span
-                                    style="font-size: 14px;font-weight:bold;padding:0px 3px;"> <span >City: </span> 
-                                    <span style="color: blue;">
-                                        {{ $city->name ?? '' }}
-                                        </span>
-                                    {{-- {{ getSafeValueFromObject($influencer->state, 'name') }} --}}
-                                </span>
-                            </div>
+                            
                        
                             {{--<div class="col-md-3"><span style="font-size: 14px;font-weight:bold;padding:0px 3px;">Age: {{ getSafeValueFromObject($influencer->personal_information, 'age') }}</span></div>--}}
                         </div>

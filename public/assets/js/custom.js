@@ -743,7 +743,7 @@ function show_success_message(message) {
         icon: 'success',
         size: 'mini',
         msg: message,
-        delay: 30000000 
+        delay: 30000 
     });
 }
 
@@ -752,7 +752,8 @@ function show_error_message(message) {
     Lobibox.notify('error', {
         icon: 'error',
         size: 'mini',
-        msg: message
+        msg: message,
+        delay: 300000 
     });
 }
 

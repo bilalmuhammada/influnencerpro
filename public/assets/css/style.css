@@ -2174,7 +2174,7 @@ border: 1px solid #2d11e7;
 
 .main-nav>li .submenu li a {
     display: block;
-    padding: 4px 10px 4px 4px;
+    padding: 4px 4px 4px 4px;
     clear: both;
     white-space: nowrap;
     font-size: 15px;
@@ -2195,7 +2195,8 @@ border: 1px solid #2d11e7;
     font-size: 13px;
 }
 .lobibox-close{
-    top:4px !important;
+    top:6px !important;
+    right:2px !important;
 }
 
 .lobibox-notify.notify-mini .lobibox-notify-msg {
