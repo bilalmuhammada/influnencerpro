@@ -1045,13 +1045,13 @@ color: #0504aa !important;
                                             <div  class="influencerdetail">
                                             <div style="position:absolute;text-align:right;border:0px solid red;;right: 20px;z-index: 99999;">
 
-                                                 <i class="fa-solid fa-heart  add-to-favourite"
+                                                 <i class="fa-solid fa-heart shaking  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
                                                  data-fvt="1"
                                                   
                                                  style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px;  display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
-                                                <i class="fas fa-check-circle   add-to-invented"
+                                                <i class="fas fa-check-circle shaking  add-to-invented"
                                                    data-id="{{ $influencer->id }}"
                                                    data-fvt="2"
                                                  
