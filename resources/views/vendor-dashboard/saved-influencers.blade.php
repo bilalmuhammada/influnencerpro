@@ -331,7 +331,7 @@ width: 195px !important;
                               @endphp
                                
                                 <div class="influencerdetail" id="">
-                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-20px">
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-15px">
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite"
                                         data-id="{{ $influencer->id }}"
