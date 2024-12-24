@@ -60,7 +60,7 @@
             color:#000
         }
         .textarea:hover{
-            border:2px solid blue;
+            border:2px solid blue !important;
           
         }
        
