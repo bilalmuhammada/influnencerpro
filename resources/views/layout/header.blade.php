@@ -170,7 +170,7 @@
             }
 
             .avatar-one:hover .influencerdetail {
-                top: 0;
+                top: -10px;
                 opacity: 1;
                 visibility: visible;
                 height: 100%
@@ -199,9 +199,9 @@
                 left: 0;
                 top: 0;
                 content: "";
-                height: 200px;
+                height: 180px;
                 width: 100%;
-                background: #000;
+                /* background: #000; */
                 z-index: -1;
                 /* border-radius: 15px; */
                 opacity: 0.8;

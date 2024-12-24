@@ -153,7 +153,7 @@
                 content: "";
                 height: 200px;
                 width: 100%;
-                background: #000;
+                /* background: #000; */
                 z-index: -1;
                 /* border-radius: 15px; */
                 opacity: 0.8;

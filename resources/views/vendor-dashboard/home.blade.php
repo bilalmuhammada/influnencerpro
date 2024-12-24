@@ -1043,7 +1043,7 @@ color: #0504aa !important;
                                      @endphp
 
                                             <div  class="influencerdetail">
-                                            <div style="position:absolute;text-align:right;border:0px solid red;;right: 20px;z-index: 99999;">
+                                            <div style="position:absolute;text-align:right;border:0px solid red;;right: 20px;top:6px;z-index: 99999;">
 
                                                  <i class="fa-solid fa-heart shaking  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
@@ -1082,35 +1082,34 @@ color: #0504aa !important;
                                                     <li style="display: inline-block;;color:#fff; margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center; margin-left:6px;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
-                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        <div class="text-center font-change followers-count" style="font-size:11px; ">
                                                         <span>  {{ $instagram ? $instagram->followers : 0 }}</span> 
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
                                                 @endif
 
-                                                @if($twitter  && isset($twitter->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                @if($twitter && isset($twitter->followers))
+                                                <li style="display: inline-block; color:#fff; margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
-                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                        <span>  {{ $twitter ? $twitter->followers : 0 }}</span> 
+                                                        <div class="text-center font-change followers-count" style="font-size: 11px;">
+                                                            <span>{{ $twitter ? $twitter->followers : 0 }}</span>
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
-
-                                                    
-                                                @endif
+                                            @endif
+                                            
 
                                                 @if($youtube && isset($youtube->followers))
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ $youtube ? $youtube->followers : 0 }}</span> 
@@ -1123,7 +1122,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ $tiktok ? $tiktok->followers : 0 }}</span> 
@@ -1136,7 +1135,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span>   {{ $facebook ? $facebook->followers : 0 }}</span>  
@@ -1149,7 +1148,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span>{{ $snapchat ? $snapchat->followers : 0 }}</span>  

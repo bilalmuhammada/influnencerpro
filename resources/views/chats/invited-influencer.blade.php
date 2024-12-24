@@ -99,7 +99,7 @@
         }
 
         .avatar-one:hover .influencerdetail {
-            top: 0;
+            top: -10px;
             opacity: 1;
             visibility: visible;
             height: 100%
@@ -132,7 +132,7 @@
             content: "";
             height: 200px;
             width: 100%;
-            background: #000;
+            /* background: #000; */
             z-index: -1;
             /* border-radius: 15px; */
             opacity: 0.8;
@@ -291,7 +291,7 @@ width: 195px !important;
 
 
                   @forelse($influencers as $influencer)
-                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;top:6px;">
                         <div class="card avatar-one"
                              style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee; padding: 0px;">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
@@ -325,7 +325,7 @@ width: 195px !important;
                               @endphp
                                
                                 <div class="influencerdetail" id="">
-                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-15px">
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-15px;top:6px;">
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite"
                                         data-id="{{ $influencer->id }}"
@@ -363,7 +363,7 @@ width: 195px !important;
                                          <li style="display: inline-block;;color:#fff;">
                                          <div class="social-wrapper" style="text-align: center; margin-left:14px;">
                                              <a href="">
-                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                              </a>
                                              <div class="text-center font-change followers-count" style="font-size:11px;">
                                                  {{ $instagram ? $instagram->followers : 0 }}
@@ -376,7 +376,7 @@ width: 195px !important;
                                                          <li style="display: inline-block;;color:#fff;">
                                                              <div class="social-wrapper" style="text-align: center;">
                                                                  <a href="">
-                                                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                  </a>
                                                                  <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                      {{ $twitter ? $twitter->followers : 0 }}
@@ -391,7 +391,7 @@ width: 195px !important;
                                                          <li style="display: inline-block;;color:#fff;">
                                                              <div class="social-wrapper" style="text-align: center;">
                                                                  <a href="">
-                                                                     <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                                     <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                  </a>
                                                                  <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                      {{ $youtube ? $youtube->followers : 0 }}
@@ -405,7 +405,7 @@ width: 195px !important;
                                                          <li style="display: inline-block;;color:#fff;">
                                                              <div class="social-wrapper" style="text-align: center;">
                                                                  <a href="">
-                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                  </a>
                                                                  <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                      {{ $tiktok ? $tiktok->followers : 0 }}
@@ -419,7 +419,7 @@ width: 195px !important;
                                                          <li style="display: inline-block;;color:#fff;">
                                                              <div class="social-wrapper" style="text-align: center;">
                                                                  <a href="">
-                                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                  </a>
                                                                  <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                      {{ $facebook ? $facebook->followers : 0 }}
@@ -433,7 +433,7 @@ width: 195px !important;
                                                          <li style="display: inline-block;;color:#fff;">
                                                              <div class="social-wrapper" style="text-align: center;">
                                                                  <a href="">
-                                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                  </a>
                                                                  <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                      {{ $snapchat ? $snapchat->followers : 0 }}
