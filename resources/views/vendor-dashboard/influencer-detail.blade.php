@@ -145,9 +145,7 @@ color: goldenrod !important;
     transition: transform 0.2s ease-in-out;
    }
 
-  .shaking:hover {
-   /* Change to your desired hover color */
- 
+   .social-wrapper:hover .shaking  {
     animation: shake 1.5s linear infinite;
    }
 

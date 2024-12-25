@@ -197,9 +197,9 @@
             .avatar-one .influencerdetail::after {
                 position: absolute;
                 left: 0;
-                top: 12px;
+                top: 9px;
                 content: "";
-                height: 180px;
+                height: 198px;
                 width: 100%;
                 background: #000;
                 z-index: -1;

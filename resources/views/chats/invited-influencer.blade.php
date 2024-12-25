@@ -72,8 +72,7 @@
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-
-  .shaking:hover {
+   .social-wrapper:hover .shaking  {
    /* Change to your desired hover color */
  
     animation: shake 1.5s linear infinite;
@@ -128,9 +127,9 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 12;
+            top: 9;
             content: "";
-            height: 195px;
+            height: 198px;
             width: 100%;
             background: #000;
             z-index: -1;
@@ -556,6 +555,7 @@ yearRange: "2024:+0",
                     "fvt": fvt
                 },
                 success: function (response) {
+                    console.log(response.status);
                     if(response.fr_in==1){
                         $('.add-to-favourite').css('color', 'red');
                       }else{

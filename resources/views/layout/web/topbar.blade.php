@@ -1,8 +1,8 @@
 <header class="header"  style="border-bottom:0px solid #eee;">
 
     <style>
-        .VIpgJd-ZVi9od-ORHb{
-            display: none !important;}
+        /* .VIpgJd-ZVi9od-ORHb{
+            display: none !important;} */
             ::-webkit-scrollbar {
   width: 6px; /* You can adjust this value based on your preference */
 }
@@ -12,7 +12,7 @@
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b:hover {
 
-border-color:goldenrod !important; 
+border-color:goldenrod transparent transparent transparent !important; 
 }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {

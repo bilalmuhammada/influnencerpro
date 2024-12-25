@@ -18,7 +18,7 @@
     transition: transform 0.2s ease-in-out;
    }
  
-  .shaking:hover {
+   .social-wrapper:hover .shaking  {
     animation: shake 1.5s linear infinite;
    }
 
@@ -58,6 +58,7 @@
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
+            margin-left: 1px !important;
             /* margin-left: 0px !important; */
         }
         .font_label {

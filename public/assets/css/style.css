@@ -8840,8 +8840,12 @@ div#global-loader {
 }
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #353535;
+    border-color: transparent transparent blue !important;
     border-width: 0 6px 6px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:hover{
+    border-color: transparent transparent goldenrod !important;  
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {

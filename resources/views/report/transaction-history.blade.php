@@ -355,7 +355,7 @@ width: 212px !important;
                                     <th>Expires in</th>
                                     <th>Renew</th>
                                     <th>Amount $</th>
-                                    <th class="text-end">Actions</th>
+                                    <th class="text-end">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="transBody" class="transBody">

@@ -114,9 +114,9 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 9px;
             content: "";
-            height: 195px;
+            height: 198px;
             width: 100%;
             background: #000;
             z-index: -1;
@@ -130,7 +130,9 @@
     transition: transform 0.2s ease-in-out;
    }
 
-  .shaking:hover {
+   
+   
+   .social-wrapper:hover .shaking  {
    /* Change to your desired hover color */
  
     animation: shake 1.5s linear infinite;
@@ -410,10 +412,10 @@ width: 195px !important;
                                                         @if($tiktok && isset($tiktok->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="">
+                                                                <a href="" class="shaking-container">
                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
-                                                                <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                                <div class="text-center font-change followers-count shaking-text" style="font-size:11px;">
                                                                     {{ $tiktok ? $tiktok->followers : 0 }}
                                                                 </div>
                                                             </div>
@@ -514,6 +516,7 @@ yearRange: "2024:+0",
             let influencerId = thisElem.data('id');
             let fvt = thisElem.data('fvt');
             
+          
             $.ajax({
                 url: api_url + 'influencers/add-to-favourites',
                 type: "POST",
@@ -523,11 +526,13 @@ yearRange: "2024:+0",
                     "fvt": fvt
                 },
                 success: function (response) {
+                   
                     if(response.fr_in==1){
                         $('.add-to-favourite').css('color', 'red');
                       }else{
                         $('.add-to-favourite').css('color', 'white');
 }
+
                     if (response.status) {
                         show_success_message(response.message);
                         $(thisElem).hide();

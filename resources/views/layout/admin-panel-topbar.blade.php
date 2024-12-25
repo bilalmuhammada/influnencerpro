@@ -210,7 +210,7 @@ color: goldenrod !important;
                 </li>
               
                 <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
-                    <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourite Influencers</a>
+                    <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourited Influencers</a>
                 </li>
                 <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
@@ -231,7 +231,7 @@ color: goldenrod !important;
                         @else
                         <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
                         @endif
-                        <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transaction History</a></li>
+                        <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions History</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}">

@@ -307,7 +307,7 @@ class UserController extends Controller
         ]);
 
         return response()->json([
-            'status' => false,
+            'status' => true,
             'fr_in'=>$fvt,
             'message' => "Favourited",
         ]);
