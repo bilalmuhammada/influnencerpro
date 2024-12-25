@@ -200,7 +200,7 @@
                         <div class="footer-bottom-logo">
                             <a href="{{ env('BASE_URL') }}" class="menu-logo">
                                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid"
-                                     alt="Logo">
+                                     alt="Logo" style="margin-bottom: 4px;">
                             </a>
                         </div>
                         <div class="copyright-text bilal-footer1"  style="margin-top: -14px;">
