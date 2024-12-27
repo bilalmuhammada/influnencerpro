@@ -342,7 +342,7 @@ select::-ms-expand {
                                             <div class="chat-scroll">
                                                 <ul class="list-unstyled message-body" style="font-weight: 300;">
                                                     @foreach($chat->sorted_messages as $date => $sorted_messages)
-                                                        <div class="text-center fw-bolds " style="font-size:12px;">{{ $date}}</div>
+                                                        <div class="text-center fw-bolds " style="font-size:12px;">    {{ \Carbon\Carbon::parse($date)->format('d-M-Y') }}</div>
                                                         @foreach($sorted_messages as $date => $message)
                                                       
                                                             <li class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">

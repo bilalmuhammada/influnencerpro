@@ -53,7 +53,7 @@ border-color:goldenrod transparent transparent transparent  !important;
         }
 
         .select2-container--open .select2-dropdown--below {
-            margin-left: 0px !important;
+            margin-left: -5px !important;
             background-color: #ffffff !important;
         }
 

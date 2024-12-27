@@ -246,7 +246,7 @@ width: 195px !important;
     </style>
 
     <section style="border-top:2px solid #eee;padding-top:90px;">
-        <br/>
+        {{-- <br/> --}}
         <div class="row">
             <div class="col-md-12 ">
                 <!-- <div class="input-box text-center mx-auto"
@@ -257,7 +257,7 @@ width: 195px !important;
             </div>
         </div>
     </section>
-    <br/>
+    {{-- <br/> --}}
     <div class="container">
         <div class="col-md-12">
             <div class="row" style="padding-left:25px;padding-right:25px;">
