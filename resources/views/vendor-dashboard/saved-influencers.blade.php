@@ -114,9 +114,9 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 9px;
+            top: 8px;
             content: "";
-            height: 198px;
+            height: 200px;
             width: 100%;
             background: #000;
             z-index: -1;
@@ -235,7 +235,7 @@
 width: 195px !important;
   }
   ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */

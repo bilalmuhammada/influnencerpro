@@ -12,7 +12,7 @@ input::placeholder{
     font-size: 13px;
 }
 ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
@@ -251,7 +251,7 @@ input[type="file"] {
 
                             if (states) {
                                 $.each(states, function (index, value) {
-                                    $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").append('<option value="" disabled hidden selected> &nbsp;&nbsp;</option>');
                                     
                                     $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                     // $("#citylable").css('margin-top', '-15px');

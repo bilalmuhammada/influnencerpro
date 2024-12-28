@@ -743,7 +743,7 @@ function show_success_message(message) {
         icon: 'success',
         size: 'mini',
         msg: message,
-        delay: 30000 
+        delay: 3000 
     });
 }
 
@@ -753,7 +753,7 @@ function show_error_message(message) {
         icon: 'error',
         size: 'mini',
         msg: message,
-        delay: 300000 
+        delay: 3000 
     });
 }
 

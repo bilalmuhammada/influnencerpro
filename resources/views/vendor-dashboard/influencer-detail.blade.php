@@ -126,7 +126,7 @@ color: goldenrod !important;
     cursor: pointer;
 }
 ::-webkit-scrollbar {
-  width: 12px; /* You can adjust this value based on your preference */
+  width: 6px; /* You can adjust this value based on your preference */
 }
 
 /* Define the scrollbar thumb */
