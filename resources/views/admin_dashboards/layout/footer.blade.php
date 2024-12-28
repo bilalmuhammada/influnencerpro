@@ -31,7 +31,7 @@
                     </h6>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px; margin-top: 14px;">
-                    <img src="{{ asset('assets/img/icons/iphone.png') }}" alt=" " height="80px" width="140px">
+                    <img src="{{ asset('assets/img/icons/iphone.png') }}" alt=" " height="80px" width="100px">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;">
                     <img src="{{ asset('assets/img/icons/google-play-stores.png') }}" alt=" " height="45px"
@@ -42,7 +42,7 @@
                          style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;">
-                    <img src="{{ asset('assets/img/icons/huawei-app-gallery.svg') }}" alt=" " height="45px"
+                    <img src="{{ asset('assets/img/icons/huawei-app-gallery.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
             </div>
