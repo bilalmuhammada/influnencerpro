@@ -151,6 +151,8 @@ color: goldenrod !important;
         width: 99% !important;
     }
     .emojionearea-editor{
+        font-size: 16px !important;
+        color: #000 !important;
         left: 19px !important;
     }
     /* Professional Dropdown Styling */
