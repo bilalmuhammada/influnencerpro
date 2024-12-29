@@ -183,7 +183,7 @@ select::-ms-expand {
     </style>
 @section('content')
     <div class="content-chat"
-         style="background-color:#eee;min-height: 500px !important;padding-top:100px;padding-bottom:10px;">
+         style="background-color:#eee;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
         <div class="container-fluid">
             <div class="row">
                 <!-- <div style="padding-bottom:2px;"><button class="btn btn-danger" id="deleteSelected"><i class="fa fa-trash"></i></button>
