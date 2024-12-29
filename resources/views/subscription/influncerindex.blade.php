@@ -1,6 +1,6 @@
 @extends('layout.master')
 <style>
-    li{
+    .li{
         margin-bottom: 7px !important;
     }
     .fa-check-circle,.fa-times-circle{
@@ -58,16 +58,16 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check mx-auto" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: 30 Days</li>
-        <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
-        <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Stay  Active: 30 Days</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar</li>
        
-        <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
         {{-- <li><i class="fa fa-times-circle text-danger"></i> Featured Days: <b>No</b></li> --}}
     </ul>
     </div>
@@ -102,16 +102,16 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: 90 Days</li>
-        <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
-        <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms </li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Stay  Active: 90 Days</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar </li>
 
-        <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
     </ul>
     </div>
     <div class="mx-auto" style="text-align:center;margin-top: 90px;">
@@ -143,16 +143,16 @@
     <hr>
     <div class="row mx-auto">
     <ul class="circle-check" style="list-style-type:none;height:200px;padding-left:30px;">
-        <li><i class="fa fa-check-circle"></i>  Stay  Active: 180 Days</li>
-        <li><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
-        <li><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
-        <li><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
-        <li><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Stay  Active: 180 Days</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Mention your Target Fee  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Travel-Calendar </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Deals with Brands </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Chats from Brands  </li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Showcase all your Social Platforms</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Manage your Availability-Calendar  </li>
 
-        <li><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
-        <li><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Make Direct Collaborations with Brands</li>
+        <li class="li"><i class="fa fa-check-circle"></i>  Receive Direct Deals in your Travelling-Countries</li>
 
     </ul>
     </div>

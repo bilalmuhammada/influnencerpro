@@ -98,7 +98,7 @@
         }
 
         .avatar-one:hover .influencerdetail {
-            top: -8px;
+            /* top: -8px; */
             opacity: 1;
             visibility: visible;
             height: 100%
@@ -127,7 +127,7 @@
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
-            top: 8;
+            top: 0px;
             content: "";
             height: 200px;
             width: 100%;
@@ -463,7 +463,7 @@ width: 195px !important;
 
                             // dd($influencer->categories);
                             @endphp
-                            <div class="influencer-dev" style="margin:10px;padding: 3px;">
+                            <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">
                                 <h5 style="font-size:12px;"
                                     class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
                                     <h5 style="font-size:12px;">{!! $categoryNames ?? '' !!}</h5>
