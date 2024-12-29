@@ -200,13 +200,13 @@ select::-ms-expand {
                                         <div class="col-md-2 text-center ">
                                             <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 5px;margin-top: 14px;">
                                         </div>
-                                        <div class="col-md-10 hiddencheck" style="margin-top: 8px;">Select All</div>
+                                        <div class="col-md-10 hiddencheck" style="margin-top: 8px;padding:0px;">Select All</div>
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
                                     <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; border:transparent !important">
                                         <option value="all">All Chats</option>
-                                        <option value="favorites">Favourites</option>
+                                        <option value="favorites">Favourited</option>
                                         <option value="blocked">Blocked</option>
                                     </select>
                                 </div>

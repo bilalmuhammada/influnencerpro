@@ -34,7 +34,7 @@
                     <img src="{{ asset('assets/img/icons/iphone.png') }}" alt=" " height="80px" width="100px">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;">
-                    <img src="{{ asset('assets/img/icons/google-play-stores.png') }}" alt=" " height="45px"
+                    <img src="{{ asset('assets/img/icons/google-play-store.png') }}" alt=" " height="45px"
                          style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;">
@@ -137,7 +137,7 @@
                         </ul> -->
                         <div class="footer-bottom-logo">
                             <a href="{{ env('BASE_URL') }}" class="menu-logo">
-                                <img src="{{ asset('assets/images/logo/Influencers Pro-01-01.png') }}" class="img-fluid"
+                                <img src="{{ asset('assets/images/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
                                      alt="Logo" width="150">
                             </a>
                         </div>
