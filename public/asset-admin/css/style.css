@@ -13596,7 +13596,7 @@ label.file-upload input[type="file"] {
     -ms-flex: 0 0 34%;
     flex: 0 0 34%;
     left: 0;
-    margin-right: 1%;
+    margin-right: 0.5%;
     max-width: 35%;
     position: relative;
     z-index: 4;

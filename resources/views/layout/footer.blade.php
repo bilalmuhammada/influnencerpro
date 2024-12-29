@@ -33,18 +33,18 @@
                     </h6>
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;margin-top: -30px;">
-                    <img src="{{ asset('assets/iphone.png') }}" alt=" " height="80px" width="100px">
+                    <img src="{{ asset('assets/iphone.png') }}" alt=" " class="shaking" height="80px" width="100px">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " height="45px"
+                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " class="shaking" height="45px"
                          style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " height="45px"
+                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking" height="45px"
                          style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " height="45px"
+                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking" height="45px"
                          style="margin-top:20px;">
                 </div>
             </div>
@@ -186,7 +186,7 @@
                         </ul> -->
                         <div class="footer-bottom-logo">
                             <a href="{{ env('BASE_URL') }}" class="menu-logo">
-                                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid"
+                                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
                                      alt="Logo" style="margin-bottom: 4px;">
                             </a>
                         </div>
