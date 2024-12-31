@@ -921,10 +921,10 @@ $.ajax({
             $('#reportModal').modal('hide');
 
            
-            show_success_message( "Ad Reported Successfully!");
+            show_success_message( "Ad Reported!");
 
         } else {
-            show_error_message( "Ad Reported Successfully!");
+            show_error_message( "Ad Reported!");
             // $('.alert-text').text(response.message);
             // $('.alert-div').show();
 
