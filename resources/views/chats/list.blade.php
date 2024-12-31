@@ -8,6 +8,14 @@
         /* border: 1px solid #ddd; */
         border-radius: 5px;
     }
+    .lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
+}
+.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
+    width: 100px !important;
+    margin-right: 120px !important; 
+    /* text-align: center !important; */
+}
     .dropdown-item:focus, .dropdown-item:hover {
     color: blue !important;
     background-color: #ffffff !important;
