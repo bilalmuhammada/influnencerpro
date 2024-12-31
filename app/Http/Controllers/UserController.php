@@ -219,7 +219,7 @@ class UserController extends Controller
         }
 
         $AdsReported = ChatReported::where([
-            'listing_id' => $request->ad_id,
+            'chat_id' => $request->ad_id,
             'reported_by' => Auth::id() ?? Session::get('user')->id,
         ])->first();
 
