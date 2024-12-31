@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\SiteHelper;
 use App\Models\Attachment;
 use App\Models\Chat;
+use App\Models\ChatReported;
 use App\Models\Country;
 use App\Models\Favourite;
 use App\Models\ProfileVisit;
@@ -15,6 +16,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -197,6 +199,53 @@ class UserController extends Controller
         ]);
     }
 
+    public function reportchat(Request $request)
+    {
+
+        // dd($request->all());
+        $Validator = Validator::make($request->all(), [
+            'ad_id' => 'required|exists:listings,id',
+            'report_reason' => 'required',
+            'description' => 'required',
+        ]);
+
+
+        if ($Validator->fails()) {
+
+            return response()->json([
+                'status' => false,
+                'message' => $Validator->errors()->first(),
+            ]);
+        }
+
+        $AdsReported = ChatReported::where([
+            'listing_id' => $request->ad_id,
+            'reported_by' => Auth::id() ?? Session::get('user')->id,
+        ])->first();
+
+        if (!empty($AdsReported)) {
+
+            return response()->json([
+                'status' => false,
+                'message' => "Already Reported",
+            ]);
+        }
+
+
+        ChatReported::create([
+            'listing_id' => $request->ad_id,
+            'reason' => $request->report_reason,
+            'description' => $request->description,
+            'reported_by' => Auth::id() ?? Session::get('user')->id,
+            'reported_at' => Carbon::now(),
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => "Ad Reported",
+        ]);
+
+    }
     
     public function addToInvented(Request $request)
     {

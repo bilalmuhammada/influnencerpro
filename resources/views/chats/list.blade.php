@@ -906,5 +906,49 @@ $(document).ready(function() {
                     }
                 })
         });
+
+
+        $(document).on('click', '.report-ad-submit-btn', function () {
+
+$.ajax({
+    url: api_url + 'influencers/report-chat',
+    type: 'post',
+    data: $('.report-ad-form').serialize(),
+    dataType: "JSON",
+    success: function (response) {
+        if (response.status) {
+            $('#reportModal').modal('hide');
+
+           
+            show_success_message( "Ad Reported Successfully!");
+
+        } else {
+            show_error_message( "Ad Reported Successfully!");
+            // $('.alert-text').text(response.message);
+            // $('.alert-div').show();
+
+            // setTimeout(function () {
+            //     $('.alert-text').text('');
+            //     $('.alert-div').hide();
+            // }, 7000)
+            // showAlert('error', "Ad could not be reported");
+        }
+    },
+    error: function (response) {
+        $('#reportModal').modal('hide');
+        $('.alert-text').text("Login");
+        $('.alert-div').show();
+
+        $('#loginModal').modal('show');
+
+        setTimeout(function () {
+            $('.alert-text').text('');
+            $('.alert-div').hide();
+        }, 7000);
+    }
+});
+
+});
+
     </script>
 @endsection

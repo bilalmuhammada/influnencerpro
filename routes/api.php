@@ -96,7 +96,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::post('add-to-favourites', [UserController::class, 'addToFavourites']);
         Route::post('add-to-invented', [UserController::class, 'addToInvented']);
 
-
+        Route::post('report-chat', [UserController::class, 'reportchat']);
         Route::post('remove-profile-image', [AuthController::class, 'removeProfileImage']);
         Route::post('remove-from-favourites', [UserController::class, 'removeFromFavourites']);
         Route::post("detail", [MobileApiController::class, 'detail']);
