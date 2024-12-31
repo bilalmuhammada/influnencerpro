@@ -233,7 +233,7 @@ class UserController extends Controller
 
 
         ChatReported::create([
-            'listing_id' => $request->ad_id,
+            'chat_id' => $request->ad_id,
             'reason' => $request->report_reason,
             'description' => $request->description,
             'reported_by' => Auth::id() ?? Session::get('user')->id,
