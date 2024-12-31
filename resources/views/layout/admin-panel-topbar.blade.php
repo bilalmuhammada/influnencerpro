@@ -174,7 +174,7 @@ color: goldenrod !important;
                 </span>
             </a>
             <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 57px;">
-                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
+                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
             </a>
 
             <div class="mobile-country desktop-menu-right" style="margin-top: 16px;">

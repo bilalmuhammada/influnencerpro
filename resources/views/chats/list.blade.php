@@ -332,7 +332,7 @@ select::-ms-expand {
                                             
                                             <!-- Dropdown menu options -->
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                <a class="dropdown-item" href="#" onclick="blockUser()">Block User</a>
+                                                <a class="dropdown-item block-chat " data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
                                                 <a class="dropdown-item report-user-btn" data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
                                             </div>
                                         </div>
@@ -501,18 +501,6 @@ $(document).on("click", "#userOptionsMenu", function() {
         $('.msg-send-btn').prop('disabled', true);
      });
     
-     
-//         $(document).on('input keyup emoji-trigger.change', '.emojionearea-editor', function(e) { 
-//     var inputMessage = $('.emojionearea-editor').text().trim();
-//     var hasImg = $('.emojionearea-editor').find('img').length > 0;
-
-//     if (inputMessage === '' && !hasImg) {
-//         // If there's no text and no emojis
-//         $('.msg-send-btn').prop('disabled', true);
-//     } else {
-//         $('.msg-send-btn').prop('disabled', false);
-//     }
-// });
 
 
             $('.gallerys').magnificPopup({

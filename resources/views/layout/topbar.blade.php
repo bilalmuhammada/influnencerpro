@@ -7,7 +7,7 @@
 </span>
         </a>
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
-            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
+            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
         </a>
     </div>
     <div class="country" style="border:0px solid green;position:relative;left:-111px;">
