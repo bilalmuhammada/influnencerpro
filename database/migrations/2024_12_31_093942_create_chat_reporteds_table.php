@@ -15,16 +15,12 @@ return new class extends Migration
     {
         Schema::create('chat_reporteds', function (Blueprint $table) {
             $table->id();
-
-
-            $table->foreignId('chat_id')->nullable()->constrained('users');
-            $table->foreignId('reported_by')->nullable()->constrained('users');
-            $table->string('reason')->nullable();
+            $table->foreignId('chat_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('reported_by')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->string('reason', 191)->nullable();
             $table->text('description')->nullable();
             $table->timestamp('reported_at')->nullable();
-
             $table->softDeletes();
-            
             $table->timestamps();
         });
     }
