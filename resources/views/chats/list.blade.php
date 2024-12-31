@@ -12,7 +12,7 @@
     margin: 7px 1px 0px 0px !important;
 }
 .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 100px !important;
+    width: 150px !important;
     margin-right: 120px !important; 
     /* text-align: center !important; */
 }
