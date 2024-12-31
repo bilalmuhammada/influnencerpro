@@ -613,8 +613,9 @@ $(document).ready(function() {
 
 
         $(document).ready(function () {
-
-
+            var button = $('.block-chat');
+            var chatId = button.data('chat-id');
+            $('.ad-id').val(chatId);
 
             $('.hiddencheck').hide()
             $('.hiddentrash').hide()

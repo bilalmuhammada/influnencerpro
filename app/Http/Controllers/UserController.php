@@ -202,9 +202,9 @@ class UserController extends Controller
     public function reportchat(Request $request)
     {
 
-        // dd($request->all());
+        
         $Validator = Validator::make($request->all(), [
-            'ad_id' => 'required|exists:listings,id',
+            'ad_id' => 'required|exists:chats,id',
             'report_reason' => 'required',
             'description' => 'required',
         ]);
