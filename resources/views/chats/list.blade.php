@@ -395,7 +395,8 @@ select::-ms-expand {
                                                            id="emoji-trigger"
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                            data-chat-id="{{ $chat->id }}"
-                                                           style="border-radius: 30px; width: 100%; padding-right: 50px;">
+                                                           style="border-radius: 30px; width: 100%; padding-right: 50px;"
+                                                           >
                                                    
                                                 </div>
                                                         
@@ -581,11 +582,30 @@ $(document).ready(function() {
                     chat_id: chatId
                 },
                 success: function(response) {
+                    var emojioneArea = $('.emojionearea.emojionearea-inline');
+                    var emojioneEditor = $('.emojionearea-editor');
                     if (response.is_blocked) {
                         show_error_message('Chat is Blocked')
                         button.find('i').css('color', 'goldenrod');
+                        if (emojioneArea.length > 0) {
+                                emojioneArea.css({
+                                    'background': '#8080803d',
+                                    'cursor': 'not-allowed',
+                                    'pointer-events': 'none'
+                                });
+                                emojioneEditor.attr('contenteditable', 'false');
+                            }
                     } else {
                         show_success_message('Chat is unBlocked')
+                        if (emojioneArea.length > 0) {
+                            emojioneArea.css({
+                                'background': '',
+                                'cursor': '',
+                                'pointer-events': ''
+                            });
+                            emojioneEditor.attr('contenteditable', 'true');
+                        }
+
                         button.find('i').css('color', 'grey');
                     }
                 }
