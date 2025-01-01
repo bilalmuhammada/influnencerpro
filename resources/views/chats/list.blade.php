@@ -582,10 +582,10 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     if (response.is_blocked) {
-                        show_success_message('Chat is Blocked')
+                        show_error_message('Chat is Blocked')
                         button.find('i').css('color', 'goldenrod');
                     } else {
-                        show_error_message('Chat is unBlocked')
+                        show_success_message('Chat is unBlocked')
                         button.find('i').css('color', 'grey');
                     }
                 }
