@@ -225,7 +225,7 @@ color: goldenrod !important;
                 @endif
 
                 <li class="has-submenu {{ request()->is('subscriptions') ? 'active' : '' }}">
-                    <a href="#" style="color: #ffffff">Subscription<i class="fas fa-chevron-down"></i></a>
+                    <a href="#" style="color: #a0a0a092">Subscription<i class="fas fa-chevron-down"></i></a>
                     <ul class="submenu6" style="margin-left: 0px;">
                         @if(session()->get('role') == 'influencer')
                         <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
