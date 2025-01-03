@@ -394,8 +394,7 @@ select::-ms-expand {
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger" 
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                                           data-chat-id="{{ $chat->id }}"
-                                                           style="border-radius: 30px; width: 100%; padding-right: 50px;"
+                                                           data-chat-id="{{ $chat->id }}" @if($chat->is_blocked == 1) disabled @endif style="border-radius: 30px; width: 100%; padding-right: 50px;"
                                                            >
                                                    
                                                 </div>
