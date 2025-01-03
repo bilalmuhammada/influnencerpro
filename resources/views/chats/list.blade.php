@@ -584,7 +584,7 @@ $(document).ready(function() {
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
                     if (response.is_blocked) {
-                        show_error_message('Chat is Blocked')
+                        show_error_message('User Blocked')
                         button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
@@ -595,7 +595,7 @@ $(document).ready(function() {
                                 emojioneEditor.attr('contenteditable', 'false');
                             }
                     } else {
-                        show_success_message('Chat is unBlocked')
+                        show_success_message('User Unblocked');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
@@ -943,7 +943,7 @@ $.ajax({
             show_success_message( "Ad Reported!");
 
         } else {
-            show_error_message( "already Reported!");
+            show_error_message( "Already Reported");
             // $('.alert-text').text(response.message);
             // $('.alert-div').show();
 
