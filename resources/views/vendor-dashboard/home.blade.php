@@ -9,6 +9,9 @@
     border-radius: 4px !important;
     color: black !important;
         }
+        .btn-link:hover{
+            color: goldenrod !important;
+                }
 
         .social-wrapper:hover .followers-count {
     color:goldenrod; /* Change to your desired hover color */
@@ -1451,7 +1454,7 @@ color: #0504aa !important;
                 },
                 success: function (response) {
                     if (response.status) {
-                        show_success_message(response.message);
+                        show_error_message(response.message);
                         $(thisElem).hide();
                         $(thisElem).parents('.influencerdetail').find('.add-to-favourite').show();
                         $(thisElem).parents('.avatar-one').find('.main-icon').css('color', '#0504aa');

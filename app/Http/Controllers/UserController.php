@@ -285,7 +285,7 @@ class UserController extends Controller
             $Favourite->delete();
 
             return response()->json([
-                'status' => true,
+                'status' => false,
                 'fr_in'=>$fvt,
                 'message' => "Removed",
             ]);
@@ -405,7 +405,7 @@ class UserController extends Controller
             $Favourite->delete();
 
             return response()->json([
-                'status' => true,
+                'status' => false,
                 'message' => "Removed",
             ]);
         }
