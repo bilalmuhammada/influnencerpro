@@ -9,10 +9,7 @@
     border-radius: 4px !important;
     color: black !important;
         }
-        .btn-link:hover{
-            color: goldenrod !important;
-                }
-
+        
         .social-wrapper:hover .followers-count {
     color:goldenrod; /* Change to your desired hover color */
 }

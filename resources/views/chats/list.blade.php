@@ -8,6 +8,10 @@
         /* border: 1px solid #ddd; */
         border-radius: 5px;
     }
+    .btn-link:hover{
+            color: goldenrod !important;
+                }
+
     .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
