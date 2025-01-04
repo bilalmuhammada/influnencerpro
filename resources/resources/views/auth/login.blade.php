@@ -3,6 +3,7 @@
     <style>
         .invalid-feedback {
             margin-top: 0;
+            font-size: .7em !important; 
         }
     </style>
     <div class="content" style="">
