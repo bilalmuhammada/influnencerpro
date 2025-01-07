@@ -6,12 +6,20 @@
 .modal-content{
     border: 0px solid;
 }
-
+.closebtncolor{
+  
+    background-color: rgb(220, 53, 69); color:white;
+}
 
 .closebtn:hover{
-    background-color: #A17A4E;
-
+    color: #A17A4E;
+    
 }
+.closebtncolor:hover{
+    background-color: #A17A4E;
+    
+}
+background-color: rgb(220, 53, 69); color:white;
 .reportBtn:hover{
     background-color: #A17A4E;
 }
@@ -150,7 +158,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn closebtn shaking" style="background-color: rgb(220, 53, 69); color:white;" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn closebtn closebtncolor shaking" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary shaking reportBtn report-ad-submit-btn" style="margin-left: 16px; background-color:rgb(0, 123, 255);">Report</button>
             </div>
 
