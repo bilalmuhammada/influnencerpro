@@ -169,6 +169,9 @@ padding-left: 12px !important;
 .changecolor{
 color: #0504aa !important; 
 }
+.active{
+    color: goldenrod !important; 
+}
 .changecolor:hover{
     color: goldenrod !important; 
 }
@@ -926,33 +929,33 @@ color: #0504aa !important;
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">
                                     <li  class="@if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">
-                                        <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="changecolor">All
+                                        <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="changecolor @if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">All
                                             Influencers</a></li>
-                                    <li class="@if(request()->instagram == 'on') active @endif ">
-                                        <a href="{{ env('BASE_URL') }}/vendor/influencers-filter?instagram=on" class="changecolor">Instagram</a>
+                                    <li class="@if(request()->instagram == 'on') active  @endif ">
+                                        <a href="{{ env('BASE_URL') }}/vendor/influencers-filter?instagram=on"  class="changecolor @if(request()->instagram == 'on') active  @endif " >Instagram</a>
                                     </li>
                                     <li class="@if(request()->twitter == 'on') active @endif changecolor"><a
-                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?twitter=on" class="changecolor">Twitter</a>
+                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?twitter=on" class="changecolor @if(request()->twitter == 'on') active @endif">Twitter</a>
                                     </li>
                                     <li class="@if(request()->youtube == 'on') active @endif changecolor"><a
-                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?youtube=on" class="changecolor">Youtube</a>
+                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?youtube=on" class="changecolor @if(request()->youtube == 'on') active @endif">Youtube</a>
                                     </li>
                                     <li class="@if(request()->tiktok == 'on') active @endif changecolor"><a
-                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?tiktok=on" class="changecolor">Tik Tok</a>
+                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?tiktok=on" class="changecolor @if(request()->tiktok == 'on') active @endif">Tik Tok</a>
                                     </li>
                                     <li class="@if(request()->facebook == 'on') active @endif changecolor"><a
-                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?facebook=on" class="changecolor">Facebook</a>
+                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?facebook=on" class="changecolor @if(request()->facebook == 'on') active @endif">Facebook</a>
                                     </li>
                                     <li class="@if(request()->snapchat == 'on') active @endif "><a
-                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?snapchat=on" class="changecolor">Snap
+                                            href="{{ env('BASE_URL') }}/vendor/influencers-filter?snapchat=on" class="changecolor @if(request()->snapchat == 'on') active @endif">Snap
                                             Chat</a>
                                     </li>
                                     <li class="@if(request()->pinterest == 'on') active @endif "><a
-                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?pinterest=on" class="changecolor">Pinterest
+                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?pinterest=on" class="changecolor @if(request()->pinterest == 'on') active @endif">Pinterest
                                         </a>
                                 </li>
                                     <li class="@if(request()->website== 'on') active @endif "><a
-                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?website=on" class="changecolor">Website</a>
+                                        href="{{ env('BASE_URL') }}/vendor/influencers-filter?website=on" class="changecolor @if(request()->website== 'on') active @endif">Website</a>
                                 </li>
                                 <!-- <li class="has-submenu">
                                         <a href="#">More<i class="fas fa-chevron-down"></i></a>

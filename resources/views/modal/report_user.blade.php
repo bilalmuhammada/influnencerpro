@@ -8,6 +8,13 @@
 }
 
 
+.closebtn:hover{
+    background-color: #A17A4E;
+
+}
+.reportBtn:hover{
+    background-color: #A17A4E;
+}
 
 #report-ad-form1 input{
     padding: 7px;
@@ -143,8 +150,8 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn closebtn" style="background-color: rgb(220, 53, 69); color:white;" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary report-ad-submit-btn" style="margin-left: 16px; background-color:rgb(0, 123, 255);">Report</button>
+                <button type="button" class="btn closebtn shaking" style="background-color: rgb(220, 53, 69); color:white;" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary shaking reportBtn report-ad-submit-btn" style="margin-left: 16px; background-color:rgb(0, 123, 255);">Report</button>
             </div>
 
         </div>
