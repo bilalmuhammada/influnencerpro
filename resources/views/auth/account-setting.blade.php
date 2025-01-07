@@ -69,9 +69,9 @@ input::placeholder {
                                     </div>
                                     <div class="form-group form-focus">
                                         <input type="text" class="form-control floating name" name="name" value="{{ session()->get('User')['name'] }}">
-                                        <div class="invalid-feedback">
+                                        {{-- <div class="invalid-feedback">
                                             Please provide a valid Name.
-                                        </div>
+                                        </div> --}}
                                         <label class="focus-label">Name </label>
                                     </div>
                                     <div class="form-group form-focus">
