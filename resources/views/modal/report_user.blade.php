@@ -16,11 +16,13 @@
     
 }
 .closebtncolor:hover{
+    color: white;
     background-color: #A17A4E;
     
 }
-background-color: rgb(220, 53, 69); color:white;
+
 .reportBtn:hover{
+    color: white;
     background-color: #A17A4E;
 }
 
