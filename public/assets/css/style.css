@@ -2148,7 +2148,7 @@ border: 1px solid #2d11e7;
 }
 
 .main-nav>li.active>a {
-    color: #0504aa;
+    color: goldenrod;
 }
 
 .main-nav>li>a {
@@ -2156,7 +2156,7 @@ border: 1px solid #2d11e7;
 }
 
 .main-nav>li>a:hover {
-    color: #0504aa;
+    color: goldenrod;
 }
 
 /* calender code */

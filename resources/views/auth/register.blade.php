@@ -80,9 +80,18 @@ margin-left: -9px !important;
                                     <div role="tabpanel" id="developer"
                                          class="tab-pane fade @if(request()->role == 'influencer') active show @endif">
                                         <form id="influencer-register-form">
+
+                                            <div class="alert-div" style="display: none;">
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <div class="alert-text-register" style="font-size: 14px;">  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button></div>
+                                                   
+                                                </div>
+                                            </div>
                                             <input type="hidden" name="role" value="influencer">
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating name" name="name">
+                                                <input type="text" class="form-control floating name" name="first_name">
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid First Name.
                                                 </div> --}}
@@ -148,18 +157,18 @@ margin-left: -9px !important;
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Country.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Country </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <select name="city_id" class="form-control  floating" id="city_id">
                                                     {{-- <option value="">Select City</option> --}}
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid City.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">City </label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -178,9 +187,9 @@ margin-left: -9px !important;
                                                        <div class="input-group-append">
                                                         <span class="toggle-password" onclick="togglePassword('confirm_password')" style="cursor: pointer;">👁️</span>
                                                     </div>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Confirm Password.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
                                             <div class="dont-have">
@@ -222,16 +231,16 @@ margin-left: -9px !important;
                                             <input type="hidden" name="role" value="vendor">
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" name="brand_name">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Brand Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Brand Name</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" name="company_name">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Company Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Company Name</label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -243,31 +252,29 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating " id="bemail" placeholder="Please provide a valid Business Email." name="email">
-                                                <div class="invalid-feedback">
-                                                    {{-- Please provide a valid Business Email. --}}
-                                                </div>
+                                              
                                                 <label class="inner_label focus-label">Business Email</label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating"  name="name"/>
-                                                <div class="invalid-feedback">
+                                                <input type="text" class="form-control floating"  name="first_name"/>
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid First Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">First Name</label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating" name="last_name">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Last Name.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Last Name </label>
                                             </div>
                                             <div class="form-group form-focus">
                                                 <input type="text" class="form-control floating position"
                                                        name="position">
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Position.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Position </label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -284,9 +291,9 @@ margin-left: -9px !important;
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Gender.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Gender</label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -314,9 +321,9 @@ margin-left: -9px !important;
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Country.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Country </label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -324,9 +331,9 @@ margin-left: -9px !important;
                                                     {{-- <option value="">Select City</option> --}}
 
                                                 </select>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid City.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">City </label>
                                             </div>
                                             <div class="form-group form-focus">
@@ -344,9 +351,9 @@ margin-left: -9px !important;
                                                        <div class="input-group-append">
                                                         <span class="toggle-password" onclick="togglePassword_brand('confirm_password_brand')" style="cursor: pointer;">👁️</span>
                                                     </div>
-                                                <div class="invalid-feedback">
+                                                {{-- <div class="invalid-feedback">
                                                     Please provide a valid Confirm Password.
-                                                </div>
+                                                </div> --}}
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
                                             <div class="dont-have">
@@ -521,11 +528,11 @@ function validateInput(input) {
             var inputs = $(form).find('input');
             // var allInputsValid = validate_inputs(form);
 
-            if (!$(form).find('.agreed_to_terms').is(":checked")) {
-                $('.term-invalid').show();
-                // $('.invalid-feedback').html('Please Check User Agreement, Privacy Policy');
-                return;
-            }
+            // if (!$(form).find('.agreed_to_terms').is(":checked")) {
+            //     $('.term-invalid').show();
+            //     // $('.invalid-feedback').html('Please Check User Agreement, Privacy Policy');
+            //     return;
+            // }
 
             // if (allInputsValid) {
                 form.classList.remove('was-validated');
@@ -544,10 +551,27 @@ function validateInput(input) {
                                 window.location.assign(base_url + "/login");
                             }, 600);
                         } else {
+
+                        
+                        
                             // $('.invalid-feedback').show();
                             // Handle validation errors
                             var errors = response.errors;
 
+                            
+                            if (errors.hasOwnProperty('age')) {
+            // Show the alert for the 'age' field
+
+            console.log(response);
+
+            $('.alert-text-register').text(response.message); // Display error message
+            $('.alert-div').show();
+
+            setTimeout(function () {
+                $('.alert-text-register').text('');
+                $('.alert-div').hide();
+            }, 7000);
+        }
                             // Clear previous validation messages
                             // $(form).find('.invalid-feedback').html('');
 
@@ -556,10 +580,16 @@ function validateInput(input) {
                             // form.classList.remove('was-validated');
                             // Display validation messages for each field6
                             for (var fieldName in errors) {
-                                // var errorElement = $(form).find('[name="' + fieldName + '"]');
-                                // errorElement.removeClass('was-validated')
-                                // errorElement.addClass('is-invalid')
-                                // errorElement.siblings('.invalid-feedback').html(errors[fieldName]);
+
+                              
+
+
+                           
+
+                                var errorElement = $(form).find('[name="' + fieldName + '"]');
+                                errorElement.removeClass('was-validated')
+                                errorElement.addClass('is-invalid')
+                                errorElement.siblings('.invalid-feedback').html(errors[fieldName]);
                             }
                         }
                     },

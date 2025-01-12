@@ -597,7 +597,7 @@ $(document).ready(function() {
                                     'pointer-events': 'none'
                                 });
                                 emojioneEditor.attr('contenteditable', 'false');
-                            }
+                        }
                     } else {
                         show_success_message('User Unblocked');
                         if (emojioneArea.length > 0) {

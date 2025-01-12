@@ -66,27 +66,39 @@ class AuthController extends Controller
 
     public function registerBackend(Request $request)
     {
-      
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
-            'role' => 'required|exists:roles,code'
-        ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => FALSE,
-                'message' => $validator->errors()->first(),
-                'errors' => $validator->errors()
-            ]);
-        }
+        // dd($request->all());gender
+      
+        
+
+       
 
 
         if ($request->role == 'vendor') {
             $validator = Validator::make($request->all(), [
+  
+                'brand_name' => 'required', 
+                'company_name' => 'required', 
                 'website' => 'required|url',
+                'email' => 'required',
+                'first_name' => 'required', 
+                'last_name' => 'required', 
+                'position' => 'required',
+                'phone' => 'required',
+                'gender' => 'required',
+
+                'national_id' => 'required',
+                'country_id' => 'required',
+                'city_id' => 'required',
+
+                
+                'age' => ['required', 'date', 'before:' . now()->subYears(18)->format('Y-m-d')],
+                'password' => 'required|min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
+              
             ], [
+                'age.date' => 'The date of birth must be a valid date.',
+                'age.before' => 'You must be at least 18 years old.',
+                'password.confirmed' => 'Confirm Password does not match.',
                 'website' => 'Please enter valid website url with http:// in front',
             ]);
 
@@ -98,14 +110,52 @@ class AuthController extends Controller
                 ]);
             }
         }
-       
-        if ($request->agreed_to_terms != 'on') {
-            return response()->json([
-                'status' => FALSE,
-                'message' => 'Please Check User Agreement, Privacy Policy',
-                'errors' => ['agreed_to_terms' => ["Please Check User Agreement, Privacy Policy"]]
-            ]);
+        else{
+
+            $validator = Validator::make($request->all(), [
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'phone' => 'required',
+                'gender'=>'required',
+                
+                'email' => 'required|email',
+                  
+                'age' => ['required', 'date', 'before:' . now()->subYears(18)->format('Y-m-d')],
+                'national_id' => 'required',
+                'gender' => 'required',
+                  
+                'country_id' => 'required',
+                'city_id' => 'required',
+    
+                'password' => 'required|min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
+                'role' => 'required|exists:roles,code'
+            ],
+            [
+                'age.date' => 'The date of birth must be a valid date.',
+                'age.before' => 'You must be at least 18 years old.',
+                'password.confirmed' => 'Confirm Password does not match.',
+
+            ]
+            
+        
+        );
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => FALSE,
+                    'message' => $validator->errors()->first(),
+                    'errors' => $validator->errors()
+                ]);
+            }
         }
+       
+        // if ($request->agreed_to_terms != 'on') {
+        //     return response()->json([
+        //         'status' => FALSE,
+        //         'message' => 'Please Check User Agreement, Privacy Policy',
+        //         'errors' => ['agreed_to_terms' => ["Please Check User Agreement, Privacy Policy"]]
+        //     ]);
+        // }
 
 
         $User = User::where('email', $request->email)->first();
@@ -1003,20 +1053,6 @@ class AuthController extends Controller
             'message' => 'Image Removed successfully',
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //  admins method
     public function index()
     {

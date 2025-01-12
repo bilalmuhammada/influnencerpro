@@ -78,6 +78,7 @@ class ChatController extends Controller
 
     public function toggleBlock(Request $request)
     {
+        
         $chat = Chat::findOrFail($request->chat_id);
         $chat->is_blocked = !$chat->is_blocked;
         $chat->save();

@@ -12,7 +12,7 @@
 }
 
 .closebtn:hover{
-    color: #A17A4E;
+    color: goldenrod;
     
 }
 .closebtncolor:hover{
@@ -165,8 +165,8 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn closebtn closebtncolor shaking" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary shaking reportBtn report-ad-submit-btn" >Report</button>
+                <button type="button" class="btn closebtn closebtncolor " data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary  reportBtn report-ad-submit-btn" >Report</button>
             </div>
 
         </div>
