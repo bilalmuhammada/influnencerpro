@@ -80,18 +80,15 @@ class AuthController extends Controller
                 'brand_name' => 'required', 
                 'company_name' => 'required', 
                 'website' => 'required|url',
-                'email' => 'required',
+                'email' => ['required', 'email', 'regex:/^[a-zA-Z0-9._%+-]+@(example\.com|example\.org|example\.at|example\.net)$/'],
                 'first_name' => 'required', 
                 'last_name' => 'required', 
                 'position' => 'required',
                 'phone' => 'required',
                 'gender' => 'required',
-
                 'national_id' => 'required',
                 'country_id' => 'required',
                 'city_id' => 'required',
-
-                
                 'age' => ['required', 'date', 'before:' . now()->subYears(18)->format('Y-m-d')],
                 'password' => 'required|min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
               

@@ -32,7 +32,7 @@ class ChatController extends Controller
         if ($request->i) {
                 $chats = $chats->where('second_user_id', '=', $request->i);
         } 
-        // dd( $chats );
+         dd( $chats );
 
         if (session()->get('role') == 'vendor') {
             $chats = $chats->where('status', '=', 'accepted');
