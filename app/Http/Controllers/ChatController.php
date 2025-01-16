@@ -27,13 +27,10 @@ class ChatController extends Controller
         $chats = Chat::with(['messages'])
             ->where('first_user_id', SiteHelper::getLoginUserId())
             ->orWhere('second_user_id', SiteHelper::getLoginUserId());
-
-    //   dd();
+        dd($chats->get(), session()->get('role'));
         if ($request->i) {
                 $chats = $chats->where('second_user_id', '=', $request->i);
         } 
-         dd( $chats );
-
         if (session()->get('role') == 'vendor') {
             $chats = $chats->where('status', '=', 'accepted');
         } else {
@@ -42,7 +39,7 @@ class ChatController extends Controller
 
         $chats = $chats->orderBy('created_at','desc')
         ->get();
-    //    dd( $chats,session()->get('role'));
+   
         foreach ($chats as $chat) {
             $groupedMessages = [];
             if ($chat->messages) {
