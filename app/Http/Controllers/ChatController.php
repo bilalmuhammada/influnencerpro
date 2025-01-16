@@ -23,7 +23,7 @@ class ChatController extends Controller
             ['first_user_id'=>session()->get('User')['id'],'status'=> 'accepted', 'initiated_by'=>session()->get('User')['id']]
         );
     }
-    dd( SiteHelper::getLoginUserId());
+   
       
         $chats = Chat::with(['messages'])
             // ->where('first_user_id', SiteHelper::getLoginUserId());
