@@ -13796,7 +13796,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-left .chat-users-list a.media:hover {
-    background-color: #f5f5f6;
+    background-color: #eaffff;
 }
 
 .chat-cont-left .chat-users-list a.media.read-chat .media-body>div:last-child .last-chat-time {
