@@ -27,7 +27,7 @@ class ChatController extends Controller
         $chats = Chat::with(['messages'])
             ->where('first_user_id', SiteHelper::getLoginUserId())
             ->orWhere('second_user_id', SiteHelper::getLoginUserId());
-        dd($chats->get(), session()->get('role'));
+        // dd($chats->get(), session()->get('role'));
         if ($request->i) {
                 $chats = $chats->where('second_user_id', '=', $request->i);
         } 
