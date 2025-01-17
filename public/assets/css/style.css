@@ -13796,7 +13796,7 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-left .chat-users-list a.media:hover {
-    background-color: #eaffff;
+    background-color: #eeffff;
 }
 
 .chat-cont-left .chat-users-list a.media.read-chat .media-body>div:last-child .last-chat-time {
@@ -14020,7 +14020,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box>div {
     /* background-color: #E8EFFF; */
-    background-color: #d8f9ff;
+    background-color: #eeffff;
     color: #000;
     display: flex;
 }
@@ -14205,8 +14205,8 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right .chat-body .media.sent .media-body .msg-box:first-child:before {
-    border-bottom: 9px solid #d8f9ff;
-    border-left: 15px solid #d8f9ff;
+    border-bottom: 9px solid #eeffff;
+    border-left: 15px solid #eeffff;
     border-top: 15px solid transparent;
     border-right: 15px solid transparent;
     content: "";
