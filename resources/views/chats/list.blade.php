@@ -592,7 +592,7 @@ $(document).ready(function() {
                         button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
-                                    'background': '#fcd5d4',
+                                    'background': '#fdeaea',
                                     'cursor': 'not-allowed',
                                     'pointer-events': 'none'
                                 });
