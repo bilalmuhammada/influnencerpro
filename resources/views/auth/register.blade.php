@@ -564,13 +564,13 @@ function validateInput(input) {
 
             console.log(response);
 
-            $('.alert-text-register').text(response.message); // Display error message
-            $('.alert-div').show();
+            // $('.alert-text-register').text(response.message); // Display error message
+            // $('.alert-div').show();
 
-            setTimeout(function () {
-                $('.alert-text-register').text('');
-                $('.alert-div').hide();
-            }, 7000);
+            // setTimeout(function () {
+            //     $('.alert-text-register').text('');
+            //     $('.alert-div').hide();
+            // }, 7000);
         }
                             // Clear previous validation messages
                             // $(form).find('.invalid-feedback').html('');
