@@ -204,7 +204,7 @@
                             </a>
                         </div>
                         <div class="copyright-text bilal-footer1"  style="margin-top: -14px;">
-                            <p class="mb-0" style="text-align: center; width: 96%; color:#00498e;font-weight: 500;font-size:12px; margin-top: -10px;">© InfluencerPro.org 2024, All Rights Reserved.</p>
+                            <p class="mb-2" style="text-align: center; width: 96%; color:#00498e;font-weight: 500;font-size:12px; margin-top: -10px;">© InfluencerPro.org 2024, All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-4 right-text">

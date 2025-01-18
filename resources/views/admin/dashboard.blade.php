@@ -70,7 +70,7 @@ margin-bottom: 13px;
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx2"><i class="fa fa-user" style="font-size:50px;"></i></div>
-                                <h5 class="total_view">{{ formatNumber($influencer->favourites_count) }}</h5>
+                                <h5 class="favourite_count">{{ formatNumber($influencer->favourites_count) }}</h5>
                                 <!-- <span><b>Views</b></span> -->
                                 <span><b style="font-size: 14px">Favourites</b></span>
                             </div>
@@ -81,7 +81,7 @@ margin-bottom: 13px;
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx"><i class="fa fa-user" style="font-size:50px;"></i></div>
-                                <h5 class="favourite_count">-----</h5>
+                                <h5 class="chat_count">-----</h5>
                                 <span><b style="font-size: 14px">Chats</b></span>
                             </div>
                         </a>
@@ -169,6 +169,7 @@ $(function() {
                     $('.total_view').html(response.profile_visit_count);
                     $('.total_click').html(response.profile_visit_count);
                     $('.favourite_count').html(response.favorite_count);
+                    $('.chat_count').html(response.chat_count);
                 },
                 error: function (response) {
                     console.log("You must have sufficient data to show the Bar Chart");

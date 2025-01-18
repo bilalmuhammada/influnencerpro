@@ -545,7 +545,14 @@ function validateInput(input) {
                     contentType: false,
                     dataType: "JSON",
                     success: function (response) {
+                        var errors = response.errors;
                         if (response.status) {
+                    for (var fieldName in errors) {
+                    var errorElement = $(form).find('[name="' + fieldName + '"]');
+// errorElement.removeClass('was-validated')
+                    errorElement.removeClass('is-invalid')
+// errorElement.siblings('.invalid-feedback').html(errors[fieldName]);
+                     }
                             // Handle successful submission here
                             setTimeout(function () {
                                 window.location.assign(base_url + "/login");
@@ -556,23 +563,13 @@ function validateInput(input) {
                         
                             // $('.invalid-feedback').show();
                             // Handle validation errors
-                            var errors = response.errors;
+                           
 
                             
-                            if (errors.hasOwnProperty('age')) {
-            // Show the alert for the 'age' field
+             
+            console.log(response.errors);
 
-            console.log(response);
-
-            // $('.alert-text-register').text(response.message); // Display error message
-            // $('.alert-div').show();
-
-            // setTimeout(function () {
-            //     $('.alert-text-register').text('');
-            //     $('.alert-div').hide();
-            // }, 7000);
-        }
-                            // Clear previous validation messages
+                         // Clear previous validation messages
                             // $(form).find('.invalid-feedback').html('');
 
                             // Add the 'was-validated' class to show validation messages

@@ -188,7 +188,7 @@ border-color:goldenrod transparent transparent transparent !important;
             <li><a href="contact-us.php">Contact us</a></li> -->
             @if(session()->missing('User'))
                 <li class="has-submenu">
-                    <a href="{{ env('BASE_URL') . '/register?role=influencer' }}" class="register-btn">Register<i
+                    <a href="#" class="register-btn">Register<i
                             class="fas fa-chevron-down register-btn"></i></a>
                     <ul class="submenu">
                         <li class="has-submenu"></li>

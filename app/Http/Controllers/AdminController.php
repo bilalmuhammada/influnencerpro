@@ -28,17 +28,19 @@ class AdminController extends Controller
         $Influencer = User::find(Auth::id());
         $total_favourites = Favourite::where('influencer_id', Auth::id())->count();
 
-        $ProfileVisitsAndClicks = ProfileVisit::when($request->from_date, function ($Visit) use ($request) {
+        $ProfileVisitsAndClicks = ProfileVisit::where('influencer_id', Auth::id())->when($request->from_date, function ($Visit) use ($request) {
             $Visit->where('date', '>=', $request->from_date);
         })->when($request->to_date, function ($Visit) use ($request) {
             $Visit->where('date', '>=', $request->to_date);
         })->count();
 
-        $favourite_count = Favourite::when($request->from_date, function ($Visit) use ($request) {
+        $favourite_count = Favourite::where('influencer_id', Auth::id())->when($request->from_date, function ($Visit) use ($request) {
             $Visit->whereDate('created_at', '>=', $request->from_date);
         })->when($request->to_date, function ($Visit) use ($request) {
             $Visit->whereDate('created_at', '>=', $request->to_date);
         })->count();
+
+        $chat_count = Chat::where('first_user_id', Auth::id())->count();
 
         return response()->json([
             'status' => true,
@@ -49,7 +51,8 @@ class AdminController extends Controller
             ],
             'profile_visit_bar_chart' => $this->barChartForProfileVisit($request),
             'profile_visit_count' => $ProfileVisitsAndClicks,
-            'favorite_count' => $favourite_count
+            'favorite_count' => $favourite_count,
+            'chat_count' => $chat_count
         ]);
     }
 
