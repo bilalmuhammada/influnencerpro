@@ -23918,3 +23918,7 @@ span:hover .icon-hover {
 .select2-results__options > li, .select2-container--default .select2-selection--single .select2-selection__rendered{
    font-size: 12px;
 }
+
+.card-body .font-label{
+    margin-bottom: unset;
+}

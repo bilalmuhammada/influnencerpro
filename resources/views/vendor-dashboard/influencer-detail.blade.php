@@ -263,14 +263,14 @@ color: goldenrod !important;
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;" >
-                                    <label class="font-label">Hair color</label>
+                                    <label class="font-label">Hair Color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ $influencer->personal_information ? $influencer->personal_information->hair_color : '' }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;">
-                                    <label class="font-label">Eye color</label>
+                                    <label class="font-label">Eye Color</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'eye_color') }}</span>
