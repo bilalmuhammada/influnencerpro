@@ -231,7 +231,7 @@ select::-ms-expand {
                                 </div>
                                 <div class="col-md-2 edit">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 180px;">
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 165px;">
                                             <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
@@ -477,7 +477,7 @@ $(document).on("click", "#userOptionsMenu", function() {
                     console.log('enter');
                  
                
-                    $('#msg-send-btn').click();  
+                    // $('#msg-send-btn').click();  
                 }
                 
             },
@@ -737,10 +737,8 @@ $(document).ready(function() {
             thisElem = $(this);
           
             var message = $(thisElem).parents('.chat-footer').find('.input-msg-send');
-        //   alert(message);
             send_new_message(message, thisElem);
         });
-
         //send request on input enter
         // $(".emojionearea-editor").on('keydown', function (e) {
         //     console.log('djkf')
@@ -757,16 +755,16 @@ $(document).ready(function() {
         //
         //     }
         // });
-        // $(document).on('keydown', '.emojionearea-editor', function (e) {
-        //     // Check if the pressed key is Enter (keyCode 13)
-        //  var inputMessage = $('.emojionearea-editor').text().trim();
+        $(document).on('keydown', '.emojionearea-editor', function (e) {
+            // Check if the pressed key is Enter (keyCode 13)
+         var inputMessage = $('.emojionearea-editor').text().trim();
         
-        //     if (e.keyCode === 13  &&  inputMessage !='') {
-        //         $(this).blur()
-        //         send_new_message($('.input-msg-send'), $('.input-msg-send'));
-        //         $(this).focus()
-        //     }
-        // });
+            if (e.keyCode === 13  &&  inputMessage !='') {
+                $(this).blur()
+                send_new_message($('.input-msg-send'), $('.input-msg-send'));
+                $(this).focus()
+            }
+        });
 
         function send_new_message(message, thisElem) {
             // alert($(message).val());
