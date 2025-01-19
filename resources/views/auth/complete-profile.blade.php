@@ -11,7 +11,7 @@
     border: 2px solid #ccc;
     padding: 20px;
     /* text-align: center; */
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .dz-image {
     position: relative;
@@ -366,7 +366,7 @@ display: none !important;
                                             <div class="form-group form-focus dropdowndecoration"  style="height:50px;">
                                            
                                             <select name="ethnicity_id" id="mySelect" class="form-control mySelect floating">
-                                                {{-- <option value="">Ethnicity</option> --}}
+                                                <option value="" selected hidden  disabled></option>
                                                 @foreach(getEthnicity() as $ethnicity)
                                                     <option
                                                         value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->ethnicity_id == $ethnicity->id ? 'selected' : '' }}>{{ $ethnicity->name }}</option>
@@ -380,7 +380,7 @@ display: none !important;
                                        
                                             <select name="gender" id="" class="form-control mySelect floating"
                                                     value="{{ $influencer_personal_info ? $influencer_personal_info->gender : '' }}">
-                                               
+                                                    <option value="" selected hidden  disabled></option>
                                                 <option
                                                   value="Male" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'Male' ? 'selected' : '' }}>
                                                     Male
@@ -415,12 +415,8 @@ display: none !important;
                                            
                                             <select name="hair_type" id=""
                                             class="form-control  mySelect floating">
-                                        {{-- <option value="">Hair Typess</option> --}}
-                                        {{-- @foreach( $userInformation as $userinfo)
-                                            <option
-                                                value="{{ $userinfo->id }}" >{{ $userinfo->hairtype }}</option>
-                                        @endforeach --}}
-                                        {{-- <option selected value="">Select Hair Type</option> --}}
+                                      
+                                        <option value="" selected hidden  disabled></option>
                                         <option value="afro">Afro</option>
                                                                            <option value="blad">Bald</option>
                                                                            <option value="curly">Curly</option>
@@ -442,12 +438,7 @@ display: none !important;
                                             
                                             <select name="hair_color" id=""
                                             class="form-control mySelect floating">
-                                        {{-- <option value="">Hair Color</option> --}}
-                                        {{-- @foreach( $userInformation as $userinfo)
-                                            <option
-                                                value="{{ $userinfo->id }}" >{{ $userinfo->haircolor }}</option>
-                                        @endforeach --}}
-                                        {{-- <option selected value="">Hair color</option> --}}
+                                            <option value="" selected hidden  disabled></option>
                                         <option value="balayage">Balayage</option> 
                                         <option value="black">Black</option>
                                         <option value="blonde">Blonde</option>
@@ -476,12 +467,7 @@ display: none !important;
                                             
                                             <select name="eye_color" id=""
                                             class="form-control  mySelect  floating">
-                                        {{-- <option value="">Eye Type</option> --}}
-                                        {{-- @foreach( $userInformation as $userinfo)
-                                            <option
-                                                value="{{ $userinfo->id }}" >{{ $userinfo->eyecolor }}</option>
-                                        @endforeach --}}
-                                        {{-- <option selected value="">Eye Color</option> --}}
+                                            <option value="" selected hidden  disabled></option>
                                         <option value="azure">Azure</option>
                                            <option value="Agate">Agate</option>
                                            <option value="amber">Amber</option>
@@ -537,7 +523,7 @@ display: none !important;
                                             value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
                                             <select name="clothsize" id=""
                                             class="form-control  mySelect  floating">
-                                      
+                                            <option value="" selected hidden  disabled></option>
                                         <option value="XS">XS</option>
                                         <option value="S">S</option>
                                         <option value="M">M</option>
@@ -567,6 +553,7 @@ display: none !important;
                                             <select name="base_country_id" id=""
                                                     class="form-control available-country selectdropdownforcountry floating">
                                                     {{-- <option value=" " selected>&nbsp;</option> --}}
+                                                    <option value="" selected hidden  disabled></option>
                                                 @foreach(getCountries() as $country)
                                                     <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
@@ -839,6 +826,7 @@ display: none !important;
                                             
                                             <select name="willing_to_traval" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">Willing To Traval</option> --}}
+                                                <option value="" selected hidden  disabled></option>
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
                                                     Yes
@@ -857,6 +845,7 @@ display: none !important;
                                           
                                             <select name="is_collaboration" id="" class="form-control mySelect floating">
                                                 {{-- <option value="">--Collaboration--</option> --}}
+                                                <option value="" selected hidden  disabled></option>
                                                 <option
                                                     value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
                                                     Yes
@@ -875,7 +864,7 @@ display: none !important;
                                             <select name="price_negotion" id=""
                                                     class="form-control floating mySelect available-country">
                                                 {{-- <option value="">Price Negotiable</option> --}}
-                                                
+                                                <option value="" selected hidden  disabled></option>
                                                     <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
                                                      
                                                     <option value="0" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 0 ? 'selected' : '' }}>No</option>  
@@ -1302,8 +1291,19 @@ function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
     input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
 }
+$(document).on('change', '.floating', function () {
+
+if ($('.floating').length > 0) {
+
+$('.floating').on('focus blur', function (e) {
+$(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+}).trigger('blur');
+} 
+
+});
             $(document).ready(function() {
-         
+                
+
             $('.datepicker').datepicker({
                 dateFormat: 'dd-M-yy',
                 changeMonth: true,
@@ -1326,6 +1326,7 @@ function validateInput(input) {
 
         $(document).ready(function () {
           
+       
         
     // alert(api_url);
         

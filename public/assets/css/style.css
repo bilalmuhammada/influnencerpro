@@ -1861,7 +1861,7 @@ border: 1px solid #2d11e7;
 .form-focus .select2-container--default .select2-selection--single .select2-selection__arrow b {
     border-color: #ccc transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 0;
+    border-width: 4px 4px 0;
     height: 0;
     left: 50%;
     margin-left: -10px;

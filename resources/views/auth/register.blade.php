@@ -91,7 +91,7 @@ margin-left: -9px !important;
                                             </div>
                                             <input type="hidden" name="role" value="influencer">
                                             <div class="form-group form-focus">
-                                                <input type="text" class="form-control floating name" name="first_name">
+                                                <input type="text" class="form-control floating name" name="name">
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid First Name.
                                                 </div> --}}

@@ -16,6 +16,10 @@
     line-height: 1.6;
 
 }
+.delete-icon:hover{
+    filter: sepia(1) hue-rotate(45deg) saturate(4) brightness(1.2) contrast(1.1);;
+
+}
 
 .form-group::first-letter {
     text-transform: uppercase !important;
@@ -177,8 +181,8 @@ color: goldenrod !important;
                         <!-- <div class="card-header d-flex justify-content-between"> -->
                         <div class="card-header__">
                             <div class="influencer project-img" id="influencer">
-                                <a href="{{ $influencer ? $influencer->image_url : '' }}">
-                                <img class="card-title mb-0" src="{{ $influencer ? $influencer->image_url : '' }}"
+                                <a href="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}">
+                                <img class="card-title mb-0" src="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}"
                                      alt="author"
                                      width="100%" height="208px">
                                 </a><br/>
@@ -510,7 +514,7 @@ color: goldenrod !important;
                                     <label class="font-label">Price Negotiable</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ $influencer->personal_information && $influencer->personal_information->price_negotiable==1 ? "Yes" : "No"  }}
+                                            class="badge badge-pill badge-skill">{{ $influencer->personal_information && $influencer->personal_information->price_negotiable==1 ? "Yes" : " "  }}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }} --}}
                                         </span>
                                     </div>
@@ -540,7 +544,7 @@ color: goldenrod !important;
                                    
                                     <div class="form-group">
                                     <p style="text-align:justify;line-height: 1.5rem !important;" class="badge-skill">
-                                    {{ getSafeValueFromObject($influencer->personal_information, 'bio') }}"
+                                    {{ getSafeValueFromObject($influencer->personal_information, 'Bio') }}
                                      </p>
                                         <!-- <div
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'bio') }}</div> -->

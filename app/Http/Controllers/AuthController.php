@@ -169,6 +169,7 @@ class AuthController extends Controller
       
         $User = User::create([
             'name' => $request->name,
+            'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'agreed_to_terms' => $request->agreed_to_terms == 'on' ? 1 : 0,
             'email' => $request->input('email', null),
@@ -929,6 +930,8 @@ class AuthController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
+            'last_name' => 'required',
+
             'email' => 'required',
             'phone' => 'required',
             
@@ -978,7 +981,7 @@ class AuthController extends Controller
                 'type' => $logo->getClientOriginalExtension(),
                 'object' => 'User',
                 'object_id' => $User->id,
-                'context' => 'influencer-profile-image'
+                'context' => 'influencer-profile-image-main'
             ]);
 
             SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $logo_name);

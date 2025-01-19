@@ -72,7 +72,14 @@ input::placeholder {
                                         {{-- <div class="invalid-feedback">
                                             Please provide a valid Name.
                                         </div> --}}
-                                        <label class="focus-label">Name </label>
+                                        <label class="focus-label">First Name </label>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <input type="text" class="form-control floating name" name="last_name" value="{{ session()->get('User')['last_name'] }}">
+                                        {{-- <div class="invalid-feedback">
+                                            Please provide a valid Name.
+                                        </div> --}}
+                                        <label class="focus-label">last Name </label>
                                     </div>
                                     <div class="form-group form-focus">
                                         <input type="email" class="form-control floating" name="email" placeholder="Please provide a valid Email."  value="{{ session()->get('User')['email'] }}">

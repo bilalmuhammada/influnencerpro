@@ -20,18 +20,16 @@ class User extends Authenticatable
      */
     protected $guarded = [];
     protected $appends = ['full_name',
-    'image_url', 
-    'is_favourite_influencer', 
-    'instagram_followers', 
-    'tiktok_followers',
-     'facebook_followers',
-      'country_name',
+       'image_url', 
+       'influencer_profile_image_main',
+       'is_favourite_influencer', 
+       'instagram_followers', 
+       'tiktok_followers',
+       'facebook_followers',
+       'country_name',
        'user_arts',
-    
-    
-    
        'age',
-        'created_at_formatted',
+       'created_at_formatted',
         'status_formatted',
        
         'member_since',
@@ -135,6 +133,24 @@ class User extends Authenticatable
         return $this->hasOne(Attachment::class, 'object_id')->where('object', 'User')->where('context', '=', 'user-image');
     }
 
+    public function influencer_profile_image_main()
+    {
+        return $this->hasOne(Attachment::class, 'object_id')
+            ->where('object', 'User')
+            ->where('context', '=', 'influencer-profile-image-main');
+    }
+
+    public function getInfluencerProfileImageMainAttribute()
+    {
+        $image= $this->influencer_profile_image_main()->first();
+
+        if ($image) {
+            return asset('uploads/users') . '/' . $image->name;
+        } else {
+            return 'https://via.placeholder.com/30x30';
+        }
+    }
+
     public function influencer_profile_images()
     {
         
@@ -142,6 +158,7 @@ class User extends Authenticatable
         ->where('object', 'User')
         ->where('context', '=', 'influencer-profile-image');
     }
+
     public function getNumberOfDealsAttribute()
     {
         return 10;
