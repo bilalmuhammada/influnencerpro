@@ -13729,7 +13729,7 @@ label.file-upload input[type="file"] {
     background: #fff;
     /* box-shadow: 0px 4px 4px #f5f8ff; */
     /* margin: 10px; */
-    padding: 5px 15px;
+    padding: 3px 15px;
     transition: all 0.2s ease 0s;
 }
 
