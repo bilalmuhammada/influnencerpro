@@ -588,7 +588,7 @@ $(document).ready(function() {
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
                     if (response.is_blocked) {
-                        show_error_message('User Blocked')
+                        // show_error_message('User Blocked')
                         button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
@@ -599,7 +599,7 @@ $(document).ready(function() {
                                 emojioneEditor.attr('contenteditable', 'false');
                         }
                     } else {
-                        show_success_message('User Unblocked');
+                        // show_success_message('User Unblocked');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
