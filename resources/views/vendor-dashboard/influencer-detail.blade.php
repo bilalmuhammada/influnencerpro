@@ -13,7 +13,7 @@
 
 }
 .linespace{
-    line-height: 1.6;
+    line-height: 1.2;
 
 }
 .delete-icon:hover{
@@ -613,7 +613,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $instagram ? $instagram->followers : 0 }}
+                                        {{ strtoupper($instagram ? $instagram->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -626,7 +626,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $instagram ? $instagram->followers : 0 }}
+                                        {{ strtoupper($instagram ? $instagram->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -639,7 +639,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $youtube ? $youtube->followers : 0 }}
+                                        {{ strtoupper($youtube ? $youtube->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -651,7 +651,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $tiktok ? $tiktok->followers : 0 }}
+                                        {{ strtoupper($tiktok ? $tiktok->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -663,7 +663,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $facebook ? $facebook->followers : 0 }}
+                                        {{ strtoupper($facebook ? $facebook->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -676,7 +676,7 @@ color: goldenrod !important;
                                         <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
-                                        {{ $snapchat ? $snapchat->followers : 0 }}
+                                        {{ strtoupper($snapchat ? $snapchat->followers : 0) }}
                                     </div>
                                 </div>
                             </li> &nbsp; &nbsp;
@@ -689,7 +689,7 @@ color: goldenrod !important;
                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" class="shaking" alt="" width="30px">
                                 </a>
                                 <div class="text-center font-change followers-count">
-                                    {{ $pinterestProfiles ? $pinterestProfiles->followers : 0 }}
+                                    {{ strtoupper($pinterestProfiles ? $pinterestProfiles->followers : 0) }}
                                 </div>
                             </div>
                         </li> &nbsp; &nbsp;
@@ -701,7 +701,7 @@ color: goldenrod !important;
                             <img src="{{ asset('assets/img/social-icon/web.png') }}" class="shaking" alt="" width="30px">
                         </a>
                         <div class="text-center font-change followers-count">
-                            {{ $web ? $web->followers : 0 }}
+                            {{ strtoupper($web ? $web->followers : 0)  }}
                         </div>
                     </div>
                 </li> &nbsp;

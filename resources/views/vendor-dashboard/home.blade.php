@@ -1089,7 +1089,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px; ">
-                                                        <span>  {{ $instagram ? $instagram->followers : 0 }}</span> 
+                                                        <span>  {{ strtoupper($instagram ? $instagram->followers : 0) }}</span> 
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
@@ -1102,7 +1102,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size: 11px;">
-                                                            <span>{{ $twitter ? $twitter->followers : 0 }}</span>
+                                                            <span>{{ strtoupper($twitter ? $twitter->followers : 0) }}</span>
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
@@ -1116,7 +1116,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ $youtube ? $youtube->followers : 0 }}</span> 
+                                                          <span> {{ strtoupper($youtube ? $youtube->followers : 0) }}</span> 
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
@@ -1129,7 +1129,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ $tiktok ? $tiktok->followers : 0 }}</span> 
+                                                          <span> {{ strtoupper($tiktok ? $tiktok->followers : 0) }}</span> 
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
@@ -1142,7 +1142,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>   {{ $facebook ? $facebook->followers : 0 }}</span>  
+                                                          <span>   {{ strtoupper($facebook ? $facebook->followers : 0) }}</span>  
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;
@@ -1155,7 +1155,7 @@ color: #0504aa !important;
                                                             <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>{{ $snapchat ? $snapchat->followers : 0 }}</span>  
+                                                          <span>{{ strtoupper($snapchat ? $snapchat->followers : 0) }}</span>  
                                                         </div>
                                                     </div>
                                                 </li>&nbsp;&nbsp;

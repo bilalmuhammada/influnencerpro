@@ -597,7 +597,7 @@ class AuthController extends Controller
                     'user_id' => Auth::id(),
                     'type' => $socialMediaType,
                    
-                    'followers' => $followers,
+                    'followers' =>  $followers,
                     'url' => $url,
             
                 ]);
