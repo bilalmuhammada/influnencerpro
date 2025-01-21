@@ -335,8 +335,8 @@ select::-ms-expand {
                                         @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
-                                                {{--                                            <div class="user-status">online</div>--}}
+                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - {{ $categoryNames ?? ''}}111 {{ getSafeValueFromObject($chat->other_user, 'company_name') }}</div>
+                                               
                                             </div>
                                         </div>
 
