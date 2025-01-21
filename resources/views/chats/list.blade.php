@@ -194,6 +194,9 @@ color: goldenrod !important;
 select::-ms-expand {
     display: none;
 }
+.colorchange:hover{
+ color: blue !important;
+}
 
     </style>
 @section('content')
