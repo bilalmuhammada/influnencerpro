@@ -124,6 +124,9 @@
 
     border-radius: 25px !important;
 }
+.select2-container {
+    margin-top: 5px !important;
+}
 .mgn-send-color{
 color:#0686ee !important;
 }
