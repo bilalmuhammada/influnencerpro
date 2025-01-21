@@ -1873,7 +1873,7 @@ border: 1px solid #2d11e7;
 
 .form-focus .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
     border-color: transparent transparent #ccc;
-    border-width: 0 6px 6px;
+    border-width: 0 4px 4px;
 }
 
 .form-focus .select2-container .select2-selection--single .select2-selection__rendered {

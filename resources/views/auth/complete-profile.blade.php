@@ -561,17 +561,18 @@ display: none !important;
                                          <label for="username" class="focus-label">Based Country</label>
                                         </div>
                                     </div>
+                           
+                                    
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
                                             
                                             <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
-                                                {{-- <option value=""  hidden selected></option> --}}
-                                                {{-- <option value="" disabled hidden selected>&nbsp;</option> --}}
-                                                @foreach(getCityByStateId(1) as $city)
-
-                                                <option  value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->city_id == $city->id ? 'selected' : '' }} > {{ $city->name }} </option>
                                                 
-                                                @endforeach
+
+                                            
+              
+                                           
+                                            
                                             </select>
                                         <label for="username" class="focus-label" >Based City</label>
                                         </div>
@@ -649,7 +650,7 @@ display: none !important;
                                             @php
                                             //    dd($static,$states_ids,getCityByStateId(1));
                                             @endphp
-                                        <label for="username" class="focus-label"  style="margin-top:-15px;">Traveling City</label>
+                                        <label for="username" class="focus-label"  >Traveling City</label>
                                         </div>
 
                                     </div>
@@ -703,18 +704,21 @@ display: none !important;
                                                 @php
                                                     if($availabilities && count($availabilities) > 0){
                                                         $states_ids = getStateByCountryId($availabilities[0]['country_id'])->pluck('id')->toArray();
+
+  
                                                     }else{
-                                                         $states_ids = [1];
+                                                        $states_ids = [1];
                                                     }
                                                 @endphp
 
-                                                <option value=""  selected>&nbsp;</option>
+                                                <option value="" selected>&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
+
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="username" class="focus-label"  style="margin-top:-15px;">Traveling City</label>
+                                            <label for="username" class="focus-label"  >Traveling City</label>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -748,14 +752,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                          
-                                            {{-- <select name="travlling_three_country_id" id=""
-                                                    class="form-control available-country  floating">
-                                                <option value="null">&nbsp;&nbsp;</option>
-                                                @foreach(getCountries() as $country)
-                                                    <option
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $city->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                                @endforeach
-                                            </select> --}}
+                                            
                                             <select name="travlling_three_country_id" id=""
                                             class="form-control available-country selectdropdownforcountry floating">
                                             <option value="0" selected>&nbsp;</option>
@@ -767,21 +764,20 @@ display: none !important;
                                            <label for="username" class=" focus-label">Traveling Country</label>
                                         </div>
                                     </div>
+
+
+                                
+                                  
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                         
                                             <select name="travlling_three_city_id" id="" class="form-control selectdropdown city_id floating">
 
-                                                @php
-                                                    if($availabilities && count($availabilities) >= 2){
-                                                        $states_ids = getStateByCountryId($availabilities[1]['country_id'])->pluck('id')->toArray();
-                                                    }else{
-                                                         $states_ids = [1];
-                                                    }
-                                                @endphp
+                                             
 
-                                              <option value=""  hidden selected>&nbsp;</option>
+                                                <option value=""  hidden selected>&nbsp;</option>
                                                 @foreach(getCityByStateIds($states_ids) as $city)
+                                              
                                                     <option
                                                         value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
@@ -862,7 +858,7 @@ display: none !important;
                                         <div class="form-group form-focus dropdowndecoration focus-label" style="height: 52px;">
                                            
                                             <select name="price_negotion" id=""
-                                                    class="form-control floating mySelect available-country">
+                                                    class="form-control floating mySelect ">
                                                 {{-- <option value="">Price Negotiable</option> --}}
                                                 <option value="" selected hidden  disabled></option>
                                                     <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
@@ -923,10 +919,7 @@ display: none !important;
                                                 <label class="inner_label focus-label"  style="margin-left: 0px;">Bio</label>
                                     
                                         
-                                            {{-- <input type="text" class="form-control floating" name="bio" style="height: 100px"
-                                                   placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}"/>
-                                                   <label for="username" class="inner_label focus-label">Bio</label> --}}
+                                        
                                         </div>
 
                                     <!-- <select name="is_collaboration" id="" class="form-control">
@@ -980,13 +973,7 @@ display: none !important;
                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="insta"
                                                          width="40" style="margin-left: 24px;" class="shaking">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="facebook_username"
-                                                           placeholder="Username"
-                                                           value="{{ $facebookProfiles ? $facebookProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg"  style=" width: 92% margin-left: 7px;" name="facebook_url"
@@ -1011,13 +998,7 @@ display: none !important;
                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}"
                                                          alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="tiktok_username"
-                                                           placeholder="Username"
-                                                           value="{{ $tiktokProfiles ? $tiktokProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="tiktok_url"
@@ -1043,13 +1024,7 @@ display: none !important;
                                                         src="{{ asset('assets/img/social-icon/youtube.png') }}"
                                                         alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="youtube_username"
-                                                           placeholder="Username"
-                                                           value="{{ $youtubeProfiles ? $youtubeProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="youtube_url"
@@ -1075,13 +1050,7 @@ display: none !important;
                                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
                                                         alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="twitter_username"
-                                                           placeholder="Username"
-                                                           value="{{ $twitterProfiles ? $twitterProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="twitter_url"
@@ -1226,10 +1195,10 @@ display: none !important;
                                 </div>
                                 
                                 <!-- Hidden file input -->
-                                <input type="file" id="fileInput" style="display: none;" accept="image/*">
+                                <input type="file" id="fileInput"  style="display: none;" accept="image/*" multiple>
                                 
                                 <!-- Dropzone Container -->
-                                <div class="dropzone-container dz-message" id="my-Dropzone" style="border: white; color: blue; font-weight: bold;">
+                                <div class="dropzone-container dz-message" id="my-Dropzone" style="border:white; color: blue; font-weight: bold;">
                                     <!-- Dropzone message or content -->
                                 </div>
                                 
@@ -1248,7 +1217,7 @@ display: none !important;
                                     <div class="col-3" style="text-align:center;">
                                         <!-- <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> -->
                                         <i class="fa fa-check"
-                                           style="font-size:60px;color:#997045;border:2px solid #fff;"></i>
+                                           style="font-size:60px;color:goldenrod;border:2px solid #fff;"></i>
                                     </div>
                                 </div>
                                 <!-- <br><br> -->
@@ -1460,7 +1429,7 @@ $(document).on('click', '.submit-btn', function () {
         $(document).ready(function() {
             var selectedCountryId = $('.available-country').val();
   
-    var selectedCountryId = $('.available-country').val();
+    
     if (selectedCountryId) {
         $('.available-country').trigger('change');
     }
@@ -1471,7 +1440,8 @@ $(document).on('click', '.submit-btn', function () {
         $(document).on('change', '.available-country', function () {
             var country_id = $(this).val();
             var thisElem = $(this);
-            // alert(country_id);
+            
+            
             if (country_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
@@ -1503,8 +1473,7 @@ if (response.data.length > 0) {
                     }
                 });
             }
-        })
-;
+        });
 
 
 

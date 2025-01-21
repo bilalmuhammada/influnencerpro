@@ -17,7 +17,8 @@
 
 }
 .delete-icon:hover{
-    filter: sepia(1) hue-rotate(45deg) saturate(4) brightness(1.2) contrast(1.1);;
+    filter: hue-rotate(220deg) saturate(2) brightness(1.2);
+
 
 }
 
@@ -126,7 +127,7 @@ color: goldenrod !important;
 
 .image-actions img {
     width: 12px;
-    height: 12px;
+    height: 15px;
     cursor: pointer;
 }
 ::-webkit-scrollbar {

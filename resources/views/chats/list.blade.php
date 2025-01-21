@@ -103,7 +103,7 @@
     .chat-title {
         border-bottom: 1px solid #ddd !important;
         padding-bottom: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
     }
 
     

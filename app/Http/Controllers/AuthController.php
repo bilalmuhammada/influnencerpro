@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\SiteHelper;
 use App\Models\Attachment;
+use App\Models\City;
 use App\Models\Role;
 use App\Models\StaticDatabase;
 use App\Models\usebodyinfo;
@@ -54,9 +55,10 @@ class AuthController extends Controller
         $Influencer = getInfluencerById(\session()->get('User')['id']);
 
            $userInformation=     usebodyinfo::all();
+           $cities=     City::all();
        
 
-        return view('auth.complete-profile')->with(['influencer' => $Influencer,'userInformation'=>$userInformation]);
+        return view('auth.complete-profile')->with(['influencer' => $Influencer,'cities'=>$cities,'userInformation'=>$userInformation]);
     }
 
     public function vendorAccountSetting()
