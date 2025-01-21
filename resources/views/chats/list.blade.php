@@ -216,7 +216,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
-                                    <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; border:transparent !important">
+                                    <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favourited</option>
                                         <option value="blocked">Blocked</option>
