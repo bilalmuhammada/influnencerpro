@@ -194,7 +194,7 @@ color: goldenrod !important;
 select::-ms-expand {
     display: none;
 }
-.colorchange:hover{
+.colorchangecompany:hover{
  color: blue !important;
 }
 
@@ -338,7 +338,7 @@ select::-ms-expand {
                                         @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <span class="colorchange">{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <span class="colorchangecompany">{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
                                                
                                             </div>
                                         </div>
