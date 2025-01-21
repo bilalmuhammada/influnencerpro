@@ -1216,8 +1216,7 @@ display: none !important;
                                 <div class="row justify-content-center">
                                     <div class="col-3" style="text-align:center;">
                                         <!-- <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> -->
-                                        <i class="fa fa-check"
-                                           style="font-size:60px;color:goldenrod;border:2px solid #fff;"></i>
+                                        <i class="fa fa-check" style="font-size:60px;color:goldenrod;border:2px solid #fff;"></i>
                                     </div>
                                 </div>
                                 <!-- <br><br> -->

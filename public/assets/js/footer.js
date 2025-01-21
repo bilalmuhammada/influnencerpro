@@ -5,7 +5,7 @@
 // var api_url = "{{ env('API_URL') }}";
 function logout(e) {
     // e.preventDefault();
-    alert(api_url);
+   
     $.ajax({
         url: api_url + 'logout',
         type: 'POST',

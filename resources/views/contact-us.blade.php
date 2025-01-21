@@ -149,7 +149,7 @@ input[type="file"] {
                                     </div>
                                     <div class="col-md-12" style="text-align: center;
                                     margin-top: 75px;">
-                                        <button class="btn-block btn-lg t-btn contact-us" type="submit">Submit</button>
+                                        <button class="btn-block btn-lg t-btn contact-us contact-us-form"  id="contact-us-form" type="submit">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -188,7 +188,8 @@ input[type="file"] {
             var inputs = $(form).find('input');
             var allInputsValid = validate_inputs(form);
 
-            if (allInputsValid) {
+            // alert(allInputsValid);
+            // if (allInputsValid) {
                 form.classList.add('was-validated');
                 var formData = new FormData(form);
                 $.ajax({
@@ -231,7 +232,7 @@ input[type="file"] {
                     }
                 });
             }
-        }
+        // }
 
         $(document).on('change', '#country_id', function () {
             var nationality_id = $(this).val();
