@@ -213,9 +213,9 @@ select::-ms-expand {
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-2 text-center ">
-                                            <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 5px;margin-top: 14px;">
+                                            <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 5px;margin-top: 10px;">
                                         </div>
-                                        <div class="col-md-10 hiddencheck" style="margin-top: 8px;padding:0px;">Select All</div>
+                                        <div class="col-md-10 hiddencheck" style="margin-top: 7px;padding:0px; font-size:13px;">Select All</div>
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
@@ -227,14 +227,14 @@ select::-ms-expand {
                                 </div>
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 183px;">
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 195px;">
                                             <i class="fa fa-trash" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 edit">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 165px;">
+                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 195px;">
                                             <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);"></i>
                                         </div>
                                     </div>
