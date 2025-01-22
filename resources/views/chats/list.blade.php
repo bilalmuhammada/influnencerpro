@@ -597,7 +597,7 @@ $(document).ready(function() {
                     var emojioneEditor = $('.emojionearea-editor');
                     if (response.is_blocked) {
                         // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
+                        // button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
@@ -617,7 +617,7 @@ $(document).ready(function() {
                             emojioneEditor.attr('contenteditable', 'true');
                         }
 
-                        button.find('i').css('color', 'grey');
+                        // button.find('i').css('color', 'grey');
                     }
                 }
             });
