@@ -566,13 +566,14 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
                                             
-                                            <select name="base_city_id" id="" class="form-control selectdropdown city_id floating">
-                                                
-
-                                            
-              
-                                           
-                                            
+                                            <select name="base_city_id" id="" class="form-control selectdropdown  floating {{ isset($influencer_personal_info->country_id) ? '' : 'city_id' }} ">
+                                                @if(isset($influencer_personal_info->country_id))
+                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->country_id)->get() as $city)
+                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                @endforeach
+                                            @else
+                                                <option value="" hidden disabled>Select City</option>
+                                            @endif
                                             </select>
                                         <label for="username" class="focus-label" >Based City</label>
                                         </div>
@@ -624,32 +625,18 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
-                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown city_id floating">
+                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown  floating   {{ isset($influencer_personal_info->country_id) ? '' : 'city_id' }}">
                                                 <option value="" disabled hidden selected>&nbsp;</option>
-                                                @php
-                                                if($influencer_personal_info && isset($influencer_personal_info->travlling_one_country_id)){
-
-                                                    $static= DB::table('states')->where('country_id',$influencer_personal_info->travlling_one_country_id)->pluck('id')->toArray();
-                                                    
-                                                  
-                                                    $states_ids = getCityByStateIds($static)->pluck('id')->toArray();
-                                                  
-                                                }else{
-                                                     $states_ids = [1];
-                                                }
-
-                                               
-                                            @endphp
-                                            
-                                                @foreach(getCityByStateId(1) as $city)
-
-                                                    <option
-                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $states_ids == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                         
+                                                @if(isset($influencer_personal_info->travlling_one_country_id))
+                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_one_country_id)->get() as $city)
+                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_one_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
+                                            @else
+                                                <option value="" hidden disabled>Select City</option>
+                                            @endif
                                             </select>
-                                            @php
-                                            //    dd($static,$states_ids,getCityByStateId(1));
-                                            @endphp
+                                           
                                         <label for="username" class="focus-label"  >Traveling City</label>
                                         </div>
 
@@ -700,23 +687,16 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                           
-                                            <select name="travlling_two_city_id" id="" class="form-control city_id selectdropdown floating">
-                                                @php
-                                                    if($availabilities && count($availabilities) > 0){
-                                                        $states_ids = getStateByCountryId($availabilities[0]['country_id'])->pluck('id')->toArray();
+                                            <select name="travlling_two_city_id" id="" class="form-control  selectdropdown floating {{ isset($influencer_personal_info->travlling_two_country_id) ? '' : 'city_id' }}">
+                                           
 
-  
-                                                    }else{
-                                                        $states_ids = [1];
-                                                    }
-                                                @endphp
-
-                                                <option value="" selected>&nbsp;</option>
-                                                @foreach(getCityByStateIds($states_ids) as $city)
-
-                                                    <option
-                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                @if(isset($influencer_personal_info->travlling_two_country_id))
+                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_two_country_id)->get() as $city)
+                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
+                                            @else
+                                                <option value="" hidden disabled>Select City</option>
+                                            @endif
                                             </select>
                                             <label for="username" class="focus-label"  >Traveling City</label>
                                         </div>
@@ -771,18 +751,19 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                         
-                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown city_id floating">
+                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown  floating  {{ isset($influencer_personal_info->travlling_two_country_id) ? '' : 'city_id' }}">
 
                                              
 
-                                                <option value=""  hidden selected>&nbsp;</option>
-                                                @foreach(getCityByStateIds($states_ids) as $city)
-                                              
-                                                    <option
-                                                        value="{{ $city->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
+                                                @if(isset($influencer_personal_info->travlling_three_country_id))
+                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_three_country_id)->get() as $city)
+                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
+                                            @else
+                                                <option value="" hidden disabled>Select City</option>
+                                            @endif
                                             </select>
-                                                <label for="username" class="focus-label" style="margin-top:-15px;">Traveling City</label>
+                                                <label for="username" class="focus-label" >Traveling City</label>
 
                                         </div>
                                     </div>
