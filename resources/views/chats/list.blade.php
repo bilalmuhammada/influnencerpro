@@ -584,7 +584,7 @@ $(document).ready(function() {
         
             var chatId = button.data('chat-id');
 
-            alert(chatId);
+          
             $.ajax({
                 url: "{{ route('chat.block') }}",
                 method: "POST",
