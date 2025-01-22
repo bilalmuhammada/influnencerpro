@@ -581,8 +581,10 @@ $(document).ready(function() {
         // Toggle block
         $('.block-chat').on('click', function() {
             var button = $(this);
+        
             var chatId = button.data('chat-id');
 
+            alert(chatId);
             $.ajax({
                 url: "{{ route('chat.block') }}",
                 method: "POST",
