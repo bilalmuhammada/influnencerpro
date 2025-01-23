@@ -248,8 +248,8 @@ select::-ms-expand {
                                     @foreach($chats as $chat)
                                    
                                         <a href="javascript:void(0);"
-                                           class="media chat-title @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
-                                           style="display: flex;"
+                                           class="media chatActionBlock chat-title    @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                           style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
                                            <input type="checkbox" style="width: 27 !important; margin-left:-14px;position: relative; z-index: 10; pointer-events: auto; "
@@ -579,15 +579,21 @@ $(document).ready(function() {
             });
         });
 
+      
+        $('.chatActionBlock').on('click', function() {
+
+            const chatInput = $('#emoji-trigger');
+
+// Get the chat block status
+const isBlocked = chatInput.data('chat-block');
+alert(isBlocked);
+        });
+
         // Toggle block
         $('.block-chat').on('click', function() {
 
 
-            const chatInput = $('#emoji-trigger');
-            const isBlocked = chatInput.data('chat-block');
-
-            alert(isBlocked);
-
+            
 
 
             var button = $(this);
