@@ -404,7 +404,7 @@ select::-ms-expand {
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger" 
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                                           data-chat-id="{{ $chat->id }}" @if($chat->is_blocked == 1)  @endif style="border-radius: 30px; width: 100%; padding-right: 50px;"
+                                                           data-chat-id="{{ $chat->id }}"  data-chat-block="{{$chat->is_blocked }}"    style="border-radius: 30px; width: 100%; padding-right: 50px;"
                                                            >
                                                    
                                                 </div>
@@ -450,6 +450,27 @@ select::-ms-expand {
         var api_url = "{{ env('API_URL') }}";
         $(document).on('click', '.hiddencheck', function(e) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
+});
+$(document).ready(function () {
+    // Select the input field by its ID
+    const chatInput = $('#emoji-trigger');
+
+    // Get the chat block status from the data attribute
+    const isBlocked = chatInput.data('chat-block');
+    var emojioneArea = $('.emojionearea.emojionearea-inline');
+    var emojioneEditor = $('.emojionearea-editor');
+    // Check the condition and apply the block if necessary
+    if (isBlocked) {
+        button.find('i').css('color', 'goldenrod');
+                        if (emojioneArea.length > 0) {
+                                emojioneArea.css({
+                                    'background': '#fdeaea',
+                                    'cursor': 'not-allowed',
+                                    'pointer-events': 'none'
+                                });
+                                emojioneEditor.attr('contenteditable', 'false');
+                        }
+    }
 });
 
 
@@ -747,22 +768,7 @@ $(document).ready(function() {
             var message = $(thisElem).parents('.chat-footer').find('.input-msg-send');
             send_new_message(message, thisElem);
         });
-        //send request on input enter
-        // $(".emojionearea-editor").on('keydown', function (e) {
-        //     console.log('djkf')
-        //     console.log(e.which)
-        //     if (e.which === 13) {
-        //         console.log('good')
-        //         // Check if the key pressed is Enter (key code 13)
-        //         // e.preventDefault(); // Prevent the form submission
-        //
-        //         // send message
-        //         $(this).blur();
-        //         send_new_message($('.input-msg-send'), $('.input-msg-send'));
-        //         $(this).focus();
-        //
-        //     }
-        // });
+        
         $(document).on('keydown', '.emojionearea-editor', function (e) {
             // Check if the pressed key is Enter (keyCode 13)
          var inputMessage = $('.emojionearea-editor').text().trim();
