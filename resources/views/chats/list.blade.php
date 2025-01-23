@@ -457,6 +457,7 @@ $(document).ready(function () {
 
     // Get the chat block status from the data attribute
     const isBlocked = chatInput.data('chat-block');
+    alert(isBlocked);
     var emojioneArea = $('.emojionearea.emojionearea-inline');
     var emojioneEditor = $('.emojionearea-editor');
     // Check the condition and apply the block if necessary
