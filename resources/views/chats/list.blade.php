@@ -969,27 +969,41 @@ $.ajax({
 
 
 $(document).ready(function () {
-    // Select the input field by its ID
+    // Select the input field
     const chatInput = $('#emoji-trigger');
 
-    // Get the chat block status from the data attribute
-    const isBlocked = chatInput.data('chat-block');
-    alert(isBlocked);
-    var emojioneArea = $('.emojionearea.emojionearea-inline');
-    var emojioneEditor = $('.emojionearea-editor');
-    // Check the condition and apply the block if necessary
+    // Get the chat block status
+    const isBlocked = chatInput.data('chat-block') === true || chatInput.data('chat-block') === "true";
+
+    // Check if the chat is blocked
     if (isBlocked) {
-        button.find('i').css('color', 'goldenrod');
-                        if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '#fdeaea',
-                                    'cursor': 'not-allowed',
-                                    'pointer-events': 'none'
-                                });
-                                emojioneEditor.attr('contenteditable', 'false');
-                        }
+        // Disable the input
+        chatInput.prop('disabled', true);
+        
+        // Add placeholder text and update style
+        chatInput.attr('placeholder', 'This chat is blocked').css({
+            'background-color': '#fdeaea',
+            'cursor': 'not-allowed'
+        });
+
+        // Handle other UI changes if necessary
+        const emojioneArea = $('.emojionearea.emojionearea-inline');
+        const emojioneEditor = $('.emojionearea-editor');
+
+        if (emojioneArea.length > 0) {
+            emojioneArea.css({
+                'background': '#fdeaea',
+                'cursor': 'not-allowed',
+                'pointer-events': 'none'
+            });
+        }
+
+        if (emojioneEditor.length > 0) {
+            emojioneEditor.attr('contenteditable', 'false');
+        }
     }
 });
+
 
     </script>
 @endsection
