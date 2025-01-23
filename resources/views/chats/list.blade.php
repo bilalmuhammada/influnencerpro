@@ -592,7 +592,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
                     if (isBlocked) {
                         // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
+                        // button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
@@ -660,7 +660,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                             emojioneEditor.attr('contenteditable', 'true');
                         }
 
-                        button.find('i').css('color', 'grey');
+                        // button.find('i').css('color', 'grey');
                     }
                 }
             });
