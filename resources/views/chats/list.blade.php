@@ -582,6 +582,8 @@ $(document).ready(function() {
         // Toggle block
         $('.block-chat').on('click', function() {
 
+
+            const chatInput = $('#emoji-trigger');
             const isBlocked = chatInput.data('chat-block');
 
             alert(isBlocked);
