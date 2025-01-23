@@ -404,7 +404,7 @@ select::-ms-expand {
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger" 
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                                           data-chat-id="{{ $chat->id }}"  data-chat-block="{{$chat->is_blocked }}"    style="border-radius: 30px; width: 100%; padding-right: 50px;"
+                                                           data-chat-id="{{ $chat->id }}"  data-chat-block="{{$chat->is_blocked}}"    style="border-radius: 30px; width: 100%; padding-right: 50px;"
                                                            >
                                                    
                                                 </div>
@@ -451,28 +451,7 @@ select::-ms-expand {
         $(document).on('click', '.hiddencheck', function(e) {
     e.stopPropagation();  // Prevent the click from triggering the anchor link
 });
-$(document).ready(function () {
-    // Select the input field by its ID
-    const chatInput = $('#emoji-trigger');
 
-    // Get the chat block status from the data attribute
-    const isBlocked = chatInput.data('chat-block');
-    alert(isBlocked);
-    var emojioneArea = $('.emojionearea.emojionearea-inline');
-    var emojioneEditor = $('.emojionearea-editor');
-    // Check the condition and apply the block if necessary
-    if (isBlocked) {
-        button.find('i').css('color', 'goldenrod');
-                        if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '#fdeaea',
-                                    'cursor': 'not-allowed',
-                                    'pointer-events': 'none'
-                                });
-                                emojioneEditor.attr('contenteditable', 'false');
-                        }
-    }
-});
 
 
 $(document).on("click", "#userOptionsMenu", function() {
@@ -985,6 +964,31 @@ $.ajax({
     }
 });
 
+});
+
+
+
+$(document).ready(function () {
+    // Select the input field by its ID
+    const chatInput = $('#emoji-trigger');
+
+    // Get the chat block status from the data attribute
+    const isBlocked = chatInput.data('chat-block');
+    alert(isBlocked);
+    var emojioneArea = $('.emojionearea.emojionearea-inline');
+    var emojioneEditor = $('.emojionearea-editor');
+    // Check the condition and apply the block if necessary
+    if (isBlocked) {
+        button.find('i').css('color', 'goldenrod');
+                        if (emojioneArea.length > 0) {
+                                emojioneArea.css({
+                                    'background': '#fdeaea',
+                                    'cursor': 'not-allowed',
+                                    'pointer-events': 'none'
+                                });
+                                emojioneEditor.attr('contenteditable', 'false');
+                        }
+    }
 });
 
     </script>
