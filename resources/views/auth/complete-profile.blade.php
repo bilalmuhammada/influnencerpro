@@ -159,9 +159,7 @@ font-weight: bold;
         border: 0px !important;
     background-color: white !important; /* Change this to the desired color */
   }
-  .select2-container--open .select2-dropdown--below {
-    margin-left: 15px !important;
-  }
+
   #select2-language_dropdown-container {
     margin-left: -15px !important;
 }
@@ -1170,16 +1168,18 @@ display: none !important;
                                     </div>
                                 </div>
                                 <div style="left: 41%; position: absolute;">
-                                    <label for="fileInput" class="fileInput" style=" font-weight:bold; cursor: pointer;">
+                                    <label for="fileInput" class="fileInput0" style=" font-weight:bold;"> 
                                         Or Upload & Drop Images Here
-                                    </label>
+                                   </label>
                                 </div>
                                 
                                 <!-- Hidden file input -->
-                                <input type="file" id="fileInput"  style="display: none;" accept="image/*" multiple>
+                                <input type="file" id="fileInput0"  style="display: none;" accept="image/*" multiple>
                                 
                                 <!-- Dropzone Container -->
                                 <div class="dropzone-container dz-message" id="my-Dropzone" style="border:white; color: blue; font-weight: bold;">
+                                  
+                                 
                                     <!-- Dropzone message or content -->
                                 </div>
                                 
@@ -1252,6 +1252,8 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
 });
             $(document).ready(function() {
                 
+
+               
 
             $('.datepicker').datepicker({
                 dateFormat: 'dd-M-yy',

@@ -1847,7 +1847,7 @@ border: 1px solid #2d11e7;
 .select2-container--default .select2-selection--single {
     background-color: transparent !important;
     border: none !important;
-    height: auto !important;
+   
 }
 
 .select2-container--default .select2-results__option {

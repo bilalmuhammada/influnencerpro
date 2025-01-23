@@ -7,6 +7,14 @@
         .floating:focus {
     border: 1px solid blue !important;
 }
+.lobibox-notify.notify-mini .lobibox-notify-body {
+    margin: 7px 1px 0px 0px !important;
+}
+.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
+    width: 230px !important;
+    margin-right: 120px !important; 
+    /* text-align: center !important; */
+}
     
 input::placeholder{
     font-size: 13px;
@@ -35,7 +43,7 @@ input[type="file"] {
     </style>
    <div class="content" style="padding: 17px 0 30px;">
     <div class="container">
-        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-top: -1rem;">
+        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo shaking" style="margin-top: -1rem;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
         <div class="row">
@@ -201,11 +209,12 @@ input[type="file"] {
                     dataType: "JSON",
                     success: function (response) {
                         if (response.status) {
+                            show_success_message(response.message)
                             // Handle successful submission here
 
-                            setTimeout(function () {
-                                window.location.assign(base_url);
-                            }, 600);
+                            // setTimeout(function () {
+                            //     window.location.assign(base_url);
+                            // }, 600);
                         } else {
                             $('.invalid-feedback').show();
                             // Handle validation errors

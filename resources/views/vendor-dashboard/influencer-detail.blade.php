@@ -545,7 +545,7 @@ color: goldenrod !important;
                                    
                                     <div class="form-group">
                                     <p style="text-align:justify;line-height: 1.5rem !important;" class="badge-skill">
-                                    {{ getSafeValueFromObject($influencer->personal_information, 'Bio') }}
+                                    {{ getSafeValueFromObject($influencer->personal_information, 'bio') }}
                                      </p>
                                         <!-- <div
                                             class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'bio') }}</div> -->

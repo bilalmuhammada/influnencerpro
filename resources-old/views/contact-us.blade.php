@@ -108,11 +108,13 @@
                     dataType: "JSON",
                     success: function (response) {
                         if (response.status) {
+
+                            showAlert("success",response.message)
                             // Handle successful submission here
 
-                            setTimeout(function () {
-                                window.location.assign(base_url);
-                            }, 600);
+                            // setTimeout(function () {
+                            //     window.location.assign(base_url);
+                            // }, 600);
                         } else {
                             $('.invalid-feedback').show();
                             // Handle validation errors
