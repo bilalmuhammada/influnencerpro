@@ -661,9 +661,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                            
                             emojioneEditor.attr('contenteditable', 'true');
                         }
-                        $('.chat-remove').removeAttr("style");
-
-                        alert('ddd');
+                       
                          button.find('i').css('color', 'grey');
                     }
                 }
