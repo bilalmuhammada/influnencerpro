@@ -651,6 +651,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                         }
                     } else {
                         // show_success_message('User Unblocked');
+                        button.find('i').css('color', 'grey');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
@@ -658,11 +659,11 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                                 'pointer-events': ''
                             });
 
-                           
+                            
                             emojioneEditor.attr('contenteditable', 'true');
                         }
                        
-                         button.find('i').css('color', 'grey');
+                       
                     }
                 }
             });
