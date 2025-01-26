@@ -631,7 +631,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
             var isblocked =  button.find('i').data('remove-color');
 
 
-            alert(isblocked);
+            alert(isblocked );
 
        
             $.ajax({
