@@ -535,7 +535,7 @@ color: goldenrod !important;
                                             class="badge-skill">{{$influencer->personal_information->price_include ?? ''}}
                                             {{-- {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_include_formatted') }} --}}
                                         </p>
-                                    </div>
+                                    </div> 
                                 </div>
                                 
                               

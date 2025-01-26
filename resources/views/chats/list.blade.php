@@ -278,7 +278,7 @@ select::-ms-expand {
                                                         <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
                                                     <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban"  style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"></i>
+                                                        <i class="fa fa-ban chat-remove"  style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"></i>
                                                     </button>
                                                 </div>
                                               
@@ -657,6 +657,8 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                                 'cursor': '',
                                 'pointer-events': ''
                             });
+
+                            $(".chat-remove").removeAttr("style");
                             emojioneEditor.attr('contenteditable', 'true');
                         }
 
