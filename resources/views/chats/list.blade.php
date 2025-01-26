@@ -658,11 +658,11 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                                 'pointer-events': ''
                             });
 
-                            $(".chat-remove").removeAttr("style");
+                            button.find('i').removeAttr("style");
                             emojioneEditor.attr('contenteditable', 'true');
                         }
 
-                        // button.find('i').css('color', 'grey');
+                         button.find('i').css('color', 'grey');
                     }
                 }
             });
