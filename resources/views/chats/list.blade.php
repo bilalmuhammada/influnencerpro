@@ -67,6 +67,7 @@
         margin-bottom: 15px;
     }
     .dropdown-menu.show{
+        padding: 0rem 0;
         display: block;
         min-width: 12px;
         margin-left: -7rem;
@@ -630,7 +631,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
             var chatId = button.data('chat-id');
            
 
-            alert(chatId,button);
+          
        
             $.ajax({
                 url: "{{ route('chat.block') }}",
