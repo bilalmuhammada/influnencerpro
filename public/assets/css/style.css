@@ -2174,7 +2174,7 @@ border: 1px solid #2d11e7;
 
 .main-nav>li .submenu li a {
     display: block;
-    padding: 4px 4px 4px 4px;
+    /* padding: 4px 4px 4px 4px; */
     clear: both;
     white-space: nowrap;
     font-size: 15px;
