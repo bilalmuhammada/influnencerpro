@@ -630,6 +630,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
             var chatId = button.data('chat-id');
            
 
+            alert(chatId);
        
             $.ajax({
                 url: "{{ route('chat.block') }}",
