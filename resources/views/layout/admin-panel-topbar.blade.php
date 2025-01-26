@@ -245,7 +245,7 @@ color: goldenrod !important;
                 </li>
                
                 <li class="has-submenu">
-                    <a href="{{ env('BASE_URL') . '#' }}">
+                    <a href="#">
                         <img src="{{ session()->has('User') ? session()->get('User')->influencer_profile_image_main : asset('assets/img/user.png') }}" alt="img" width="40" height="40" style="border-radius:20px;margin-top:-10px;">
                     </a>
                     <ul class="submenu" style="margin-left: -25px;">
