@@ -278,8 +278,8 @@ select::-ms-expand {
                                                         <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
                                                     <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban "  data-remove-color="{{$chat->is_blocked}} "   
-                                                        {{-- style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};" --}}
+                                                        <i class="fa fa-ban"   
+                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"
                                                             ></i>
                                                     </button>
                                                 </div>
@@ -352,7 +352,7 @@ select::-ms-expand {
                                             
                                             <!-- Dropdown menu options -->
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                <a class="dropdown-item block-chat "  data-remove-color="{{$chat->is_blocked}}"   data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
+                                                <a class="dropdown-item block-chat "    data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
                                                 <a class="dropdown-item report-user-btn" data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
                                             </div>
                                         </div>
