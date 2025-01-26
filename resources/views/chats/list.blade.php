@@ -279,7 +279,7 @@ select::-ms-expand {
                                                     </button>
                                                     <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
                                                         <i class="fa fa-ban"   
-                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"
+                                                        {{-- style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};" --}}
                                                             ></i>
                                                     </button>
                                                 </div>
@@ -628,10 +628,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
             var button = $(this);
         
             var chatId = button.data('chat-id');
-            var isblocked =  button.find('i').data('remove-color');
-
-
-            alert(isblocked );
+           
 
        
             $.ajax({
