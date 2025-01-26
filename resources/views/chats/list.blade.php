@@ -352,7 +352,7 @@ select::-ms-expand {
                                             
                                             <!-- Dropdown menu options -->
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                <a class="dropdown-item block-chat " data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
+                                                <a class="dropdown-item block-chat "  data-remove-color="{{$chat->is_blocked}}"   data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
                                                 <a class="dropdown-item report-user-btn" data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
                                             </div>
                                         </div>
