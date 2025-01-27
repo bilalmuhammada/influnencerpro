@@ -551,7 +551,10 @@ class AuthController extends Controller
 
 //   
 
-UserProfessionDetail::updateOrCreate($match, [
+$matchprf_user_id = ['user_id' => $user_id];
+
+
+UserProfessionDetail::updateOrCreate($matchprf_user_id, [
     'user_id' => Auth::id(),
     'professional_category' => $request->professional_category,
     'category_id' => $request->category_id,
@@ -562,6 +565,7 @@ UserProfessionDetail::updateOrCreate($match, [
     'price_include' => $request->price_include,
     'skills' => json_encode($request->skills),
 ]);
+dd('dd');
         // user feature store here
         if ($request->features) {
             // dd($request->features);
