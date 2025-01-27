@@ -555,7 +555,7 @@ $matchprf_user_id = ['user_id' => $user_id];
 
 
 
-dd(json_encode($request->skills));
+
 UserProfessionDetail::updateOrCreate($matchprf_user_id, [
     'user_id' => Auth::id(),
     'professional_category' => $request->professional_category,
