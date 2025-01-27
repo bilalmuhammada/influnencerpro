@@ -562,10 +562,10 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
     'available_from_date' => $request->available_from_date,
     'available_to_date' => $request->available_to_date,
     'price' => $request->price,
-    'price_include' => $request->price_include,
+    // 'price_include' => $request->price_include,
     'skills' => json_encode($request->skills),
 ]);
-dd('dd');
+
         // user feature store here
         if ($request->features) {
             // dd($request->features);
