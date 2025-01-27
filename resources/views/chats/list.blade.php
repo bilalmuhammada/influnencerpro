@@ -279,8 +279,8 @@ select::-ms-expand {
                                                         <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
                                                     </button>
                                                     <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban"   
-                                                        {{-- style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};" --}}
+                                                        <i class="fa fa-ban removeattr"   
+                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"
                                                             ></i>
                                                     </button>
                                                 </div>
@@ -587,9 +587,7 @@ $(document).ready(function() {
 
             const chatInput = $('#emoji-trigger');
 
-// Get the chat block status
-const isBlocked = chatInput.data('chat-block');
-// alert(isBlocked);
+
 
 var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
@@ -606,6 +604,8 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                         }
                     } else {
                         // show_success_message('User Unblocked');
+
+                        $('.removeattr').removeAttr('style');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
@@ -656,6 +656,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                         }
                     } else {
                         // show_success_message('User Unblocked');
+                        $('.removeattr').removeAttr('style');
                         button.find('i').css('color', 'grey');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
