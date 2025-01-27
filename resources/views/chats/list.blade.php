@@ -656,7 +656,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
                         }
                     } else {
                         // show_success_message('User Unblocked');
-                        $('.removeattr').removeAttr('style');
+                        
                         button.find('i').css('color', 'grey');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
