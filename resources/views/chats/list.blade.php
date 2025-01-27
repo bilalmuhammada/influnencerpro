@@ -590,7 +590,7 @@ $(document).ready(function() {
 const isBlocked = chatInput.data('chat-block');
  alert(isBlocked);
 
-var emojioneArea = $('.emojionearea.emojionearea-inline');
+                   var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
                     if (isBlocked) {
                         // show_error_message('User Blocked')
@@ -628,10 +628,7 @@ var emojioneArea = $('.emojionearea.emojionearea-inline');
             var button = $(this);
         
             var chatId = button.data('chat-id');
-            var isblocked =  button.find('i').data('remove-color');
-
-
-            alert(isblocked );
+            
 
        
             $.ajax({
