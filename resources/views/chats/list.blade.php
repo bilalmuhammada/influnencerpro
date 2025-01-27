@@ -605,14 +605,14 @@ const isBlocked = chatInput.data('chat-block');
                         }
                     } else {
                         // show_success_message('User Unblocked');
-                        if (emojioneArea.length > 0) {
+                        // if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
                                 'cursor': '',
                                 'pointer-events': ''
                             });
                             emojioneEditor.attr('contenteditable', 'true');
-                        }
+                        // }
 
                         button.find('i').css('color', 'grey');
                     }
