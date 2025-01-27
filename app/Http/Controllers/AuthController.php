@@ -525,39 +525,27 @@ class AuthController extends Controller
             'weight' => $request->weight,
             'shoes_size' => $request->shoes_size,
             'bio' => $request->bio,
-
             'price_include' => $request->price_include,
             'price_negotiable' => $request->price_negotion,
-
             'willing_to_traval' => $request->willing_to_traval,
             'is_collaboration' => $request->is_collaboration,
             'national_id' =>$request->national_id,
             'country_id' => $request->base_country_id,
             'city_id' => $request->base_city_id,
-
             'travlling_one_country_id' => $request->travlling_one_country_id,
             'travlling_one_city_id' => $request->travlling_one_city_id,
             'travlling_one_from_date' =>date('Y-m-d', strtotime($request->travlling_one_from_date)),
             'travlling_one_to_date' => date('Y-m-d', strtotime($request->travlling_one_to_date)),
-
-
             'travlling_two_country_id' => $request->travlling_two_country_id,
             'travlling_two_city_id' => $request->travlling_two_city_id,
             'travlling_two_from_date' => date('Y-m-d', strtotime($request->travlling_two_from_date)),
             'travlling_two_to_date' => date('Y-m-d', strtotime($request->travlling_two_to_date)),
-
-
             'travlling_three_country_id' => $request->travlling_three_country_id,
             'travlling_three_city_id' => $request->travlling_three_city_id,
             'travlling_three_from_date' => date('Y-m-d', strtotime($request->travlling_three_from_date)),
             'travlling_three_to_date' => date('Y-m-d', strtotime($request->travlling_three_to_date)),
-
             'main_available_from_date' => date('Y-m-d', strtotime($request->main_available_from_date)),
             'base_date' => date('Y-m-d', strtotime($request->base_date)),
-            
-
-
-
             'user_id' => Auth::id()
         ]);
 
