@@ -595,14 +595,14 @@ const isBlocked = chatInput.data('chat-block');
                     if (isBlocked) {
                         // show_error_message('User Blocked')
                         button.find('i').css('color', 'goldenrod');
-                        if (emojioneArea.length > 0) {
+                        // if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
                                     'cursor': 'not-allowed',
                                     'pointer-events': 'none'
                                 });
                                 emojioneEditor.attr('contenteditable', 'false');
-                        }
+                        // }
                     } else {
                         // show_success_message('User Unblocked');
                         // if (emojioneArea.length > 0) {
