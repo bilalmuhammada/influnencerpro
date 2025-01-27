@@ -588,7 +588,6 @@ $(document).ready(function() {
 
 // Get the chat block status
 const isBlocked = chatInput.data('chat-block');
- alert(isBlocked);
 
                    var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
