@@ -550,6 +550,18 @@ class AuthController extends Controller
         ]);
 
 //   
+
+UserProfessionDetail::updateOrCreate($match, [
+    'user_id' => Auth::id(),
+    'professional_category' => $request->professional_category,
+    'category_id' => $request->category_id,
+    'category_model_id' => $request->category_model_id,
+    'available_from_date' => $request->available_from_date,
+    'available_to_date' => $request->available_to_date,
+    'price' => $request->price,
+    'price_include' => $request->price_include,
+    'skills' => json_encode($request->skills),
+]);
         // user feature store here
         if ($request->features) {
             // dd($request->features);
@@ -620,17 +632,7 @@ class AuthController extends Controller
         }
 
         // user professional detail store here
-        UserProfessionDetail::updateOrCreate($match, [
-            'user_id' => Auth::id(),
-            'professional_category' => $request->professional_category,
-            'category_id' => $request->category_id,
-            'category_model_id' => $request->category_model_id,
-            'available_from_date' => $request->available_from_date,
-            'available_to_date' => $request->available_to_date,
-            'price' => $request->price,
-            'price_include' => $request->price_include,
-            'skills' => json_encode($request->skills),
-        ]);
+       
 
         // $logo = $request->file('logo');
         // if ($logo && $Influencer) {
