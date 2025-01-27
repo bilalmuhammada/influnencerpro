@@ -251,7 +251,7 @@ select::-ms-expand {
                                            class="media chatActionBlock chat-title    @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
-                                           unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
+                                           unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}"  >
                                            <input type="checkbox" style="width: 27 !important; margin-left:-14px;position: relative; z-index: 10; pointer-events: auto; "
                                            value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
                                             <div class="media-img-wrap flex-shrink-0">
@@ -588,7 +588,7 @@ $(document).ready(function() {
 
 // Get the chat block status
 const isBlocked = chatInput.data('chat-block');
-// alert(isBlocked);
+ alert(isBlocked);
 
 var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
