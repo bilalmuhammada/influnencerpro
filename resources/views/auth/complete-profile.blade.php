@@ -850,7 +850,7 @@ display: none !important;
                                     </div>
 
                                     @php
-                                    dd($influencer_professional_detail);
+                                    // dd($influencer_professional_detail);
                                     @endphp
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
