@@ -617,7 +617,7 @@ display: none !important;
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
-                                         <label for="username" class="focus-label">Traveling Country 1</label>
+                                         <label for="username" class="focus-label">Traveling Country &nbsp;&nbsp;1</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -679,7 +679,7 @@ display: none !important;
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                         @endforeach
                                     </select>
-                                            <label for="username" class=" focus-label">Traveling Country 2</label>
+                                            <label for="username" class=" focus-label">Traveling Country &nbsp;&nbsp;2</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -739,7 +739,7 @@ display: none !important;
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                         @endforeach
                                     </select>
-                                           <label for="username" class=" focus-label">Traveling Country 3</label>
+                                           <label for="username" class=" focus-label">Traveling Country &nbsp;&nbsp;3</label>
                                         </div>
                                     </div>
 
@@ -1259,7 +1259,7 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
                 dateFormat: 'dd-M-yy',
                 changeMonth: true,
                 changeYear: true,
-             yearRange: "2024:+0",
+              yearRange: "2025:2030"
 
 
             });
