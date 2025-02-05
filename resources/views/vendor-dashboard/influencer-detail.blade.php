@@ -306,7 +306,7 @@ color: goldenrod !important;
                                     <label class="font-label">Cloth Size-EU</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'shoes_size') }}</span>
+                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject($influencer->personal_information, 'clothsize') }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;">
