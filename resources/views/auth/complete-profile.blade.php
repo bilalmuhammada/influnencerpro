@@ -49,6 +49,7 @@ border: 0px !important;
   }
   .select2-selection__choice__display{
     margin-left: -5px !important;
+    font-size: 15px;
   }
   .dz-preview {
             position: relative;
@@ -415,18 +416,15 @@ display: none !important;
                                             class="form-control  mySelect floating">
                                       
                                         <option value="" selected hidden  disabled></option>
-                                        <option value="afro">Afro</option>
-                                                                           <option value="blad">Bald</option>
-                                                                           <option value="curly">Curly</option>
-                                                                           <option value="coily">Coily</option>
-                                                                         
-                                                                          
-                                                                           <option value="long">Long</option>
-                                                                           <option value="short">Short</option>
-                                                                           <option value="straight">Straight</option>
-                                                                           <option value="thick">Thick</option>
-                                                                           
-                                                                            <option value="wavy">Wavy</option>
+                                        <option value="afro" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'afro' ? 'selected' : '' }}>Afro</option>
+                                        <option value="blad" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'blad' ? 'selected' : '' }}>Bald</option>
+                                        <option value="curly" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'curly' ? 'selected' : '' }}>Curly</option>
+                                        <option value="coily" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'coily' ? 'selected' : '' }}>Coily</option>
+                                        <option value="long" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'long' ? 'selected' : '' }}>Long</option>
+                                        <option value="short" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'short' ? 'selected' : '' }}>Short</option>
+                                        <option value="straight" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'straight' ? 'selected' : '' }}>Straight</option>
+                                        <option value="thick" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'thick' ? 'selected' : '' }}>Thick</option>
+                                        <option value="wavy" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'wavy' ? 'selected' : '' }}>Wavy</option>
                                     </select>
                                       <label for="username" class="focus-label">Hair Type</label>
                                         </div>
@@ -437,20 +435,19 @@ display: none !important;
                                             <select name="hair_color" id=""
                                             class="form-control mySelect floating">
                                             <option value="" selected hidden  disabled></option>
-                                        <option value="balayage">Balayage</option> 
-                                        <option value="black">Black</option>
-                                        <option value="blonde">Blonde</option>
-                                        <option value="brown">Brown</option>
-                                        <option value="dark">Dark</option>
-                                        <option value="ginger">Ginger</option>
-                                        <option value="gold">Gold</option>
-                                        <option value="green">Green</option>
-                                        <option value="grey">Grey</option>
-                                        <option value="mixed">Mixed</option>
-
-                                       
-                                        <option value="red">Red</option>
-                                        <option value="white">White</option>
+                                            
+                                            <option value="balayage" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'balayage' ? 'selected' : '' }}>Balayage</option>
+                                            <option value="black"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'black' ? 'selected' : '' }}>Black</option>
+                                            <option value="blonde"   {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'blonde' ? 'selected' : '' }}>Blonde</option>
+                                            <option value="brown"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'brown' ? 'selected' : '' }}>Brown</option>
+                                            <option value="dark"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'dark' ? 'selected' : '' }}>Dark</option>
+                                            <option value="ginger"   {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'ginger' ? 'selected' : '' }}>Ginger</option>
+                                            <option value="gold"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'gold' ? 'selected' : '' }}>Gold</option>
+                                            <option value="green"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'green' ? 'selected' : '' }}>Green</option>
+                                            <option value="grey"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'grey' ? 'selected' : '' }}>Grey</option>
+                                            <option value="mixed"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'mixed' ? 'selected' : '' }}>Mixed</option>
+                                            <option value="red"      {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'red' ? 'selected' : '' }}>Red</option>
+                                            <option value="white"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'white' ? 'selected' : '' }}>White</option>
                                     </select>
                                     <label for="username" class="focus-label">Hair Color</label>
                                         </div>
@@ -466,20 +463,22 @@ display: none !important;
                                             <select name="eye_color" id=""
                                             class="form-control  mySelect  floating">
                                             <option value="" selected hidden  disabled></option>
-                                        <option value="azure">Azure</option>
-                                           <option value="Agate">Agate</option>
-                                           <option value="amber">Amber</option>
-                                           <option value="blue">Blue</option>
-                                           <option value="black">Black</option>
-                                           <option value="brown">Brown</option>
-                                           <option value="grey">Gray</option> 
-                                           <option value="green">Green</option>
-                                           <option value="hazel">Hazel</option>
-                                           <option value="mixed">Mixed</option>
-                                           <option value="nordic">Nordic</option>
-                                          
-                                           <option value="red">Red</option>
-                                           <option value="Serene ">Serene </option>
+                                       
+
+
+                                           <option value="azure" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'azure' ? 'selected' : '' }}>Azure</option>
+                                           <option value="Agate" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'Agate' ? 'selected' : '' }}>Agate</option>
+                                           <option value="amber" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'amber' ? 'selected' : '' }}>Amber</option>
+                                           <option value="blue" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'blue' ? 'selected' : '' }}>Blue</option>
+                                           <option value="black" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'black' ? 'selected' : '' }}>Black</option>
+                                           <option value="brown" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'brown' ? 'selected' : '' }}>Brown</option>
+                                           <option value="grey" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'grey' ? 'selected' : '' }}>Gray</option>
+                                           <option value="green" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'green' ? 'selected' : '' }}>Green</option>
+                                           <option value="hazel" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'hazel' ? 'selected' : '' }}>Hazel</option>
+                                           <option value="mixed" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'mixed' ? 'selected' : '' }}>Mixed</option>
+                                           <option value="nordic" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'nordic' ? 'selected' : '' }}>Nordic</option>
+                                           <option value="red" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'red' ? 'selected' : '' }}>Red</option>
+                                           <option value="Serene" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'Serene' ? 'selected' : '' }}>Serene</option>
                                     </select>
                                     <label for="username" class="focus-label">Eye Color</label>
                                         </div>
@@ -522,13 +521,13 @@ display: none !important;
                                             <select name="clothsize" id=""
                                             class="form-control  mySelect  floating">
                                             <option value="" selected hidden  disabled></option>
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                         <option value="L">L</option> 
-                                         <option value="XL">XL</option>
-                                         <option value="XXL">XXL</option>
-                                         <option value="XXXL">XXXL</option>
+                                            <option value="XS" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XS' ? 'selected' : '' }}>XS</option>
+                                            <option value="S"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'S' ? 'selected' : '' }}>S</option>
+                                            <option value="M"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'M' ? 'selected' : '' }}>M</option>
+                                            <option value="L"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'L' ? 'selected' : '' }}>L</option>
+                                            <option value="XL" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XL' ? 'selected' : '' }}>XL</option>
+                                            <option value="XXL" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XXL' ? 'selected' : '' }}>XXL</option>
+                                            <option value="XXXL"{{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XXXL' ? 'selected' : '' }}>XXXL</option>
                                     </select>
                                             <label for="username" class="focus-label">Cloth Size</label>
                                         </div>
