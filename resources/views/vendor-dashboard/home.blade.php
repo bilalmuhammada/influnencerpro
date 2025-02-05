@@ -906,10 +906,10 @@ color: #0504aa !important;
 
                                     <label class="font_label">Price $</label>
                                     <div class="row">
-                                        <div class="col-md-6"><input type="text" name="min_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Min" class="form-control"
+                                        <div class="col-md-6"><input type="text" name="min_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Min" class="form-control text-center"
                                                                      value="@if(request()->min_price){{ request()->min_price }}@endif"
                                                                    ></div>
-                                        <div class="col-md-6"><input type="text" name="max_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Max" class="form-control"
+                                        <div class="col-md-6"><input type="text" name="max_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Max" class="form-control text-center"
                                                                      value="@if(request()->max_price){{ request()->max_price }}@endif"
                                                                      ></div>
                                     </div>
