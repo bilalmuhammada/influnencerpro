@@ -58,8 +58,8 @@
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
-            margin-left: 1px !important;
-            /* margin-left: 0px !important; */
+            margin-left: 5px !important;
+           
         }
         .font_label {
             padding-top: 0px !important;
