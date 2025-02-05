@@ -523,6 +523,7 @@ class AuthController extends Controller
             'ethnicity_id' => $request->ethnicity_id,
             'eye_color' => $request->eye_color,
             'height' => $request->height,
+            'clothsize' => $request->clothsize,
             'weight' => $request->weight,
             'shoes_size' => $request->shoes_size,
             'bio' => $request->bio,
