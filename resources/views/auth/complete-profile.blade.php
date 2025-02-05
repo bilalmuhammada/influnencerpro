@@ -521,13 +521,13 @@ display: none !important;
                                             <select name="clothsize" id=""
                                             class="form-control  mySelect  floating">
                                             <option value="" selected hidden  disabled></option>
-                                            <option value="XS" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XS' ? 'selected' : '' }}>XS</option>
-                                            <option value="S"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'S' ? 'selected' : '' }}>S</option>
-                                            <option value="M"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'M' ? 'selected' : '' }}>M</option>
-                                            <option value="L"  {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'L' ? 'selected' : '' }}>L</option>
-                                            <option value="XL" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XL' ? 'selected' : '' }}>XL</option>
-                                            <option value="XXL" {{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XXL' ? 'selected' : '' }}>XXL</option>
-                                            <option value="XXXL"{{ isset($influencer_personal_info) && $influencer_personal_info->size == 'XXXL' ? 'selected' : '' }}>XXXL</option>
+                                            <option value="XS" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XS' ? 'selected' : '' }}>XS</option>
+                                            <option value="S"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'S' ? 'selected' : '' }}>S</option>
+                                            <option value="M"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'M' ? 'selected' : '' }}>M</option>
+                                            <option value="L"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'L' ? 'selected' : '' }}>L</option>
+                                            <option value="XL" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XL' ? 'selected' : '' }}>XL</option>
+                                            <option value="XXL" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XXL' ? 'selected' : '' }}>XXL</option>
+                                            <option value="XXXL"{{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XXXL' ? 'selected' : '' }}>XXXL</option>
                                     </select>
                                             <label for="username" class="focus-label">Cloth Size</label>
                                         </div>

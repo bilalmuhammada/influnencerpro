@@ -322,6 +322,7 @@ class AuthController extends Controller
             'hair_type' => $request->hair_type,
             'hair_color' => $request->hair_color,
             'age' => $request->age,
+            'clothsize' => $request->clothsize,
             'valid_license' => $request->valid_license,
             'tattoes' => $request->tattoes,
             'gender' => $request->gender,
