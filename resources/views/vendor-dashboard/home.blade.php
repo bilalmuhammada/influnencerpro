@@ -59,7 +59,7 @@
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             border: none !important;
-            margin-left: 5px !important;
+            margin-left: 0px !important;
            
         }
         .font_label {
@@ -201,6 +201,8 @@ color: #0504aa !important;
 }
 .select2-selection__choice__display{
  margin-left: -6px !important;
+ font-size: 14px;
+
 }
 .select2-selection--multiple{
     overflow-y: overlay !important;

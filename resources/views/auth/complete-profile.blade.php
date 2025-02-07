@@ -49,7 +49,7 @@ border: 0px !important;
   }
   .select2-selection__choice__display{
     margin-left: -5px !important;
-    font-size: 15px;
+    font-size: 14px;
   }
   .dz-preview {
             position: relative;
@@ -294,7 +294,11 @@ display: none !important;
                                 <div class="row" style="margin-top:-20px;">
                                     {{--                                    <div class="col-md-4">--}}
                                     {{--                                        <input type="text" name="uname" placeholder="Name"/>--}}
-                                    {{--                                    </div>--}}
+                                    {{--     
+                                
+                                </div>--}}
+
+ 
                                     <div class="col-md-4">
                                         <div class="form-group form-focus">
                                            
@@ -303,7 +307,7 @@ display: none !important;
                                                 {{-- <option value="">Select Influencer Category</option> --}}
                                                 @foreach(getCategories()->sortBy('name') as $category)
                                                     <option
-                                                        value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('category_id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
+                                                        value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
                                          <label for="" style="top: -18px;" class="focus-label">Influencer Category</label>
