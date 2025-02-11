@@ -33,7 +33,7 @@
     margin: 7px 1px 0px 0px !important;
 }
 .lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 100px !important;
+    width: 110px !important;
     margin-right: 110px !important; 
     /* text-align: center !important; */
 }
@@ -610,7 +610,9 @@ color: goldenrod !important;
                             @if($instagram && isset($instagram->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+
+                                        <a href="{{ $instagram ? 'https://' . ltrim($instagram->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                       
                                         <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -623,7 +625,8 @@ color: goldenrod !important;
                             @if($twitter  && isset($twitter->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{ $twitter ? 'https://' . ltrim($twitter->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                       
                                         <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -636,7 +639,8 @@ color: goldenrod !important;
                             @if($youtube && isset($youtube->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{ $youtube ? 'https://' . ltrim($youtube->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                       
                                         <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -648,7 +652,8 @@ color: goldenrod !important;
                             @if($tiktok && isset($tiktok->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{ $tiktok ? 'https://' . ltrim($tiktok->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                       
                                         <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -660,7 +665,8 @@ color: goldenrod !important;
                             @if($facebook && isset($facebook->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{ $facebook ? 'https://' . ltrim($facebook->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                       
                                         <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -673,7 +679,8 @@ color: goldenrod !important;
                             @if($snapchat && isset($snapchat->followers))
                             <li style="display: inline-block;">
                                 <div class="social-wrapper" style="text-align: center;">
-                                    <a href="">
+                                    <a href="{{ $snapchat ? 'https://' . ltrim($snapchat->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                     
                                         <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
@@ -686,7 +693,8 @@ color: goldenrod !important;
                         @if($pinterestProfiles && isset($pinterestProfiles->followers))
                         <li style="display: inline-block;">
                             <div class="social-wrapper" style="text-align: center;">
-                                <a href="">
+                                <a href="{{ $pinterestProfiles ? 'https://' . ltrim($pinterestProfiles->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                     
                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" class="shaking" alt="" width="30px">
                                 </a>
                                 <div class="text-center font-change followers-count">
@@ -698,7 +706,8 @@ color: goldenrod !important;
                 @if($web && isset($web->followers))
                 <li style="display: inline-block;">
                     <div class="social-wrapper" style="text-align: center;">
-                        <a href="">
+                        <a href="{{ $web ? 'https://' . ltrim($web->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
+                                    
                             <img src="{{ asset('assets/img/social-icon/web.png') }}" class="shaking" alt="" width="30px">
                         </a>
                         <div class="text-center font-change followers-count">

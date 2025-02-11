@@ -46,10 +46,13 @@ border: 0px !important;
   }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     border-right:0px solid !important;
+ 
+    top: -2px !important;
+   
   }
   .select2-selection__choice__display{
     margin-left: -5px !important;
-    font-size: 14px;
+    font-size: 12px;
   }
   .dz-preview {
             position: relative;
@@ -113,6 +116,7 @@ height: 200px;
   .form
   .select2-container--default .select2-selection--multiple .select2-selection__choice{
     font-size: 10px !important;
+    border: 0px solid #aaa !important;
   }
   .select2-container {
     z-index: 1 !important;
