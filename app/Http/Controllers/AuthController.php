@@ -975,17 +975,23 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
             
             $logo->move(public_path('uploads/users'), $logo_name);
 
-            
-            Attachment::where('object', 'User')->where('object_id', $User->id)->where('context', 'user-image')->delete();
-            Attachment::create([
-                'name' => $logo_name,
-                'file_name' => $logo->getClientOriginalName() . Auth::id(),
-                'type' => $logo->getClientOriginalExtension(),
-                'object' => 'User',
-                'object_id' => $User->id,
-                'context' => 'influencer-profile-image-main'
-            ]);
-
+          
+            Attachment::where('object', 'User')->where('object_id', $User->id)->where('context', 'influencer-profile-image-main')->delete();
+           
+           
+           
+            Attachment::updateOrCreate(
+                ['name' => $logo_name, 'object_id' => $User->id],  // Conditions to find existing record
+                [
+                    'file_name' => $logo->getClientOriginalName(),
+                    'type' => $logo->getClientOriginalExtension(),
+                    'object' => 'User',
+                    'context' => 'influencer-profile-image-main',
+                    'updated_at' => now(),
+                    'created_at' => now()
+                ]
+            );
+         
             SiteHelper::sendFileToSite(public_path('uploads/users') . '/' . $logo_name);
         }
 

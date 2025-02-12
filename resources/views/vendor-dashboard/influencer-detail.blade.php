@@ -173,7 +173,7 @@ color: goldenrod !important;
 //    dd($influencer->image_url
    @endphp
 
-    <div class="content" style="padding-top: 100px; border-top: 1px solid #ccc"  >
+    <div class="content  pdfdownload" id="pdfdownload" style="padding-top: 100px; border-top: 1px solid #ccc"  >
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys" style="border:0px solid red;">
@@ -569,7 +569,7 @@ color: goldenrod !important;
                              <a href="javascript:void(0)" style="margin: 9px 10px 0px 18px;" class="share-link" onclick="shareLink()">
                                         <img src="{{ asset('assets/img/icons/share.png') }}" alt=""  class="shaking" width="30px">
                                     </a>
-                                <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;">
+                                <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;" class="downloadButton">
                                     {{-- <i class="fas fa-download" style="color: blue;"></i> --}}
                                     <img src="{{ asset('assets/img/icons/dwnld.png') }}"  class="shaking" alt="" width="30px">
                                 </a>
@@ -853,6 +853,9 @@ color: goldenrod !important;
             </div>
         </div>
     </div>
+
+
+
     {{-- @include('pages.files.components.table.ajax') --}}
     {{-- @include("vendor-dashboard.influncerProfiledownload"); --}}
    
@@ -861,10 +864,62 @@ color: goldenrod !important;
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!-- Magnific Popup JS -->
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <script>
         
     $(document).ready(function() {
+
+        $('.downloadButton').on('click', function() {
+
+            let element = document.getElementById("pdfdownload");
+         
+            
+
+            const logoUrl = "{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}";
+            const influencerName = '{{ $influencer->full_name }}';
+
+
+            html2pdf()
+            .from(element)
+            .set({
+                margin: 6,
+                filename: `InfluencerPro - ${influencerName}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1.5 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+            })
+            .toPdf()
+            .get('pdf')
+            .then(function (pdf) {
+                const pageWidth = pdf.internal.pageSize.getWidth();  // A4 Landscape Width (297mm)
+                const pageHeight = pdf.internal.pageSize.getHeight(); // A4 Landscape Height (210mm)
+                const totalPages = pdf.internal.getNumberOfPages();
+                const imgWidth = 100 * 0.6;  // 60% of page width for better appearance
+                const imgHeight = 80 * 0.2; // Maintain aspect ratio (adjust as needed)
+                const centerX = (pageWidth - imgWidth) / 2;
+                const topY = 8; // Adjust Y-position for top placement
+                const bottomY = pageHeight - imgHeight - 10; // Adjust Y-position for bottom placement
+
+                // Add Centered Logo at the Top of the First Page
+                pdf.setPage(1);
+                pdf.addImage(logoUrl, 'PNG', centerX, topY, imgWidth, imgHeight);
+
+                // Add Centered Logo at the Bottom of the Last Page
+                pdf.setPage(totalPages);
+                pdf.addImage(logoUrl, 'PNG', centerX, bottomY, imgWidth, imgHeight);
+
+                // Reduce Font Size for Better Fit
+                pdf.setFontSize(10);
+                pdf.save(`InfluencerPro - ${influencerName}.pdf`);
+            });
+
+
+
+
+
+
+         });
         // Handle delete icon click
         $('.delete-icon').on('click', function() {
            
@@ -902,22 +957,7 @@ color: goldenrod !important;
     });
 
 
-$(document).ready(function() {
-    $('#downloadButton').on('click', function() {
-        // URL of the blade file you want to download
-        var fileUrl = '/files/influencer-detail.blade.php';
-        // Create an 'a' element
-        var a = document.createElement('a');
-        a.href = fileUrl;
-        a.download = 'influencer-detail.blade.php'; // Specify the filename
-        // Append the 'a' element to the body (necessary for Firefox)
-        document.body.appendChild(a);
-        // Trigger a click event on the 'a' element
-        a.click();
-        // Remove the 'a' element from the document
-        document.body.removeChild(a);
-    });
-});
+
 
     
         $(document).ready(function () {
