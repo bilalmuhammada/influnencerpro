@@ -173,7 +173,7 @@ color: goldenrod !important;
 //    dd($influencer->image_url
    @endphp
 
-    <div class="content  pdfdownload" id="pdfdownload" style="padding-top: 100px; border-top: 1px solid #ccc"  >
+    <div class="content  pdfdownload" id="pdfdownload" style="padding-top: 100px; " >
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys" style="border:0px solid red;">
@@ -886,7 +886,14 @@ color: goldenrod !important;
                 margin: 6,
                 filename: `InfluencerPro - ${influencerName}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 1.5 },
+                // html2canvas: { scale: 1 },
+          html2canvas: { 
+            scale: 2, // Ensure proper scaling
+            useCORS: true, // Allow cross-origin images
+            letterRendering: true, // Improve text rendering
+            allowTaint: true, // Allow tainted images
+            logging: true, // Enable logging for debugging
+        },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
             })
             .toPdf()
@@ -898,9 +905,11 @@ color: goldenrod !important;
                 const imgWidth = 100 * 0.6;  // 60% of page width for better appearance
                 const imgHeight = 80 * 0.2; // Maintain aspect ratio (adjust as needed)
                 const centerX = (pageWidth - imgWidth) / 2;
-                const topY = 8; // Adjust Y-position for top placement
-                const bottomY = pageHeight - imgHeight - 10; // Adjust Y-position for bottom placement
+                const topY = 1; // Adjust Y-position for top placement
+                const bottomY = pageHeight - imgHeight+2 ; // Adjust Y-position for bottom placement
 
+
+        
                 // Add Centered Logo at the Top of the First Page
                 pdf.setPage(1);
                 pdf.addImage(logoUrl, 'PNG', centerX, topY, imgWidth, imgHeight);
@@ -909,8 +918,9 @@ color: goldenrod !important;
                 pdf.setPage(totalPages);
                 pdf.addImage(logoUrl, 'PNG', centerX, bottomY, imgWidth, imgHeight);
 
-                // Reduce Font Size for Better Fit
-                pdf.setFontSize(10);
+                
+            pdf.setFontSize(5);  // Reduce font size to make it fit
+       
                 pdf.save(`InfluencerPro - ${influencerName}.pdf`);
             });
 
