@@ -141,9 +141,9 @@ border-color:goldenrod transparent transparent transparent !important;
         <div class="mobile-country desktop-menu-right" style="margin-top: 15px;">
         
             <select class="form-control country_dropdown1 " name="country_dropdown"  style="width:157px;" id="country_dropdown" onchange="translateLanguage()">>
-                <option value="null" selected style="color: blue;">Language</option>
+                {{-- <option value="null" selected style="color: blue;">Language</option --}}
                 @foreach(getlanguge() as $language)
-                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}"   >
+                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}"  {{ $language->id == 131 ? 'selected' : '' }}  >
                     {{ $language->name }}     
                     </option>
                 @endforeach
