@@ -876,7 +876,7 @@ color: goldenrod !important;
          
             
 
-            const logoUrl = "{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}";
+            const logoUrl = "{{ asset('assets/img/logo/Influencers Pro-01-01.png')  }}";
             const influencerName = '{{ $influencer->full_name }}';
 
 
@@ -905,10 +905,10 @@ color: goldenrod !important;
                 const imgWidth = 100 * 0.6;  // 60% of page width for better appearance
                 const imgHeight = 80 * 0.2; // Maintain aspect ratio (adjust as needed)
                 const centerX = (pageWidth - imgWidth) / 2;
-                const topY = 1; // Adjust Y-position for top placement
-                const bottomY = pageHeight - imgHeight+2 ; // Adjust Y-position for bottom placement
+                const topY = 3; // Adjust Y-position for top placement
+                const bottomY = pageHeight - imgHeight-6 ; // Adjust Y-position for bottom placement
 
-
+                const text = "© InfluencerPro.org 2025, All Rights Reserved.";
         
                 // Add Centered Logo at the Top of the First Page
                 pdf.setPage(1);
@@ -917,6 +917,17 @@ color: goldenrod !important;
                 // Add Centered Logo at the Bottom of the Last Page
                 pdf.setPage(totalPages);
                 pdf.addImage(logoUrl, 'PNG', centerX, bottomY, imgWidth, imgHeight);
+                const textX = centerX - 7; // Adjust horizontal position if needed
+             const textY = bottomY + imgHeight; // Position text below the image (2 units margin)
+
+        // Set text styling
+        pdf.setFontSize(10); // Reduce font size to make it fit
+        pdf.setFont("helvetica", "normal"); // Set font family
+        pdf.setTextColor(0, 73, 142); // Set text color (#00498e in RGB)
+
+        // Add the text
+        pdf.text(text, textX, textY);
+
 
                 
             pdf.setFontSize(5);  // Reduce font size to make it fit
