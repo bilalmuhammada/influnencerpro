@@ -181,7 +181,7 @@ color: goldenrod !important;
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     {{-- <option value="null" selected class="colorchange">Language</option> --}}
                     @foreach(getlanguge() as $language)
-                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}" {{ $language->id == 131 ? 'selected' : '' }}>
+                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}" {{ $language->id == 27 ? 'selected' : '' }}>
                         {{ $language->name }}
                     </option>
                     @endforeach
