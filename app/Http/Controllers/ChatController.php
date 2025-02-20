@@ -187,6 +187,7 @@ class ChatController extends Controller
                 }
             }
         }
+        
 
         return response()->json([
             'status' => true,
