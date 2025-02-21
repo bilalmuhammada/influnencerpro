@@ -1879,7 +1879,7 @@ border: 1px solid #2d11e7;
 .form-focus .select2-container .select2-selection--single .select2-selection__rendered {
     padding-right: 30px;
     /* padding-left: 12px; */
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {

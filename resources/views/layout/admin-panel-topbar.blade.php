@@ -72,7 +72,7 @@ border-color:goldenrod transparent transparent transparent  !important;
         }
 
         .select2-container--default .select2-selection--single .select2-selection__rendered {
-            color: blue !important;
+            color: rgb(0, 0, 1) !important;
             width: 200px !important;
            
             /* margin-left: 8px !important; */
@@ -181,7 +181,7 @@ color: goldenrod !important;
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     {{-- <option value="null" selected class="colorchange">Language</option> --}}
                     @foreach(getlanguge() as $language)
-                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}" {{ $language->id == 27 ? 'selected' : '' }}>
+                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}" {{ $language->id == 131 ? 'selected' : '' }}>
                         {{ $language->name }}
                     </option>
                     @endforeach

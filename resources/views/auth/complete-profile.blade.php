@@ -571,7 +571,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
                                             
-                                            <select name="base_city_id" id="" class="form-control selectdropdown  floating {{ isset($influencer_personal_info->country_id) ? '' : 'city_id' }} ">
+                                            <select name="base_city_id" class="form-control selectdropdown  floating  city_id">
                                                 @if(isset($influencer_personal_info->country_id))
                                                 @foreach(\App\Models\City::where('country_id', $influencer_personal_info->country_id)->get() as $city)
                                                     <option value="{{ $city->id }}" {{ $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
@@ -630,7 +630,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                             
-                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown  floating   {{ isset($influencer_personal_info->country_id) ? '' : 'city_id' }}">
+                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown  floating  city_id">
                                                 <option value="" disabled hidden selected>&nbsp;</option>
                                          
                                                 @if(isset($influencer_personal_info->travlling_one_country_id))
@@ -692,7 +692,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
                                           
-                                            <select name="travlling_two_city_id" id="" class="form-control  selectdropdown floating {{ isset($influencer_personal_info->travlling_two_country_id) ? '' : 'city_id' }}">
+                                            <select name="travlling_two_city_id" id="" class="form-control  selectdropdown floating city_id">
                                            
 
                                                 @if(isset($influencer_personal_info->travlling_two_country_id))
@@ -756,7 +756,7 @@ display: none !important;
                                     <div class="col-md-4">
                                         <div class="form-group form-focus dropdowndecoration" style="height: 52;">
                                         
-                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown  floating  {{ isset($influencer_personal_info->travlling_two_country_id) ? '' : 'city_id' }}">
+                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown  floating  city_id">
 
                                              
 
@@ -1419,21 +1419,20 @@ $(document).on('click', '.submit-btn', function () {
 
         
      
-        $(document).ready(function() {
-            var selectedCountryId = $('.available-country').val();
+//         $(document).ready(function() {
+//             var selectedCountryId = $('.available-country').val();
   
     
-    if (selectedCountryId) {
-        $('.available-country').trigger('change');
-    }
-});
+//     if (selectedCountryId) {
+//         $('.available-country').trigger('change');
+//     }
+// });
 
 
 
-        $(document).on('change', '.available-country', function () {
+        $('.available-country').on('change', function () {
             var country_id = $(this).val();
             var thisElem = $(this);
-            
             
             if (country_id) {
                 $.ajax({
@@ -1444,11 +1443,14 @@ $(document).on('click', '.submit-btn', function () {
                         "nationality_id": country_id
                     },
                     success: function (response) {
+
+
+                        
                       
                         var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
 
 // Always clear the dropdown and add an empty option
-cityDropdown.empty().append('<option value="" disabled hidden selected> &nbsp;&nbsp;</option>');
+                       cityDropdown.empty().append('<option value="" disabled hidden selected> &nbsp;&nbsp;</option>');
 
 if (response.data.length > 0) {
     var states = response.data;
@@ -1459,10 +1461,10 @@ if (response.data.length > 0) {
             cityDropdown.append('<option value="' + value.id + '">' + value.name + '</option>');
         });
     }
-} else {
-    // If no data, the dropdown will only have the empty "Select City" option
-    cityDropdown.empty();
-}
+            } else {
+            // If no data, the dropdown will only have the empty "Select City" option
+             cityDropdown.empty();
+            }
                     }
                 });
             }
