@@ -671,6 +671,9 @@ const isBlocked = chatInput.data('chat-block');
                 }
             });
         });
+
+
+
     //fiter dropdown
 
     
@@ -692,7 +695,7 @@ const isBlocked = chatInput.data('chat-block');
 });
 
 
-        $(document).ready(function () {
+        // $(document).ready(function () {
             var button = $('.block-chat');
             var chatId = button.data('chat-id');
             $('.ad-id').val(chatId);
@@ -707,7 +710,7 @@ const isBlocked = chatInput.data('chat-block');
             $('.hiddentrash').toggle();
         });
 
-        });
+        // });
         
 
         $(document).on('change', '#check-all', function () {
