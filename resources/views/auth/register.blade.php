@@ -327,9 +327,8 @@ margin-left: -9px !important;
                                                 <label class="focus-label">Country </label>
                                             </div>
                                             <div class="form-group form-focus">
-                                                <select name="city_id" class="form-control floating  city_id" id="city_id">
+                                                <select name="city_id" class="form-control  floating" id="city_id">
                                                     {{-- <option value="">Select City</option> --}}
-
                                                 </select>
                                                 {{-- <div class="invalid-feedback">
                                                     Please provide a valid City.
