@@ -150,6 +150,7 @@
                 position: absolute;
                 left: 0;
                 top: 0;
+                border-radius:0.50rem; 
                 content: "";
                 height: 200px;
                 width: 100%;

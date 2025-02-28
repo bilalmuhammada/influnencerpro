@@ -6,6 +6,10 @@
   height: 200px; /* Adjust the height as needed */
   object-fit: cover; /* Ensures the image is scaled without distortion */
 }
+.img-fluid,.itmax{
+    border-radius:1rem; 
+}
+
 
   .headingstyle{
     padding:2%;

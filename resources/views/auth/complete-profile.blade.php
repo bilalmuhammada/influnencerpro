@@ -32,7 +32,7 @@ min-height: 70px !important;
 }
 
  .dropdowndecoration {
-    border-radius: 3%;
+    border-radius: 0.50rem;
     border: 1px solid #997045!important;
 }
 

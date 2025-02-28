@@ -34,6 +34,12 @@ margin-bottom: 13px;
 }
 
 
+.inner-div{
+    border-radius: 1rem !important;
+
+}
+
+
 </style>
 @section('content')
 

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 @include('layout.web.header')
 @include('modal.privacy-policy')
 @include('modal.terms')

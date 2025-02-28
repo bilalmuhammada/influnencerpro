@@ -171,6 +171,7 @@ $(".datepicker2").datepicker({
                 box-shadow: 0 0 1px #2196F3;
             }
 
+            
             input:checked + .slider:before {
                 -webkit-transform: translateX(16px);
                 -ms-transform: translateX(16px);

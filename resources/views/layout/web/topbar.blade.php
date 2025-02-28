@@ -25,6 +25,7 @@ border-color:goldenrod transparent transparent transparent !important;
   background: transparent;
 }
 .select2-search__field{
+    border-radius: 0.50rem !important;
     padding-left: 10px !important;
     border-color: #997045 !important;
 }
