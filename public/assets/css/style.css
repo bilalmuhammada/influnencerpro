@@ -3590,6 +3590,7 @@ html.menu-opened body header:before {
 
 .project-item {
     background: #fff;
+    border-radius: 0.4rem;
     margin-bottom: 13px;
     width: 100%;
     border: 1px solid #EBEBEB;
@@ -3602,7 +3603,7 @@ html.menu-opened body header:before {
 }
 
 .project-img {
-    border-radius: 1rem;
+    border-radius: 0.4rem 0.4rem 0 0;
     overflow: hidden;
     /* padding: 3px 3px 0 3px; */
     /* border-radius: 15px 15px 0px 0px; */
@@ -4459,6 +4460,7 @@ html.menu-opened body header:before {
 
 .project-item.feature-project-item {
     background: #FFFFFF;
+
     box-shadow: 0px 4px 4px rgba(232, 232, 232, 0.25);
     border: 0;
 }

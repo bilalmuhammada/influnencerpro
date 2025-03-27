@@ -113,14 +113,7 @@
                 border-radius: 50%;
             }
 
-            .influencerdetail {
-                /* display: none;
-                opacity:0.9;
-                width:200px;
-                position: absolute; */
-                /* height: 270px; */
-            }
-
+            
             .avatar-one:hover .influencerdetail {
                 top: 0;
                 opacity: 1;

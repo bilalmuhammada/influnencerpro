@@ -36,6 +36,8 @@ border-color:goldenrod transparent transparent transparent !important;
            
  .select2-container--default .select2-results > .select2-results__options {
     min-height: 120px; /* Set minimum height */
+
+    border-radius: 0.4rem;
           }
           
           .select2-selection .select2-selection--single{
@@ -57,6 +59,7 @@ border-color:goldenrod transparent transparent transparent !important;
 
             .select2-container--open .select2-dropdown--below{
                 background-color: #ffffff !important;
+                border-radius:0.4rem !important; 
             }
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
@@ -72,6 +75,7 @@ border-color:goldenrod transparent transparent transparent !important;
             
             .select2-dropdown .select2-dropdown--below{
                 width: 144px !important;
+                border-radius: 0.4rem !important;
             }
             .register-btn:hover, .log-btn:hover{
                 color:goldenrod !important;

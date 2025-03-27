@@ -7,7 +7,7 @@
   object-fit: cover; /* Ensures the image is scaled without distortion */
 }
 .img-fluid,.itmax{
-    border-radius:1rem; 
+    border-radius:0.4rem; 
 }
 
 
@@ -463,7 +463,7 @@ color:goldenrod !important;
                         <div class="col-lg-2 col-md-6 col-sm-6 mx-auto" style="border:0px solid red;width:170px;border:0px solid red;">
                             <div class="project-item aos">
                                 <div class="project-img">
-                                <a href="{{ env('BASE_URL') }}/category/{{ $category->id }}/influencers"><img src="{{ $category->image_url }}" alt="cats"  class="img-fluid"></a>
+                                <a href="{{ env('BASE_URL') }}/category/{{ $category->id }}/influencers"><img src="{{ $category->image_url }}" alt="cats" style="border-radius: 0;"  class="img-fluid"></a>
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -527,7 +527,7 @@ color:goldenrod !important;
                 </div>
                 <div class="col-md-6">
                     <div class="app-version-img text-center aos" data-aos="fade-up">
-                        <img class="img-fluid" src="{{ asset('assets/banner-image/marketing.jpg') }}" alt="App">
+                        <img class="img-fluid"  src="{{ asset('assets/banner-image/marketing.jpg') }}" alt="App">
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-center">
