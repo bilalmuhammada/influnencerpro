@@ -115,6 +115,7 @@
             position: absolute;
             left: 0;
             top: 0px;
+            border-radius: 1rem;
             content: "";
             height: 200px;
             width: 100%;
@@ -301,7 +302,7 @@ width: 195px !important;
                 @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
                         <div class="card avatar-one"
-                             style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee;">
+                             style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee; ">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                 
                                 
@@ -454,7 +455,7 @@ width: 195px !important;
                                     </ul>
                                 </div>
                                 <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
-                                     class="influencer"
+                                     class="influencer" style="border-radius: 1rem;"
                                      width="100%" height="200px">
                             </a>
                             @php

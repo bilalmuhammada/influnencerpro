@@ -128,6 +128,7 @@
         top: 0;
         content: "";
         height: 200px;
+        border-radius: 0.4rem;
         width: 100%;
         background: #000;
         z-index: -1;

@@ -35,7 +35,7 @@ margin-bottom: 13px;
 
 
 .inner-div{
-    border-radius: 1rem !important;
+    border-radius: 0.4rem !important;
 
 }
 

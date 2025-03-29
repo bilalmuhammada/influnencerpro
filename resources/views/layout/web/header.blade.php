@@ -228,6 +228,7 @@ $(".datepicker2").datepicker({
                 height: 200px;
                 width: 100%;
                 background: #000;
+                border-radius: 0.4rem;
                 z-index: -1;
                 /* border-radius: 15px; */
                 opacity: 0.8;
