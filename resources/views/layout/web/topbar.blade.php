@@ -25,7 +25,7 @@ border-color:goldenrod transparent transparent transparent !important;
   background: transparent;
 }
 .select2-search__field{
-    border-radius: 0.50rem !important;
+    border-radius: 0.30rem !important;
     padding-left: 10px !important;
     border-color: #997045 !important;
 }
@@ -52,6 +52,7 @@ border-color:goldenrod transparent transparent transparent !important;
           }
             .select2-container--default .select2-results>.select2-results__options{
                 overflow-x: hidden !important;
+                border-radius: 0.3rem !important;
                 min-height: 120px !important;
                 background-color: #ffffff !important;
                 color: rgb(0, 0, 0) !important;

@@ -198,7 +198,7 @@ margin-left: -9px !important;
                                                 > --}}
                                                     {{-- <span class="checkmark"></span> --}}
                                                 <span style="font-size: 14px;">
-                                                By registering, I agree to the 
+                                                By registering I agree to the 
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                 </span>
@@ -361,7 +361,7 @@ margin-left: -9px !important;
                                                 > --}}
                                                     {{-- <span class="checkmark"></span> --}}
                                                     <span style="font-size: 14px;">
-                                                        By registering, I agree to the 
+                                                        By registering I agree to the 
                                                     <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms & Conditions</a> and 
                                                     <a href="{{ env('BASE_URL') }}/privacy-policy" target="_blank">Privacy Policy</a>.
                                                     </span>

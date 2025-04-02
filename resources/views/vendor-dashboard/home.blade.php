@@ -49,7 +49,7 @@
 }
 
  .dropdowndecoration {
-    border-radius: 3%;
+    border-radius: 0.3rem;
     border: 1px solid #997045!important;
 }
         #select2-nationality_id-container{
@@ -1021,7 +1021,7 @@ color: #0504aa !important;
                                 
                                 <div class="card avatar-one" 
                                      {{-- onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" --}}
-                                   style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee; border-radius: 1rem;">
+                                   style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
 
@@ -1168,7 +1168,7 @@ color: #0504aa !important;
 
                                         </div>
                                         <img src="{{ $influencer ? $influencer->image_url : '' }}" class="influencer"
-                                             alt="author" width="100%" height="200px" style="border-radius:0.50rem;">
+                                             alt="author" width="100%" height="200px" >
                                     {{-- </a> --}}
                                     <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">
                                         <h5 style="font-size:12px;"

@@ -133,7 +133,7 @@
             width: 100%;
             background: #000;
             z-index: -1;
-            border-radius: 1rem;
+            /* border-radius: 1rem; */
             /* border-radius: 15px; */
             opacity: 0.8;
             -webkit-transition: all 0.35s ease-in-out;
@@ -293,7 +293,7 @@ width: 195px !important;
                   @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;top:6px;">
                         <div class="card avatar-one"
-                             style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee; padding: 0px; border-radius: 1rem;">
+                             style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee; padding: 0px;">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                 
                                 
@@ -447,7 +447,7 @@ width: 195px !important;
                                 </div>
                                 <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
                                      class="influencer"
-                                     width="100%" height="200px"  style="border-radius: 1rem;">
+                                     width="100%" height="200px" >
                             </a>
                             @php
                             $categoryNames = '';

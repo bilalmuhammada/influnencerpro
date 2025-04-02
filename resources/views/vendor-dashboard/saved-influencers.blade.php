@@ -455,7 +455,7 @@ width: 195px !important;
                                     </ul>
                                 </div>
                                 <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
-                                     class="influencer" style="border-radius: 1rem;"
+                                     class="influencer" 
                                      width="100%" height="200px">
                             </a>
                             @php

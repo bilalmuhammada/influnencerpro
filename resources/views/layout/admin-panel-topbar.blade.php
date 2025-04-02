@@ -7,6 +7,7 @@
         }
 
         .select2-search__field{
+            border-radius: 0.3rem;
             padding-left: 10px !important;
     border-color: #997045 !important;
 }
@@ -48,6 +49,7 @@ border-color:goldenrod transparent transparent transparent  !important;
 
         .select2-container--default .select2-results>.select2-results__options {
             overflow-x: hidden !important;
+            border-radius: 0.3rem;
             background-color: #ffffff !important;
             color: rgb(0, 0, 0) !important;
         }

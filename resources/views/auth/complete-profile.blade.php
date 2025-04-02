@@ -32,7 +32,7 @@ min-height: 70px !important;
 }
 
  .dropdowndecoration {
-    border-radius: 0.50rem;
+    border-radius: 0.30rem;
     border: 1px solid #997045!important;
 }
 
@@ -119,6 +119,7 @@ height: 200px;
     border: 0px solid #aaa !important;
   }
   .select2-container {
+
     z-index: 1 !important;
 }
 .baseCountry{
