@@ -302,7 +302,7 @@ width: 195px !important;
                 @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;">
                         <div class="card avatar-one"
-                             style="border:0px solid #997045;width:244px;box-shadow:1px 1px 1px 1px #eee; ">
+                             style="border:0px solid #997045;width:244px; ">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                 
                                 

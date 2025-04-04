@@ -446,7 +446,7 @@
                         @forelse($influencers as $influencer)
                             <div class="col-md-3 col-lg-3 col-xl-3 influencer-box mx-auto" style="border:1px solid red;">
                                 <div class="card avatar-one"
-                                     style="border:1px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                                     style="border:1px solid #997045;width:200px;">
                                     <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                         <div class="start"
                                              style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">

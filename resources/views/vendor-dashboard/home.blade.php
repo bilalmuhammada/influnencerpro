@@ -1021,7 +1021,7 @@ color: #0504aa !important;
                                 
                                 <div class="card avatar-one" 
                                      {{-- onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" --}}
-                                   style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
+                                   style="width:100%;cursor: pointer;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
 
@@ -1583,7 +1583,7 @@ color: #0504aa !important;
                            
                                 <div class="card avatar-one" 
                                      {{-- onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" --}}
-                                   style="width:100%;cursor: pointer;box-shadow:1px 1px 1px 1px #eee;">
+                                   style="width:100%;cursor: pointer;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
 

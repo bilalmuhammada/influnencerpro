@@ -1123,7 +1123,7 @@ button.bg-danger:hover {
 .card {
     border: 1px solid #f9fafb !important;
     background-color: #f9fafb !important;
-    box-shadow: 0px 4px 4px #f9fafb !important;
+    /* box-shadow: 0px 4px 4px #f9fafb !important; */
     /* margin-bottom: 30px; */
 }
 

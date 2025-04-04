@@ -208,7 +208,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -251,7 +251,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="#">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -294,7 +294,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -337,7 +337,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
-                    <div class="card avatar-one"
+                    <div class=""
                          style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"

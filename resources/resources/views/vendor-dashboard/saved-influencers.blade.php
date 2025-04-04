@@ -208,7 +208,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -252,7 +252,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -296,52 +296,7 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
-                        <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
-                            <div class="start"
-                                 style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
-                                <i class="fas fa-check-circle text-success verified"
-                                   style="background-color:#fff;padding:7px;border-radius:50%;"></i>
-                                   &nbsp;
-                            </div>
-                            <div class="influencerdetail" id="">
-                                <div class="start"
-                                     style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:196px;">
-                                    <i class="fas fa-check-circle text-success verified"
-                                       style="background-color:#fff;padding:7px;border-radius:50%;"></i>
-                                </div>
-                                <br>
-                                <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; United Arab Emirates</span><br/>
-                                <span
-                                    style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; Travel, Fashion, Modeling</span>
-                                <ul style="list-style-type: none;margin-top:10px;">
-                                    <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp; <span
-                                            style="font-size: 12px;text-align:center;"><a href=""><img
-                                                    src="assets/img/social-icon/insta.png" alt="" width="30px"></a> <br> &nbsp;&nbsp;&nbsp;&nbsp; 12k</span>
-                                    </li> &nbsp;
-                                    <li style=" display: inline-block;color:#fff;"><span style="font-size: 12px;"><a
-                                                href=""><img src="assets/img/social-icon/fb.png" alt=""
-                                                             width="30px"></a> <br>&nbsp;&nbsp;7k</span></li> &nbsp;
-                                    <li style=" display: inline-block;color:#fff;"><span style="font-size: 12px;"><a
-                                                href=""><img src="assets/img/social-icon/tiktok.png" alt=""
-                                                             width="30px"></a> <br>&nbsp;&nbsp;9k</span></li>
-                                </ul>
-                            </div>
-                            <img src="{{ asset('assets/img/user/avatar-9.jpg')}}" alt="author" class="influencer"
-                                 width="200px">
-                        </a>
-                        <div class="influencer-dev" style="margin:10px;padding:3px;">
-                            <h5 style="font-size:16px;">Noraiz
-                            </h5>
-                            <h5 style="font-size:16px;">No. &nbsp;987879</i></h5>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
-                    <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
@@ -386,7 +341,52 @@
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <div class="card avatar-one"
-                         style="border:0px solid #997045;width:200px;box-shadow:1px 1px 1px 1px #eee;">
+                         style="border:0px solid #997045;width:200px;">
+                        <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
+                            <div class="start"
+                                 style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
+                                <i class="fas fa-check-circle text-success verified"
+                                   style="background-color:#fff;padding:7px;border-radius:50%;"></i>
+                                   &nbsp;
+                            </div>
+                            <div class="influencerdetail" id="">
+                                <div class="start"
+                                     style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:196px;">
+                                    <i class="fas fa-check-circle text-success verified"
+                                       style="background-color:#fff;padding:7px;border-radius:50%;"></i>
+                                </div>
+                                <br>
+                                <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; United Arab Emirates</span><br/>
+                                <span
+                                    style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; Travel, Fashion, Modeling</span>
+                                <ul style="list-style-type: none;margin-top:10px;">
+                                    <li style=" display: inline-block;color:#fff;">&nbsp;&nbsp; <span
+                                            style="font-size: 12px;text-align:center;"><a href=""><img
+                                                    src="assets/img/social-icon/insta.png" alt="" width="30px"></a> <br> &nbsp;&nbsp;&nbsp;&nbsp; 12k</span>
+                                    </li> &nbsp;
+                                    <li style=" display: inline-block;color:#fff;"><span style="font-size: 12px;"><a
+                                                href=""><img src="assets/img/social-icon/fb.png" alt=""
+                                                             width="30px"></a> <br>&nbsp;&nbsp;7k</span></li> &nbsp;
+                                    <li style=" display: inline-block;color:#fff;"><span style="font-size: 12px;"><a
+                                                href=""><img src="assets/img/social-icon/tiktok.png" alt=""
+                                                             width="30px"></a> <br>&nbsp;&nbsp;9k</span></li>
+                                </ul>
+                            </div>
+                            <img src="{{ asset('assets/img/user/avatar-9.jpg')}}" alt="author" class="influencer"
+                                 width="200px">
+                        </a>
+                        <div class="influencer-dev" style="margin:10px;padding:3px;">
+                            <h5 style="font-size:16px;">Noraiz
+                            </h5>
+                            <h5 style="font-size:16px;">No. &nbsp;987879</i></h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+                    <div class="card avatar-one"
+                         style="border:0px solid #997045;width:200px;">
                         <a href="{{ env('BASE_URL') . 'dashboard-influencer-detail' }}">
                             <div class="start"
                                  style="color:#0504aa;position:absolute;margin-top:10px;text-align:right;border:0px solid red;width:200px;">
