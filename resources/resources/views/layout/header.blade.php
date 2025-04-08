@@ -153,7 +153,7 @@
                 content: "";
                 height: 200px;
                 width: 100%;
-                border-radius: 0.4rem;
+                /* border-radius: 0.4rem; */
                 background: #000;
                 z-index: -1;
                 /* border-radius: 15px; */

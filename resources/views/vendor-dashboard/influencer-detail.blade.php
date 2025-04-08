@@ -181,7 +181,7 @@ color: goldenrod !important;
                     <div class="card search-filter" style="border:0px solid red;">
                         <!-- <div class="card-header d-flex justify-content-between"> -->
                         <div class="card-header__">
-                            <div class="influencer project-img" id="influencer">
+                            <div class="influencer project-img" style="border-radius:0.3rem !important; " id="influencer">
                                 <a href="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}">
                                 <img class="card-title mb-0" src="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}"
                                      alt="author"
@@ -825,7 +825,7 @@ color: goldenrod !important;
 
                         @forelse($influencer->influencer_profile_images as $image)
 <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
-    <div class="avatar-one project-img" style="width:100%;">
+    <div class="avatar-one project-img" style="width:100%;   border-radius:0.3rem !important; ">
         <a href="{{ $image->file_name_url }}">
             <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
         </a>

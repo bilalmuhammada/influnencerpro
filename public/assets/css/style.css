@@ -3600,7 +3600,7 @@ html.menu-opened body header:before {
 }
 
 .project-img {
-    border-radius: 0.4rem 0.4rem 0 0;
+    border-radius: 0.3rem 0.3rem 0 0;
     overflow: hidden;
     /* padding: 3px 3px 0 3px; */
     /* border-radius: 15px 15px 0px 0px; */
@@ -8921,7 +8921,7 @@ div#global-loader {
 .search-filter .select2-container .select2-selection--single,
 .search-filter .form-control {
     border: 1px solid #997045 !important;
-    border-radius: 6px;
+    border-radius: 0.3rem;
     height: 45px !important;
     padding: 6px 0px 3px 9px;
 }
@@ -8929,7 +8929,7 @@ div#global-loader {
 .search-filter .select2-container .select2-selection--single,
 .search-filter:focus .form-control:focus {
     /* border: 1px solid blue !important; */
-    border-radius: 6px;
+    border-radius: 0.3rem;
 }
 
 /*-----------------

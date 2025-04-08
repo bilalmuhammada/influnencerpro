@@ -115,7 +115,7 @@
             position: absolute;
             left: 0;
             top: 0px;
-            border-radius: 1rem;
+            /* border-radius: 1rem; */
             content: "";
             height: 200px;
             width: 100%;

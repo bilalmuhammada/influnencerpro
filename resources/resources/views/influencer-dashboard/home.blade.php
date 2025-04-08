@@ -124,13 +124,13 @@ input:checked + .slider:before {
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 0.50rem;
+    /* border-radius: 0.50rem; */
     content: "";
     height: 200px;
     width: 100%;
     /* background: #000; */
     z-index: -1;
-    border-radius: 0.4rem;
+    /* border-radius: 0.4rem; */
     opacity: 0.8
     ;
     -webkit-transition: all 0.35s ease-in-out;
