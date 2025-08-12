@@ -3656,7 +3656,10 @@ html.menu-opened body header:before {
 }
 
 .project-content h5 a:hover {
-    color: #0504aa;
+    color: goldenrod;
+}
+.project-img:hover ~ .d-flex .project-content h5 a {
+    color: goldenrod; /* your desired color */
 }
 
 .developer {

@@ -285,11 +285,11 @@ $(document).ready(function() {
         console.log('Flag URL:', flagUrl);
 
         if (flagUrl) {
-        return $('<span style="font-size:14px; font-weight:bold;  white-space: nowrap;padding:6px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;margin-bottom: 6px;" /> ' + option.text + '</span>');
+        return $('<span style="font-size:14px; font-weight:bold;  white-space: nowrap;padding:9px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;margin-bottom: 6px;" /> ' + option.text + '</span>');
     } else {
 
     
-        return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:6px;"">' +
+        return $('<span style="font-size:14px;font-weight:bold;white-space: nowrap;padding:9px;"">' +
     // '<img src="{{ asset("/assets/img/social-icon/lang.png") }}" class="img-flag" style="width: 20px; height:20px; margin-right: 5px;margin-bottom: 11px;" />  +
     option.text + 
     '</span>');}

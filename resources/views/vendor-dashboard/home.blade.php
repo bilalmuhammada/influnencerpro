@@ -158,7 +158,7 @@ width: 200px !important;
     min-height: 40px !important;
 }
 #select2-language_dropdown-container{
-    margin-left: 6px !important;
+    margin-left: 9px !important;
 }
 #select2-nationality_id-results{
 padding-left: 12px !important;
