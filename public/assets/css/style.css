@@ -17820,11 +17820,13 @@ h2.footer-title:before {
 .iconx3:hover i:hover{
     color:#0504aa !important;
 }
-.inner-div:hover .icon i, 
-  .inner-div:hover .total_click, 
-  .inner-div:hover span {
-    color: blue !important; /* Change the icon, text, and span color */
-  }
+.inner-div:hover .icon i,
+.inner-div:hover .total_click,
+.inner-div:hover .favourite_count,
+.inner-div:hover .chat_count,
+.inner-div:hover span {
+  color: blue !important; /* Change the icon, text, and span color */
+}
 .sort-tab {
     background-color: #edeef3;
     padding: 3px 25px;

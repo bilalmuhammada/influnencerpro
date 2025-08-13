@@ -22,6 +22,7 @@
             }
             .select2-dropdown {
                 border: 0px solid !important;
+                margin-left: -2px;
             }
 
         .select2-container--default .select2-results > .select2-results__options {
@@ -175,7 +176,7 @@ color: goldenrod !important;
                     <span></span>
                 </span>
             </a>
-            <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 57px;">
+            <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 62px;">
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
             </a>
 
@@ -239,12 +240,12 @@ color: goldenrod !important;
                 </li>
                 <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/chats' }}">Chats</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown">Notifications</a>
-                    <div class="dropdown-menu notifications" style="width: 450px; margin-left: -240px; height: auto; overflow: auto;">
-                        <!-- Notification logic -->
-                    </div>
-                </li>
+                    <li class="nav-item dropdown">
+    <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">Notifications</a>
+    <div class="dropdown-menu notifications" style="width: 450px; margin-left: -240px; height: auto; overflow: auto;">
+        <!-- Notification logic -->
+    </div>
+</li>
                
                 <li class="has-submenu">
                     <a href="#">
@@ -268,6 +269,13 @@ color: goldenrod !important;
 $(document).ready(function() {
         // Initialize Select2
         $(document).ready(function() {
+
+          
+        $('#notificationLink').on('click', function(){
+            
+            $(".dropdown").toggleClass('active'); // toggle active on click
+        });
+  
      $('#language_dropdown').select2({
         width: 'resolve',
         templateResult: function(option) {

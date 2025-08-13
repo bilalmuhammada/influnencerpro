@@ -78,7 +78,7 @@ margin-bottom: 13px;
                                 <div class="icon iconx2"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <h5 class="favourite_count">{{ formatNumber($influencer->favourites_count) }}</h5>
                                 <!-- <span><b>Views</b></span> -->
-                                <span><b style="font-size: 14px">Favourites</b></span>
+                                <span><b style="font-size: 14px">Favorites</b></span>
                             </div>
                         </a>
                     </div>
