@@ -45,7 +45,7 @@ $(document).on('click', '.login-submit-button', function () {
         success: function (response) {
             console.log(response.status);
             if (response.status) {
-                window.location.assign(base_url + 'admins-dashboard/dashboard');
+                window.location.assign(base_url + '/admins-dashboard/dashboard');
             } else {
                 Swal.fire({
                     title: 'Problem!',
