@@ -265,7 +265,7 @@ select::-ms-expand {
                                             </div>
                                             <div class="media-body flex-grow-1">
                                                 <div>
-                                                    <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }}</div>
+                                                    <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} {{getSafeValueFromObject($chat->other_user, 'last_name')}}</div>
                                                     <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                 </div>
                                                 <div>
@@ -397,7 +397,7 @@ select::-ms-expand {
                                             </div>
                                         </div>
                                         <div class="chat-footer">
-                                            <div class="input-group" style="margin-left: 12px;" >
+                                            <div class="input-group" style="margin-left: 17px;" >
                                                 {{-- <div class="avatar" style="padding:4px;">
                                                     <img
                                                         src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
