@@ -242,9 +242,7 @@ select::-ms-expand {
                                     </div>
                                 </div>
                             </div>  
-                            @php 
-                            dd(getSafeValueFromObject($chat->other_user, 'name'));
-                            @endphp                    
+                                         
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
@@ -303,6 +301,9 @@ select::-ms-expand {
                         
                            
                             @foreach($chats as $key => $chat)
+                            @php 
+                            dd(getSafeValueFromObject($chat->other_user, 'name'));
+                            @endphp      
                                 <div class="chat-body-div"
                                      id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
                                      style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}" 
@@ -343,8 +344,7 @@ select::-ms-expand {
                                       
                                         @endphp
                                             <div class="media-body flex-grow-1">
-                                                <div
-                                                    class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <span class="colorchangecompany">{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+                                                <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} - <span class="colorchangecompany">{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
                                                
                                             </div>
                                         </div>
