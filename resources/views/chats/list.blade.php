@@ -302,7 +302,7 @@ select::-ms-expand {
                            
                             @foreach($chats as $key => $chat)
                             @php 
-                            dd(getSafeValueFromObject($chat->other_user, 'name'));
+                            dd(getSafeValueFromObject($chat->other_user, 'name'),getSafeValueFromObject($chat->other_user, 'last_name'));
                             @endphp      
                                 <div class="chat-body-div"
                                      id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
