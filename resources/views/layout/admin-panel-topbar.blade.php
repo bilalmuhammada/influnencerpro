@@ -56,7 +56,7 @@ border-color:goldenrod transparent transparent transparent  !important;
         }
 
         .select2-container--open .select2-dropdown--below {
-            /* margin-left: -5px !important; */
+            
             background-color: #ffffff !important;
         }
 
@@ -214,7 +214,7 @@ color: goldenrod !important;
                 </li>
               
                 <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
-                    <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favourited Influencers</a>
+                    <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favorited Influencers</a>
                 </li>
                 <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>

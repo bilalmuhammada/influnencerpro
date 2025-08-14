@@ -371,7 +371,7 @@ width: 195px !important;
 
                                         <li style="display: inline-block;;color:#fff;">
                                         <div class="social-wrapper" style="text-align: center; margin-left:14px;">
-                                            <a href="">
+                                            <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                             </a>
                                             <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -384,7 +384,7 @@ width: 195px !important;
                                                         @if($twitter  && isset($twitter->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="">
+                                                                <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -399,7 +399,7 @@ width: 195px !important;
                                                         @if($youtube && isset($youtube->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="">
+                                                                <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                                     <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -413,7 +413,7 @@ width: 195px !important;
                                                         @if($tiktok && isset($tiktok->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="" class="shaking-container">
+                                                                <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" class="shaking-container">
                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count shaking-text" style="font-size:11px;">
@@ -427,7 +427,7 @@ width: 195px !important;
                                                         @if($facebook && isset($facebook->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="">
+                                                                <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom:8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
@@ -441,7 +441,7 @@ width: 195px !important;
                                                         @if($snapchat && isset($snapchat->followers))
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                <a href="">
+                                                                <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">

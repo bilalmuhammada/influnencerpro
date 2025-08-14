@@ -211,7 +211,7 @@ color: #0504aa !important;
     display:none; 
 }
 .select2-container--default .select2-results__option{
-    padding-left: 9px !important;
+    padding-left: 11px !important;
 }
     </style>
     <section style="border-top:2px solid #eee;">
