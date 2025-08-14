@@ -241,7 +241,10 @@ select::-ms-expand {
                                         </div>
                                     </div>
                                 </div>
-                            </div>                      
+                            </div>  
+                            @php 
+                            dd(getSafeValueFromObject($chat->other_user, 'name'));
+                            @endphp                    
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
@@ -337,7 +340,7 @@ select::-ms-expand {
                                             }
                                         }
 
-                                        dd(getSafeValueFromObject($chat->other_user, 'name'));
+                                      
                                         @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div
