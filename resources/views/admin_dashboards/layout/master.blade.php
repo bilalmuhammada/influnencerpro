@@ -99,12 +99,12 @@ function formatCountry(country) {
     if (!flagUrl) {
         var $country = $( 
         '<img src="' + flagUrl + '" class="img-flag" style="width:20px; height:13px;margin-top:-5px; display:none;" />' + 
-        '<span style="font-size:14px; margin-left: 7px;">' + country.text + '</span>'
+        '<span style="font-size:14px; ">' + country.text + '</span>'
     );// Optional default image
     }else{
         var $country = $( 
         '<img src="' + flagUrl + '" class="img-flag" style="width:20px;height:13px;margin-top:-5px;" />' + 
-        '<span style="font-size:14px; margin-left: 7px;">' + country.text + '</span>'
+        '<span style="font-size:14px; ">' + country.text + '</span>'
     );
     }
 

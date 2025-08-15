@@ -26,7 +26,17 @@
     padding: 0px;
  border-radius: 2px;
     }
+
+    .rounded-circle{
+        width: 40px;
+        height: 40px;
+    }
     
+    .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
 </style>
 <nav class="navbar">
     <a href="#" class="sidebar-toggler">
@@ -44,9 +54,9 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="wd-30 ht-30 rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else https://via.placeholder.com/30x30 @endif" alt="profile">
+                    <img class="rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else https://via.placeholder.com/30x30 @endif" alt="profile">
                 </a>
-                <div class="dropdown-menu p-0" style="min-width: 4rem;" aria-labelledby="profileDropdown">
+                <div class="dropdown-menu p-0" style="min-width: 4rem;margin-top: 7rem;" aria-labelledby="profileDropdown">
                     {{-- <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                         <div class="mb-3">
                             <img class="wd-80 ht-80 rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else https://via.placeholder.com/30x30 @endif" alt="">
@@ -76,4 +86,18 @@
         </ul>
     </div>
 </nav>
+
+
+<script>
+    document.querySelectorAll('.nav-item.dropdown').forEach(function(el) {
+    el.addEventListener('mouseenter', function() {
+        let dropdownMenu = el.querySelector('.dropdown-menu');
+        dropdownMenu.classList.add('show');
+    });
+    el.addEventListener('mouseleave', function() {
+        let dropdownMenu = el.querySelector('.dropdown-menu');
+        dropdownMenu.classList.remove('show');
+    });
+});
+</script>
 <!-- partial -->

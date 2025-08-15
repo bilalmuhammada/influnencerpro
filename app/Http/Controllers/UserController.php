@@ -72,9 +72,9 @@ class UserController extends Controller
     }
 
     public function getCitiesByCountry(Request $request){
-        $cities=   DB::table('cities')->where('country_id',$request->nationality_id)->get();
+        $cities=   DB::table('cities')->where('country_id',$request->country_id)->get();
        
-    //    dd($cities);
+      
         return response()->json([
             'data' => $cities,
              'status'=>true

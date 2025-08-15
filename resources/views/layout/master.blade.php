@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- @include('layout.header')
+@include('layout.header')
 @include('modal.privacy-policy')
 @include('modal.terms')
 

@@ -43,9 +43,11 @@ input[type="file"] {
     </style>
    <div class="content" style="padding: 17px 0 30px;">
     <div class="container">
+        
         <a href="{{ env('BASE_URL') }}" class="navbar-brand logo shaking" style="margin-top: -1rem;">
             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
         </a>
+        
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="account-content">
