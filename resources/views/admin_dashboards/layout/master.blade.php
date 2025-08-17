@@ -98,13 +98,13 @@ function formatCountry(country) {
     // If no flag URL is available, fallback to default image or nothing
     if (!flagUrl) {
         var $country = $( 
-        '<img src="' + flagUrl + '" class="img-flag" style="width:20px; height:13px;margin-top:-5px; display:none;" />' + 
-        '<span style="font-size:14px; ">' + country.text + '</span>'
+        '<img src="' + flagUrl + '" class="img-flag" style="width:20px; height:13px;margin-top:-5px; display:none; />' + 
+        '<span style="font-size:14px; margin-left: 2px;">' + country.text + '</span>'
     );// Optional default image
     }else{
         var $country = $( 
         '<img src="' + flagUrl + '" class="img-flag" style="width:20px;height:13px;margin-top:-5px;" />' + 
-        '<span style="font-size:14px; ">' + country.text + '</span>'
+        '<span style="font-size:14px; margin-left: 7px;">' + country.text + '</span>'
     );
     }
 
@@ -160,12 +160,16 @@ function formatCountry(country) {
         input.parents('.form-focus').toggleClass('focused', input.val().length > 0);
     }, 10);
 });
+       
+         $(".currency_dropdown").select2({
+            templateSelection: formatCountry,
+            templateResult: formatCountry,
+        });
         $(".country_dropdown").select2({
             templateSelection: formatCountry,
             templateResult: formatCountry,
             // minimumResultsForSearch: -1
         });
-      
         $(".chat").select2({
    
     minimumResultsForSearch: -1
