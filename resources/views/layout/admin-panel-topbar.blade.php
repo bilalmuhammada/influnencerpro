@@ -207,6 +207,7 @@ color: goldenrod !important;
                     <i class="fas fa-times"></i>
                 </a>
             </div>
+            @if( session()->get('User')!=null)
             <ul class="main-nav nav" style="margin-right: 32px;">
                 @if(session()->get('role') == 'vendor')
                 <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">
@@ -257,6 +258,9 @@ color: goldenrod !important;
                     </ul>
                 </li>
             </ul>
+            
+
+            @endif
         </div>
     </nav>
 </header>

@@ -1,4 +1,4 @@
-@extends('auth.layout.master')
+@extends('layout.master')
 @section('content')
     <style>
         .invalid-feedback {
@@ -39,7 +39,7 @@ input[type="file"] {
                         <div class="login-right">
                             <div class="login-header text-center">
                                 <a href="{{ env('BASE_URL') }}"> <img src="{{asset('assets/images/logo/Influencers Pro-01-01.png')}}" alt="logo"></a>
-                                <h3>Contact Us</h3>
+                                <h3>Contact Us33/h3>
                                 <p>Share your mind with us!</p>
                             </div>
                             <form action="#" id="contact-us-form">

@@ -9,10 +9,10 @@
 <body class="home-page bg-one">
 
 <div class="main-wrapper">
-    @if( session()->get('User')!=null)
+    
     @include('layout.admin-panel-topbar')
-    @endif
 
+    
     @yield('content')
     @include('layout.footer')
 </div>
