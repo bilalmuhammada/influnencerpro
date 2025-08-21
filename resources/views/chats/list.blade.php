@@ -646,35 +646,33 @@ const isBlocked = chatInput.data('chat-block');
                     chat_id: chatId
                 },
                 success: function(response) {
-                    var emojioneArea = $('.emojionearea.emojionearea-inline');
-                    var emojioneEditor = $('.emojionearea-editor');
-                    if (response.is_blocked) {
-                        // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
-                        if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '#fdeaea',
-                                    'cursor': 'not-allowed',
-                                    'pointer-events': 'none'
-                                });
-                                emojioneEditor.attr('contenteditable', 'false');
-                        }
-                    } else {
-                        // show_success_message('User Unblocked');
-                        button.find('i').css('color', 'grey');
-                        if (emojioneArea.length > 0) {
-                            emojioneArea.css({
-                                'background': '',
-                                'cursor': '',
-                                'pointer-events': ''
-                            });
+                    button.find('i').css('color', response.is_blocked ? 'goldenrod' : 'grey');
 
-                            
-                            emojioneEditor.attr('contenteditable', 'true');
-                        }
-                       
-                       
+                    // Find emoji input for this chat
+                    var emojiInput = $('.emoji-trigger[data-chat-id="' + chatId + '"]');
+                    var emojioneInstance = emojiInput.data('emojioneAreaInstance');
+
+                    if (response.is_blocked) {
+                        emojioneInstance.editor.attr('contenteditable', 'false');
+                        emojioneInstance.container.css({
+                            'background': '#fdeaea',
+                            'cursor': 'not-allowed',
+                            'pointer-events': 'none'
+                        });
+                    } else {
+                        emojioneInstance.editor.attr('contenteditable', 'true');
+                        emojioneInstance.container.css({
+                            'background': '',
+                            'cursor': '',
+                            'pointer-events': ''
+                        });
                     }
+
+                    // Update data attribute to reflect new block state
+                    emojiInput.data('chat-block', response.is_blocked);
+
+
+
                 }
             });
         });
