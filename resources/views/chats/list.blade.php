@@ -342,7 +342,7 @@ select::-ms-expand {
                                       
                                         @endphp
                                             <div class="media-body flex-grow-1">
-                                                <div class="user-name"> <a href="{{ env('BASE_URL') }}/influencers/{{ getSafeValueFromObject($chat->other_user, 'id')}}/detail">  {{ getSafeValueFromObject($chat->other_user, 'name') }} {{getSafeValueFromObject($chat->other_user, 'last_name')}} </a> - <span class="colorchangecompany">{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+                                                <div class="user-name colorchangecompany"> <a href="{{ env('BASE_URL') }}/influencers/{{ getSafeValueFromObject($chat->other_user, 'id')}}/detail">  {{ getSafeValueFromObject($chat->other_user, 'name') }} {{getSafeValueFromObject($chat->other_user, 'last_name')}} </a> - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
                                                
                                             </div>
                                         </div>
