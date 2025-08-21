@@ -193,7 +193,9 @@ color: goldenrod !important;
 select::-ms-expand {
     display: none;
 }
-.colorchangecompany a:hover {
+.colorchangecompany:hover a,
+.colorchangecompany:hover span 
+{
     color: blue !important;
     text-decoration: none; /* optional, to remove underline */
 }
