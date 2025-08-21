@@ -193,10 +193,10 @@ color: goldenrod !important;
 select::-ms-expand {
     display: none;
 }
-.colorchangecompany:hover{
- color: blue !important;
+.colorchangecompany a:hover {
+    color: blue !important;
+    text-decoration: none; /* optional, to remove underline */
 }
-
     </style>
 @section('content')
     <div class="content-chat"
