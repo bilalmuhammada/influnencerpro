@@ -30,8 +30,8 @@
 }
 
 .select2-results__option{
-    padding: 0px !important;
-    margin-left: 4px !important;
+    padding: 6px 0px 4px 1px !important;
+  /*  margin-left: 4px !important; */
 
 }
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
