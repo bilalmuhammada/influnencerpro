@@ -224,14 +224,14 @@ input[type="file"] {
         }
 
         $(document).on('change', '#country_id', function () {
-            var nationality_id = $(this).val();
-            if (nationality_id) {
+            var country_id = $(this).val();
+            if (country_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        "nationality_id": nationality_id
+                        "country_id": country_id
                     },
                     success: function (response) {
                         if (response.data.length > 0) {
