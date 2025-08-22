@@ -133,7 +133,7 @@ font-weight: bold;
 
 
 .select2-results__option {
-    padding: 6px 0px 0px 14px !important;}
+    padding: 6px 0px 4px 12x !important;}
 .dropzone .dz-preview .dz-image {
     border-radius: 0px !important;}
 #Priceinclude::placeholder {
