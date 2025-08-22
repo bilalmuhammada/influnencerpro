@@ -136,21 +136,28 @@ color: white;
 label{
     color: blue;
 }
+.shaking:hover h4,
+.shaking:hover p,
+.shaking:hover span,
+.shaking:hover h6 {
+    color: blue !important;
+}
 
-.shaking {
+.shaking , .apexcharts-legend-series{
     
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-      .shaking:hover {
+      .shaking:hover ,.apexcharts-legend-series:hover {
+        
     animation: shake 2s linear infinite;
    }
 
-  @keyframes shake {
+  @keyframes shake  {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
     100% { transform: translateX(0); }
   }
 

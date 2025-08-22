@@ -39,7 +39,22 @@ margin-bottom: 13px;
 
 }
 
+.shaking {
+    
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+   }
+      .shaking:hover {
+    animation: shake 2s linear infinite;
+   }
 
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
 </style>
 @section('content')
 
@@ -59,8 +74,8 @@ margin-bottom: 13px;
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2" style="border:0px solid red;margin-top:20px;">
-                        <a href="">
+                    <div class="col-md-2 shaking" style="border:0px solid red;margin-top:20px;">
+                        <a href="" >
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx3"><i class="fa fa-user" style="font-size:50px;"></i></div>
@@ -71,9 +86,9 @@ margin-bottom: 13px;
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-2" style="border:0px solid red;margin-top:20px;">
+                    <div class="col-md-2 shaking" style="border:0px solid red;margin-top:20px;">
                         <a href="">
-                            <div class="inner-div"
+                            <div class="inner-div "
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx2"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <h5 class="favourite_count">{{ formatNumber($influencer->favourites_count) }}</h5>
@@ -82,7 +97,7 @@ margin-bottom: 13px;
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-2" style="border:0px solid red;margin-top:20px;">
+                    <div class="col-md-2 shaking" style="border:0px solid red;margin-top:20px;">
                         <a href="">
                             <div class="inner-div"
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
@@ -268,64 +283,74 @@ $(function() {
             //END OF DONUT CHART
         }
 
-
         function create_bar_chart(data) {
-            var options = {
-                series: [{
-                    name: 'Profile Views',
-                    //  data:[1,2,4,5,6,7,8,9],
-                    data:      data.profile_visit_count,
-                    color: '#00e396'
-                }, {
-                    name: 'Favourites',
-                    // data:[1,2,4,5,6,7,8,9],
-                     data: data.favourite_count,
-                    color: '#008ffb'
-                }, {
-                    name: 'Chats',
-                    // data:[1,2,4,5,6,7,8,9],
-                    data: data.chat_count,
-                    color: 'rgb(254, 176, 25)'
-                }],
-                chart: {
-                    type: 'bar',
-                    height: 500
-                },
-                plotOptions: {
-                    bar: {
-                        horizontal: false,
-                        columnWidth: '35%',
-                        endingShape: 'rounded'
-                    },
-                },
+    var options = {
+        series: [{
+            name: 'Profile Views',
+            data: data.profile_visit_count,
+            color: '#00e396'
+        }, {
+            name: 'Favourites',
+            data: data.favourite_count,
+            color: '#008ffb'
+        }, {
+            name: 'Chats',
+            data: data.chat_count,
+            color: 'rgb(254, 176, 25)'
+        }],
+        chart: {
+            type: 'bar',
+            height: 500,
+            animations: {
+                enabled: true,
+                easing: 'easeinout',
+                speed: 800
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '35%',
+                endingShape: 'rounded',
                 dataLabels: {
-                    enabled: false
-                },
-                
-                xaxis: {
-                    categories: data.months,
-                },
-                yaxis: {
-                    title: {
-                        // text: '(Count)'
-                    }
-                },
-                fill: {
-                    opacity: 1
-                },
-                tooltip: {
-                    y: {
-                        formatter: function (val) {
-                            return "" + val + ""
-                        }
-                    }
+                    position: 'center' // puts label inside bar
                 }
-            };
-
-            var chart = new ApexCharts(document.querySelector("#barChart"), options);
-            chart.render();
-            //END OF DONUT CHART
+            },
+        },
+        dataLabels: {
+            enabled: true,
+            
+        },
+        xaxis: {
+            categories: data.months,
+            labels: {
+                show: false // hide bottom labels since we move them
+            }
+        },
+        tooltip: {
+            y: {
+                formatter: function (val) {
+                    return "" + val + "";
+                }
+            },
+            custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                // Custom tooltip with date centered
+                let month = w.globals.labels[dataPointIndex];
+                let val = series[seriesIndex][dataPointIndex];
+                return `<div style="text-align:center; padding:6px;">
+                          <strong>${month}</strong><br/>
+                          ${w.config.series[seriesIndex].name}: ${val}
+                        </div>`;
+            }
+        },
+        fill: {
+            opacity: 1
         }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#barChart"), options);
+    chart.render();
+}
 
     </script>
 @endsection
