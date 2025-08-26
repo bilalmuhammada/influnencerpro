@@ -54,7 +54,7 @@ border-color:goldenrod transparent transparent transparent !important;
                 overflow-x: hidden !important;
                 border-radius: 0.3rem !important;
                 min-height: 120px !important;
-                max-height: 190px !important;
+               
                 background-color: #ffffff !important;
                 color: rgb(0, 0, 0) !important;
             }
@@ -62,6 +62,7 @@ border-color:goldenrod transparent transparent transparent !important;
             .select2-container--open .select2-dropdown--below{
                 background-color: #ffffff !important;
                 border-radius:0.4rem !important; 
+                
             }
             .select2-container--default .select2-selection--single{
                 border: 0px solid !important ;
