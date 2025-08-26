@@ -353,6 +353,8 @@ select::-ms-expand {
                                             }
                                         }
 
+                                        dd(getSafeValueFromObject($chat->other_user, 'role'));
+
                                       
                                         @endphp
                                             <div class="media-body flex-grow-1">
