@@ -8,7 +8,8 @@
 
         .select2-search__field{
             border-radius: 0.3rem;
-            padding-left: 10px !important;
+            margin-top: 3px;
+            padding-left: 10px !important; 
     border-color: #997045 !important;
 }
 /* .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
