@@ -270,26 +270,36 @@ select::-ms-expand {
                                                     <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name') }} {{getSafeValueFromObject($chat->other_user, 'last_name')}}</div>
                                                     <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                 </div>
-                                                <div>
-                                                   
-                                                    <div class="badge bgg-yellow badge-pill unread-count"
-                                                         style="display: {{($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none'}} ">{{ $chat->unread_count }}</div>
+                                                
+                                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3rem; margin-top: 5px;">
+                                                <div style="display: flex; gap: 8px;">
+                                                    <button class="btn btn-link favorite-chat" 
+                                                            title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}" 
+                                                            style="padding: 0;" 
+                                                            data-chat-id="{{ $chat->id }}">
+                                                        <i class="fa fa-heart" style="color: {{ $chat->is_favorite ? 'red' : 'grey' }} !important;"></i>
+                                                    </button>
+
+                                                    <button class="btn btn-link block-chat" 
+                                                            title="{{ $chat->is_blocked ? 'Unblock' : 'Block' }}" 
+                                                            style="padding: 0;" 
+                                                            data-chat-id="{{ $chat->id }}">
+                                                        <i class="fa fa-ban" style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }} !important;"></i>
+                                                    </button>
                                                 </div>
-                                                <div class="chat-container" id="chat-{{ $chat->id }}">
-                                                <div style="display:flex; justify-content: flex-end; align-items: center;    margin-top: -10px;  margin-right: -63px;margin-bottom: 25px;">
-                                                    <button class="btn btn-link favorite-chat" title="{{ $chat->is_favorite ? 'Unfavourite ' : 'Favourite' }}" style="padding: 0px;" data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-heart"  style="color: {{ $chat->is_favorite ? 'red' : 'grey' }};"></i>
-                                                    </button>
-                                                    <button class="btn btn-link block-chat" title="{{ $chat->is_blocked ? 'Unblock' : 'Block ' }}" style="padding: 8px;"  data-chat-id="{{ $chat->id }}">
-                                                        <i class="fa fa-ban"   
-                                                        style="color:{{ $chat->is_blocked ? 'goldenrod' : 'grey' }};"
-                                                            ></i>
-                                                    </button>
+
+                                                <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #666;">
+                                                    <div class="badge bgg-yellow badge-pill unread-count" 
+                                                        style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }};">
+                                                        {{ $chat->unread_count }}
+                                                    </div>
+
+                                                    <span>{{ $chat->latest_message_recieved_time_diff }}</span>
                                                 </div>
                                                 </div>
                                               
                                             </div>
-                                            <div class="last-chat-time block" style="margin-top: 26px;">{{ $chat->latest_message_recieved_time_diff }}</div>
+                                           
                                           
                                         </a>
                                       
