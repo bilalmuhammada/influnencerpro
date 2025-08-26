@@ -271,7 +271,7 @@ select::-ms-expand {
                                                     <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                 </div>
                                                 
-                                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3rem; margin-top: 5px;">
+                                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-top: 5px;">
                                                 <div style="display: flex; gap: 8px;">
                                                     <button class="btn btn-link favorite-chat" 
                                                             title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}" 
