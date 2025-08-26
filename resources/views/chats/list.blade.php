@@ -251,9 +251,7 @@ select::-ms-expand {
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                    @php 
-                dd(getSafeValueFromObject($chat->other_user, 'role')["name"]);
-                @endphp
+                            
                                         <a href="javascript:void(0);"
                                            class="media chatActionBlock chat-title    @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
@@ -363,7 +361,11 @@ select::-ms-expand {
                                       
                                         @endphp
                                             <div class="media-body flex-grow-1">
-                                                <div class="user-name colorchangecompany"> <a href="{{ env('BASE_URL') }}/influencers/{{ getSafeValueFromObject($chat->other_user, 'id')}}/detail">  {{ getSafeValueFromObject($chat->other_user, 'name') }} {{getSafeValueFromObject($chat->other_user, 'last_name')}} </a> - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+                                                <div class="user-name colorchangecompany"> {!! strtolower(getSafeValueFromObject($chat->other_user, 'role')['name'] ?? '') === 'vendor' 
+    ? getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') 
+    : '<a href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">' 
+        . getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') . 
+      '</a>' !!}<a href="{{ env('BASE_URL') }}/influencers/{{ getSafeValueFromObject($chat->other_user, 'id')}}/detail">  - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
                                                
                                             </div>
                                         </div>
