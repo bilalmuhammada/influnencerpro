@@ -365,7 +365,7 @@ select::-ms-expand {
     ? getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') 
     : '<a href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">' 
         . getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') . 
-      '</a>' !!}<a href="{{ env('BASE_URL') }}/influencers/{{ getSafeValueFromObject($chat->other_user, 'id')}}/detail">  - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+      '</a>' !!} - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
                                                
                                             </div>
                                         </div>
