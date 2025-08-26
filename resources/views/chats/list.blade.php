@@ -209,6 +209,11 @@ select::-ms-expand {
                 <input type="checkbox" style="margin-left:26.5%;" id="check-all">&nbsp;ALL
 
                 </div> -->
+
+
+                @php 
+                dd(getSafeValueFromObject($chat->other_user, 'role'));
+                @endphp
                 <div class="col-md-12">
                     <div class="chat-window">
 
@@ -353,7 +358,7 @@ select::-ms-expand {
                                             }
                                         }
 
-                                        dd(getSafeValueFromObject($chat->other_user, 'role'));
+                                      
 
                                       
                                         @endphp
