@@ -194,6 +194,7 @@ select::-ms-expand {
     display: none;
 }
 .colorchangecompany:hover a,
+.colorchangecompany:hover ,
 .colorchangecompany:hover span 
 {
     color: blue !important;
