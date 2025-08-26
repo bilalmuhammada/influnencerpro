@@ -252,7 +252,7 @@ select::-ms-expand {
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
                                     @php 
-                dd(getSafeValueFromObject($chat->other_user, 'role'));
+                dd(getSafeValueFromObject($chat->other_user, 'role')["name"]);
                 @endphp
                                         <a href="javascript:void(0);"
                                            class="media chatActionBlock chat-title    @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
