@@ -54,6 +54,7 @@ border-color:goldenrod transparent transparent transparent !important;
                 overflow-x: hidden !important;
                 border-radius: 0.3rem !important;
                 min-height: 120px !important;
+                max-height: 190px !important;
                 background-color: #ffffff !important;
                 color: rgb(0, 0, 0) !important;
             }

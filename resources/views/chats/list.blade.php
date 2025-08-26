@@ -434,7 +434,7 @@ select::-ms-expand {
                                                         Accept
                                                     </button>
                                                 </div>
-                                                <div class="col-md-6 col-12">
+                                                <di_v class="col-md-6 col-12">
                                                     <button class="btn btn-danger reject" chat-id="{{ $chat->id }}">
                                                         Reject
                                                     </button>
@@ -508,7 +508,7 @@ $(document).on("click", "#userOptionsMenu", function() {
             
         }
 
-            });
+    });
         
 
     function checkInput() {
@@ -585,10 +585,10 @@ $(document).ready(function() {
                     }
                 }
             });
-        });
+    });
 
       
-        $('.chatActionBlock').on('click', function() {
+ $('.chatActionBlock').on('click', function() {
 
             const chatInput = $('#emoji-trigger');
 
@@ -1006,14 +1006,7 @@ $.ajax({
 
         } else {
             show_error_message( "Already Reported");
-            // $('.alert-text').text(response.message);
-            // $('.alert-div').show();
-
-            // setTimeout(function () {
-            //     $('.alert-text').text('');
-            //     $('.alert-div').hide();
-            // }, 7000)
-            // showAlert('error', "Ad could not be reported");
+            
         }
     },
     error: function (response) {
