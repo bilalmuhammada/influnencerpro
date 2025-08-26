@@ -70,7 +70,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post("auth/account-setting-update", [AuthController::class, 'accountSettingUpdate']);
     Route::post("auth/vendor-account-setting-update", [AuthController::class, 'vendorAccountSettingUpdateBackend']);
     Route::post("auth/update-password", [AuthController::class, 'updatePassword']);
-
+    
     Route::prefix('/brands')->group(function () {
         
         Route::post("/", [UserController::class, 'brands']);

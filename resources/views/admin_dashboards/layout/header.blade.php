@@ -7,7 +7,7 @@
     <meta name="keywords" content="InfluencersPRO">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>InfluencersPRO Admin Panel </title>
+    <title>InfluencersPro Admin Panel </title>
     <link rel="stylesheet" href="{{ asset('asset-admin/vendors/dropify/dist/dropify.min.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

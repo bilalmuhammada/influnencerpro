@@ -220,7 +220,7 @@ function getCitiesByCountry(country_id) {
             } else {
                 $("#city_id").empty();
             }
-            $("#city_id").append('<option  value=""> All Cities </option>');
+            
         }
     });
 }

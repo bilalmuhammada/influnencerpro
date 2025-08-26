@@ -17803,19 +17803,19 @@ h2.footer-title:before {
     color: #fff;
 }
 .iconx i{
-    color:rgb(254, 176, 25)  !important;
+    color: #FFD700  !important;
 }
 .iconx i:hover{
     color:#0504aa !important;
 }
 .iconx2 i{
-    color: rgb(0, 143, 251) !important;
+    color: #008FFB !important;
 }
 .iconx2 i:hover{
     color:#0504aa !important;
 }
 .iconx3 i{
-    color: rgb(0, 227, 150) !important;
+    color: #32CD32 !important;
 }
 .iconx3:hover i:hover{
     color:#0504aa !important;

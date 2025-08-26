@@ -1072,7 +1072,7 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
 
     public function editProfile()
     {
-        // dd(session()->get('user') );
+         //dd(session()->get('user') );
         $admin = User::find(session()->get('user')['id']);
 
       
@@ -1274,6 +1274,7 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
     public function editProfileBackend(Request $request)
     {
 
+        
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);

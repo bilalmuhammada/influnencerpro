@@ -142,7 +142,7 @@
             e.preventDefault();
             var formData = new FormData($(this)[0]);
             $.ajax({
-                url: api_url + 'edit-profile',
+                url: api_url + 'admins-dashboard/edit-profile',
                 type: 'post',
                 dataType: "JSON",
                 data: formData,

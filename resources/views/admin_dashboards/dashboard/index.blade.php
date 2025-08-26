@@ -155,9 +155,9 @@ label{
 
   @keyframes shake  {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
     100% { transform: translateX(0); }
   }
 
@@ -757,7 +757,7 @@ label{
                 <select class="js-example-basic-single form-control city_dropdown  form-select city_id" data-width="100%"
                                         id="city_id"
                                         name="city_id">
-                                    <option value=""> All Cities</option>
+                                   
 
                                 </select>
             </div>
@@ -1093,13 +1093,19 @@ function numberFormat(number) {
                     var options = {
                         series: [{
                             name: 'Influencers',
-                            data: data.influencer_payment_amount_array
+                            data: [30, 40, 35, 50, 49, 60, 70, 91],
+                            color: '#32CD32'
+                          //  data: data.influencer_payment_amount_array
                         }, {
                              name: 'Brands',
-                            data: data.brand_payment_amount_array
+                             data: [30, 40, 35, 50, 49, 60, 70, 91],
+                             color: '#008FFB' 
+                            //data: data.brand_payment_amount_array
                         }, {
                             name: 'Total',
-                            data: data.payment_amount_array
+                            data: [30, 40, 35, 50, 49, 60, 70, 91],
+                            color: '#FFD700' 
+                           // data: data.payment_amount_array
                         }],
                         chart: {
                             type: 'bar',
@@ -1108,7 +1114,7 @@ function numberFormat(number) {
                         plotOptions: {
                             bar: {
                                 horizontal: false,
-                                columnWidth: '55%',
+                                columnWidth: '30%',
                                 endingShape: 'rounded'
                             },
                         },

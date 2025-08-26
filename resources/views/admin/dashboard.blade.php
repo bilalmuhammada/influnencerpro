@@ -39,12 +39,20 @@ margin-bottom: 13px;
 
 }
 
-.shaking {
+
+
+.apexcharts-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.shaking, .apexcharts-legend-series {
     
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-      .shaking:hover {
+      .shaking:hover, .apexcharts-legend-series:hover {
     animation: shake 2s linear infinite;
    }
 
@@ -288,64 +296,68 @@ $(function() {
         series: [{
             name: 'Profile Views',
             data: data.profile_visit_count,
-            color: '#00e396'
+             color: '#32CD32'
         }, {
-            name: 'Favourites',
+            name: 'Favorites',
             data: data.favourite_count,
-            color: '#008ffb'
+            color: '#008FFB' 
         }, {
             name: 'Chats',
             data: data.chat_count,
-            color: 'rgb(254, 176, 25)'
+            color: '#FFD700' 
         }],
         chart: {
             type: 'bar',
-            height: 500,
-            animations: {
-                enabled: true,
-                easing: 'easeinout',
-                speed: 800
-            }
+            height: 350,
+            background: 'transparent'
+            //animations: {
+             //   enabled: true,
+               // easing: 'easeinout',
+               // speed: 800
+            //}
         },
         plotOptions: {
             bar: {
                 horizontal: false,
-                columnWidth: '35%',
+                columnWidth: '30%',
                 endingShape: 'rounded',
-                dataLabels: {
-                    position: 'center' // puts label inside bar
-                }
+                //dataLabels: {
+                  //  position: 'center' // puts label inside bar
+              //  }
             },
         },
         dataLabels: {
-            enabled: true,
+            enabled: false,
             
-        },
+        },stroke: {
+            show: true,
+             width: 2,
+            colors: ['transparent']
+         },
         xaxis: {
             categories: data.months,
-            labels: {
-                show: false // hide bottom labels since we move them
-            }
+            
+        },
+        fill: {
+            opacity: 1
         },
         tooltip: {
             y: {
                 formatter: function (val) {
-                    return "" + val + "";
+                    return val
                 }
             },
-            custom: function({ series, seriesIndex, dataPointIndex, w }) {
-                // Custom tooltip with date centered
-                let month = w.globals.labels[dataPointIndex];
-                let val = series[seriesIndex][dataPointIndex];
-                return `<div style="text-align:center; padding:6px;">
-                          <strong>${month}</strong><br/>
-                          ${w.config.series[seriesIndex].name}: ${val}
-                        </div>`;
-            }
+            //custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                 //  Custom tooltip with date centered
+               // let month = w.globals.labels[dataPointIndex];
+                //let val = series[seriesIndex][dataPointIndex];
+             //   return `<div style="text-align:center; padding:6px;background: transparent;">
+                //          <strong>${month}</strong><br/>
+                     ////     ${w.config.series[seriesIndex].name}: ${val}
+                    //   </div>`;
+           // }
         },
-        fill: {
-            opacity: 1
-        }
+      
     };
 
     var chart = new ApexCharts(document.querySelector("#barChart"), options);
