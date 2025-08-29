@@ -615,41 +615,7 @@ $(document).ready(function() {
             });
     });
 
-      
- $('.chatActionBlock').on('click', function() {
-
-            const chatInput = $('#emoji-trigger');
-
-// Get the chat block status
-const isBlocked = chatInput.data('chat-block');
-
-                   var emojioneArea = $('.emojionearea.emojionearea-inline');
-                    var emojioneEditor = $('.emojionearea-editor');
-                    if (isBlocked) {
-                        // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
-                        // if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '#fdeaea',
-                                    'cursor': 'not-allowed',
-                                    'pointer-events': 'none'
-                                });
-                                emojioneEditor.attr('contenteditable', 'false');
-                        // }
-                    } else {
-                        // show_success_message('User Unblocked');
-                        // if (emojioneArea.length > 0) {
-                            emojioneArea.css({
-                                'background': '',
-                                'cursor': '',
-                                'pointer-events': ''
-                            });
-                            emojioneEditor.attr('contenteditable', 'true');
-                        // }
-
-                        button.find('i').css('color', 'grey');
-                    }
-        });
+   
 
         // Toggle block
         $('.block-chat').on('click', function() {
