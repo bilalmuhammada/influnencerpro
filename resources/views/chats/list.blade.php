@@ -709,6 +709,16 @@ const isBlocked = chatInput.data('chat-block');
                        
                     }
 
+                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                        if (response.is_blocked) {
+                            chatItem.addClass('blocked');
+                        } else {
+                            chatItem.removeClass('blocked');
+                        }
+
+                    
+
+
 
                     
                 }
