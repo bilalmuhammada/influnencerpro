@@ -300,11 +300,11 @@ $(function() {
         }, {
             name: 'Favorites',
             data: data.favourite_count,
-            color: '#008FFB' 
+            color: '#0000ff' 
         }, {
             name: 'Chats',
             data: data.chat_count,
-            color: '#FFD700' 
+            color: '#DAA520' 
         }],
         chart: {
             type: 'bar',

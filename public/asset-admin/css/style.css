@@ -256,7 +256,7 @@ input[type=password] {
     border-color: #E7E8EA;
     /* color: #353535; */
     color: black;
-    font-size: 15px;
+    font-size: 14px;
     min-height: 46px;
     padding: 6px 15px;
     border: 1px solid #997045 !important;
@@ -17755,7 +17755,7 @@ h2.footer-title:before {
     color:#0504aa !important;
 }
 .iconx2 i{
-    color: rgb(0, 143, 251) !important;
+    color: #0000ff !important;
 }
 .iconx2 i:hover{
     color:#0504aa !important;

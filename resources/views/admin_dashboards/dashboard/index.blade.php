@@ -79,6 +79,7 @@ font-weight:bold !important;
     /* color: white; */
     /* border-radius: 12px; */
     width: 60px;
+   
 
 }
 
@@ -155,9 +156,9 @@ label{
 
   @keyframes shake  {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-8px); }
-    50% { transform: translateX(8px); }
-    75% { transform: translateX(-8px); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
   }
 
@@ -734,9 +735,11 @@ label{
         <div class="row mb-4" style="width: 98%;margin-top: 14px;">
             <div class="col">
                 <select name="filtergraph" id="filtergraph" class="form-control filtergraph">
-                    <option value="sales">Sales</option>
-                    <option value="counts" >Counts</option>
-                    {{-- <option value="">Influencers</option> --}}
+                    <option value="salesinf">Sales - Influencers </option>
+                    <option value="salebrand" >Sales - Brands </option>
+                    <option value="countinf">Counts - Influencers</option> 
+                    <option value="countbrand">Counts - Brands </option> 
+
                 </select>
             </div>
             <div class="col">
@@ -757,7 +760,7 @@ label{
                 <select class="js-example-basic-single form-control city_dropdown  form-select city_id" data-width="100%"
                                         id="city_id"
                                         name="city_id">
-                                   
+                                        <option value="0"> All Cities</option>
 
                                 </select>
             </div>
@@ -991,193 +994,87 @@ function numberFormat(number) {
         })
 
 
-        function render_monthly_sale_chart() {
-            $.ajax({
-                url: api_url + 'get-chart-data', // Update with your actual endpoint
-                method: 'GET',
-                data: {
-                    from_date: $('#from_date').val(),
-                    to_date: $('#to_date').val(),
-                    filtergraph: $('#filtergraph').val()
-                },
-                success: function (data) {
 
-                    // var options = {
-                    //     chart: {
-                    //         type: 'bar',
-                    //         height: '318',
-                    //         parentHeightOffset: 0,
-                    //         foreColor: colors.bodyColor,
-                    //         background: colors.cardBg,
-                    //         toolbar: {
-                    //             show: false
-                    //         },
-                    //     },
-                    //     theme: {
-                    //         mode: 'light'
-                    //     },
-                    //     tooltip: {
-                    //         theme: 'light'
-                    //     },
-                    //     colors: [colors.primary],
-                    //     fill: {
-                    //         opacity: .9
-                    //     },
-                    //     grid: {
-                    //         padding: {
-                    //             bottom: -4
-                    //         },
-                    //         borderColor: colors.gridBorder,
-                    //         xaxis: {
-                    //             lines: {
-                    //                 show: true
-                    //             }
-                    //         }
-                    //     },
-                    //     series: [{
-                    //         name: 'Sales',
-                    //         data: data.payment_amount_array
-                    //     }],
-                    //     xaxis: {
-                    //         type: 'datetime',
-                    //         categories: data.month_array,
-                    //         axisBorder: {
-                    //             color: colors.gridBorder,
-                    //         },
-                    //         axisTicks: {
-                    //             color: colors.gridBorder,
-                    //         },
-                    //     },
-                    //     yaxis: {
-                    //         title: {
-                    //             text: 'Number of Sales',
-                    //             style: {
-                    //                 size: 9,
-                    //                 color: colors.muted
-                    //             }
-                    //         },
-                    //     },
-                    //     legend: {
-                    //         show: true,
-                    //         position: "top",
-                    //         horizontalAlign: 'center',
-                    //         fontFamily: fontFamily,
-                    //         itemMargin: {
-                    //             horizontal: 8,
-                    //             vertical: 0
-                    //         },
-                    //     },
-                    //     stroke: {
-                    //         width: 0
-                    //     },
-                    //     dataLabels: {
-                    //         enabled: true,
-                    //         style: {
-                    //             fontSize: '10px',
-                    //             fontFamily: fontFamily,
-                    //         },
-                    //         offsetY: -27
-                    //     },
-                    //     plotOptions: {
-                    //         bar: {
-                    //             columnWidth: "50%",
-                    //             borderRadius: 4,
-                    //             dataLabels: {
-                    //                 position: 'top',
-                    //                 orientation: 'vertical',
-                    //             }
-                    //         },
-                    //     },
-                    // }
+        var apexBarChart; // global chart instance
 
-                    var options = {
-                        series: [{
-                            name: 'Influencers',
-                            data: [30, 40, 35, 50, 49, 60, 70, 91],
-                            color: '#32CD32'
-                          //  data: data.influencer_payment_amount_array
-                        }, {
-                             name: 'Brands',
-                             data: [30, 40, 35, 50, 49, 60, 70, 91],
-                             color: '#008FFB' 
-                            //data: data.brand_payment_amount_array
-                        }, {
-                            name: 'Total',
-                            data: [30, 40, 35, 50, 49, 60, 70, 91],
-                            color: '#FFD700' 
-                           // data: data.payment_amount_array
-                        }],
-                        chart: {
-                            type: 'bar',
-                            height: 350
-                        },
-                        plotOptions: {
-                            bar: {
-                                horizontal: false,
-                                columnWidth: '30%',
-                                endingShape: 'rounded'
-                            },
-                        },
-                        dataLabels: {
-                            enabled: false
-                        },
-                        stroke: {
-                            show: true,
-                            width: 2,
-                            colors: ['transparent']
-                        },
-                        xaxis: {
-                            // categories: data.month_array,
-                            categories: data.month_array.map(function(date) {
-            const dateParts = date.split("/"); // Split the date by "/"
-            const year = dateParts[0]; // Get the last two digits of the year
-            const month = dateParts[1];
+function render_monthly_sale_chart() {
+    var filterValue = $('#filtergraph').val();
 
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const monthAbbreviation = monthNames[parseInt(month) - 1]; // Convert month number to abbreviation
+    // Decide Y-axis title based on filter
+    var yAxisTitle = (filterValue === "salebrand") ? "Sales - Brands"
+                   : (filterValue === "salesinf") ? "Sales - Influencers"
+                   : (filterValue === "countbrand") ? "Counts - Brands"
+                   : (filterValue === "countinf") ? "Counts - Influencers"
+                   : "";
 
-            return `${monthAbbreviation}/${year}`; // Combine abbreviation with year
-        }),
-                            // categories: data.month_array.map(month => month + "/24"), 
-                        },
-                        yaxis: {
-                            title: {
-                                text: data.filtergraph  
-                            }
-                        },
-                        fill: {
-                            opacity: 1
-                        },
-                        
-                        tooltip: {
-                            y: {
-                                formatter: function (val) {
-                                    // return "$ " + val + " thousands"
-                                    return   val 
-                                }
-                            }
-                        }
-                    };
-
-                    var apexBarChart = new ApexCharts(document.querySelector("#monthlySalesChart"), options);
-                    apexBarChart.render();
-                    $('#filtergraph').on('change', function () {
-                filtergraph = $(this).val(); // Get updated filtergraph value
-                if (apexBarChart) {
-        apexBarChart.destroy();
-    }
-                apexBarChart.updateOptions({
-                    yaxis: {
-                        title: {
-                            text: filtergraph === "sales" ? "Sales" : "Counts" // Update title based on selection
-                        }
+    $.ajax({
+        url: api_url + 'get-chart-data',
+        method: 'GET',
+        data: {
+            from_date: $('#from_date').val(),
+            to_date: $('#to_date').val(),
+            filtergraph: filterValue
+        },
+        success: function (data) {
+            var options = {
+                series: [
+                    {
+                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Influencers",
+                        data: [30, 40, 35, 50, 49, 60, 70, 91],
+                        color: '#32CD32'
+                    }, {
+                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Brands",
+                        data: [30, 40, 35, 50, 49, 60, 70, 91],
+                        color: '#0000ff'
+                    }, {
+                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Total",
+                        data: [30, 40, 35, 50, 49, 60, 70, 91],
+                        color: '#DAA520'
                     }
-                });
-            });
+                ],
+                chart: { type: 'bar', height: 350 },
+                plotOptions: {
+                    bar: { horizontal: false, columnWidth: '30%', endingShape: 'rounded' }
+                },
+                dataLabels: { enabled: false },
+                stroke: { show: true, width: 2, colors: ['transparent'] },
+                xaxis: {
+                    categories: data.month_array.map(function (date) {
+                        const [year, month] = date.split("/");
+                        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        return monthNames[parseInt(month) - 1] + "/" + year;
+                    })
+                },
+                yaxis: { title: { text: yAxisTitle } },
+                fill: { opacity: 1 },
+                tooltip: {
+                    y: { formatter: function (val) { return val; } }
                 }
-            });
+            };
 
+            if (!apexBarChart) {
+                // Create chart once
+                apexBarChart = new ApexCharts(document.querySelector("#monthlySalesChart"), options);
+                apexBarChart.render();
+            } else {
+                // Update existing chart
+                apexBarChart.updateOptions(options);
+                apexBarChart.updateSeries(options.series);
+            }
         }
+    });
+}
+
+// Bind filter change handler only once
+$('#filtergraph').on('change', function () {
+    render_monthly_sale_chart();
+});
+
+
+
+
+
 
         $(document).on('keyup', '#search-box', function () {
             boxSearch();

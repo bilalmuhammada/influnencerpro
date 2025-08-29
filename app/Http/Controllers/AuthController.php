@@ -1320,7 +1320,7 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
                 'type' => $logo->getClientOriginalExtension(),
                 'object' => 'User',
                 'object_id' => $User->id,
-                'context' => $User->role->code . '-image'
+                'context' => "influencer-profile-image"
             ]);
         }
 
@@ -1328,7 +1328,7 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
 
         return response()->json([
             'status' => true,
-            'message' => 'Account Setting Update successfully',
+            'message' => 'Updated',
         ]);
     }
 }
