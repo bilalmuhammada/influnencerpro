@@ -675,7 +675,7 @@ $(document).ready(function() {
                        
                     }
 
-                    var chatItem = $('.chatActionBlock[chat-id="' + chatId + '"]');
+                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
                         if (response.is_blocked) {
                             chatItem.addClass('blocked');
                         } else {
