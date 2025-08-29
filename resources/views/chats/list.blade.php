@@ -645,7 +645,7 @@ $(document).ready(function() {
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
 
-                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                   
                   
                     if (response.is_blocked) {
                         // show_error_message('User Blocked')
@@ -675,7 +675,7 @@ $(document).ready(function() {
                        
                     }
 
-                    
+                    var chatItem = $('.chatActionBlock[chat-id="' + chatId + '"]');
                         if (response.is_blocked) {
                             chatItem.addClass('blocked');
                         } else {
