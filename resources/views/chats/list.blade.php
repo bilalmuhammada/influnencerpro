@@ -660,7 +660,7 @@ $(document).ready(function() {
                         }
                     } else {
                         // show_success_message('User Unblocked');
-                        chatItem.find('i').css('color', 'grey');
+                        button.find('i').css('color', 'grey');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
