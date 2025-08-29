@@ -12,6 +12,15 @@
     cursor: pointer !important;
     color: lightgray !important;}
     
+
+
+    .toggle-password {
+            position: absolute;
+            right: 23px;
+            top: 43%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
 </style>
 @section('content')
     <div class="page-content">
