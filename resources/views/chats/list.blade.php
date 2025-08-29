@@ -715,6 +715,8 @@ const isBlocked = chatInput.data('chat-block');
     $('#filter-dropdown').on('change', function() {
         var filterValue = $(this).val();
 
+        alert(filterValue);
+
         if (filterValue === 'all') {
             $('.chat-title').show(); // Show all chats
         } else if (filterValue === 'favorites') {
