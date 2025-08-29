@@ -683,7 +683,7 @@ const isBlocked = chatInput.data('chat-block');
                   
                     if (response.is_blocked) {
                         // show_error_message('User Blocked')
-                        chatItem.find('i').css('color', 'goldenrod');
+                        button.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
