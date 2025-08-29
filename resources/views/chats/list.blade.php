@@ -604,6 +604,13 @@ $(document).ready(function() {
                     } else {
                         button.find('i').css('color', 'grey');
                     }
+
+                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                        if (response.is_favorite) {
+                            chatItem.addClass('favorite');
+                        } else {
+                            chatItem.removeClass('favorite');
+                        }
                 }
             });
     });
