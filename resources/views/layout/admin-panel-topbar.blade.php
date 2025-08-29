@@ -52,7 +52,7 @@ border-color:goldenrod transparent transparent transparent  !important;
         .select2-container--default .select2-results>.select2-results__options {
             overflow-x: hidden !important;
             border-radius: 0.3rem;
-            max-height: 190px !important;
+            max-height: 200px !important;
             background-color: #ffffff !important;
             color: rgb(0, 0, 0) !important;
         }
