@@ -10,8 +10,8 @@
     top: 28% !important;
     right: 4% !important;
     cursor: pointer !important;
-    /* color: lightgray !important; */
-    }
+    color: lightgray !important;}
+    
 </style>
 @section('content')
     <div class="page-content">
@@ -63,22 +63,22 @@
                                 <label class="focus-label">Mobile </label>
                             </div>
                             <div class="form-group form-focus">
-                                <input type="password" class="form-control floating" name="password"
+                                <input type="password" class="form-control floating" name="password"  id="userPassword"
                                  {{-- placeholder="8  Characters - 1 Capital, 1 Number, 1 Special"  --}}
                                  value="">
-                                 <i class="fa fa-eye" id="togglePassword"
-                                 onclick="togglePassword('profile')"></i>
-                               <div class="invalid-feedback">
-                                  Please provide a valid Password.
-                        </div>
+                                 <div class="input-group-append">
+                                        <span class="toggle-password" onclick="togglePassword('userPassword')" style="cursor: pointer;">👁️</span>
+                                    </div>
                         <label class="focus-label">Change Password </label>
                </div>
                <div class="form-group form-focus">
-                <input type="password" class="form-control floating" name="password" value="">
-                <i class="fa fa-eye" id="togglePassword"
-                onclick="togglePassword('brand_confirm_password')"></i>
-                {{-- <div class="invalid-feedback">                                           Please provide a valid Password.
-                  </div> --}}
+                <input type="password" class="form-control floating" name="password" value=""  id="confirmuserPassword">
+
+                <div class="input-group-append">
+                                        <span class="toggle-password" onclick="togglePassword('confirmuserPassword')" style="cursor: pointer;">👁️</span>
+                                    </div>
+
+               
                  <label class="focus-label">Confirm Password </label>
                   </div>
 
@@ -120,6 +120,23 @@
 @section('page_scripts')
 
     <script type="text/javascript">
+
+
+
+function togglePassword(fieldId) {
+
+
+const passwordField = document.getElementById(fieldId);
+const icon = passwordField.nextElementSibling.querySelector(".toggle-password");
+
+if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.textContent = "🙈"; // Change the icon to "hide"
+} else {
+    passwordField.type = "password";
+    icon.textContent = "👁️"; // Change the icon to "show"
+}
+}
  $(document).ready(function() {
         if ($('.floating').length > 0) {
             
