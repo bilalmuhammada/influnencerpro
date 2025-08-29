@@ -679,11 +679,11 @@ const isBlocked = chatInput.data('chat-block');
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
 
-
+                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
                   
                     if (response.is_blocked) {
                         // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
+                        chatItem.find('i').css('color', 'goldenrod');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
@@ -694,7 +694,7 @@ const isBlocked = chatInput.data('chat-block');
                         }
                     } else {
                         // show_success_message('User Unblocked');
-                        button.find('i').css('color', 'grey');
+                        chatItem.find('i').css('color', 'grey');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
@@ -709,7 +709,7 @@ const isBlocked = chatInput.data('chat-block');
                        
                     }
 
-                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                    
                         if (response.is_blocked) {
                             chatItem.addClass('blocked');
                         } else {
