@@ -8820,7 +8820,7 @@ div#global-loader {
 }
 
 .select2-results__option {
-    padding: 6px 15px;
+    padding: 5px 15px !important;
 }
 
 .select2-container .select2-selection--single {
