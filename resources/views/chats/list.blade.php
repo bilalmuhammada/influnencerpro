@@ -588,7 +588,7 @@ $(document).ready(function() {
     // Handle favorite button click
     $('.favorite-chat').on('click', function() {
             var button = $(this);
-            alert(button );
+            
             var chatId = button.data('chat-id');
 
             $.ajax({
