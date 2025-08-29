@@ -211,6 +211,8 @@ color: #0504aa !important;
     display:none; 
 }
 .select2-container--default .select2-results__option{
+
+    padding-top: 3px;
     padding-left: 11px !important;
 }
     </style>
