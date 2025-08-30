@@ -737,8 +737,9 @@ label{
                 <select name="filtergraph" id="filtergraph" class="form-control filtergraph">
                     <option value="salesinf">Sales - Influencers </option>
                     <option value="salebrand" >Sales - Brands </option>
+                    <option value="saletotal" >Sales - Total </option>
                     <option value="countinf">Counts - Influencers</option> 
-                    <option value="countbrand">Counts - Brands </option> 
+                    <option value="countotal">Counts - Total </option> 
 
                 </select>
             </div>
@@ -995,7 +996,7 @@ function numberFormat(number) {
 
 
 
-        var apexBarChart; // global chart instance
+var apexBarChart; // global chart instance
 
 function render_monthly_sale_chart() {
     var filterValue = $('#filtergraph').val();
@@ -1003,8 +1004,10 @@ function render_monthly_sale_chart() {
     // Decide Y-axis title based on filter
     var yAxisTitle = (filterValue === "salebrand") ? "Sales - Brands"
                    : (filterValue === "salesinf") ? "Sales - Influencers"
+                   : (filterValue === "saletotal") ? "Sales - Total"
                    : (filterValue === "countbrand") ? "Counts - Brands"
                    : (filterValue === "countinf") ? "Counts - Influencers"
+                   : (filterValue === "countotal") ? "Counts - Total"
                    : "";
 
     $.ajax({
