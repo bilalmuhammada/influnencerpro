@@ -822,16 +822,17 @@ $(document).ready(function() {
         });
         
         $(document).on('keydown', '.emojionearea-editor', function (e) {
-            // Check if the pressed key is Enter (keyCode 13)
-            alert("dd");
-         var inputMessage = $('.emojionearea-editor').text().trim();
-        
-            if (e.keyCode === 13  &&  inputMessage !='') {
-                $(this).blur()
-                send_new_message($('.input-msg-send'), $('.input-msg-send'));
-                $(this).focus()
-            }
-        });
+    var inputMessage = $(this).text().trim();
+
+    if (e.keyCode === 13 && inputMessage !== '') {
+        e.preventDefault(); // prevent newline in the editor
+        let chatFooter = $(this).closest('.chat-footer');
+        let message = chatFooter.find('.input-msg-send');
+        let thisElem = chatFooter.find('.msg-send-btn');
+
+        send_new_message(message, thisElem);
+    }
+});
 
         function send_new_message(message, thisElem) {
             // alert($(message).val());
