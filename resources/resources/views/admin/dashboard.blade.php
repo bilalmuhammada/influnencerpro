@@ -174,55 +174,33 @@
             //END OF DONUT CHART
         }
 
-
         function create_bar_chart(data) {
-            //DONUT Chart
-            var options = {
-                series: [{
-                    data: data
-                }],
-                chart: {
-                    width: '100%',
-                    height: '200%',
-                    type: 'bar',
-                },
-                plotOptions: {
-                    pie: {
-                        startAngle: -90,
-                        endAngle: 270
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                fill: {
-                    type: 'gradient',
-                },
-                legend: {
-                    formatter: function (val, opts) {
-                        return val + " - " + opts.w.globals.series[opts.seriesIndex]
-                    }
-                },
-                // title: {
-                //     text: 'Last 30 days Expense'
-                // },
-                responsive: [{
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 380
-                        },
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }]
-            };
+  var options = {
+    series: [
+      { name: 'Profile Views', data: data.profile_visit_count, color: '#32CD32' },
+      { name: 'Favorites',     data: data.favourite_count,     color: '#0000ff' },
+      { name: 'Chats',         data: data.chat_count,          color: '#DAA520' }
+    ],
+    chart: { type: 'bar', height: 350, background: 'transparent' },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '30%',
+        borderRadius: 8,
+        borderRadiusApplication: 'end'
+      }
+    },
+    legend: { markers: { shape: 'square' } },
+    dataLabels: { enabled: false },
+    stroke: { show: true, width: 2, colors: ['transparent'] },
+    xaxis: { categories: data.months },
+    fill: { opacity: 1 },
+    tooltip: { y: { formatter: val => val } }
+  };
 
-            var chart = new ApexCharts(document.querySelector("#barChart"), options);
-            chart.render();
-            //END OF DONUT CHART
-        }
+  var chart = new ApexCharts(document.querySelector("#barChart"), options);
+  chart.render();
+}
 
     </script>
 @endsection

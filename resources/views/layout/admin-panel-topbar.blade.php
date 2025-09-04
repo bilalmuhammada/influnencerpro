@@ -224,7 +224,7 @@ color: goldenrod !important;
                     <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
                 </li>
                 @else
-                <li><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}">Dashboard</a></li>
+                <li class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}"><a href="{{ env('BASE_URL') . '/influencer/dashboard' }}" class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}">Dashboard</a></li>
                 <li class="has-submenu {{ request()->is('influencers/' . session()->get('User')['id'] . '/public-profile') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/influencers'}}/{{session()->has('User') ? session()->get('User')['id'] : '' }}/public-profile">Public Profile</a></li>
                 <li class="has-submenu {{ request()->is('influencer/complete-profile') ? 'active' : '' }}">

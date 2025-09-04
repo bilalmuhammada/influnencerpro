@@ -849,7 +849,7 @@ $(document).ready(function() {
                         $(message).val('');
                         $('.emojionearea-editor').html('');
                     }
-                    $(selector).find('.unread-count').css('display', 'none');
+                   // $(selector).find('.unread-count').css('display', 'none');
                 },
                 error: function (response) {
                     console.log('error');

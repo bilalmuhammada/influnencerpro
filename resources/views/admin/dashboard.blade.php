@@ -24,6 +24,7 @@ width: 212px !important;
 margin-bottom: 13px;
 }
 .apexcharts-legend-text{
+    margin-bottom: -1px;
     color: blue !important;
 }
 .apexcharts-legend-text:hover{
@@ -46,6 +47,11 @@ margin-bottom: 13px;
   border: none !important;
   box-shadow: none !important;
 }
+#barChart .apexcharts-legend .apexcharts-legend-marker {
+  border-radius: 6px !important;   /* 50% for a perfect circle */
+  /* optional: tweak size for pill look */
+  /* width: 14px !important; height: 8px !important; border-radius: 999px !important; */
+}
 
 .shaking, .apexcharts-legend-series {
     
@@ -63,6 +69,7 @@ margin-bottom: 13px;
     75% { transform: translateX(-10px); }
     100% { transform: translateX(0); }
   }
+
 </style>
 @section('content')
 
@@ -292,77 +299,33 @@ $(function() {
         }
 
         function create_bar_chart(data) {
-    var options = {
-        series: [{
-            name: 'Profile Views',
-            data: data.profile_visit_count,
-             color: '#32CD32'
-        }, {
-            name: 'Favorites',
-            data: data.favourite_count,
-            color: '#0000ff' 
-        }, {
-            name: 'Chats',
-            data: data.chat_count,
-            color: '#DAA520' 
-        }],
-        chart: {
-            type: 'bar',
-            height: 350,
-            background: 'transparent'
-            //animations: {
-             //   enabled: true,
-               // easing: 'easeinout',
-               // speed: 800
-            //}
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '30%',
-                endingShape: 'rounded',
-                //dataLabels: {
-                  //  position: 'center' // puts label inside bar
-              //  }
-            },
-        },
-        dataLabels: {
-            enabled: false,
-            
-        },stroke: {
-            show: true,
-             width: 2,
-            colors: ['transparent']
-         },
-        xaxis: {
-            categories: data.months,
-            
-        },
-        fill: {
-            opacity: 1
-        },
-        tooltip: {
-            y: {
-                formatter: function (val) {
-                    return val
-                }
-            },
-            //custom: function({ series, seriesIndex, dataPointIndex, w }) {
-                 //  Custom tooltip with date centered
-               // let month = w.globals.labels[dataPointIndex];
-                //let val = series[seriesIndex][dataPointIndex];
-             //   return `<div style="text-align:center; padding:6px;background: transparent;">
-                //          <strong>${month}</strong><br/>
-                     ////     ${w.config.series[seriesIndex].name}: ${val}
-                    //   </div>`;
-           // }
-        },
-      
-    };
+  var options = {
+    series: [
+      { name: 'Profile Views', data: data.profile_visit_count, color: '#32CD32' },
+      { name: 'Favorites',     data: data.favourite_count,     color: '#0000ff' },
+      { name: 'Chats',         data: data.chat_count,          color: '#DAA520' }
+    ],
+    chart: { type: 'bar', height: 350, background: 'transparent' },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '30%',
+        borderRadius: 8,
+        borderRadiusApplication: 'end'
+      }
+    },
+    legend: { markers: { shape: 'square' } },
+    dataLabels: { enabled: false },
+    stroke: { show: true, width: 2, colors: ['transparent'] },
+    xaxis: { categories: data.months },
+    fill: { opacity: 1 },
+    tooltip: { y: { formatter: val => val } }
+  };
 
-    var chart = new ApexCharts(document.querySelector("#barChart"), options);
-    chart.render();
+  var chart = new ApexCharts(document.querySelector("#barChart"), options);
+  chart.render();
 }
+
 
     </script>
 @endsection

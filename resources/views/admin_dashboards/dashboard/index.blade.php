@@ -137,6 +137,11 @@ color: white;
 label{
     color: blue;
 }
+
+.apexcharts-legend-marker{
+
+    border-radius: 3px !important ;
+}
 .shaking:hover h4,
 .shaking:hover p,
 .shaking:hover span,
@@ -735,11 +740,10 @@ label{
         <div class="row mb-4" style="width: 98%;margin-top: 14px;">
             <div class="col">
                 <select name="filtergraph" id="filtergraph" class="form-control filtergraph">
-                    <option value="salesinf">Sales - Influencers </option>
-                    <option value="salebrand" >Sales - Brands </option>
-                    <option value="saletotal" >Sales - Total </option>
-                    <option value="countinf">Counts - Influencers</option> 
-                    <option value="countotal">Counts - Total </option> 
+                    <option value="sale">Sales </option>
+                    
+                    <option value="count">Counts</option> 
+                    
 
                 </select>
             </div>
@@ -1002,12 +1006,10 @@ function render_monthly_sale_chart() {
     var filterValue = $('#filtergraph').val();
 
     // Decide Y-axis title based on filter
-    var yAxisTitle = (filterValue === "salebrand") ? "Sales - Brands"
-                   : (filterValue === "salesinf") ? "Sales - Influencers"
-                   : (filterValue === "saletotal") ? "Sales - Total"
-                   : (filterValue === "countbrand") ? "Counts - Brands"
-                   : (filterValue === "countinf") ? "Counts - Influencers"
-                   : (filterValue === "countotal") ? "Counts - Total"
+    var yAxisTitle = (filterValue === "sale") ? "Sales"
+                   
+                   : (filterValue === "count") ? "Counts"
+                   
                    : "";
 
     $.ajax({

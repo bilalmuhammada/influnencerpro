@@ -183,7 +183,7 @@ border-color:goldenrod transparent transparent transparent !important;
         @endphp
         <ul class="main-nav nav">
             @if(session()->has('User') && session()->get('role') == 'vendor')
-               <li><a href="{{ env('BASE_URL') . '/vendor/dashboard' }}" class="colorchange" style="margin-right: 76px;">Dashboard</a></li>
+               <li><a href="{{ env('BASE_URL') . '/vendor/dashboard' }}" class="colorchange {{ request()->is('vendor/dashboard') ? 'active' : '' }}" style="margin-right: 76px;">Dashboard</a></li>
                
             @endif
 
