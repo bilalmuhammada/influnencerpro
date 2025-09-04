@@ -822,15 +822,24 @@ $(document).ready(function() {
         });
         
         $(document).on('keydown', '.emojionearea-editor', function (e) {
-    var inputMessage = $(this).text().trim();
+    if (e.keyCode === 13) { 
+        e.preventDefault(); // stop newline
 
-    if (e.keyCode === 13 && inputMessage !== '') {
-        e.preventDefault(); // prevent newline in the editor
+        let text = $(this).text().trim();
+        if (text === '') return;
+
         let chatFooter = $(this).closest('.chat-footer');
         let message = chatFooter.find('.input-msg-send');
-        let thisElem = chatFooter.find('.msg-send-btn');
+        let btn = chatFooter.find('.msg-send-btn');
 
-        send_new_message(message, thisElem);
+        // copy editor text into hidden input
+        message.val(text);
+
+        send_new_message(message, btn);
+
+        // clear after send
+        $(this).text('');
+        message.val('');
     }
 });
 
