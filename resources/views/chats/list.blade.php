@@ -823,6 +823,7 @@ $(document).ready(function() {
         
         $(document).on('keydown', '.emojionearea-editor', function (e) {
             // Check if the pressed key is Enter (keyCode 13)
+            alert("dd");
          var inputMessage = $('.emojionearea-editor').text().trim();
         
             if (e.keyCode === 13  &&  inputMessage !='') {
