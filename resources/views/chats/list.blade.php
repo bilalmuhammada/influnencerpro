@@ -250,12 +250,14 @@ select::-ms-expand {
                                 </div>
                             </div>  
                             
-                            
+                           
                             
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                            
+                                    @php 
+                            dd($chat->unread_count);
+                            @endphp
                                         <a href="javascript:void(0);"
                                            class="media chatActionBlock chat-title  @if($chat->unread_count>0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
