@@ -55,7 +55,7 @@ class ChatController extends Controller
                 }
         
                 // Sort the messages by the date key
-                krsort($groupedMessages);
+                ksort($groupedMessages);
                 $chat->sorted_messages = $groupedMessages;
         
             }
