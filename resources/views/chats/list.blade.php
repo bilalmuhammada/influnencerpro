@@ -255,11 +255,9 @@ select::-ms-expand {
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
-                                    @php 
-                            dd($chat);
-                            @endphp
+                                   
                                         <a href="javascript:void(0);"
-                                           class="media chatActionBlock chat-title  @if($chat->unread_count>0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                           class="media chatActionBlock chat-title  @if($chat->unread_count) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}"  >
