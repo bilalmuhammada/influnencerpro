@@ -249,7 +249,11 @@ select::-ms-expand {
                                     </div>
                                 </div>
                             </div>  
-                                         
+                            
+                            @php 
+                            dd($chats);
+                            @endphp
+                            
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
                                     @foreach($chats as $chat)
@@ -364,11 +368,11 @@ select::-ms-expand {
                                         @endphp
                                             <div class="media-body flex-grow-1">
                                                 <div class="user-name colorchangecompany"> {!! strtolower(getSafeValueFromObject($chat->other_user, 'role')['name'] ?? '') === 'vendor' 
-    ? getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') 
-    : '<a href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">' 
-        . getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') . 
-      '</a>' !!} - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
-                                               
+                                                ? getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') 
+                                                : '<a href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">' 
+                                                    . getSafeValueFromObject($chat->other_user, 'name') . ' ' . getSafeValueFromObject($chat->other_user, 'last_name') . 
+                                                '</a>' !!} - <span >{{ $categoryNames ?? ''}} {{ getSafeValueFromObject($chat->other_user, 'company_name') }} </span> </div>
+                                                                                        
                                             </div>
                                         </div>
 
