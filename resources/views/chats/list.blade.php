@@ -230,6 +230,7 @@ select::-ms-expand {
                                     <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="favorites">Favorited</option>
+                                        <option value="unread">Unread</option>
                                         <option value="blocked">Blocked</option>
                                     </select>
                                 </div>
@@ -254,7 +255,7 @@ select::-ms-expand {
                                     @foreach($chats as $chat)
                             
                                         <a href="javascript:void(0);"
-                                           class="media chatActionBlock chat-title    @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                           class="media chatActionBlock chat-title  @if($chat->unread_count>0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}"  >
@@ -292,7 +293,7 @@ select::-ms-expand {
                                                     </button>
                                                 </div>
 
-                                                <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: #666;">
+                                                <div style="display: flex; align-items: center; gap: 9px; font-size: 12px; color: #666;">
                                                     <div class="badge bg-primary badge-pill unread-count" 
                                                         style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }};">
                                                         {{ $chat->unread_count }}
@@ -710,6 +711,11 @@ $(document).ready(function() {
             $('.chat-title').hide(); // Hide all chats
             $('.blocked').show();    // Show only blocked chats
         }
+        else if (filterValue === 'unread') {
+            $('.chat-title').hide(); // Hide all chats
+            $('.unread').show();    // Show only blocked chats
+        }
+        
     });
 
 
