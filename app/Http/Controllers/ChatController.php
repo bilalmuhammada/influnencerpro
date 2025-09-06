@@ -45,22 +45,23 @@ class ChatController extends Controller
    
         foreach ($chats as $chat) {
             $groupedMessages = [];
-            if ($chat->messages) {
+        
+            if ($chat->messages->isNotEmpty()) {
                 foreach ($chat->messages as $message) {
                     $dateKey = Carbon::parse($message->sended_at)->format('d-m-Y');
-                    // Log the date key for debugging
-                    \Log::info('Date Key: ' . $dateKey);
                     $groupedMessages[$dateKey][] = $message;
+        
                     $message->update(['is_delivered' => true]);
                 }
         
-                // Sort the messages by the date key
-                ksort($groupedMessages);
-                $chat->sorted_messages = $groupedMessages;
+                // If you want the date groups in order (latest day last):
+                ksort($groupedMessages); // ascending by date
+                // or for newest day first:
+                // krsort($groupedMessages);
         
+                $chat->sorted_messages = $groupedMessages;
             }
         }
-
        
         return view('chats.list')->with([
             'chats' => $chats,
