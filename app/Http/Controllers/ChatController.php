@@ -40,7 +40,7 @@ class ChatController extends Controller
             $chats = $chats->where('status', '!=', 'rejected');
         }
 
-        $chats = $chats
+        $chats = $chats->orderBy('created_at','desc')
         ->get();
    
         foreach ($chats as $chat) {
