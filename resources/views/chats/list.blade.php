@@ -250,9 +250,7 @@ select::-ms-expand {
                                 </div>
                             </div>  
                             
-                            @php 
-                            dd($chats);
-                            @endphp
+                            
                             
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
