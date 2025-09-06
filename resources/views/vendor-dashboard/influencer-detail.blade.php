@@ -181,7 +181,7 @@ color: goldenrod !important;
                     <div class="card search-filter" style="border:0px solid red;">
                         <!-- <div class="card-header d-flex justify-content-between"> -->
                         <div class="card-header__">
-                            <div class="influencer project-img" style="border-radius:0.1rem !important; " id="influencer">
+                            <div class="influencer project-img" style="border-radius:0.2rem !important; " id="influencer">
                                 <a href="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}">
                                 <img class="card-title mb-0" src="{{ $influencer ? $influencer->influencer_profile_image_main : '' }}"
                                      alt="author"
