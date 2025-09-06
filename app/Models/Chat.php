@@ -25,7 +25,7 @@ class Chat extends Model
 
     public function messages()
     {
-        return $this->hasMany(Message::class, 'chat_id', 'id')->orderBy('sended_at', 'ASC');;
+        return $this->hasMany(Message::class, 'chat_id', 'id')->orderBy('sended_at', 'DESC');;
     }
 
     public function getOtherUserAttribute()
