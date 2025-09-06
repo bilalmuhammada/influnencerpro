@@ -1024,15 +1024,15 @@ function render_monthly_sale_chart() {
             var options = {
                 series: [
                     {
-                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Influencers",
+                        name: (filterValue.includes("sale") ? "Sales - " : "Counts - ") + "Influencers",
                         data: [30, 40, 35, 50, 49, 60, 70, 91],
                         color: '#32CD32'
                     }, {
-                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Brands",
+                        name: (filterValue.includes("sale") ? "Sales - " : "Counts - ") + "Brands",
                         data: [30, 40, 35, 50, 49, 60, 70, 91],
                         color: '#0000ff'
                     }, {
-                        name: (filterValue.includes("sales") ? "Sales - " : "Counts - ") + "Total",
+                        name: (filterValue.includes("sale") ? "Sales - " : "Counts - ") + "Total",
                         data: [30, 40, 35, 50, 49, 60, 70, 91],
                         color: '#DAA520'
                     }
