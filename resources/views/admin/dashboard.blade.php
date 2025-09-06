@@ -310,8 +310,8 @@ $(function() {
       bar: {
         horizontal: false,
         columnWidth: '30%',
-        borderRadius: 8,
-        borderRadiusApplication: 'end'
+        
+        
       }
     },
     legend: { markers: { shape: 'square' } },
