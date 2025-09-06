@@ -55,7 +55,7 @@ class ChatController extends Controller
                 }
         
                 // If you want the date groups in order (latest day last):
-                ksort($groupedMessages); // ascending by date
+                krsort($groupedMessages); // ascending by date
                 // or for newest day first:
                 // krsort($groupedMessages);
         
