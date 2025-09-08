@@ -833,9 +833,19 @@ $(document).ready(function() {
     if (e.keyCode === 13) { 
         e.preventDefault(); // stop newline
 
-        let text = $(this).text().trim();
-       
-alert(text);
+        // Get text + emojis
+        let text = '';
+        $(this).contents().each(function() {
+            if (this.nodeType === 3) { // text node
+                text += this.nodeValue;
+            } else if (this.nodeType === 1 && this.tagName === 'IMG') { // emoji image
+                text += $(this).attr('alt') || '';
+            }
+        });
+        text = text.trim();
+
+        alert(text); // now shows both text and emojis
+
         let chatFooter = $(this).closest('.chat-footer');
         let message = chatFooter.find('.input-msg-send');
         let btn = chatFooter.find('.msg-send-btn');
@@ -850,6 +860,7 @@ alert(text);
         message.val('');
     }
 });
+
 
         function send_new_message(message, thisElem) {
             // alert($(message).val());
