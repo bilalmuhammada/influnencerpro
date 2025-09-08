@@ -835,7 +835,7 @@ $(document).ready(function() {
 
         let text = $(this).text().trim();
        
-
+alert(text);
         let chatFooter = $(this).closest('.chat-footer');
         let message = chatFooter.find('.input-msg-send');
         let btn = chatFooter.find('.msg-send-btn');
