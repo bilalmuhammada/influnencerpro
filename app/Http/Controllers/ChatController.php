@@ -58,7 +58,7 @@ class ChatController extends Controller
                 
         
                 uksort($groupedMessages, function($a, $b) {
-                    return strtotime($b) - strtotime($a);
+                    return strtotime($a) - strtotime($b);
                 });
                 $chat->sorted_messages = $groupedMessages;
             }
