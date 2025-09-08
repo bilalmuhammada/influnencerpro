@@ -834,7 +834,7 @@ $(document).ready(function() {
         e.preventDefault(); // stop newline
 
         let text = $(this).text().trim();
-        if (text === '') return;
+       
 
         let chatFooter = $(this).closest('.chat-footer');
         let message = chatFooter.find('.input-msg-send');
