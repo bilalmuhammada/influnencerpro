@@ -844,7 +844,7 @@ $(document).ready(function() {
         });
         text = text.trim();
 
-        alert(text); // now shows both text and emojis
+        // now shows both text and emojis
 
         let chatFooter = $(this).closest('.chat-footer');
         let message = chatFooter.find('.input-msg-send');
