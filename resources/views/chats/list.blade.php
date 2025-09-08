@@ -188,6 +188,7 @@ color: goldenrod !important;
 
 .select2-container--default .select2-results > .select2-results__options {
     min-height: 0px !important;
+    max-height: 193px !important;
 }
 /* Customize the dropdown arrow */
 select::-ms-expand {
