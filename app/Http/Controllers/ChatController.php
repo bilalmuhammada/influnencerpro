@@ -54,11 +54,12 @@ class ChatController extends Controller
                     $message->update(['is_delivered' => true]);
                 }
         
-                // If you want the date groups in order (latest day last):
-                krsort($groupedMessages); // ascending by date
-                // or for newest day first:
-                // krsort($groupedMessages);
+
+                
         
+                uksort($groupedMessages, function($a, $b) {
+                    return strtotime($b) - strtotime($a);
+                });
                 $chat->sorted_messages = $groupedMessages;
             }
         }
