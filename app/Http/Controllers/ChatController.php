@@ -63,7 +63,7 @@ class ChatController extends Controller
                 $chat->sorted_messages = $groupedMessages;
             }
         }
-        dd($chat->sorted_messages);
+      
        
        
         return view('chats.list')->with([
