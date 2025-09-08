@@ -30,7 +30,7 @@
 }
 
 .select2-results__option{
-    padding: 6px 0px 4px 1px !important;
+    padding: 7px 0px 4px 1px !important;
   /*  margin-left: 4px !important; */
 
 }
@@ -188,7 +188,7 @@ color: goldenrod !important;
 
 .select2-container--default .select2-results > .select2-results__options {
     min-height: 0px !important;
-    max-height: 193px !important;
+   
 }
 /* Customize the dropdown arrow */
 select::-ms-expand {
