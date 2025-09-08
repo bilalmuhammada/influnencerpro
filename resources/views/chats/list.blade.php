@@ -206,11 +206,7 @@ select::-ms-expand {
          style="background-color:#eee;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
         <div class="container-fluid">
             <div class="row">
-                <!-- <div style="padding-bottom:2px;"><button class="btn btn-danger" id="deleteSelected"><i class="fa fa-trash"></i></button>
-                <input type="checkbox" style="margin-left:26.5%;" id="check-all">&nbsp;ALL
-
-                </div> -->
-
+                
 
                 
                 <div class="col-md-12">
@@ -221,7 +217,7 @@ select::-ms-expand {
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-2 text-center ">
-                                            <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 7px;margin-top: 10px;">
+                                            <input type="checkbox" class="hiddencheck" id="check-all" style="margin-left: 9px;margin-top: 10px;">
                                         </div>
                                         <div class="col-md-10 hiddencheck" style="margin-top: 7px;padding:0px; font-size:13px;">Select All</div>
                                     </div>
