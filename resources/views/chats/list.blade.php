@@ -650,6 +650,8 @@ $(document).ready(function() {
                     if (response.is_blocked) {
                         // show_error_message('User Blocked')
                         button.find('i').css('color', 'goldenrod');
+                        button.attr('title', 'Unblock');
+                        button.text('Unblock User');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
@@ -661,6 +663,9 @@ $(document).ready(function() {
                     } else {
                         // show_success_message('User Unblocked');
                         button.find('i').css('color', 'grey');
+                      
+                        button.attr('title', 'Block');
+                        button.text('Block User ');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',

@@ -82,7 +82,7 @@
             color:#000
         }
         .textarea:hover{
-            border:2px solid blue !important;
+            border:1px solid blue !important;
           
         }
        
