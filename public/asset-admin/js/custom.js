@@ -209,6 +209,7 @@ function getCitiesByCountry(country_id) {
             if (response.data.length > 0) {
                 var states = response.data;
                 $("#city_id").empty();
+                
                
                 $("#city_id").append('<option  value=""> All Cities </option>');
 
@@ -218,7 +219,7 @@ function getCitiesByCountry(country_id) {
                     });
                 }
             } else {
-                $("#city_id1").empty();
+                $("#city_id").append('<option  value=""> All Cities </option>');
             }
             
         }
