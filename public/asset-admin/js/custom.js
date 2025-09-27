@@ -218,7 +218,7 @@ function getCitiesByCountry(country_id) {
                     });
                 }
             } else {
-                $("#city_id").empty();
+                $("#city_id1").empty();
             }
             
         }
