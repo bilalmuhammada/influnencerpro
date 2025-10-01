@@ -681,7 +681,7 @@ color: goldenrod !important;
                                 <div class="social-wrapper" style="text-align: center;">
                                     <a href="{{ $snapchat ? 'https://' . ltrim($snapchat->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
                                      
-                                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt="" width="30px">
+                                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt="" width="33px">
                                     </a>
                                     <div class="text-center font-change followers-count">
                                         {{ strtoupper($snapchat ? $snapchat->followers : 0) }}
