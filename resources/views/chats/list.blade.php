@@ -428,6 +428,14 @@ select::-ms-expand {
                                             </div>
                                         </div>
 
+                                        @php
+                                                $existingReport = \App\Models\AdsReported::where('reported_by', session()->get('user')['id'])
+                                                    ->where('listing_id', $chat->id)
+                                                    ->first();
+
+
+                                                   
+                                             @endphp
                                         <div class="dropdown">
                                             <button class="btn btn-link p-0" type="button" id="userOptionsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fa fa-ellipsis-v"></i>
@@ -435,8 +443,14 @@ select::-ms-expand {
                                             
                                             <!-- Dropdown menu options -->
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                <a class="dropdown-item block-chat "    data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
-                                                <a class="dropdown-item report-user-btn" data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
+                                                <a class="dropdown-item block-chat "  style="font-size: 12px;"  data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
+                                                <a class="dropdown-item report-user-btn" style="font-size: 12px;"  data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
+                                                @if($existingReport)
+                                                        Reported User
+                                                    @else
+                                                        Report User
+                                                    @endif
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
