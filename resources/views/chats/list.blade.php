@@ -270,10 +270,10 @@ select::-ms-expand {
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
                                     <div class="row align-items-center"  id="checkbox">
-                                        
+                                    <div class="col-md-12">
                                             <input type="checkbox" class="hiddencheck" id="check-all" >
                                             <span style="font-size: 13px;">Select All</span>
-                                      
+</div>
                                         
                                     </div>
                                 </div>
