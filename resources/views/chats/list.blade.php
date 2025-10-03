@@ -429,13 +429,14 @@ select::-ms-expand {
                                         </div>
 
                                         @php
-                                                $existingReport = \App\Models\ChatReported::where('reported_by', session()->get('user')['id'])
-                                                    ->where('listing_id', $chat->id)
-                                                    ->first();
-
+                                       
+                                            $existingReport = \App\Models\ChatReported::where('reported_by', session()->get('user')['id'])
+                                                ->where('listing_id', $chat->id)
+                                                ->exists();
+                                        @endphp
 
                                                    
-                                             @endphp
+                                           
                                         <div class="dropdown">
                                             <button class="btn btn-link p-0" type="button" id="userOptionsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fa fa-ellipsis-v"></i>
