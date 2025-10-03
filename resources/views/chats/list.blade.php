@@ -181,7 +181,7 @@ input.form-control-search:focus {
   border-color: goldenrod !important;
 
 } 
-.form-control-search{
+input.form-control-search{
     margin-top: 7px  !important;
     margin-left: 21px  !important;
     width: 90% !important;
@@ -298,7 +298,7 @@ select::-ms-expand {
                             <div class="row">
                                 <div class="col-md-12 position-relative">
                                   
-                                 <input type="text" name="" id="" placeholder="Search..." class="form-control form-control-search" style="min-height: 12px;">
+                                 <input type="text" name="" id="" placeholder="Search..." class="form-control form-control-search" style="min-height: 12px; border: 1px solid #000fff !important;">
                                
                                 </div>
                             </div>

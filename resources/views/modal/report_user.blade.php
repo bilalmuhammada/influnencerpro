@@ -48,9 +48,9 @@
             padding: 0rem 1rem 0rem 1rem;
         }
         .modal-title_report{
-            margin-left: 33px !important;
+            margin-left: 16px !important;
             color: blue;
-            font-size: 20px;
+            font-size: 17px;
         }
         #report-ad-form1 .form-control {
           
