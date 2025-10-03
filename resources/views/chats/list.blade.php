@@ -429,7 +429,7 @@ select::-ms-expand {
                                         </div>
 
                                         @php
-                                                $existingReport = \App\Models\AdsReported::where('reported_by', session()->get('user')['id'])
+                                                $existingReport = \App\Models\ChatReported::where('reported_by', session()->get('user')['id'])
                                                     ->where('listing_id', $chat->id)
                                                     ->first();
 
