@@ -252,7 +252,7 @@ select::-ms-expand {
 
                         <div class="chat-cont-left">
                             <div class="row" style="padding:5px 8px;">
-                                <<div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="row align-items-center"  id="checkbox">
                                         
                                             <input type="checkbox" class="hiddencheck" id="check-all" >
