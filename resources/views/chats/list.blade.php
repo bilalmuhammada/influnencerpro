@@ -227,9 +227,6 @@ select::-ms-expand {
 .hiddencheck {
     margin-right: 5px;
 }
-.hiddencheck {
-    margin: 0;
-}
 
 .hiddencheck-label {
     font-size: 14px;
@@ -239,14 +236,14 @@ select::-ms-expand {
     align-items: center;
     position: relative;
     z-index: 10;
-    margin-top: 1.7rem;
+   
     box-sizing: border-box;
 }
 
 .dlt-chat {
     width: 13px;
   position: relative;
-  transform: translateX(-10px); /* same as left:-18px but cross-browser */
+  /* same as left:-18px but cross-browser */
   cursor: pointer;
       
 }
@@ -270,7 +267,7 @@ select::-ms-expand {
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
                             <div class="d-flex align-items-center" id="checkbox">
-                                <input type="checkbox" class="hiddencheck me-2" id="check-all">
+                                <input type="checkbox" class="hiddencheck me-2" id="check-all" style="width: -9;">
                                 <label for="check-all" class="mb-0" style="font-size: 13px;">Select All</label>
                             </div>
                         </div>
