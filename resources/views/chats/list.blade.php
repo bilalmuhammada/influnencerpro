@@ -267,7 +267,7 @@ select::-ms-expand {
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
                             <div class="d-flex align-items-center" id="checkbox">
-                                <input type="checkbox" class="hiddencheck me-2" id="check-all" style="width: auto;">
+                                <input type="checkbox" class="hiddencheck " id="check-all" style="width: auto;">
                                 <label for="check-all" class="mb-0" style="font-size: 13px;">Select All</label>
                             </div>
                         </div>
