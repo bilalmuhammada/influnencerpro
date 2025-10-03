@@ -298,7 +298,7 @@ select::-ms-expand {
                             <div class="row">
                                 <div class="col-md-12 position-relative">
                                   
-                                 <input type="text" name="" id="" placeholder="Search..." class="form-control form-control-search">
+                                 <input type="text" name="" id="" placeholder="Search..." class="form-control form-control-search" style="min-height: 12px;">
                                
                                 </div>
                             </div>
