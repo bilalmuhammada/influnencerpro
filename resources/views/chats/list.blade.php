@@ -269,14 +269,11 @@ select::-ms-expand {
                         <div class="chat-cont-left">
                             <div class="row" style="padding:5px 8px;">
                                 <div class="col-md-6">
-                                    <div class="row align-items-center"  id="checkbox">
-                                    <div class="col-md-12">
-                                            <input type="checkbox" class="hiddencheck" id="check-all" >
-                                            <span style="font-size: 13px;">Select All</span>
-</div>
-                                        
-                                    </div>
-                                </div>
+                            <div class="d-flex align-items-center" id="checkbox">
+                                <input type="checkbox" class="hiddencheck me-2" id="check-all">
+                                <label for="check-all" class="mb-0" style="font-size: 13px;">Select All</label>
+                            </div>
+                        </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
                                     <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
