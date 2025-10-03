@@ -201,6 +201,43 @@ select::-ms-expand {
     color: blue !important;
     text-decoration: none; /* optional, to remove underline */
 }
+
+
+.hiddencheck-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7px;
+    white-space: nowrap;
+}
+
+.hiddencheck {
+    margin-right: 5px;
+}
+
+.hiddencheck-label {
+    font-size: 14px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-top: 1.7rem;
+    box-sizing: border-box;
+}
+
+.dlt-chat {
+    width: 13px;
+  position: relative;
+  transform: translateX(-10px); /* same as left:-18px but cross-browser */
+  cursor: pointer;
+      
+}
+#checkbox{
+    margin-top: 7px;margin-left: 12px;
+
+}
     </style>
 @section('content')
     <div class="content-chat"
@@ -258,8 +295,11 @@ select::-ms-expand {
                                            style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}"  >
-                                           <input type="checkbox" style="width: 27 !important; margin-left:-14px;position: relative; z-index: 10; pointer-events: auto; "
-                                           value="{{ $chat->id }}" class="dlt-chat hiddencheck" >
+                                           <div class="checkbox-container">
+                                                <input type="checkbox" 
+                                                    value="{{ $chat->id }}" 
+                                                    class="dlt-chat hiddencheck">
+                                            </div>
                                             <div class="media-img-wrap flex-shrink-0">
                                                 <div class="avatar">
                                                     <img
