@@ -214,6 +214,9 @@ select::-ms-expand {
 .hiddencheck {
     margin-right: 5px;
 }
+.hiddencheck {
+    margin: 0;
+}
 
 .hiddencheck-label {
     font-size: 14px;
