@@ -430,7 +430,7 @@ select::-ms-expand {
 
                                         @php
                                        
-                                            $existingReport = \App\Models\ChatReported::where('reported_by', session()->get('user')['id'])
+                                            $existingReport = \App\Models\ChatReported::where('reported_by',  getSafeValueFromObject($chat->other_user, 'id'))
                                                 ->where('listing_id', $chat->id)
                                                 ->exists();
                                         @endphp
