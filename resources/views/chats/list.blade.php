@@ -177,7 +177,20 @@ color: goldenrod !important;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
 }
+input.form-control-search:focus {
+  border-color: goldenrod !important;
 
+} 
+.form-control-search{
+    margin-top: 7px  !important;
+    margin-left: 21px  !important;
+    width: 90% !important;
+    border:1px solid #000fff !important;
+    padding-left: 30px;
+}
+.position-relative {
+    position: relative;
+}
 #filter-dropdown:hover {
     border-color: #80bdff;
 }
