@@ -288,7 +288,13 @@ select::-ms-expand {
                                 </div>
                             </div>  
                             
-                           
+                            <div class="row">
+                                <div class="col-md-12 position-relative">
+                                  
+                                 <input type="text" name="" id="" placeholder="Search..." class="form-control form-control-search">
+                               
+                                </div>
+                            </div>
                             
                             <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
