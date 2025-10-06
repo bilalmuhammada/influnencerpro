@@ -186,7 +186,7 @@ input.form-control-search{
     margin-left: 21px  !important;
     width: 90% !important;
     border:1px solid #000fff !important;
-    padding-left: 30px;
+  
 }
 .position-relative {
     position: relative;
