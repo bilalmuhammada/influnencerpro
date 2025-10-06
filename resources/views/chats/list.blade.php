@@ -355,7 +355,7 @@ select::-ms-expand {
 
                                                 <div style="display: flex; align-items: center; gap: 9px; font-size: 12px; color: #666;">
                                                     <div class="badge bg-primary badge-pill unread-count"  
-                                                        style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }}; border-radius: 30px;">
+                                                        style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }}; border-radius: 30px;margin-bottom: 2px;">
                                                         {{ $chat->unread_count }}
                                                     </div>
 
