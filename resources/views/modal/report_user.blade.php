@@ -78,11 +78,11 @@
         .textarea{
             
             font-size: 14px;
-            border: 1px solid #eee;
+            border: 1px solid #000fff !important;   
             color:#000
         }
         .textarea:hover{
-            border:1px solid blue !important;
+            border:1px solid goldenrod !important;
           
         }
        
