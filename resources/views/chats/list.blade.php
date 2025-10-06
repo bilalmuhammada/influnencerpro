@@ -556,6 +556,7 @@ select::-ms-expand {
 
 $(document).on("click", "#userOptionsMenu", function() {
 
+    e.stopPropagation();
   $(".dropdown-menu-right").toggleClass("show");
 });
 
