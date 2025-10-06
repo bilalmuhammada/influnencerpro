@@ -554,7 +554,7 @@ select::-ms-expand {
 
 
 
-$(document).on("click", "#userOptionsMenu", function() {
+$(document).on("click", "#userOptionsMenu", function(e) {
 
     e.stopPropagation();
   $(".dropdown-menu-right").toggleClass("show");
