@@ -81,7 +81,7 @@
             border: 1px solid #000fff !important;   
             color:#000
         }
-        .textarea:hover{
+        .textarea:focus{
             border:1px solid goldenrod !important;
           
         }
