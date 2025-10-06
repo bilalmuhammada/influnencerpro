@@ -50,7 +50,7 @@
         .modal-title_report{
             margin-left: 16px !important;
             color: blue;
-            font-size: 17px;
+            font-size: 12px;
         }
         #report-ad-form1 .form-control {
           
@@ -98,7 +98,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title_report">Report User</h4>
-                <button type="button" class="close btn closebtn" data-bs-dismiss="modal" style="margin-top: -2px;font-size: 20px">×</button>
+                <button type="button" class="close btn closebtn" data-bs-dismiss="modal" style="margin-top: -8px;font-size: 20px">×</button>
             </div>
 
             <!-- Modal body -->
