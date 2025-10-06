@@ -554,15 +554,31 @@ select::-ms-expand {
 
 
 
-$(document).on("click", "#userOptionsMenu", function(e) {
 
-    e.stopPropagation();
-  $(".dropdown-menu-right").toggleClass("show");
-});
 
 // jQuery.noConflict();
 // jQuery(document).ready(function($) {
  $(document).ready(function () {
+
+    $(document).on('click', '.btn-link', function (e) {
+        e.stopPropagation(); // prevent closing immediately
+        const $menu = $(this).next('.dropdown-menu');
+        
+        // Close any open dropdowns first
+        $('.dropdown-menu').not($menu).removeClass('show');
+        
+        // Toggle the clicked one
+        $menu.toggleClass('show');
+    });
+
+    // When clicking outside any dropdown
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.dropdown-menu, .btn-link').length) {
+            $('.dropdown-menu').removeClass('show');
+        }
+    });
+
+
 
     $(".chat").select2({
            
