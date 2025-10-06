@@ -228,6 +228,10 @@ select::-ms-expand {
     margin-right: 5px;
 }
 
+.fa-trash:hover, .fa-pencil:hover{
+   color: goldenrod!important;
+}
+
 .hiddencheck-label {
     font-size: 14px;
 }
