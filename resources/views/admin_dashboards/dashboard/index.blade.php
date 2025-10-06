@@ -988,8 +988,10 @@ function numberFormat(number) {
         });
         $(document).on('change', '#from_date1, #tod_date1, #filtergraph', function () {
             render_monthly_sale_chart();
-           var filtergraph= $('#filtergraph').val();
-            if(filtergraph === 'counts'){
+
+            
+              var filtergraph= $('#filtergraph').val();
+            if(filtergraph === 'count'){
                 $('.currency_dropdown').prop('disabled', true);
             }else{
                 $('.currency_dropdown').prop('disabled', false);
