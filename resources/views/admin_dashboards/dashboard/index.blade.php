@@ -992,7 +992,9 @@ function numberFormat(number) {
             
               var filtergraph= $('#filtergraph').val();
             if(filtergraph === 'count'){
+
                 $('.currency_dropdown').prop('disabled', true);
+                $('.currency_dropdown').val(null).trigger('change'); 
             }else{
                 $('.currency_dropdown').prop('disabled', false);
             }

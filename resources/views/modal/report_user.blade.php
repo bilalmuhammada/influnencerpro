@@ -48,9 +48,9 @@
             padding: 0rem 1rem 0rem 1rem;
         }
         .modal-title_report{
-            margin-left: 16px !important;
+            margin-left: 43px !important;
             color: blue;
-            font-size: 12px;
+            font-size: 14px;
         }
         #report-ad-form1 .form-control {
           
@@ -78,11 +78,11 @@
         .textarea{
             
             font-size: 14px;
-            border: 1px solid #000fff !important;   
+            border: 1px solid goldenrod !important;   
             color:#000
         }
         .textarea:focus{
-            border:1px solid goldenrod !important;
+            border:1px solid #000fff !important;
           
         }
        
