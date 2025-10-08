@@ -48,6 +48,7 @@
             padding: 0rem 1rem 0rem 1rem;
         }
         .modal-title_report{
+            margin-bottom: 0px;
             margin-left: 43px !important;
             color: blue;
             font-size: 14px;
