@@ -99,7 +99,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title_report">Report User</h4>
-                <button type="button" class="close btn closebtn" data-bs-dismiss="modal" style="margin-top: -8px;font-size: 20px">×</button>
+                <button type="button" class="close btn closebtn" data-bs-dismiss="modal" style="font-size: 20px">×</button>
             </div>
 
             <!-- Modal body -->
