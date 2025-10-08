@@ -11,6 +11,10 @@
     background-color: rgb(220, 53, 69); color:white;
 }
 
+.closebtn{
+    color: #000fff;
+    
+}
 .closebtn:hover{
     color: goldenrod;
     
