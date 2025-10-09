@@ -457,7 +457,7 @@ select::-ms-expand {
                                             
                                             <!-- Dropdown menu options -->
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                <a class="dropdown-item block-chat "  style="font-size: 12px;"  data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
+                                                <a class="dropdown-item block-chat  block_user "  style="font-size: 12px;"  data-chat-id="{{ $chat->id }}" href="#" >Block User</a>
                                                 <a class="dropdown-item report-user-btn" style="font-size: 12px;"  data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
                                                 @if($existingReport)
                                                         Reported User
@@ -746,7 +746,7 @@ $(document).ready(function() {
 
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
-                    var report_user = $('.report-user-btn');
+                    var report_user = $('.block_user');
 
                    
                   
