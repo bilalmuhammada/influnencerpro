@@ -59,7 +59,7 @@
 }
 
     .emojionearea.emojionearea-inline>.emojionearea-editor{
-    top: 5px !important;
+    top: 3px !important;
     
     }
     .chat-scroll {
@@ -189,6 +189,7 @@ input.form-control-search{
     margin-left: 21px  !important;
     width: 90% !important;
     border:1px solid goldenrod !important;
+    font-size: 10px !important;
   
 }
 .position-relative {
@@ -294,14 +295,14 @@ select::-ms-expand {
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
                                         <div class="col-md-12 text-center" style="margin: 9px 0px 0px 182px;">
-                                            <i class="fa fa-trash" style="color: rgb(9, 9, 166);"></i>
+                                            <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 edit">
                                     <div class="row">
                                         <div class="col-md-12 text-center" style="margin: 9px 0px 0px 183px;">
-                                            <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);"></i>
+                                            <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
                                     </div>
                                 </div>
