@@ -746,6 +746,7 @@ $(document).ready(function() {
 
                     var emojioneArea = $('.emojionearea.emojionearea-inline');
                     var emojioneEditor = $('.emojionearea-editor');
+                    var report_user = $('.report-user-btn');
 
                    
                   
@@ -753,7 +754,9 @@ $(document).ready(function() {
                         // show_error_message('User Blocked')
                         button.find('i').css('color', 'goldenrod');
                         button.attr('title', 'Unblock');
-                        button.text('Unblock User');
+                       
+                        
+                        report_user.text('Unblock User');
                         if (emojioneArea.length > 0) {
                                 emojioneArea.css({
                                     'background': '#fdeaea',
@@ -767,7 +770,7 @@ $(document).ready(function() {
                         button.find('i').css('color', 'grey');
                       
                         button.attr('title', 'Block');
-                        button.text('Block User ');
+                        report_user.text('Block User ');
                         if (emojioneArea.length > 0) {
                             emojioneArea.css({
                                 'background': '',
