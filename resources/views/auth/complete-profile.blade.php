@@ -1012,7 +1012,7 @@ display: none !important;
                                             <div class="row">
                                                 <div class="col-md-1 text-center" style="padding-top:5px;">
                                                     <img
-                                                        src="{{ asset('assets/img/social-icon/svg.png') }}"
+                                                        src="{{ asset('assets/img/social-icon/youtube.png') }}"
                                                         alt="insta" width="40" style="margin-left:24px;" class="shaking">
                                                 </div>
                                                 
