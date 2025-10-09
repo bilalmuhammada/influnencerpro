@@ -641,7 +641,7 @@ color: goldenrod !important;
                                 <div class="social-wrapper" style="text-align: center;">
                                     <a href="{{ $youtube ? 'https://' . ltrim($youtube->url, 'https://') : ''}}" target="_blank" rel="noopener noreferrer">
                                        
-                                        <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" alt="" width="30px">
+                                        <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" alt="" width="30px">
                                     </a>
                                     <div class="text-center font-change followers-count">
                                         {{ strtoupper($youtube ? $youtube->followers : 0) }}

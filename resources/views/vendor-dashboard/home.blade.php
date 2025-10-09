@@ -327,7 +327,7 @@ color: #0504aa !important;
                                             </div>
                                             <div class="col-md-6">
                                                 <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img src="{{ asset('assets/img/social-icon/youtube.png')}}" alt="insta"
+                                                <img src="{{ asset('assets/img/social-icon/youtube.svg')}}" alt="insta"
                                                      width="20" class="shaking" style=" margin-right: 5px;">
                                                      Youtube &nbsp;&nbsp; </span> <input type="checkbox" name="youtube"
                                                                                          <?php
@@ -1118,7 +1118,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ strtoupper($youtube ? $youtube->followers : 0) }}</span> 
@@ -1680,7 +1680,7 @@ color: #0504aa !important;
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ $youtube ? $youtube->followers : 0 }}</span> 

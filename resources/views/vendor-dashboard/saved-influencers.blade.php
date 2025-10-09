@@ -400,7 +400,7 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                    <img src="{{ asset('assets/img/social-icon/youtube.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $youtube ? $youtube->followers : 0 }}

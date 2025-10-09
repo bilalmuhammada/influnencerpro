@@ -444,7 +444,7 @@ color:goldenrod !important;
                         <img src="{{ asset('assets/img/social-icon/insta.png') }}" alt="" class="shaking" width="60px" height="60px" style="margin-right: 10px;">
                         <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt=""  class="shaking" width="60px" height="60px"style="margin-right: 10px;" >
                         <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""   class="shaking" width="60px" height="60px" style="margin-right: 10px;" >
-                        <img src="{{ asset('assets/img/social-icon/youtube.png') }}" alt=""  class="shaking" width="60px" height="60px"  style="margin-right: 10px;">
+                        <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" alt=""  class="shaking" width="60px" height="60px"  style="margin-right: 10px;">
                         <img src="{{ asset('assets/img/social-icon/twitter.png') }}" alt=""  class="shaking" width="60px" height="60px"style="margin-right: 10px;" >
                         <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""  class="shaking" width="70px" height="70px" style="margin-right: 10px; border-radius: 2px;">
                         <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" alt=""   class="shaking" width="60px" height="60px" style="margin-right: 10px;" >

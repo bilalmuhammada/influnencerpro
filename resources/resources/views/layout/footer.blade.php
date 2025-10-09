@@ -118,7 +118,7 @@
                                         alt="twitter"
                                         width="30" height="30"></a></li>
                             <li><a href="#" class="icon" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"
+                                        src="{{ asset('assets/img/social-icon/youtube.svg') }}" alt="youtube"
                                         width="30"
                                         height="30"></a></li>
                         </ul>

@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <span style="font-size:11px;position:relative;top:-7px;">
-                                                <img src="{{ asset('assets/img/social-icon/youtube.png')}}" alt="youtube"
+                                                <img src="{{ asset('assets/img/social-icon/youtube.svg')}}" alt="youtube"
                                                      width="20">
                                                 Youtube</span>
                                                 <label class="switch">

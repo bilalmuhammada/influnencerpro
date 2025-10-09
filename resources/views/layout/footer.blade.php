@@ -137,7 +137,7 @@
                                         alt="twitter"    style="margin-bottom: 8px;"
                                         width="25" height="25"></a></li>
                             {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/youtube.png') }}" alt="youtube"
+                                        src="{{ asset('assets/img/social-icon/youtube.svg') }}" alt="youtube"
                                         width="30"
                                         height="30"></a></li> --}}
                         </ul>
