@@ -76,7 +76,12 @@ class UserController extends Controller
        
         $cities=   DB::table('cities')->where('country_id',$request->country_id)->get();
        
-      
+     
+
+        return response()->json([
+            'status' => true,
+            'data' => $cities
+        ]);
         return response()->json([
             'data' => $cities,
              'status'=>true

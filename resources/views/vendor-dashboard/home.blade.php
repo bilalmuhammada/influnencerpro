@@ -1344,13 +1344,14 @@ color: #0504aa !important;
 
         $(document).on('change', '#nationality_id', function () {
             var nationality_id = $(this).val();
+            
             if (nationality_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        "nationality_id": nationality_id
+                        "country_id": nationality_id
                     },
                     success: function (response) {
                         if (response.data.length > 0) {
