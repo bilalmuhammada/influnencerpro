@@ -9,10 +9,10 @@
         border-radius: 5px;
     }
     #userOptionsMenu:hover{
-    color: #000fff !important;
+    color: goldenrod !important;
 }
 #userOptionsMenu{
-    color: goldenrod;
+    color: #000fff;
 }
 
     .lobibox-notify.notify-mini .lobibox-notify-body {
