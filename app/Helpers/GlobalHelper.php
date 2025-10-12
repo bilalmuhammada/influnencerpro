@@ -4,6 +4,11 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;             
+use App\Models\UserNotification;
+use Illuminate\Support\Facades\Log;
+
 function getDropdownMenu($role)
 {
     $DropdownMenus = \App\Models\User::with('role')->whereHas('role', function ($Role) use ($role) {
@@ -11,6 +16,80 @@ function getDropdownMenu($role)
     })->limit(5)->get();
 
     return $DropdownMenus;
+}
+
+function getValueById($modelClass, $id, $columns = 'name', $default = '')
+{
+    
+    try {
+        if (empty($modelClass) || empty($id) || empty($columns)) {
+            return $default;
+        }
+
+        $isSingle = !is_array($columns);
+        $columns = (array) $columns;
+
+        // Check if image_url or other accessor is requested
+        $hasAppended = false;
+        foreach ($columns as $col) {
+            if (in_array($col, ['image_url', 'avatar_url', 'profile_image_url'])) {
+                $hasAppended = true;
+                break;
+            }
+        }
+
+        // If accessor is needed, fetch full model
+        $record = $hasAppended
+            ? $modelClass::find($id)
+            : $modelClass::where('id', $id)->select($columns)->first();
+
+        if (!$record) {
+            return $default;
+        }
+
+        // Handle single column
+        if ($isSingle) {
+            $column = $columns[0];
+
+            if (!isset($record->{$column})) {
+                return $default;
+            }
+
+            $value = $record->{$column};
+
+            if (empty($value)) {
+                return $default;
+            }
+
+            // Image fields: handle both accessors and stored paths
+            if (in_array($column, ['image_url', 'avatar', 'profile_image', 'photo'])) {
+                if (filter_var($value, FILTER_VALIDATE_URL)) {
+                    return $value;
+                }
+                return asset($value);
+            }
+
+            return (string) $value;
+        }
+
+        // Multiple columns (e.g., first_name + last_name)
+        $values = [];
+        foreach ($columns as $column) {
+            $val = trim((string)($record->{$column} ?? ''));
+            if ($val !== '') {
+                $values[] = $val;
+            }
+        }
+
+        return !empty($values) ? implode(' ', $values) : $default;
+
+    } catch (\Throwable $e) {
+        Log::error("getValueById error: " . $e->getMessage());
+        return $default;
+    }
+    
+
+
 }
 function getCategories()
 {
@@ -149,6 +228,18 @@ function formatNumber($number, $precision = 1)
 
 }
 }
+
+ function getNotifications()
+{
+    $user_id = Auth::id() ?? Session::get('user')->id;
+    
+   $notification= DB::table('notifications')->where('user_id', 4)->orderBy('created_at', 'desc')->get(); 
+   
+   
+   
+   return $notification;
+}
+
 
 
 
@@ -422,12 +513,14 @@ function getUnreadMessages()
 
 function getSafeValueFromObject($object, $index='', $default = '')
 {
-    
+   
 
     // Check if the object is null or not an object
     if (empty($object) || !is_object($object)) {
         return $default;
     }
+
+   
 
     
 

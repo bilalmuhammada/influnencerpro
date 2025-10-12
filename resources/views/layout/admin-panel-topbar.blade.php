@@ -101,6 +101,8 @@ border-color:goldenrod transparent transparent transparent  !important;
             border-radius: 34px;
         }
 
+    
+
         .colorchange{
 color: blue;
         }
@@ -111,6 +113,29 @@ color: goldenrod !important;
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+        .dropdown-menu-custom {
+            position: absolute;
+            top: 2px; /* Adjust distance from the icon */
+            left: 16rem;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* width: 150px; */
+            display: none; /* Initially hidden */
+            z-index: 1000;
+        }
+
+        /* Dropdown items */
+        .dropdown-menu-custom a {
+            display: block;
+            padding: 3px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown-menu-custom a:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 
     <script type="text/javascript">
@@ -119,6 +144,8 @@ color: goldenrod !important;
                 pageLanguage: 'en'
             }, 'google_translate_element');
         }
+
+        
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -169,6 +196,15 @@ color: goldenrod !important;
             }
         });
     </script>
+    
+    @php
+        $notifications = [];
+      
+            $notifications = getNotifications();
+
+          
+  
+        @endphp
 
     <nav class="navbar navbar-expand-lg header-nav" style="background-color: white;">
         <div class="navbar-header" style="display: flex;">
@@ -242,14 +278,87 @@ color: goldenrod !important;
                         <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions History</a></li>
                     </ul>
                 </li>
+
                 <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}">
                     <a href="{{ env('BASE_URL') . '/chats' }}">Chats</a></li>
+                    
                     <li class="nav-item dropdown">
-    <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">Notifications</a>
-    <div class="dropdown-menu notifications" style="width: 450px; margin-left: -240px; height: auto; overflow: auto;">
-        <!-- Notification logic -->
+    <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">
+        Notifications
+    </a>
+
+    <div class="dropdown-menu notifications" 
+         style="width: 400px; max-height: 350px; margin-left: -220px;">
+
+        @if (session()->has('User') && isset($notifications) && count($notifications) > 0)
+            <!-- Header -->
+            <div class="row px-2 py-1">
+                <div class="col-6"><strong>Notifications</strong></div>
+                <div class="col-6 text-end">
+                    <a href="#" onclick="markAllAsRead()">Mark all as Read</a>
+                </div>
+            </div>
+            <hr class="my-1">
+
+            <!-- Notifications list -->
+            @foreach ($notifications as $notification)
+
+
+            
+                <div class="notifications-wrapper mb-2">
+                    <div class="notification-item position-relative" style="background: aliceblue; border-radius: 5px; padding: 8px;">
+                        <div class="row g-2">
+                            <div class="col-2">
+                                <div style="width: 60px; height: 60px; border-radius:50%; overflow: hidden;">
+                                    <img  src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url', asset('assets/img/default.png')) }}"
+                                         alt="notification image"
+                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <strong>{{$notification->data}}</strong><br>
+                                <span>{{ getValueById(\App\Models\User::class, $notification->user_id, ['name', 'last_name'], 'Unknown User') }}
+                                </span><br>
+                                <small>10 min ago</small>
+                            </div>
+
+                            <div class="col-md-1" style="position: absolute; top: 10px; left: -8px;">
+                            <div class="dropdown">
+                                <!-- Button -->
+                                <button class="btn btn-link" type="button" 
+                                        onclick="toggleDropdown(this, event)" 
+                                        style="margin-left: 23rem; margin-top: -34px;">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </button>
+
+                                <!-- Custom dropdown menu -->
+                                <div class="dropdown-menu-custom" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 140px; z-index: 1000;">
+                                    <a href="#" style="font-size: 12px;" onclick="markAsRead(this)">Mark as Read</a>
+                                    <a href="#" style="font-size: 12px;" onclick="removeNotification(this)">Remove Notification</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            <div class="notification-footer text-center mt-2">
+                <a href="{{ env('BASE_URL').'notifications' }}" style="color: red;">
+                    View all Notifications
+                </a>
+            </div>
+
+        @else
+            <div class="p-3 text-center">
+                <em>No notifications available</em>
+            </div>
+        @endif
     </div>
 </li>
+
+
                
                 <li class="has-submenu">
                     <a href="#">
@@ -274,14 +383,17 @@ color: goldenrod !important;
 <script>
 
 $(document).ready(function() {
-        // Initialize Select2
-        $(document).ready(function() {
+        
 
-          
+    // Function to toggle the dropdown visibility
+   
+
+     
         $('#notificationLink').on('click', function(){
             
             $(".dropdown").toggleClass('active'); // toggle active on click
         });
+
   
      $('#language_dropdown').select2({
         width: 'resolve',
@@ -331,5 +443,35 @@ $(document).ready(function() {
     optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'none' : 'block';
 }
 });
+
+function toggleDropdown(element, event) {
+    // Stop click from bubbling to parent notification dropdown
+    event.stopPropagation();
+
+    const dropdownMenu = element.nextElementSibling;
+
+    // Close other three-dots menus
+    document.querySelectorAll('.dropdown-menu-custom').forEach(menu => {
+        if (menu !== dropdownMenu) menu.style.display = 'none';
+    });
+
+    // Toggle this menu
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Example actions
+function markAsRead(el){
+    el.closest('.notification-item').style.background = '#fff';
+}
+
+function removeNotification(el){
+    el.closest('.notification-item').remove();
+}
+
+// Clicking outside closes only three-dots menus
+document.addEventListener('click', function(){
+    document.querySelectorAll('.dropdown-menu-custom').forEach(menu => menu.style.display = 'none');
 });
+
+
 </script>

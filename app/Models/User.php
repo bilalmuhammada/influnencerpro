@@ -143,10 +143,11 @@ class User extends Authenticatable
     public function getInfluencerProfileImageMainAttribute()
     {
         $image= $this->influencer_profile_image_main()->first();
-
+      
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;
         } else {
+           
             return 'https://via.placeholder.com/30x30';
         }
     }
