@@ -73,7 +73,7 @@
         padding: 0rem 0;
         display: block;
         min-width: 12px;
-        margin-left: -7rem;
+        margin-left: -5rem;
     }
     
     .chat-title {
@@ -189,7 +189,7 @@ input.form-control-search{
     margin-left: 21px  !important;
     width: 90% !important;
     border:1px solid goldenrod !important;
-    font-size: 10px !important;
+    font-size: 12px !important;
   
 }
 .position-relative {
@@ -345,7 +345,7 @@ select::-ms-expand {
                                                     <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                 </div>
                                                 
-                                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px; margin-right: 3px;">
+                                                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px;">
                                                 <div style="display: flex; gap: 8px;">
                                                     <button class="btn btn-link favorite-chat" 
                                                             title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}" 
@@ -368,7 +368,7 @@ select::-ms-expand {
                                                         {{ $chat->unread_count }}
                                                     </div>
 
-                                                    <span>{{ $chat->latest_message_recieved_time_diff }}</span>
+                                                    <span style="font-size: 12px;">{{ $chat->latest_message_recieved_time_diff }}</span>
                                                 </div>
                                                 </div>
                                               
@@ -572,6 +572,23 @@ select::-ms-expand {
 // jQuery.noConflict();
 // jQuery(document).ready(function($) {
  $(document).ready(function () {
+
+    $('.form-control-search').on('keyup', function() {
+        var searchTerm = $(this).val().toLowerCase();
+
+        // Loop through all chat items
+        $('#chat-users-list a.chatActionBlock').each(function() {
+            var userName = $(this).find('.user-name').text().toLowerCase();
+            var lastMessage = $(this).find('.user-last-chat').text().toLowerCase();
+
+            // Show if search term matches name or last message
+            if (userName.indexOf(searchTerm) !== -1 || lastMessage.indexOf(searchTerm) !== -1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
 
     $(document).on('click', '.btn-link', function (e) {
         e.stopPropagation(); // prevent closing immediately

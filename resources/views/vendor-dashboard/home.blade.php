@@ -161,7 +161,7 @@ width: 200px !important;
     margin-left: 9px !important;
 }
 #select2-nationality_id-results{
-padding-left: 12px !important;
+padding-left: 3px !important;
 } 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
     border: 0px solid !important;
@@ -241,16 +241,7 @@ color: #0504aa !important;
                                 <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="clearall">Clear All</a>
                             </div>
                             <div class="card-body" style="background:#f2e49c  !important;">
-                                {{--                                <div class="filter-widget">--}}
-                                {{--                                    <h4>Add Skills</h4>--}}
-                                {{--                                    <div class="form-group">--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">+ All Professionals</span>--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">+ Performers</span>--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">+ Voice overs</span>--}}
-                                {{--                                        <span class="badge badge-pill badge-skill">+ Influencers</span>--}}
-                                {{--                                        <input type="text" class="form-control">--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
+                                                              
                                 <div class="filter-widget">
                                     <input type="text" class="form-control" placeholder="Search..." name="">
                                     <label for="" class="font_label">Country</label>
