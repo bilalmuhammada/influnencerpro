@@ -233,7 +233,7 @@ function formatNumber($number, $precision = 1)
 {
     $user_id = Auth::id() ?? Session::get('user')->id;
     
-   $notification= DB::table('notifications')->where('user_id', 4)->orderBy('created_at', 'desc')->get(); 
+   $notification= DB::table('notifications')->where('user_id', $user_id  )->orderBy('created_at', 'desc')->get(); 
    
    
    
