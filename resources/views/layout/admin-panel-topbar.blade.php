@@ -165,12 +165,13 @@ color: goldenrod !important;
         }
 
         function formatOption(option) {
+
             if (!option.id) {
                 return option.text;
             }
 
             var flagUrl = $(option.element).data('flag-url');
-            return $('<span style="font-size:14px;font-weight:bold; white-space: nowrap;padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text + '</span>');
+            return $('<span style="font-size:14px;font-weight:bold; white-space: nowrap;padding:8px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;" /> ' + option.text  + '</span>');
         }
 
         $(document).ready(function () {
@@ -384,7 +385,7 @@ color: goldenrod !important;
 
 $(document).ready(function() {
         
-
+    $(document).ready(function() {
     // Function to toggle the dropdown visibility
    
 
@@ -406,10 +407,11 @@ $(document).ready(function() {
     });
 
     function formatOption(option) {
+      
         if (!option.id) { return option.text; }
 
         var flagUrl = $(option.element).data('flag-url');
-        console.log('Flag URL:', flagUrl);
+        
 
         if (flagUrl) {
         return $('<span style="font-size:14px; font-weight:bold;  white-space: nowrap;padding:9px;"><img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 5px;margin-bottom: 6px;" /> ' + option.text + '</span>');
@@ -443,7 +445,7 @@ $(document).ready(function() {
     optionsMenu.style.display = optionsMenu.style.display === 'block' ? 'none' : 'block';
 }
 });
-
+});
 function toggleDropdown(element, event) {
     // Stop click from bubbling to parent notification dropdown
     event.stopPropagation();
