@@ -213,7 +213,7 @@ color: #0504aa !important;
 .select2-container--default .select2-results__option{
 
     
-    padding-left: 11px !important;
+    padding-left: 10px !important;
 }
     </style>
     <section style="border-top:2px solid #eee;">
