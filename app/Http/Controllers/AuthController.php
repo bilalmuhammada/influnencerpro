@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
+use App\Mail\RegistrationEmail;
+use Illuminate\Support\Facades\Mail;
 class AuthController extends Controller
 {
     public function login()
@@ -69,12 +71,8 @@ class AuthController extends Controller
     public function registerBackend(Request $request)
     {
 
-        // dd($request->all());gender
-      
-        
 
        
-
 
         if ($request->role == 'vendor') {
             $validator = Validator::make($request->all(), [
@@ -82,9 +80,9 @@ class AuthController extends Controller
                 'brand_name' => 'required', 
                 'company_name' => 'required', 
                 'website' => 'required|url',
-               'email' => ['required', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'],
+                'email' => ['required', 'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'],
 
-                'first_name' => 'required', 
+                'name' => 'required', 
                 'last_name' => 'required', 
                 'position' => 'required',
                 'phone' => 'required',
@@ -113,7 +111,7 @@ class AuthController extends Controller
         else{
 
             $validator = Validator::make($request->all(), [
-                'first_name' => 'required',
+                'name' => 'required',
                 'last_name' => 'required',
                 'phone' => 'required',
                 'gender'=>'required',
@@ -126,7 +124,7 @@ class AuthController extends Controller
                 'gender' => 'required',
                   
                 'country_id' => 'required',
-                'city_id' => 'required',
+                
     
                 'password' => 'required|min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
                 'role' => 'required|exists:roles,code'
@@ -170,10 +168,10 @@ class AuthController extends Controller
                 'errors' => ['email' => ["Please user different email address"]]
             ]);
         }
-      
+        $otp = rand(100000, 999999);
         $User = User::create([
             'name' => $request->name,
-            'first_name' => $request->first_name,
+            
             'last_name' => $request->last_name,
             'agreed_to_terms' => $request->agreed_to_terms == 'on' ? 1 : 0,
             'email' => $request->input('email', null),
@@ -189,6 +187,12 @@ class AuthController extends Controller
             'type' => $request->role == 'influencer' ? 'BUYER' : 'SELLER',
         ]);
        
+        $details = [
+            'name' => $request->first_name . " " . $request->last_name,
+            'otp' => $otp,
+        ];
+    
+        Mail::to($User->email)->send(new RegistrationEmail($details));
         $token = $User->createToken($request->role)->plainTextToken;
         
         return response()->json([
