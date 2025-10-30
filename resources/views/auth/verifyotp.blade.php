@@ -117,40 +117,51 @@
     const otpInput = document.getElementById('otp');
     const verifyBtn = document.getElementById('verifyBtn');
 
+    // CSRF setup for Laravel
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     // Enable button when OTP length = 6
     otpInput.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, ''); // only digits
+        this.value = this.value.replace(/[^0-9]/g, '');
         verifyBtn.disabled = this.value.length !== 6;
     });
 
-    // Submit OTP via AJAX
+    // Submit OTP
     $(document).on('submit', '#otp-form', function(e) {
         e.preventDefault();
 
         const otp = otpInput.value.trim();
-
         if (otp.length < 6) {
             $('.invalid-feedback').show().text('Please enter a valid 6-digit OTP.');
             return;
         }
 
+        $('#verifyBtn').prop('disabled', true).text('Verifying...');
+
         $.ajax({
-            url: base_url + '/auth/verify-otp',
+            url: base_url + '/verify-otp',
             type: 'POST',
             data: { otp: otp },
             dataType: "JSON",
             success: function(response) {
-                if (response.status) {
-                    localStorage.setItem("user_token", response.token);
+                if (response.status === true) {
+                    localStorage.setItem("user_token", response.token ?? '');
                     window.location.href = base_url + '/dashboard';
                 } else {
                     $('.invalid-feedback').show().text(response.message || 'Invalid OTP.');
+                    $('#verifyBtn').prop('disabled', false).text('Verify OTP');
                 }
             },
             error: function() {
                 $('.invalid-feedback').show().text('Server error, please try again.');
+                $('#verifyBtn').prop('disabled', false).text('Verify OTP');
             }
         });
     });
 </script>
+
 @endsection
