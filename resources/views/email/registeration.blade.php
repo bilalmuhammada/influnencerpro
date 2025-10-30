@@ -67,7 +67,7 @@
     <!-- Centered Logo -->
     <div class="logo">
       <a href="{{ env('BASE_URL') }}">
-        <img src="{{ asset('assets/img/logo/InfluencersPro-2.png') }}" alt="InfluencerPro Logo" class="img-fluid shaking">
+        <img src="{{ asset('assets/img/logo/InfluencersPro-011.png') }}" alt="InfluencerPro Logo" class="img-fluid shaking">
       </a>
     </div>
 
