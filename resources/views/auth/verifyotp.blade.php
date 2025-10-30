@@ -119,10 +119,10 @@
 
     // CSRF setup for Laravel
     $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
     // Enable button when OTP length = 6
     otpInput.addEventListener('input', function() {
