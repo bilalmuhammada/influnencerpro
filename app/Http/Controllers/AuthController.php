@@ -192,6 +192,10 @@ class AuthController extends Controller
             'otp' => $otp,
         ];
     
+          Session::put('otp_email', $request->email);
+          Session::put('otp_code', $otp);
+          Session::put('otp_username', $request->name." ".$request->last_name);
+          
         Mail::to($User->email)->send(new RegistrationEmail($details));
         $token = $User->createToken($request->role)->plainTextToken;
         
@@ -201,6 +205,73 @@ class AuthController extends Controller
             'token' => ['token' => $token]
         ])->header('Cache-Control', 'private')->header('Authorization', $token);
      
+    }
+
+
+
+
+    public function verify(Request $request)
+    {
+        $request->validate([
+            'otp' => 'required|digits:6'
+        ]);
+
+        $storedOtp = Session::get('otp_code');
+        $email = Session::get('otp_email');
+
+        if (!$storedOtp || !$email) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Session expired. Please resend OTP.'
+            ]);
+        }
+
+        if ($request->otp == $storedOtp) {
+            $user = User::where('email', $email)->first();
+            if ($user) {
+                $user->email_verified_at = now();
+                $user->save();
+            }
+
+            Session::forget(['otp_code', 'otp_email']);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Email verified successfully!'
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'Invalid OTP. Please try again.'
+        ]);
+    }
+
+    public function resend()
+    {
+        $email = Session::get('otp_email');
+        $otp = Session::get('otp_code');
+        $otp_username = Session::get('otp_username');
+        if (!$email) {
+            return redirect()->route('login')->with('error', 'Session expired. Please log in again.');
+        }
+        $details = [
+            'name' => $otp_username,
+            'otp' => $otp,
+        ];
+        $otp = rand(100000, 999999);
+        Session::put('otp_code', $otp);
+
+        // Send OTP via email
+        Mail::to($email)->send(new RegistrationEmail($details));
+
+        return redirect()->back()->with('success', 'A new OTP has been sent to your email.');
+    }
+
+
+    public function otpIndex()
+    {
+        return view('auth.verifyotp');
     }
 
     // public function loginBackend(Request $request)

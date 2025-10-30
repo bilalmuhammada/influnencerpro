@@ -73,6 +73,11 @@ Route::prefix('/reports')->middleware(['checkUser:vendor,influencer', 'checkLogi
 });
 
 
+Route::get('/verify-otp', [UserAuthController::class, 'otpIndex'])->name('verify.otp');
+Route::post('/verify-otp', [UserAuthController::class, 'verify'])->name('verify.otp.post');
+Route::get('/resend-otp', [UserAuthController::class, 'resend'])->name('resend.otp');
+
+
 Route::get('/download-csv', [\App\Http\Controllers\CsvController::class, 'downloadCsv']);
 Route::get('/download-csv-favourite-influencer', [\App\Http\Controllers\CsvController::class, 'downloadCsvFavouriteInfluencer']);
 

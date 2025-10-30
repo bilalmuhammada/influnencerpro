@@ -554,7 +554,7 @@ function validateInput(input) {
                      }
                             // Handle successful submission here
                             setTimeout(function () {
-                                window.location.assign(base_url + "/login");
+                                window.location.assign(base_url + "/verify-otp");
                             }, 600);
                         } else {
 
