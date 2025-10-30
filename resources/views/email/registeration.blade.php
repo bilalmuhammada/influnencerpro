@@ -67,12 +67,12 @@
     <!-- Centered Logo -->
     <div class="logo">
       <a href="{{ env('BASE_URL') }}">
-        <img src="{{ asset('assets/images/logo/Influencers Pro-01-01.png') }}" alt="InfluencerPro Logo" class="img-fluid shaking">
+        <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="InfluencerPro Logo" class="img-fluid shaking">
       </a>
     </div>
 
     <!-- Greeting -->
-    <p>Hey <strong>{{ $details['name'] }}</strong>,</p>
+    <p>Hey<strong>{{ $details['name'] }}</strong>,</p>
     <p>Welcome to <strong>InfluencerPro</strong>! Please verify your email using the OTP below:</p>
 
     <!-- OTP Code -->
