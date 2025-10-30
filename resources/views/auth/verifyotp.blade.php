@@ -135,7 +135,7 @@
         }
 
         $.ajax({
-            url: base_url + 'auth/verify-otp',
+            url: base_url + '/auth/verify-otp',
             type: 'POST',
             data: { otp: otp },
             dataType: "JSON",
