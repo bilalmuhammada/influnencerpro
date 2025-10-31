@@ -17,10 +17,10 @@
     .otp-container {
         text-align: center;
         padding: 50px 30px;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+       
+      
         background: #fff;
-        margin-top: 60px;
+        
     }
 
     .otp-logo img {
@@ -85,11 +85,9 @@
 </style>
 
 <div class="container">
-    <div class="col-md-6 offset-md-3">
+   
         <div class="otp-container">
-            <div class="otp-logo">
-                <img src="{{ asset('assets/images/logo/Influencers Pro-01-01.png') }}" alt="InfluencerPro">
-            </div>
+            
             <h3>Email Verification</h3>
             <p>Enter the 6-digit OTP sent to your registered email.</p>
 
@@ -105,7 +103,7 @@
             <div class="resend">
                 Didn’t receive the code? <a href="{{ route('resend.otp') }}">Resend OTP</a>
             </div>
-        </div>
+     
     </div>
 </div>
 @endsection
@@ -151,7 +149,7 @@
             success: function(response) {
                 if (response.status === true) {
                     localStorage.setItem("user_token", response.token ?? '');
-                    window.location.href = base_url + '/dashboard';
+                    window.location.href = base_url + '/login';
                 } else {
                     $('.invalid-feedback').show().text(response.message || 'Invalid OTP.');
                     $('#verifyBtn').prop('disabled', false).text('Verify OTP');
