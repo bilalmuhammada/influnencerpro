@@ -250,18 +250,18 @@ class AuthController extends Controller
     public function resend()
     {
         $email = Session::get('otp_email');
-        $otp = Session::get('otp_code');
+        
         $otp_username = Session::get('otp_username');
         if (!$email) {
             return redirect()->route('login')->with('error', 'Session expired. Please log in again.');
         }
+      
+        $otp = rand(100000, 999999);
+        Session::put('otp_code', $otp);
         $details = [
             'name' => $otp_username,
             'otp' => $otp,
         ];
-        $otp = rand(100000, 999999);
-        Session::put('otp_code', $otp);
-
         // Send OTP via email
         Mail::to($email)->send(new RegistrationEmail($details));
 
