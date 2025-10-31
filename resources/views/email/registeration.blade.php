@@ -72,7 +72,7 @@
     </div>
 
     <!-- Greeting -->
-    <p>Hey ,<strong>{{ $details['name'] }}</strong></p>
+    <p>Hey <strong>{{ $details['name'] }}</strong> ,</p>
     <p>Welcome to <strong>InfluencerPro</strong>! Please verify your email using the OTP:</p>
 
     <!-- OTP Code -->
