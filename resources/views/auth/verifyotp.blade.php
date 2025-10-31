@@ -1,6 +1,7 @@
 @extends('layout.web.master')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
     .invalid-feedback {
         margin-top: 5px;
