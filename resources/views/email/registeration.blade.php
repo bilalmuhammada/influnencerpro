@@ -35,7 +35,7 @@
       letter-spacing: 3px;
     }
     .footer {
-      font-size: 9px;
+      font-size: 8px;
       color: #666;
       margin-top: 25px;
       text-align: center;
@@ -72,7 +72,7 @@
     </div>
 
     <!-- Greeting -->
-    <p>Hey <strong>{{ $details['name'] }}</strong> ,</p>
+    <p>Hey <strong>{{ $details['name'] }}</strong></p>
     <p>Welcome to <strong>InfluencerPro</strong>! Please verify your email using the<strong> OTP</strong>:</p>
 
     <!-- OTP Code -->
