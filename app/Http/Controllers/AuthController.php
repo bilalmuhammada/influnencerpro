@@ -188,7 +188,7 @@ class AuthController extends Controller
         ]);
        
         $details = [
-            'name' => $request->first_name . " " . $request->last_name,
+            'name' => $request->name . " " . $request->last_name,
             'otp' => $otp,
         ];
     
