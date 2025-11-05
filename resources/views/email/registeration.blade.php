@@ -83,7 +83,20 @@
     <div class="divider"></div>
 
     <!-- Centered Social Icons -->
-    
+    <div class="social-icons">
+      <a href="https://instagram.com/yourpage">
+        <img src="{{ asset('assets/img/social-icon/insta.png') }}" width="200" alt="Instagram">
+      </a>
+      <a href="https://facebook.com/yourpage">
+        <img src="{{ asset('assets/img/social-icon/fb.png') }}" width="200" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/yourpage">
+        <img src="{{ asset('assets/img/social-icon/twitter.png') }}" width="200" alt="Twitter">
+      </a>
+      <a href="https://yourwebsite.com">
+        <img src="{{ asset('assets/img/social-icon/web.png') }}" width="200" alt="Website">
+      </a>
+    </div>
 
     <!-- Footer -->
     <p class="footer">&copy; {{ date('Y') }} InfluencerPro. All rights reserved.</p>
