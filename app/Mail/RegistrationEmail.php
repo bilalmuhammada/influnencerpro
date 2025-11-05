@@ -35,7 +35,7 @@ class RegistrationEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'InfluencerPro – User Registration',
+            subject: 'User Registration OTP',
         );
     }
 
