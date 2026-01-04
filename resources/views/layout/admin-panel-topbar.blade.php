@@ -323,6 +323,7 @@
 
                         <!-- Notifications list -->
                         @foreach ($notifications as $notification)
+                        @if($loop->iteration > 4) @break @endif
 
 
 
