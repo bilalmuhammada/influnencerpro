@@ -1,4 +1,4 @@
-@extends('layout.web.master')
+@extends('layout.master')
 <style>
 
 .img {

@@ -5,7 +5,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;             
+use Illuminate\Support\Facades\Session;
 use App\Models\UserNotification;
 use Illuminate\Support\Facades\Log;
 
@@ -20,7 +20,7 @@ function getDropdownMenu($role)
 
 function getValueById($modelClass, $id, $columns = 'name', $default = '')
 {
-    
+
     try {
         if (empty($modelClass) || empty($id) || empty($columns)) {
             return $default;
@@ -82,14 +82,10 @@ function getValueById($modelClass, $id, $columns = 'name', $default = '')
         }
 
         return !empty($values) ? implode(' ', $values) : $default;
-
     } catch (\Throwable $e) {
         Log::error("getValueById error: " . $e->getMessage());
         return $default;
     }
-    
-
-
 }
 function getCategories()
 {
@@ -99,7 +95,7 @@ function getCategories()
 }
 function getnationality()
 {
-    $nationality = DB::table('nationality')->orderBy("name",'ASC')->get();
+    $nationality = DB::table('nationality')->orderBy("name", 'ASC')->get();
 
     return $nationality;
 }
@@ -139,7 +135,7 @@ function getCountries()
 
 function getlanguge()
 {
-    $languages = DB::table('languages')->orderBy("name",'ASC')->get();
+    $languages = DB::table('languages')->orderBy("name", 'ASC')->get();
 
     return $languages;
 }
@@ -215,29 +211,30 @@ function formatNumber($number, $precision = 1)
     // dd(is_string($number));
     if (is_string($number)) {
         return $number;
-    }else{
-    for ($index = count($abbrevs) - 1; $index >= 0; $index--) {
-        $divisor = pow(1000, $index + 1);
+    } else {
+        for ($index = count($abbrevs) - 1; $index >= 0; $index--) {
+            $divisor = pow(1000, $index + 1);
 
-        if ($number >= $divisor) {
-            return round($number / $divisor, $precision) . $abbrevs[$index];
+            if ($number >= $divisor) {
+                return round($number / $divisor, $precision) . $abbrevs[$index];
+            }
         }
+
+        return number_format($number);
+    }
+}
+
+function getNotifications()
+{
+    $user_id = Auth::id() ?? (session()->has('User') ? session()->get('User')->id : null);
+
+    if (!$user_id) {
+        return collect();
     }
 
-    return number_format($number);
+    $notification = DB::table('notifications')->where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
 
-}
-}
-
- function getNotifications()
-{
-    $user_id = Auth::id() ?? Session::get('user')->id;
-    
-   $notification= DB::table('notifications')->where('user_id', $user_id  )->orderBy('created_at', 'desc')->get(); 
-   
-   
-   
-   return $notification;
+    return $notification;
 }
 
 
@@ -253,7 +250,7 @@ function getInfluencerSocialMediaProfileByTypeAndId($type, $userId)
 
 function getInfluencersByCategoryIdAndFilter($filter)
 {
-    
+
     $categoryId = $filter->id;
     $query = User::with(['role', 'user_professional_detail', 'personal_information', 'features', 'social_media_profiles'])
         ->whereHas('role', function ($role) {
@@ -284,11 +281,11 @@ function getInfluencersByCategoryIdAndFilter($filter)
             $query->where('status', $filter->input('status'));
         });
 
-    $query = applySocialMediaFilter($query, $filter, ['instagram', 'facebook', 'tiktok', 'twitter', 'youtube', 'website','pinterest','snapchat']);
-    
-  
+    $query = applySocialMediaFilter($query, $filter, ['instagram', 'facebook', 'tiktok', 'twitter', 'youtube', 'website', 'pinterest', 'snapchat']);
+
+
     $query = applyInfluencerFollowersFilter($query, $filter, ['nano', 'micro', 'small', 'medium', 'large', 'mega']);
-  
+
     $query = applyNameFilter($query, $filter);
     $query = applyGenderFilter($query, $filter, ['MALE', 'FEMALE', 'OTHER']);
 
@@ -297,7 +294,7 @@ function getInfluencersByCategoryIdAndFilter($filter)
     } else {
         $query = applyAdditionalCriteriaFilter($query, $filter);
     }
-  
+
     $influencers = $query->get();
     // dd($influencers );
     return $influencers;
@@ -419,7 +416,7 @@ function applyAdditionalCriteriaFilterForWeb($query, $request)
     $age = getValuesFromObjectOfArray(json_decode($request->input('age')));
     $hair_colors = getValuesFromObjectOfArray(json_decode($request->input('hair_color')));
     $eye_colors = getValuesFromObjectOfArray(json_decode($request->input('eye_color')));
-//dd($hair_types);
+    //dd($hair_types);
     return $query->when($request->min_value && $request->max_value, function ($query) use ($age) {
         $query->whereHas('personal_information', function ($user_professional_detail) use ($age) {
             $user_professional_detail->whereBetween('age', $age);
@@ -507,33 +504,32 @@ function hasFavoritedInfluencers($influencer_id, $user_id)
 
 function getUnreadMessages()
 {
-    $Messages = \App\Models\Message::with(['receiver','sender'])->where('receiver_id', \App\Helpers\SiteHelper::getLoginUserId())->where('is_readed', 0)->get();
+    $Messages = \App\Models\Message::with(['receiver', 'sender'])->where('receiver_id', \App\Helpers\SiteHelper::getLoginUserId())->where('is_readed', 0)->get();
     return $Messages;
 }
 
-function getSafeValueFromObject($object, $index='', $default = '')
+function getSafeValueFromObject($object, $index = '', $default = '')
 {
-   
+
 
     // Check if the object is null or not an object
     if (empty($object) || !is_object($object)) {
         return $default;
     }
 
-   
 
-    
+
+
 
 
     // Check if the index exists and is not null
     if (isset($object->$index) && !empty($object->$index)) {
-     
+
         return $object->$index;
     }
 
 
     return $default;
-
 }
 
 function getArts()
@@ -543,13 +539,13 @@ function getArts()
 function formatDateToShowread($date)
 {
     // dd(    gettype($date) );
-  
+
     if ($date) {
         try {
             // Create a Carbon instance from the given format
             $carbonDate =  Carbon::createFromFormat('Y-m-d', $date);
 
-           
+
             // Format the date as 'd-M-Y'
             return $carbonDate->format('d-M-Y');
         } catch (\Exception $e) {
@@ -564,13 +560,13 @@ function formatDateToShowread($date)
 function formatDateToread($date)
 {
     // dd(    gettype($date) );
-  
+
     if ($date) {
         try {
             // Create a Carbon instance from the given format
             $carbonDate = Carbon::createFromFormat('Y-m-d', $date);
 
-           
+
             // Format the date as 'd-M-Y'
             return $carbonDate->format('d-m-Y');
         } catch (\Exception $e) {
@@ -581,9 +577,3 @@ function formatDateToread($date)
         return '';
     }
 }
-
-
-
-
-
-

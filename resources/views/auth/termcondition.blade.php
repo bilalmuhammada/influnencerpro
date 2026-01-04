@@ -1,4 +1,4 @@
-@extends('layout.web.master')
+@extends('layout.master')
 @section('content')
     <style>
         .invalid-feedback {
