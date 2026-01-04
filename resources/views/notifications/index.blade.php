@@ -56,7 +56,7 @@
     /* Remove table borders */
     .table> :not(caption)>*>* {
         border-bottom-width: 0 !important;
-        padding: 10px 10px !important;
+        padding: 4px 10px !important;
         /* Increased padding for spacing */
         vertical-align: middle !important;
     }
@@ -74,6 +74,17 @@
         box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25) !important;
         margin-bottom: 30px !important;
         padding: 1rem !important;
+    }
+
+    .table-avatar {
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 0 !important;
+    }
+
+    .table-avatar a {
+        color: blue !important;
+        margin-top: -2px !important;
     }
 </style>
 
@@ -100,17 +111,17 @@
                         @forelse($notifications as $notification)
                         <tr class="{{ $notification->read_at ? '' : 'fw-bold' }}" style="{{ $notification->read_at ? '' : 'background-color: #f8f9fa;' }}">
                             <td>
-                                <h2 class="table-avatar">
+                                <div class="table-avatar">
                                     <a href="#" class="avatar me-3"> <!-- Increased margin -->
                                         <img class="avatar-img rounded-circle"
                                             src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/default.png') }}"
                                             alt="User Image">
                                     </a>
                                     <a href="#">
-                                        {{ $notification->data }}
-                                        <span>{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
+                                        {{ \Illuminate\Support\Str::limit($notification->data, 50) }}
+                                        <span class="d-block text-muted" style="font-size: 12px;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
                                     </a>
-                                </h2>
+                                </div>
                             </td>
                             <td>{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</td>
                         </tr>
