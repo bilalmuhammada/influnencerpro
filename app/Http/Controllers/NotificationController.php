@@ -25,4 +25,22 @@ class NotificationController extends Controller
 
         return view('notifications.index', compact('notifications'));
     }
+
+    public function markAsRead($id)
+    {
+        DB::table('notifications')
+            ->where('id', $id)
+            ->update(['read_at' => now()]);
+
+        return back()->with('success', 'Notification marked as read');
+    }
+
+    public function destroy($id)
+    {
+        DB::table('notifications')
+            ->where('id', $id)
+            ->delete();
+
+        return back()->with('success', 'Notification removed');
+    }
 }

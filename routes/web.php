@@ -45,6 +45,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->middlew
 Route::get('/account-setting', [UserAuthController::class, 'vendorAccountSetting'])->middleware('checkUser:vendor,influencer');
 Route::get('/contact-us', [\App\Http\Controllers\ContactUsController::class, 'index']);
 Route::get('/notifications', [\App\Http\Controllers\NotificationController::class, 'index']);
+Route::post('/notifications/{id}/mark-as-read', [\App\Http\Controllers\NotificationController::class, 'markAsRead'])->name('notifications.mark-as-read');
+Route::post('/notifications/{id}/delete', [\App\Http\Controllers\NotificationController::class, 'destroy'])->name('notifications.delete');
 
 Route::prefix('/category')->group(function () {
     Route::get('/{id}/influencers', [\App\Http\Controllers\UserController::class, 'index']);

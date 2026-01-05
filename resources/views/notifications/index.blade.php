@@ -105,6 +105,7 @@
                         <tr>
                             <th>Content</th>
                             <th>Date</th>
+                            <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,6 +125,29 @@
                                 </div>
                             </td>
                             <td>{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</td>
+                            <td class="text-end">
+                                <div class="dropdown dropdown-action">
+                                    <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end py-0" style="min-width: 5rem;">
+                                        @if(!$notification->read_at)
+                                        <form action="{{ route('notifications.mark-as-read', $notification->id) }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item p-0">
+                                                Mark as Read
+                                            </button>
+                                        </form>
+                                        @endif
+                                        <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item text-danger p-0">
+                                                Remove
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         @empty
                         <tr>
