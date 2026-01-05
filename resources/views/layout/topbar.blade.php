@@ -113,7 +113,7 @@
             </a>
         </div>
         <div id="google_translate_element" style="display: none;"></div>
-        <div class="country" style="border:0px solid green;position:relative;left:-350px;">
+        <div class="country" style="border:0px solid green;position:relative;left:-450px;">
             <div class="mobile-country desktop-menu-right">
                 <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
                     @foreach(getlanguge() as $language)
