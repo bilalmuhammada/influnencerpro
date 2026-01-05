@@ -366,7 +366,7 @@
                         @endforeach
 
                         <div class="notification-footer text-center mt-2" style="background-color: white; border-top: 1px solid #f0f0f0;">
-                            <a href="{{ env('BASE_URL').'notifications' }}" style="color: red; font-weight: bold; text-decoration: none;">
+                            <a href="{{ env('BASE_URL').'/notifications' }}" style="color: red; font-weight: bold; text-decoration: none;">
                                 View all Notifications
                             </a>
                         </div>
