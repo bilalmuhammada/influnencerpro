@@ -39,6 +39,20 @@
         font-weight: 900 !important;
     }
 
+    .gold-ellipsis {
+        color: blue !important;
+        /* Light Gold color */
+    }
+
+    .gold-ellipsis:hover {
+        color: #997045 !important;
+        /* Light Gold color */
+    }
+
+    .dropdown-item-compact {
+        padding: 0px 8px !important;
+    }
+
     ::-webkit-scrollbar-thumb {
         background-color: #997045;
         border-radius: 34px;
@@ -128,20 +142,20 @@
                             <td class="text-end">
                                 <div class="dropdown dropdown-action">
                                     <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-h"></i>
+                                        <i class="fas fa-ellipsis-h gold-ellipsis"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-end py-0" style="min-width: 5rem;">
+                                    <div class="dropdown-menu dropdown-menu-end py-1" style="min-width: 6rem;">
                                         @if(!$notification->read_at)
-                                        <form action="{{ route('notifications.mark-as-read', $notification->id) }}" method="POST" style="display: inline;">
+                                        <form action="{{ route('notifications.mark-as-read', $notification->id) }}" method="POST" class="m-0">
                                             @csrf
-                                            <button type="submit" class="dropdown-item p-0">
+                                            <button type="submit" class="dropdown-item dropdown-item-compact">
                                                 Mark as Read
                                             </button>
                                         </form>
                                         @endif
-                                        <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" style="display: inline;">
+                                        <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" class="m-0">
                                             @csrf
-                                            <button type="submit" class="dropdown-item text-danger p-0">
+                                            <button type="submit" class="dropdown-item text-danger dropdown-item-compact">
                                                 Remove
                                             </button>
                                         </form>
