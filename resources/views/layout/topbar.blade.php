@@ -36,7 +36,9 @@
         }
 
         .select2-results__option--highlighted[aria-selected] {
-            background-color: #997045 !important;
+            background-color: white !important;
+            color: blue !important;
+            font-weight: 500 !important;
         }
     </style>
     <script type="text/javascript">
