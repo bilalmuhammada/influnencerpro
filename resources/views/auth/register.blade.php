@@ -151,7 +151,7 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="form-group form-focus">
                                                
-                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                <select name="country_id" class="form-control floating country_id" id="country_id_influencer">
                                                     <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     @foreach(getCountries() as $country)
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -315,7 +315,7 @@ margin-left: -9px !important;
                                             </div>
                                             <div class="form-group form-focus">
                                                 {{--    <input type="text" class="form-control floating" name="country">--}}
-                                                <select name="country_id" class="form-control  floating" id="country_id">
+                                                <select name="country_id" class="form-control floating country_id" id="country_id_brand">
                                                     <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                                     @foreach(getCountries() as $country)
                                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -597,15 +597,15 @@ function validateInput(input) {
             // }
         }
 
-        $(document).on('change', '#country_id', function () {
-            var nationality_id = $(this).val();
-            if (nationality_id) {
+        $(document).on('change', '.country_id', function () {
+            var country_id = $(this).val();
+            if (country_id) {
                 $.ajax({
                     url: api_url + 'get-cities-by-country',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        "nationality_id": nationality_id
+                        "country_id": country_id
                     },
                     success: function (response) {
                         if (response.data.length > 0) {
@@ -614,10 +614,11 @@ function validateInput(input) {
                             $("#brand_city_id").empty();
 
                             if (states) {
+                                $("#city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option>');
+                                $("#brand_city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option>');
                                 $.each(states, function (index, value) {
-                                    $("#city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
-                                    // $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
-                                    $("#brand_city_id").append('<option selected hidden disabled value="">&nbsp;&nbsp;</option><option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
+                                    $("#brand_city_id").append('<option value="' + value.id + '">' + value.name + '</option>');
                                 });
                             }
                         } else {
