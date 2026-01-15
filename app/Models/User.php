@@ -147,8 +147,7 @@ class User extends Authenticatable
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;
         } else {
-           
-            return 'https://via.placeholder.com/30x30';
+            return asset('assets/img/user.png');
         }
     }
 
@@ -213,7 +212,7 @@ class User extends Authenticatable
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;
         } else {
-            return 'https://via.placeholder.com/30x30';
+            return asset('assets/img/user.png');
         }
     }
 

@@ -4,7 +4,7 @@
 
     <title>InfluencerPro</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png" type="image/x-icon') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -40,7 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png" type="image/x-icon') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
@@ -150,7 +150,94 @@
     </script>
 
     <style>
-        /* Hide Google Translate toolbar */
+        /* Unified Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #997045;
+            border-radius: 34px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Unified Select2 Styling */
+        .select2-container--default .select2-selection--single {
+            border: 0px solid !important;
+            border-radius: 5px !important;
+            height: 38px !important;
+            padding-top: 4px !important;
+            box-shadow: none !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            border-color: #0504aa transparent transparent transparent !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #0504aa !important;
+            font-weight: 500 !important;
+        }
+
+        .select2-container--default .select2-selection--single:hover .select2-selection__rendered {
+            color: goldenrod !important;
+        }
+
+        .select2-container--default .select2-selection--single:hover .select2-selection__arrow b {
+            border-color: goldenrod transparent transparent transparent !important;
+        }
+
+        .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
+            color: blue !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            top: 5px !important;
+        }
+
+        .badge-premium-green {
+           background-color: #dcfce7 !important;
+        color: #166534 !important;
+            border-radius: 50% !important;
+            padding: 2px 5px !important;
+            font-size: 10px !important;
+            font-weight: bold !important;
+            vertical-align: top !important;
+            margin-left: 2px !important;
+            position: relative !important;
+            top: -5px !important;
+        }
+
+        .select2-dropdown {
+            border: 0px solid !important;
+            border-radius: 5px !important;
+            overflow: hidden !important;
+        }
+
+        .select2-results__option--highlighted[aria-selected] {
+            background-color: white !important;
+            color: #0504aa !important;
+            font-weight: 500 !important;
+        }
+
+        .select2-search--dropdown .select2-search__field {
+            border: 1px solid goldenrod !important;
+            color: goldenrod !important;
+        }
+
+        .select2-search--dropdown .select2-search__field:focus {
+            border-color: #0504aa !important;
+            outline: none !important;
+        }
+
+        .select2-results__option {
+            padding: 6px 9px !important;
+        }
+
+        /* Google Translate Hiding */
         .goog-te-banner-frame.skiptranslate,
         .goog-te-banner-frame,
         .goog-te-balloon-frame,

@@ -10,10 +10,7 @@ width: 212px !important;
   .from_date:focus, .to_date:focus {
     border: 1px solid blue !important;
 }
-#select2-language_dropdown-container{
-           
-         margin-left: -21px !important
-       }
+
 .apexcharts-legend {
     margin-right: 6pc !important;
 }

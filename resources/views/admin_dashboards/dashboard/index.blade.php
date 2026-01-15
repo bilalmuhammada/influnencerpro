@@ -53,10 +53,7 @@ font-weight:bold !important;
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     text-align: center;
 }
-.select2-results__option{
-    padding: 0px 0px 0px 6px !important;
-    margin: 5px 0px 5px 15px !important;
-}
+
 /* option{
     text-align: left;
 } */

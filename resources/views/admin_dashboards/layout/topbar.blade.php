@@ -36,6 +36,9 @@
   display: block;
 }
 
+.select2-results__option {
+    padding: 6px 9px !important;
+}
 
 </style>
 <nav class="navbar">
@@ -54,12 +57,12 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else https://via.placeholder.com/30x30 @endif" alt="profile">
+                    <img class="rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else {{ asset('assets/img/user.png') }} @endif" alt="profile">
                 </a>
                 <div class="dropdown-menu p-0" style="min-width: 4rem;margin-top: 7rem;" aria-labelledby="profileDropdown">
                     {{-- <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                         <div class="mb-3">
-                            <img class="wd-80 ht-80 rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else https://via.placeholder.com/30x30 @endif" alt="">
+                            <img class="wd-80 ht-80 rounded-circle" src="@if(session()->has('user')) {{ session()->get('user')['image_url'] }} @else {{ asset('assets/img/user.png') }} @endif" alt="">
                         </div>
                         {{-- <div class="text-center">
                             <p class="tx-16 fw-bolder">Admin</p>

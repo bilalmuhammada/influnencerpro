@@ -225,6 +225,9 @@
     function carousel() {
         var i;
         var x = document.getElementsByClassName("mySlides");
+        if (x.length === 0) {
+            return;
+        }
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
@@ -240,7 +243,7 @@
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>
 </button>
-<script src="assets/js/feather.min.js"></script>
+<script src="{{ asset('assets/js/feather.min.js') }}"></script>
 {{--<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>--}}
 
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>

@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"/>
     <link rel="stylesheet" href="{{ asset('asset-admin/css/style.css') }}">
 
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+    {{-- <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script> --}}
     <script type="text/javascript">
         api_url = "{{env('API_URL')}}";
         base_url = "{{env('BASE_URL')}}";
@@ -73,6 +73,38 @@
             border: 2px solid red !important;
         }
 
+        .select2-container--default .select2-selection--single:hover .select2-selection__rendered {
+            color: goldenrod !important;
+        }
+
+        .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
+            color: blue !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            top: 5px !important;
+        }
+
+        .select2-container--default .select2-selection--single:hover .select2-selection__arrow b {
+            border-color: goldenrod transparent transparent transparent !important;
+        }
+
+        .select2-container--default .select2-selection--single:hover {
+            color: goldenrod !important;
+        }
+
+        .badge-premium-green {
+            background-color: #dcfce7 !important;
+        color: #166534 !important;
+            border-radius: 50% !important;
+            padding: 2px 5px !important;
+            font-size: 10px !important;
+            font-weight: bold !important;
+            vertical-align: top !important;
+            margin-left: 2px !important;
+            position: relative !important;
+            top: -5px !important;
+        }
       
 
     </style>

@@ -132,8 +132,7 @@ font-weight: bold;
 
 
 
-.select2-results__option {
-    padding: 6px 0px 4px 12px !important;}
+
 .dropzone .dz-preview .dz-image {
     border-radius: 0px !important;}
 #Priceinclude::placeholder {
@@ -166,20 +165,13 @@ font-weight: bold;
     background-color: white !important; /* Change this to the desired color */
   }
 
-  #select2-language_dropdown-container {
-    margin-left: -15px !important;
-}
   #ui-datepicker-div{
 width: 210px !important;
   }
-  #msform .select2-container .select2-selection--single .select2-selection__rendered {
-    /* padding-right: 30px; */
-    padding-left: 12px !important;
-}
   .from_date:focus, .to_date:focus {
     border: 1px solid blue !important;
 }
-#my-dropzone .dz-preview {
+    #my-dropzone .dz-preview {
             display: inline-block;
             margin: 30px;
         }

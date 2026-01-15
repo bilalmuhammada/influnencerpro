@@ -1,14 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-    {{--    @dd(request()->all())--}}
+
     <style>
-        .select2-container--default .select2-selection--single{
-            background-color: #fff !important;
-    /* border: 1px solid #aaa !important; */
-    border-radius: 4px !important;
-    color: black !important;
-        }
         
         .social-wrapper:hover .followers-count {
     color:goldenrod; /* Change to your desired hover color */
@@ -17,17 +11,23 @@
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
- 
-   .social-wrapper:hover .shaking  {
-    animation: shake 1.5s linear infinite;
-   }
-
-   @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    .social-wrapper:hover .shaking, 
+    .d-flex:hover .shaking {
+        animation: shakeIcon 0.5s;
+        animation-iteration-count: infinite;
+    }
+   @keyframes shakeIcon {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
    .card .icon-container {
     pointer-events: none; /* Disable clicks for the container of the icons */
@@ -58,9 +58,23 @@
             font-size: 14px;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: rgba(5, 4, 170, 0.04) !important;
             border: none !important;
-            margin-left: 5px !important;
+            border-radius: 20px !important;
+            padding: 0 0px !important;
+            margin: 0px 3px 0 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            color: #0504aa !important;
+            font-weight: 500 !important;
+            font-size: 11px !important;
+            transition: all 0.2s ease !important;
            
+            flex-shrink: 0 !important;
+            position: relative !important;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
+            background-color: rgba(5, 4, 170, 0.08) !important;
         }
         .font_label {
             padding-top: 0px !important;
@@ -73,9 +87,6 @@
         }
         .datepicker {
             padding-left: 10px !important;}
-        /* .select2-container--default.select2-container--focus .select2-selection--multiple:focus{
-            border: 1px solid blue !important;
-        } */
 
         .tagify__tag {
             width: 47% !important;
@@ -91,7 +102,7 @@
     width: 100px !important;
     margin-right: 120px !important; 
     /* text-align: center !important; */
-}
+ }
   #ui-datepicker-div{
 width: 200px !important;
   }
@@ -101,13 +112,14 @@ width: 200px !important;
 
   }
   .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
-    color: black !important;
+    color: blue !important;
     padding-left: 0px !important;
 }
 
-  #select2--container,.select2-selection__rendered{
- color: black !important;
- padding-left: 0px !important;
+  .card.search-filter .select2-container .select2-selection__rendered {
+    color: #1e293b !important;
+    padding-left: 0px !important;
+    line-height: 32px !important;
   }
   .nationality_id{
     border-color: #997045;
@@ -130,26 +142,6 @@ width: 200px !important;
   background-color: #997045;
   border-radius: 34px;
 }
-.form-control{
-    border-color: #997045 !important;
-}
-.form-control:hover{
-    border-color: blue !important;
-}
-.select2-container--default .select2-selection--multiple {
-    border-color: #997045 !important; 
-}
-
-
-.select2-container--default .select2-selection--multiple:hover {
-    border-color: blue !important; 
-}
-.select2-container{
-    border-color: #997045 !important; 
-}
-.select2-container:focus{
-    border-color: blue !important; 
-}
 .select2-results__message{
  text-align: center !important;
 }
@@ -157,15 +149,25 @@ width: 200px !important;
     /* display: none !important; */
     min-height: 40px !important;
 }
-#select2-language_dropdown-container{
-    margin-left: 9px !important;
-}
+
 #select2-nationality_id-results{
 padding-left: 3px !important;
 } 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
-    border: 0px solid !important;
-    background-color: #e4e4e4 !important;
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    border: none !important;
+    background: transparent !important;
+    color: #0504aa !important;
+    margin-right: 0px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    opacity: 0.4 !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    top: 0px !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    opacity: 1 !important;
+    color: #ff4d4f !important;
 }
 .changecolor{
 color: #0504aa !important; 
@@ -193,16 +195,10 @@ color: #0504aa !important;
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
-.select2-container--default .select2-selection--multiple{
-    border: 1px solid #997045 !important;
-    border-radius: 6px;
-    height: 45px !important;
-    padding: 6px 0px 3px 9px;
-}
-.select2-selection__choice__display{
- margin-left: -6px !important;
- font-size: 14px;
-
+.select2-selection__choice__display {
+    padding-left: 0 !important;
+    font-size: 11px !important;
+    color: #0504aa !important;
 }
 .select2-selection--multiple{
     overflow-y: overlay !important;
@@ -210,10 +206,189 @@ color: #0504aa !important;
 .select2-selection__clear{
     display:none; 
 }
-.select2-container--default .select2-results__option{
 
-    
-    padding-left: 10px !important;
+/* Refined Premium Filter Design */
+.search-filter {
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background: #f2e49c !important;
+    overflow: hidden;
+}
+
+.search-filter .card-header {
+    background: #f2e49c !important;
+    padding: 4px 20px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.search-filter .card-title {
+    color: #1a1a1a;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.5px;
+}
+
+.search-filter .card-body {
+    padding: 2px 20px !important;
+}
+
+.filter-widget {
+   
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.filter-widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.font_label {
+    display: block;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    color: blue !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px !important;
+    padding-top: 0 !important;
+}
+
+ul, li {
+    margin-bottom: 0px !important;
+}
+
+/* Hide number input spin buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.card.search-filter .form-control:focus,
+.card.search-filter .select2-container--default.select2-container--focus .select2-selection--multiple,
+.card.search-filter .select2-container--default.select2-container--open .select2-selection--single {
+    border-color: #0504aa !important;
+    /* box-shadow: 0 0 0 3px rgba(5, 4, 170, 0.1) !important; */
+    background-color: #fff !important;
+}
+
+.card.search-filter .form-control:hover,
+.card.search-filter .select2-container--default .select2-selection--single:hover,
+.card.search-filter .select2-container--default .select2-selection--multiple:hover {
+    border-color: #997045 !important;
+}
+
+/* Custom Checkbox */
+.filter-widget input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1.5px solid #cbd5e1 !important;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    position: relative;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    margin: 0 !important;
+}
+
+.filter-widget input[type="checkbox"]:checked {
+    background-color: #0504aa;
+    border-color: #0504aa;
+}
+
+.filter-widget input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card.search-filter .form-control,
+.card.search-filter .select2-container--default .select2-selection--single,
+.card.search-filter .select2-container--default .select2-selection--multiple {
+    border: 1.5px solid blue !important;
+    border-radius: 8px !important;
+    min-height: 34px !important;
+    height: auto !important;
+    background-color: #fcfdfe !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    color: #1e293b !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+
+.card.search-filter .select2-container--default .select2-selection--single {
+    height: 34px !important;
+}
+
+.card.search-filter .select2-container .select2-selection__rendered {
+    color: #1e293b !important;
+    padding-left: 0px !important;
+    line-height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+#spoken_language_ids + .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #0504aa !important;
+    font-weight: 500 !important;
+}
+
+.card.search-filter .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0px !important;
+    padding: 0 4px !important;
+    line-height: normal !important;
+   
+    align-items: center !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+}
+
+.card.search-filter .select2-container--default .select2-selection--multiple .select2-selection__rendered::-webkit-scrollbar {
+    display: none !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--open .select2-selection--single {
+    border-color: #997045 !important;
+    /* box-shadow: 0 0 0 3px rgba(5, 4, 170, 0.1) !important; */
+}
+
+/* Clear All Button */
+.clearall {
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    color: #0504aa !important;
+    text-decoration: none;
+    padding: 0px 12px;
+    border-radius: 6px;
+    background: rgba(5, 4, 170, 0.05);
+    transition: all 0.2s ease;
+}
+
+.clearall:hover {
+    background: rgba(5, 4, 170, 0.1);
+    color: #04038a !important;
 }
     </style>
     <section style="border-top:2px solid #eee;">
@@ -231,688 +406,309 @@ color: #0504aa !important;
     <div class="content">
         <div class="container" style="max-width: 1440px !important;">
             <div class="row">
-                <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar" style="border:0px solid red;">
+                <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
                     <form action="{{ env('BASE_URL') }}vendor/influencers-filter" id="fiter-infl">
                         <input type="hidden" name="source" value="web">
-                        <div class="card search-filter" style="border:0px solid red;">
-                            <div class="card-header d-flex justify-content-between"
-                                 style="background:#f2e49c  !important;">
+                        <div class="card search-filter">
+                            <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title mb-0">FILTERS</h4>
                                 <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="clearall">Clear All</a>
                             </div>
-                            <div class="card-body" style="background:#f2e49c  !important;">
+                            <div class="card-body">
                                                               
                                 <div class="filter-widget">
-                                    <input type="text" class="form-control" placeholder="Search..." name="">
-                                    <label for="" class="font_label">Country</label>
+                                    <label class="font_label">Search</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Search by name..." name="search">
+                                    
+                                    <label class="font_label">Country</label>
                                     @php $countries = getCountries()->sortBy('name'); @endphp
-                                    <select class="form-control  nationality_id" id="nationality_id" 
-                                            name="country_id">
-                                        <option value="" disabled hidden selected>&nbsp;</option>
+                                    <select class="form-control select2 mb-3" id="nationality_id" name="country_id">
+                                        <option value="" disabled hidden selected>Select Country</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
-                                                    @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
+                                                @if(request()->country_id == $country->id) selected @endif>{{ $country->name }}</option>
                                         @empty
                                             <option value="">No Data</option>
                                         @endforelse
                                     </select>
-                                    <label for="" class="font_label">City</label>
-                                    <select name="city_id[]" class="form-control select2" multiple id="city_id">
 
+                                    <label class="font_label">City</label>
+                                    <select name="city_id[]" class="form-control selectMul" multiple id="city_id">
                                     </select>
-                                    @php $categories = getCategories()->sortBy('name');  @endphp
-                                    <div class="form-group">
-                                        <label for="" class="font_label">Category</label>
-                                        <select class="form-control select2" name="category_id[]" multiple>
-                                           
-                                            @forelse($categories as $category)
-                                                <option
-                                                    value="{{ $category->id }}"
-                                                    @if(request()->category_id && in_array($category->id, request()->category_id))
-                                                    selected
-                                                    @endif>{{ $category->name }}</option>
-                                            @empty
-                                                <option value="">No Data</option>
-                                            @endforelse
-                                        </select>
-                                    </div>
                                 </div>
 
+                                <div class="filter-widget">
+                                    <label class="font_label">Category</label>
+                                    @php $categories = getCategories()->sortBy('name');  @endphp
+                                    <select class="form-control selectMul" name="category_id[]" multiple>
+                                        @forelse($categories as $category)
+                                            <option value="{{ $category->id }}"
+                                                @if(request()->category_id && in_array($category->id, request()->category_id)) selected @endif>{{ $category->name }}</option>
+                                        @empty
+                                            <option value="">No Data</option>
+                                        @endforelse
+                                    </select>
+                                </div>
 
                                 <div class="filter-widget">
                                     <label class="font_label">Platforms</label>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img src="{{ asset('assets/img/social-icon/insta.png')}}" alt="insta"
-                                                     width="20" class="shaking" style=" margin-right: 3px;"
-                                                 >
-                                                Instagram</span> <input type="checkbox" name="instagram"
-                                                                        <?php
-
-                                                                        if (request()->instagram) {
-                                                                            echo "checked";
-
-                                                                        } else {
-                                                                            echo "";
-                                                                        }
-                                                                        ?>
-                                                                        style="width:20px;height:20px; margin-left: 4px;">
+                                    <div class="row g-2">
+                                        @php
+                                            $social_platforms = [
+                                                ['name' => 'instagram', 'label' => 'Instagram', 'icon' => 'insta.png'],
+                                                ['name' => 'facebook', 'label' => 'Facebook', 'icon' => 'fb.png'],
+                                                ['name' => 'youtube', 'label' => 'YouTube', 'icon' => 'youtube.svg'],
+                                                ['name' => 'tiktok', 'label' => 'TikTok', 'icon' => 'tiktok.png'],
+                                                ['name' => 'twitter', 'label' => 'Twitter', 'icon' => 'twitter.png'],
+                                                ['name' => 'pinterest', 'label' => 'Pinterest', 'icon' => 'pinterest.png'],
+                                                ['name' => 'snapchat', 'label' => 'Snapchat', 'icon' => 'snapchat.png'],
+                                                ['name' => 'website', 'label' => 'Website', 'icon' => 'web.png'],
+                                            ];
+                                        @endphp
+                                        @foreach($social_platforms as $platform)
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <input type="checkbox" name="{{ $platform['name'] }}" id="check_{{ $platform['name'] }}" {{ request()->{$platform['name']} ? 'checked' : '' }}>
+                                                    <label class="ms-2 mb-0 d-flex align-items-center cursor-pointer" for="check_{{ $platform['name'] }}" style="font-size: 13px;">
+                                                        <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="18" class="me-2 shaking">
+                                                        {{ $platform['label'] }}
+                                                    </label>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img src="{{ asset('assets/img/social-icon/fb.png')}}" alt="insta"
-                                                     width="20" class="shaking" style=" margin-right: 3px;">
-                                                     Facebook</span> <input type="checkbox" name="facebook"
-                                                                            <?php
-
-                                                                            if (request()->facebook) {
-                                                                                echo "checked";
-                                                                            } else {
-                                                                                echo "";
-                                                                            }
-                                                                            ?>
-                                                                            style="width:20px;height:20px; margin-left: 4px;">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img src="{{ asset('assets/img/social-icon/youtube.svg')}}" alt="insta"
-                                                     width="20" class="shaking" style=" margin-right: 5px;">
-                                                     Youtube &nbsp;&nbsp; </span> <input type="checkbox" name="youtube"
-                                                                                         <?php
-
-                                                                                         if (request()->youtube) {
-                                                                                             echo "checked";
-
-                                                                                         } else {
-                                                                                             echo "";
-                                                                                         }
-                                                                                         ?>
-                                                                                         style="width:20px;height:20px; margin-left: 4px;">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img src="{{ asset('assets/img/social-icon/tiktok.png')}}" alt="insta"
-                                                     width="20" class="shaking" style=" margin-right: 3px;">
-                                                     Tiktok &nbsp; &nbsp; &nbsp; </span> <input type="checkbox"
-                                                                                                name="tiktok"
-                                                                                                <?php
-
-                                                                                                if (request()->tiktok) {
-                                                                                                    echo "checked";
-
-                                                                                                } else {
-                                                                                                    echo "";
-                                                                                                }
-                                                                                                ?>
-                                                                                                style="width:20px;height:20px; margin-left: 3px;">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img
-                                                    src="{{ asset('assets/img/social-icon/twitter.png')}}"
-                                                    alt="insta"
-                                                    width="20" class="shaking" style=" margin-right: 3px;">
-                                                     Twitter &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
-                                                                                               name="twitter"
-                                                                                               <?php
-
-                                                                                               if (request()->twitter) {
-                                                                                                   echo "checked";
-
-                                                                                               } else {
-                                                                                                   echo "";
-                                                                                               }
-                                                                                               ?>
-                                                                                               style="width:20px;height:20px; margin-left: 4px;">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img
-                                                    src="{{ asset('assets/img/social-icon/pinterest.png')}}"
-                                                    alt="insta"
-                                                    width="20" class="shaking" style=" margin-right: 3px;">
-                                                    Pinterest &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
-                                                                                               name="twitter"
-                                                                                               <?php
-
-                                                                                               if (request()->pinterest) {
-                                                                                                   echo "checked";
-
-                                                                                               } else {
-                                                                                                   echo "";
-                                                                                               }
-                                                                                               ?>
-                                                                                               style="width:20px;height:20px; margin-left: -10px;">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img
-                                                    src="{{ asset('assets/img/social-icon/snapchat.png')}}"
-                                                    alt="insta" class="shaking"
-                                                    style="margin-left: -3px; margin-right: 4px; height: 23px;width: 23px;">
-                                                    Snapchat &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
-                                                                                               name="twitter"
-                                                                                               <?php
-
-                                                                                               if (request()->snapchat) {
-                                                                                                   echo "checked";
-
-                                                                                               } else {
-                                                                                                   echo "";
-                                                                                               }
-                                                                                               ?>
-                                                                                               style="width:20px;height:20px;margin-left: -10px;">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span style="font-size:14px;position:relative;top:-3px;">
-                                                <img
-                                                    src="{{ asset('assets/img/social-icon/web.png')}}"
-                                                    alt="insta"
-                                                    width="20" class="shaking" style="margin-right: 4px;">
-                                                    Website &nbsp;&nbsp; &nbsp;</span> <input type="checkbox"
-                                                                                               name="twitter"
-                                                                                               <?php
-
-                                                                                               if (request()->website) {
-                                                                                                   echo "checked";
-
-                                                                                               } else {
-                                                                                                   echo "";
-                                                                                               }
-                                                                                               ?>
-                                                                                               style="width:20px;height:20px ;margin-left: -8px;">
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
-
                                 </div>
 
 
                                 <div class="filter-widget">
                                     <label class="font_label">Followers</label>
 
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">1 - 250K</div>
-                                                    <div class="col">
-                                                        <input type="checkbox" name="nano"
-                                                               <?php
-
-                                                               if (request()->nano) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?>
-                                                               style="width:20px;height:20px; margin-left: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">250K - 500K</div>
-                                                    <div class="col">
-                                                        <input type="checkbox" name="micro"
-                                                               <?php
-
-                                                               if (request()->micro) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?> style="width:20px;height:19px  ;  margin-left: -8px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">500k - 1M</div>
-                                                    <div class="col">
-                                                        <input type="checkbox" name="small"
-                                                               <?php
-
-                                                               if (request()->small) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?> style="width:20px;height:20px  ;  margin-left:5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">1M - 5M</div>
-                                                    <div class="col">
-                                                        <input type="checkbox" name="medium"
-                                                               <?php
-
-                                                               if (request()->medium) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?> style="width:20px;height:19px; margin-left: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">5M - 50M</div>
-                                                    <div class="col">
-                                                        <input type="checkbox"
-                                                               name="mega"
-                                                               <?php
-
-                                                               if (request()->mega) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?>
-                                                               style="width:20px;height:21px;margin-left: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col filters">50M+</div>
-                                                    <div class="col">
-                                                        <input type="checkbox"
-                                                               name="mega"
-                                                               <?php
-
-                                                               if (request()->mega) {
-                                                                   echo "checked";
-
-                                                               } else {
-                                                                   echo "";
-                                                               }
-                                                               ?>
-                                                               style="width:20px;height:19px; margin-left: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <!-- <div class="filter-widget"> -->
-                                        <!-- </div> -->
-
-                                        <!-- <div class="filter-widget"> -->
-                                        <label class="font_label">Language</label>
-                                        <!-- <div class="form-group"> -->
-                                        @php $spoken_languages = getlanguge(); @endphp
-                                        <select class="form-control select2" name="spoken_language_ids[]"  multiple="multiple">
-                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
-                                            @forelse($spoken_languages as $language)
-                                                <option value="{{ $language->id }}"
-                                                        @if(isset(request()->spoken_language_ids) && in_array($language->id, request()->spoken_language_ids)) selected @endif>{{ $language->name }}</option>
-                                            @empty
-                                                <option value="">No Result Found</option>
-                                            @endforelse
-                                        </select>
-                                        <!-- </div> -->
-                                        <!-- </div> -->
-                                        <!-- <div class="filter-widget"> -->
-                                        <label class="font_label">Ethnicity</label>
-                                        <!-- <div class="form-group"> -->
-                                        @php $ethnicities = getEthnicity(); @endphp
-                                        <select class="form-control select2" name="ethnicity_ids[]" multiple>
-                                            {{-- <option value="">&nbsp;&nbsp;</option> --}}
-                                            @forelse($ethnicities as $ethnicity)
-                                                <option value="{{ $ethnicity->id }}"
-                                                        @if(isset(request()->ethnicity_ids) && in_array($ethnicity->id, request()->ethnicity_ids)) selected @endif>{{ $ethnicity->name }}</option>
-                                            @empty
-                                                <option value="">No Result Found</option>
-                                            @endforelse
-                                        </select>
-                                        <!-- </div> -->
-                                        <!-- </div> -->
-                                        <!-- <div class="filter-widget"> -->
-                                        <label class="font_label">Nationality</label>
-                                        <!-- <div class="form-group"> -->
-                                        @php $countries = getnationality(); @endphp
-                                        <select class="form-control seletct2 nationality_id" 
-                                                name="country_id" multiple="multiple">
-                                            {{-- <option value="">&nbsp;&nbsp;</option>  --}}
-                                            @forelse($countries as $country)
-                                                <option value="{{ $country->id }}"
-                                                        @if(isset(request()->country_id) && in_array($country->id, request()->country_id)) selected @endif>{{ $country->name }}</option>
-                                            @empty
-                                                <option value="">No Result Found</option>
-                                            @endforelse
-                                        </select>
-                                        <!-- </div> -->
-                                        <!-- </div> -->
-                                        <!-- <div class="filter-widget"> -->
-
+                                <div class="filter-widget">
+                                    <label class="font_label">Followers Range</label>
+                                    <div class="row g-2">
                                         @php
-
-                                            if(request()->age){
-                                                 $age = getValuesFromObjectOfArray(json_decode(request()->age));
-
-                                                $ages = implode(',', $age);
-
-                                            } else {
-                                                $ages = '';
-                                            }
+                                            $follower_ranges = [
+                                                ['name' => 'nano', 'label' => '1 - 250K'],
+                                                ['name' => 'micro', 'label' => '250K - 500K'],
+                                                ['name' => 'small', 'label' => '500K - 1M'],
+                                                ['name' => 'medium', 'label' => '1M - 5M'],
+                                                ['name' => 'mega', 'label' => '5M - 50M'],
+                                                ['name' => 'mega_plus', 'label' => '50M+'],
+                                            ];
                                         @endphp
-                                        <label class="font_label">Age</label>
-                                        <!-- <div class="form-group"> -->
-                                        {{--                                        <select class="form-control" name="">--}}
-                                        {{--                                            <option value="">+More</option>--}}
-                                        {{--  
-                                                                              </select>--}}
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" pattern="\+?\d*" oninput="validateInput(this)" name="age1"
-                                            
-                                                placeholder='Min' value="" >
+                                        @foreach($follower_ranges as $range)
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <input type="checkbox" name="{{ $range['name'] }}" id="check_{{ $range['name'] }}" {{ request()->{$range['name']} ? 'checked' : '' }}>
+                                                    <label class="ms-2 mb-0 cursor-pointer" for="check_{{ $range['name'] }}" style="font-size: 13px;">
+                                                        {{ $range['label'] }}
+                                                    </label>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-
-
-                                                <input type="text" class="form-control" name="age" pattern="\+?\d*" oninput="validateInput(this)"
-                                                
-                                                placeholder='Max ' value="{{$ages}}" >
-                                              
-                                            </div>
-                                          
-                                          
-                                           
-                                        </div>
-                                       
-
-                                        <!-- </div> -->
+                                        @endforeach
                                     </div>
-                                    <label class="font_label">Gender</label>
+                                </div>
 
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span
-                                                    style="font-size:14px;position:relative;top:-7px;">Male &nbsp;</span>
-                                                <input type="checkbox" name="male"
-                                                       <?php
+                                <div class="filter-widget">
+                                    <label class="font_label">Language</label>
+                                    @php $spoken_languages = getlanguge(); @endphp
+                                    <select class="form-control selectMul" name="spoken_language_ids[]" multiple="multiple" id="spoken_language_sidebar">
+                                        @forelse($spoken_languages as $language)
+                                            <option value="{{ $language->id }}" data-flag-url="{{ asset($language->flag_image_url) }}"
+                                                    @if(isset(request()->spoken_language_ids) && in_array($language->id, request()->spoken_language_ids)) selected @endif>{{ $language->name }}</option>
+                                        @empty
+                                            <option value="">No Result Found</option>
+                                        @endforelse
+                                    </select>
+                                </div>
 
-                                                       if (request()->male) {
-                                                           echo "checked";
+                                <div class="filter-widget">
+                                    <label class="font_label">Demographics</label>
+                                    <label class="font_label mt-1" style="font-size: 10px !important;">Ethnicity</label>
+                                    @php $ethnicities = getEthnicity(); @endphp
+                                    <select class="form-control selectMul mb-3" name="ethnicity_ids[]" multiple>
+                                        @forelse($ethnicities as $ethnicity)
+                                            <option value="{{ $ethnicity->id }}"
+                                                    @if(isset(request()->ethnicity_ids) && in_array($ethnicity->id, request()->ethnicity_ids)) selected @endif>{{ $ethnicity->name }}</option>
+                                        @empty
+                                            <option value="">No Result Found</option>
+                                        @endforelse
+                                    </select>
 
-                                                       } else {
-                                                           echo "";
-                                                       }
-                                                       ?> style="width:20px;height:20px">
+                                    <label class="font_label mt-1" style="font-size: 10px !important;">Nationality</label>
+                                    @php $nationalities = getnationality(); @endphp
+                                    <select class="form-control selectMul" name="country_id">
+                                        <option value="" disabled hidden selected>Select Nationality</option>
+                                        @forelse($nationalities as $country)
+                                            <option value="{{ $country->id }}"
+                                                    @if(request()->country_id == $country->id) selected @endif>{{ $country->name }}</option>
+                                        @empty
+                                            <option value="">No Result Found</option>
+                                        @endforelse
+                                    </select>
+                                </div>
+
+                                <div class="filter-widget">
+                                    <label class="font_label">Profile Details</label>
+                                    
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Gender</label>
+                                            <div class="d-flex gap-3 mt-1">
+                                                <div class="d-flex align-items-center">
+                                                    <input type="checkbox" name="male" id="check_male" {{ request()->male ? 'checked' : '' }}>
+                                                    <label class="ms-1 mb-0 cursor-pointer" for="check_male" style="font-size: 13px;">Male</label>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <input type="checkbox" name="female" id="check_female" {{ request()->female ? 'checked' : '' }}>
+                                                    <label class="ms-1 mb-0 cursor-pointer" for="check_female" style="font-size: 13px;">Female</label>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <span
-                                                    style="font-size:14px;position:relative;top:-7px;">Female &nbsp;</span>
-                                                <input type="checkbox" name="female"
-                                                       <?php
-
-                                                       if (request()->female) {
-                                                           echo "checked";
-
-                                                       } else {
-                                                           echo "";
-                                                       }
-                                                       ?> style="width:20px;height:20px">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Age Range</label>
+                                            <div class="d-flex gap-2">
+                                                <input type="number" class="form-control form-control-sm" name="age1" placeholder="Min" value="{{ request()->age1 }}">
+                                                <input type="number" class="form-control form-control-sm" name="age" placeholder="Max" value="{{ request()->age }}">
                                             </div>
-                                            {{-- <div class="col-md-6">
-                                                <span
-                                                    style="font-size:14px;position:relative;top:-7px;">Other</span>
-                                                <input type="checkbox" name="other"
-                                                       <?php
-                                                       //if (request()->other) {
-                                                       //    echo "checked";
-                                                       //} else {
-                                                          // echo "";
-                                                      // }
-                                                       ?> 
-                                                       style="width:20px;height:20px">
-                                            </div> --}}
                                         </div>
                                     </div>
-                                    <!-- <div class="filter-widget"> -->
-                                    @php
 
-                                        if(request()->hair_types){
-                                             $hairs = getValuesFromObjectOfArray(json_decode(request()->hair_types));
-
-                                            $hair_type = implode(',', $hairs);
-
-                                        } else {
-                                            $hair_type = 'Long, Short, Curly';
-                                        }
-
-                                        $hair_type1 = explode(",", $hair_type);
-                                    @endphp
-
-                                    <label class="font_label">Hair Type</label>
-                                    {{-- <input name='hair_types' class='form-control'
-                                           placeholder='write some hair types'
-                                           value="{{$hair_type}}"> --}}
-                                                                       <select name="hair_types[]" class="form-control select2" multiple  id="">
-                                                                        {{-- @foreach($hair_type1 as $hair)  
-                                                                        
-                                                                        <option value="{{$hair}}">{{$hair}}</option>
-                                                                         
-                                                                           @endforeach --}}
-                                                                           {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
-                                                                           <option value="afro">Afro</option>
-                                                                           <option value="blad">Bald</option>
-                                                                           <option value="curly">Curly</option>
-                                                                           <option value="coily">Coily</option>
-                                                                         
-                                                                          
-                                                                           <option value="long">Long</option>
-                                                                           <option value="short">Short</option>
-                                                                           <option value="straight">Straight</option>
-                                                                           <option value="thick">Thick</option>
-                                                                           
-                                                                            <option value="wavy">Wavy</option>
-                                                                           
-                                                                           
-                                                                  </select> 
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Hair Type</label>
+                                            <select name="hair_types[]" class="form-control selectMul" multiple="multiple">
+                                                <option value="afro">Afro</option>
+                                                <option value="bald">Bald</option>
+                                                <option value="curly">Curly</option>
+                                                <option value="coily">Coily</option>
+                                                <option value="long">Long</option>
+                                                <option value="short">Short</option>
+                                                <option value="straight">Straight</option>
+                                                <option value="thick">Thick</option>
+                                                <option value="wavy">Wavy</option>
+                                            </select>
+                                        </div>
 
 
                                 <!-- <div class="filter-widget"> -->
 
-                                    @php
-
-                                        if(request()->hair_color){
-                                             $hairs = getValuesFromObjectOfArray(json_decode(request()->hair_color));
-
-                                            $hair_color = implode(',', $hairs);
-
-                                        } else {
-                                            $hair_color = 'Black, Blue, White';
-                                        }
-                                        $hair_color1 = explode(",", $hair_color);
-                                    @endphp
-                                    <label class="font_label">Hair Color</label>
-                                    <!-- <div class="form-group"> -->
-                                        <select name="hair_color[]" class="form-control select2 " multiple  id="">
-                                            {{-- @foreach($hair_color1 as $hcolor)  
-                                            
-                                            <option value="{{$hcolor}}">{{$hcolor}}</option>
-                                             
-                                               @endforeach --}}
-                                               {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
-                                               <option value="balayage">Balayage</option> 
-                                               <option value="black">Black</option>
-                                               <option value="blonde">Blonde</option>
-                                               <option value="brown">Brown</option>
-                                               <option value="dark">Dark</option>
-                                               <option value="ginger">Ginger</option>
-                                               <option value="gold">Gold</option>
-                                               <option value="green">Green</option>
-                                               <option value="grey">Grey</option>
-                                               <option value="mixed">Mixed</option>
-
-                                              
-                                               <option value="red">Red</option>
-                                               <option value="white">White</option>
-                                              
-                                      </select> 
-                                    <!-- </div> -->
-
-                                    @php
-
-                                        if(request()->hair_color){
-                                             $eyes = getValuesFromObjectOfArray(json_decode(request()->hair_color));
-
-                                            $eye_color = implode(',', $eyes);
-
-                                        } else {
-                                            $eye_color = 'Black, Blue, White';
-                                        }
-                                        $eye_color1 = explode(",", $eye_color);
-                                    @endphp
-                                    <label class="font_label">Eye Color</label>
-                                    <select name="eye_color[]" class="form-control select2 " multiple  id="">
-                                        {{-- @foreach($eye_color1 as $ecolor)  
-                                        
-                                        <option value="{{$ecolor}}">{{$ecolor}}</option>
-                                         
-                                           @endforeach --}}
-                                           {{-- <option selected value="">&nbsp;&nbsp;</option> --}}
-                                           <option value="azure">Azure</option>
-                                           <option value="Agate">Agate</option>
-                                           <option value="amber">Amber</option>
-                                           <option value="blue">Blue</option>
-                                           <option value="black">Black</option>
-                                           <option value="brown">Brown</option>
-                                           <option value="grey">Gray</option> 
-                                           <option value="green">Green</option>
-                                           <option value="hazel">Hazel</option>
-                                           <option value="mixed">Mixed</option>
-                                           <option value="nordic">Nordic</option>
-                                          
-                                           <option value="red">Red</option>
-                                           <option value="Serene ">Serene </option>
-                                          
-   
-                                          
-                                        
-                                          
-                                          
-
-                                  </select> 
-                                    
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="font_label">Height-CM</label>
-                                            <input type="text" class="form-control" name="height" pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   {{-- placeholder=" Height..." --}}
-                                                   value="@if(request()->height){{ request()->height }}@endif">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">Weight-KG</label>
-                                            <input type="text" class="form-control" name="width" pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   {{-- placeholder=" Weight..." --}}
-                                                   value="@if(request()->width){{ request()->width }}@endif">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">Shoes Size - EU</label>
-                                            <input type="text" class="form-control" name="shoes_size" pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   {{-- placeholder=" Shoes Size..." --}}
-                                                   value="@if(request()->shoes_size){{ request()->shoes_size }}@endif">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">Cloth Size</label>
-                                            {{-- <input type="text" class="form-control" name="cloth_size"
-                                                   {{-- placeholder=" Cloth Size..." --}}
-                                                   {{-- value="@if(request()->cloth_size){{ request()->cloth_size }}@endif"> --}} 
-                                                   <select name="clothsize" id=""
-                                                   class="form-control available-country mySelect floating">
-                                                   <option selected value="">&nbsp;&nbsp;</option>
-                                               <option value="XS">XS</option>
-                                               <option value="S">S</option>
-                                               <option value="M">M</option>
-                                                <option value="L">L</option> 
-                                                <option value="XL">XL</option>
-                                                <option value="XXL">XXL</option>
-                                                <option value="XXXL">XXXL</option>
-                                           </select>
-                                                </div>
-                                        <div class="col-md-6">
-                                            {{-- select2 --}}
-                                            <label class="font_label">Tattoo</label>
-                                            <select  name="tattoo" class="form-control mySelect tattoo ">
-                                                <option disabled selected hidden value="">&nbsp;&nbsp;</option>
-                                                <option value="yes"
-                                                        @if(isset(request()->tattoo) && request()->tattoo == 'yes') selected @endif>
-                                                    Yes
-                                                </option>
-
-                                                <option value="yes"
-                                                        @if(isset(request()->tattoo) && request()->tattoo == 'no') selected @endif>
-                                                    No
-                                                </option>
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Hair Color</label>
+                                            <select name="hair_color[]" class="form-control selectMul" multiple="multiple">
+                                                <option value="balayage">Balayage</option> 
+                                                <option value="black">Black</option>
+                                                <option value="blonde">Blonde</option>
+                                                <option value="brown">Brown</option>
+                                                <option value="dark">Dark</option>
+                                                <option value="ginger">Ginger</option>
+                                                <option value="gold">Gold</option>
+                                                <option value="green">Green</option>
+                                                <option value="grey">Grey</option>
+                                                <option value="mixed">Mixed</option>
+                                                <option value="red">Red</option>
+                                                <option value="white">White</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control mySelect is_collaboration " id="">
-                                                <option disabled selected hidden value="">&nbsp;&nbsp;</option>
-                                                <option value="1" @if(request()->is_collaboration == 1) selected @endif>
-                                                    Yes
-                                                </option>
-                                                <option value="0" @if(request()->is_collaboration == 0)  @endif>
-                                                    No
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="font_label">Art</label>
-                                            <select type="text" class="form-control select2" name="art[]" multiple>
-                                                @foreach(getArts()->sortBy('name') as $art)
-                                                    <option
-                                                        value="{{ $art->key }}"
-                                                        @if(in_array($art->key, request()->art ?? [])) selected @endif>{{ $art->name }}</option>
+                                    </div>
+
+
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Eye Color</label>
+                                            <select name="eye_color[]" class="form-control selectMul" multiple="multiple">
+                                                @php
+                                                    $eye_colors = [
+                                                        'azure' => 'Azure',
+                                                        'agate' => 'Agate',
+                                                        'amber' => 'Amber',
+                                                        'blue' => 'Blue',
+                                                        'black' => 'Black',
+                                                        'brown' => 'Brown',
+                                                        'grey' => 'Gray',
+                                                        'green' => 'Green',
+                                                        'hazel' => 'Hazel',
+                                                        'mixed' => 'Mixed',
+                                                        'nordic' => 'Nordic',
+                                                        'red' => 'Red',
+                                                        'serene' => 'Serene'
+                                                    ];
+                                                @endphp
+                                                @foreach($eye_colors as $val => $label)
+                                                    <option value="{{ $val }}" {{ in_array($val, request()->eye_color ?? []) ? 'selected' : '' }}>{{ $label }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">Availability</label>
-                                            <input type="text" class="form-control datepicker1" name="availability_from_date" placeholder="Date" 
-                                                   value="@if(request()->availability_from_date){{  date('d-m-Y',strtotime(request()->availability_from_date)) }}@endif" style=" background-color: white;">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Cloth Size</label>
+                                            <select name="clothsize[]" class="form-control selectMul" multiple="multiple">
+                                                @php
+                                                    $cloth_sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+                                                @endphp
+                                                @foreach($cloth_sizes as $size)
+                                                    <option value="{{ $size }}" {{ in_array($size, request()->clothsize ?? []) ? 'selected' : '' }}>{{ $size }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="font_label">&nbsp;</label>
-                                            <input type="text" class="form-control datepicker1" name="availability_to_date" placeholder="Date" 
-                                                   value="@if(request()->availability_to_date){{date('d-m-Y',strtotime(request()-> request()->availability_to_date)) }}@endif" style=" background-color: white;">
+                                    </div>
+                                </div>
+                                
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-4">
+                                            <label class="font_label" style="font-size: 10px !important;">Height (cm)</label>
+                                            <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="font_label" style="font-size: 10px !important;">Weight (kg)</label>
+                                            <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="font_label" style="font-size: 10px !important;">Shoes (EU)</label>
+                                            <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
                                         </div>
                                     </div>
 
-
-                                    <label class="font_label">Price $</label>
-                                    <div class="row">
-                                        <div class="col-md-6"><input type="text" name="min_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Min" class="form-control "
-                                                                     value="@if(request()->min_price){{ request()->min_price }}@endif"
-                                                                   ></div>
-                                        <div class="col-md-6"><input type="text" name="max_price" pattern="\+?\d*"  oninput="validateInput(this)"  placeholder="Max" class="form-control "
-                                                                     value="@if(request()->max_price){{ request()->max_price }}@endif"
-                                                                     ></div>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Tattoo</label>
+                                            <select name="tattoo" class="form-control selectMul">
+                                                <option value="">Any</option>
+                                                <option value="yes" {{ request()->tattoo == 'yes' ? 'selected' : '' }}>Yes</option>
+                                                <option value="no" {{ request()->tattoo == 'no' ? 'selected' : '' }}>No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Collaboration</label>
+                                            <select name="is_collaboration" class="form-control selectMul">
+                                                <option value="">Any</option>
+                                                <option value="1" {{ request()->is_collaboration == '1' ? 'selected' : '' }}>Yes</option>
+                                                <option value="0" {{ request()->is_collaboration == '0' ? 'selected' : '' }}>No</option>
+                                            </select>
+                                        </div>
                                     </div>
 
+                                    <div class="mb-2">
+                                        <label class="font_label" style="font-size: 10px !important;">Art Skills</label>
+                                        <select class="form-control selectMul" name="art[]" multiple>
+                                            @foreach(getArts()->sortBy('name') as $art)
+                                                <option value="{{ $art->key }}" {{ in_array($art->key, request()->art ?? []) ? 'selected' : '' }}>{{ $art->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="row g-2 mb-1">
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Price Min ($)</label>
+                                            <input type="number" name="min_price" class="form-control form-control-sm" placeholder="Min" value="{{ request()->min_price }}">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="font_label" style="font-size: 10px !important;">Price Max ($)</label>
+                                            <input type="number" name="max_price" class="form-control form-control-sm" placeholder="Max" value="{{ request()->max_price }}">
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="btn-search text-center" style="margin-top: 12px;">
-                                    <button type="submit" class="btn btn-block">Search</button>
+                                <div class="btn-search text-center mt-2">
+                                    <button type="submit" class="btn btn-primary w-100 py-2" style="border-radius: 8px; font-weight: 600; background: #0504aa; border: none; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2);">Apply Filters</button>
                                 </div>
                             </div>
                         </div>
@@ -1225,12 +1021,7 @@ color: #0504aa !important;
 }
         var range_start = "{{ isset(request()->min_value) ? request()->min_value : 0 }}";
         var range_end = "{{ isset(request()->max_value) ? request()->max_value : 50 }}";
-        // // Initialize theia-sticky-sidebar
-        // jQuery(document).ready(function() {
-        //     jQuery('.sidebar').theiaStickySidebar({
-        //         // Configuration options go here
-        //     });
-        // });
+       
         function validateInput(input) {
     // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
     input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
@@ -1256,38 +1047,20 @@ color: #0504aa !important;
       
     });
    
-    $('.selectdropdown').select2();
+              
+        
 
-    $('#nationality_id').select2({
-         placeholder: " ",  // Set placeholder text
-        allowClear: true,                        // Enable clearing selection
-        width: '100%',                           // Ensure full width for the dropdown
-        minimumInputLength: 0                   // Set minimum input to trigger search
-    });
-  
+        
 
-
-    
             
-            $('.seletct2').select2({
-                placeholder: " ", // Sets the placeholder text
-                allowClear: true,
-            });
+            
+            
             $('.mySelect').select2({
-                placeholder: " ", // Sets the placeholder text
+                placeholder: " ",
                 allowClear: true, 
-    minimumResultsForSearch: Infinity // Disables the search box
-  });
-            var age_input = document.querySelector('input[name="age"]');
-            var hair_types_input = document.querySelector('input[name="hair_types"]');
-            var eye_color_input = document.querySelector('input[name="eye_color"]');
-            var hair_color_input = document.querySelector('input[name="hair_color"]');
-
-
-            // initlialize_tagify(age_input);
-            initlialize_tagify(hair_types_input);
-            initlialize_tagify(eye_color_input);
-            initlialize_tagify(hair_color_input);
+                minimumResultsForSearch: Infinity
+            });
+            
         });
 
         function initlialize_tagify(input) {

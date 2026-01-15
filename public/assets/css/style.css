@@ -8856,10 +8856,6 @@ div#global-loader {
     border-color: transparent transparent goldenrod !important;  
 }
 
-.select2-container .select2-selection--single .select2-selection__rendered {
-    /* padding-right: 30px; */
-    padding-left: 25px !important;
-}
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #353535;

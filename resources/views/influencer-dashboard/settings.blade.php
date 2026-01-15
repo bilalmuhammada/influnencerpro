@@ -66,9 +66,6 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
-/* #select2-language_dropdown-container{
-    margin-left: -21px !important;
-} */
 
 input:checked + .slider {
   background-color: #2196F3;

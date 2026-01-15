@@ -1,111 +1,6 @@
 <header class="header" style="border-bottom:0px solid #eee;">
     <style>
-        .VIpgJd-ZVi9od-ORHb {
-            display: none !important;
-        }
-
-        .select2-search__field {
-            border-radius: 0.3rem;
-            margin-top: 3px;
-            padding-left: 10px !important;
-            border-color: #997045 !important;
-        }
-
-        /* .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
-    margin-left: 3px !important;
-} */
-        .select2-search__field:hover {
-            border-color: blue !important;
-        }
-
-        .select2-container--default .select2-selection--single {
-            border: 0px solid !important;
-        }
-
-        .select2-dropdown {
-            border: 0px solid !important;
-            margin-left: -2px;
-        }
-
-        .select2-container--default .select2-results>.select2-results__options {
-            min-height: 120px;
-        }
-
-        /* 
-        .select2-selection__arrow {
-            display: none;
-        } */
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-
-            border-color: blue transparent transparent transparent !important;
-        }
-
-        .select2-container--default .select2-selection--single .select2-selection__arrow b:hover {
-
-            border-color: goldenrod transparent transparent transparent !important;
-        }
-
-        .select2-selection .select2-selection--single {
-            margin-left: -12px !important;
-        }
-
-        .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-            color: blue !important;
-        }
-
-        .select2-container--default .select2-results>.select2-results__options {
-            overflow-x: hidden !important;
-            border-radius: 0.3rem;
-            max-height: 195px !important;
-            background-color: #ffffff !important;
-            color: rgb(0, 0, 0) !important;
-        }
-
-        .select2-container--open .select2-dropdown--below {
-
-            background-color: #ffffff !important;
-
-        }
-
-        .select2-container--default .select2-selection--single {
-            border: 0px solid !important;
-        }
-
-        .register-btn,
-        .log-btn {
-            color: blue;
-        }
-
-        .register-btn:hover,
-        .log-btn:hover {
-            color: #997045 !important;
-        }
-
-        .select2-container--default .select2-selection--single .select2-selection__rendered {
-            color: rgb(0, 0, 1) !important;
-            width: 200px !important;
-
-            /* margin-left: 8px !important; */
-        }
-
-        .select2-container .select2-selection--single .select2-selection__rendered {
-            padding-left: 8px;
-        }
-
-        #select2-language_dropdown-container {
-
-            color: blue !important
-        }
-
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #997045;
-            border-radius: 34px;
-        }
-
+       
 
 
         .colorchange {
@@ -114,6 +9,10 @@
 
         .colorchange:hover {
             color: goldenrod !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            top: 5px !important;
         }
 
         ::-webkit-scrollbar-track {
@@ -148,85 +47,17 @@
         }
     </style>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <script type="text/javascript">
-        function translateLanguage() {
-            var dropdown = document.getElementById("language_dropdown");
-            var selectedLanguage = dropdown.options[dropdown.selectedIndex].value;
-
-            if (selectedLanguage) {
-                var googleTranslateCombo = document.querySelector('.goog-te-combo');
-                if (googleTranslateCombo) {
-                    googleTranslateCombo.value = selectedLanguage;
-                    googleTranslateCombo.dispatchEvent(new Event('change'));
-                }
-            }
-        }
-
-        function formatOption(option) {
-            if (!option.id) {
-                return option.text;
-            }
-            var flagUrl = $(option.element).data('flag-url');
-            var $option = $(
-                '<span style="display: flex; align-items: center; font-size:14px; font-weight:500;">' +
-                (flagUrl ? '<img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 8px;" /> ' : '') +
-                option.text + '</span>'
-            );
-            return $option;
-        }
-
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        $(document).ready(function() {
-            $('#language_dropdown').select2({
-                width: 'resolve',
-                templateResult: formatOption,
-                templateSelection: formatOption,
-                escapeMarkup: function(markup) {
-                    return markup;
-                }
-            });
-
-            // Persist language visually
-            var googtrans = getCookie('googtrans');
-            if (googtrans) {
-                var lang = googtrans.split('/').pop();
-                if (lang && $('#language_dropdown').val() !== lang) {
-                    $('#language_dropdown').val(lang).trigger('change.select2');
-                }
-            }
-        });
-    </script>
-
+   
     @php
     $notifications = [];
 
     $notifications = getNotifications();
-
-
+    $unread_messages = getUnreadMessages();
 
     @endphp
 
     <nav class="navbar navbar-expand-lg header-nav" style="background-color: white;">
-        <div class="navbar-header" style="display: flex;">
+        <div class="navbar-header" style="display: flex; align-items: center;">
             <a id="mobile_btn" href="javascript:void(0);">
                 <span class="bar-icon">
                     <span></span>
@@ -234,15 +65,14 @@
                     <span></span>
                 </span>
             </a>
-            <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" style="margin-left: 62px;">
+            <a href="{{ env('BASE_URL') }}" class="navbar-brand logo" >
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
             </a>
 
-            <div class="mobile-country desktop-menu-right" style="margin-top: 16px;">
-                <select class="form-control country_dropdown select2" name="language_dropdown" style="width:155px;" id="language_dropdown" onchange="translateLanguage()">
-                    {{-- <option value="null" selected class="colorchange">Language</option> --}}
+            <div class="mobile-country desktop-menu-right" style=" margin-left: 15px;">
+                <select class="form-control" name="language_dropdown" style="width:150px;" id="language_dropdown_nav" onchange="translateLanguage()">
                     @foreach(getlanguge() as $language)
-                    <option value="{{ $language->prefix }}" data-flag-url="{{ $language->flag_image_url }}" {{ $language->id == 131 ? 'selected' : '' }}>
+                    <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}" {{ $language->prefix == 'en' ? 'selected' : '' }}>
                         {{ $language->name }}
                     </option>
                     @endforeach
@@ -259,7 +89,7 @@
         <div class="main-menu-wrapper">
             <div class="menu-header">
                 <a href="#" class="menu-logo">
-                    <img src="{{ asset('assets/img/logo/InfluencersPro-01.png') }}" class="img-fluid" alt="Logo">
+                    <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
                 </a>
                 <a id="menu_close" class="menu-close" href="javascript:void(0);">
                     <i class="fas fa-times"></i>
@@ -300,13 +130,60 @@
                     </ul>
                 </li>
 
-                <li class="has-submenu {{ request()->is('chats') ? 'active' : '' }}">
-                    <a href="{{ env('BASE_URL') . '/chats' }}">Chats</a>
+                <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
+                    <a href="#" class="nav-link" id="chatLink" data-bs-toggle="dropdown">
+                        Chats @if(isset($unread_messages) && count($unread_messages) > 0) <span class="badge-premium-green">{{ count($unread_messages) }}</span> @endif
+                    </a>
+                    <div class="dropdown-menu notifications" id="chatDropdown" style="width: 400px; max-height: 350px; margin-left: -220px; padding:0px">
+                        @if (isset($unread_messages) && count($unread_messages) > 0)
+                        <div class="row px-2 py-0">
+                            <div class="col-6"><strong>Messages</strong></div>
+                            <div class="col-6 text-end font-size-12">
+                                <a href="{{ env('BASE_URL') . '/chats' }}" style="color: #000"> View all Chats</a>
+                            </div>
+                        </div>
+                        <hr class="mt-0 mb-1">
+
+                        @foreach ($unread_messages as $message)
+                        <div class="notifications-wrapper" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 4px;">
+                            <a href="{{ env('BASE_URL') . '/chats' }}" style="text-decoration: none; color: inherit;">
+                                <div class="notification-item position-relative" style="background: aliceblue; border-radius: 5px; padding: 2px 10px;">
+                                    <div class="d-flex align-items-center" style="gap: 12px; flex: 1;">
+                                        <div style="width: 60px; height: 63px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+                                            <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
+                                                alt="sender image"
+                                                style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                        <div style="flex: 1; min-width: 0;">
+                                            <strong style="font-size: 14px; display: block; line-height: 1.2; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}</strong>
+                                            <span style="font-size: 12px; color: #6c757d;">{{ \Illuminate\Support\Str::limit($message->message, 40) }}</span>
+                                            <br>
+                                            <small style="font-size: 10px; color: #adb5bd;">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                        
+                        <div class="notification-footer text-center " style="background-color: white; border-top: 1px solid #f0f0f0;">
+                            <a href="{{ env('BASE_URL') . '/chats' }}" style="color: red; font-weight: bold; text-decoration: none;">
+                                View all Chats
+                            </a>
+                        </div>
+                        @else
+                        <div class="p-3 text-center">
+                            <em>No unread messages</em>
+                            <br>
+                            <a href="{{ env('BASE_URL') . '/chats' }}" class="btn btn-primary btn-sm" style=" border: none; color: red;">Go to Chats</a>
+                        </div>
+                        @endif
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">
-                        Notifications
+                        Notifications @if(isset($notifications) && count($notifications) > 0) <span class="badge-premium-green">{{ count($notifications) }}</span> @endif
                     </a>
 
                     <div class="dropdown-menu notifications"
@@ -402,8 +279,10 @@
 
 
 <script>
+
+
     $(document).ready(function() {
-        $('#notificationLink').on('click', function(e) {
+        $('#notificationLink, #chatLink').on('click', function(e) {
             $(this).closest('.dropdown').toggleClass('active');
         });
     });
@@ -438,4 +317,89 @@
             menu.style.display = 'none';
         });
     });
+
+
+
+
 </script>
+
+
+ <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+
+        function translateLanguage() {
+            var dropdown = document.getElementById("language_dropdown_nav");
+            var selectedLanguageCode = dropdown.options[dropdown.selectedIndex].value;
+            if (selectedLanguageCode) {
+                var googleTranslateCombo = document.querySelector('.goog-te-combo');
+                if (googleTranslateCombo) {
+                    googleTranslateCombo.value = selectedLanguageCode;
+                    googleTranslateCombo.dispatchEvent(new Event('change'));
+                }
+            }
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function formatFlagOption(option) {
+            if (!option.id) {
+                return option.text;
+            }
+            var flagUrl = $(option.element).data('flag-url');
+            var $option = $(
+                '<span style="display: flex; align-items: center; font-size:14px; font-weight:500;">' +
+                (flagUrl ? '<img src="' + flagUrl + '" class="img-flag" style="width: 20px; height:14px; margin-right: 8px;" /> ' : '') +
+                option.text + '</span>'
+            );
+            return $option;
+        }
+
+        $(document).ready(function() {
+            $('#language_dropdown_nav').select2({
+                width: 'resolve',
+                templateResult: formatFlagOption,
+                templateSelection: formatFlagOption,
+                escapeMarkup: function(markup) {
+                    return markup;
+                }
+            });
+
+            // Persist language visually
+            var googtrans = getCookie('googtrans');
+            if (googtrans) {
+                var lang = googtrans.split('/').pop();
+                if (lang && $('#language_dropdown_nav').val() !== lang) {
+                    $('#language_dropdown_nav').val(lang).trigger('change.select2');
+                }
+            }
+
+            $('#nationality_id,.selectMul').select2({
+                placeholder: " ",
+                allowClear: true,
+                width: '100%'
+            });
+
+            
+            
+            
+            $('.mySelect').select2({
+                placeholder: " ",
+                allowClear: true, 
+                minimumResultsForSearch: Infinity
+            });
+        });
+    </script>
+ <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

@@ -25,9 +25,7 @@
 .form-group::first-letter {
     text-transform: uppercase !important;
 } 
-#select2-language_dropdown-container {
-    margin-left: -22px !important;
-}
+
 
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
@@ -325,7 +323,7 @@ color: goldenrod !important;
                                 </div>
                                
                                 {{-- <div class="col-md-6" >
-                                    <label class="font-label">Availability</label>
+                                    <label class="font-label">Availability566</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"

@@ -26,7 +26,7 @@ class Attachment extends Model
         if ($this->context == 'influencer-profile-image') {
             $file_path = asset('uploads/users');
         }else {
-            return 'https://via.placeholder.com/30x30';
+            return asset('assets/img/user.png');
         }
 
 //        return asset('storage/order-proof-signatures');

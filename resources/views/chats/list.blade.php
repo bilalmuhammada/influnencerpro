@@ -32,11 +32,7 @@
     padding: 0rem 0.3rem !important;
 }
 
-.select2-results__option{
-    padding: 7px 0px 4px 1px !important;
-  /*  margin-left: 4px !important; */
 
-}
     .emojionearea .emojionearea-button>div, .emojionearea .emojionearea-picker .emojionearea-wrapper:after{
         filter: sepia(22%) saturate(904%) hue-rotate(12deg) !important;
     }
@@ -333,7 +329,7 @@ select::-ms-expand {
                                             <div class="media-img-wrap flex-shrink-0">
                                                 <div class="avatar">
                                                     <img
-                                                        src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: 'https://via.placeholder.com/30x30' }}"
+                                                        src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png') }}"
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div>

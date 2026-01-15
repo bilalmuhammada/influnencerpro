@@ -236,9 +236,7 @@ ul li {
     background:#997045;
     color:#0504aa; 
 }
-#select2-language_dropdown-container {
-    margin-left: -22px !important;
-}
+
 </style>
     <body>
 

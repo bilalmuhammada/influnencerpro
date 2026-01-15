@@ -121,9 +121,7 @@
             visibility: hidden;
             opacity: 0
         }
-        #select2-language_dropdown-container {
-            margin-left: -22px !important;
-        }
+      
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;

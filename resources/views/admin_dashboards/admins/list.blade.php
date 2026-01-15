@@ -228,7 +228,7 @@ table td img, .datepicker table td img {
                                 <td> ${Number(count++)} </td>
                                 <td> ${value.id} </td>
                                 <td>
-                                    <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="profile">
+                                    <img class="wd-30 ht-30 rounded-circle" src="{{ asset('assets/img/user.png') }}" alt="profile">
                                 </td>
                                 <td> ${value.name} </td>
                                 

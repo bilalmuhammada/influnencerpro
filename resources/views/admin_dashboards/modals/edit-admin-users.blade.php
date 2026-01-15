@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label" class="form-control">Vendor Image</label><br />
-                                    <img class="wd-80 ht-80 rounded-circle" src="https://via.placeholder.com/80x80" style="margin-bottom:5px;" alt="" class="form-control">
+                                    <img class="wd-80 ht-80 rounded-circle" src="{{ asset('assets/img/user.png') }}" style="margin-bottom:5px;" alt="" class="form-control">
                                     <br />
                                     <input type="file" class="form-control" id="" name="image" />
                                 </div>

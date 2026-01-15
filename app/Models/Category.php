@@ -21,7 +21,7 @@ class Category extends Model
         if ($this->attachment) {
             return asset('uploads/categories') . '/' . $this->attachment->name;
         } else {
-            return 'https://via.placeholder.com/30x30';
+            return asset('assets/img/user.png');
         }
     }
     public function users()
