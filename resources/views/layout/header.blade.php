@@ -167,6 +167,7 @@
         /* Unified Select2 Styling */
         .select2-container--default .select2-selection--single {
             border: 0px solid !important;
+            margin-left:10px;
             border-radius: 5px !important;
             height: 38px !important;
             padding-top: 4px !important;
