@@ -323,6 +323,7 @@ input[type=number] {
     border-radius: 8px !important;
     min-height: 34px !important;
     height: auto !important;
+    margin-left:0px;
     background-color: #fcfdfe !important;
     padding: 0 12px !important;
     font-size: 14px !important;
