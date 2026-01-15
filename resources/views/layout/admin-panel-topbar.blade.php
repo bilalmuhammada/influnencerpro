@@ -69,7 +69,7 @@
                 <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
             </a>
 
-            <div class="mobile-country desktop-menu-right" style=" margin-left: 15px;">
+            <div class="mobile-country desktop-menu-right" >
                 <select class="form-control" name="language_dropdown" style="width:150px;" id="language_dropdown_nav" onchange="translateLanguage()">
                     @foreach(getlanguge() as $language)
                     <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}" {{ $language->prefix == 'en' ? 'selected' : '' }}>
