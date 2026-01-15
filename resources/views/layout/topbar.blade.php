@@ -242,8 +242,8 @@
                         class="fas fa-chevron-down"></i></a>
                 <ul class="submenu">
                     <li class="has-submenu"></li>
-                    <li><a href="{{ env('BASE_URL') . 'register?role=influencer' }}">As Influencer</a></li>
-                    <li><a href="{{ env('BASE_URL') . 'register?role=brand' }}">As Brand</a></li>
+                    <li><a href="{{ env('BASE_URL') . '/register?role=influencer' }}">As Influencer</a></li>
+                    <li><a href="{{ env('BASE_URL') . '/register?role=brand' }}">As Brand</a></li>
                 </ul>
             </li>
             <li>
