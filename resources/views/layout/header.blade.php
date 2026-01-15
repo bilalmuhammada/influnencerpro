@@ -180,6 +180,7 @@
         .select2-container--default .select2-selection--single .select2-selection__rendered {
             color: #0504aa !important;
             font-weight: 500 !important;
+            padding-left: 0px !important;
         }
 
         .select2-container--default .select2-selection--single:hover .select2-selection__rendered {
@@ -192,6 +193,7 @@
 
         .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
             color: blue !important;
+            padding-left: 0px !important;
         }
 
         .select2-container--default .select2-selection--single .select2-selection__arrow {
