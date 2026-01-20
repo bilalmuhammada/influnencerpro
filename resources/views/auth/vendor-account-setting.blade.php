@@ -60,6 +60,18 @@
                                         </select>
                                         <label class="focus-label">Location City </label>
                                     </div>
+
+                                    <div class="form-group form-focus">
+                                        <select name="category_ids[]" class="form-control floating select2-category" multiple>
+                                            @foreach(getCategories()->sortBy('name') as $category)
+                                                <option value="{{ $category->id }}" 
+                                                    @if(in_array($category->id, $user_categories ?? [])) selected @endif>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <label class="focus-label">Brand Category</label>
+                                    </div>
                                     <div class="form-group form-focus">
                                         <input type="password" class="form-control" name="password">
                                         <label class="focus-label">Password (Leave it empty if you don't want to change)</label>
@@ -83,7 +95,11 @@
 @section('page_scripts')
     <script>
         $(document).ready(function () {
-            var form = $('#influencer-register-form')[0];
+            $('.select2-category').select2({
+                placeholder: "Select Brand Category",
+                allowClear: true
+            });
+            var form = $('#brand-register-form')[0];
             var inputs = $(form).find('input');
 
             remove_validation_on_input_change(inputs);

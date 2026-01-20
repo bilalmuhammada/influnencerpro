@@ -11,9 +11,7 @@
         border-color: #997045 !important;
     }
 
-    .col-sm-3 {
-        padding-right: 116px !important;
-    }
+    /* No custom col-sm-3 padding */
 
     .dataTables_filter>input:focus {
         border-color: blue !important;
@@ -36,17 +34,21 @@
     }
 
     th {
-        font-weight: 900 !important;
+        font-weight: 400 !important;
+        color: #333 !important;
     }
 
     .gold-ellipsis {
         color: blue !important;
-        /* Light Gold color */
     }
 
     .gold-ellipsis:hover {
         color: #997045 !important;
-        /* Light Gold color */
+    }
+
+    .dropdown-item-compact:hover {
+        background-color: aliceblue !important;
+        color: #997045 !important;
     }
 
     .dropdown-item-compact {
@@ -75,8 +77,8 @@
         vertical-align: middle !important;
     }
 
-    /* Remove link decoration */
-    a {
+    /* Remove link decoration within table only */
+    .table-responsive a {
         text-decoration: none !important;
         color: inherit !important;
     }
@@ -97,34 +99,38 @@
     }
 
     .table-avatar a {
-        color: blue !important;
+        color: black !important;
         margin-top: -2px !important;
+        font-weight: 400 !important;
+    }
+
+    .notif-desc-text {
+        color: black !important;
+        font-weight: 400 !important;
+        text-decoration: none !important;
+    }
+
+    .notif-desc-text:hover {
+        color: #997045 !important;
     }
 </style>
 
-<div class="page-content">
-    <nav class="page-breadcrumb">
-        <h6 class="card-title" style="color: blue !important;font-weight: bold; margin-left: 25px;">All Notifications</h6>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Notifications</li>
-        </ol>
-    </nav>
-
-    <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
-            <div class="table-responsive table-container">
-                <table id="datatable" class="table">
-                    <thead>
-                        <tr>
-                            <th>Content</th>
-                            <th>Date</th>
-                            <th class="text-end">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="table-responsive table-container">
+                    <table id="datatable" class="table">
+                        <thead>
+                            <tr>
+                                <th>All Notifications</th>
+                                <th>Date</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         @forelse($notifications as $notification)
-                        <tr class="{{ $notification->read_at ? '' : 'fw-bold' }}" style="{{ $notification->read_at ? '' : 'background-color: #f8f9fa;' }}">
+                        <tr style="{{ $notification->read_at ? '' : 'background-color: aliceblue;' }}">
                             <td>
                                 <div class="table-avatar">
                                     <a href="#" class="avatar me-3"> <!-- Increased margin -->
@@ -132,9 +138,9 @@
                                             src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/default.png') }}"
                                             alt="User Image">
                                     </a>
-                                    <a href="#">
+                                    <a href="#" class="notif-desc-text">
                                         {{ \Illuminate\Support\Str::limit($notification->data, 50) }}
-                                        <span class="d-block text-muted" style="font-size: 12px;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
+                                        <span class="d-block text-muted" style="font-size: 12px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
                                     </a>
                                 </div>
                             </td>
@@ -155,7 +161,7 @@
                                         @endif
                                         <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" class="m-0">
                                             @csrf
-                                            <button type="submit" class="dropdown-item text-danger dropdown-item-compact">
+                                            <button type="submit" class="dropdown-item dropdown-item-compact">
                                                 Remove
                                             </button>
                                         </form>
@@ -176,5 +182,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

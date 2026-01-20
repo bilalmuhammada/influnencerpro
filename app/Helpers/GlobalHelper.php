@@ -237,6 +237,17 @@ function getNotifications()
     return $notification;
 }
 
+function getUnreadNotificationsCount()
+{
+    $user_id = Auth::id() ?? (session()->has('User') ? session()->get('User')->id : null);
+
+    if (!$user_id) {
+        return 0;
+    }
+
+    return DB::table('notifications')->where('user_id', $user_id)->whereNull('read_at')->count();
+}
+
 
 
 

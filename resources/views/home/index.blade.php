@@ -7,7 +7,7 @@
   object-fit: cover; /* Ensures the image is scaled without distortion */
 }
 .img-fluid,.itmax{
-    border-radius:0.4rem; 
+    border-radius:4px; 
 }
 
 

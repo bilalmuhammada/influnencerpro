@@ -13,22 +13,17 @@
    }
     .social-wrapper:hover .shaking, 
     .d-flex:hover .shaking {
-        animation: shakeIcon 0.5s;
-        animation-iteration-count: infinite;
+        animation: shake 2s linear infinite;
     }
-   @keyframes shakeIcon {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
+   @keyframes shake {
+          0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
   }
+
+  
    .card .icon-container {
     pointer-events: none; /* Disable clicks for the container of the icons */
 }
@@ -41,7 +36,7 @@
   color: blue;
    }
    .changetogold:hover{
-  color: blue;
+  color: #997045;
    }
 
 .dropdowndecoration:hover {
@@ -185,7 +180,7 @@ color: #0504aa !important;
     color: goldenrod !important;
 }
 .select2-container:hover{
-    border-color: #0504aa !important; 
+    border-color: blue !important; 
 }
 
 /* Define the scrollbar track */
@@ -233,10 +228,7 @@ color: #0504aa !important;
     padding: 2px 20px !important;
 }
 
-.filter-widget {
-   
-    border-bottom: 1px solid #f8f9fa;
-}
+
 
 .filter-widget:last-child {
     border-bottom: none;
@@ -246,7 +238,7 @@ color: #0504aa !important;
 
 .font_label {
     display: block;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     font-size: 11px !important;
     color: blue !important;
     text-transform: uppercase;
@@ -273,7 +265,7 @@ input[type=number] {
 .card.search-filter .form-control:focus,
 .card.search-filter .select2-container--default.select2-container--focus .select2-selection--multiple,
 .card.search-filter .select2-container--default.select2-container--open .select2-selection--single {
-    border-color: #0504aa !important;
+    border-color: blue !important;
     /* box-shadow: 0 0 0 3px rgba(5, 4, 170, 0.1) !important; */
     background-color: #fff !important;
 }
@@ -281,7 +273,7 @@ input[type=number] {
 .card.search-filter .form-control:hover,
 .card.search-filter .select2-container--default .select2-selection--single:hover,
 .card.search-filter .select2-container--default .select2-selection--multiple:hover {
-    border-color: #997045 !important;
+    border-color: blue !important;
 }
 
 /* Custom Checkbox */
@@ -319,8 +311,8 @@ input[type=number] {
 .card.search-filter .form-control,
 .card.search-filter .select2-container--default .select2-selection--single,
 .card.search-filter .select2-container--default .select2-selection--multiple {
-    border: 1.5px solid blue !important;
-    border-radius: 8px !important;
+    border: 1.5px solid #997045 !important;
+    border-radius: 4px !important;
     min-height: 34px !important;
     height: auto !important;
     margin-left:0px;
@@ -371,7 +363,7 @@ input[type=number] {
 
 .select2-container--default.select2-container--focus .select2-selection--multiple,
 .select2-container--default.select2-container--open .select2-selection--single {
-    border-color: #997045 !important;
+    border-color: blue !important;
     /* box-shadow: 0 0 0 3px rgba(5, 4, 170, 0.1) !important; */
 }
 
@@ -390,6 +382,10 @@ input[type=number] {
 .clearall:hover {
     background: rgba(5, 4, 170, 0.1);
     color: #04038a !important;
+}
+.sidebar-submit:hover {
+    background: blue !important;
+    border-color: blue !important;
 }
     </style>
     <section style="border-top:2px solid #eee;">
@@ -468,12 +464,12 @@ input[type=number] {
                                         @endphp
                                         @foreach($social_platforms as $platform)
                                             <div class="col-6">
-                                                <div class="d-flex align-items-center">
-                                                    <input type="checkbox" name="{{ $platform['name'] }}" id="check_{{ $platform['name'] }}" {{ request()->{$platform['name']} ? 'checked' : '' }}>
-                                                    <label class="ms-2 mb-0 d-flex align-items-center cursor-pointer" for="check_{{ $platform['name'] }}" style="font-size: 13px;">
+                                                <div class="d-flex align-items-center justify-content-between w-100">
+                                                    <label class="mb-0 d-flex align-items-center cursor-pointer" for="check_{{ $platform['name'] }}" style="font-size: 13px;">
                                                         <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="18" class="me-2 shaking">
                                                         {{ $platform['label'] }}
                                                     </label>
+                                                    <input type="checkbox" name="{{ $platform['name'] }}" id="check_{{ $platform['name'] }}" {{ request()->{$platform['name']} ? 'checked' : '' }}>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -483,9 +479,6 @@ input[type=number] {
 
                                 <div class="filter-widget">
                                     <label class="font_label">Followers</label>
-
-                                <div class="filter-widget">
-                                    <label class="font_label">Followers Range</label>
                                     <div class="row g-2">
                                         @php
                                             $follower_ranges = [
@@ -499,11 +492,11 @@ input[type=number] {
                                         @endphp
                                         @foreach($follower_ranges as $range)
                                             <div class="col-6">
-                                                <div class="d-flex align-items-center">
-                                                    <input type="checkbox" name="{{ $range['name'] }}" id="check_{{ $range['name'] }}" {{ request()->{$range['name']} ? 'checked' : '' }}>
-                                                    <label class="ms-2 mb-0 cursor-pointer" for="check_{{ $range['name'] }}" style="font-size: 13px;">
+                                                <div class="d-flex align-items-center justify-content-between w-100">
+                                                    <label class="mb-0 cursor-pointer" for="check_{{ $range['name'] }}" style="font-size: 13px;">
                                                         {{ $range['label'] }}
                                                     </label>
+                                                    <input type="checkbox" name="{{ $range['name'] }}" id="check_{{ $range['name'] }}" {{ request()->{$range['name']} ? 'checked' : '' }}>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -524,8 +517,8 @@ input[type=number] {
                                 </div>
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Demographics</label>
-                                    <label class="font_label mt-1" style="font-size: 10px !important;">Ethnicity</label>
+                                  
+                                    <label class="font_label mt-1">Ethnicity</label>
                                     @php $ethnicities = getEthnicity(); @endphp
                                     <select class="form-control selectMul mb-3" name="ethnicity_ids[]" multiple>
                                         @forelse($ethnicities as $ethnicity)
@@ -536,7 +529,7 @@ input[type=number] {
                                         @endforelse
                                     </select>
 
-                                    <label class="font_label mt-1" style="font-size: 10px !important;">Nationality</label>
+                                    <label class="font_label mt-1">Nationality</label>
                                     @php $nationalities = getnationality(); @endphp
                                     <select class="form-control selectMul" name="country_id">
                                         <option value="" disabled hidden selected>Select Nationality</option>
@@ -550,24 +543,24 @@ input[type=number] {
                                 </div>
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Profile Details</label>
+                                    
                                     
                                     <div class="row g-2 mb-3">
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Gender</label>
-                                            <div class="d-flex gap-3 mt-1">
-                                                <div class="d-flex align-items-center">
+                                            <label class="font_label" >Gender</label>
+                                            <div class="d-flex flex-column gap-1 mt-1">
+                                                <div class="d-flex align-items-center justify-content-between w-100">
+                                                    <label class="mb-0 cursor-pointer" for="check_male" style="font-size: 13px;">Male</label>
                                                     <input type="checkbox" name="male" id="check_male" {{ request()->male ? 'checked' : '' }}>
-                                                    <label class="ms-1 mb-0 cursor-pointer" for="check_male" style="font-size: 13px;">Male</label>
                                                 </div>
-                                                <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center justify-content-between w-100">
+                                                    <label class="mb-0 cursor-pointer" for="check_female" style="font-size: 13px;">Female</label>
                                                     <input type="checkbox" name="female" id="check_female" {{ request()->female ? 'checked' : '' }}>
-                                                    <label class="ms-1 mb-0 cursor-pointer" for="check_female" style="font-size: 13px;">Female</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Age Range</label>
+                                            <label class="font_label">Age Range</label>
                                             <div class="d-flex gap-2">
                                                 <input type="number" class="form-control form-control-sm" name="age1" placeholder="Min" value="{{ request()->age1 }}">
                                                 <input type="number" class="form-control form-control-sm" name="age" placeholder="Max" value="{{ request()->age }}">
@@ -577,7 +570,7 @@ input[type=number] {
 
                                     <div class="row g-2 mb-3">
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Hair Type</label>
+                                            <label class="font_label">Hair Type</label>
                                             <select name="hair_types[]" class="form-control selectMul" multiple="multiple">
                                                 <option value="afro">Afro</option>
                                                 <option value="bald">Bald</option>
@@ -595,7 +588,7 @@ input[type=number] {
                                 <!-- <div class="filter-widget"> -->
 
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Hair Color</label>
+                                            <label class="font_label">Hair Color</label>
                                             <select name="hair_color[]" class="form-control selectMul" multiple="multiple">
                                                 <option value="balayage">Balayage</option> 
                                                 <option value="black">Black</option>
@@ -616,7 +609,7 @@ input[type=number] {
 
                                     <div class="row g-2 mb-2">
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Eye Color</label>
+                                            <label class="font_label">Eye Color</label>
                                             <select name="eye_color[]" class="form-control selectMul" multiple="multiple">
                                                 @php
                                                     $eye_colors = [
@@ -641,7 +634,7 @@ input[type=number] {
                                             </select>
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Cloth Size</label>
+                                            <label class="font_label">Cloth Size</label>
                                             <select name="clothsize[]" class="form-control selectMul" multiple="multiple">
                                                 @php
                                                     $cloth_sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
@@ -652,26 +645,27 @@ input[type=number] {
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                 
+
                                 
                                     <div class="row g-2 mb-2">
                                         <div class="col-4">
-                                            <label class="font_label" style="font-size: 10px !important;">Height (cm)</label>
+                                            <label class="font_label">Height (cm)</label>
                                             <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
                                         </div>
                                         <div class="col-4">
-                                            <label class="font_label" style="font-size: 10px !important;">Weight (kg)</label>
+                                            <label class="font_label">Weight (kg)</label>
                                             <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
                                         </div>
                                         <div class="col-4">
-                                            <label class="font_label" style="font-size: 10px !important;">Shoes (EU)</label>
+                                            <label class="font_label">Shoes (EU)</label>
                                             <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
                                         </div>
                                     </div>
 
                                     <div class="row g-2 mb-2">
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Tattoo</label>
+                                            <label class="font_label">Tattoo</label>
                                             <select name="tattoo" class="form-control selectMul">
                                                 <option value="">Any</option>
                                                 <option value="yes" {{ request()->tattoo == 'yes' ? 'selected' : '' }}>Yes</option>
@@ -679,7 +673,7 @@ input[type=number] {
                                             </select>
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Collaboration</label>
+                                            <label class="font_label">Collaboration</label>
                                             <select name="is_collaboration" class="form-control selectMul">
                                                 <option value="">Any</option>
                                                 <option value="1" {{ request()->is_collaboration == '1' ? 'selected' : '' }}>Yes</option>
@@ -689,7 +683,7 @@ input[type=number] {
                                     </div>
 
                                     <div class="mb-2">
-                                        <label class="font_label" style="font-size: 10px !important;">Art Skills</label>
+                                        <label class="font_label">Art Skills</label>
                                         <select class="form-control selectMul" name="art[]" multiple>
                                             @foreach(getArts()->sortBy('name') as $art)
                                                 <option value="{{ $art->key }}" {{ in_array($art->key, request()->art ?? []) ? 'selected' : '' }}>{{ $art->name }}</option>
@@ -698,18 +692,18 @@ input[type=number] {
                                     </div>
                                     <div class="row g-2 mb-1">
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Price Min ($)</label>
+                                            <label class="font_label">Price Min ($)</label>
                                             <input type="number" name="min_price" class="form-control form-control-sm" placeholder="Min" value="{{ request()->min_price }}">
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label" style="font-size: 10px !important;">Price Max ($)</label>
+                                            <label class="font_label">Price Max ($)</label>
                                             <input type="number" name="max_price" class="form-control form-control-sm" placeholder="Max" value="{{ request()->max_price }}">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="btn-search text-center mt-2">
-                                    <button type="submit" class="btn btn-primary w-100 py-2" style="border-radius: 8px; font-weight: 600; background: #0504aa; border: none; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2);">Apply Filters</button>
+                                    <button type="submit" class="btn btn-primary py-1 sidebar-submit" style="width: 140px; border-radius: 4px; font-weight: 600; background: #997045; border: 1px solid #997045; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 13px;">Apply Filters</button>
                                 </div>
                             </div>
                         </div>
@@ -720,7 +714,7 @@ input[type=number] {
                     <div class="col-md-10 mx-auto text-center" style="margin-top: -15px;">
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
-                                <ul class="main-nav nav mx-auto" style="text-align:center !important;">
+                                <ul class="main-nav nav mx-auto" style="text-align:center !important; gap: 20px;">
                                     <li  class="@if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">
                                         <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="changecolor @if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">All
                                             Influencers</a></li>
@@ -1529,7 +1523,7 @@ input[type=number] {
                                         <h5 style="font-size:12px;">{!! $categoryNames ?? '' !!}</h5>
                                         <h5 style="font-size:12px;">
                                             Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City:&nbsp;{{$city->name ?? ''}}
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;City:&nbsp;{{$city->name ?? ''}}</h5>
                                     </div>
                                 </div>
                             {{--                                dsf--}}

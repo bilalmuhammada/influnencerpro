@@ -32,6 +32,10 @@ class NotificationController extends Controller
             ->where('id', $id)
             ->update(['read_at' => now()]);
 
+        if (request()->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Notification marked as read']);
+        }
+
         return back()->with('success', 'Notification marked as read');
     }
 
@@ -40,6 +44,10 @@ class NotificationController extends Controller
         DB::table('notifications')
             ->where('id', $id)
             ->delete();
+
+        if (request()->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Notification removed']);
+        }
 
         return back()->with('success', 'Notification removed');
     }

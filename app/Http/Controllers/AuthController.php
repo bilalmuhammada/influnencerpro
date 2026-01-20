@@ -65,7 +65,9 @@ class AuthController extends Controller
 
     public function vendorAccountSetting()
     {
-        return view('auth.vendor-account-setting');
+        $User = User::with('categories')->find(Auth::id());
+        $user_categories = $User->categories->pluck('id')->toArray();
+        return view('auth.vendor-account-setting', compact('user_categories'));
     }
 
     public function registerBackend(Request $request)
@@ -1118,6 +1120,16 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
         }
 
         $User->update($dataArray);
+
+        if ($request->has('category_ids')) {
+            UserCategory::where('user_id', $User->id)->delete();
+            foreach ($request->category_ids as $category_id) {
+                UserCategory::create([
+                    'user_id' => $User->id,
+                    'category_id' => $category_id
+                ]);
+            }
+        }
 
         \session()->put('User', $User);
 

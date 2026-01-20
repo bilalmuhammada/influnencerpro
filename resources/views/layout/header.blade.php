@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>InfluencerPro</title>
 
@@ -209,9 +210,9 @@
             font-size: 10px !important;
             font-weight: bold !important;
             vertical-align: top !important;
-            margin-left: 2px !important;
+            margin-left: -4px !important;
             position: relative !important;
-            top: -5px !important;
+            top: -2px !important;
         }
 
         .select2-dropdown {
@@ -229,10 +230,11 @@
         .select2-search--dropdown .select2-search__field {
             border: 1px solid goldenrod !important;
             color: goldenrod !important;
+            border-radius: 4px !important;
         }
 
         .select2-search--dropdown .select2-search__field:focus {
-            border-color: #0504aa !important;
+            border-color: blue !important;
             outline: none !important;
         }
 

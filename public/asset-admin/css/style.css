@@ -20886,7 +20886,7 @@ button.scroll-top:focus {
         max-width: 1440px;
     }
     .main-nav>li {
-        margin-right: 30px;
+        margin-right: 10px;
     }
     .main-nav>li:last-child {
         margin-right: 0;

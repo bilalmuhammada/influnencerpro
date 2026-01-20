@@ -106,9 +106,9 @@
             font-size: 10px !important;
             font-weight: bold !important;
             vertical-align: top !important;
-            margin-left: 2px !important;
+            margin-left: -4px !important;
             position: relative !important;
-            top: -5px !important;
+            top: -2px !important;
         }
       
 
