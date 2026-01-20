@@ -176,7 +176,7 @@
                 </a>
             </div>
             @if( session()->get('User')!=null)
-            <ul class="main-nav nav" style="margin-right: 32px; gap: 20px;">
+            <ul class="main-nav nav" style="margin-right: 32px;">
                 
                 @if(session()->get('role') == 'vendor')
                 <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">

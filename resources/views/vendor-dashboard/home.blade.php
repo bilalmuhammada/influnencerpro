@@ -714,7 +714,7 @@ input[type=number] {
                     <div class="col-md-10 mx-auto text-center" style="margin-top: -15px;">
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
-                                <ul class="main-nav nav mx-auto" style="text-align:center !important; gap: 20px;">
+                                <ul class="main-nav nav mx-auto" style="text-align:center !important;">
                                     <li  class="@if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">
                                         <a href="{{ env('BASE_URL') }}/vendor/dashboard" class="changecolor @if(request()->instagram != 'on' && request()->twitter != 'on' && request()->youtube != 'on' && request()->tiktok != 'on' && request()->snapchat != 'on' && request()->pinterest != 'on' && request()->facebook != 'on') active @endif ">All
                                             Influencers</a></li>
