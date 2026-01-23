@@ -26,7 +26,7 @@
             max-width: 400px;
         }
         .form-focus .focus-label {
-            left: 20px !important;
+            left: 12px !important;
             font-weight: 500;
         }
         .login-right {
