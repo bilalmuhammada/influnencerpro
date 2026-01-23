@@ -29,15 +29,15 @@
         font-size: 32px;
         font-weight: bold;
         text-align: center;
-        border: 2px solid #f1c40f; /* Logo Gold */
-        border-radius: 12px;
+        border: 2px solid #997045; /* Blue */
+        border-radius: 4px; /* Sharper */
         background: transparent;
         transition: all 0.3s ease;
-        color: #1b3c8e;
+        color: #997045;
     }
 
     .otp-input:focus {
-        border-color: #1b3c8e !important; /* Blue */
+        border: 2px solid #1b3c8e !important; /* Blue */
         box-shadow: 0 0 10px rgba(27, 60, 142, 0.2);
         outline: none;
     }
@@ -47,13 +47,13 @@
     }
 
     .verify-btn {
-        background-color: #1b3c8e; /* Blue */
+        background-color: #997045; /* Blue */
         border: none;
         color: white;
         font-size: 18px;
         font-weight: 600;
         padding: 12px 50px;
-        border-radius: 10px;
+        border-radius: 4px; /* Sharper */
         cursor: pointer;
         transition: 0.3s;
         margin-top: 20px;
@@ -76,13 +76,14 @@
     }
 
     .resend a {
-        color: #f1c40f; /* Logo Gold */
+        color: #997045; /* Blue */
         text-decoration: none;
         font-weight: bold;
         margin-left: 5px;
     }
 
     .resend a:hover {
+        color: #1b3c8e;
         text-decoration: underline;
     }
 
@@ -93,7 +94,7 @@
     }
 
     p.instruction {
-        color: #777;
+        color: black;
         font-size: 16px;
     }
 </style>
@@ -101,10 +102,10 @@
 <div class="container">
     <div class="otp-container">
         <h3>Email Verification</h3>
-        <p class="instruction">Enter the 4-digit OTP sent to your registered email.</p>
+        <p class="instruction">Enter OTP</p>
 
         <form id="otp-form">
-            <div class="otp-inputs">
+            <div class="otp-inputs" style="margin-top: 31px;">
                 <input type="text" maxlength="1" class="otp-input" id="otp1" autocomplete="off">
                 <input type="text" maxlength="1" class="otp-input" id="otp2" autocomplete="off">
                 <input type="text" maxlength="1" class="otp-input" id="otp3" autocomplete="off">
@@ -112,7 +113,7 @@
             </div>
             <div class="invalid-feedback">Please enter a valid OTP.</div>
 
-            <button type="submit" class="verify-btn" id="verifyBtn" >Verify</button>
+            <button type="submit" class="verify-btn" id="verifyBtn">Verify</button>
         </form>
 
         <div class="resend">
