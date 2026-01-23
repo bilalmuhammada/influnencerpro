@@ -105,7 +105,7 @@
 
                             if (response.redirect) {
                                 setTimeout(function() {
-                                    window.location.href = base_url + 'verify-otp';
+                                    window.location.href = base_url + '/verify-otp';
                                 }, 2000);
                             }
 
