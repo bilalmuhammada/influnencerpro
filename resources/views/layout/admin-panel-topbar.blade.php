@@ -127,6 +127,13 @@
         .notif-chat:hover{
             color: #997045 !important;
         }
+        
+        .main-nav > li:last-child {
+            margin-right: 0 !important;
+        }
+        .main-nav > li > a {
+            padding: 10px 10px !important;
+        }
     </style>
 
    
@@ -176,7 +183,7 @@
                 </a>
             </div>
             @if( session()->get('User')!=null)
-            <ul class="main-nav nav" style="margin-right: 32px;">
+            <ul class="main-nav nav" style="margin-right: 32px; display: flex !important; align-items: center;">
                 
                 @if(session()->get('role') == 'vendor')
                 <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">

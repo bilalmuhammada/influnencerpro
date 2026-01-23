@@ -40,11 +40,10 @@
                         <div class="align-items-center justify-content-center">
                             <div class="login-right">
                                 <div class="login-header text-center">
-                                    <a href="{{ env('BASE_URL') }}"><img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="logo" class="img-fluid"></a>
                                     <h3>Reset Password</h3>
                                     <p>Enter your email to reset your new password</p>
                                 </div>
-                                <div class="alert alert-primary show-msg" role="alert" style="display: none"></div>
+                                <!--<div class="alert alert-primary show-msg" role="alert" style="display: none"></div>-->
                                 <form id="forgot-password-form">
                                     <div class="form-group text-center form-focus">
                                         <input type="email" class="form-control floating email" name="email">
@@ -70,11 +69,6 @@
 
 @section('page_scripts')
     <script>
-        // var token = localStorage.getItem("user_token");
-        // if (token) {
-        //     window.location = base_url;
-        // }
-
         $(document).ready(function () {
             var form = $('#forgot-password-form')[0];
             var inputs = $(form).find('input');
@@ -108,6 +102,12 @@
 
                             $('.show-msg').html(response.message);
                             $('.show-msg').show();
+
+                            if (response.redirect) {
+                                setTimeout(function() {
+                                    window.location.href = base_url + 'verify-otp';
+                                }, 2000);
+                            }
 
                         } else {
                             $('.invalid-feedback').show();

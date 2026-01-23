@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 use App\Mail\RegistrationEmail;
+use App\Mail\ResetPasswordEmail;
 use Illuminate\Support\Facades\Mail;
 class AuthController extends Controller
 {
@@ -170,7 +171,7 @@ class AuthController extends Controller
                 'errors' => ['email' => ["Please user different email address"]]
             ]);
         }
-        $otp = rand(100000, 999999);
+        $otp = rand(1000, 9999);
         $User = User::create([
             'name' => $request->name,
             
@@ -215,7 +216,7 @@ class AuthController extends Controller
     public function verify(Request $request)
     {
         $request->validate([
-            'otp' => 'required|digits:6'
+            'otp' => 'required|digits:4'
         ]);
 
         $storedOtp = Session::get('otp_code');
@@ -235,11 +236,14 @@ class AuthController extends Controller
                 $user->save();
             }
 
-            Session::forget(['otp_code', 'otp_email']);
+            $isPasswordReset = Session::get('is_password_reset');
+            Session::forget(['otp_code', 'otp_email', 'otp_username', 'is_password_reset', 'otp_link']);
 
             return response()->json([
                 'status' => true,
-                'message' => 'Email verified successfully!'
+                'message' => 'Email verified successfully!',
+                'is_password_reset' => $isPasswordReset,
+                'otp' => $request->otp
             ]);
         }
 
@@ -258,7 +262,7 @@ class AuthController extends Controller
             return redirect()->route('login')->with('error', 'Session expired. Please log in again.');
         }
       
-        $otp = rand(100000, 999999);
+        $otp = rand(1000, 9999);
         Session::put('otp_code', $otp);
         $details = [
             'name' => $otp_username,
@@ -859,20 +863,29 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
         $User = User::where('email', $request->email)->first();
 
         if (!empty($User)) {
-            $password_reset_code = date('hisymd') . $User->id;
-            $User->password_reset_code = $password_reset_code;
+            $otp = rand(1000, 9999);
+            $User->password_reset_code = $otp;
             $User->save();
 
             /*******PREPARE EMAIL FOR USER PASSWORD RESET********/
-            $link = env('BASE_URL') . 'reset/' . $password_reset_code;
-            $User->notify(new PasswordReset($password_reset_code));
+            $details = [
+                'name' => $User->name,
+                'otp' => $otp
+            ];
+            
+            Session::put('otp_email', $User->email);
+            Session::put('otp_code', $otp);
+            Session::put('otp_username', $User->name);
+            Session::put('is_password_reset', true);
 
+            Mail::to($User->email)->send(new ResetPasswordEmail($details));
 
             /*******END- PREPARE EMAIL FOR USER PASSWORD RESET********/
 
             return response()->json([
                 'status' => TRUE,
-                'message' => "An Email Has been sent to your email address to reset your password",
+                'message' => "An OTP has been sent to your email address to reset your password",
+                'redirect' => true
             ]);
         } else {
             return response()->json([
@@ -1294,20 +1307,30 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
         $User = User::where('email', $request->email)->first();
 
         if (!empty($User)) {
-            $password_reset_code = date('hisymd') . $User->id;
-            $User->password_reset_code = $password_reset_code;
+            $otp = rand(1000, 9999);
+            $User->password_reset_code = $otp;
             $User->save();
 
             /*******PREPARE EMAIL FOR USER PASSWORD RESET********/
-            $link = env('BASE_URL') . 'reset/' . $password_reset_code;
-            $User->notify(new PasswordReset($password_reset_code));
+            $details = [
+                'name' => $User->name,
+                'otp' => $otp
+            ];
+
+            Session::put('otp_email', $User->email);
+            Session::put('otp_code', $otp);
+            Session::put('otp_username', $User->name);
+            Session::put('is_password_reset', true);
+
+            Mail::to($User->email)->send(new ResetPasswordEmail($details));
 
 
             /*******END- PREPARE EMAIL FOR USER PASSWORD RESET********/
 
             return response()->json([
                 'status' => TRUE,
-                'message' => "An Email Has been sent to your email address to reset your password",
+                'message' => "An OTP has been sent to your email address to reset your password",
+                'redirect' => true
             ]);
         } else {
             return response()->json([

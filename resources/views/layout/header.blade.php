@@ -228,8 +228,8 @@
         }
 
         .select2-search--dropdown .select2-search__field {
-            border: 1px solid goldenrod !important;
-            color: goldenrod !important;
+            border: 1px solid #997045 !important;
+            color: black !important;
             border-radius: 4px !important;
         }
 
@@ -240,6 +240,21 @@
 
         .select2-results__option {
             padding: 6px 9px !important;
+        }
+
+        .main-nav > li {
+            margin-right: 15px !important;
+        }
+        .main-nav > li:last-child {
+            margin-right: 0 !important;
+        }
+        .main-nav > li > a {
+            padding: 10px 5px !important;
+        }
+        ul.main-nav {
+            display: flex !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
         }
 
         /* Google Translate Hiding */

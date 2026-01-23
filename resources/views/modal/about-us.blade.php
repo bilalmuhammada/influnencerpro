@@ -2,6 +2,7 @@
 
 <style>
 .modal-title{
+  font-size:20px;
   margin-left: 172px;
   color: blue;
 }
@@ -17,7 +18,7 @@
       <div class="modal-body">
        {{-- <h3 class="text-center" style="margin-top: -14px;">  About Us</h3>   --}}
       
-       <p style="text-align:start;    font-size: 18px;">
+       <p style="text-align:start;    font-size: 16px;">
         InfluencerPro is the leading global visionary force at the intersection of Influencer Collaborations & Innovative Direct Connections between Influencers & Businesses. Our platform provides direct access to millions of Celebrity & Pro-Influencers, Media Artists & Talents across 50+ Business Categories. Business Brands can easily Filter & Chat with Nano, Macro, Mega & Celebrity Influencers, ensuring high revenues and a guaranteed ROI on their Marketing Budgets.
         </p>
         {{-- <div>&nbsp;</div>  --}}

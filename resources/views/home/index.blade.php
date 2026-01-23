@@ -15,7 +15,7 @@
     padding:2%;
     border-radius:2%;
     width:100%;
-    margin-left:46px;
+    margin-left:6rem;
   }
     .numberstyle{
     font-size: 55px;

@@ -4,142 +4,183 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
     .invalid-feedback {
-        margin-top: 5px;
-        font-size: .8em !important;
+        margin-top: 15px;
+        font-size: .9em !important;
         display: none;
-    }
-
-    input:focus {
-        border: 1px solid #0504aa !important;
-        box-shadow: 0 0 5px rgba(5, 4, 170, 0.3);
+        color: #dc3545;
     }
 
     .otp-container {
         text-align: center;
-        padding: 50px 30px;
-       
-      
+        padding: 60px 30px;
         background: #fff;
-        
     }
 
-    .otp-logo img {
-        width: 150px;
-        margin-bottom: 20px;
+    .otp-inputs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
     }
 
-    .form-control {
-        height: 50px;
-        font-size: 18px;
+    .otp-input {
+        width: 60px;
+        height: 70px;
+        font-size: 32px;
+        font-weight: bold;
         text-align: center;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
+        border: 2px solid #f1c40f; /* Logo Gold */
+        border-radius: 12px;
+        background: transparent;
+        transition: all 0.3s ease;
+        color: #1b3c8e;
+    }
+
+    .otp-input:focus {
+        border-color: #1b3c8e !important; /* Blue */
+        box-shadow: 0 0 10px rgba(27, 60, 142, 0.2);
+        outline: none;
+    }
+
+    .otp-input.has-value {
+        border-color: #1b3c8e;
     }
 
     .verify-btn {
-        background-color: #0504aa;
+        background-color: #1b3c8e; /* Blue */
         border: none;
         color: white;
-        font-size: 16px;
-        padding: 12px 30px;
-        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px 50px;
+        border-radius: 10px;
         cursor: pointer;
-        width: 11%;
         transition: 0.3s;
-    }
-
-    .verify-btn:hover {
-        background-color: #000080;
-    }
-
-    .resend {
-        font-size: 14px;
         margin-top: 20px;
     }
 
+    .verify-btn:hover:not(:disabled) {
+        background-color: #142d6b;
+        transform: translateY(-2px);
+    }
+
+    .verify-btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+    .resend {
+        font-size: 15px;
+        margin-top: 30px;
+        color: #666;
+    }
+
     .resend a {
-        color: #0504aa;
+        color: #f1c40f; /* Logo Gold */
         text-decoration: none;
         font-weight: bold;
+        margin-left: 5px;
     }
 
     .resend a:hover {
         text-decoration: underline;
     }
 
-    ::-webkit-scrollbar {
-        width: 6px;
+    h3 {
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: #997045;
-        border-radius: 34px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: transparent;
+    p.instruction {
+        color: #777;
+        font-size: 16px;
     }
 </style>
 
 <div class="container">
-   
-        <div class="otp-container">
-            
-            <h3>Email Verification</h3>
-            <p>Enter the 6-digit OTP sent to your registered email.</p>
+    <div class="otp-container">
+        <h3>Email Verification</h3>
+        <p class="instruction">Enter the 4-digit OTP sent to your registered email.</p>
 
-            <form id="otp-form">
-                <div class="form-group">
-                    <input type="text" maxlength="6" name="otp" class="form-control" id="otp" placeholder="Enter OTP" required>
-                    <div class="invalid-feedback">Please enter a valid OTP.</div>
-                </div>
-
-                <button type="submit" class="verify-btn" id="verifyBtn" disabled>Verify OTP</button>
-            </form>
-
-            <div class="resend">
-                Didn’t receive the code? <a href="{{ route('resend.otp') }}">Resend OTP</a>
+        <form id="otp-form">
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp-input" id="otp1" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-input" id="otp2" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-input" id="otp3" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-input" id="otp4" autocomplete="off">
             </div>
-     
+            <div class="invalid-feedback">Please enter a valid OTP.</div>
+
+            <button type="submit" class="verify-btn" id="verifyBtn" >Verify</button>
+        </form>
+
+        <div class="resend">
+            Didn’t receive OTP? <a href="{{ route('resend.otp') }}">Resend</a>
+        </div>
     </div>
 </div>
 @endsection
 
 @section('page_scripts')
 <script>
-    const api_url = "{{ env('API_URL') }}";
-    const base_url = "{{ env('BASE_URL') }}";
-
-    const otpInput = document.getElementById('otp');
+    const inputs = document.querySelectorAll('.otp-input');
     const verifyBtn = document.getElementById('verifyBtn');
 
-    // CSRF setup for Laravel
+    // CSRF setup
     $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
-    // Enable button when OTP length = 6
-    otpInput.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, '');
-        verifyBtn.disabled = this.value.length !== 6;
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
+
+    // Handle input behavior
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            if (e.inputType === "deleteContentBackward") return;
+            
+            // Allow only numbers
+            input.value = input.value.replace(/[^0-9]/g, '');
+            
+            if (input.value) {
+                input.classList.add('has-value');
+                // Move to next input
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            } else {
+                input.classList.remove('has-value');
+            }
+            checkInputs();
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === "Backspace" && !input.value && index > 0) {
+                inputs[index - 1].focus();
+            }
+        });
+    });
+
+    function checkInputs() {
+        let otp = "";
+        inputs.forEach(input => otp += input.value);
+        verifyBtn.disabled = otp.length !== 4;
+    }
 
     // Submit OTP
     $(document).on('submit', '#otp-form', function(e) {
         e.preventDefault();
 
-        const otp = otpInput.value.trim();
-        if (otp.length < 6) {
-            $('.invalid-feedback').show().text('Please enter a valid 6-digit OTP.');
+        let otp = "";
+        inputs.forEach(input => otp += input.value);
+
+        if (otp.length < 4) {
+            $('.invalid-feedback').show().text('Please enter a valid 4-digit OTP.');
             return;
         }
 
         $('#verifyBtn').prop('disabled', true).text('Verifying...');
+        $('.invalid-feedback').hide();
 
         $.ajax({
             url: base_url + '/verify-otp',
@@ -148,19 +189,23 @@
             dataType: "JSON",
             success: function(response) {
                 if (response.status === true) {
-                    localStorage.setItem("user_token", response.token ?? '');
-                    window.location.href = base_url + '/login';
+                    if (response.is_password_reset) {
+                        window.location.href = base_url + '/reset/' + response.otp;
+                    } else {
+                        localStorage.setItem("user_token", response.token ?? '');
+                        window.location.href = base_url + '/login';
+                    }
                 } else {
                     $('.invalid-feedback').show().text(response.message || 'Invalid OTP.');
-                    $('#verifyBtn').prop('disabled', false).text('Verify OTP');
+                    $('#verifyBtn').prop('disabled', false).text('Verify');
                 }
             },
             error: function() {
                 $('.invalid-feedback').show().text('Server error, please try again.');
-                $('#verifyBtn').prop('disabled', false).text('Verify OTP');
+                $('#verifyBtn').prop('disabled', false).text('Verify');
             }
         });
     });
 </script>
-
 @endsection
+

@@ -215,12 +215,12 @@ margin-left: -9px !important;
                                                     Register
                                                 </button>
                                             </div>
-                                            <div class="row">
+                                            <div class="row align-items-center" style="margin-top: 20px;">
                                                 <div class="col-6 text-start">
-                                                    <a class="forgot-link" style="color: blue;"  href="{{ url('forgot-password') }}">Forgot
+                                                    <a class="forgot-link" style="color: blue; margin-top: 0;"  href="{{ url('forgot-password') }}">Forgot
                                                         Password?</a>
                                                 </div>
-                                                <div class="col-6 text-end dont-have">Already on InfluencerPro?&nbsp;&nbsp; <a
+                                                <div class="col-6 text-end dont-have" style="margin-top: 0;">Already on InfluencerPro?&nbsp;&nbsp; <a
                                                         href="{{ url('login') }}">Click here</a></div>
                                             </div>
                                         </form>
@@ -382,12 +382,12 @@ margin-left: -9px !important;
                                             </div>
 
 
-                                            <div class="row form-row">
+                                            <div class="row form-row align-items-center" style="margin-top: 20px;">
                                                 <div class="col-6 text-start">
-                                                    <a class="forgot-link" style="color: blue;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
+                                                    <a class="forgot-link" style="color: blue; margin-top: 0;" href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                         Password?</a>
                                                 </div>
-                                                <div class="col-6 text-end dont-have">Already on influencerPro? &nbsp;&nbsp;
+                                                <div class="col-6 text-end dont-have" style="margin-top: 0;">Already on influencerPro? &nbsp;&nbsp;
                                                     <a href="{{env('BASE_URL').'/login'}}">Click here</a></div>
                                             </div>
                                         </form>

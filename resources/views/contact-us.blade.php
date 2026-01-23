@@ -44,9 +44,11 @@ input[type="file"] {
    <div class="content" style="padding: 17px 0 30px;">
     <div class="container">
         
-        <a href="{{ env('BASE_URL') }}" class="navbar-brand logo shaking" style="margin-top: -1rem;">
-            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
-        </a>
+        <div class="text-center">
+            <a href="{{ env('BASE_URL') }}" class="navbar-brand logo shaking" style="margin-left: 10px;">
+                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid" alt="Logo">
+            </a>
+        </div>
         
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -54,7 +56,7 @@ input[type="file"] {
                     <div class="align-items-center justify-content-center">
                         <div class="login-right">
                             <div class="login-header text-center">
-                                {{-- <a href="{{ env('BASE_URL') }}"><img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" alt="logo" class="img-fluid"></a> --}}
+                               
                                 <h3>Contact Us</h3>
                                 <p>Share your mind with us!</p>
                             </div>

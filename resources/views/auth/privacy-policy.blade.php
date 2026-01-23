@@ -225,7 +225,7 @@ ul, ol{
     We welcome your comments or questions about this Policy. You may contact us at <a href="mailto:support@influencerpro.org">support@influencerpro.org</a>.
 </p>
 
-<p>Last Revised Date:<strong> December 1, 2024</strong></p>
+<p>Last Revised Date:<strong> May, 2025</strong></p>
 
 
 

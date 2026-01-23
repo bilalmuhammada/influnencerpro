@@ -184,29 +184,17 @@
         <div class="container">
 
             <div class="copyright">
-                <div class="row">
-                    <div class="col-md-4"></div>
-
-                    <div class="col-md-4 text-center">
-                        <!-- <ul class="nav footer-bottom-nav">
-                        <li><a href="#">Chat</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        </ul> -->
-                        <div class="footer-bottom-logo">
-                            <a href="{{ env('BASE_URL') }}" class="menu-logo">
-                                <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
-                                    alt="Logo" style="margin-bottom: 4px;">
-                            </a>
-                        </div>
-                        <div class="copyright-text bilal-footer1" style="margin-bottom: 22px;">
-                            <p class="mb-0" style="color:#00498e;font-weight: 500;font-size:12px; margin-top: -10px;">© InfluencerPro.org 2025, All Rights Reserved.</p>
-                        </div>
+                <div class="row d-flex flex-column align-items-center">
+                    <div class="footer-bottom-logo text-center">
+                        <a href="{{ env('BASE_URL') }}" class="menu-logo">
+                            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
+                                alt="Logo">
+                        </a>
                     </div>
-                    <div class="col-md-4 right-text">
-
+                    <div class="copyright-text bilal-footer1 text-center" style="margin-bottom: 22px;">
+                        <p class="mb-0" style="color:#00498e; font-weight: 500; font-size:12px; margin-top: -10px; width: auto !important; display: inline-block;">
+                            © InfluencerPro.org May, 2025, All Rights Reserved.
+                        </p>
                     </div>
                 </div>
             </div>
