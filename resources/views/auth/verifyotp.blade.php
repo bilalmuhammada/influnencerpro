@@ -19,7 +19,7 @@
     .otp-inputs {
         display: flex;
         justify-content: center;
-        gap: 15px;
+        gap: 20px;
         margin: 30px 0;
     }
 
@@ -29,61 +29,61 @@
         font-size: 32px;
         font-weight: bold;
         text-align: center;
-        border: 2px solid #997045; /* Blue */
-        border-radius: 4px; /* Sharper */
+        border: 2px solid #997045; /* Logo Gold */
+        border-radius: 4px; /* Sharp edges */
         background: transparent;
         transition: all 0.3s ease;
         color: #997045;
     }
 
     .otp-input:focus {
-        border: 2px solid #1b3c8e !important; /* Blue */
+        border: 2px solid blue !important; /* Blue */
         box-shadow: 0 0 10px rgba(27, 60, 142, 0.2);
         outline: none;
     }
 
     .otp-input.has-value {
-        border-color: #1b3c8e;
+        border-color: blue;
     }
 
     .verify-btn {
-        background-color: #997045; /* Blue */
+        background-color: #997045; /* Logo Blue */
         border: none;
         color: white;
         font-size: 18px;
         font-weight: 600;
         padding: 12px 50px;
-        border-radius: 4px; /* Sharper */
+        border-radius: 4px; /* Sharp edges */
         cursor: pointer;
         transition: 0.3s;
         margin-top: 20px;
     }
 
     .verify-btn:hover:not(:disabled) {
-        background-color: #142d6b;
+        background-color: blue;
         transform: translateY(-2px);
     }
 
     .verify-btn:disabled {
-        background-color: #cccccc;
+        background-color: #997045;
         cursor: not-allowed;
     }
 
     .resend {
         font-size: 15px;
         margin-top: 30px;
-        color: #666;
+        color: #997045; /* Logo Gold */
     }
 
     .resend a {
-        color: #997045; /* Blue */
+        color: blue; /* Logo Gold */
         text-decoration: none;
         font-weight: bold;
         margin-left: 5px;
     }
 
     .resend a:hover {
-        color: #1b3c8e;
+        color: #997045;
         text-decoration: underline;
     }
 
@@ -105,7 +105,7 @@
         <p class="instruction">Enter OTP</p>
 
         <form id="otp-form">
-            <div class="otp-inputs" style="margin-top: 31px;">
+            <div class="otp-inputs" style="margin-top: 32px;"> <!-- Pushed down 1px -->
                 <input type="text" maxlength="1" class="otp-input" id="otp1" autocomplete="off">
                 <input type="text" maxlength="1" class="otp-input" id="otp2" autocomplete="off">
                 <input type="text" maxlength="1" class="otp-input" id="otp3" autocomplete="off">
