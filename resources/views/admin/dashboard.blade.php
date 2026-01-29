@@ -73,7 +73,7 @@ margin-bottom: 13px;
     <section class="contents" style="border:0px solid red;padding:70px 0 0px;">
         <div class="container" style="border-top:1px solid #eee;">
 
-            <div class="col-md-12" style="padding:10px;margin-top:30px;">
+            <div class="col-md-12" style="padding:0px;margin-top:30px;">
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
                         <input type="text" id="from_datepicker" class="form-control from_date" name="from_date" placeholder="Date" >
@@ -147,7 +147,7 @@ margin-bottom: 13px;
                     </div>
                 </div>
             </div> -->
-            <div class="col-md-12" style="padding:10px;">
+            <div class="col-md-12" style="padding:10px 0;">
                 <div class="card">
                     <div class="card-header" style="padding: 20px 17px;">
                         <h2 class="card-title">Profile Analytics</h2>

@@ -21,10 +21,16 @@
 a{
     color: blue;
 }
-p{
-  width: 110%;
+    p{
+ 
     text-align: justify; 
     color: #333;
+    }
+
+    .privacy-content-container {
+        max-width: 100% !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
     }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -53,15 +59,15 @@ ul, ol{
 
     </style>
     <div class="content">
-        <div class="container" style="margin-top: 0px;">
+        <div class="container privacy-content-container" style="margin-top: 0px;">
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-md-12">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
-                        <div class="modal-body">
+                        <div class="modal-body" style="padding: 0px;">
                             <div class="login-header ">
-                                <h3 class="text-center blueGold" style="margin-left: 7rem;">Privacy & Policy</h3>
+                                <h3 class="text-center blueGold">Privacy & Policy</h3>
                                
                                 
 
@@ -84,7 +90,7 @@ ul, ol{
 <h3>Collecting Your Personal Data</h3>
 <p>We collect information about you in the following ways:</p>
 <h6>Information You Give Us</h6>
-        <ul class="indented-list" style="text-align: justify; width: 110%;">
+        <ul class="indented-list" style="text-align: justify;">
             <li>The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password, and demographic information (such as your gender);</li>
             <li>The personal data that may be contained in any video, comment, or other submission you upload or post to the website;</li>
             <li>The personal data you provide in connection with our rewards program and other promotions we run on the website;</li>
@@ -124,7 +130,7 @@ ul, ol{
 
 <p>
     We use two broad categories of cookies: 
-    <ol  style="text-align: justify; width: 110%;">
+    <ol  style="text-align: justify;">
         <li>First-party cookies, served directly by us to your computer or mobile device, which are used only by us to recognize your computer or mobile device when it revisits our website;</li>
         <li>Third-party cookies, which are served by service providers on our website, and can be used by such service providers to recognize your computer or mobile device when it visits other websites.</li>
     </ol>
@@ -132,7 +138,7 @@ ul, ol{
 
 <strong>Cookies We Use</strong>
 <p>Our website uses the following types of cookies for the purposes set out below:</p>
-<ul class="indented-list"  style="text-align: justify; width: 110%;">
+<ul class="indented-list"  style="text-align: justify;">
     <li><strong>Essential Cookies</strong> - These cookies are essential to provide you with services available through our website and to enable you to use some of its features. For example, they allow you to log in to secure areas of our website and help the content of the pages you request load quickly. Without these cookies, the services that you have asked for cannot be provided, and we only use these cookies to provide you with those services.</li>
     <li><strong>Functionality Cookies</strong> - These cookies allow our website to remember choices you make when you use our website, such as remembering your language preferences, remembering your login details, and remembering the changes you make to other parts of our website which you can customize. The purpose of these cookies is to provide you with a more personal experience and to avoid you having to re-enter your preferences every time you visit our website.</li>
     <li><strong>Analytics and Performance Cookies</strong> - These cookies are used to collect information about traffic to our website and how users use our website. The information gathered does not identify any individual visitor. It includes the number of visitors to our website, the websites that referred them to our website, the pages they visited on our website, what time of day they visited our website, whether they have visited our website before, and other similar information. We use this information to help operate our website more efficiently, to gather broad demographic information and to monitor the level of activity on our website. We use Google Analytics for this purpose. Google Analytics uses its own cookies. It is only used to improve how our website works. You can find out more information about Google Analytics cookies <a href="https://developers.google.com/analytics" target="_blank">here</a>. You can find out more about how Google protects your data <a href="https://policies.google.com/privacy" target="_blank">here</a>. You can prevent the use of Google Analytics relating to your use of our website by downloading and installing the browser plugin available via this link: <a href="http://tools.google.com/dlpage/gaoptout?hl=en-GB" target="_blank">Google Analytics Opt-Out</a>.</li>
@@ -153,7 +159,7 @@ ul, ol{
 
 <h3>Using Your Personal Data</h3>
 <p>We may use your personal data as follows:</p>
-<ul class="indented-list"  style="text-align: justify; width: 110%;">
+<ul class="indented-list"  style="text-align: justify;">
     <li>To operate, maintain, and improve our website, products, and services;</li>
     <li>To manage your account, including to communicate with you regarding your account, if you have an account on our website;</li>
     <li>To operate and administer our rewards program and other promotions you participate in on our website;</li>
@@ -168,7 +174,7 @@ ul, ol{
 
 <h3>Sharing Your Personal Data</h3>
 <p>We may share your personal data as follows:</p>
-<ul class="indented-list"  style="text-align: justify; width: 110%;">
+<ul class="indented-list"  style="text-align: justify;">
     <li><strong>Third Parties Designated by You:</strong> We may share your personal data with third parties where you have provided your consent to do so.</li>
     <li><strong>Our Third Party Service Providers:</strong> We may share your personal data with our third party service providers who provide services such as data analysis, payment processing, information technology and related infrastructure provision, customer service, email delivery, auditing and other similar services.</li>
     <li><strong>Third Party Sites:</strong> Our website may contain links to third party websites and features. This Policy does not cover the privacy practices of such third parties. These third parties have their own privacy policies and we do not accept any responsibility or liability for their websites, features or policies. Please read their privacy policies before you submit any data to them.</li>
@@ -204,7 +210,7 @@ ul, ol{
 </p>
 
 <h3>Your Rights</h3>
-<ul class="indented-list"  style="text-align: justify; width: 110%;">
+<ul class="indented-list"  style="text-align: justify;">
     <li><strong>Opt-out:</strong> You may contact us anytime to opt-out of: (i) direct marketing communications; (ii) automated decision-making and/or profiling; (iii) our collection of sensitive personal data; (iv) any new processing of your personal data that we may carry out beyond the original purpose; or (v) the transfer of your personal data outside the EEA. Please note that your use of some of the website may be ineffective upon opt-out.</li>
     <li><strong>Access:</strong> You may access the information we hold about you at any time via your profile/account or by contacting us directly.</li>
     <li><strong>Amend:</strong> You can also contact us to update or correct any inaccuracies in your personal data.</li>

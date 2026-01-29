@@ -13,44 +13,55 @@
     align-items: center !important;
     background-color: white !important;
 }
-
+.select2-container--default .select2-selection--multiple:focus,.select2-container--default .select2-selection--multiple:active {
+    min-height: 52px !important;
+    border: 1px solid blue !important;
+    border-radius: 4.8px !important;
+    padding: 2px 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: white !important;
+}
+.select2-container .select2-search--inline .select2-search__field {
+margin-top: 18px !important;
+    margin-left: 0px !important;
+}
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: rgba(5, 4, 170, 0.08) !important;
+    background-color: transparent !important;
     border: none !important;
-    border-radius: 20px !important;
-    padding: 0px 3px 2px 15px !important;
-    margin: 0px 0px 0px 3px !important;
+    border-radius: 4px !important;
+    padding: 0px 0px 2px 13px !important;
+    margin: 0px 2px 0px 0px !important;
     display: flex !important;
     align-items: center !important;
     color: #0504aa !important;
-    font-weight: 600 !important;
-    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
     transition: all 0.2s ease !important;
     position: relative !important;
-    box-shadow: 0 1px 2px rgba(5, 4, 170, 0.05) !important;
-    height: 17px !important;
+    box-shadow: none !important;
+    height: 24px !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
-    background-color: rgba(5, 4, 170, 0.12) !important;
-    transform: translateY(-1px);
+    background-color: transparent !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     position: absolute !important;
-    left: 6px !important;
+    left: 2px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     border: none !important;
     color: #0504aa !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: bold !important;
     line-height: 1 !important;
     padding: 0 !important;
     margin: 0 !important;
-    opacity: 0.6 !important;
-    transition: opacity 0.2s ease !important;
+    opacity: 1.0 !important;
+    transition: color 0.2s ease !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
@@ -72,14 +83,14 @@
 }
 
 .select2-container--default .select2-search--inline .select2-search__field {
-    margin: 0 !important;
-    height: 30px !important;
-    line-height: 30px !important;
+    margin: 13px 0 0 0 !important; /* Reduced margin for better centering */
+    height: 32px !important;
+    line-height: 32px !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    padding-left: 5px !important;
-    font-size: 13px !important;
+    
+    font-size: 14px !important;
 }
 .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
     color: black !important;
@@ -87,7 +98,8 @@
 }
 .dropzone-container {
     border: 2px solid #ccc;
-    padding: 20px;
+    padding: 0px 6px;
+    margin-left: 29px;
     /* text-align: center; */
     margin-top: 0px;
   }
@@ -115,9 +127,9 @@ min-height: 70px !important;
 }
 
   .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: rgba(5, 4, 170, 0.05) !important;
+    background-color: transparent!important;
     color: #0504aa !important;
-    font-weight: 600 !important;
+    font-weight: normal !important;
   }
   
   .select2-results__option {
@@ -137,21 +149,20 @@ min-height: 70px !important;
         }
   .dz-preview .dz-remove {
     position: absolute;
-    top: 7px;
-    left: 153px;
-   
+    top: 6px;
+    left: 130px;
     background-color: #f0f8ff03;
     color: #f20909f7;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 28px; /* Reduced from 35px */
     width: 20px;
     font-weight: 600;
     height: 20px;
     text-align: center;
     line-height: 18px;
-        }
+}
         .dz-preview .dz-remove:hover {
             color: blue;
 
@@ -164,9 +175,9 @@ min-height: 70px !important;
     padding-top: 20px !important;
   }
   .dz-image img{
-width: 180px;
+width: 160px;
 border-radius: 4px;
-height: 180px;
+height: 160px;
   }
 
   .select2-search__field{
@@ -178,8 +189,9 @@ height: 180px;
   #select2--container{
     padding-top: 16px;
   color: #0b0b0b !important;
+  font-size: 14px !important;
   }
- 
+  
   .dz-success-mark{
     display: none;
   }
@@ -213,11 +225,13 @@ font-weight: bold;
         }
 .form-control{
     color: black !important;
+    font-size: 15px !important;
 }
 .form-control::placeholder {
     color: #adadad !important;
     opacity: 1 !important;
     font-weight: 400 !important;
+    font-size: 14px !important;
 }
 
 /* Dynamic Floating Labels */
@@ -230,7 +244,7 @@ font-weight: bold;
     position: absolute !important;
     top: -7px !important; /* Start in middle */
     left: 12px !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     font-weight: 500 !important;
     color: #997045 !important;
     background: transparent !important;
@@ -240,7 +254,7 @@ font-weight: bold;
     transition: all 0.2s ease !important;
 }
 .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 13px !important;
+    font-size: 14px !important;
     font-weight: normal !important;
     line-height: 22px !important;
     
@@ -254,8 +268,8 @@ font-weight: bold;
 .form-group.form-focus.focused .inner_label,
 .form-group.form-focus.has-value .focus-label,
 .form-group.form-focus.has-value .inner_label {
-    top: -19px !important;
-    font-size: 13px !important;
+    top: -17px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     color: #0504aa !important;
     background: white !important;
@@ -265,8 +279,8 @@ font-weight: bold;
 /* Multiple selects always float if they have selections or are focused */
 .form-group.form-focus:has(.select2-selection__choice) .focus-label,
 .form-group.form-focus.focused:has(.select2-container) .focus-label {
-    top: -19px !important;
-    font-size: 13px !important;
+    top: -17px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     background: white !important;
     padding: 0 0px !important;
@@ -299,16 +313,22 @@ font-weight: bold;
   #ui-datepicker-div{
 width: 210px !important;
   }
-  .from_date:focus, .to_date:focus {
-    border: 1px solid blue !important;
+  .from_date:focus, .to_date:focus, .datepicker:focus {
+    border: 1px solid #0504aa !important;
+}
+.datepicker::placeholder {
+    color: #0504aa !important;
+}
+.form-group.form-focus:has(.datepicker) .focus-label {
+    color: #0504aa !important;
 }
     #my-dropzone .dz-preview {
             display: inline-block;
             
         }
         #my-dropzone .dz-image {
-            width: 200px;
-            height: 200px;
+            width: 185px;
+            height: 185px;
         }
         #my-dropzone .dz-details {
             display: none;
@@ -412,7 +432,7 @@ display: none !important;
                             <li id="confirm"><strong>Complete</strong></li>
                         </ul>
                         <fieldset>
-                            <div class="form-card ps-3 pe-3" style="padding-top: 25px !important;">
+                            <div class="form-card ps-3 pe-3">
                                 <div class="row">
                                     {{--                                    <div class="col-md-4">--}}
                                     {{--                                        <input type="text" name="uname" placeholder="Name"/>--}}
@@ -1048,64 +1068,66 @@ display: none !important;
                             <input type="button" name="next" style="margin-top: 80px;" class="next font-size-15 action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
-                            <div class="form-card" style="padding-top: 25px !important;">
+                            <div class="form-card" >
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                            <div class="row ">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
+                                                    
                                                     <img src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                         alt="insta" width="40" class="shaking">
+                                                         alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
+                                                    
                                                 </div>
                                                 
                                                 <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="instagram_url"
+                                                    <div class="form-group form-focus ">
+                                                    <input type="text" class="form-control floating inputbg" name="instagram_url" 
                                                            placeholder="URL" value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
                                                            <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Instagram</label>
                                                         </div>
-                                                    </div>
+                                                </div>
                                                 <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 90%;"
+                                                    <div class="form-group form-focus ">
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="instagram_followers"
                                                            placeholder="10K, 1M, 2,5M"
                                                            value="{{ $instagramProfiles ? $instagramProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                               
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
-                                                    <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="insta"
-                                                         width="40" class="shaking">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
+                                                    <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
+                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
                                                 
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg"  style=" width: 92% margin-left: 7px;" name="facebook_url"
+                                                    <input type="text" class="form-control floating inputbg" name="facebook_url"
                                                            placeholder="URL" value="{{ $facebookProfiles ? $facebookProfiles->url : '' }}">
                                                            <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Facebook</label>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 90%;"
-                                                           class="form-control floating"
+                                                    <input type="text" id=""
+                                                           class="form-control floating inputbg"
                                                            name="facebook_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $facebookProfiles ? $facebookProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                          
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                         alt="insta" width="40" class="shaking">
+                                                         alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
                                                 
                                                 <div class="col-md-8">
@@ -1117,21 +1139,21 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 90%;"
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="tiktok_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $tiktokProfiles ? $tiktokProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/youtube.svg') }}"
-                                                        alt="insta" width="40" class="shaking">
+                                                        alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
                                                 
                                                 <div class="col-md-8">
@@ -1143,21 +1165,21 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style="width:90%;"
+                                                    <input type="text" id=""
                                                            class="form-control  floating inputbg"
                                                            name="youtube_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $youtubeProfiles ? $youtubeProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img
                                                         src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                        alt="insta" width="40" class="shaking">
+                                                        alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
                                                 
                                                 <div class="col-md-8">
@@ -1169,29 +1191,23 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 90%;"
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="twitter_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $twitterProfiles ? $twitterProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                         alt="insta"
-                                                         width="44px" height="44px" class="shaking">
+                                                         alt="snapchat"
+                                                         width="44px" height="44px" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="snapchat_username"
-                                                           placeholder="Username"
-                                                           value="{{ $snapchatProfiles ? $snapchatProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="snapchat_url"
@@ -1201,29 +1217,23 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id="" style=" width: 90%;"
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="snapchat_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $snapchatProfiles ? $snapchatProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}"
                                                          alt="insta"
-                                                         width="40" class="shaking">
+                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="pinterest_username"
-                                                           placeholder="Username"
-                                                           value="{{ $pinterestProfiles ? $pinterestProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="pinterest_url"
@@ -1233,28 +1243,22 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 90% ;"
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="pinterest_followers"
-                                                           placeholder="10K, 1M, 2,5M "
+                                                           placeholder="10K, 1M, 2,5M"
                                                            value="{{ $pinterestProfiles ? $pinterestProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px;">
+                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
                                                     <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
-                                                         width="40" class="shaking">
+                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
                                                 </div>
-                                                {{-- <div class="col-md-3">
-                                                    <input type="text" id=""
-                                                           class="form-control"
-                                                           name="web_username"
-                                                           placeholder="Username"
-                                                           value="{{ $webProfiles ? $webProfiles->username : '' }}"/>
-                                                </div> --}}
+                                                
                                                 <div class="col-md-8">
                                                     <div class="form-group form-focus">
                                                     <input type="text" class="form-control floating inputbg" name="web_url"
@@ -1264,12 +1268,12 @@ display: none !important;
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group form-focus">
-                                                    <input type="text" id=""  style=" width: 90%;"
+                                                    <input type="text" id=""
                                                            class="form-control floating inputbg"
                                                            name="web_followers"
                                                            placeholder="10K, 1M, 2,5M "
                                                            value="{{ $webProfiles ? $webProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 2px;"> Followers</label>
+                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
                                                         </div>
                                                 </div>
                                                 
@@ -1282,8 +1286,8 @@ display: none !important;
 
                             
                             <input type="button" name="previous" class="previous font-size-15 action-button-previous"
-                                   value="Previous"/>
-                                   <input type="button" name="next"  class="next font-size-15 action-button" value="Next"/ >
+                                   value="Back"/>
+                                   <input type="button" name="next"  class="next font-size-15 action-button" style="margin-left: 12px;" value="Next"/ >
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -1294,23 +1298,24 @@ display: none !important;
                                         <input type="text"
                                                placeholder=""
                                                class="form-control inputbg" name=""
-                                               style="border:0px solid #1A237E;!important"/>
+                                               style=" margin-bottom: 0px;"/>
                                     </div>
                                 </div>
-                                <div style="left: 41%; position: absolute;">
-                                    <label for="fileInput" class="fileInput0" style=" font-weight:bold;"> 
-                                        Or Upload & Drop Images Here
-                                   </label>
-                                </div>
-                                
-                                <!-- Hidden file input -->
-                                <input type="file" id="fileInput0"  style="display: none;" accept="image/*" multiple>
-                                
-                                <!-- Dropzone Container -->
-                                <div class="dropzone-container dz-message" id="my-Dropzone" style="border:white; color: blue; font-weight: bold;">
-                                  
-                                 
-                                    <!-- Dropzone message or content -->
+                                <div class="row" style="padding: 0 47px 0 20px">
+                                    <div class="col-md-12 text-center" style="margin-left: 12px;margin-top: 6px;">
+                                        <label for="fileInput0" class="fileInput0" style="font-weight:bold; cursor: pointer;"> 
+                                            Or Upload & Drop Images Here
+                                        </label>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <!-- Hidden file input -->
+                                        <input type="file" id="fileInput0" style="display: none;" accept="image/*" multiple>
+                                        
+                                        <!-- Dropzone Container -->
+                                        <div class="dropzone-container dz-message" id="my-Dropzone" style="border:white; color: blue; font-weight: bold;">
+                                            <!-- Dropzone content -->
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                        
@@ -1318,8 +1323,8 @@ display: none !important;
                               {{-- </div> --}}
                             </div>
                             <input type="button" name="previous" class="previous font-size-15 action-button-previous"
-                                   value="Previous"/>
-                            <input type="button" name="next" class="next font-size-15 action-button submit-btn" value="Submit"/>
+                                   value="Back"/>
+                            <input type="button" name="next" class="next font-size-15 action-button submit-btn" style="margin-left: 12px;" value="Submit"/>
                             
                         </fieldset>
                         <fieldset>
@@ -1393,6 +1398,12 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
 
 
             });
+
+            // Trigger file input click when upload label is clicked
+            $('.fileInput0').on('click', function() {
+                $('#my-Dropzone').trigger('click');
+            });
+
             $('#price').on('input', function() {
                 let value = $(this).val();
                 this.value = this.value.replace(/[^0-9]/g, '');
@@ -1567,6 +1578,7 @@ $(document).on('click', '.submit-btn', function () {
                         
                       
                         var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
+                        cityDropdown.append('<option value="" selected disabled>Select City</option>');
 
 
 if (response.data.length > 0) {
@@ -1641,56 +1653,17 @@ if (response.data.length > 0) {
     minimumResultsForSearch: Infinity // Disables the search box
   });
             $('#category_ids').select2({
-                //   placeholder: "Select Spoken",
-                allowClear: true
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
+                allowClear: true,
+                maximumSelectionLength: 3
             });
             $('#spoken_language_ids').select2({
-                // placeholder: "Select Spoken Languages",
                 allowClear: true,
-                 width: '100%'
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
+                width: '100%',
+                maximumSelectionLength: 3
             });
             $('#arts').select2({
-                // placeholder: "Select Spoken Languages",
-                allowClear: true
-            }).on('select2:select', function (e) {
-                var maxSelection = 3;
-                var selectedOptions = $(this).find('option:selected');
-                if (selectedOptions.length >= maxSelection) {
-                    // Disable the remaining options
-                    $(this).find('option:not(:selected)').prop('disabled', true);
-                } else {
-                    // Enable all options
-                    $(this).find('option').prop('disabled', false);
-                }
-            }).on('select2:unselect', function (e) {
-                // Enable all options
-                $(this).find('option').prop('disabled', false);
+                allowClear: true,
+                maximumSelectionLength: 3
             });
             
             

@@ -34,8 +34,12 @@
     }
 
     th {
-        font-weight: 400 !important;
+        font-weight: 700 !important;
         color: #333 !important;
+        font-size: 13px !important;
+    }
+    tr:hover {
+        background-color: #efffff !important;
     }
 
     .gold-ellipsis {
@@ -108,10 +112,15 @@
         color: black !important;
         font-weight: 400 !important;
         text-decoration: none !important;
+        font-size: 13px !important;
     }
 
     .notif-desc-text:hover {
-        color: #997045 !important;
+        color: blue !important;
+    }
+
+    td {
+        font-size: 13px !important;
     }
 </style>
 
@@ -130,7 +139,7 @@
                         </thead>
                         <tbody>
                         @forelse($notifications as $notification)
-                        <tr style="{{ $notification->read_at ? '' : 'background-color: aliceblue;' }}">
+                        <tr style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
                             <td>
                                 <div class="table-avatar">
                                     <a href="#" class="avatar me-3"> <!-- Increased margin -->
@@ -139,8 +148,8 @@
                                             alt="User Image">
                                     </a>
                                     <a href="#" class="notif-desc-text">
-                                        {{ \Illuminate\Support\Str::limit($notification->data, 50) }}
-                                        <span class="d-block text-muted" style="font-size: 12px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
+                                        {{ $notification->data }}
+                                        <span class="d-block text-muted" style="font-size: 11px; margin-top: 15px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
                                     </a>
                                 </div>
                             </td>

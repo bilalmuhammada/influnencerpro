@@ -1786,7 +1786,7 @@ label {
     -webkit-transform: translate3d(0, 22px, 0) scale(1);
     -ms-transform: translate3d(0, 22px, 0) scale(1);
     -o-transform: translate3d(0, 22px, 0) scale(1);
-    transform: translate3d(0, 22px, 0) scale(1);
+    transform: translate3d(0, 18px, 0) scale(1);
     transform-origin: left top;
     transition: 240ms;
     left: 12px;
@@ -1854,6 +1854,7 @@ border: 1px solid #2d11e7;
 
 .select2-container--default .select2-results__option {
     background-color: transparent !important;
+  
 }
 .form-focus .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 48px;
@@ -2131,7 +2132,7 @@ border: 1px solid #2d11e7;
     -webkit-justify-content: space-between;
     -ms-flex-pack: space-between;
     position: relative;
-    padding: 0 30px;
+    padding: 0 10px;
     margin-bottom: 0;
     transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -2176,8 +2177,9 @@ border: 1px solid #2d11e7;
 
 .main-nav>li .submenu li a {
     display: block;
-    /* padding: 4px 4px 4px 4px; */
+    padding: 0px 8px;
     clear: both;
+    font-weight: normal;
     white-space: nowrap;
     font-size: 15px;
     color: #2B2B2B;
@@ -3520,7 +3522,7 @@ html.menu-opened body header:before {
     background: #997045 !important;
     padding: 12px 20px !important;
     /* border: 3px solid #0504aa; */
-    border-radius: 0.30rem !important;
+    border-radius: 4px !important;
     color: #fff !important;
     font-weight: bold !important;
     font-size: 16px !important;
@@ -3587,7 +3589,7 @@ html.menu-opened body header:before {
 
 .project-item {
     background: #fff;
-    border-radius: 0.4rem;
+    border-radius: 4px;
     margin-bottom: 13px;
     width: 100%;
     border: 1px solid #EBEBEB;
@@ -3600,7 +3602,7 @@ html.menu-opened body header:before {
 }
 
 .project-img {
-    border-radius: 0.3rem 0.3rem 0 0;
+    border-radius: 4px 4px 0 0;
     overflow: hidden;
     /* padding: 3px 3px 0 3px; */
     /* border-radius: 15px 15px 0px 0px; */
@@ -8412,7 +8414,7 @@ div#global-loader {
 
 .login-header h3 {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: 18px;
     color: #161c2d;
 }
@@ -8427,7 +8429,7 @@ div#global-loader {
 .login-right .dont-have {
     color: #161c2d;
     font-weight: 500;
-    margin-top: 23px;
+    margin-top: 0px;
     font-size: 13px;
 }
 
@@ -8440,6 +8442,18 @@ div#global-loader {
 
 .login-right .dont-have a {
     color: blue;
+}
+
+.login-right .dont-have a:hover {
+    color: #997045 !important;
+}
+
+.logo-color {
+    color: blue !important;
+}
+
+.logo-color:hover {
+    color: #997045 !important;
 }
 
 .login-btn {
@@ -13733,7 +13747,7 @@ label.file-upload input[type="file"] {
     background: #fff;
     /* box-shadow: 0px 4px 4px #f5f8ff; */
     /* margin: 10px; */
-    padding: 4px 0px 4px 12px;
+    padding: 0px 0px 0px 12px;
 
     transition: all 0.2s ease 0s;
 }
@@ -20968,7 +20982,7 @@ button.scroll-top:focus {
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
         display: block;
         font-size: 14px;
-        left: -4;
+        left: -4px;
         margin: 0;
         /* min-width: 200px; */
         opacity: 0;
@@ -20982,6 +20996,8 @@ button.scroll-top:focus {
         top: 100%;
         visibility: hidden;
         z-index: 1000;
+        border-radius: 4px;
+        overflow: hidden;
     }
     .main-nav li.has-submenu:hover>.submenu {
         visibility: visible;
@@ -21736,7 +21752,7 @@ button.scroll-top:focus {
         border-top: 0;
         color: #263238;
         padding: 10px 15px 10px 35px;
-        font-size: 14px;
+        font-size: 15px;
     }
     .main-nav>li .submenu ul li a {
         padding: 10px 15px 10px 45px;

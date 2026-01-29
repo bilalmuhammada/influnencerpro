@@ -15,6 +15,15 @@
 ::-webkit-scrollbar {
   width: 6px; /* You can adjust this value based on your preference */
 }
+.logo-color:hover{
+    color: #997045 !important;
+}
+.logo-color{
+    color: #0504aa !important;
+}
+.t-btn.login-btn{
+    border-radius: 4px !important;
+}
 .toggle-password {
             position: absolute;
             right: 23px;
@@ -75,12 +84,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6 text-start">
-                                            <a class="forgot-link" href="{{ env('BASE_URL') }}/forgot-password" style="color:#0504aa;">Forgot
+                                            <a class="forgot-link logo-color" href="{{ env('BASE_URL') }}/forgot-password" >Forgot
                                                 Password?</a>
                                         </div>
-                                        <div class="col-6 text-end dont-have" style="margin-top: 33px !important;">New to InfluencerPro? &nbsp;&nbsp;<a
-                                                href="{{ env('BASE_URL') }}/register?role=influencer" style="color:#0504aa;">Click
-                                                here</a></div>
+                                        <div class="col-6 text-end dont-have" style="margin-top: 33px !important;">New to InfluencerPro? <a
+                                                href="{{ env('BASE_URL') }}/register?role=influencer"  class="logo-color">Click here</a></div>
                                     </div>
                                 </form>
                             </div>

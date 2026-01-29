@@ -5,6 +5,8 @@
   font-size:20px;
   margin-left: 172px;
   color: blue;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>
 

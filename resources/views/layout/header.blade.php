@@ -243,7 +243,7 @@
         }
 
         .main-nav > li {
-            margin-right: 15px !important;
+            margin-right: 0px !important;
         }
         .main-nav > li:last-child {
             margin-right: 0 !important;
@@ -423,4 +423,5 @@
         }
     </style>
     @endif
+    @yield('custom_css')
 </head>

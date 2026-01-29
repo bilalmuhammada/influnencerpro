@@ -34,37 +34,59 @@
     .changeColor:hover {
         color: blue !important;
     }
+
+    .footer-container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (min-width: 1200px) {
+        .footer-container {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
+    }
+
+    .home-page .footer-container,
+    .home-page .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
 </style>
 <footer class="footer" style="border:0px solid red;">
-    <div class="container mb-30" style="margin-top: 50px;">
-        <div class="col-lg-12 col-md-12 col-12 m-10" style="border:0px solid red; margin-top:0px;">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
+    <div class="footer-container mb-30" style="margin-top: 50px;">
+        <div style="border:0px solid red; margin-top:0px;">
+            <div class="row" >
+                <div class="col-lg-4 col-md-6 col-12" >
                     <h6>
                         Join Us & Discover More.<br />
                         <div style="color:#0000FF;margin-top:6px;"><b>Download our App now!</b></div>
                     </h6>
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 54px;margin-top: -30px;">
+                <div class="col-lg-2 col-md-3 col-6" style="margin-top: -30px;">
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " class="" height="80px" width="100px">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 26px;margin-top: -20px;">
+                <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " class="shaking" height="45px"
                         style="margin-top:20px;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 64px;margin-top: -20px;">
+                <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px;">
+                        style="margin-top:20px; margin-left: 3rem;">
                 </div>
-                <div class="col-lg-2 col-md-6 col-6" style="padding-left: 62px;margin-top: -20px;">
+                <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px; ">
                     <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px;">
+                        style="margin-top:20px; margin-left: 4rem;">
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-top aos" style="border:0px solid red;">
-        <div class="container" style="border:0px solid red;margin-top:-25px;">
+        <div class="footer-container" style="border:0px solid red;margin-top:-25px;">
             <div class="row" style="margin-top: 20px;">
                 <div class="col-xl-3 col-md-6">
                     <div class="footer-widget footer-menu">
@@ -180,20 +202,20 @@
     </div>
 
 
-    <div class="footer-bottom">
-        <div class="container">
+   <div class="footer-bottom">
+        <div class="footer-container">
 
             <div class="copyright">
                 <div class="row d-flex flex-column align-items-center">
-                    <div class="footer-bottom-logo text-center">
+                    <div class="footer-bottom-logo text-center" style="margin-bottom: -9px;">
                         <a href="{{ env('BASE_URL') }}" class="menu-logo">
                             <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
-                                alt="Logo">
+                                alt="Logo" style="width: 150px;">
                         </a>
                     </div>
                     <div class="copyright-text bilal-footer1 text-center" style="margin-bottom: 22px;">
-                        <p class="mb-0" style="color:#00498e; font-weight: 500; font-size:12px; margin-top: -10px; width: auto !important; display: inline-block;">
-                            © InfluencerPro.org May, 2025, All Rights Reserved.
+                        <p class="mb-0" style="color:#00498e; font-weight: 500; font-size:12px; width: auto !important; display: inline-block;">
+                            © InfluencerPro.org  {{ date('Y') }}, All Rights Reserved.
                         </p>
                     </div>
                 </div>

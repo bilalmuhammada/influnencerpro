@@ -194,6 +194,8 @@ function getInfluencerById($userId)
                 'ethnicity',
             ],
             'features',
+            'spoken_languages.spoken_language',
+            'arts',
             'social_media_profiles',
             'influencer_profile_images'
         ]

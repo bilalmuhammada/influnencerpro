@@ -573,9 +573,8 @@ class AuthController extends Controller
 
         // update user table here
         User::where('id', $user_id)->update([
-            'country_id' => $request->country_id,
-            'city_id' => $request->city_id,
-            'state_id' => $request->state_id,
+            'country_id' => $request->base_country_id,
+            'city_id' => $request->base_city_id,
         ]);
 
         //create categories
@@ -712,10 +711,11 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
         if ($request->arts) {
             UserArt::where('user_id', $Influencer->id)->delete();
             foreach ($request->arts as $art) {
+                $artObj = StaticDatabase::getArts()->where('key', '=', $art)->first();
                 UserArt::create([
                     'user_id' => $Influencer->id,
                     'art_key' => $art,
-                    'art_name' => StaticDatabase::getArts()->where('key', '=', $art)->first()->name
+                    'art_name' => $artObj ? $artObj->name : $art
                 ]);
             }
         }
@@ -767,6 +767,9 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
         //     }
         // }
 
+        // Traveling info is already saved in UserPersonalInformation above.
+        // If there's a separate UserAvailability table for multiple countries, we should handle it here.
+        // For now, mirroring the mobile logic but with correct field names if they were provided.
         if ($request->available_country_id) {
             UserAvailability::where('user_id', $Influencer->id)->where('is_default', 0)->delete();
 
@@ -781,7 +784,6 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
                     ]);
                 }
             }
-
         }
 
         if ($request->main_available_from_date) {
@@ -789,10 +791,10 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
 
             UserAvailability::create([
                 'user_id' => $Influencer->id,
-                'country_id' => $request->country_id,
-                'city_id' => $request->city_id,
+                'country_id' => $request->base_country_id,
+                'city_id' => $request->base_city_id,
                 'availability_from_date' => Carbon::createFromFormat('d-M-Y', $request->main_available_from_date)->format('Y-m-d'),
-                'availability_to_date' => Carbon::createFromFormat('d-M-Y', $request->main_available_to_date)->format('Y-m-d'),
+                'availability_to_date' => Carbon::createFromFormat('d-M-Y', $request->base_date ? $request->base_date : $request->main_available_from_date)->format('Y-m-d'),
                 'is_default' => 1,
             ]);
         }

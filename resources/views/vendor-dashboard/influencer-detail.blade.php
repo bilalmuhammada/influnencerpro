@@ -13,7 +13,7 @@
 
 }
 .linespace{
-    line-height: 1.2;
+    line-height: 1.25;
 
 }
 .delete-icon:hover{
@@ -209,24 +209,29 @@ color: goldenrod !important;
                                 <div class="col-md-6" >
                                     <label class="font-label">Art</label>
                                     <div class="form-group linespace">
-                                        <span
-                                            class="badge badge-pill badge-skill">
-                                            @foreach($influencer->arts as $art)
-                                                {{ getSafeValueFromObject($art, 'art_name') }}
-                                                <br>
-                                            @endforeach
-                                        </span>
+                                        <span class="badge badge-pill badge-skill">@foreach($influencer->arts as $art){{ getSafeValueFromObject($art, 'art_name') }}<br>@endforeach</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="font-label">Languages</label>
                                     <div class="form-group linespace">
-                                        <span
-                                       
-                                            class="badge badge-pill badge-skill">@foreach ($influencer->spoken_languages as $spokenLanguage)
-                                                {{ $spokenLanguage->spoken_language?->name }}
-                                                <br>
-                                            @endforeach</span>
+                                        <span class="badge badge-pill badge-skill">
+                                            @php $langShown = false; @endphp
+                                            @foreach ($influencer->spoken_languages as $sl)
+                                                @if($sl->spoken_language)
+                                                    {{ $sl->spoken_language->name }}<br>
+                                                    @php $langShown = true; @endphp
+                                                @endif
+                                            @endforeach
+                                            
+                                            @if(!$langShown)
+                                                @if($influencer->personal_information && $influencer->personal_information->spoken_language)
+                                                    {{ $influencer->personal_information->spoken_language->name }}
+                                                @elseif($influencer->personal_information && $influencer->personal_information->dialects)
+                                                    {{ $influencer->personal_information->dialects }}
+                                                @endif
+                                            @endif
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;">
@@ -276,7 +281,7 @@ color: goldenrod !important;
                                     <label class="font-label">Eye Color</label>
                                     <div class="form-group">
                                         <span
-                                            class="badge badge-pill badge-skill">{{ getSafeValueFromObject(Str::ucfirst($influencer->personal_information), 'eye_color') }}</span>
+                                            class="badge badge-pill badge-skill">{{ ucfirst($influencer->personal_information->eye_color ?? '') }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6" style="margin-top: 8px;">
@@ -323,7 +328,7 @@ color: goldenrod !important;
                                 </div>
                                
                                 {{-- <div class="col-md-6" >
-                                    <label class="font-label">Availability566</label>
+                                    <label class="font-label">Availability</label>
                                     <div class="form-group">
                                         <span
                                             class="badge badge-pill badge-skill"
@@ -348,9 +353,11 @@ color: goldenrod !important;
                                 <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Based City</label>
                                     @php
+                                    $city = null;
+                                    $main_available_from_date = '';
                                     if($influencer->personal_information !=null){
                                         $main_available_from_date=  $influencer->personal_information->main_available_from_date;   
-                                       $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
+                                        $city =  DB::table('cities')->where('id',$influencer->personal_information->city_id )->first();
                                     }
                                    @endphp
                                     <div class="form-group linespace">
@@ -369,9 +376,11 @@ color: goldenrod !important;
                                 <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Based Country</label>
                                     @php
+                                    $country = null;
+                                    $base_date = '';
                                     if($influencer->personal_information !=null){
-                                        $base_date= $travlling_one_from_date=  $influencer->personal_information->base_date;
-                                    $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
+                                        $base_date = $influencer->personal_information->base_date;
+                                        $country =  DB::table('countries')->where('id',$influencer->personal_information->country_id)->first();
                                     }
                                     @endphp
                                       <div class="form-group linespace">
@@ -391,9 +400,13 @@ color: goldenrod !important;
                                 <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City</label>
                                     @php
+                                    $city1 = null;
+                                    $travlling_one_from_date = '';
                                     if($influencer->personal_information !=null){
-                                        $travlling_one_from_date= $travlling_one_from_date=  $influencer->personal_information->travlling_one_from_date;
-                                    $city1=  DB::table('cities')->where('id',$influencer->personal_information->travlling_one_city_id)->first();
+                                        $travlling_one_from_date =  $influencer->personal_information->travlling_one_from_date;
+                                        if($influencer->personal_information->travlling_one_city_id){
+                                            $city1 =  DB::table('cities')->where('id',$influencer->personal_information->travlling_one_city_id)->first();
+                                        }
                                     }
                                     @endphp
                                      <div class="form-group linespace">
@@ -431,9 +444,13 @@ color: goldenrod !important;
                                 <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City </label>
                                     @php
+                                    $city2 = null;
+                                    $travlling_two_from_date = '';
                                     if($influencer->personal_information !=null){
-                                        $travlling_two_from_date=  $influencer->personal_information->travlling_two_from_date;
-                                    $city2=  DB::table('cities')->where('id',$influencer->personal_information->travlling_two_city_id)->first();
+                                        $travlling_two_from_date =  $influencer->personal_information->travlling_two_from_date;
+                                        if($influencer->personal_information->travlling_two_city_id){
+                                            $city2 =  DB::table('cities')->where('id',$influencer->personal_information->travlling_two_city_id)->first();
+                                        }
                                     }
                                     @endphp
                                       <div class="form-group linespace">
@@ -451,9 +468,13 @@ color: goldenrod !important;
                                     <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling Country &nbsp;&nbsp;2</label>
                                     @php
+                                    $country2 = null;
+                                    $travlling_two_to_date = '';
                                     if($influencer->personal_information !=null){
-                                        $travlling_two_to_date=  $influencer->personal_information->travlling_two_to_date;
-                                    $country2 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_two_country_id)->first();
+                                        $travlling_two_to_date =  $influencer->personal_information->travlling_two_to_date;
+                                        if($influencer->personal_information->travlling_two_country_id){
+                                            $country2 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_two_country_id)->first();
+                                        }
                                     }
                                     @endphp
                                       <div class="form-group linespace">
@@ -471,9 +492,13 @@ color: goldenrod !important;
                                 <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling City</label>
                                     @php
+                                    $city3 = null;
+                                    $travlling_three_from_date = '';
                                     if($influencer->personal_information !=null){
-                                        $travlling_three_from_date=  $influencer->personal_information->travlling_three_from_date;
-                                    $city3=  DB::table('cities')->where('id',$influencer->personal_information->travlling_three_city_id)->first();
+                                        $travlling_three_from_date =  $influencer->personal_information->travlling_three_from_date;
+                                        if($influencer->personal_information->travlling_three_city_id){
+                                            $city3 =  DB::table('cities')->where('id',$influencer->personal_information->travlling_three_city_id)->first();
+                                        }
                                     }
                                     @endphp
                                     <div class="form-group linespace">
@@ -491,9 +516,13 @@ color: goldenrod !important;
                                     <div class="col-md-6" style="margin-top: 8px;">
                                     <label class="font-label">Traveling Country &nbsp;&nbsp;3</label>
                                     @php
+                                    $country3 = null;
+                                    $travlling_three_to_date = '';
                                     if($influencer->personal_information !=null){
-                                         $travlling_three_to_date=  $influencer->personal_information->travlling_three_to_date;
-                                    $country3 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_three_country_id)->first();
+                                       $travlling_three_to_date =  $influencer->personal_information->travlling_three_to_date;
+                                       if($influencer->personal_information->travlling_three_country_id){
+                                            $country3 =  DB::table('countries')->where('id',$influencer->personal_information->travlling_three_country_id)->first();
+                                       }
                                     }
                                     @endphp
                                       <div class="form-group linespace">
@@ -906,7 +935,7 @@ color: goldenrod !important;
                 const topY = 3; // Adjust Y-position for top placement
                 const bottomY = pageHeight - imgHeight-6 ; // Adjust Y-position for bottom placement
 
-                const text = "© InfluencerPro.org 2025, All Rights Reserved.";
+                const text = "© InfluencerPro.org {{ date('Y') }}, All Rights Reserved.";
         
                 // Add Centered Logo at the Top of the First Page
                 pdf.setPage(1);

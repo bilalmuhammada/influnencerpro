@@ -1,5 +1,42 @@
 @extends('layout.master')
+
+@section('custom_css')
 <style>
+/* FULL WIDTH HEADER FIX FOR HOME PAGE */
+.home-page .header-nav .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Ensure Logo and Login are at absolute ends */
+.home-page .header-nav .navbar-header {
+    margin-right: auto !important;
+}
+
+.home-page .header-nav .main-menu-wrapper {
+    margin-left: auto !important;
+}
+
+/* Fix for mobile/tablet where main-menu-wrapper might be hidden or absolute */
+@media (max-width: 991px) {
+    .home-page .header-nav .container {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .home-page .header-nav .main-menu-wrapper {
+        display: block !important; /* Force visibility for login if it was hidden */
+        position: static !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+    }
+}
 
 .img {
   width: 200px; /* Adjust the width as needed */
@@ -12,10 +49,10 @@
 
 
   .headingstyle{
-    padding:2%;
+    padding:10px;
     border-radius:2%;
     width:100%;
-    margin-left:6rem;
+   
   }
     .numberstyle{
     font-size: 55px;
@@ -80,9 +117,9 @@ color:goldenrod !important;
         font-size: 0.75rem;
     }
 }
-
-   
 </style>
+@endsection
+
 @section('content')
     <section class="contents">
         <!-- <div class="container"> -->

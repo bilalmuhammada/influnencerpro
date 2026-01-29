@@ -204,7 +204,7 @@ color: #0504aa !important;
 
 /* Refined Premium Filter Design */
 .search-filter {
-    border-radius: 12px !important;
+    border-radius: 4px !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     background: #f2e49c !important;
@@ -388,20 +388,8 @@ input[type=number] {
     border-color: blue !important;
 }
     </style>
-    <section style="border-top:2px solid #eee;">
-        <br/>
-        <div class="row" style="display: none;">
-            <div class="col-md-12 ">
-                <div class="input-box text-center mx-auto"
-                     style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
-                    <input type="text" class="middle-search" placeholder=" Search..."
-                           style="border:none;height:50px;width:500px; display: none;" ><i class="fa fa-search"></i>
-                </div>
-            </div>
-        </div>
-    </section>
     <div class="content">
-        <div class="container" style="max-width: 1440px !important;">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
                     <form action="{{ env('BASE_URL') }}vendor/influencers-filter" id="fiter-infl">
@@ -703,7 +691,7 @@ input[type=number] {
                                 </div>
 
                                 <div class="btn-search text-center mt-2">
-                                    <button type="submit" class="btn btn-primary py-1 sidebar-submit" style="width: 140px; border-radius: 4px; font-weight: 600; background: #997045; border: 1px solid #997045; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 13px;">Apply Filters</button>
+                                    <button type="submit" class="btn btn-primary py-1 sidebar-submit" style="width: 140px; border-radius: 4px; margin-bottom: 2px; font-weight: 600; background: #997045; border: 1px solid #997045; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 13px;">Apply Filters</button>
                                 </div>
                             </div>
                         </div>

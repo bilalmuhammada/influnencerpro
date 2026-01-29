@@ -80,12 +80,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        @media (min-width: 1200px) {
-            .header-nav .container {
-                padding-left: 25px !important;
-                padding-right: 25px !important;
-            }
+            max-width: 1440px !important;
+            padding-left: 25px !important;
+            padding-right: 25px !important;
         }
     </style>
     <nav class="navbar navbar-expand-lg header-nav">
@@ -256,7 +253,12 @@
                 <!-- <li><a href="about-us.php">About us</a></li>
                 <li><a href="contact-us.php">Contact us</a></li> -->
                     @if(session()->missing('User'))
-                    <li class="has-submenu" style="margin-right: 10px;">
+                    <li style="margin-right: 10px;">
+                        <a href="{{ url('login') }}" class="log-btn">
+                             Login
+                        </a>
+                    </li>
+                    <li class="has-submenu">
                         <a href="#">Register<i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
@@ -264,11 +266,6 @@
                             <li><a href="{{ env('BASE_URL') . '/register?role=influencer' }}">As Influencer</a></li>
                             <li><a href="{{ env('BASE_URL') . '/register?role=brand' }}">As Brand</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="{{ url('login') }}" class="log-btn">
-                             Login
-                        </a>
                     </li>
 
                     @elseif(session()->get('role') != 'influencer')

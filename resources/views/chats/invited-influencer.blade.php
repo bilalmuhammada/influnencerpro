@@ -259,7 +259,7 @@ width: 195px !important;
     {{-- <br/> --}}
     <div class="container">
         <div class="col-md-12">
-            <div class="row" style="padding-left:25px;padding-right:25px;">
+            <div class="row" >
                 <div class="col-md-10">
                     <form action="{{ env('BASE_URL') }}chats/invited-influencers">
                         <div class="row">
@@ -283,13 +283,13 @@ width: 195px !important;
         </div>
     </div>
     <br/>
-    <div class="container mx-auto">
+    <div class="container">
         <div class="col-md-12">
-            <div class="row mx-auto">
+            <div class="row">
 
 
                   @forelse($influencers as $influencer)
-                    <div class="col-md-2 col-lg-2 col-xl-2" style="margin-left:13px;margin-right:20px;top:6px;">
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="top:6px;">
                         <div class="card avatar-one"
                              style="border:0px solid #997045;width:244px; padding: 0px;">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">

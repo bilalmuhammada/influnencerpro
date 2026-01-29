@@ -48,7 +48,7 @@
 }
 
     .emojionearea {
-    border-color: goldenrod !important;
+    border-color: #997045 !important;
     outline: 0;
   
     box-shadow: none  !important;
@@ -106,10 +106,18 @@
         margin-bottom: 2px;
     }
 
+    .chat-title.unread {
+        background-color: #eeffff !important;
+    }
+
     
     .user-info {
         flex-grow: 1;
     }
+    .badge-premium-green {
+   background-color: #dcfce7 !important;
+    color: #166534 !important;
+}
     
     .user-name {
         font-weight: bold;
@@ -184,7 +192,7 @@ input.form-control-search{
     margin-top: 7px  !important;
     margin-left: 21px  !important;
     width: 90% !important;
-    border:1px solid goldenrod !important;
+    border:1px solid #997045 !important;
     font-size: 12px !important;
   
 }
@@ -257,14 +265,14 @@ select::-ms-expand {
       
 }
 #checkbox{
-    margin-top: 7px;margin-left: 12px;
+    margin-top: 7px;margin-left: 14px;
 
 }
     </style>
 @section('content')
     <div class="content-chat"
          style="background-color:#eee;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 
 
@@ -317,7 +325,7 @@ select::-ms-expand {
                                     @foreach($chats as $chat)
                                    
                                         <a href="javascript:void(0);"
-                                           class="media chatActionBlock chat-title  @if($chat->unread_count) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                           class="media chatActionBlock chat-title @if($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
                                            style="display: flex;" 
                                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                            unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}"  >
@@ -359,7 +367,7 @@ select::-ms-expand {
                                                 </div>
 
                                                 <div style="display: flex; align-items: center; gap: 9px; font-size: 12px; color: #666;">
-                                                    <div class="badge bg-primary badge-pill unread-count"  
+                                                    <div class="badge  badge-premium-green  unread-count"  
                                                         style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }}; border-radius: 30px;margin-bottom: 2px;">
                                                         {{ $chat->unread_count }}
                                                     </div>
@@ -521,7 +529,7 @@ select::-ms-expand {
                                                 <button type="button" id="msg-send-btn" class="btn btn-primary msg-send-btn"
                                                 data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                 data-chat-id="{{ $chat->id }}"
-                                                style="position: absolute; right: 41px; top: 12px; background-color: transparent; border: none;">
+                                                style="position: absolute; right: 41px; top: 9px; background-color: transparent; border: none;">
                                             <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
                                                style="font-size: 30px; background-color: none;"></i>
                                         </button>
@@ -922,6 +930,7 @@ $(document).ready(function() {
                 },
                 success: function (response) {
                     $(selector).find('.unread-count').css('display', 'none');
+                    $(selector).removeClass('unread');
                 },
                 error: function (response) {
                     console.log('error');

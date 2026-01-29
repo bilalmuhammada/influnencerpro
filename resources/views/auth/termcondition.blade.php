@@ -5,85 +5,85 @@
             margin-top: 0px !important;
         }
         ::-webkit-scrollbar {
-  width: 6px; /* You can adjust this value based on your preference */
-}
+            width: 6px;
+        }
 
+        ul, ol {
+            color: #000;
+        }
 
-ul, ol{
-    /* width: 110%; */
-    color: #000;
-   
-}
+        a {
+            color: blue;
+        }
 
-a{
-    color: blue;
-}
-p{
-    width: 110%;
-    text-align: justify; 
-    color: #333;
-    }
+        p {
+            width: 100%;
+            text-align: justify; 
+            color: #333;
+        }
 
-/* Define the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background-color: #997045;
-  border-radius: 34px;
-}
+        ::-webkit-scrollbar-thumb {
+            background-color: #997045;
+            border-radius: 34px;
+        }
 
-/* Define the scrollbar track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .term-content-container {
+            max-width: 100% !important;
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            margin-top: 0px;
+        }
     </style>
     <div class="content">
-        <div class="container" style="margin-top: 0px;">
+        <div class="container term-content-container">
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-md-12">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
-                        <div class="modal-body">
-                            <div class="login-header ">
-                                <h3 class="text-center" style=" margin-left: 7rem;">Terms of Use</h3> 
-                               
+                        <div class="modal-body" style="padding: 0px;">
+                            <div class="login-header">
+                                <h3 class="text-center" style="margin-bottom: 20px;">Terms of Use</h3> 
                                 
-
-
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”), and Collabstr Ventures Inc. ("Company", “we”, “us”, or “our”), concerning your access to and use of the collabstr.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). The Site provides an online marketplace for the following goods, products, and/or services: marketing influence via social media platforms (the “Marketplace Offerings”). In order to help make the Site a secure environment for the purchase and sale of Marketplace Offerings, all users are required to accept and comply with these Terms of Use, including the User Agreement posted on the Site, which are incorporated into these Terms of Use. You agree that by accessing the Site and/or the Marketplace Offerings, you have read, understood, and agree to be bound by all of these Terms of Use. If you do not agree with all of these terms of use, then you are expressly prohibited from using the site and/or the marketplace offerings and you must discontinue use immediately.
                                 </p>
                                 
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms of Use at any time and for any reason. We will alert you about any changes by updating the “Last updated” date of these Terms of Use, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Terms of Use to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms of Use by your continued use of the Site after the date such revised Terms of Use are posted.
                                 </p>
                                 
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     The information provided on the Site is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Site from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
                                 </p>
                                 
                            
                                 
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     The Site is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the Site or use the Marketplace Offerings.
                                 </p>
                                 
                                 <h3>Intellectual Property Rights</h3>
                                 
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     Unless otherwise indicated, the Site and the Marketplace Offerings are our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the “Content”) and the trademarks, service marks, and logos contained therein (the “Marks”) are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws of the United States, international copyright laws, and international conventions. The Content and the Marks are provided on the Site “AS IS” for your information and personal use only. Except as expressly provided in these Terms of Use, no part of the Site or the Marketplace Offerings and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.
                                 </p>
                                 
-                                <p style="text-align: justify; width: 110%;"> 
+                                <p style="text-align: justify;"> 
                                     Provided that you are eligible to use the Site, you are granted a limited license to access and use the Site and to download or print a copy of any portion of the Content to which you have properly gained access solely for your personal, non-commercial use. We reserve all rights not expressly granted to you in and to the Site, the Content, and the Marks.
                                 </p>
                                 
 
 
                                 <h3>User Representations</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     By using the Site or the Marketplace Subscriptions & Offerings, you represent and warrant that:
 </p>
-<ul style="text-align: justify; width: 110%;list-style-type: none;">
+<ul style="text-align: justify;list-style-type: none;">
     <li>(1) all registration information you submit will be true, accurate, current, and complete;</li>
     <li>(2) you will maintain the accuracy of such information and promptly update such registration information as necessary;</li>
     <li>(3) you have the legal capacity and you agree to comply with these Terms of Use;</li>
@@ -92,52 +92,52 @@ p{
     <li>(6) you will not use the Site for any illegal or unauthorized purpose;</li>
     <li>(7) your use of the Site or the Marketplace Offerings will not violate any applicable law or regulation.</li>
 </ul>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site (or any portion thereof).
 </p>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     You may not use the Site or the Marketplace Offerings for any illegal or unauthorized purpose nor may you, in the use of Marketplace Offerings, violate any laws. Among unauthorized Marketplace Offerings are the following: intoxicants of any sort; illegal drugs or other illegal products; alcoholic beverages; games of chance; and pornography or graphic adult content, images, or other adult products. Postings of any unauthorized products or content may result in immediate termination of your account and a lifetime ban from use of the Site.
 </p>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     We are a service provider and make no representations as to the safety, effectiveness, adequacy, accuracy, availability, prices, ratings, reviews, or legality of any of the information contained on the Site or the Marketplace Offerings displayed or offered through the Site. You understand and agree that the content of the Site does not contain or constitute representations to be reasonably relied upon, and you agree to hold us harmless from any errors, omissions, or misrepresentations contained within the Site’s content. We do not endorse or recommend any Marketplace Offerings and the Site is provided for informational and advertising purposes only.
 </p>
 
 <h3>User Registration</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     You may be required to register with the Site in order to access the Marketplace Offerings. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene, or otherwise objectionable.
 </p>
 
 <h3>Marketplace Subscriptions & Offerings</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     We reserve the right to limit the quantities of the Marketplace Subscriptions & Offerings offered or available on the Site. All descriptions or pricing of the Marketplace Offerings are subject to change at any time without notice, at our sole discretion. We reserve the right to discontinue any Marketplace Subscriptions & Offerings at any time for any reason. We do not warrant that the quality of any of the Marketplace Subscriptions & Offerings purchased by you will meet your expectations or that any errors in the Site will be corrected.
 </p>
 
 <h3>Purchases & Payment</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     You agree to provide current, complete, and accurate purchase and account information for all purchases of the Marketplace Subscriptions & Offerings made via the Site. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that we can complete your transactions and contact you as needed. Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in U.S. dollars.
 </p>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     You agree to pay all charges at the prices then in effect for your purchases and any applicable shipping fees, and you authorize us to charge your chosen payment provider for any such amounts upon placing your order. If your order is subject to recurring charges, then you consent to our charging your payment method on a recurring basis without requiring your prior approval for each recurring charge, until such time as you cancel the applicable order. We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment.
 </p>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     We reserve the right to refuse any order placed through the Site. We may, in our sole discretion, limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same payment method, and/or orders that use the same billing or shipping address. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers, or distributors.
 </p>
 
 <h3>Refund Policy</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     All amounts posted are final and will not be refunded once payment is made.
 </p>
 
 <h3>Prohibited Activities</h3>
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.
 </p>
 
-<p style="text-align: justify; width: 110%;">
+<p style="text-align: justify;">
     As a user of the Site, you agree not to:
 </p>
 
-<ul style="text-align: justify;margin-bottom:7px; width: 110%;list-style-type: none;">
+<ul style="text-align: justify;margin-bottom:7px;list-style-type: none;">
     <li><strong>1.</strong> Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
     <li><strong>2.</strong> Make any unauthorized use of the Marketplace Subscriptions & Offerings, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
     <li><strong>3.</strong> Circumvent, disable, or otherwise interfere with security-related features of the Site, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the Site and/or the Content contained therein.</li>
@@ -162,11 +162,11 @@ p{
     <li><strong>20.</strong> Use the Site in a manner inconsistent with any applicable laws or regulations.</li>
 </ul>
 <h3 style="margin-top:18px;margin-bottom: 18px">User Generated Contributions</h3>
-    <p style="text-align: justify; width: 110%;">The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
+    <p style="text-align: justify;">The Site may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Site, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Site and the Marketplace Offerings and through third-party websites. As such, any Contributions you transmit may be treated as non-confidential and non-proprietary.
     </p> 
       <h6 style="margin-top:10px; font-weight: bolder;">When you create or make available any Contributions, you thereby represent and warrant that: </h6>
 
-    <ul style="list-style-type: none;text-align: justify; width: 110%;">
+     <ul style="list-style-type: none;text-align: justify;">
         <li>1. The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
         <li>2. You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Site, and other users of the Site to use your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
         <li>3. You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Site and these Terms of Use.</li>
@@ -217,7 +217,7 @@ p{
         If you access the Marketplace Offerings via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license contained in these Terms of Use.
     </li>
     <li>You shall not:
-        <ul style="list-style-type: none; text-align: justify; width: 110%;">
+         <ul style="list-style-type: none; text-align: justify;">
             <li>(1) decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the application;</li>
             <li>(2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the application;</li>
             <li>(3) violate any applicable laws, rules, or regulations in connection with your access or use of the application;</li>
@@ -226,7 +226,7 @@ p{
             <li>(6) make the application available over a network or other environment permitting access or use by multiple devices or users at the same time;</li>
             <li>(7) use the application for creating a product, service, or software that is, directly or indirectly, competitive with or in any way a substitute for the application.</li>
             <li>(8) use the application to send automated queries to any website or to send any unsolicited commercial e-mail; or</li>
-    <li style=" width: 91%;">(9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications,
+    <li>(9) use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications,
      accessories, or devices for use with the application.</li>
         </ul>
     </li>
@@ -248,12 +248,12 @@ p{
 <h3 style="margin-top:18px;margin-bottom: 18px">Social Media</h3>
 <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
 
-<ul style="list-style-type: none;text-align: justify; width: 110%;"> 
+ <ul style="list-style-type: none;text-align: justify;"> 
     <li>(1) providing your Third-Party Account login information through the Site; or</li>
     <li>(2) allowing us to access your Third-Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third-Party Account. You represent and warrant that you are entitled to disclose your Third-Party Account login information to us and/or grant us access to your Third-Party Account, without breach by you of any of the terms and conditions that govern your use of the applicable Third-Party Account, and without obligating us to pay any fees or making us subject to any usage limitations imposed by the third-party service provider of the Third-Party Account.</li>
     <li>By granting us access to any Third-Party Accounts, you understand that:</li>
     <ul style="list-style-type: none;">
-        <li style="width: 91%;">(1) We may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account (the “Social Network Content”) so that it is available on and through the Site via your account, including without limitation any friend lists;</li>
+        <li>(1) We may access, make available, and store (if applicable) any content that you have provided to and stored in your Third-Party Account (the “Social Network Content”) so that it is available on and through the Site via your account, including without limitation any friend lists;</li>
         <li>(2) We may submit to and receive from your Third-Party Account additional information to the extent you are notified when you link your account with the Third-Party Account.</li>
     </ul>
     <li>Depending on the Third-Party Accounts you choose and subject to the privacy settings that you have set in such Third-Party Accounts, personally identifiable information that you post to your Third-Party Accounts may be available on and through your account on the Site.</li>
@@ -306,7 +306,7 @@ p{
 <p>
     We reserve the right, but not the obligation, to:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(1) monitor the Site for violations of these Terms of Use;</li>
     <li>(2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Terms of Use, including without limitation, reporting such user to law enforcement authorities;</li>
     <li>(3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;</li>
@@ -328,7 +328,7 @@ p{
 <p>
     All Notifications should meet the requirements of DMCA 17 U.S.C. § 512(c)(3) and include the following information:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(1) A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
     <li>(2) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Site are covered by the Notification, a representative list of such works on the Site;</li>
     <li>(3) identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material;</li>
@@ -344,7 +344,7 @@ p{
 <p>
     To be an effective Counter Notification under the DMCA, your Counter Notification must include substantially the following:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(1) identification of the material that has been removed or disabled and the location at which the material appeared before it was removed or disabled;</li>
     <li>(2) a statement that you consent to the jurisdiction of the Federal District Court in which your address is located, for any judicial district in which we are located;</li>
     <li>(3) a statement that you will accept service of process from the party that filed the Notification or the party's agent;</li>
@@ -382,7 +382,7 @@ p{
 <p>
     To the full extent permitted by law:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(a) no arbitration shall be joined with any other proceeding;</li>
     <li>(b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures;</li>
     <li>(c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</li>
@@ -393,7 +393,7 @@ p{
 <p>
     The Parties agree that the following Disputes are not subject to the above provisions concerning binding arbitration:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party;</li>
     <li>(b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use;</li>
     <li>(c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</li>
@@ -408,7 +408,7 @@ p{
 <p>
     The site and the marketplace Subscriptions & offerings are provided on an as-is and as-available basis. You agree that your use of the site and our services will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the site and the marketplace offerings and your use thereof, including, without limitation, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the site’s content or the content of any websites linked to the site and we will assume no liability or responsibility for any:
 </p>
-<ul style="list-style-type: none; text-align: justify; width: 110%;">
+<ul style="list-style-type: none; text-align: justify;">
     <li>(1) errors, mistakes, or inaccuracies of content and materials,</li>
     <li>(2) personal injury or property damage, of any nature whatsoever, resulting from your access to and use of the site,</li>
     <li>(3) any unauthorized access to or use of our secure servers and/or any and all personal information and/or financial information stored therein,</li>
@@ -429,7 +429,7 @@ p{
 <p>
     You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of:
 </p>
-<ul style="list-style-type: none;  text-align: justify; width: 110%;">
+<ul style="list-style-type: none;  text-align: justify;">
     <li>(1) your Contributions;</li>
     <li>(2) use of the Marketplace Offerings;</li>
     <li>(3) breach of these Terms of Use;</li>

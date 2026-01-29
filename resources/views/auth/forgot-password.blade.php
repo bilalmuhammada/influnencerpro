@@ -16,7 +16,12 @@
 .form-focus .focus-label{
     left: 140px !important;
 }
-
+.login-color{
+    color: blue !important;
+}
+.login-color:hover{
+    color: #997045 !important;
+}
 .form-group {
     text-align: center; /* Center align label and input */
 }
@@ -41,20 +46,20 @@
                             <div class="login-right">
                                 <div class="login-header text-center">
                                     <h3>Reset Password</h3>
-                                    <p>Enter your email to reset your new password</p>
+                                    <p style="margin-bottom: 40px !important;">Enter your email</p>
                                 </div>
                                 <!--<div class="alert alert-primary show-msg" role="alert" style="display: none"></div>-->
                                 <form id="forgot-password-form">
-                                    <div class="form-group text-center form-focus">
+                                    <div class="form-group text-center form-focus" style="margin-bottom: 40px !important;">
                                         <input type="email" class="form-control floating email" name="email">
                                         <div class="invalid-feedback">
                                             Please provide a valid email.
                                         </div>
                                         <label class="focus-label">Email</label>
                                     </div>
-                                    <button class="btn-block btn-lg t-btn reset-btn" type="submit" style="margin-left: 18pc;">Reset</button>
+                                    <button class="btn-block btn-lg t-btn reset-btn" type="submit" style="margin-bottom: 24px; border-radius: 4px !important;">Reset</button>
                                     <div class="row">
-                                        <div class="col-6 text-end dont-have" style="margin-left: 84px;">Login <a style="margin-left: 20px;" href="{{ env('BASE_URL') }}/login">Click here</a></div>
+                                        <div class="col-6 text-end dont-have " style="margin-left: 70px;">Login <a style="margin-left: 20px; " class="login-color" href="{{ env('BASE_URL') }}/login">Click here</a></div>
                                     </div>
                                 </form>
                             </div>

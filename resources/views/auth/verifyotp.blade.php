@@ -12,7 +12,7 @@
 
     .otp-container {
         text-align: center;
-        padding: 60px 30px;
+        padding: 100px 30px;
         background: #fff;
     }
 
@@ -72,13 +72,13 @@
     .resend {
         font-size: 15px;
         margin-top: 30px;
-        color: #997045; /* Logo Gold */
+        color: black; /* Logo Gold */
     }
 
     .resend a {
         color: blue; /* Logo Gold */
         text-decoration: none;
-        font-weight: bold;
+        font-weight: normal;
         margin-left: 5px;
     }
 
