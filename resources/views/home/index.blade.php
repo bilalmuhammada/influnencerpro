@@ -49,7 +49,7 @@
 
 
   .headingstyle{
-    padding:10px;
+    padding:10px 8px;
     border-radius:2%;
     width:100%;
    
