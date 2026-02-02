@@ -55,7 +55,7 @@
             background-color: transparent !important;
             border: none !important;
             border-radius: 20px !important;
-            padding: 0 0px !important;
+            padding: 0 4px !important;
             margin: 0px 3px 0 -8px !important;
             display: flex !important;
             align-items: center !important;
