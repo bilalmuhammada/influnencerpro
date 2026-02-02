@@ -11,8 +11,7 @@
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-    .social-wrapper:hover .shaking, 
-    .d-flex:hover .shaking {
+    .shaking:hover {
         animation: shake 2s linear infinite;
     }
    @keyframes shake {
@@ -53,11 +52,11 @@
             font-size: 14px;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
-            background-color: rgba(5, 4, 170, 0.04) !important;
+            background-color: transparent !important;
             border: none !important;
             border-radius: 20px !important;
             padding: 0 0px !important;
-            margin: 0px 3px 0 0 !important;
+            margin: 0px 3px 0 -8px !important;
             display: flex !important;
             align-items: center !important;
             color: #0504aa !important;
@@ -69,7 +68,7 @@
             position: relative !important;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
-            background-color: rgba(5, 4, 170, 0.08) !important;
+            background-color:   transparent !important;
         }
         .font_label {
             padding-top: 0px !important;
@@ -213,14 +212,14 @@ color: #0504aa !important;
 
 .search-filter .card-header {
     background: #f2e49c !important;
-    padding: 4px 20px !important;
-    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 4px 18px !important;
+    border-bottom: 1px solid #f2e49c !important;
 }
 
 .search-filter .card-title {
     color: #1a1a1a;
     font-weight: 700 !important;
-    font-size: 15px !important;
+    font-size: 14px !important;
     letter-spacing: 0.5px;
 }
 
@@ -243,7 +242,7 @@ color: #0504aa !important;
     color: blue !important;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    margin-bottom: 4px !important;
+    margin-bottom: 0px !important;
     padding-top: 0 !important;
 }
 
@@ -318,7 +317,7 @@ input[type=number] {
     margin-left:0px;
     background-color: #fcfdfe !important;
     padding: 0 12px !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: #1e293b !important;
     display: flex !important;
     align-items: center !important;
@@ -373,9 +372,9 @@ input[type=number] {
     font-size: 12px !important;
     color: #0504aa !important;
     text-decoration: none;
-    padding: 0px 12px;
+    padding: 0px 0px;
     border-radius: 6px;
-    background: rgba(5, 4, 170, 0.05);
+    
     transition: all 0.2s ease;
 }
 
@@ -403,7 +402,7 @@ input[type=number] {
                                                               
                                 <div class="filter-widget">
                                     <label class="font_label">Search</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Search by name..." name="search">
+                                    <input type="text" class="form-control mb-1" placeholder="Search..." name="search">
                                     
                                     <label class="font_label">Country</label>
                                     @php $countries = getCountries()->sortBy('name'); @endphp
@@ -417,13 +416,13 @@ input[type=number] {
                                         @endforelse
                                     </select>
 
-                                    <label class="font_label">City</label>
+                                    <label class="font_label mt-1">City</label>
                                     <select name="city_id[]" class="form-control selectMul" multiple id="city_id">
                                     </select>
                                 </div>
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Category</label>
+                                    <label class="font_label mt-1">Category</label>
                                     @php $categories = getCategories()->sortBy('name');  @endphp
                                     <select class="form-control selectMul" name="category_id[]" multiple>
                                         @forelse($categories as $category)
@@ -436,7 +435,7 @@ input[type=number] {
                                 </div>
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Platforms</label>
+                                    <label class="font_label mt-1">Platforms</label>
                                     <div class="row g-2">
                                         @php
                                             $social_platforms = [
@@ -466,7 +465,7 @@ input[type=number] {
 
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Followers</label>
+                                    <label class="font_label mt-1">Followers</label>
                                     <div class="row g-2">
                                         @php
                                             $follower_ranges = [
@@ -492,7 +491,7 @@ input[type=number] {
                                 </div>
 
                                 <div class="filter-widget">
-                                    <label class="font_label">Language</label>
+                                    <label class="font_label mt-1">Language</label>
                                     @php $spoken_languages = getlanguge(); @endphp
                                     <select class="form-control selectMul" name="spoken_language_ids[]" multiple="multiple" id="spoken_language_sidebar">
                                         @forelse($spoken_languages as $language)
@@ -519,11 +518,10 @@ input[type=number] {
 
                                     <label class="font_label mt-1">Nationality</label>
                                     @php $nationalities = getnationality(); @endphp
-                                    <select class="form-control selectMul" name="country_id">
-                                        <option value="" disabled hidden selected>Select Nationality</option>
+                                    <select class="form-control selectMul" name="nationality_ids[]" multiple>
                                         @forelse($nationalities as $country)
                                             <option value="{{ $country->id }}"
-                                                    @if(request()->country_id == $country->id) selected @endif>{{ $country->name }}</option>
+                                                    @if(isset(request()->nationality_ids) && in_array($country->id, request()->nationality_ids)) selected @endif>{{ $country->name }}</option>
                                         @empty
                                             <option value="">No Result Found</option>
                                         @endforelse
@@ -533,9 +531,9 @@ input[type=number] {
                                 <div class="filter-widget">
                                     
                                     
-                                    <div class="row g-2 mb-3">
-                                        <div class="col-6">
-                                            <label class="font_label" >Gender</label>
+                                    <div class="row ">
+                                        <div class="col-12 ">
+                                            <label class="font_label mt-1" >Gender</label>
                                             <div class="d-flex flex-column gap-1 mt-1">
                                                 <div class="d-flex align-items-center justify-content-between w-100">
                                                     <label class="mb-0 cursor-pointer" for="check_male" style="font-size: 13px;">Male</label>
@@ -547,8 +545,8 @@ input[type=number] {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-6">
-                                            <label class="font_label">Age Range</label>
+                                        <div class="col-12">
+                                            <label class="font_label mt-1">Age Range</label>
                                             <div class="d-flex gap-2">
                                                 <input type="number" class="form-control form-control-sm" name="age1" placeholder="Min" value="{{ request()->age1 }}">
                                                 <input type="number" class="form-control form-control-sm" name="age" placeholder="Max" value="{{ request()->age }}">
@@ -556,9 +554,9 @@ input[type=number] {
                                         </div>
                                     </div>
 
-                                    <div class="row g-2 mb-3">
-                                        <div class="col-6">
-                                            <label class="font_label">Hair Type</label>
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <label class="font_label mt-1">Hair Type</label>
                                             <select name="hair_types[]" class="form-control selectMul" multiple="multiple">
                                                 <option value="afro">Afro</option>
                                                 <option value="bald">Bald</option>
@@ -575,8 +573,8 @@ input[type=number] {
 
                                 <!-- <div class="filter-widget"> -->
 
-                                        <div class="col-6">
-                                            <label class="font_label">Hair Color</label>
+                                        <div class="col-12 ">
+                                            <label class="font_label mt-1">Hair Color</label>
                                             <select name="hair_color[]" class="form-control selectMul" multiple="multiple">
                                                 <option value="balayage">Balayage</option> 
                                                 <option value="black">Black</option>
@@ -595,9 +593,9 @@ input[type=number] {
                                     </div>
 
 
-                                    <div class="row g-2 mb-2">
-                                        <div class="col-6">
-                                            <label class="font_label">Eye Color</label>
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <label class="font_label mt-1">Eye Color</label>
                                             <select name="eye_color[]" class="form-control selectMul" multiple="multiple">
                                                 @php
                                                     $eye_colors = [
@@ -621,14 +619,14 @@ input[type=number] {
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-6">
-                                            <label class="font_label">Cloth Size</label>
+                                        <div class="col-12 ">
+                                            <label class="font_label mt-1">Cloth Size</label>
                                             <select name="clothsize[]" class="form-control selectMul" multiple="multiple">
                                                 @php
                                                     $cloth_sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
                                                 @endphp
                                                 @foreach($cloth_sizes as $size)
-                                                    <option value="{{ $size }}" {{ in_array($size, request()->clothsize ?? []) ? 'selected' : '' }}>{{ $size }}</option>
+                                                     <option value="{{ $size }}" {{ in_array($size, request()->clothsize ?? []) ? 'selected' : '' }}>{{ $size }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -636,33 +634,33 @@ input[type=number] {
                                  
 
                                 
-                                    <div class="row g-2 mb-2">
+                                    <div class="row  ">
                                         <div class="col-4">
-                                            <label class="font_label">Height (cm)</label>
+                                            <label class="font_label mt-1">Height (cm)</label>
                                             <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
                                         </div>
                                         <div class="col-4">
-                                            <label class="font_label">Weight (kg)</label>
+                                            <label class="font_label mt-1">Weight (kg)</label>
                                             <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
                                         </div>
                                         <div class="col-4">
-                                            <label class="font_label">Shoes (EU)</label>
+                                            <label class="font_label mt-1">Shoes (EU)</label>
                                             <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
                                         </div>
                                     </div>
 
-                                    <div class="row g-2 mb-2">
+                                    <div class="row ">
                                         <div class="col-6">
-                                            <label class="font_label">Tattoo</label>
-                                            <select name="tattoo" class="form-control selectMul">
+                                            <label class="font_label mt-1">Tattoo</label>
+                                            <select name="tattoo" class="form-control mySelect">
                                                 <option value="">Any</option>
                                                 <option value="yes" {{ request()->tattoo == 'yes' ? 'selected' : '' }}>Yes</option>
                                                 <option value="no" {{ request()->tattoo == 'no' ? 'selected' : '' }}>No</option>
                                             </select>
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label">Collaboration</label>
-                                            <select name="is_collaboration" class="form-control selectMul">
+                                            <label class="font_label mt-1">Collaboration</label>
+                                            <select name="is_collaboration" class="form-control mySelect">
                                                 <option value="">Any</option>
                                                 <option value="1" {{ request()->is_collaboration == '1' ? 'selected' : '' }}>Yes</option>
                                                 <option value="0" {{ request()->is_collaboration == '0' ? 'selected' : '' }}>No</option>
@@ -670,15 +668,15 @@ input[type=number] {
                                         </div>
                                     </div>
 
-                                    <div class="mb-2">
-                                        <label class="font_label">Art Skills</label>
+                                    <div class="mb-1">
+                                        <label class="font_label mt-1">Art Skills</label>
                                         <select class="form-control selectMul" name="art[]" multiple>
                                             @foreach(getArts()->sortBy('name') as $art)
                                                 <option value="{{ $art->key }}" {{ in_array($art->key, request()->art ?? []) ? 'selected' : '' }}>{{ $art->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="row g-2 mb-1">
+                                    <div class="row  mb-1">
                                         <div class="col-6">
                                             <label class="font_label">Price Min ($)</label>
                                             <input type="number" name="min_price" class="form-control form-control-sm" placeholder="Min" value="{{ request()->min_price }}">
@@ -690,8 +688,8 @@ input[type=number] {
                                     </div>
                                 </div>
 
-                                <div class="btn-search text-center mt-2">
-                                    <button type="submit" class="btn btn-primary py-1 sidebar-submit" style="width: 140px; border-radius: 4px; margin-bottom: 2px; font-weight: 600; background: #997045; border: 1px solid #997045; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 13px;">Apply Filters</button>
+                                <div class="btn-search text-center mt-3 mb-3">
+                                    <button type="submit" class="btn btn-primary py-1 sidebar-submit" style="width: 90px; border-radius: 4px; margin-bottom: 2px; font-weight: 600; background: #997045; border: 1px solid #997045; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 15px;">Apply</button>
                                 </div>
                             </div>
                         </div>
@@ -699,7 +697,7 @@ input[type=number] {
                 </div>
 
                 <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="col-md-10 mx-auto text-center" style="margin-top: -15px;">
+                    <div class="col-md-10 mx-auto text-center" >
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">

@@ -243,7 +243,7 @@
         }
 
         .main-nav > li {
-            margin-right: 0px !important;
+            margin-right: 10px !important;
         }
         .main-nav > li:last-child {
             margin-right: 0 !important;

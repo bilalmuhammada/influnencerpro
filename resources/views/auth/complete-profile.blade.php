@@ -13,9 +13,10 @@
     align-items: center !important;
     background-color: white !important;
 }
-.select2-container--default .select2-selection--multiple:focus,.select2-container--default .select2-selection--multiple:active {
+.select2-container--default .select2-selection--multiple:focus,.select2-container--default .select2-selection--multiple:active,
+.form-group.form-focus.focused .select2-container--default .select2-selection--multiple {
     min-height: 52px !important;
-    border: 1px solid blue !important;
+    border: 1px solid #997045 !important;
     border-radius: 4.8px !important;
     padding: 2px 8px !important;
     display: flex !important;
@@ -99,7 +100,7 @@ margin-top: 18px !important;
 .dropzone-container {
     border: 2px solid #ccc;
     padding: 0px 6px;
-    margin-left: 29px;
+    margin: 0 auto;
     /* text-align: center; */
     margin-top: 0px;
   }
@@ -117,8 +118,8 @@ margin-top: 18px !important;
   #select2--results{
 min-height: 70px !important;
   }
-  .dropdowndecoration:hover {
-        border: 1px solid blue!important;
+  .dropdowndecoration:hover,.dropdowndecoration:focus-within {
+        border: 1px solid #0504aa!important;
 }
 
  .dropdowndecoration {
@@ -164,7 +165,7 @@ min-height: 70px !important;
     line-height: 18px;
 }
         .dz-preview .dz-remove:hover {
-            color: blue;
+            color: #0504aa;
 
         }
 
@@ -184,7 +185,7 @@ height: 160px;
     border-color: #997045 !important;
   }
   .select2-search__field:focus{
-    border-color: blue !important;
+    border-color: #0504aa !important;
   }
   #select2--container{
     padding-top: 16px;
@@ -209,8 +210,9 @@ height: 160px;
 font-size: 14px;
 font-weight: bold;
 }
-  .inputbg:focus,.floating:focus {
-    border: 1px solid blue !important;
+  .inputbg:hover,.inputbg:focus-within,.floating:hover, .floating:focus-within,
+  .form-group.form-focus.focused-within .form-control {
+    border: 1px solid #0504aa !important;
 }
 
 
@@ -246,7 +248,7 @@ font-weight: bold;
     left: 12px !important;
     font-size: 15px !important;
     font-weight: 500 !important;
-    color: #997045 !important;
+    color: #0504aa !important;
     background: transparent !important;
     z-index: 15 !important;
     pointer-events: none !important;
@@ -322,18 +324,25 @@ width: 210px !important;
 .form-group.form-focus:has(.datepicker) .focus-label {
     color: #0504aa !important;
 }
-    #my-dropzone .dz-preview {
+    #my-Dropzone .dz-preview {
             display: inline-block;
-            
+            margin: 5px !important;
         }
-        #my-dropzone .dz-image {
-            width: 185px;
-            height: 185px;
+        #my-Dropzone .dz-image {
+            width: 160px !important;
+            height: 160px !important;
         }
-        #my-dropzone .dz-details {
+       #my-Dropzone {
+            display: flex !important;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        #my-Dropzone .dz-details {
             display: none;
         }
-        #my-dropzone .dz-message {
+        #my-Dropzone .dz-message {
             text-align: center;
             margin: 20px;
         }
@@ -386,8 +395,9 @@ display: none !important;
     /* height: 12px; */
 
 /* } */ 
-.select2-container--default:focus .select2-selection--multiple:focus{
-    border: 1px solid blue !important;
+.select2-container--default:hover .select2-selection--multiple,
+.form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
+    border: 1px solid #0504aa !important;
 }
 .select2-container--default .select2-selection--multiple{
     border: 1px solid #997045 !important;
@@ -419,7 +429,7 @@ display: none !important;
     <div class="container-fluid" style="border:0px solid red;padding-top:60px;">
         <hr>
         <div class="row justify-content-center" style="border:0px solid red;">
-            <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0" style="border:0px solid red;    width: 58%;">
+            <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0" style="border:0px solid red; width: 100%; max-width: 850px; float: none; display: inline-block;">
                 <div class="card px-0 pb-0 " style="border:0px solid red;">
                     {{-- <h2 id="heading">Profile</h2> --}}
                     <!-- <p>Fill all form field to go to next step</p> -->
@@ -1003,7 +1013,7 @@ display: none !important;
                                             
                                             <input type="price" id="price" class="form-control floating" name="price"
                                                    placeholder=""
-                                                   value="{{ isset($influencer_professional_detail->price) ? rtrim(rtrim(number_format($influencer_professional_detail->price, 2, '.', ''), '0'), '.') : '' }}">
+                                                   value="{{ isset($influencer_professional_detail->price) ? number_format($influencer_professional_detail->price, 0, '.', ',') : '' }}">
 
                                                    <label for="username" class="focus-label" style="margin-left:0px !important;">Price $</label>
                                         </div>
@@ -1291,7 +1301,7 @@ display: none !important;
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
-                                <div class="row" style="padding: 2px 47px 2px 20px">
+                                <div class="row" style="padding: 2px 20px">
                                    
                                     <div class="col-md-12">
                                         <label for="" style="color:#0504aa;font-weight:bold;"> Instagram URL</label>
@@ -1301,8 +1311,8 @@ display: none !important;
                                                style=" margin-bottom: 0px;"/>
                                     </div>
                                 </div>
-                                <div class="row" style="padding: 0 47px 0 20px">
-                                    <div class="col-md-12 text-center" style="margin-left: 12px;margin-top: 6px;">
+                                <div class="row" style="padding: 0 20px">
+                                    <div class="col-md-12 text-center" style="margin-top: 6px;">
                                         <label for="fileInput0" class="fileInput0" style="font-weight:bold; cursor: pointer;"> 
                                             Or Upload & Drop Images Here
                                         </label>
@@ -1405,11 +1415,9 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
             });
 
             $('#price').on('input', function() {
-                let value = $(this).val();
-                this.value = this.value.replace(/[^0-9]/g, '');
-                if (value.includes('.')) {
-                    $(this).val(Math.floor(value));
-                }
+                let value = $(this).val().replace(/[^0-9]/g, '');
+                let formatted = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                $(this).val(formatted);
             });
         });
 
@@ -1628,13 +1636,9 @@ if (response.data.length > 0) {
             show_img();
             show_img('#image0', '#logo0');
             var maxSelections = 3;
-            $('.category_id').on('select2:select', function (e) {
-                // Check if the maximum number of selections is reached
-                if ($('.category_id').val().length > maxSelections) {
-                    // Remove the last selected option
-                    $('.category_id').find('option:selected').last().prop('selected', false);
-                    // Trigger the change event to update Select2
-                    $('.category_id').trigger('change');
+            $('#category_ids, #spoken_language_ids, #arts').on('select2:selecting', function (e) {
+                if ($(this).val() && $(this).val().length >= maxSelections) {
+                    e.preventDefault();
                 }
             });
             // $('.feature-select2').select2();
@@ -1654,16 +1658,16 @@ if (response.data.length > 0) {
   });
             $('#category_ids').select2({
                 allowClear: true,
-                maximumSelectionLength: 3
+                // Result limit handled by event listener to keep items visible
             });
             $('#spoken_language_ids').select2({
                 allowClear: true,
                 width: '100%',
-                maximumSelectionLength: 3
+                // Result limit handled by event listener to keep items visible
             });
             $('#arts').select2({
                 allowClear: true,
-                maximumSelectionLength: 3
+                // Result limit handled by event listener to keep items visible
             });
             
             
