@@ -242,6 +242,11 @@
             padding: 6px 9px !important;
         }
 
+        .select2-results__option[aria-selected="true"] {
+            color: #0504aa !important;
+            font-weight: 500 !important;
+        }
+
         .main-nav > li {
             margin-right: 10px !important;
         }

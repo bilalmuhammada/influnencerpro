@@ -211,7 +211,7 @@ function getCitiesByCountry(country_id) {
                 $("#city_id").empty();
                 
                
-                $("#city_id").append('<option  value=""> All Cities </option>');
+                $("#city_id").append('<option  value=""> No Data </option>');
 
                 if (states) {
                     $.each(states, function (index, value) {
@@ -221,7 +221,7 @@ function getCitiesByCountry(country_id) {
             } else {
                 
                 $("#city_id").empty();
-                $("#city_id").append('<option  value=""> All Cities </option>');
+                $("#city_id").append('<option  value=""> No Data </option>');
             }
             
         }

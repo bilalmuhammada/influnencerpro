@@ -74,7 +74,7 @@ class MobileApiController extends Controller
 
         return response()->json([
             'status' => false,
-            'message' => 'No Results Found'
+            'message' => 'No Data'
         ]);
     }
 

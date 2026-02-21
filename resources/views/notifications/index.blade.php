@@ -41,19 +41,26 @@
     tr:hover {
         background-color: #efffff !important;
     }
+    tr:hover .notif-desc-text {
+        color: #0504aa !important;
+    }
+
 
     .gold-ellipsis {
         color: blue !important;
+        font-size: 18px !important;
     }
+
 
     .gold-ellipsis:hover {
         color: #997045 !important;
     }
 
     .dropdown-item-compact:hover {
-        background-color: aliceblue !important;
-        color: #997045 !important;
+        background-color: transparent !important;
+        color: #0504aa !important;
     }
+
 
     .dropdown-item-compact {
         padding: 0px 8px !important;
@@ -93,7 +100,7 @@
         background-color: #fff !important;
         box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25) !important;
         margin-bottom: 30px !important;
-        padding: 1rem !important;
+        padding: 0rem 1rem !important;
     }
 
     .table-avatar {
@@ -149,8 +156,9 @@
                                     </a>
                                     <a href="#" class="notif-desc-text">
                                         {{ $notification->data }}
-                                        <span class="d-block text-muted" style="font-size: 11px; margin-top: 15px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
+                                        <span class="d-block text-muted" style="font-size: 11px; margin-top: 12px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
                                     </a>
+
                                 </div>
                             </td>
                             <td>{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</td>

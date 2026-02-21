@@ -231,9 +231,14 @@ font-weight: bold;
 }
 .form-control::placeholder {
     color: #adadad !important;
-    opacity: 1 !important;
+    opacity: 0 !important;
     font-weight: 400 !important;
     font-size: 14px !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.form-control:focus::placeholder {
+    opacity: 1 !important;
 }
 
 /* Dynamic Floating Labels */
@@ -725,7 +730,7 @@ display: none !important;
                                                     <option value="{{ $city->id }}" {{ $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             @else
-                                                <option value="" hidden disabled>Select City</option>
+                                                <option value="" hidden disabled></option>
                                             @endif
                                             </select>
                                         <label for="username" class="focus-label" >Based City</label>
@@ -773,7 +778,7 @@ display: none !important;
                                                         value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
-                                         <label for="username" class="focus-label">Traveling Country &nbsp;&nbsp;1</label>
+                                         <label for="username" class="focus-label">Traveling Country &nbsp;1</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -787,7 +792,7 @@ display: none !important;
                                                     <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_one_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             @else
-                                                <option value="" hidden disabled>Select City</option>
+                                                <option value="" hidden disabled></option>
                                             @endif
                                             </select>
                                            
@@ -835,7 +840,7 @@ display: none !important;
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                         @endforeach
                                     </select>
-                                            <label for="username" class=" focus-label">Traveling Country &nbsp;&nbsp;2</label>
+                                            <label for="username" class=" focus-label">Traveling Country &nbsp;2</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -849,7 +854,7 @@ display: none !important;
                                                     <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             @else
-                                                <option value="" hidden disabled>Select City</option>
+                                                <option value="" hidden disabled></option>
                                             @endif
                                             </select>
                                             <label for="username" class="focus-label"  >Traveling City</label>
@@ -895,7 +900,7 @@ display: none !important;
                                                 value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                         @endforeach
                                     </select>
-                                           <label for="username" class=" focus-label">Traveling Country &nbsp;&nbsp;3</label>
+                                           <label for="username" class=" focus-label">Traveling Country &nbsp;3</label>
                                         </div>
                                     </div>
 
@@ -914,7 +919,7 @@ display: none !important;
                                                     <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
                                                 @endforeach
                                             @else
-                                                <option value="" hidden disabled>Select City</option>
+                                                <option value="" hidden disabled></option>
                                             @endif
                                             </select>
                                                 <label for="username" class="focus-label" >Traveling City</label>
@@ -1586,7 +1591,7 @@ $(document).on('click', '.submit-btn', function () {
                         
                       
                         var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
-                        cityDropdown.append('<option value="" selected disabled>Select City</option>');
+                        cityDropdown.append('<option value="" selected disabled></option>');
 
 
 if (response.data.length > 0) {

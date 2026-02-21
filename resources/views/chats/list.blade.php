@@ -189,7 +189,7 @@ input.form-control-search:focus {
 
 } 
 input.form-control-search{
-    margin-top: 7px  !important;
+    margin-top: 0px  !important;
     margin-left: 21px  !important;
     width: 90% !important;
     border:1px solid #997045 !important;
@@ -209,7 +209,7 @@ input.form-control-search{
     opacity: 1; /* Firefox */
 }
 .select2-container--open .select2-dropdown {
-    left: 25px !important;
+    left: 0px !important;
 }
 
 .select2-container--default .select2-results > .select2-results__options {
@@ -265,7 +265,7 @@ select::-ms-expand {
       
 }
 #checkbox{
-    margin-top: 7px;margin-left: 14px;
+    margin-top: 15px;margin-left: 14px;
 
 }
     </style>
@@ -298,14 +298,14 @@ select::-ms-expand {
                                 </div>
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 182px;">
+                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 182px;">
                                             <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 edit">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 9px 0px 0px 183px;">
+                                        <div class="col-md-12 text-center" style="margin:   15px 0px 0px 183px;">
                                             <i class="fa fa-pencil" id="edit-icon" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
                                     </div>

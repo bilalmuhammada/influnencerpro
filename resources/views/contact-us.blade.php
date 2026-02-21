@@ -41,7 +41,7 @@ input[type="file"] {
             visibility: hidden;
         } */
     </style>
-   <div class="content" style="padding: 17px 0 30px;">
+   <div class="content" >
     <div class="container">
         
         <div class="text-center">

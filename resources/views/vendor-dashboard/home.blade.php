@@ -56,7 +56,7 @@
             border: none !important;
             border-radius: 20px !important;
             padding: 0 4px !important;
-            margin: 0px 3px 0 -8px !important;
+            margin: 0px 3px 0 -12px !important;
             display: flex !important;
             align-items: center !important;
             color: #0504aa !important;
@@ -124,7 +124,7 @@ width: 200px !important;
 
   }
   .select2-results__options{
-    min-height: 70px !important;
+    min-height: 30px !important;
   }
  
 
@@ -406,7 +406,7 @@ input[type=number] {
                                     
                                     <label class="font_label">Country</label>
                                     @php $countries = getCountries()->sortBy('name'); @endphp
-                                    <select class="form-control select2 mb-3" id="nationality_id" name="country_id">
+                                    <select class="form-control  mb-3" id="nationality_id" name="country_id">
                                         <option value="" disabled hidden selected>Select Country</option>
                                         @forelse($countries as $country)
                                             <option value="{{ $country->id }}"
@@ -453,7 +453,7 @@ input[type=number] {
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center justify-content-between w-100">
                                                     <label class="mb-0 d-flex align-items-center cursor-pointer" for="check_{{ $platform['name'] }}" style="font-size: 13px;">
-                                                        <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="18" class="me-2 shaking">
+                                                        <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="{{ $platform['name'] == 'snapchat' ? '22' : '18' }}" class="me-2 shaking">
                                                         {{ $platform['label'] }}
                                                     </label>
                                                     <input type="checkbox" name="{{ $platform['name'] }}" id="check_{{ $platform['name'] }}" {{ request()->{$platform['name']} ? 'checked' : '' }}>
@@ -534,13 +534,13 @@ input[type=number] {
                                     <div class="row ">
                                         <div class="col-12 ">
                                             <label class="font_label mt-1" >Gender</label>
-                                            <div class="d-flex flex-column gap-1 mt-1">
-                                                <div class="d-flex align-items-center justify-content-between w-100">
-                                                    <label class="mb-0 cursor-pointer" for="check_male" style="font-size: 13px;">Male</label>
+                                            <div class="d-flex align-items-center mt-1">
+                                                <div class="d-flex align-items-center me-5">
+                                                    <label class="mb-0 cursor-pointer me-2" for="check_male" style="font-size: 14px; color: #374151; font-weight: 500;">Male</label>
                                                     <input type="checkbox" name="male" id="check_male" {{ request()->male ? 'checked' : '' }}>
                                                 </div>
-                                                <div class="d-flex align-items-center justify-content-between w-100">
-                                                    <label class="mb-0 cursor-pointer" for="check_female" style="font-size: 13px;">Female</label>
+                                                <div class="d-flex align-items-center ms-4">
+                                                    <label class="mb-0 cursor-pointer me-2" for="check_female" style="font-size: 14px; color: #374151; font-weight: 500;">Female</label>
                                                     <input type="checkbox" name="female" id="check_female" {{ request()->female ? 'checked' : '' }}>
                                                 </div>
                                             </div>
@@ -619,7 +619,28 @@ input[type=number] {
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-12 ">
+                                        
+                                    </div>
+                                 
+
+                                
+                                    <div class="row  ">
+                                        <div class="col-6">
+                                            <label class="font_label mt-1">Height (cm)</label>
+                                            <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="font_label mt-1">Weight (kg)</label>
+                                            <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-6">
+                                            <label class="font_label mt-1">Shoes (EU)</label>
+                                            <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
+                                        </div>
+                                        <div class="col-6 ">
                                             <label class="font_label mt-1">Cloth Size</label>
                                             <select name="clothsize[]" class="form-control selectMul" multiple="multiple">
                                                 @php
@@ -630,23 +651,7 @@ input[type=number] {
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
-                                 
 
-                                
-                                    <div class="row  ">
-                                        <div class="col-4">
-                                            <label class="font_label mt-1">Height (cm)</label>
-                                            <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
-                                        </div>
-                                        <div class="col-4">
-                                            <label class="font_label mt-1">Weight (kg)</label>
-                                            <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
-                                        </div>
-                                        <div class="col-4">
-                                            <label class="font_label mt-1">Shoes (EU)</label>
-                                            <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
-                                        </div>
                                     </div>
 
                                     <div class="row ">
@@ -676,6 +681,16 @@ input[type=number] {
                                             @endforeach
                                         </select>
                                     </div>
+                                     <div class="row mb-1">
+                                        <div class="col-12">
+                                            <label class="font_label mt-1">Availability</label>
+                                            <div class="d-flex gap-2">
+                                                <input type="text" name="availability_from" class="form-control form-control-sm datepicker1" placeholder="Date" value="{{ request()->availability_from }}">
+                                                <input type="text" name="availability_to" class="form-control form-control-sm datepicker1" placeholder="Date" value="{{ request()->availability_to }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="row  mb-1">
                                         <div class="col-6">
                                             <label class="font_label">Price Min ($)</label>
@@ -820,7 +835,7 @@ input[type=number] {
                                      @endphp
 
                                             <div  class="influencerdetail">
-                                            <div style="position:absolute;text-align:right;border:0px solid red;;right: 20px;top:6px;z-index: 99999;">
+                                            <div style="position:absolute;text-align:right;border:0px solid red;;right: 13px;top:-6px;z-index: 99999;">
 
                                                  <i class="fa-solid fa-heart shaking  add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
@@ -859,7 +874,7 @@ input[type=number] {
                                                     <li style="display: inline-block;;color:#fff; margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center; margin-left:6px;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px; ">
                                                         <span>  {{ strtoupper($instagram ? $instagram->followers : 0) }}</span> 
@@ -872,7 +887,7 @@ input[type=number] {
                                                 <li style="display: inline-block; color:#fff; margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size: 11px;">
                                                             <span>{{ strtoupper($twitter ? $twitter->followers : 0) }}</span>
@@ -886,7 +901,7 @@ input[type=number] {
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ strtoupper($youtube ? $youtube->followers : 0) }}</span> 
@@ -899,7 +914,7 @@ input[type=number] {
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span> {{ strtoupper($tiktok ? $tiktok->followers : 0) }}</span> 
@@ -912,7 +927,7 @@ input[type=number] {
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span>   {{ strtoupper($facebook ? $facebook->followers : 0) }}</span>  
@@ -925,7 +940,7 @@ input[type=number] {
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 8px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="27px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span>{{ strtoupper($snapchat ? $snapchat->followers : 0) }}</span>  
@@ -1465,7 +1480,7 @@ input[type=number] {
                                                 <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
+                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="27px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
                                                           <span>{{ $snapchat ? $snapchat->followers : 0 }}</span>  
