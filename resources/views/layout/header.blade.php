@@ -299,8 +299,8 @@
             max-width: 80% !important;
             margin-left: auto !important;
             margin-right: auto !important;
-            padding-left: 25px !important;
-            padding-right: 25px !important;
+             /*padding-left: 25px !important;
+            padding-right: 25px !important;*/
         }
 
         .header-nav {
