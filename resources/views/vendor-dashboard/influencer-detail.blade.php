@@ -164,7 +164,7 @@ color: goldenrod !important;
    @endphp
 
     <div class="content  pdfdownload" id="pdfdownload" style="padding-top: 100px; " >
-        <div class="container">
+        <div class="container" style="width: 80%;">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys" style="border:0px solid red;">
 

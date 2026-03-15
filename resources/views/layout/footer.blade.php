@@ -56,11 +56,11 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
                     <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px; margin-left: 3rem;">
+                        style="margin-top:20px; margin-left: 0rem;">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px; ">
                     <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px; margin-left: 4rem;">
+                        style="margin-top:20px; margin-left: 0rem;">
                 </div>
             </div>
         </div>
