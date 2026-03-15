@@ -373,11 +373,11 @@ function validateInput(input) {
 
                         $("#editinfluencer").modal('show')
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
@@ -402,29 +402,29 @@ function validateInput(input) {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
                             $("#editinfluencer").modal('hide')
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             }), 1000);
         });
@@ -441,21 +441,21 @@ function validateInput(input) {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
                             $("#editStatusModal").modal('hide')
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
@@ -484,20 +484,20 @@ function validateInput(input) {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {

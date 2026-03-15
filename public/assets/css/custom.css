@@ -177,7 +177,7 @@ animation: scroll 40% linear infinite
 }
     .circleThumb{
         position: absolute;
-    left: 110px;
+    left: 92px;
     /* margin: 0px auto; */
     top: 0px;
     border-width: 3px;

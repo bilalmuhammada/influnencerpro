@@ -169,7 +169,7 @@ color: goldenrod !important;
         border-radius: 10px;
     }
     .input-msg-send{
-        width: 99% !important;
+        width: 93% !important;
     }
     .emojionearea-editor{
         font-size: 16px !important;
@@ -214,7 +214,9 @@ input.form-control-search{
 
 .select2-container--default .select2-results > .select2-results__options {
     min-height: 0px !important;
-   
+}
+.select2-container--default .select2-results__option {
+    padding: 2px 10px !important;
 }
 /* Customize the dropdown arrow */
 select::-ms-expand {
@@ -272,7 +274,7 @@ select::-ms-expand {
 @section('content')
     <div class="content-chat"
          style="background-color:#eee;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
-        <div class="container">
+        <div class="container" style="max-width: 80% !important;">
             <div class="row">
                 
 
@@ -291,8 +293,8 @@ select::-ms-expand {
                                 <div class="col-md-2" style="margin-left: -97px;">
                                     <select class="form-select chat" id="filter-dropdown" style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
-                                        <option value="favorites">Favorited</option>
                                         <option value="unread">Unread</option>
+                                        <option value="favorites">Favorited</option>
                                         <option value="blocked">Blocked</option>
                                     </select>
                                 </div>
@@ -517,7 +519,7 @@ select::-ms-expand {
                                                         alt="User Image"
                                                         class="avatar-img rounded-circle">
                                                 </div> --}}
-                                                <div class="input-group" style="position: relative; width: 93%; height: 42px;">
+                                                <div class="input-group" style="position: relative; width: 96%; height: 42px;">
                                                     <input type="text" class="input-msg-send emoji-trigger form-controls"
                                                            id="emoji-trigger" 
                                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"

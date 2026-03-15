@@ -300,7 +300,7 @@ width: 195px !important;
                 @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" >
                         <div class="card avatar-one"
-                             style="border:0px solid #997045;width:244px; ">
+                             style="border:0px solid #997045;width:200px; ">
                             <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
                                 
                                 
@@ -332,7 +332,7 @@ width: 195px !important;
                               @endphp
                                
                                 <div class="influencerdetail" id="">
-                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-15px;top:6px;">
+                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-50px;top:6px;">
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite"
                                         data-id="{{ $influencer->id }}"
@@ -354,7 +354,7 @@ width: 195px !important;
                                         style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}
                                     {{--<span
                                         style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}}
-                                    <ul style="list-style-type: none;margin-top:120px;">
+                                    <ul class="d-flex justify-content-center w-100 align-items-end" style="list-style-type: none; margin-top: 120px; padding-left: 0; gap: 6px;">
                                         @php
                                             $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
                                             $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
@@ -368,7 +368,7 @@ width: 195px !important;
 
 
                                         <li style="display: inline-block;;color:#fff;">
-                                        <div class="social-wrapper" style="text-align: center; margin-left:14px;">
+                                        <div class="social-wrapper" style="text-align: center;">
                                             <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                             </a>
@@ -376,7 +376,7 @@ width: 195px !important;
                                                 {{ $instagram ? $instagram->followers : 0 }}
                                             </div>
                                         </div>
-                                    </li>&nbsp;&nbsp;
+                                    </li>
                                                         @endif
         
                                                         @if($twitter  && isset($twitter->followers))
@@ -389,7 +389,7 @@ width: 195px !important;
                                                                     {{ $twitter ? $twitter->followers : 0 }}
                                                                 </div>
                                                             </div>
-                                                        </li>&nbsp;&nbsp;
+                                                        </li>
         
                                                             
                                                         @endif
@@ -404,7 +404,7 @@ width: 195px !important;
                                                                     {{ $youtube ? $youtube->followers : 0 }}
                                                                 </div>
                                                             </div>
-                                                        </li>&nbsp;&nbsp;
+                                                        </li>
                                                         
                                                             
                                                         @endif
@@ -418,7 +418,7 @@ width: 195px !important;
                                                                     {{ $tiktok ? $tiktok->followers : 0 }}
                                                                 </div>
                                                             </div>
-                                                        </li>&nbsp;&nbsp;
+                                                        </li>
                                                         
                                                           
                                                         @endif
@@ -432,7 +432,7 @@ width: 195px !important;
                                                                     {{ $facebook ? $facebook->followers : 0 }}
                                                                 </div>
                                                             </div>
-                                                        </li>&nbsp;&nbsp;
+                                                        </li>
                                                         
                                                             
                                                         @endif
@@ -440,13 +440,13 @@ width: 195px !important;
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                    <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
+                                                                    <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 3px;" alt="" width="27px">
                                                                 </a>
                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
                                                                     {{ $snapchat ? $snapchat->followers : 0 }}
                                                                 </div>
                                                             </div>
-                                                        </li>&nbsp;&nbsp;
+                                                        </li>
                                                        
                                                            
                                                         @endif

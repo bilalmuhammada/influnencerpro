@@ -11,8 +11,15 @@
     display: inline-block;
     transition: transform 0.2s ease-in-out;
    }
-    .shaking:hover {
-        animation: shake 2s linear infinite;
+    .social-wrapper:hover .shaking {
+        animation: shake 1.5s linear infinite;
+    }
+    
+    .filter-social-label:hover {
+        color: #D4AF37 !important; /* Light-Gold override */
+    }
+    .filter-social-label:hover .shaking {
+        animation: shake 1.5s linear infinite;
     }
    @keyframes shake {
           0% { transform: translateX(0); }
@@ -49,7 +56,7 @@
         #select2-nationality_id-container{
             color:rgb(6 6 6 / 74%)!important;
             /* margin-left: 12px; */
-            font-size: 14px;
+            font-size: 12px;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             background-color: transparent !important;
@@ -61,7 +68,7 @@
             align-items: center !important;
             color: #0504aa !important;
             font-weight: 500 !important;
-            font-size: 11px !important;
+            font-size: 12px !important;
             transition: all 0.2s ease !important;
            
             flex-shrink: 0 !important;
@@ -74,7 +81,13 @@
             padding-top: 0px !important;
         }
         .select2-search__field{
-            padding-left: 13px !important;
+            padding-left: 12px !important;
+        }
+        .select2-search--dropdown .select2-search__field {
+            padding-left: 12px !important;
+        }
+        .select2-results__option {
+            padding-left: 17px !important;
         }
         .select2-search--inline{
             display: none;
@@ -145,13 +158,13 @@ width: 200px !important;
 }
 
 #select2-nationality_id-results{
-padding-left: 3px !important;
+padding-left: 0px !important;
 } 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     border: none !important;
     background: transparent !important;
     color: #0504aa !important;
-    margin-right: 0px !important;
+    margin-right: -0.5px !important;
     font-size: 14px !important;
     font-weight: bold !important;
     opacity: 0.4 !important;
@@ -173,10 +186,10 @@ color: #0504aa !important;
     color: goldenrod !important; 
 }
 .clearall{
-    color: #0504aa !important;
+    color: #D4AF37 !important;
 }
 .clearall:hover{
-    color: goldenrod !important;
+    color: #D4AF37 !important;
 }
 .select2-container:hover{
     border-color: blue !important; 
@@ -191,7 +204,7 @@ color: #0504aa !important;
 }
 .select2-selection__choice__display {
     padding-left: 0 !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     color: #0504aa !important;
 }
 .select2-selection--multiple{
@@ -238,9 +251,9 @@ color: #0504aa !important;
 .font_label {
     display: block;
     font-weight: 700 !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     color: blue !important;
-    text-transform: uppercase;
+    text-transform: none; /* Changed from uppercase to allow Title Case HTML to render */
     letter-spacing: 0.8px;
     margin-bottom: 0px !important;
     padding-top: 0 !important;
@@ -317,8 +330,9 @@ input[type=number] {
     margin-left:0px;
     background-color: #fcfdfe !important;
     padding: 0 12px !important;
-    font-size: 13px !important;
-    color: #1e293b !important;
+        font-weight: 500;
+    font-size: 12px !important;
+    color: rgb(6 6 6 / 74%)  !important;
     display: flex !important;
     align-items: center !important;
     overflow: hidden !important;
@@ -370,7 +384,7 @@ input[type=number] {
 .clearall {
     font-weight: 600 !important;
     font-size: 12px !important;
-    color: #0504aa !important;
+    color: #D4AF37 !important;
     text-decoration: none;
     padding: 0px 0px;
     border-radius: 6px;
@@ -379,8 +393,8 @@ input[type=number] {
 }
 
 .clearall:hover {
-    background: rgba(5, 4, 170, 0.1);
-    color: #04038a !important;
+    background: transparent;
+    color: #D4AF37 !important;
 }
 .sidebar-submit:hover {
     background: blue !important;
@@ -388,7 +402,7 @@ input[type=number] {
 }
     </style>
     <div class="content">
-        <div class="container">
+        <div class="container" style="max-width: 80%; width: 80%;">
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
                     <form action="{{ env('BASE_URL') }}vendor/influencers-filter" id="fiter-infl">
@@ -452,8 +466,8 @@ input[type=number] {
                                         @foreach($social_platforms as $platform)
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center justify-content-between w-100">
-                                                    <label class="mb-0 d-flex align-items-center cursor-pointer" for="check_{{ $platform['name'] }}" style="font-size: 13px;">
-                                                        <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="{{ $platform['name'] == 'snapchat' ? '22' : '18' }}" class="me-2 shaking">
+                                                    <label class="mb-0 d-flex align-items-center cursor-pointer filter-social-label" for="check_{{ $platform['name'] }}" style="font-size: 12px;">
+                                                        <img src="{{ asset('assets/img/social-icon/' . $platform['icon']) }}" alt="{{ $platform['label'] }}" width="{{ $platform['name'] == 'snapchat' ? '20' : '18' }}" class="me-2 shaking">
                                                         {{ $platform['label'] }}
                                                     </label>
                                                     <input type="checkbox" name="{{ $platform['name'] }}" id="check_{{ $platform['name'] }}" {{ request()->{$platform['name']} ? 'checked' : '' }}>
@@ -480,7 +494,7 @@ input[type=number] {
                                         @foreach($follower_ranges as $range)
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center justify-content-between w-100">
-                                                    <label class="mb-0 cursor-pointer" for="check_{{ $range['name'] }}" style="font-size: 13px;">
+                                                    <label class="mb-0 cursor-pointer filter-social-label" for="check_{{ $range['name'] }}" style="font-size: 12px;">
                                                         {{ $range['label'] }}
                                                     </label>
                                                     <input type="checkbox" name="{{ $range['name'] }}" id="check_{{ $range['name'] }}" {{ request()->{$range['name']} ? 'checked' : '' }}>
@@ -534,13 +548,13 @@ input[type=number] {
                                     <div class="row ">
                                         <div class="col-12 ">
                                             <label class="font_label mt-1" >Gender</label>
-                                            <div class="d-flex align-items-center mt-1">
-                                                <div class="d-flex align-items-center me-5">
-                                                    <label class="mb-0 cursor-pointer me-2" for="check_male" style="font-size: 14px; color: #374151; font-weight: 500;">Male</label>
+                                            <div class="d-flex align-items-center mt-1 justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <label class="mb-0 cursor-pointer me-2" for="check_male" style="font-size: 12px; color: #374151; font-weight: 500;">Male</label>
                                                     <input type="checkbox" name="male" id="check_male" {{ request()->male ? 'checked' : '' }}>
                                                 </div>
-                                                <div class="d-flex align-items-center ms-4">
-                                                    <label class="mb-0 cursor-pointer me-2" for="check_female" style="font-size: 14px; color: #374151; font-weight: 500;">Female</label>
+                                                <div class="d-flex align-items-center">
+                                                    <label class="mb-0 cursor-pointer me-2" for="check_female" style="font-size: 12px; color: #374151; font-weight: 500;">Female</label>
                                                     <input type="checkbox" name="female" id="check_female" {{ request()->female ? 'checked' : '' }}>
                                                 </div>
                                             </div>
@@ -626,18 +640,18 @@ input[type=number] {
                                 
                                     <div class="row  ">
                                         <div class="col-6">
-                                            <label class="font_label mt-1">Height (cm)</label>
+                                            <label class="font_label mt-1">Height - CM </label>
                                             <input type="number" class="form-control form-control-sm" name="height" value="{{ request()->height }}">
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label mt-1">Weight (kg)</label>
+                                            <label class="font_label mt-1">Weight - KG</label>
                                             <input type="number" class="form-control form-control-sm" name="width" value="{{ request()->width }}">
                                         </div>
                                        
                                     </div>
                                     <div class="row ">
                                         <div class="col-6">
-                                            <label class="font_label mt-1">Shoes (EU)</label>
+                                            <label class="font_label mt-1">Shoes - EU</label>
                                             <input type="number" class="form-control form-control-sm" name="shoes_size" value="{{ request()->shoes_size }}">
                                         </div>
                                         <div class="col-6 ">
@@ -683,7 +697,7 @@ input[type=number] {
                                     </div>
                                      <div class="row mb-1">
                                         <div class="col-12">
-                                            <label class="font_label mt-1">Availability</label>
+                                            <label class="font_label ">Availability</label>
                                             <div class="d-flex gap-2">
                                                 <input type="text" name="availability_from" class="form-control form-control-sm datepicker1" placeholder="Date" value="{{ request()->availability_from }}">
                                                 <input type="text" name="availability_to" class="form-control form-control-sm datepicker1" placeholder="Date" value="{{ request()->availability_to }}">
@@ -691,13 +705,13 @@ input[type=number] {
                                         </div>
                                     </div>
 
-                                    <div class="row  mb-1">
+                                    <div class="row  mb-1 mt-1">
                                         <div class="col-6">
-                                            <label class="font_label">Price Min ($)</label>
+                                            <label class="font_label ">Price Min - $</label>
                                             <input type="number" name="min_price" class="form-control form-control-sm" placeholder="Min" value="{{ request()->min_price }}">
                                         </div>
                                         <div class="col-6">
-                                            <label class="font_label">Price Max ($)</label>
+                                            <label class="font_label">Price Max - $</label>
                                             <input type="number" name="max_price" class="form-control form-control-sm" placeholder="Max" value="{{ request()->max_price }}">
                                         </div>
                                     </div>
@@ -712,7 +726,7 @@ input[type=number] {
                 </div>
 
                 <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="col-md-10 mx-auto text-center" >
+                    <div class="col-md-12 mx-auto text-center" >
                         <div class="row mx-auto">
                             <div class="quick-filter mx-auto">
                                 <ul class="main-nav nav mx-auto" style="text-align:center !important;">
@@ -806,7 +820,7 @@ input[type=number] {
                                 
                                 <div class="card avatar-one" 
                                      {{-- onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'" --}}
-                                   style="width:100%;cursor: pointer;">
+                                   style="width:200px;cursor: pointer;">
                         
                                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
 
@@ -834,27 +848,27 @@ input[type=number] {
                                     }
                                      @endphp
 
-                                            <div  class="influencerdetail">
-                                            <div style="position:absolute;text-align:right;border:0px solid red;;right: 13px;top:-6px;z-index: 99999;">
+                                    <div class="influencerdetail" id="">
+                                        <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-50px;top:6px;">
 
-                                                 <i class="fa-solid fa-heart shaking  add-to-favourite"
+                                                 <i class="fa-solid fa-heart shaking add-to-favourite"
                                                  data-id="{{ $influencer->id }}"
                                                  data-fvt="1"
                                                   
-                                                 style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px;  display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                 style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 <i class="fas fa-check-circle shaking  add-to-invented"
                                                    data-id="{{ $influencer->id }}"
                                                    data-fvt="2"
                                                  
-                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -6px;display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                   style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                     
                                             </div>
                                             <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}} -->
                                              {{-- <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span> --}}
                                           
-                                             <ul class="start" data-id="{{$influencer->id}}" style="list-style-type: none ;         height: 100%;">
+                                    <ul class="d-flex justify-content-center w-100 align-items-end" style="list-style-type: none; margin-top: 140px; padding-left: 0; gap: 6px;">
 
                                                 @php
                                                 
@@ -871,82 +885,82 @@ input[type=number] {
 
 
 
-                                                    <li style="display: inline-block;;color:#fff; margin-top: 60%;">
-                                                    <div class="social-wrapper" style="text-align: center; margin-left:6px;">
+                                                    <li style="color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
-                                                        <div class="text-center font-change followers-count" style="font-size:11px; ">
-                                                        <span>  {{ strtoupper($instagram ? $instagram->followers : 0) }}</span> 
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                          {{ strtoupper($instagram ? $instagram->followers : 0) }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                 @endif
 
                                                 @if($twitter && isset($twitter->followers))
-                                                <li style="display: inline-block; color:#fff; margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
-                                                        <div class="text-center font-change followers-count" style="font-size: 11px;">
-                                                            <span>{{ strtoupper($twitter ? $twitter->followers : 0) }}</span>
+                                                        <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                            {{ strtoupper($twitter ? $twitter->followers : 0) }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                             @endif
                                             
 
                                                 @if($youtube && isset($youtube->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ strtoupper($youtube ? $youtube->followers : 0) }}</span> 
+                                                           {{ strtoupper($youtube ? $youtube->followers : 0) }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                     
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ strtoupper($tiktok ? $tiktok->followers : 0) }}</span> 
+                                                           {{ strtoupper($tiktok ? $tiktok->followers : 0) }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                   
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>   {{ strtoupper($facebook ? $facebook->followers : 0) }}</span>  
+                                                             {{ strtoupper($facebook ? $facebook->followers : 0) }}  
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                     
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="27px">
+                                                            <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 3px;" alt="" width="27px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>{{ strtoupper($snapchat ? $snapchat->followers : 0) }}</span>  
+                                                          {{ strtoupper($snapchat ? $snapchat->followers : 0) }}  
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                    
                                                 @endif
                                             </ul>
@@ -1381,20 +1395,20 @@ input[type=number] {
                                                  data-id="{{ $influencer->id }}"
                                                  data-fvt="1"
                                                   
-                                                 style="padding:7px;border-radius:50%;margin-top: 12px;  color:{{$color}}!important; margin-right: -8px;  display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                 style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                                                 <i class="fas fa-check-circle   add-to-invented"
                                                    data-id="{{ $influencer->id }}"
                                                    data-fvt="2"
                                                  
-                                                   style="padding:7px;border-radius:50%;margin-top: 12px; color:{{$color1}}!important; margin-right: -6px;display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                   style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
 
                     
                                             </div>
                                             <!-- {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}} -->
                                              {{-- <span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span> --}}
                                           
-                                             <ul class="start" data-id="{{$influencer->id}}" style="list-style-type: none ;         height: 100%;">
+                                    <ul class="d-flex justify-content-center w-100 align-items-end" style="list-style-type: none; margin-top: 120px; padding-left: 0; gap: 6px;">
                                                  @php
                                                 
                                                     $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
@@ -1410,83 +1424,83 @@ input[type=number] {
 
 
 
-                                                    <li style="display: inline-block;;color:#fff; margin-top: 60%;">
-                                                    <div class="social-wrapper" style="text-align: center; margin-left:6px;">
+                                                    <li style="color:#fff;">
+                                                    <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                        <span>  {{ $instagram ? $instagram->followers : 0 }}</span> 
+                                                          {{ $instagram ? $instagram->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                 @endif
 
                                                 @if($twitter  && isset($twitter->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                        <span>  {{ $twitter ? $twitter->followers : 0 }}</span> 
+                                                          {{ $twitter ? $twitter->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
 
                                                     
                                                 @endif
 
                                                 @if($youtube && isset($youtube->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ $youtube ? $youtube->followers : 0 }}</span> 
+                                                           {{ $youtube ? $youtube->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                     
                                                 @endif
                                                 @if($tiktok && isset($tiktok->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span> {{ $tiktok ? $tiktok->followers : 0 }}</span> 
+                                                           {{ $tiktok ? $tiktok->followers : 0 }}
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                   
                                                 @endif
                                                 @if($facebook && isset($facebook->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 60%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="25px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>   {{ $facebook ? $facebook->followers : 0 }}</span>  
+                                                             {{ $facebook ? $facebook->followers : 0 }}  
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                     
                                                 @endif
                                                 @if($snapchat && isset($snapchat->followers))
-                                                <li style="display: inline-block;;color:#fff;  margin-top: 50%;">
+                                                <li style="color:#fff;">
                                                     <div class="social-wrapper" style="text-align: center;">
                                                         <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
                                                             <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 10px;" alt="" width="27px">
                                                         </a>
                                                         <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                          <span>{{ $snapchat ? $snapchat->followers : 0 }}</span>  
+                                                          {{ $snapchat ? $snapchat->followers : 0 }}  
                                                         </div>
                                                     </div>
-                                                </li>&nbsp;&nbsp;
+                                                </li>
                                                    
                                                 @endif
                                             </ul>

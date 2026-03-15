@@ -70,7 +70,7 @@ margin-bottom: 13px;
 </style>
 @section('content')
 
-    <section class="contents" style="border:0px solid red;padding:70px 0 0px;">
+    <section class="contents" style="border:0px solid red;padding:46px 0 0px;">
         <div class="container" style="border-top:1px solid #eee;">
 
             <div class="col-md-12" style="padding:0px;margin-top:30px;">

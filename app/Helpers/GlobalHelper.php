@@ -521,6 +521,19 @@ function getUnreadMessages()
     return $Messages;
 }
 
+function getRecentChats()
+{
+    $userId = \App\Helpers\SiteHelper::getLoginUserId();
+    if (!$userId) return collect();
+
+    return \App\Models\Message::with(['receiver', 'sender'])
+        ->where('receiver_id', $userId)
+        ->orderBy('created_at', 'desc')
+        ->limit(5)
+        ->get();
+}
+
+
 function getSafeValueFromObject($object, $index = '', $default = '')
 {
 

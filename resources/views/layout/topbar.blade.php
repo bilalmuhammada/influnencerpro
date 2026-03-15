@@ -67,24 +67,13 @@
             }
 
             $('#chatLink, #chatLinkInfluencer').on('click', function(e) {
-                $(this).closest('.dropdown').toggleClass('active');
+                if ($(this).attr('data-bs-toggle') === 'dropdown') {
+                    $(this).closest('.dropdown').toggleClass('active');
+                }
             });
         });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <style>
-        .header-nav {
-            padding: 0 !important;
-        }
-        .header-nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1440px !important;
-            padding-left: 25px !important;
-            padding-right: 25px !important;
-        }
-    </style>
     <nav class="navbar navbar-expand-lg header-nav">
         <div class="container">
             <div class="navbar-header" style="display: flex; align-items: center;">
@@ -121,17 +110,20 @@
                 $influencers = getDropdownMenu('influencer');
                 $brands = getDropdownMenu('vendor');
                 $unread_messages = getUnreadMessages();
+                $recent_chats = getRecentChats();
                 @endphp
                 <ul class="main-nav nav">
                     
                     @if(session()->has('User') && session()->get('role') == 'vendor')
                             <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
-                                @php $hasUnread = isset($unread_messages) && count($unread_messages) > 0; @endphp
+                                @php 
+                                    $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
+                                @endphp
                                 <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLink" {!! $hasUnread ? 'data-bs-toggle="dropdown"' : '' !!}>
                                     Chat @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span> @endif
                                 </a>
+                                @if ($hasUnread)
                                 <div class="dropdown-menu notifications" id="chatDropdown" style="width: 400px; max-height: 350px; margin-left: -220px;">
-                                    @if (isset($unread_messages) && count($unread_messages) > 0)
                                     <div class="row px-2 py-0">
                                         <div class="col-6"><strong>Messages</strong></div>
                                         <div class="col-6 text-end font-size-12">
@@ -139,11 +131,11 @@
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-1">
-
-                                    @foreach ($unread_messages as $message)
+                                    <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
+                                    @foreach ($recent_chats as $message)
                                     <div class="notifications-wrapper" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 4px;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="text-decoration: none; color: inherit;">
-                                            <div class="notification-item position-relative" style="background: aliceblue; border-radius: 5px; padding: 2px 10px;">
+                                            <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
                                                 <div class="d-flex align-items-center" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
                                                         <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
@@ -161,20 +153,14 @@
                                         </a>
                                     </div>
                                     @endforeach
-
+                                    </div>
                                     <div class="notification-footer text-center mt-2" style="background-color: white; border-top: 1px solid #f0f0f0;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="color: blue; font-weight: bold; text-decoration: none;">
                                             View all Chats
                                         </a>
                                     </div>
-                                    @else
-                                    <div class="p-3 text-center">
-                                        <em>No unread messages</em>
-                                        <br>
-                                        <a href="{{ url('/chats') }}" class="btn btn-primary btn-sm mt-2" style="background-color: #997045; border: none; color: red !important; font-weight: bold;">Go to Chats</a>
-                                    </div>
-                                    @endif
                                 </div>
+                                @endif
                             </li>
 
                         @endif
@@ -182,12 +168,14 @@
                         @if(session()->get('role') == 'influencer')
                             <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li>
                             <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
-                                @php $hasUnread = isset($unread_messages) && count($unread_messages) > 0; @endphp
+                                @php 
+                                    $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
+                                @endphp
                                 <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLinkInfluencer" {!! $hasUnread ? 'data-bs-toggle="dropdown"' : '' !!}>
                                     Chat @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span> @endif
                                 </a>
+                                @if ($hasUnread)
                                 <div class="dropdown-menu notifications" id="chatDropdownInfluencer" style="width: 400px; max-height: 350px; margin-left: -220px;">
-                                    @if (isset($unread_messages) && count($unread_messages) > 0)
                                     <div class="row px-2 py-0">
                                         <div class="col-6"><strong>Messages</strong></div>
                                         <div class="col-6 text-end font-size-12">
@@ -195,11 +183,11 @@
                                         </div>
                                     </div>
                                     <hr class="mt-0 mb-1">
-
-                                    @foreach ($unread_messages as $message)
+                                    <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
+                                    @foreach ($recent_chats as $message)
                                     <div class="notifications-wrapper" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 4px;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="text-decoration: none; color: inherit;">
-                                            <div class="notification-item position-relative" style="background: aliceblue; border-radius: 5px; padding: 2px 10px;">
+                                            <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
                                                 <div class="d-flex align-items-center" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
                                                         <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
@@ -217,20 +205,14 @@
                                         </a>
                                     </div>
                                     @endforeach
-
+                                    </div>
                                     <div class="notification-footer text-center mt-2" style="background-color: white; border-top: 1px solid #f0f0f0;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="color: blue; font-weight: bold; text-decoration: none;">
                                             View all Chats
                                         </a>
                                     </div>
-                                    @else
-                                    <div class="p-3 text-center">
-                                        <em>No unread messages</em>
-                                        <br>
-                                        <a href="{{ url('/chats') }}" class="btn btn-primary btn-sm mt-2" style="background-color: #997045; border: none; color: red !important; font-weight: bold;">Go to Chats</a>
-                                    </div>
-                                    @endif
                                 </div>
+                                @endif
                             </li>
                             <li class="has-submenu">
                                 <a href="{{ env('BASE_URL') . '#' }}"><span><b>Welcome {{ session()->get('User')['full_name'] }} </b></span><img

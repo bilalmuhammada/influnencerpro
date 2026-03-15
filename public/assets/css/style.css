@@ -8409,14 +8409,14 @@ div#global-loader {
 .login-header p {
     font-size: 16px;
     color: #17191A;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 
 .login-header h3 {
     font-size: 22px;
     font-weight: 800;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     color: #161c2d;
 }
 
@@ -13656,11 +13656,11 @@ label.file-upload input[type="file"] {
 
 .chat-cont-left {
     border-right: 1px solid #f0f0f0;
-    -ms-flex: 0 0 34%;
-    flex: 0 0 34%;
+    -ms-flex: 0 0 37.5%;
+    flex: 0 0 37.5%;
     left: 0;
     margin-right: 0.5%;
-    max-width: 35%;
+    max-width: 37.5%;
     position: relative;
     z-index: 4;
     background: #fff;
@@ -13828,9 +13828,9 @@ label.file-upload input[type="file"] {
 }
 
 .chat-cont-right {
-    -ms-flex: 0 0 65%;
-    flex: 0 0 65%;
-    max-width: 65%;
+    -ms-flex: 0 0 62%;
+    flex: 0 0 62%;
+    max-width: 62%;
     background: #fff;
     box-shadow: 0px 4px 14px rgba(198, 198, 198, 0.25);
     border-radius: 0px 0px 10px 10px;

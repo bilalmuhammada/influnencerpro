@@ -35,27 +35,7 @@
         color: blue !important;
     }
 
-    .footer-container {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    @media (min-width: 1200px) {
-        .footer-container {
-            padding-left: 25px !important;
-            padding-right: 25px !important;
-        }
-    }
 
-    .home-page .footer-container,
-    .home-page .container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
 </style>
 <footer class="footer" style="border:0px solid red;">
     <div class="footer-container mb-30" style="margin-top: 50px;">

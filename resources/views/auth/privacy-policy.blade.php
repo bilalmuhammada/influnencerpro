@@ -28,7 +28,6 @@ a{
     }
 
     .privacy-content-container {
-        max-width: 100% !important;
         padding-left: 40px !important;
         padding-right: 40px !important;
     }

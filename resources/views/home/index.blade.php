@@ -2,41 +2,6 @@
 
 @section('custom_css')
 <style>
-/* FULL WIDTH HEADER FIX FOR HOME PAGE */
-.home-page .header-nav .container {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-/* Ensure Logo and Login are at absolute ends */
-.home-page .header-nav .navbar-header {
-    margin-right: auto !important;
-}
-
-.home-page .header-nav .main-menu-wrapper {
-    margin-left: auto !important;
-}
-
-/* Fix for mobile/tablet where main-menu-wrapper might be hidden or absolute */
-@media (max-width: 991px) {
-    .home-page .header-nav .container {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-    }
-    
-    .home-page .header-nav .main-menu-wrapper {
-        display: block !important; /* Force visibility for login if it was hidden */
-        position: static !important;
-        width: auto !important;
-        flex: 0 0 auto !important;
-    }
-}
 
 .img {
   width: 200px; /* Adjust the width as needed */
@@ -715,8 +680,8 @@ color:goldenrod !important;
                 </div>
                 <div class="col-xl-12 col-md-12 mx-auto">
 
-                    <div class="row justify-content-center">
-                        &nbsp;
+                    <div class="row">
+                  
                         <div class="col-xl-2 col-md-6" style="width:235px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
@@ -824,7 +789,7 @@ color:goldenrod !important;
                 </div>
                 <div class="col-xl-12 col-md-12  mx-auto" style="border:0px solid red;">
                     <div class="row justify-content-center">
-                        <!-- &nbsp; -->
+                     
                         <div class="col-xl-2 col-md-6" style="border:0px solid red;width:235px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
@@ -930,11 +895,11 @@ color:goldenrod !important;
                 </div>
                 <div class="col-xl-12 col-md-12 mx-auto">
 
-                    <div class="row justify-content-center">
-                        &nbsp;
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                    <div class="row ">
+                    
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                    
@@ -950,9 +915,9 @@ color:goldenrod !important;
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -968,9 +933,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -986,9 +951,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1004,9 +969,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1036,7 +1001,7 @@ color:goldenrod !important;
     </section>
 
     <section class="section1 app-version1" >
-        <div class="container1">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
@@ -1045,12 +1010,12 @@ color:goldenrod !important;
                 </div>
                 <div class="col-xl-12 col-md-12 mx-auto">
 
-                    <div class="row justify-content-center">
-                        <!-- &nbsp; -->
+                    <div class="row ">
+                        
                     
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1067,9 +1032,9 @@ color:goldenrod !important;
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1085,9 +1050,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1103,9 +1068,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1121,9 +1086,9 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
+                        <div class="col-xl-2 col-md-6" style="width:210px;">
                             <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
+                            <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
                                 <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:230px;">
                                     {{-- <button style="width:70px;height:70px;border-radius:50%;color:#fff;background-color:#0504aa;"> --}}
@@ -1624,7 +1589,7 @@ color:goldenrod !important;
             <div class="row">
                 <div class="col-12">
                     <div class="section-header text-center aos">
-                        <h4 class="header-title">Brands</h1>
+                        <h4 class="header-title">Brands</h4>
                     </div>
                 </div>
             </div>
@@ -1724,8 +1689,9 @@ color:goldenrod !important;
 
 
 
-  </div>
+    </div>
 </div>
-
-            <!-- </marquee> -->
+<!-- </marquee> -->
+    </div> <!-- closes container -->
+</section> <!-- closes section -->
 @endsection

@@ -307,11 +307,11 @@ $(document).ready(function() {
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         }
@@ -336,28 +336,28 @@ $(document).ready(function() {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         });
@@ -374,29 +374,29 @@ $(document).ready(function() {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
                             $("#editStatusModal").modal('hide')
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         });
@@ -452,19 +452,19 @@ $(document).ready(function() {
 
                         $("#editvendor").modal('show')
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         });
@@ -481,29 +481,29 @@ $(document).ready(function() {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
                             $("#editvendor").modal('hide')
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             }), 1000);
         });
@@ -517,28 +517,28 @@ $(document).ready(function() {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             destroyDatatable();
                             fetchRecords();
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         });

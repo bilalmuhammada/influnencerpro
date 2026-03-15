@@ -1,3 +1,45 @@
+/**
+ * Global SweetAlert2 Suppression Override
+ * Suppresses "Success", "Error", and "Info" notifications to skip action pop-ups,
+ * while preserving "Warning" (confirmations).
+ */
+(function() {
+    if (typeof Swal !== 'undefined') {
+        const originalSwal = Swal.fire;
+        Swal.fire = function(...args) {
+            let options = args[0];
+            if (typeof options === 'string') {
+                const icon = args[2];
+                if (icon === 'success' || icon === 'error' || icon === 'info' || !icon) {
+                    return Promise.resolve({ value: true, isConfirmed: true, isDenied: false, isDismissed: false });
+                }
+            } else if (typeof options === 'object' && options !== null) {
+                const isConfirmation = options.showCancelButton || options.icon === 'warning' || (options.title && options.title.toLowerCase().includes('sure'));
+                if (!isConfirmation) {
+                    return Promise.resolve({ value: true, isConfirmed: true, isDenied: false, isDismissed: false });
+                }
+            }
+            return originalSwal.apply(this, args);
+        };
+
+        const originalMixin = Swal.mixin;
+        Swal.mixin = function(mixinOptions) {
+            const mixin = originalMixin.apply(this, arguments);
+            const originalMixinFire = mixin.fire;
+            mixin.fire = function(...args) {
+                let options = args[0];
+                const isConfirmation = (typeof options === 'object' && options !== null) && 
+                    (options.showCancelButton || options.icon === 'warning' || (options.title && options.title.toLowerCase().includes('sure')));
+                if (!isConfirmation) {
+                    return Promise.resolve({ value: true, isConfirmed: true, isDenied: false, isDismissed: false });
+                }
+                return originalMixinFire.apply(this, args);
+            };
+            return mixin;
+        };
+    }
+})();
+
 $(document).ready(function () {
     datetimepicker_load();
 })
@@ -22,29 +64,30 @@ function deleteRecord(url, thisElem) {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success',
-                        }).then((result) => {
-                            console.log($(thisElem).parents('tr'))
+                        // Suppressed success pop-up
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success',
+                        // }).then((result) => {
                             $(thisElem).parents('tr').remove();
-
-                        })
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Suppressed problem pop-up
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Suppressed unexpected error pop-up
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         }
@@ -113,6 +156,9 @@ function initializeDatatable(selector = '#table',type = 'type') {
         autoWidth: false, 
     
     });
+}
+
+$(function() {
     $('#datatable_filter label').contents().filter(function() {
         return this.nodeType === 3; // Removes the text node inside the label
     }).remove();
@@ -120,7 +166,7 @@ function initializeDatatable(selector = '#table',type = 'type') {
     $('#datatable_filter input').attr('placeholder','Search...').unwrap(); // Removes the label but keeps the input
     // $('#datatable_filter input').css('padding-right','12px;'); // Removes the label but keeps the input
 
-}
+});
 
 function destroyDatatable() {
     data_table.destroy();

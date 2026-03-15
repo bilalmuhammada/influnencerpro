@@ -6,21 +6,37 @@
 /* Premium Multiple Select Design */
 .select2-container--default .select2-selection--multiple {
     min-height: 52px !important;
+    max-height: 52px !important; /* Fixed height */
     border: 1px solid #997045 !important;
     border-radius: 4.8px !important;
-    padding: 2px 8px !important;
+    padding: 10px 8px 2px 8px !important;
     display: flex !important;
     align-items: center !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping */
+    overflow-x: scroll !important; /* Keep scrollable but we will hide scrollbars */
+    overflow-y: hidden !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
     background-color: white !important;
 }
+.select2-container--default .select2-selection--multiple::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari/Brave */
+}
 .select2-container--default .select2-selection--multiple:focus,.select2-container--default .select2-selection--multiple:active,
-.form-group.form-focus.focused .select2-container--default .select2-selection--multiple {
+.form-group.form-focus.focused .select2-container--default .select2-selection--multiple,
+.form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
     min-height: 52px !important;
-    border: 1px solid #997045 !important;
+    max-height: 52px !important; /* Fixed height */
+    border: 1px solid #0504aa !important; /* Highlight on focus */
     border-radius: 4.8px !important;
-    padding: 2px 8px !important;
+    padding: 0px 8px 2px 8px !important;
     display: flex !important;
     align-items: center !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping */
+    overflow-x: scroll !important; /* Keep scrollable but we will hide scrollbars */
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
     background-color: white !important;
 }
 .select2-container .select2-search--inline .select2-search__field {
@@ -32,10 +48,11 @@ margin-top: 18px !important;
     background-color: transparent !important;
     border: none !important;
     border-radius: 4px !important;
-    padding: 0px 0px 2px 13px !important;
-    margin: 0px 2px 0px 0px !important;
+    padding: 0px 0px 2px 10px !important; /* Reduced padding for tightly fit 'x' */
+    margin: 2px 2px 2px 0px !important; /* Added vertical margin for multi-line */
     display: flex !important;
     align-items: center !important;
+    flex-shrink: 0 !important; /* Prevent tags from shrinking */
     color: #0504aa !important;
     font-weight: 400 !important;
     font-size: 13px !important;
@@ -51,18 +68,18 @@ margin-top: 18px !important;
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     position: absolute !important;
-    left: 2px !important;
+    left: 1px !important; /* Closer to start */
     top: 50% !important;
     transform: translateY(-50%) !important;
     border: none !important;
     color: #0504aa !important;
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-weight: bold !important;
     line-height: 1 !important;
     padding: 0 !important;
     margin: 0 !important;
-    opacity: 1.0 !important;
-    transition: color 0.2s ease !important;
+    opacity: 0.4 !important; /* Faded button */
+    transition: all 0.2s ease !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
@@ -71,7 +88,10 @@ margin-top: 18px !important;
     background: transparent !important;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
@@ -360,18 +380,18 @@ display: none !important;
 }
 #select2-arts-container{
     display: inherit !important;
-    padding-top: 13px !important;
+    padding-top: 33px !important;
     max-height: 10px !important;
 
 }
 #select2-category_ids-container{
     display: inherit !important;
-    padding-top: 13px !important;
+    padding-top: 33px !important;
     max-height: 10px !important;
 }
 #select2-spoken_language_ids-container{
     display: inherit !important;
-    padding-top: 13px !important;   
+    padding-top: 3.badge-premium-green {3px !important;   
     max-height: 10px !important;
 }
 
@@ -1026,9 +1046,9 @@ display: none !important;
                                     <div class="col-md-8">
                                         <div class="form-group form-focus">
 
-                                            <textarea class="form-control floating" style="height:52px;" id="Priceinclude" name="price_include"
+                                            <textarea class="form-control floating" style="height:52px; padding-top: 20px;" id="Priceinclude" name="price_include"
                                                    placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
-                                                   value=""> {{ $influencer_personal_info->price_include ?? ''  }} </textarea>
+                                                   value="">{{ $influencer_personal_info->price_include ?? ''  }}</textarea>
                                             {{-- <select name="Priceinclude" id="Priceinclude" 
                                                     class="form-control floating " >
                                                 <option value="">Price Negotiable</option> 
@@ -1059,7 +1079,7 @@ display: none !important;
                                     <div class="col-md-12" >
                                         <div class="form-group form-focus">
                                         
-                                                <textarea class="form-control floating" style="height:120px;" name="bio">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
+                                                <textarea class="form-control floating" style="height:120px; padding-top: 20px;" name="bio">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
                                                 <label class="inner_label focus-label"  style="margin-left: 0px;">Bio</label>
                                     
                                         
@@ -1508,8 +1528,11 @@ $(document).on('click', '.submit-btn', function () {
                 data: formData,
                 contentType: false,
                 processData: false,
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
                 success: function (data) {
-                    if (data.status == 200) {
+                    if (data.status == true) {
                         console.log(data)
                         // window.location = base_url + '/register/complete-profile';
                     }

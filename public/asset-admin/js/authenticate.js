@@ -10,25 +10,25 @@ $(document).on('click', '.register-button', function () {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
-                            icon: 'success'
-                        })
+                        // Swal.fire({
+                        //     title: 'Success!',
+                        //     text: response.message,
+                        //     icon: 'success'
+                        // })
                     } else {
-                        Swal.fire({
-                            title: 'Problem!',
-                            text: response.message,
-                            icon: 'warning',
-                        })
+                        // Swal.fire({
+                        //     title: 'Problem!',
+                        //     text: response.message,
+                        //     icon: 'warning',
+                        // })
                     }
                 },
                 error: function (response) {
-                    Swal.fire({
-                        title: 'Problem!',
-                        text: 'Unexpected error',
-                        icon: 'warning',
-                    })
+                    // Swal.fire({
+                    //     title: 'Problem!',
+                    //     text: 'Unexpected error',
+                    //     icon: 'warning',
+                    // })
                 }
             });
         });
@@ -47,19 +47,19 @@ $(document).on('click', '.login-submit-button', function () {
             if (response.status) {
                 window.location.assign(base_url + '/admins-dashboard/dashboard');
             } else {
-                Swal.fire({
-                    title: 'Problem!',
-                    text: response.message,
-                    icon: 'warning',
-                })
+                // Swal.fire({
+                //     title: 'Problem!',
+                //     text: response.message,
+                //     icon: 'warning',
+                // })
             }
         },
         error: function (response) {
-            Swal.fire({
-                title: 'Problem!',
-                text: 'Unexpected error',
-                icon: 'warning',
-            })
+            // Swal.fire({
+            //     title: 'Problem!',
+            //     text: 'Unexpected error',
+            //     icon: 'warning',
+            // })
         }
     });
 });
@@ -74,19 +74,19 @@ $(document).on('click', '.logout-btn', function () {
             if (response.status) {
                 window.location.assign(base_url + '/admins-dashboard/login');
             } else {
-                Swal.fire({
-                    title: 'Problem!',
-                    text: response.message,
-                    icon: 'warning',
-                })
+                // Swal.fire({
+                //     title: 'Problem!',
+                //     text: response.message,
+                //     icon: 'warning',
+                // })
             }
         },
         error: function (response) {
-            Swal.fire({
-                title: 'Problem!',
-                text: 'Unexpected error',
-                icon: 'warning',
-            })
+            // Swal.fire({
+            //     title: 'Problem!',
+            //     text: 'Unexpected error',
+            //     icon: 'warning',
+            // })
         }
     });
 });
@@ -102,19 +102,19 @@ $(document).on('click', '.forgot-submit', function () {
             if (response.status) {
                 $('.password-alert').show().text(response.message);
             } else {
-                Swal.fire({
-                    title: 'Problem!',
-                    text: response.message,
-                    icon: 'warning',
-                })
+                // Swal.fire({
+                //     title: 'Problem!',
+                //     text: response.message,
+                //     icon: 'warning',
+                // })
             }
         },
         error: function (response) {
-            Swal.fire({
-                title: 'Problem!',
-                text: 'Unexpected error',
-                icon: 'warning',
-            })
+            // Swal.fire({
+            //     title: 'Problem!',
+            //     text: 'Unexpected error',
+            //     icon: 'warning',
+            // })
         }
     });
 });
@@ -128,25 +128,25 @@ $(document).on('click', '.update-password-submit', function () {
         dataType: "JSON",
         success: function (response) {
             if (response.status) {
-                Swal.fire({
-                    title: 'Sucess!',
-                    text: response.message,
-                    icon: 'success',
-                })
+                // Swal.fire({
+                //     title: 'Sucess!',
+                //     text: response.message,
+                //     icon: 'success',
+                // })
             } else {
-                Swal.fire({
-                    title: 'Problem!',
-                    text: response.message,
-                    icon: 'warning',
-                })
+                // Swal.fire({
+                //     title: 'Problem!',
+                //     text: response.message,
+                //     icon: 'warning',
+                // })
             }
         },
         error: function (response) {
-            Swal.fire({
-                title: 'Problem!',
-                text: 'Unexpected error',
-                icon: 'warning',
-            })
+            // Swal.fire({
+            //     title: 'Problem!',
+            //     text: 'Unexpected error',
+            //     icon: 'warning',
+            // })
         }
     });
 });
@@ -160,25 +160,25 @@ $(document).on('click', '.reset-password-submit', function () {
         dataType: "JSON",
         success: function (response) {
             if (response.status) {
-                Swal.fire({
-                    title: 'Success!',
-                    text: response.message,
-                    icon: 'success',
-                })
+                // Swal.fire({
+                //     title: 'Success!',
+                //     text: response.message,
+                //     icon: 'success',
+                // })
             } else {
-                Swal.fire({
-                    title: 'Problem!',
-                    text: response.message,
-                    icon: 'warning',
-                })
+                // Swal.fire({
+                //     title: 'Problem!',
+                //     text: response.message,
+                //     icon: 'warning',
+                // })
             }
         },
         error: function (response) {
-            Swal.fire({
-                title: 'Problem!',
-                text: 'Unexpected error',
-                icon: 'warning',
-            })
+            // Swal.fire({
+            //     title: 'Problem!',
+            //     text: 'Unexpected error',
+            //     icon: 'warning',
+            // })
         }
     });
 });

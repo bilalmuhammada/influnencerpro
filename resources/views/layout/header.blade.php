@@ -248,7 +248,7 @@
         }
 
         .main-nav > li {
-            margin-right: 10px !important;
+            margin-right: 0px !important;
         }
         .main-nav > li:last-child {
             margin-right: 0 !important;
@@ -287,6 +287,36 @@
 
         .goog-te-gadget .goog-te-combo {
             display: none !important;
+        }
+
+        /* Global 80% width for containers in structural sections */
+        .header-nav .container,
+        .main-wrapper > .container,
+        .main-wrapper > .container-fluid,
+        section .container,
+        .footer .footer-container {
+            width: 80% !important;
+            max-width: 80% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
+
+        .header-nav {
+            padding: 0 !important;
+        }
+
+        .header-nav .container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        /* Ensure internal elements within limited containers behave correctly */
+        .footer .container {
+            width: 100% !important;
+            max-width: 100% !important;
         }
     </style>
 

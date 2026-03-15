@@ -32,7 +32,6 @@
         }
 
         .term-content-container {
-            max-width: 100% !important;
             padding-left: 40px !important;
             padding-right: 40px !important;
             margin-top: 0px;
@@ -40,14 +39,14 @@
     </style>
     <div class="content">
         <div class="container term-content-container">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-10">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body" style="padding: 0px;">
                             <div class="login-header">
-                                <h3 class="text-center" style="margin-bottom: 20px;">Terms of Use</h3> 
+                                <h3 class="text-center" style="margin-bottom: 0px;">Terms of Use</h3> 
                                 
                                 <p style="text-align: justify;"> 
                                     These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”), and Collabstr Ventures Inc. ("Company", “we”, “us”, or “our”), concerning your access to and use of the collabstr.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). The Site provides an online marketplace for the following goods, products, and/or services: marketing influence via social media platforms (the “Marketplace Offerings”). In order to help make the Site a secure environment for the purchase and sale of Marketplace Offerings, all users are required to accept and comply with these Terms of Use, including the User Agreement posted on the Site, which are incorporated into these Terms of Use. You agree that by accessing the Site and/or the Marketplace Offerings, you have read, understood, and agree to be bound by all of these Terms of Use. If you do not agree with all of these terms of use, then you are expressly prohibited from using the site and/or the marketplace offerings and you must discontinue use immediately.
@@ -245,7 +244,7 @@
     <li>(4) You must comply with applicable third-party terms of agreement when using the mobile application, e.g., if you have a VoIP application, then you must not be in violation of their wireless data service agreement when using the mobile application;</li>
     <li>(5) You acknowledge and agree that the App Distributors are third-party beneficiaries of the terms and conditions in this mobile application license contained in these Terms of Use, and that each App Distributor will have the right (and will be deemed to have accepted the right) to enforce the terms and conditions in this mobile application license contained in these Terms of Use against you as a third-party beneficiary thereof.</li>
 </ul>
-<h3 style="margin-top:18px;margin-bottom: 18px">Social Media</h3>
+<h3 style="margin-top:10px;margin-bottom: 10px">Social Media</h3>
 <p>As part of the functionality of the Site, you may link your account with online accounts you have with third-party service providers (each such account, a “Third-Party Account”) by either:</p>
 
  <ul style="list-style-type: none;text-align: justify;"> 

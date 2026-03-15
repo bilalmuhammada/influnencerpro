@@ -571,6 +571,14 @@ class AuthController extends Controller
         $Influencer = User::with(['role', 'attachment'])->find($user_id);
 
 
+        // Strip commas from price
+        if ($request->has('price')) {
+            $request->merge([
+                'price' => str_replace(',', '', $request->price)
+            ]);
+        }
+
+
         // update user table here
         User::where('id', $user_id)->update([
             'country_id' => $request->base_country_id,
