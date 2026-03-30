@@ -38,15 +38,15 @@
         }
     </style>
     <div class="content">
-        <div class="container term-content-container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-10">
+        <div class="container term-content-container" style="max-width: 1140px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body" style="padding: 0px;">
                             <div class="login-header">
-                                <h3 class="text-center" style="margin-bottom: 0px;">Terms of Use</h3> 
+                                <h3 class="text-center" style="margin-bottom: 8px;">Terms of Use</h3> 
                                 
                                 <p style="text-align: justify;"> 
                                     These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”), and Collabstr Ventures Inc. ("Company", “we”, “us”, or “our”), concerning your access to and use of the collabstr.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”). The Site provides an online marketplace for the following goods, products, and/or services: marketing influence via social media platforms (the “Marketplace Offerings”). In order to help make the Site a secure environment for the purchase and sale of Marketplace Offerings, all users are required to accept and comply with these Terms of Use, including the User Agreement posted on the Site, which are incorporated into these Terms of Use. You agree that by accessing the Site and/or the Marketplace Offerings, you have read, understood, and agree to be bound by all of these Terms of Use. If you do not agree with all of these terms of use, then you are expressly prohibited from using the site and/or the marketplace offerings and you must discontinue use immediately.

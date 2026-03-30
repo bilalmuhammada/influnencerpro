@@ -18190,7 +18190,7 @@ button.scroll-top:focus {
     position: fixed;
     bottom: 105%;
     right: 35px;
-    border-radius: 10px;
+    border-radius: 4px;
     z-index: 9;
     color: #ffffff;
     text-align: center;

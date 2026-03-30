@@ -8,7 +8,7 @@
     }
 
     .dt-button {
-        border-color: #997045 !important;
+        border-color: goldenrod !important;
     }
 
     /* No custom col-sm-3 padding */
@@ -38,11 +38,13 @@
         color: #333 !important;
         font-size: 13px !important;
     }
+
     tr:hover {
         background-color: #efffff !important;
     }
+
     tr:hover .notif-desc-text {
-        color: #0504aa !important;
+        color: #2c2cf0f5 !important;
     }
 
 
@@ -53,7 +55,7 @@
 
 
     .gold-ellipsis:hover {
-        color: #997045 !important;
+        color: goldenrod !important;
     }
 
     .dropdown-item-compact:hover {
@@ -132,7 +134,7 @@
 </style>
 
 <div class="content">
-    <div class="container">
+    <div class="container" style="width: 80%;">
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="table-responsive table-container">
@@ -145,60 +147,67 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @forelse($notifications as $notification)
-                        <tr style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
-                            <td>
-                                <div class="table-avatar">
-                                    <a href="#" class="avatar me-3"> <!-- Increased margin -->
-                                        <img class="avatar-img rounded-circle"
-                                            src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/default.png') }}"
-                                            alt="User Image">
-                                    </a>
-                                    <a href="#" class="notif-desc-text">
-                                        {{ $notification->data }}
-                                        <span class="d-block text-muted" style="font-size: 11px; margin-top: 12px; font-weight: 400;">{{ getValueById(\App\Models\User::class, $notification->user_id, 'name') }} {{ getValueById(\App\Models\User::class, $notification->user_id, 'last_name') }}</span>
-                                    </a>
+                            @forelse($notifications as $notification)
+                            <tr style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
+                                <td>
+                                    <div class="table-avatar">
+                                        <a href="#" class="avatar me-3"> <!-- Increased margin -->
+                                            <img class="avatar-img rounded-circle"
+                                                src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/default.png') }}"
+                                                alt="User Image">
+                                        </a>
+                                        <a href="#" class="notif-desc-text">
+                                            {{ $notification->data }}
+                                            <span class="d-block text-muted"
+                                                style="font-size: 11px; margin-top: 12px; font-weight: 400;">{{
+                                                getValueById(\App\Models\User::class, $notification->user_id, 'name') }}
+                                                {{ getValueById(\App\Models\User::class, $notification->user_id,
+                                                'last_name') }}</span>
+                                        </a>
 
-                                </div>
-                            </td>
-                            <td>{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</td>
-                            <td class="text-end">
-                                <div class="dropdown dropdown-action">
-                                    <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-h gold-ellipsis"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-end py-1" style="min-width: 6rem;">
-                                        @if(!$notification->read_at)
-                                        <form action="{{ route('notifications.mark-as-read', $notification->id) }}" method="POST" class="m-0">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item dropdown-item-compact">
-                                                Mark as Read
-                                            </button>
-                                        </form>
-                                        @endif
-                                        <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" class="m-0">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item dropdown-item-compact">
-                                                Remove
-                                            </button>
-                                        </form>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td colspan="2" class="text-center">No notifications found</td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-            <div class="mt-4">
-                {{ $notifications->links() }}
+                                </td>
+                                <td>{{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}</td>
+                                <td class="text-end">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="fas fa-ellipsis-h gold-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end py-1" style="min-width: 4rem;">
+                                            @if(!$notification->read_at)
+                                            <form action="{{ route('notifications.mark-as-read', $notification->id) }}"
+                                                method="POST" class="m-0">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item dropdown-item-compact">
+                                                    Mark as Read
+                                                </button>
+                                            </form>
+                                            @endif
+                                            <form action="{{ route('notifications.delete', $notification->id) }}"
+                                                method="POST" class="m-0">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item dropdown-item-compact">
+                                                    Remove
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="2" class="text-center">No notifications found</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4">
+                    {{ $notifications->links() }}
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection

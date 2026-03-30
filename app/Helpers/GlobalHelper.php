@@ -529,7 +529,7 @@ function getRecentChats()
     return \App\Models\Message::with(['receiver', 'sender'])
         ->where('receiver_id', $userId)
         ->orderBy('created_at', 'desc')
-        ->limit(5)
+        ->limit(3)
         ->get();
 }
 

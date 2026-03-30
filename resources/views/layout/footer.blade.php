@@ -34,14 +34,12 @@
     .changeColor:hover {
         color: blue !important;
     }
-
-
 </style>
 <footer class="footer" style="border:0px solid red;">
     <div class="footer-container mb-30" style="margin-top: 50px;">
-        <div style="border:0px solid red; margin-top:0px;">
-            <div class="row" >
-                <div class="col-lg-4 col-md-6 col-12" >
+        <div style="border:0px solid red; margin-left:20px;">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
                     <h6>
                         Join Us & Discover More.<br />
                         <div style="color:#0000FF;margin-top:6px;"><b>Download our App now!</b></div>
@@ -51,23 +49,23 @@
                     <img src="{{ asset('assets/iphone.png') }}" alt=" " class="" height="80px" width="100px">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px;">
+                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " class="shaking"
+                        height="45px" style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px; margin-left: 0rem;">
+                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking"
+                        height="45px" style="margin-top:20px; margin-left: 0rem;">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px; ">
-                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking" height="45px"
-                        style="margin-top:20px; margin-left: 0rem;">
+                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking"
+                        height="45px" style="margin-top:20px; margin-left: 0rem;">
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-top aos" style="border:0px solid red;">
         <div class="footer-container" style="border:0px solid red;margin-top:-25px;">
-            <div class="row" style="margin-top: 20px;">
+            <div class="row" style="margin-top: 20px;margin-left:10px;">
                 <div class="col-xl-3 col-md-6">
                     <div class="footer-widget footer-menu">
                         <!-- <div class="footer-bottom-logo">
@@ -77,7 +75,8 @@
                         </div> -->
                         <h5 style="font-size:15px;font-weight: bold;" class="footer-title">Company</h5>
                         <ul>
-                            {{-- <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>Home</a></li> --}}
+                            {{-- <li><a href="{{ env('BASE_URL') }}"><i class="fas fa-angle-right me-1"></i>Home</a>
+                            </li> --}}
                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutus" class="changeColor">
                                     {{-- <i class="fas fa-angle-right me-1"></i> --}}
 
@@ -91,13 +90,13 @@
                             <!-- <li><a href="{{ env('BASE_URL') . 'register' }}"><i class="fas fa-angle-right me-1"></i>Register</a> -->
                             </li>
                             @endif
-                            <li><a href="{{ env('BASE_URL') }}/termcondition" class="changeColor"
-                                    {{-- data-bs-toggle="modal" data-bs-target="#termsModal" --}}>
+                            <li><a href="{{ env('BASE_URL') }}/termcondition" class="changeColor" {{--
+                                    data-bs-toggle="modal" data-bs-target="#termsModal" --}}>
 
                                     Terms of Use</a>
                             </li>
-                            <li><a href="{{ env('BASE_URL') }}/privacy-policy" class="changeColor"
-                                    {{-- data-bs-toggle="modal" data-bs-target="#privacyModal" --}}>
+                            <li><a href="{{ env('BASE_URL') }}/privacy-policy" class="changeColor" {{--
+                                    data-bs-toggle="modal" data-bs-target="#privacyModal" --}}>
                                     {{-- <i class="fas fa-angle-right me-1"></i> --}}
                                     Privacy Policy</a>
                             </li>
@@ -137,22 +136,20 @@
                     <div class="footer-widget footer-menu">
                         <h5 style="font-size:15px;font-weight: bold;" class="footer-title">Socials</h5>
                         <ul style="margin-left: 14px;margin-top: 14px;">
-                            <li><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d" class="icon shaking" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
-                                        width="25" style="margin-bottom: 8px;"
-                                        height="25"></a></li>
-                            <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA==" class="icon shaking" target="_blank"><img
-                                        src="{{ asset('assets/icons/instagram.png') }}"
-                                        alt="insta" width="25" style="margin-bottom: 8px;"
-                                        height="25"></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61564513546656&mibextid=LQQJ4d"
+                                    class="icon shaking" target="_blank"><img
+                                        src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb" width="25"
+                                        style="margin-bottom: 8px;" height="25"></a></li>
+                            <li><a href="https://www.instagram.com/influencerpro_org?igsh=MWIzb3pzMnQzMmFrcA=="
+                                    class="icon shaking" target="_blank"><img
+                                        src="{{ asset('assets/icons/instagram.png') }}" alt="insta" width="25"
+                                        style="margin-bottom: 8px;" height="25"></a></li>
                             <li><a href="https://x.com/influencerpro_" class="icon shaking" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                        alt="twitter" style="margin-bottom: 8px;"
-                                        width="25" height="25"></a></li>
-                            {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon" target="_blank"><img
-                                        src="{{ asset('assets/img/social-icon/youtube.svg') }}" alt="youtube"
-                            width="30"
-                            height="30"></a></li> --}}
+                                        src="{{ asset('assets/img/social-icon/twitter.png') }}" alt="twitter"
+                                        style="margin-bottom: 8px;" width="25" height="25"></a></li>
+                            {{-- <li><a href="http://www.youtube.com/@InfluencerPro_org" class="icon"
+                                    target="_blank"><img src="{{ asset('assets/img/social-icon/youtube.svg') }}"
+                                        alt="youtube" width="30" height="30"></a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -182,20 +179,21 @@
     </div>
 
 
-   <div class="footer-bottom">
+    <div class="footer-bottom">
         <div class="footer-container">
 
             <div class="copyright">
                 <div class="row d-flex flex-column align-items-center">
                     <div class="footer-bottom-logo text-center" style="margin-bottom: -9px;">
                         <a href="{{ env('BASE_URL') }}" class="menu-logo">
-                            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking"
-                                alt="Logo" style="width: 150px;">
+                            <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}"
+                                class="img-fluid shaking" alt="Logo" style="width: 150px;">
                         </a>
                     </div>
                     <div class="copyright-text bilal-footer1 text-center" style="margin-bottom: 22px;">
-                        <p class="mb-0" style="color:#00498e; font-weight: 500; font-size:12px; width: auto !important; display: inline-block;">
-                            © InfluencerPro.org  {{ date('Y') }}, All Rights Reserved.
+                        <p class="mb-0"
+                            style="color:#00498e; font-weight: 500; font-size:12px; width: auto !important; display: inline-block;">
+                            © InfluencerPro.org {{ date('Y') }}, All Rights Reserved.
                         </p>
                     </div>
                 </div>
@@ -234,7 +232,8 @@
     <span class="ti-angle-up"><img src="{{ asset('assets/img/icon/top-icon.svg') }}" class="img-fluid" alt></span>
 </button>
 <script src="{{ asset('assets/js/feather.min.js') }}"></script>
-{{--<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>--}}
+{{--
+<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>--}}
 
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -245,7 +244,8 @@
 
 <script src="{{ asset('assets/plugins/aos/aos.js') }}"></script>
 
-{{--<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>--}}
+{{--
+<script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}"></script>--}}
 
 <script src="{{ asset('assets/js/slick.js') }}"></script>
 
@@ -267,7 +267,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         ajax_setup();
 
 

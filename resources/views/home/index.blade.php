@@ -14,7 +14,7 @@
 
 
   .headingstyle{
-    padding:10px 8px;
+    padding:10px 0px 0px 148px;
     border-radius:2%;
     width:100%;
    
@@ -897,7 +897,7 @@ color:goldenrod !important;
 
                     <div class="row ">
                     
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -915,7 +915,7 @@ color:goldenrod !important;
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -933,7 +933,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -951,7 +951,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -969,7 +969,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -1013,7 +1013,7 @@ color:goldenrod !important;
                     <div class="row ">
                         
                     
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -1032,7 +1032,7 @@ color:goldenrod !important;
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -1050,7 +1050,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -1068,7 +1068,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 
@@ -1086,7 +1086,7 @@ color:goldenrod !important;
                             </div>
                         </div>
                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:210px;">
+                        <div class="col-xl-2 col-md-6" style="width:227px;">
                             <!-- <div class="row"> -->
                             <div class="listing" style="width:200px;padding:0px;border:0px solid red;">
 

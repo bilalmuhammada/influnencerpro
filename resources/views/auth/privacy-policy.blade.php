@@ -58,9 +58,9 @@ ul, ol{
 
     </style>
     <div class="content">
-        <div class="container privacy-content-container" style="margin-top: 0px;">
-            <div class="row">
-                <div class="col-md-12">
+        <div class="container privacy-content-container" style="margin-top: 0px; max-width: 1140px;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">

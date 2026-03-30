@@ -300,8 +300,9 @@ width: 195px !important;
                 @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" >
                         <div class="card avatar-one"
-                             style="border:0px solid #997045;width:200px; ">
-                            <a href="{{ env('BASE_URL') }}influencers/{{ $influencer->id }}/detail">
+                             onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+                             style="border:0px solid #997045;width:200px; cursor: pointer;">
+                            <a href="javascript:void(0)">
                                 
                                 
                                 @php
@@ -363,7 +364,7 @@ width: 195px !important;
                                             $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
-                                        @if($instagram && isset($instagram->followers))
+                                        @if($instagram && !empty($instagram->followers) && $instagram->followers != '0')
 
 
 
@@ -379,7 +380,7 @@ width: 195px !important;
                                     </li>
                                                         @endif
         
-                                                        @if($twitter  && isset($twitter->followers))
+                                                        @if($twitter  && !empty($twitter->followers) && $twitter->followers != '0')
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
@@ -394,7 +395,7 @@ width: 195px !important;
                                                             
                                                         @endif
         
-                                                        @if($youtube && isset($youtube->followers))
+                                                        @if($youtube && !empty($youtube->followers) && $youtube->followers != '0')
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
@@ -408,7 +409,7 @@ width: 195px !important;
                                                         
                                                             
                                                         @endif
-                                                        @if($tiktok && isset($tiktok->followers))
+                                                        @if($tiktok && !empty($tiktok->followers) && $tiktok->followers != '0')
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail" class="shaking-container">
@@ -422,7 +423,7 @@ width: 195px !important;
                                                         
                                                           
                                                         @endif
-                                                        @if($facebook && isset($facebook->followers))
+                                                        @if($facebook && !empty($facebook->followers) && $facebook->followers != '0')
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
@@ -436,7 +437,7 @@ width: 195px !important;
                                                         
                                                             
                                                         @endif
-                                                        @if($snapchat && isset($snapchat->followers))
+                                                        @if($snapchat && !empty($snapchat->followers) && $snapchat->followers != '0')
                                                         <li style="display: inline-block;;color:#fff;">
                                                             <div class="social-wrapper" style="text-align: center;">
                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">

@@ -319,7 +319,7 @@
                 @endphp
                 <div class="details" style="margin-top:-7px;height:auto;padding:0px 3px;">
                     <ul style="list-style-type: none;">
-                        @if($instagram)
+                        @if($instagram && !empty($instagram->followers) && $instagram->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                         href=""><img src="{{ asset('assets/img/social-icon/insta.png') }}" alt=""
                                                      width="30px"></a> <div class="text-center"
@@ -327,7 +327,7 @@
                             </li> &nbsp;
                         @endif
 
-                        @if($twitter)
+                        @if($twitter && !empty($twitter->followers) && $twitter->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                         href=""><img
                                             src="{{ asset('assets/img/social-icon/twitter.png') }}"
@@ -336,7 +336,7 @@
                                                                    style="font-size:11px;">{{ formatNumber($twitter ? $twitter->followers :  0) }}</div></span>
                             </li> &nbsp;
                         @endif
-                        @if($youtube)
+                        @if($youtube && !empty($youtube->followers) && $youtube->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;text-align:center;"><a
                                         href=""><img
                                             src="{{ asset('assets/img/social-icon/youtube.png') }}"
@@ -345,7 +345,7 @@
                                                                    style="font-size:11px;">{{ formatNumber($youtube ? $youtube->followers :  0) }}</div></span>
                             </li> &nbsp;
                         @endif
-                        @if($tiktok)
+                        @if($tiktok && !empty($tiktok->followers) && $tiktok->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                             src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt=""
                                             width="30px"></a> <div
@@ -353,14 +353,14 @@
                                         style="font-size:11px;">{{ formatNumber($tiktok ? $tiktok->followers : 0) }}</div></span>
                             </li>&nbsp;
                         @endif
-                        @if($facebook)
+                        @if($facebook && !empty($facebook->followers) && $facebook->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                             src="{{ asset('assets/img/social-icon/fb.png') }}" alt="" width="30px"></a> <div
                                         class="text-center"
                                         style="font-size:11px;">{{ formatNumber($facebook ? $facebook->followers : 0) }}</div></span>
                             </li> &nbsp;
                         @endif
-                        @if($snapchat)
+                        @if($snapchat && !empty($snapchat->followers) && $snapchat->followers != '0')
                             <li style=" display: inline-block;"><span style="font-size: 12px;"><a href=""><img
                                             src="{{ asset('assets/img/social-icon/snapchat.png') }}" alt=""
                                             width="30px"></a> <div

@@ -1,541 +1,637 @@
 @extends('layout.master')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-<style>   
-/* Premium Multiple Select Design */
-.select2-container--default .select2-selection--multiple {
-    min-height: 52px !important;
-    max-height: 52px !important; /* Fixed height */
-    border: 1px solid #997045 !important;
-    border-radius: 4.8px !important;
-    padding: 10px 8px 2px 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important; /* Prevent wrapping */
-    overflow-x: scroll !important; /* Keep scrollable but we will hide scrollbars */
-    overflow-y: hidden !important;
-    scrollbar-width: none !important; /* Firefox */
-    -ms-overflow-style: none !important; /* IE/Edge */
-    background-color: white !important;
-}
-.select2-container--default .select2-selection--multiple::-webkit-scrollbar {
-    display: none !important; /* Chrome/Safari/Brave */
-}
-.select2-container--default .select2-selection--multiple:focus,.select2-container--default .select2-selection--multiple:active,
-.form-group.form-focus.focused .select2-container--default .select2-selection--multiple,
-.form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
-    min-height: 52px !important;
-    max-height: 52px !important; /* Fixed height */
-    border: 1px solid #0504aa !important; /* Highlight on focus */
-    border-radius: 4.8px !important;
-    padding: 0px 8px 2px 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important; /* Prevent wrapping */
-    overflow-x: scroll !important; /* Keep scrollable but we will hide scrollbars */
-    overflow-y: hidden !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    background-color: white !important;
-}
-.select2-container .select2-search--inline .select2-search__field {
-margin-top: 18px !important;
-    margin-left: 0px !important;
-}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<style>
+    /* Premium Multiple Select Design */
+    .select2-container--default .select2-selection--multiple {
+        min-height: 52px !important;
+        max-height: 52px !important;
+        /* Fixed height */
+        border: 1px solid #997045 !important;
+        border-radius: 4.8px !important;
+        padding: 10px 8px 2px 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        /* Prevent wrapping */
+        overflow-x: scroll !important;
+        /* Keep scrollable but we will hide scrollbars */
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+        /* Firefox */
+        -ms-overflow-style: none !important;
+        /* IE/Edge */
+        background-color: white !important;
+    }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 4px !important;
-    padding: 0px 0px 2px 10px !important; /* Reduced padding for tightly fit 'x' */
-    margin: 2px 2px 2px 0px !important; /* Added vertical margin for multi-line */
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important; /* Prevent tags from shrinking */
-    color: #0504aa !important;
-    font-weight: 400 !important;
-    font-size: 13px !important;
-    transition: all 0.2s ease !important;
-    position: relative !important;
-    box-shadow: none !important;
-    height: 24px !important;
-}
+    .select2-container--default .select2-selection--multiple::-webkit-scrollbar {
+        display: none !important;
+        /* Chrome/Safari/Brave */
+    }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
-    background-color: transparent !important;
-}
+    .select2-container--default .select2-selection--multiple:focus,
+    .select2-container--default .select2-selection--multiple:active,
+    .form-group.form-focus.focused .select2-container--default .select2-selection--multiple,
+    .form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
+        min-height: 52px !important;
+        max-height: 52px !important;
+        /* Fixed height */
+        border: 1px solid #0504aa !important;
+        /* Highlight on focus */
+        border-radius: 4.8px !important;
+        padding: 0px 8px 2px 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        /* Prevent wrapping */
+        overflow-x: scroll !important;
+        /* Keep scrollable but we will hide scrollbars */
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        background-color: white !important;
+    }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    position: absolute !important;
-    left: 1px !important; /* Closer to start */
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    border: none !important;
-    color: #0504aa !important;
-    font-size: 14px !important;
-    font-weight: bold !important;
-    line-height: 1 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    opacity: 0.4 !important; /* Faded button */
-    transition: all 0.2s ease !important;
-}
+    .select2-container .select2-search--inline .select2-search__field {
+        margin-top: 18px !important;
+        margin-left: 0px !important;
+    }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-    opacity: 1 !important;
-    color: #ff4d4f !important;
-    background: transparent !important;
-}
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 4px !important;
+        padding: 0px 0px 2px 10px !important;
+        /* Reduced padding for tightly fit 'x' */
+        margin: 2px 2px 2px 0px !important;
+        /* Added vertical margin for multi-line */
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        /* Prevent tags from shrinking */
+        color: #0504aa !important;
+        font-weight: normal !important;
+        font-size: 13px !important;
+        transition: all 0.2s ease !important;
+        position: relative !important;
+        box-shadow: none !important;
+        height: 24px !important;
+    }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-}
+    .select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
+        background-color: transparent !important;
+    }
 
-/* Fix misaligned focus cursor and search field */
-.select2-container--default .select2-search--inline {
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        position: absolute !important;
+        left: 1px !important;
+        /* Closer to start */
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        border: none !important;
+        color: #0504aa !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        opacity: 0.4 !important;
+        /* Faded button */
+        transition: all 0.2s ease !important;
+    }
 
-.select2-container--default .select2-search--inline .select2-search__field {
-    margin: 13px 0 0 0 !important; /* Reduced margin for better centering */
-    height: 32px !important;
-    line-height: 32px !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    
-    font-size: 14px !important;
-}
-.select2-selection__rendered[role="textbox"][aria-readonly="true"] {
-    color: black !important;
-    padding-left: 4px !important;
-}
-.dropzone-container {
-    border: 2px solid #ccc;
-    padding: 0px 6px;
-    margin: 0 auto;
-    /* text-align: center; */
-    margin-top: 0px;
-  }
-  .dz-image {
-    position: relative;
-  }
-.fileInput{
-    color:#0504aa !important;
-}
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        opacity: 1 !important;
+        color: #ff4d4f !important;
+        background: transparent !important;
+    }
 
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
 
-.fileInput:hover{
-    color:goldenrod !important;
-}
-  #select2--results{
-min-height: 70px !important;
-  }
-  .dropdowndecoration:hover,.dropdowndecoration:focus-within {
-        border: 1px solid #0504aa!important;
-}
+    /* Fix misaligned focus cursor and search field */
+    .select2-container--default .select2-search--inline {
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
 
- .dropdowndecoration {
-    border-radius: 0.30rem;
-    border: 1px solid #997045!important;
-}
+    .select2-container--default .select2-search--inline .select2-search__field {
+        margin: 13px 0 0 0 !important;
+        /* Reduced margin for better centering */
+        height: 32px !important;
+        line-height: 32px !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
 
-  .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: transparent!important;
-    color: #0504aa !important;
-    font-weight: normal !important;
-  }
-  
-  .select2-results__option {
-    padding: 8px 13px !important;
-    font-size: 14px !important;
-    color: #4b5563 !important;
-  }
-  .select2-dropdown {
-    border: 1px solid #f0f0f0 !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-    overflow: hidden !important;
-    margin-top: 5px !important;
-  }
-  .dz-preview {
-            position: relative;
-        }
-  .dz-preview .dz-remove {
-    position: absolute;
-    top: 6px;
-    left: 130px;
-    background-color: #f0f8ff03;
-    color: #f20909f7;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 28px; /* Reduced from 35px */
-    width: 20px;
-    font-weight: 600;
-    height: 20px;
-    text-align: center;
-    line-height: 18px;
-}
-        .dz-preview .dz-remove:hover {
-            color: #0504aa;
+        font-size: 14px !important;
+    }
 
-        }
+    .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
+        color: black !important;
+        padding-left: 4px !important;
+    }
 
-        .select2-selection__clear{
-    display:none; 
-}
-  .floating {
-    padding-top: 20px !important;
-  }
-  .dz-image img{
-width: 160px;
-border-radius: 4px;
-height: 160px;
-  }
+    .dropzone-container {
+        border: 2px solid #ccc;
+        padding: 0px 6px;
+        margin: 0 auto;
+        /* text-align: center; */
+        margin-top: 0px;
+    }
 
-  .select2-search__field{
-    border-color: #997045 !important;
-  }
-  .select2-search__field:focus{
-    border-color: #0504aa !important;
-  }
-  #select2--container{
-    padding-top: 16px;
-  color: #0b0b0b !important;
-  font-size: 14px !important;
-  }
-  
-  .dz-success-mark{
-    display: none;
-  }
-  .inner_label{
-    margin-left: 12px;
-  }
- 
-  .dz-message{
-/* display: none !important; */
-  }
-  .select2-container {
-    z-index: 10 !important;
-}
-.baseCountry{
-font-size: 14px;
-font-weight: bold;
-}
-  .inputbg:hover,.inputbg:focus-within,.floating:hover, .floating:focus-within,
-  .form-group.form-focus.focused-within .form-control {
-    border: 1px solid #0504aa !important;
-}
+    .dz-image {
+        position: relative;
+    }
+
+    .fileInput {
+        color: #0504aa !important;
+    }
 
 
+    .fileInput:hover {
+        color: goldenrod !important;
+    }
+
+    #select2--results {
+        min-height: 70px !important;
+    }
+
+    .dropdowndecoration:hover,
+    .dropdowndecoration:focus-within {
+        border: 1px solid #0504aa !important;
+    }
+
+    .dropdowndecoration {
+        border-radius: 0.30rem;
+        border: 1px solid #997045 !important;
+    }
+
+    .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+        background-color: transparent !important;
+        color: #0504aa !important;
+        font-weight: normal !important;
+    }
+
+    .select2-results__option {
+        padding: 8px 13px !important;
+        font-size: 14px !important;
+        color: #4b5563 !important;
+    }
+
+    .select2-dropdown {
+        border: 1px solid #f0f0f0 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden !important;
+        margin-top: 5px !important;
+    }
+
+    .dz-preview {
+        position: relative;
+    }
+
+    .dz-preview .dz-remove {
+        position: absolute;
+        top: 6px;
+        left: 130px;
+        background-color: #f0f8ff03;
+        color: #f20909f7;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 28px;
+        /* Reduced from 35px */
+        width: 20px;
+        font-weight: 600;
+        height: 20px;
+        text-align: center;
+        line-height: 18px;
+    }
+
+    .dz-preview .dz-remove:hover {
+        color: #0504aa;
+
+    }
+
+    .select2-selection__clear {
+        display: none;
+    }
+
+    .floating {
+        padding-top: 20px !important;
+    }
+
+    .dz-image img {
+        width: 160px;
+        border-radius: 4px;
+        height: 160px;
+    }
+
+    .select2-search__field {
+        border-color: #997045 !important;
+    }
+
+    .select2-search__field:focus {
+        border-color: #0504aa !important;
+    }
+
+    #select2--container {
+        padding-top: 16px;
+        color: #0b0b0b !important;
+        font-size: 14px !important;
+    }
+
+    .dz-success-mark {
+        display: none;
+    }
+
+    .inner_label {
+        margin-left: 12px;
+    }
+
+    .dz-message {
+        /* display: none !important; */
+    }
+
+    .select2-container {
+        z-index: 10 !important;
+    }
+
+    .baseCountry {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .inputbg:hover,
+    .inputbg:focus-within,
+    .floating:hover,
+    .floating:focus-within,
+    .form-group.form-focus.focused-within .form-control {
+        border: 1px solid #0504aa !important;
+    }
 
 
-.dropzone .dz-preview .dz-image {
-    border-radius: 0px !important;}
-#Priceinclude::placeholder {
-            font-size: 14px !important; /* Change font size */
-            /* color: black !important;   */
-            /* font-weight: bold  !important; Change color */
-        }
-.form-control{
-    color: black !important;
-    font-size: 15px !important;
-}
-.form-control::placeholder {
-    color: #adadad !important;
-    opacity: 0 !important;
-    font-weight: 400 !important;
-    font-size: 14px !important;
-    transition: opacity 0.2s ease !important;
-}
 
-.form-control:focus::placeholder {
-    opacity: 1 !important;
-}
 
-/* Dynamic Floating Labels */
-.form-group.form-focus {
-    position: relative !important;
-    margin-bottom: 8px !important;
-}
+    .dropzone .dz-preview .dz-image {
+        border-radius: 0px !important;
+    }
 
-.focus-label, .inner_label {
-    position: absolute !important;
-    top: -7px !important; /* Start in middle */
-    left: 12px !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    color: #0504aa !important;
-    background: transparent !important;
-    z-index: 15 !important;
-    pointer-events: none !important;
-    margin: 0 !important;
-    transition: all 0.2s ease !important;
-}
-.form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    line-height: 22px !important;
-    
-    margin-left: 3px !important;
-}
+    #Priceinclude::placeholder {
+        font-size: 14px !important;
+        /* Change font size */
+        /* color: black !important;   */
+        /* font-weight: bold  !important; Change color */
+    }
 
-/* Float State: for focused, focus-within, and elements with content */
-.form-group.form-focus:focus-within .focus-label,
-.form-group.form-focus:focus-within .inner_label,
-.form-group.form-focus.focused .focus-label,
-.form-group.form-focus.focused .inner_label,
-.form-group.form-focus.has-value .focus-label,
-.form-group.form-focus.has-value .inner_label {
-    top: -17px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    color: #0504aa !important;
-    background: white !important;
-    padding: 0 0px !important;
-}
+    .form-control {
+        color: black !important;
+        font-size: 15px !important;
+    }
 
-/* Multiple selects always float if they have selections or are focused */
-.form-group.form-focus:has(.select2-selection__choice) .focus-label,
-.form-group.form-focus.focused:has(.select2-container) .focus-label {
-    top: -17px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    background: white !important;
-    padding: 0 0px !important;
-    color: #0504aa !important;
-}
+    .form-control::placeholder {
+        color: #adadad !important;
+        opacity: 0 !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        transition: opacity 0.2s ease !important;
+    }
+
+    .form-control:focus::placeholder {
+        opacity: 1 !important;
+    }
+
+    /* Dynamic Floating Labels */
+    .form-group.form-focus {
+        position: relative !important;
+        margin-bottom: 8px !important;
+    }
+
+    .focus-label,
+    .inner_label {
+        position: absolute !important;
+        top: -7px !important;
+        /* Start in middle */
+        left: 12px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #0504aa !important;
+        background: transparent !important;
+        z-index: 15 !important;
+        pointer-events: none !important;
+        margin: 0 !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 14px !important;
+        font-weight: normal !important;
+        line-height: 22px !important;
+
+        margin-left: 3px !important;
+    }
+
+    /* Float State: for focused, focus-within, and elements with content */
+    .form-group.form-focus:focus-within .focus-label,
+    .form-group.form-focus:focus-within .inner_label,
+    .form-group.form-focus.focused .focus-label,
+    .form-group.form-focus.focused .inner_label,
+    .form-group.form-focus.has-value .focus-label,
+    .form-group.form-focus.has-value .inner_label {
+        top: -22px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #0504aa !important;
+        background: white !important;
+        padding: 0 0px !important;
+    }
+
+    /* Multiple selects always float if they have selections or are focused */
+    .form-group.form-focus:has(.select2-selection__choice) .focus-label,
+    .form-group.form-focus.focused:has(.select2-container) .focus-label {
+        top: -17px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        background: white !important;
+        padding: 0 0px !important;
+        color: #0504aa !important;
+    }
+
     /* Define the scrollbar track */
-::-webkit-scrollbar {
-  width: 6px; /* You can adjust this value based on your preference */
-}
+    ::-webkit-scrollbar {
+        width: 6px;
+        /* You can adjust this value based on your preference */
+    }
 
-/* Define the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background-color: #997045;
-  border-radius: 34px;
-}
-.font-size-15{
-    font-size: 15px !important;
-}
+    /* Define the scrollbar thumb */
+    ::-webkit-scrollbar-thumb {
+        background-color: #997045;
+        border-radius: 34px;
+    }
 
-/* Define the scrollbar track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+    .font-size-15 {
+        font-size: 15px !important;
+    }
 
-.ui-state-default  {
+    /* Define the scrollbar track */
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .ui-state-default {
         border: 0px !important;
-    background-color: white !important; /* Change this to the desired color */
-  }
+        background-color: white !important;
+        /* Change this to the desired color */
+    }
 
-  #ui-datepicker-div{
-width: 210px !important;
-  }
-  .from_date:focus, .to_date:focus, .datepicker:focus {
-    border: 1px solid #0504aa !important;
-}
-.datepicker::placeholder {
-    color: #0504aa !important;
-}
-.form-group.form-focus:has(.datepicker) .focus-label {
-    color: #0504aa !important;
-}
+    #ui-datepicker-div {
+        width: 210px !important;
+    }
+
+    .from_date:focus,
+    .to_date:focus,
+    .datepicker:focus {
+        border: 1px solid #0504aa !important;
+    }
+
+    .datepicker::placeholder {
+        color: #0504aa !important;
+    }
+
+    .form-group.form-focus:has(.datepicker) .focus-label {
+        color: #0504aa !important;
+    }
+
     #my-Dropzone .dz-preview {
-            display: inline-block;
-            margin: 5px !important;
+        display: inline-block;
+        margin: 5px !important;
+    }
+
+    #my-Dropzone .dz-image {
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    #my-Dropzone {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #my-Dropzone .dz-details {
+        display: none;
+    }
+
+    #my-Dropzone .dz-message {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .dz-error-mark {
+        display: none !important;
+    }
+
+    #select2-mySelect-container {
+        color: #0b0b0b !important;
+    }
+
+    #select2-arts-container {
+        display: inherit !important;
+        padding-top: 33px !important;
+        max-height: 10px !important;
+
+    }
+
+    #select2-category_ids-container {
+        display: inherit !important;
+        padding-top: 33px !important;
+        max-height: 10px !important;
+    }
+
+    #select2-spoken_language_ids-container {
+        display: inherit !important;
+        padding-top: 33px !important;
+        max-height: 10px !important;
+    }
+
+
+    .shaking {
+        display: inline-block;
+        transition: transform 1s ease-in-out;
+    }
+
+    .shaking:hover {
+        /* Change to your desired hover color */
+
+        animation: shake 2s linear infinite;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
         }
-        #my-Dropzone .dz-image {
-            width: 160px !important;
-            height: 160px !important;
-        }
-       #my-Dropzone {
-            display: flex !important;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
-        #my-Dropzone .dz-details {
-            display: none;
-        }
-        #my-Dropzone .dz-message {
-            text-align: center;
-            margin: 20px;
+
+        25% {
+            transform: translateX(-5px);
         }
 
-.dz-error-mark{
-display: none !important;
-}
-#select2-mySelect-container{
-   color:  #0b0b0b !important;
-}
-#select2-arts-container{
-    display: inherit !important;
-    padding-top: 33px !important;
-    max-height: 10px !important;
+        50% {
+            transform: translateX(5px);
+        }
 
-}
-#select2-category_ids-container{
-    display: inherit !important;
-    padding-top: 33px !important;
-    max-height: 10px !important;
-}
-#select2-spoken_language_ids-container{
-    display: inherit !important;
-    padding-top: 3.badge-premium-green {3px !important;   
-    max-height: 10px !important;
-}
+        75% {
+            transform: translateX(-5px);
+        }
 
+        100% {
+            transform: translateX(0);
+        }
+    }
 
-.shaking {
-    display: inline-block;
-    transition: transform 1s ease-in-out;
-   }
-
-  .shaking:hover {
-   /* Change to your desired hover color */
- 
-    animation: shake 2s linear infinite;
-   }
-
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-  }
-/* .select2-selection__rendered{
+    /* .select2-selection__rendered{
     position: absolute;
     top: 12px;
     /* height: 12px; */
 
-/* } */ 
-.select2-container--default:hover .select2-selection--multiple,
-.form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
-    border: 1px solid #0504aa !important;
-}
-.select2-container--default .select2-selection--multiple{
-    border: 1px solid #997045 !important;
-}
+    /* } */
+    .select2-container--default:hover .select2-selection--multiple,
+    .form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
+        border: 1px solid #0504aa !important;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        border: 1px solid #997045 !important;
+    }
 </style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('content')
-    @php
-        $influencer_personal_info = $influencer->personal_information;
-        $influencer_professional_detail = $influencer->user_professional_detail;
-        $influencer_features = $influencer->features->pluck('feature_id')->toArray();
-        $socialMediaProfiles = $influencer->social_media_profiles;
-        $facebookProfiles = $socialMediaProfiles->where('type', 'facebook')->first();
-        $instagramProfiles = $socialMediaProfiles->where('type', 'instagram')->first();
-        $tiktokProfiles = $socialMediaProfiles->where('type', 'tiktok')->first();
-        $twitterProfiles = $socialMediaProfiles->where('type', 'twitter')->first();
-        $youtubeProfiles = $socialMediaProfiles->where('type', 'youtube')->first();
-        $snapchatProfiles = $socialMediaProfiles->where('type', 'snapchat')->first();
-        $pinterestProfiles = $socialMediaProfiles->where('type', 'pinterest')->first();
-        $webProfiles = $socialMediaProfiles->where('type', 'web')->first();
+@php
+$influencer_personal_info = $influencer->personal_information;
+$influencer_professional_detail = $influencer->user_professional_detail;
+$influencer_features = $influencer->features->pluck('feature_id')->toArray();
+$socialMediaProfiles = $influencer->social_media_profiles;
+$facebookProfiles = $socialMediaProfiles->where('type', 'facebook')->first();
+$instagramProfiles = $socialMediaProfiles->where('type', 'instagram')->first();
+$tiktokProfiles = $socialMediaProfiles->where('type', 'tiktok')->first();
+$twitterProfiles = $socialMediaProfiles->where('type', 'twitter')->first();
+$youtubeProfiles = $socialMediaProfiles->where('type', 'youtube')->first();
+$snapchatProfiles = $socialMediaProfiles->where('type', 'snapchat')->first();
+$pinterestProfiles = $socialMediaProfiles->where('type', 'pinterest')->first();
+$webProfiles = $socialMediaProfiles->where('type', 'web')->first();
 
-        $main_availability = $influencer->availabilities->where('is_default', 1)->first();
+$main_availability = $influencer->availabilities->where('is_default', 1)->first();
 
-        $availabilities = $influencer->availabilities->where('is_default', 0);
+$availabilities = $influencer->availabilities->where('is_default', 0);
 
-    @endphp
-    <!-- partial:index.partial.html -->
-    <div class="container-fluid" style="border:0px solid red;padding-top:60px;">
-        <hr>
-        <div class="row justify-content-center" style="border:0px solid red;">
-            <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0" style="border:0px solid red; width: 100%; max-width: 850px; float: none; display: inline-block;">
-                <div class="card px-0 pb-0 " style="border:0px solid red;">
-                    {{-- <h2 id="heading">Profile</h2> --}}
-                    <!-- <p>Fill all form field to go to next step</p> -->
-                    <form id="msform" action="/upload"  enctype="multipart/form-data" >
-                        <!-- progressbar -->
-                        <ul id="progressbar">
-                            <li class="active" id="personal"><strong>Personal Info</strong></li>
-                            <li id="account"><strong>Platform URL</strong></li>
-                            <li id="payment"><strong>Profile Image</strong></li>
-                            <li id="confirm"><strong>Complete</strong></li>
-                        </ul>
-                        <fieldset>
-                            <div class="form-card ps-3 pe-3">
-                                <div class="row">
-                                    {{--                                    <div class="col-md-4">--}}
-                                    {{--                                        <input type="text" name="uname" placeholder="Name"/>--}}
-                                    {{--     
-                                
+@endphp
+<!-- partial:index.partial.html -->
+<div class="container-fluid" style="border:0px solid red;padding-top:60px;">
+    <hr>
+    <div class="row justify-content-center" style="border:0px solid red;">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0"
+            style="border:0px solid red; width: 100%; max-width: 850px; float: none; display: inline-block;">
+            <div class="card px-0 pb-0 " style="border:0px solid red;">
+                {{-- <h2 id="heading">Profile</h2> --}}
+                <!-- <p>Fill all form field to go to next step</p> -->
+                <form id="msform" action="/upload" enctype="multipart/form-data">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active" id="personal"><strong>Personal Info</strong></li>
+                        <li id="account"><strong>Platform URL</strong></li>
+                        <li id="payment"><strong>Profile Image</strong></li>
+                        <li id="confirm"><strong>Complete</strong></li>
+                    </ul>
+                    <fieldset>
+                        <div class="form-card ps-3 pe-3">
+                            <div class="row">
+                                {{-- <div class="col-md-4">--}}
+                                    {{-- <input type="text" name="uname" placeholder="Name" />--}}
+                                    {{--
+
                                 </div>--}}
 
- 
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                           
-                                            <select name="category_ids[]" id="category_ids"   class="form-control floating   category_ids"
-                                            multiple >
-                                                {{-- <option value="">Select Influencer Category</option> --}}
-                                                @foreach(getCategories()->sortBy('name') as $category)
-                                                    <option
-                                                        value="{{ $category->id }}" {{ $influencer->categories && in_array($category->id, $influencer->categories->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $category->name }}</option>
-                                                @endforeach
-                                            </select>
-                                         <label for="" class="focus-label">Influencer Category</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            {{--                                        <input type="text" class="form-control" name="professional_category"--}}
-                                            {{--                                               placeholder="}
-                                            {{--                                               value="{{ $influencer_professional_detail ? $influencer_professional_detail->professional_category  : '' }}">--}}
-                                            <select name="arts[]" id="arts"
-                                            class="form-control floating"     multiple>
-                                           
-                                                {{-- <option value="">--Select Art--</option> --}}
-                                                @foreach(getArts()->sortBy('name')  as $art)
-                                                    <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key, $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : ''  }}>{{ $art->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <label for="arts" class="focus-label" >Art</label>
-                                                 {{-- <label for="" class="focus-label"></label> --}}
 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            <select name="spoken_language_ids[]" id="spoken_language_ids" class="form-control  floating" multiple>
-                                                @foreach(getlanguge() as $language)
-                                                    <option value="{{ $language->id }}" {{ $influencer->spoken_languages && in_array($language->id, $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ? 'selected' : ''  }}>
-                                                        {{ $language->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            <label for="spoken_language_ids"  class="focus-label">Languages</label>
-                                        </div>
-                                        </div>
-                                    
-                                   
+                                <div class="col-md-4">
+                                    <div class="form-group form-focus">
 
+                                        <select name="category_ids[]" id="category_ids"
+                                            class="form-control floating   category_ids" multiple>
+                                            {{-- <option value="">Select Influencer Category</option> --}}
+                                            @foreach(getCategories()->sortBy('name') as $category)
+                                            <option value="{{ $category->id }}" {{ $influencer->categories &&
+                                                in_array($category->id, $influencer->categories->pluck('id')->toArray())
+                                                ? 'selected' : '' }}>{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="" class="focus-label">Influencer Category</label>
+                                    </div>
                                 </div>
-                               
-                                <div class="row" style="margin-top:3px;">
-                                    <div class="col-md-4">
-                                        {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus dropdowndecoration" style="height:50px;" >
-                                          
-                                            <select name="national_id" id="" class="form-control selectdropdown floating">
+                                <div class="col-md-4">
+                                    <div class="form-group form-focus">
+                                        {{-- <input type="text" class="form-control" name="professional_category" --}}
+                                            {{-- placeholder="}
+                                            {{--                                               value=" {{
+                                            $influencer_professional_detail ?
+                                            $influencer_professional_detail->professional_category : '' }}">--}}
+                                        <select name="arts[]" id="arts" class="form-control floating" multiple>
+
+                                            {{-- <option value="">--Select Art--</option> --}}
+                                            @foreach(getArts()->sortBy('name') as $art)
+                                            <option value="{{ $art->key }}" {{ $influencer->arts && in_array($art->key,
+                                                $influencer->arts->pluck('art_key')->toArray()) ? 'selected' : '' }}>{{
+                                                $art->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="arts" class="focus-label">Art</label>
+                                        {{-- <label for="" class="focus-label"></label> --}}
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-focus">
+                                        <select name="spoken_language_ids[]" id="spoken_language_ids"
+                                            class="form-control  floating" multiple>
+                                            @foreach(getlanguge() as $language)
+                                            <option value="{{ $language->id }}" {{ $influencer->spoken_languages &&
+                                                in_array($language->id,
+                                                $influencer->spoken_languages->pluck('spoken_language_id')->toArray()) ?
+                                                'selected' : '' }}>
+                                                {{ $language->name }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        <label for="spoken_language_ids" class="focus-label">Languages</label>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="row" style="margin-top:3px;">
+                                <div class="col-md-4">
+                                    {{-- <div class="input-container"> --}}
+                                        <div class="form-group form-focus dropdowndecoration" style="height:50px;">
+
+                                            <select name="national_id" id=""
+                                                class="form-control selectdropdown floating">
                                                 {{-- <option value="">Country</option> --}}
                                                 <option value="" disabled selected hidden></option>
                                                 @foreach(getnationality() as $country)
-                                                    <option 
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->national_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                                <option value="{{ $country->id }}" {{ $influencer_personal_info &&
+                                                    $influencer_personal_info->national_id == $country->id ? 'selected'
+                                                    : '' }}>{{ $country->name }}</option>
                                                 @endforeach
                                             </select>
                                             <label for="" class="focus-label">Nationality</label>
@@ -543,550 +639,708 @@ display: none !important;
                                     </div>
                                     <div class="col-md-4">
                                         {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus dropdowndecoration"  style="height:50px;">
-                                           
-                                            <select name="ethnicity_id" id="mySelect" class="form-control mySelect floating">
-                                                <option value="" selected hidden  disabled></option>
-                                                @foreach(getEthnicity() as $ethnicity)
-                                                    <option
-                                                        value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->ethnicity_id == $ethnicity->id ? 'selected' : '' }}>{{ $ethnicity->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        <label for="" class="focus-label">Ethnicity</label>
+                                            <div class="form-group form-focus dropdowndecoration" style="height:50px;">
+
+                                                <select name="ethnicity_id" id="mySelect"
+                                                    class="form-control mySelect floating">
+                                                    <option value="" selected hidden disabled></option>
+                                                    @foreach(getEthnicity() as $ethnicity)
+                                                    <option value="{{ $ethnicity->id }}" {{ $influencer_personal_info &&
+                                                        $influencer_personal_info->ethnicity_id == $ethnicity->id ?
+                                                        'selected' : '' }}>{{ $ethnicity->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <label for="" class="focus-label">Ethnicity</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 50px" >
-                                       
-                                            <select name="gender" id="" class="form-control mySelect floating"
+                                        <div class="col-md-4">
+                                            <div class="form-group form-focus dropdowndecoration" style="height: 50px">
+
+                                                <select name="gender" id="" class="form-control mySelect floating"
                                                     value="{{ $influencer_personal_info ? $influencer_personal_info->gender : '' }}">
-                                                    <option value="" selected hidden  disabled></option>
-                                                <option
-                                                  value="Male" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'Male' ? 'selected' : '' }}>
-                                                    Male
-                                                </option>
-                                                <option
-                                                    value="Female" {{ $influencer_personal_info &&  $influencer_personal_info->gender == 'Female' ? 'selected' : '' }}>
-                                                    Female
-                                                </option>
-                                               
-                                            </select>
-                                            <label for="username" class="focus-label">Gender</label> 
-                                        </div>
-                                    </div>
-                                  
-                                  
-                                   
-                                </div>
+                                                    <option value="" selected hidden disabled></option>
+                                                    <option value="Male" {{ $influencer_personal_info &&
+                                                        $influencer_personal_info->gender == 'Male' ? 'selected' : ''
+                                                        }}>
+                                                        Male
+                                                    </option>
+                                                    <option value="Female" {{ $influencer_personal_info &&
+                                                        $influencer_personal_info->gender == 'Female' ? 'selected' : ''
+                                                        }}>
+                                                        Female
+                                                    </option>
 
-                                <div class="row" style="margin-top: 12px;">
-                                    <div class="col-md-4">
-                                        {{-- <div class="input-container"> --}}
-                                            <div class="form-group form-focus">
-                                            {{-- <label for="username" class="inner_label">Age</label> --}}
-                                            <input type="text" class="form-control  floating" name="age"   pattern="\+?\d*"  oninput="validateInput(this)"  placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->age : '' }}"/>
-                                                   <label class="focus-label">Age</label>
+                                                </select>
+                                                <label for="username" class="focus-label">Gender</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 53px;">
-                                        {{-- <div class="input-container"> --}}
-                                           
-                                            <select name="hair_type" id=""
-                                            class="form-control  mySelect floating">
-                                      
-                                        <option value="" selected hidden  disabled></option>
-                                        <option value="afro" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'afro' ? 'selected' : '' }}>Afro</option>
-                                        <option value="blad" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'blad' ? 'selected' : '' }}>Bald</option>
-                                        <option value="curly" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'curly' ? 'selected' : '' }}>Curly</option>
-                                        <option value="coily" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'coily' ? 'selected' : '' }}>Coily</option>
-                                        <option value="long" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'long' ? 'selected' : '' }}>Long</option>
-                                        <option value="short" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'short' ? 'selected' : '' }}>Short</option>
-                                        <option value="straight" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'straight' ? 'selected' : '' }}>Straight</option>
-                                        <option value="thick" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'thick' ? 'selected' : '' }}>Thick</option>
-                                        <option value="wavy" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_type == 'wavy' ? 'selected' : '' }}>Wavy</option>
-                                    </select>
-                                      <label for="username" class="focus-label">Hair Type</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 53px;">
-                                            
-                                            <select name="hair_color" id=""
-                                            class="form-control mySelect floating">
-                                            <option value="" selected hidden  disabled></option>
-                                            
-                                            <option value="balayage" {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'balayage' ? 'selected' : '' }}>Balayage</option>
-                                            <option value="black"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'black' ? 'selected' : '' }}>Black</option>
-                                            <option value="blonde"   {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'blonde' ? 'selected' : '' }}>Blonde</option>
-                                            <option value="brown"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'brown' ? 'selected' : '' }}>Brown</option>
-                                            <option value="dark"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'dark' ? 'selected' : '' }}>Dark</option>
-                                            <option value="ginger"   {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'ginger' ? 'selected' : '' }}>Ginger</option>
-                                            <option value="gold"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'gold' ? 'selected' : '' }}>Gold</option>
-                                            <option value="green"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'green' ? 'selected' : '' }}>Green</option>
-                                            <option value="grey"     {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'grey' ? 'selected' : '' }}>Grey</option>
-                                            <option value="mixed"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'mixed' ? 'selected' : '' }}>Mixed</option>
-                                            <option value="red"      {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'red' ? 'selected' : '' }}>Red</option>
-                                            <option value="white"    {{ isset($influencer_personal_info) && $influencer_personal_info->hair_color == 'white' ? 'selected' : '' }}>White</option>
-                                    </select>
-                                    <label for="username" class="focus-label">Hair Color</label>
-                                        </div>
-                                    </div>
-                                    
-                                
-
-                                </div>
-                                <div class="row" >
-                                    <div class="col-md-4" style="margin-top:3px;">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 50px;">
-                                            
-                                            <select name="eye_color" id=""
-                                            class="form-control  mySelect  floating">
-                                            <option value="" selected hidden  disabled></option>
-                                       
 
 
-                                           <option value="azure" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'azure' ? 'selected' : '' }}>Azure</option>
-                                           <option value="Agate" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'Agate' ? 'selected' : '' }}>Agate</option>
-                                           <option value="amber" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'amber' ? 'selected' : '' }}>Amber</option>
-                                           <option value="blue" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'blue' ? 'selected' : '' }}>Blue</option>
-                                           <option value="black" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'black' ? 'selected' : '' }}>Black</option>
-                                           <option value="brown" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'brown' ? 'selected' : '' }}>Brown</option>
-                                           <option value="grey" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'grey' ? 'selected' : '' }}>Gray</option>
-                                           <option value="green" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'green' ? 'selected' : '' }}>Green</option>
-                                           <option value="hazel" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'hazel' ? 'selected' : '' }}>Hazel</option>
-                                           <option value="mixed" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'mixed' ? 'selected' : '' }}>Mixed</option>
-                                           <option value="nordic" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'nordic' ? 'selected' : '' }}>Nordic</option>
-                                           <option value="red" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'red' ? 'selected' : '' }}>Red</option>
-                                           <option value="Serene" {{ isset($influencer_personal_info) && $influencer_personal_info->eye_color == 'Serene' ? 'selected' : '' }}>Serene</option>
-                                    </select>
-                                    <label for="username" class="focus-label">Eye Color</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                          
-                                            <input type="text" class="form-control floating" name="height"  pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->height : '' }}"/>
-                                                   <label for="username" class="focus-label">Height-CM</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                        
-                                            <input type="text" class="form-control floating" name="weight"  pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->weight : '' }}"/>
-                                                   <label for="username" class="focus-label">Weight-KG</label>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="row" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            
-                                            <input type="text" class="form-control floating" name="shoes_size"  pattern="\+?\d*"  oninput="validateInput(this)"
-                                                   placeholder=""
-                                                   value="{{ $influencer_personal_info ? $influencer_personal_info->shoes_size : '' }}"/>
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Shoes Size-EU</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            {{-- <input type="text" class="form-control floating" name="clothsize" 
-                                         
-                                            value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}"/> --}}
-                                            <select name="clothsize" id=""
-                                            class="form-control  mySelect  floating">
-                                            <option value="" selected hidden  disabled></option>
-                                            <option value="XS" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XS' ? 'selected' : '' }}>XS</option>
-                                            <option value="S"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'S' ? 'selected' : '' }}>S</option>
-                                            <option value="M"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'M' ? 'selected' : '' }}>M</option>
-                                            <option value="L"  {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'L' ? 'selected' : '' }}>L</option>
-                                            <option value="XL" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XL' ? 'selected' : '' }}>XL</option>
-                                            <option value="XXL" {{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XXL' ? 'selected' : '' }}>XXL</option>
-                                            <option value="XXXL"{{ isset($influencer_personal_info) && $influencer_personal_info->clothsize == 'XXXL' ? 'selected' : '' }}>XXXL</option>
-                                    </select>
-                                            <label for="username" class="focus-label">Cloth Size</label>
-                                        </div>
-                                 
-                                    </div>
-                                   
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            <input type="text" class="form-control floating" name="tattoes" 
-                                         
-                                            value="{{ $influencer_personal_info ? $influencer_personal_info->tattoes : '' }}"/>
-                                            <label for="username" class="focus-label">Tattoes</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row available-box" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            
-                                            <select name="base_country_id" id=""
-                                                    class="form-control available-country selectdropdownforcountry floating">
-                                                  
-                                                    <option value="" selected hidden  disabled></option>
-                                                @foreach(getCountries() as $country)
-                                                    <option value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                                @endforeach
-                                            </select>
-                                         <label for="username" class="focus-label">Based Country</label>
-                                        </div>
-                                    </div>
-                           
-                                    
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            
-                                             <select name="base_city_id" id="" class="form-control selectdropdown  floating  city_id">
-                                                @if(isset($influencer_personal_info->country_id))
-                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->country_id)->get() as $city)
-                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
-                                                @endforeach
-                                            @else
-                                                <option value="" hidden disabled></option>
-                                            @endif
-                                            </select>
-                                        <label for="username" class="focus-label" >Based City</label>
-                                        </div>
 
                                     </div>
-                                    
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                         
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="main_available_from_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                  
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->main_available_from_date)  : '' }}">
-                                            <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Availability</label>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                        
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="base_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                  
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->base_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
-                                        </div>
-                                    </div>
+                                    <div class="row" style="margin-top: 12px;">
+                                        <div class="col-md-4">
+                                            {{-- <div class="input-container"> --}}
+                                                <div class="form-group form-focus">
+                                                    {{-- <label for="username" class="inner_label">Age</label> --}}
+                                                    <input type="text" class="form-control  floating" name="age"
+                                                        pattern="\+?\d*" oninput="validateInput(this)" placeholder=""
+                                                        value="{{ $influencer_personal_info ? $influencer_personal_info->age : '' }}" />
+                                                    <label class="focus-label">Age</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group form-focus dropdowndecoration"
+                                                    style="height: 53px;">
+                                                    {{-- <div class="input-container"> --}}
 
-                                </div>
-                            
-                                <div class="row available-box" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            
-                                            <select name="travlling_one_country_id" id=""
-                                                    class="form-control available-country selectdropdownforcountry floating">
-                                                <option value="0"  selected>&nbsp;</option> 
-                                                @foreach(getCountries() as $country)
-                                                    <option
-                                                        value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_one_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                                @endforeach
-                                            </select>
-                                         <label for="username" class="focus-label">Traveling Country &nbsp;1</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            
-                                            <select name="travlling_one_city_id" id="" class="form-control selectdropdown  floating  city_id">
-                                                
-                                         
-                                                @if(isset($influencer_personal_info->travlling_one_country_id))
-                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_one_country_id)->get() as $city)
-                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_one_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
-                                                @endforeach
-                                            @else
-                                                <option value="" hidden disabled></option>
-                                            @endif
-                                            </select>
-                                           
-                                        <label for="username" class="focus-label"  >Traveling City</label>
-                                        </div>
+                                                        <select name="hair_type" id=""
+                                                            class="form-control  mySelect floating">
 
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus ">
-                                         
-                                            <input type="text" class="form-control datepicker  floating"
-                                                   name="travlling_one_from_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                   
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_from_date)  : '' }}">
-                                            <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
-                                        </div>
-                                    </div>
+                                                            <option value="" selected hidden disabled></option>
+                                                            <option value="afro" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'afro' ?
+                                                                'selected' : '' }}>Afro</option>
+                                                            <option value="blad" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'blad' ?
+                                                                'selected' : '' }}>Bald</option>
+                                                            <option value="curly" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'curly' ?
+                                                                'selected' : '' }}>Curly</option>
+                                                            <option value="coily" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'coily' ?
+                                                                'selected' : '' }}>Coily</option>
+                                                            <option value="long" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'long' ?
+                                                                'selected' : '' }}>Long</option>
+                                                            <option value="short" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'short' ?
+                                                                'selected' : '' }}>Short</option>
+                                                            <option value="straight" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->hair_type == 'straight' ?
+                                                                'selected' : '' }}>Straight</option>
+                                                            <option value="thick" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'thick' ?
+                                                                'selected' : '' }}>Thick</option>
+                                                            <option value="wavy" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_type == 'wavy' ?
+                                                                'selected' : '' }}>Wavy</option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Hair Type</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 53px;">
 
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                        
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="travlling_one_to_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_to_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;">Date</label>
-                                        </div>
-                                    </div>
+                                                        <select name="hair_color" id=""
+                                                            class="form-control mySelect floating">
+                                                            <option value="" selected hidden disabled></option>
 
-                                </div>
-                                <div class="row available-box" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                           
-                                          
-                                            <select name="travlling_two_country_id" id=""
-                                            class="form-control available-country selectdropdownforcountry  floating">
-                                        <option value="0"  selected>&nbsp;</option>
-                                        @foreach(getCountries() as $country)
-                                            <option
-                                                value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_two_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                        @endforeach
-                                    </select>
-                                            <label for="username" class=" focus-label">Traveling Country &nbsp;2</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                          
-                                            <select name="travlling_two_city_id" id="" class="form-control  selectdropdown floating city_id">
-                                           
-
-                                                @if(isset($influencer_personal_info->travlling_two_country_id))
-                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_two_country_id)->get() as $city)
-                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_two_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
-                                                @endforeach
-                                            @else
-                                                <option value="" hidden disabled></option>
-                                            @endif
-                                            </select>
-                                            <label for="username" class="focus-label"  >Traveling City</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                          
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="travlling_two_from_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_from_date)  : '' }}">
-                                                   <label for="username" class="inner_label focus-label" style="margin-left:0px !important;"> Date</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                          
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="travlling_two_to_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                  
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_to_date)  : '' }}">
-                                                   <label for="username" class="focus-label" style="margin-left:0px !important;"> Date</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row available-box" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52;">
-                                         
-                                            
-                                            <select name="travlling_three_country_id" id=""
-                                            class="form-control available-country selectdropdownforcountry floating">
-                                            
-                                        @foreach(getCountries() as $country)
-                                            <option
-                                                value="{{ $country->id }}" {{ $influencer_personal_info &&  $influencer_personal_info->travlling_three_country_id == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
-                                        @endforeach
-                                    </select>
-                                           <label for="username" class=" focus-label">Traveling Country &nbsp;3</label>
-                                        </div>
-                                    </div>
+                                                            <option value="balayage" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->hair_color == 'balayage' ?
+                                                                'selected' : '' }}>Balayage</option>
+                                                            <option value="black" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'black' ?
+                                                                'selected' : '' }}>Black</option>
+                                                            <option value="blonde" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->hair_color == 'blonde' ?
+                                                                'selected' : '' }}>Blonde</option>
+                                                            <option value="brown" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'brown' ?
+                                                                'selected' : '' }}>Brown</option>
+                                                            <option value="dark" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'dark' ?
+                                                                'selected' : '' }}>Dark</option>
+                                                            <option value="ginger" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->hair_color == 'ginger' ?
+                                                                'selected' : '' }}>Ginger</option>
+                                                            <option value="gold" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'gold' ?
+                                                                'selected' : '' }}>Gold</option>
+                                                            <option value="green" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'green' ?
+                                                                'selected' : '' }}>Green</option>
+                                                            <option value="grey" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'grey' ?
+                                                                'selected' : '' }}>Grey</option>
+                                                            <option value="mixed" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'mixed' ?
+                                                                'selected' : '' }}>Mixed</option>
+                                                            <option value="red" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'red' ?
+                                                                'selected' : '' }}>Red</option>
+                                                            <option value="white" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->hair_color == 'white' ?
+                                                                'selected' : '' }}>White</option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Hair Color</label>
+                                                    </div>
+                                                </div>
 
 
-                                
-                                  
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52;">
-                                        
-                                            <select name="travlling_three_city_id" id="" class="form-control selectdropdown  floating  city_id">
 
-                                             
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4" style="margin-top:3px;">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 50px;">
 
-                                                @if(isset($influencer_personal_info->travlling_three_country_id))
-                                                @foreach(\App\Models\City::where('country_id', $influencer_personal_info->travlling_three_country_id)->get() as $city)
-                                                    <option value="{{ $city->id }}" {{ $influencer_personal_info->travlling_three_city_id == $city->id ? 'selected' : '' }}>{{ $city->name }}</option>
-                                                @endforeach
-                                            @else
-                                                <option value="" hidden disabled></option>
-                                            @endif
-                                            </select>
-                                                <label for="username" class="focus-label" >Traveling City</label>
+                                                        <select name="eye_color" id=""
+                                                            class="form-control  mySelect  floating">
+                                                            <option value="" selected hidden disabled></option>
 
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                           
-                                            <input type="text" class="form-control datepicker floating"
-                                                   name="travlling_three_from_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                                   
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
-                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Date</label>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <div class="form-group form-focus">
-                                            
-                                            <input type="text" class="form-control floating datepicker "
-                                                   name="travlling_three_to_date"
-                                                   {{--                                               onfocus="(this.type='date')"--}}
-                                                   {{--                                               onblur="(this.type='text')"--}}
-                                               
-                                                   value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
-                                                   
-                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Date </label>
-                                        </div>
-                                    </div>
+                                                            <option value="azure" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'azure' ?
+                                                                'selected' : '' }}>Azure</option>
+                                                            <option value="Agate" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'Agate' ?
+                                                                'selected' : '' }}>Agate</option>
+                                                            <option value="amber" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'amber' ?
+                                                                'selected' : '' }}>Amber</option>
+                                                            <option value="blue" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'blue' ?
+                                                                'selected' : '' }}>Blue</option>
+                                                            <option value="black" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'black' ?
+                                                                'selected' : '' }}>Black</option>
+                                                            <option value="brown" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'brown' ?
+                                                                'selected' : '' }}>Brown</option>
+                                                            <option value="grey" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'grey' ?
+                                                                'selected' : '' }}>Gray</option>
+                                                            <option value="green" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'green' ?
+                                                                'selected' : '' }}>Green</option>
+                                                            <option value="hazel" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'hazel' ?
+                                                                'selected' : '' }}>Hazel</option>
+                                                            <option value="mixed" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'mixed' ?
+                                                                'selected' : '' }}>Mixed</option>
+                                                            <option value="nordic" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->eye_color == 'nordic' ?
+                                                                'selected' : '' }}>Nordic</option>
+                                                            <option value="red" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->eye_color == 'red' ?
+                                                                'selected' : '' }}>Red</option>
+                                                            <option value="Serene" {{ isset($influencer_personal_info)
+                                                                && $influencer_personal_info->eye_color == 'Serene' ?
+                                                                'selected' : '' }}>Serene</option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Eye Color</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus">
 
-                                </div>
+                                                        <input type="text" class="form-control floating" name="height"
+                                                            pattern="\+?\d*" oninput="validateInput(this)"
+                                                            placeholder=""
+                                                            value="{{ $influencer_personal_info ? $influencer_personal_info->height : '' }}" />
+                                                        <label for="username" class="focus-label">Height-CM</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus">
 
-                                <div class="row" style="">
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                            
-                                            <select name="willing_to_traval" id="" class="form-control mySelect floating">
-                                                {{-- <option value="">Willing To Traval</option> --}}
-                                                <option value="" selected hidden  disabled></option>
-                                                <option
-                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 1 ? 'selected' : '' }}>
-                                                    Yes
-                                                </option>
-                                                <option
-                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->willing_to_traval == 0 ? 'selected' : '' }}>
-                                                    No
-                                                </option>
-                                            </select>
-<label for="username" class="focus-label">Willing To Traval</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                       
-                                        <div class="form-group form-focus dropdowndecoration" style="height: 52px;">
-                                          
-                                            <select name="is_collaboration" id="" class="form-control mySelect floating">
-                                                {{-- <option value="">--Collaboration--</option> --}}
-                                                <option value="" selected hidden  disabled></option>
-                                                <option
-                                                    value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
-                                                    Yes
-                                                </option>
-                                                <option
-                                                    value="0" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 0 ? 'selected' : '' }}>
-                                                    No
-                                                </option>
-                                            </select>
-  <label for="username" class="focus-label">Collaboration</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus dropdowndecoration " style="height: 52px;">
-                                           
-                                            <select name="price_negotion" id=""
-                                                    class="form-control floating mySelect ">
-                                                {{-- <option value="">Price Negotiable</option> --}}
-                                                <option value="" selected hidden  disabled></option>
-                                                    <option value="1" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 1 ? 'selected' : '' }}>Yes</option>
-                                                     
-                                                    <option value="0" {{ $influencer_personal_info &&  $influencer_personal_info->price_negotiable == 0 ? 'selected' : '' }}>No</option>  
-                                                
-                                            </select>
-                                        <label for="username" class=" focus-label">Price Negotiable</label>
-                                        </div>
-                                    </div>
+                                                        <input type="text" class="form-control floating" name="weight"
+                                                            pattern="\+?\d*" oninput="validateInput(this)"
+                                                            placeholder=""
+                                                            value="{{ $influencer_personal_info ? $influencer_personal_info->weight : '' }}" />
+                                                        <label for="username" class="focus-label">Weight-KG</label>
+                                                    </div>
+                                                </div>
 
-                                    @php
-                                    // dd($influencer_professional_detail);
-                                    @endphp
-                                    <div class="col-md-4">
-                                        <div class="form-group form-focus">
-                                            
-                                            <input type="price" id="price" class="form-control floating" name="price"
-                                                   placeholder=""
-                                                   value="{{ isset($influencer_professional_detail->price) ? number_format($influencer_professional_detail->price, 0, '.', ',') : '' }}">
+                                            </div>
+                                            <div class="row" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus">
 
-                                                   <label for="username" class="focus-label" style="margin-left:0px !important;">Price $</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group form-focus">
+                                                        <input type="text" class="form-control floating"
+                                                            name="shoes_size" pattern="\+?\d*"
+                                                            oninput="validateInput(this)" placeholder=""
+                                                            value="{{ $influencer_personal_info ? $influencer_personal_info->shoes_size : '' }}" />
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;">Shoes Size-EU</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+                                                        {{-- <input type="text" class="form-control floating"
+                                                            name="clothsize"
+                                                            value="{{ $influencer_personal_info ? $influencer_personal_info->clothsize : '' }}" />
+                                                        --}}
+                                                        <select name="clothsize" id=""
+                                                            class="form-control  mySelect  floating">
+                                                            <option value="" selected hidden disabled></option>
+                                                            <option value="XS" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'XS' ?
+                                                                'selected' : '' }}>XS</option>
+                                                            <option value="S" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'S' ? 'selected'
+                                                                : '' }}>S</option>
+                                                            <option value="M" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'M' ? 'selected'
+                                                                : '' }}>M</option>
+                                                            <option value="L" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'L' ? 'selected'
+                                                                : '' }}>L</option>
+                                                            <option value="XL" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'XL' ?
+                                                                'selected' : '' }}>XL</option>
+                                                            <option value="XXL" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'XXL' ?
+                                                                'selected' : '' }}>XXL</option>
+                                                            <option value="XXXL" {{ isset($influencer_personal_info) &&
+                                                                $influencer_personal_info->clothsize == 'XXXL' ?
+                                                                'selected' : '' }}>XXXL</option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Cloth Size</label>
+                                                    </div>
 
-                                            <textarea class="form-control floating" style="height:52px; padding-top: 20px;" id="Priceinclude" name="price_include"
-                                                   placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
-                                                   value="">{{ $influencer_personal_info->price_include ?? ''  }}</textarea>
-                                            {{-- <select name="Priceinclude" id="Priceinclude" 
-                                                    class="form-control floating " >
-                                                <option value="">Price Negotiable</option> 
-                                                
-                                                    <option value="1">Reel</option>
-                                                     
-                                                    <option value="0">Story</option>  
-                                                    <option value="2">Vlog</option>
-                                                     
-                                                    <option value="2">Modal</option>  
-                                                
-                                            </select> --}}
-                                            <label for="username" class="focus-label ">Price Includes</label>
-                                        </div>
-                                    </div>
-                                   
-                                    
-                                </div>
-                                <div class="row available-box" style="">
-                                   
-                                   
-                               
-                                   
+                                                </div>
 
-                                </div>
-                                <div class="row" >
-                                    
-                                    <div class="col-md-12" >
-                                        <div class="form-group form-focus">
-                                        
-                                                <textarea class="form-control floating" style="height:120px; padding-top: 20px;" name="bio">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
-                                                <label class="inner_label focus-label"  style="margin-left: 0px;">Bio</label>
-                                    
-                                        
-                                        
-                                        </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus">
+                                                        <input type="text" class="form-control floating" name="tattoes"
+                                                            value="{{ $influencer_personal_info ? $influencer_personal_info->tattoes : '' }}" />
+                                                        <label for="username" class="focus-label">Tattoes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row available-box" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
 
-                                    <!-- <select name="is_collaboration" id="" class="form-control">
+                                                        <select name="base_country_id" id=""
+                                                            class="form-control available-country selectdropdownforcountry floating">
+
+                                                            <option value="" selected hidden disabled></option>
+                                                            @foreach(getCountries() as $country)
+                                                            <option value="{{ $country->id }}" {{
+                                                                $influencer_personal_info && $influencer_personal_info->
+                                                                country_id == $country->id ? 'selected' : '' }}>{{
+                                                                $country->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <label for="username" class="focus-label">Based Country</label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="base_city_id" id=""
+                                                            class="form-control selectdropdown  floating  city_id">
+                                                            @if(isset($influencer_personal_info->country_id))
+                                                            @foreach(\App\Models\City::where('country_id',
+                                                            $influencer_personal_info->country_id)->get() as $city)
+                                                            <option value="{{ $city->id }}" {{
+                                                                $influencer_personal_info->city_id == $city->id ?
+                                                                'selected' : '' }}>{{ $city->name }}</option>
+                                                            @endforeach
+                                                            @else
+                                                            <option value="" hidden disabled></option>
+                                                            @endif
+                                                        </select>
+                                                        <label for="username" class="focus-label">Based City</label>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="main_available_from_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->main_available_from_date)  : '' }}">
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;">Availability</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="base_date" {{-- onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->base_date)  : '' }}">
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;">Date</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row available-box" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="travlling_one_country_id" id=""
+                                                            class="form-control available-country selectdropdownforcountry floating">
+                                                            <option value="0" selected>&nbsp;</option>
+                                                            @foreach(getCountries() as $country)
+                                                            <option value="{{ $country->id }}" {{
+                                                                $influencer_personal_info && $influencer_personal_info->
+                                                                travlling_one_country_id == $country->id ? 'selected' :
+                                                                '' }}>{{ $country->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <label for="username" class="focus-label">Traveling Country
+                                                            &nbsp;1</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="travlling_one_city_id" id=""
+                                                            class="form-control selectdropdown  floating  city_id">
+
+
+                                                            @if(isset($influencer_personal_info->travlling_one_country_id))
+                                                            @foreach(\App\Models\City::where('country_id',
+                                                            $influencer_personal_info->travlling_one_country_id)->get()
+                                                            as $city)
+                                                            <option value="{{ $city->id }}" {{
+                                                                $influencer_personal_info->travlling_one_city_id ==
+                                                                $city->id ? 'selected' : '' }}>{{ $city->name }}
+                                                            </option>
+                                                            @endforeach
+                                                            @else
+                                                            <option value="" hidden disabled></option>
+                                                            @endif
+                                                        </select>
+
+                                                        <label for="username" class="focus-label">Traveling City</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus ">
+
+                                                        <input type="text" class="form-control datepicker  floating"
+                                                            name="travlling_one_from_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_from_date)  : '' }}">
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;"> Date</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="travlling_one_to_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_one_to_date)  : '' }}">
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;">Date</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row available-box" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+
+                                                        <select name="travlling_two_country_id" id=""
+                                                            class="form-control available-country selectdropdownforcountry  floating">
+                                                            <option value="0" selected>&nbsp;</option>
+                                                            @foreach(getCountries() as $country)
+                                                            <option value="{{ $country->id }}" {{
+                                                                $influencer_personal_info && $influencer_personal_info->
+                                                                travlling_two_country_id == $country->id ? 'selected' :
+                                                                '' }}>{{ $country->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <label for="username" class=" focus-label">Traveling Country
+                                                            &nbsp;2</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="travlling_two_city_id" id=""
+                                                            class="form-control  selectdropdown floating city_id">
+
+
+                                                            @if(isset($influencer_personal_info->travlling_two_country_id))
+                                                            @foreach(\App\Models\City::where('country_id',
+                                                            $influencer_personal_info->travlling_two_country_id)->get()
+                                                            as $city)
+                                                            <option value="{{ $city->id }}" {{
+                                                                $influencer_personal_info->travlling_two_city_id ==
+                                                                $city->id ? 'selected' : '' }}>{{ $city->name }}
+                                                            </option>
+                                                            @endforeach
+                                                            @else
+                                                            <option value="" hidden disabled></option>
+                                                            @endif
+                                                        </select>
+                                                        <label for="username" class="focus-label">Traveling City</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="travlling_two_from_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_from_date)  : '' }}">
+                                                        <label for="username" class="inner_label focus-label"
+                                                            style="margin-left:0px !important;"> Date</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="travlling_two_to_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_two_to_date)  : '' }}">
+                                                        <label for="username" class="focus-label"
+                                                            style="margin-left:0px !important;"> Date</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row available-box" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52;">
+
+
+                                                        <select name="travlling_three_country_id" id=""
+                                                            class="form-control available-country selectdropdownforcountry floating">
+
+                                                            @foreach(getCountries() as $country)
+                                                            <option value="{{ $country->id }}" {{
+                                                                $influencer_personal_info && $influencer_personal_info->
+                                                                travlling_three_country_id == $country->id ? 'selected'
+                                                                : '' }}>{{ $country->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <label for="username" class=" focus-label">Traveling Country
+                                                            &nbsp;3</label>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52;">
+
+                                                        <select name="travlling_three_city_id" id=""
+                                                            class="form-control selectdropdown  floating  city_id">
+
+
+
+                                                            @if(isset($influencer_personal_info->travlling_three_country_id))
+                                                            @foreach(\App\Models\City::where('country_id',
+                                                            $influencer_personal_info->travlling_three_country_id)->get()
+                                                            as $city)
+                                                            <option value="{{ $city->id }}" {{
+                                                                $influencer_personal_info->travlling_three_city_id ==
+                                                                $city->id ? 'selected' : '' }}>{{ $city->name }}
+                                                            </option>
+                                                            @endforeach
+                                                            @else
+                                                            <option value="" hidden disabled></option>
+                                                            @endif
+                                                        </select>
+                                                        <label for="username" class="focus-label">Traveling City</label>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control datepicker floating"
+                                                            name="travlling_three_from_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
+                                                        <label for="username" class="focus-label"
+                                                            style="margin-left:0px !important;">Date</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="text" class="form-control floating datepicker "
+                                                            name="travlling_three_to_date" {{--
+                                                            onfocus="(this.type='date')" --}} {{--
+                                                            onblur="(this.type='text')" --}}
+                                                            value="{{ $influencer_personal_info ? formatDateToread($influencer_personal_info->travlling_three_from_date)  : '' }}">
+
+                                                        <label for="username" class="focus-label"
+                                                            style="margin-left:0px !important;">Date </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row" style="">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="willing_to_traval" id=""
+                                                            class="form-control mySelect floating">
+                                                            {{-- <option value="">Willing To Traval</option> --}}
+                                                            <option value="" selected hidden disabled></option>
+                                                            <option value="1" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->willing_to_traval == 1 ?
+                                                                'selected' : '' }}>
+                                                                Yes
+                                                            </option>
+                                                            <option value="0" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->willing_to_traval == 0 ?
+                                                                'selected' : '' }}>
+                                                                No
+                                                            </option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Willing To
+                                                            Traval</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+
+                                                    <div class="form-group form-focus dropdowndecoration"
+                                                        style="height: 52px;">
+
+                                                        <select name="is_collaboration" id=""
+                                                            class="form-control mySelect floating">
+                                                            {{-- <option value="">--Collaboration--</option> --}}
+                                                            <option value="" selected hidden disabled></option>
+                                                            <option value="1" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->is_collaboration == 1 ?
+                                                                'selected' : '' }}>
+                                                                Yes
+                                                            </option>
+                                                            <option value="0" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->is_collaboration == 0 ?
+                                                                'selected' : '' }}>
+                                                                No
+                                                            </option>
+                                                        </select>
+                                                        <label for="username" class="focus-label">Collaboration</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus dropdowndecoration "
+                                                        style="height: 52px;">
+
+                                                        <select name="price_negotion" id=""
+                                                            class="form-control floating mySelect ">
+                                                            {{-- <option value="">Price Negotiable</option> --}}
+                                                            <option value="" selected hidden disabled></option>
+                                                            <option value="1" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->price_negotiable == 1 ?
+                                                                'selected' : '' }}>Yes</option>
+
+                                                            <option value="0" {{ $influencer_personal_info &&
+                                                                $influencer_personal_info->price_negotiable == 0 ?
+                                                                'selected' : '' }}>No</option>
+
+                                                        </select>
+                                                        <label for="username" class=" focus-label">Price
+                                                            Negotiable</label>
+                                                    </div>
+                                                </div>
+
+                                                @php
+                                                // dd($influencer_professional_detail);
+                                                @endphp
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-focus">
+
+                                                        <input type="price" id="price" class="form-control floating"
+                                                            name="price" placeholder=""
+                                                            value="{{ isset($influencer_professional_detail->price) ? number_format($influencer_professional_detail->price, 0, '.', ',') : '' }}">
+
+                                                        <label for="username" class="focus-label"
+                                                            style="margin-left:0px !important;">Price $</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group form-focus">
+
+                                                        <textarea class="form-control floating"
+                                                            style="height:52px; padding-top: 20px;" id="Priceinclude"
+                                                            name="price_include"
+                                                            placeholder="Reels 2, Stories 7, Vlogs 5, Post 1"
+                                                            value="">{{ $influencer_personal_info->price_include ?? ''  }}</textarea>
+                                                        {{-- <select name="Priceinclude" id="Priceinclude"
+                                                            class="form-control floating ">
+                                                            <option value="">Price Negotiable</option>
+
+                                                            <option value="1">Reel</option>
+
+                                                            <option value="0">Story</option>
+                                                            <option value="2">Vlog</option>
+
+                                                            <option value="2">Modal</option>
+
+                                                        </select> --}}
+                                                        <label for="username" class="focus-label ">Price
+                                                            Includes</label>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row available-box" style="">
+
+
+
+
+
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group form-focus">
+
+                                                        <textarea class="form-control floating"
+                                                            style="height:120px; padding-top: 20px;"
+                                                            name="bio">{{ $influencer_personal_info ? $influencer_personal_info->bio : '' }}</textarea>
+                                                        <label class="inner_label focus-label"
+                                                            style="margin-left: 0px;">Bio</label>
+
+
+
+                                                    </div>
+
+                                                    <!-- <select name="is_collaboration" id="" class="form-control">
                                             <option value="">--Collaboration--</option>
                                             <option
                                                 value="1" {{ $influencer_personal_info &&  $influencer_personal_info->is_collaboration == 1 ? 'selected' : '' }}>
@@ -1097,300 +1351,319 @@ display: none !important;
                                                 No
                                             </option>
                                         </select> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="button" name="next" style="margin-top: 80px;"
+                                            class="next font-size-15 action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+
+                                                <img src="{{ asset('assets/img/social-icon/insta.png') }}" alt="insta"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus ">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="instagram_url" placeholder="URL"
+                                                        value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Instagram</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus ">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="instagram_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $instagramProfiles ? $instagramProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="facebook_url" placeholder="URL"
+                                                        value="{{ $facebookProfiles ? $facebookProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Facebook</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="facebook_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $facebookProfiles ? $facebookProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" alt="insta"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="tiktok_url" placeholder="URL"
+                                                        value="{{ $tiktokProfiles ? $tiktokProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">TikTok</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="tiktok_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $tiktokProfiles ? $tiktokProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" alt="insta"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="youtube_url" placeholder="URL"
+                                                        value="{{ $youtubeProfiles ? $youtubeProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Youtube</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control  floating inputbg"
+                                                        name="youtube_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $youtubeProfiles ? $youtubeProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/twitter.png') }}" alt="insta"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="twitter_url" placeholder="URL"
+                                                        value="{{ $twitterProfiles ? $twitterProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Twitter</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="twitter_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $twitterProfiles ? $twitterProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
+                                                    alt="snapchat" width="44px" height="44px" class="shaking"
+                                                    style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="snapchat_url" placeholder="URL"
+                                                        value="{{ $snapchatProfiles ? $snapchatProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label "
+                                                        style="margin-left: 0px;">Snapchat</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="snapchat_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $snapchatProfiles ? $snapchatProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/pinterest.png') }}"
+                                                    alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="pinterest_url" placeholder="URL"
+                                                        value="{{ $pinterestProfiles ? $pinterestProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Pinterest</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="pinterest_followers" placeholder="10K, 1M, 2,5M"
+                                                        value="{{ $pinterestProfiles ? $pinterestProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 d-flex justify-content-center align-items-center"
+                                                style="height: 52px; padding: 0; margin-top:2px;">
+                                                <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
+                                                    width="40" class="shaking" style="margin-left: 1.5rem;">
+                                            </div>
+
+                                            <div class="col-md-8">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" class="form-control floating inputbg"
+                                                        name="web_url" placeholder="URL"
+                                                        value="{{ $webProfiles ? $webProfiles->url : '' }}">
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;">Website</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group form-focus">
+                                                    <input type="text" id="" class="form-control floating inputbg"
+                                                        name="web_followers" placeholder="10K, 1M, 2,5M "
+                                                        value="{{ $webProfiles ? $webProfiles->followers : '' }}" />
+                                                    <label for="username" class="inner_label focus-label"
+                                                        style="margin-left: 0px;"> Followers</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
-                            <input type="button" name="next" style="margin-top: 80px;" class="next font-size-15 action-button" value="Next"/>
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card" >
+                        </div>
+
+
+                        <input type="button" name="previous" class="previous font-size-15 action-button-previous"
+                            value="Back" />
+                        <input type="button" name="next" class="next font-size-15 action-button"
+                            style="margin-left: 12px;" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row" style="padding: 2px 20px">
+
                                 <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="row ">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    
-                                                    <img src="{{ asset('assets/img/social-icon/insta.png') }}"
-                                                         alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                    
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus ">
-                                                    <input type="text" class="form-control floating inputbg" name="instagram_url" 
-                                                           placeholder="URL" value="{{ $instagramProfiles ? $instagramProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Instagram</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus ">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="instagram_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $instagramProfiles ? $instagramProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                              
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img src="{{ asset('assets/img/social-icon/fb.png') }}" alt="fb"
-                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="facebook_url"
-                                                           placeholder="URL" value="{{ $facebookProfiles ? $facebookProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Facebook</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="facebook_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $facebookProfiles ? $facebookProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                         
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img src="{{ asset('assets/img/social-icon/tiktok.png') }}"
-                                                         alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="tiktok_url"
-                                                           placeholder="URL" value="{{ $tiktokProfiles ? $tiktokProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">TikTok</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="tiktok_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $tiktokProfiles ? $tiktokProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img
-                                                        src="{{ asset('assets/img/social-icon/youtube.svg') }}"
-                                                        alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="youtube_url"
-                                                           placeholder="URL" value="{{ $youtubeProfiles ? $youtubeProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Youtube</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control  floating inputbg"
-                                                           name="youtube_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $youtubeProfiles ? $youtubeProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img
-                                                        src="{{ asset('assets/img/social-icon/twitter.png') }}"
-                                                        alt="insta" width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="twitter_url"
-                                                           placeholder="URL" value="{{ $twitterProfiles ? $twitterProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Twitter</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="twitter_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $twitterProfiles ? $twitterProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
-                                                         alt="snapchat"
-                                                         width="44px" height="44px" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="snapchat_url"
-                                                           placeholder="URL" value="{{ $snapchatProfiles ? $snapchatProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label " style="margin-left: 0px;">Snapchat</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="snapchat_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $snapchatProfiles ? $snapchatProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img src="{{ asset('assets/img/social-icon/pinterest.png') }}"
-                                                         alt="insta"
-                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="pinterest_url"
-                                                           placeholder="URL" value="{{ $pinterestProfiles ? $pinterestProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Pinterest</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="pinterest_followers"
-                                                           placeholder="10K, 1M, 2,5M"
-                                                           value="{{ $pinterestProfiles ? $pinterestProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-1 d-flex justify-content-center align-items-center" style="height: 52px; padding: 0; margin-top:2px;">
-                                                    <img src="{{ asset('assets/img/social-icon/web.png') }}" alt="insta"
-                                                         width="40" class="shaking" style="margin-left: 1.5rem;">
-                                                </div>
-                                                
-                                                <div class="col-md-8">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" class="form-control floating inputbg" name="web_url"
-                                                           placeholder="URL" value="{{ $webProfiles ? $webProfiles->url : '' }}">
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;">Website</label>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group form-focus">
-                                                    <input type="text" id=""
-                                                           class="form-control floating inputbg"
-                                                           name="web_followers"
-                                                           placeholder="10K, 1M, 2,5M "
-                                                           value="{{ $webProfiles ? $webProfiles->followers : '' }}"/>
-                                                           <label for="username" class="inner_label focus-label" style="margin-left: 0px;"> Followers</label>
-                                                        </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
+                                    <label for="" style="color:#0504aa;font-weight:bold;"> Instagram URL</label>
+                                    <input type="text" placeholder="" class="form-control inputbg" name=""
+                                        style=" margin-bottom: 0px;" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 0 20px">
+                                <div class="col-md-12 text-center" style="margin-top: 6px;">
+                                    <label for="fileInput0" class="fileInput0"
+                                        style="font-weight:bold; cursor: pointer;">
+                                        Or Upload & Drop Images Here
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <!-- Hidden file input -->
+                                    <input type="file" id="fileInput0" style="display: none;" accept="image/*" multiple>
 
+                                    <!-- Dropzone Container -->
+                                    <div class="dropzone-container dz-message" id="my-Dropzone"
+                                        style="border:white; color: blue; font-weight: bold;">
+                                        <!-- Dropzone content -->
                                     </div>
                                 </div>
                             </div>
 
-                            
-                            <input type="button" name="previous" class="previous font-size-15 action-button-previous"
-                                   value="Back"/>
-                                   <input type="button" name="next"  class="next font-size-15 action-button" style="margin-left: 12px;" value="Next"/ >
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row" style="padding: 2px 20px">
-                                   
-                                    <div class="col-md-12">
-                                        <label for="" style="color:#0504aa;font-weight:bold;"> Instagram URL</label>
-                                        <input type="text"
-                                               placeholder=""
-                                               class="form-control inputbg" name=""
-                                               style=" margin-bottom: 0px;"/>
-                                    </div>
-                                </div>
-                                <div class="row" style="padding: 0 20px">
-                                    <div class="col-md-12 text-center" style="margin-top: 6px;">
-                                        <label for="fileInput0" class="fileInput0" style="font-weight:bold; cursor: pointer;"> 
-                                            Or Upload & Drop Images Here
-                                        </label>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <!-- Hidden file input -->
-                                        <input type="file" id="fileInput0" style="display: none;" accept="image/*" multiple>
-                                        
-                                        <!-- Dropzone Container -->
-                                        <div class="dropzone-container dz-message" id="my-Dropzone" style="border:white; color: blue; font-weight: bold;">
-                                            <!-- Dropzone content -->
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                       
-                                    {{-- </div> --}}
-                              {{-- </div> --}}
-                            </div>
-                            <input type="button" name="previous" class="previous font-size-15 action-button-previous"
-                                   value="Back"/>
-                            <input type="button" name="next" class="next font-size-15 action-button submit-btn" style="margin-left: 12px;" value="Submit"/>
-                            
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row justify-content-center">
-                                    <div class="col-3" style="text-align:center;">
-                                        <!-- <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> -->
-                                        <i class="fa fa-check" style="font-size:60px;color:goldenrod;border:2px solid #fff;"></i>
-                                    </div>
-                                </div>
-                                <!-- <br><br> -->
-                                <div class="row justify-content-center">
-                                    <div class="col-7 text-center">
-                                        <!-- <h4 class="purple-text text-center"><b>Profile</b></h4> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+
+                            {{--
+                        </div> --}}
+                        {{--
+            </div> --}}
+        </div>
+        <input type="button" name="previous" class="previous font-size-15 action-button-previous" value="Back" />
+        <input type="button" name="next" class="next font-size-15 action-button submit-btn" style="margin-left: 12px;"
+            value="Submit" />
+
+        </fieldset>
+        <fieldset>
+            <div class="form-card">
+                <div class="row justify-content-center">
+                    <div class="col-3" style="text-align:center;">
+                        <!-- <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> -->
+                        <i class="fa fa-check" style="font-size:60px;color:goldenrod;border:2px solid #fff;"></i>
+                    </div>
+                </div>
+                <!-- <br><br> -->
+                <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                        <!-- <h4 class="purple-text text-center"><b>Profile</b></h4> -->
+                    </div>
                 </div>
             </div>
-        </div>
+        </fieldset>
+        </form>
     </div>
+</div>
+</div>
+</div>
 @endsection
 
 @section('page_scripts')
 
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+{{--
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script> --}}
+{{--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script> --}}
 <!-- Include jQuery -->
 
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -1403,60 +1676,60 @@ display: none !important;
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
-  <script>
+<script>
 
 
-function validateInput(input) {
-    // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
-    input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
-}
-$(document).on('change', '.floating', function () {
+    function validateInput(input) {
+        // Allow only digits and the '+' sign, and ensure '+' is only at the beginning
+        input.value = input.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+    }
+    $(document).on('change', '.floating', function () {
 
-if ($('.floating').length > 0) {
+        if ($('.floating').length > 0) {
 
-$('.floating').on('focus blur', function (e) {
-$(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
-}).trigger('blur');
-} 
+            $('.floating').on('focus blur', function (e) {
+                $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+            }).trigger('blur');
+        }
 
-});
-            $(document).ready(function() {
-                
-
-               
-
-            $('.datepicker').datepicker({
-                dateFormat: 'dd-M-yy',
-                changeMonth: true,
-                changeYear: true,
-              yearRange: "2025:2030"
+    });
+    $(document).ready(function () {
 
 
-            });
 
-            // Trigger file input click when upload label is clicked
-            $('.fileInput0').on('click', function() {
-                $('#my-Dropzone').trigger('click');
-            });
 
-            $('#price').on('input', function() {
-                let value = $(this).val().replace(/[^0-9]/g, '');
-                let formatted = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                $(this).val(formatted);
-            });
+        $('.datepicker').datepicker({
+            dateFormat: 'dd-M-yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "2025:2030"
+
+
         });
 
-      
+        // Trigger file input click when upload label is clicked
+        $('.fileInput0').on('click', function () {
+            $('#my-Dropzone').trigger('click');
+        });
+
+        $('#price').on('input', function () {
+            let value = $(this).val().replace(/[^0-9]/g, '');
+            let formatted = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            $(this).val(formatted);
+        });
+    });
 
 
-        $(document).ready(function () {
-          
-       
-        
-    // alert(api_url);
-        
-  
-            Dropzone.autoDiscover = false;
+
+
+    $(document).ready(function () {
+
+
+
+        // alert(api_url);
+
+
+        Dropzone.autoDiscover = false;
         const myDropzone = new Dropzone("#my-Dropzone", {
             url: api_url + 'auth/upload_profile_web',
             maxFilesize: 2, // MB
@@ -1474,16 +1747,16 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
             error: function (file, response) {
                 console.log(response);
             },
-            init: function() {
-                this.on("addedfile", function(file) {
+            init: function () {
+                this.on("addedfile", function (file) {
                     // Create the remove button
                     var removeButton = Dropzone.createElement("<button class='dz-remove'>×</button>");
-                    
+
                     // Capture the Dropzone instance as closure.
                     var _this = this;
 
                     // Listen to the click event
-                    removeButton.addEventListener("click", function(e) {
+                    removeButton.addEventListener("click", function (e) {
                         // Make sure the button click doesn't submit the form
                         e.preventDefault();
                         e.stopPropagation();
@@ -1498,58 +1771,58 @@ $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || thi
                     file.previewElement.appendChild(removeButton);
                 });
             }
-           
+
         });
-   
-});     
+
+    });
 
 
-    
-
-      
-$(document).on('click', '.submit-btn', function () {
-            // Get the selected tags from the Slick input
-            // var selectedTags = $('#input-tag').slick('getTags');
-
-            formData = new FormData($('#msform')[0]);
-
-            var tags = [];
-            // Extract tags from the list
-            $('#tags li').each(function () {
-                tags.push($(this).text().trim());
-            });
 
 
-            formData.append('skills[]', tags);
-           
-            $.ajax({
-                url: api_url + 'auth/complete-profile-web',
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                },
-                success: function (data) {
-                    if (data.status == true) {
-                        console.log(data)
-                        // window.location = base_url + '/register/complete-profile';
-                    }
-                },
-                error: function (data) {
-                    console.log('Error:', data);
+
+    $(document).on('click', '.submit-btn', function () {
+        // Get the selected tags from the Slick input
+        // var selectedTags = $('#input-tag').slick('getTags');
+
+        formData = new FormData($('#msform')[0]);
+
+        var tags = [];
+        // Extract tags from the list
+        $('#tags li').each(function () {
+            tags.push($(this).text().trim());
+        });
+
+
+        formData.append('skills[]', tags);
+
+        $.ajax({
+            url: api_url + 'auth/complete-profile-web',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            success: function (data) {
+                if (data.status == true) {
+                    console.log(data)
+                    // window.location = base_url + '/register/complete-profile';
                 }
-            })
-        });
-  
-        var count = 0;
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        })
+    });
 
-        $(document).on('click', '.add-more-image', function (e) {
-            e.preventDefault();
-            count++;
+    var count = 0;
 
-            var imageBox = `<div class="col-md-4">
+    $(document).on('click', '.add-more-image', function (e) {
+        e.preventDefault();
+        count++;
+
+        var imageBox = `<div class="col-md-4">
             <label for="logo-${count}" style="cursor: pointer;">
                                         <img
                                             src="{{ asset('assets/img/img.png') }}"
@@ -1560,145 +1833,145 @@ $(document).on('click', '.submit-btn', function () {
                                                style="width:220px; background-color: #e9ecef; display:none" accept="image/*">
                                     </div>`;
 
-            $('.add-more-box').before(imageBox);
-            show_img('#image-' + count, '#logo-' + count);
-        });
+        $('.add-more-box').before(imageBox);
+        show_img('#image-' + count, '#logo-' + count);
+    });
 
-        $(document).on('click', '.delete-image', function (e) {
-            e.preventDefault();
+    $(document).on('click', '.delete-image', function (e) {
+        e.preventDefault();
 
-            thisElem = $(this);
+        thisElem = $(this);
+        $.ajax({
+            url: api_url + 'influencers/remove-profile-image',
+            type: 'POST',
+            data: { attachment_id: $(this).attr('data-attachment-id') },
+            success: function (data) {
+                if (data.status) {
+                    $(thisElem).parents('.avatar-image').remove();
+                }
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        })
+    });
+
+
+
+    //         $(document).ready(function() {
+    //             var selectedCountryId = $('.available-country').val();
+
+
+    //     if (selectedCountryId) {
+    //         $('.available-country').trigger('change');
+    //     }
+    // });
+
+
+
+    $('.available-country').on('change', function () {
+        var country_id = $(this).val();
+        var thisElem = $(this);
+
+        if (country_id) {
             $.ajax({
-                url: api_url + 'influencers/remove-profile-image',
-                type: 'POST',
-                data: {attachment_id: $(this).attr('data-attachment-id')},
-                success: function (data) {
-                    if (data.status) {
-                        $(thisElem).parents('.avatar-image').remove();
-                    }
+                url: api_url + 'get-cities-by-country',
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "country_id": country_id
                 },
-                error: function (data) {
-                    console.log('Error:', data);
-                }
-            })
-        });
-
-        
-     
-//         $(document).ready(function() {
-//             var selectedCountryId = $('.available-country').val();
-  
-    
-//     if (selectedCountryId) {
-//         $('.available-country').trigger('change');
-//     }
-// });
+                success: function (response) {
 
 
 
-        $('.available-country').on('change', function () {
-            var country_id = $(this).val();
-            var thisElem = $(this);
-            
-            if (country_id) {
-                $.ajax({
-                    url: api_url + 'get-cities-by-country',
-                    type: "POST",
-                    dataType: "json",
-                    data: {
-                        "country_id": country_id
-                    },
-                    success: function (response) {
+
+                    var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
+                    cityDropdown.append('<option value="" selected disabled></option>');
 
 
-                        
-                      
-                        var cityDropdown = $(thisElem).parents('.available-box').find(".city_id").empty();
-                        cityDropdown.append('<option value="" selected disabled></option>');
+                    if (response.data.length > 0) {
+                        var states = response.data;
 
-
-if (response.data.length > 0) {
-    var states = response.data;
-
-    // Append other options if states data is available
-    if (states) {
-        $.each(states, function (index, value) {
-            cityDropdown.append('<option value="' + value.id + '">' + value.name + '</option>');
-        });
-    }
-            } else {
-            // If no data, the dropdown will only have the empty "Select City" option
-             cityDropdown.empty();
-            }
+                        // Append other options if states data is available
+                        if (states) {
+                            $.each(states, function (index, value) {
+                                cityDropdown.append('<option value="' + value.id + '">' + value.name + '</option>');
+                            });
+                        }
+                    } else {
+                        // If no data, the dropdown will only have the empty "Select City" option
+                        cityDropdown.empty();
                     }
-                });
+                }
+            });
+        }
+    });
+
+
+
+    $(document).ready(function () {
+        // Floating Label Logic for standard inputs
+        $('.form-group.form-focus .form-control').on('focus blur', function (e) {
+            $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+        }).trigger('blur');
+
+        // Sync focused state for Select2 elements
+        $('select').on('select2:open', function () {
+            $(this).parents('.form-group').addClass('focused');
+        }).on('select2:close select2:select select2:unselect change', function () {
+            var val = $(this).val();
+            var hasValue = (val && Array.isArray(val) ? val.length > 0 : (val && val !== ''));
+            $(this).parents('.form-group').toggleClass('focused', hasValue);
+        });
+
+        // Initial check for selects on page load
+        $('select').each(function () {
+            var val = $(this).val();
+            var hasValue = (val && Array.isArray(val) ? val.length > 0 : (val && val !== ''));
+            if (hasValue) {
+                $(this).parents('.form-group').addClass('focused');
             }
         });
 
-
-
-        $(document).ready(function() {
-            // Floating Label Logic for standard inputs
-            $('.form-group.form-focus .form-control').on('focus blur', function (e) {
-                $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
-            }).trigger('blur');
-
-            // Sync focused state for Select2 elements
-            $('select').on('select2:open', function() {
-                $(this).parents('.form-group').addClass('focused');
-            }).on('select2:close select2:select select2:unselect change', function() {
-                var val = $(this).val();
-                var hasValue = (val && Array.isArray(val) ? val.length > 0 : (val && val !== ''));
-                $(this).parents('.form-group').toggleClass('focused', hasValue);
-            });
-
-            // Initial check for selects on page load
-            $('select').each(function() {
-                var val = $(this).val();
-                var hasValue = (val && Array.isArray(val) ? val.length > 0 : (val && val !== ''));
-                if (hasValue) {
-                    $(this).parents('.form-group').addClass('focused');
-                }
-            });
-
-            show_img();
-            show_img('#image0', '#logo0');
-            var maxSelections = 3;
-            $('#category_ids, #spoken_language_ids, #arts').on('select2:selecting', function (e) {
-                if ($(this).val() && $(this).val().length >= maxSelections) {
-                    e.preventDefault();
-                }
-            });
-            // $('.feature-select2').select2();
-             $('.selectdropdown').select2({
-                //    placeholder: " ",
-                  allowClear: true
-             });
-             $('.selectdropdownforcountry').select2({
-                //    placeholder: "",
-                  allowClear: true
-             });
-             
-
-            
-             $('.mySelect').select2({
-    minimumResultsForSearch: Infinity // Disables the search box
-  });
-            $('#category_ids').select2({
-                allowClear: true,
-                // Result limit handled by event listener to keep items visible
-            });
-            $('#spoken_language_ids').select2({
-                allowClear: true,
-                width: '100%',
-                // Result limit handled by event listener to keep items visible
-            });
-            $('#arts').select2({
-                allowClear: true,
-                // Result limit handled by event listener to keep items visible
-            });
-            
-            
+        show_img();
+        show_img('#image0', '#logo0');
+        var maxSelections = 3;
+        $('#category_ids, #spoken_language_ids, #arts').on('select2:selecting', function (e) {
+            if ($(this).val() && $(this).val().length >= maxSelections) {
+                e.preventDefault();
+            }
         });
-    </script>
+        // $('.feature-select2').select2();
+        $('.selectdropdown').select2({
+            //    placeholder: " ",
+            allowClear: true
+        });
+        $('.selectdropdownforcountry').select2({
+            //    placeholder: "",
+            allowClear: true
+        });
+
+
+
+        $('.mySelect').select2({
+            minimumResultsForSearch: Infinity // Disables the search box
+        });
+        $('#category_ids').select2({
+            allowClear: true,
+            // Result limit handled by event listener to keep items visible
+        });
+        $('#spoken_language_ids').select2({
+            allowClear: true,
+            width: '100%',
+            // Result limit handled by event listener to keep items visible
+        });
+        $('#arts').select2({
+            allowClear: true,
+            // Result limit handled by event listener to keep items visible
+        });
+
+
+    });
+</script>
 @endsection

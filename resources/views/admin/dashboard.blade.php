@@ -244,7 +244,9 @@ $(function() {
                 }
             };
 
-            var chart = new ApexCharts(document.querySelector("#pieChart"), options);
+            var el = document.querySelector("#pieChart");
+            if (!el) return;
+            var chart = new ApexCharts(el, options);
             chart.render();
         }
 
@@ -290,7 +292,9 @@ $(function() {
                 }]
             };
 
-            var chart = new ApexCharts(document.querySelector("#donutChart"), options);
+            var el = document.querySelector("#donutChart");
+            if (!el) return;
+            var chart = new ApexCharts(el, options);
             chart.render();
             //END OF DONUT CHART
         }
@@ -319,7 +323,9 @@ $(function() {
     tooltip: { y: { formatter: val => val } }
   };
 
-  var chart = new ApexCharts(document.querySelector("#barChart"), options);
+  var el = document.querySelector("#barChart");
+  if (!el) return;
+  var chart = new ApexCharts(el, options);
   chart.render();
 }
 

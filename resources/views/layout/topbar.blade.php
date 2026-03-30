@@ -133,10 +133,11 @@
                                     <hr class="mt-0 mb-1">
                                     <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
                                     @foreach ($recent_chats as $message)
+                                    @break($loop->index >= 3)
                                     <div class="notifications-wrapper" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 4px;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="text-decoration: none; color: inherit;">
                                             <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
-                                                <div class="d-flex align-items-center" style="gap: 12px; flex: 1;">
+                                                <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
                                                         <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
                                                             alt="sender image"
@@ -166,7 +167,7 @@
                         @endif
 
                         @if(session()->get('role') == 'influencer')
-                            <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li>
+                            {{-- <li><a href="{{ env('BASE_URL') . 'influencer/dashboard' }}">Dashboard</a></li> --}}
                             <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
                                 @php 
                                     $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
@@ -185,10 +186,11 @@
                                     <hr class="mt-0 mb-1">
                                     <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
                                     @foreach ($recent_chats as $message)
+                                    @break($loop->index >= 3)
                                     <div class="notifications-wrapper" style="border-bottom: 1px solid #f0f0f0; margin-bottom: 4px;">
                                         <a href="{{ env('BASE_URL') . 'chats' }}" style="text-decoration: none; color: inherit;">
                                             <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
-                                                <div class="d-flex align-items-center" style="gap: 12px; flex: 1;">
+                                                <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
                                                         <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
                                                             alt="sender image"
