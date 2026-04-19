@@ -92,7 +92,7 @@
         border: none !important;
         color: #0504aa !important;
         font-size: 14px !important;
-        font-weight: bold !important;
+        font-weight: normal !important;
         line-height: 1 !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -179,11 +179,20 @@
         color: #0504aa !important;
         font-weight: normal !important;
     }
-
     .select2-results__option {
         padding: 8px 13px !important;
         font-size: 14px !important;
         color: #4b5563 !important;
+    }
+
+    /* Remove bold from selected and highlighted items in the dropdown list */
+    .select2-container--default .select2-results__option[aria-selected=true],
+    .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+        background-color: transparent !important;
+        color: #0504aa !important;
+        font-weight: 400 !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
     }
 
     .select2-dropdown {
@@ -295,6 +304,7 @@
     .form-control {
         color: black !important;
         font-size: 15px !important;
+        font-weight: normal !important;
     }
 
     .form-control::placeholder {
@@ -322,13 +332,22 @@
         /* Start in middle */
         left: 12px !important;
         font-size: 15px !important;
-        font-weight: 500 !important;
+        font-weight: normal !important;
         color: #0504aa !important;
         background: transparent !important;
         z-index: 15 !important;
         pointer-events: none !important;
         margin: 0 !important;
         transition: all 0.2s ease !important;
+    }
+
+    /* Force all text in form groups to be normal weight */
+    .form-group.form-focus label,
+    .form-group.form-focus input,
+    .form-group.form-focus select,
+    .form-group.form-focus .form-control,
+    .form-group.form-focus .select2-selection__rendered {
+        font-weight: normal !important;
     }
 
     .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -346,9 +365,9 @@
     .form-group.form-focus.focused .inner_label,
     .form-group.form-focus.has-value .focus-label,
     .form-group.form-focus.has-value .inner_label {
-        top: -22px !important;
+        top: -16px !important;
         font-size: 14px !important;
-        font-weight: 600 !important;
+        font-weight: normal !important;
         color: #0504aa !important;
         background: white !important;
         padding: 0 0px !important;
@@ -357,9 +376,9 @@
     /* Multiple selects always float if they have selections or are focused */
     .form-group.form-focus:has(.select2-selection__choice) .focus-label,
     .form-group.form-focus.focused:has(.select2-container) .focus-label {
-        top: -17px !important;
+        top: -12px !important;
         font-size: 14px !important;
-        font-weight: 600 !important;
+        font-weight: normal !important;
         background: white !important;
         padding: 0 0px !important;
         color: #0504aa !important;
@@ -547,10 +566,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                 <form id="msform" action="/upload" enctype="multipart/form-data">
                     <!-- progressbar -->
                     <ul id="progressbar">
-                        <li class="active" id="personal"><strong>Personal Info</strong></li>
-                        <li id="account"><strong>Platform URL</strong></li>
-                        <li id="payment"><strong>Profile Image</strong></li>
-                        <li id="confirm"><strong>Complete</strong></li>
+                        <li class="active" id="personal">Personal Info</li>
+                        <li id="account">Platform URL</li>
+                        <li id="payment">Profile Image</li>
+                        <li id="confirm">Complete</li>
                     </ul>
                     <fieldset>
                         <div class="form-card ps-3 pe-3">

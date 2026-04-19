@@ -1,113 +1,113 @@
 @extends('layout.master')
 @section('content')
-<style>
-    .invalid-feedback {
-        margin-top: 5px;
-        font-size: .9em !important;
-        display: none;
-        color: #dc3545;
-        text-align: left;
-        margin-left: 10%;
-    }
+    <style>
+        .invalid-feedback {
+            margin-top: 5px;
+            font-size: .9em !important;
+            display: none;
+            color: #dc3545;
+            text-align: left;
+            margin-left: 10%;
+        }
 
-    input:focus {
-        border-bottom: 2px solid #1b3c8e !important;
-        outline: none;
-    }
+        input:focus {
+            border-bottom: 2px solid #1b3c8e !important;
+            outline: none;
+        }
 
-    .form-control {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        border-radius: 0px;
-        height: 50px;
-        border: none !important;
-        border-bottom: 2px solid #ccc !important;
-        padding-left: 0 !important;
-        transition: border-bottom-color 0.3s;
-        background: transparent !important;
-    }
+        .form-control {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 0px;
+            height: 50px;
+            border: none !important;
+            border-bottom: 2px solid #ccc !important;
+            padding-left: 0 !important;
+            transition: border-bottom-color 0.3s;
+            background: transparent !important;
+        }
 
-    .form-focus {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 400px;
-    }
+        .form-focus {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
+        }
 
-    .form-focus .focus-label {
-        left: 0px !important;
-        font-weight: 500;
-    }
+        .form-focus .focus-label {
+            left: 0px !important;
+            font-weight: 500;
+        }
 
-    .login-right {
-        padding: 40px 30px;
-        background: #fff;
-        border-radius: 20px;
-        border: 1px solid #eee;
-    }
+        .login-right {
+            padding: 40px 30px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid #eee;
+        }
 
-    .reset-btn {
-        background-color: #1b3c8e !important;
-        border: none !important;
-        color: white !important;
-        font-size: 18px !important;
-        font-weight: 600 !important;
-        padding: 12px 30px !important;
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px !important;
-        cursor: pointer;
-        transition: 0.3s;
-        margin: 30px auto 10px;
-        display: block;
-    }
+        .reset-btn {
+            background-color: #1b3c8e !important;
+            border: none !important;
+            color: white !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            padding: 12px 30px !important;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px !important;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 30px auto 10px;
+            display: block;
+        }
 
-    .reset-btn:hover {
-        background-color: #142d6b !important;
-        transform: translateY(-2px);
-    }
+        .reset-btn:hover {
+            background-color: #142d6b !important;
+            transform: translateY(-2px);
+        }
 
-    .login-color {
-        color: #1b3c8e !important;
-        font-weight: 500;
-    }
+        .login-color {
+            color: #1b3c8e !important;
+            font-weight: 500;
+        }
 
-    .login-color:hover {
-        color: #997045 !important;
-    }
-</style>
-<div class="content">
-    <div class="container" style="margin-top: 60px;">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="account-content">
-                    <div class="align-items-center justify-content-center">
-                        <div class="login-right shadow-sm">
-                            <div class="login-header text-center">
-                                <h3>Reset Password</h3>
-                                <p class="text-muted">Enter your email</p>
-                            </div>
-                            <form id="forgot-password-form">
-                                <div class="form-group form-focus">
-                                    <input type="email" class="form-control floating email" name="email">
-                                    <div class="invalid-feedback">
-                                        Please provide a valid email.
+        .login-color:hover {
+            color: #997045 !important;
+        }
+    </style>
+    <div class="content">
+        <div class="container" style="margin-top: 60px;">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="account-content">
+                        <div class="align-items-center justify-content-center">
+                            <div class="login-right shadow-sm">
+                                <div class="login-header text-center">
+                                    <h3>Reset Password</h3>
+                                    <p class="text-muted">Enter your email</p>
+                                </div>
+                                <form id="forgot-password-form">
+                                    <div class="form-group form-focus">
+                                        <input type="email" class="form-control floating email" name="email">
+                                        <div class="invalid-feedback">
+                                            Please provide a valid email.
+                                        </div>
+                                        <label class="focus-label">Email</label>
                                     </div>
-                                    <label class="focus-label">Email</label>
-                                </div>
-                                <button class="reset-btn" type="submit">Reset Password</button>
-                                <div class="text-center mt-3">
-                                    <p class="dont-have">Remember your password? <a class="login-color"
-                                            href="{{ env('BASE_URL') }}/login">Login Here</a></p>
-                                </div>
-                            </form>
+                                    <button class="reset-btn" type="submit">Reset Password</button>
+                                    <div class="text-center mt-3">
+                                        <p class="dont-have">Remember your password? <a class="login-color"
+                                                href="{{ env('BASE_URL') }}/login">Login Here</a></p>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('page_scripts')

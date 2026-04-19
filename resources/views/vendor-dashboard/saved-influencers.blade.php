@@ -134,16 +134,30 @@
    .social-wrapper:hover .shaking  {
    /* Change to your desired hover color */
  
-    animation: shake 1.5s linear infinite;
+    animation: shake 3.5s linear infinite;
    }
 
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-  }
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-2px);
+        }
+
+        50% {
+            transform: translateX(2px);
+        }
+
+        75% {
+            transform: translateX(-2px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
         .filled {
             color: #997045 !important;
         }

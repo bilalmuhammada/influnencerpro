@@ -237,6 +237,17 @@ ul li {
     color:#0504aa; 
 }
 
+.font-label {
+    white-space: nowrap !important;
+    font-size: 8px !important;
+    font-weight: bold !important;
+    color: blue !important;
+    text-transform: none;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 5px;
+}
+
 </style>
     <body>
 
@@ -425,17 +436,17 @@ ul li {
                                 <div class="card-body">
                                     
                                     <div class="filter-widget">
-                                        <h4><b>Basic Details</b></h4>
+                                        <label class="font-label">Basic Details</label>
                                       
                                     </div>
                                     <div class="filter-widget">
-                                        <h4>Influencers category</h4>
+                                        <label class="font-label">Influencers category</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Beauty, Fitness, Lifestyle, Travel</span>
                                         </div>
                                     </div>
                                     <div class="filter-widget">
-                                        <h4>Models category</h4>
+                                        <label class="font-label">Models category</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Fitness, Glamour, Lifestyle, Travel</span>
                                         </div>
@@ -444,13 +455,13 @@ ul li {
                                         <div class="col-md-12" style="font-size: 11px;">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                <h4 style="font-size: 13px;">Spoken Languages</h4>
+                                                <label class="font-label">Spoken Languages</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">English</span>
                                         </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                <h4 style="font-size: 13px;">English dialects</h4>
+                                                <label class="font-label">English dialects</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">American/canadian</span>
                                         </div>
@@ -463,19 +474,19 @@ ul li {
                                         <div class="col-md-12" style="font-size: 11px;">
                                             <div class="row">
                                             <div class="col-md-4">
-                                                <h4 style="font-size: 13px;">Ethnicity</h4>
+                                                <label class="font-label">Ethnicity</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Look Arab</span>
                                         </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <h4 style="font-size: 11px;">Hair Type</h4>
+                                                <label class="font-label">Hair Type</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Long</span>
                                         </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <h4 style="font-size: 11px;">Hair Colour</h4>
+                                                <label class="font-label">Hair Colour</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Brown</span>
                                         </div>
@@ -486,10 +497,10 @@ ul li {
 
                                    <div class="filter-widget">
                                         <div class="col-md-12" style="font-size: 11px;">
-                                        <h4 style="font-size: 15px;">Art</h4>
+                                        <label class="font-label">Art</label>
                                             <div class="row">
                                             <div class="col-md-12">
-                                                <h4 style="font-size: 11px;">Dance</h4>
+                                                <label class="font-label">Dance</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">club/freestyle/contemporary, desco, modern</span>
                                         </div>
@@ -500,22 +511,22 @@ ul li {
 
                                     <div class="filter-widget">
                                         <div class="col-md-12" style="font-size: 11px;">
-                                        <h4 style="font-size: 13px;">I have the following:</h4>
+                                        <label class="font-label">I have the following:</label>
                                             <div class="row">
                                             <div class="col-md-4">
-                                                <h4 style="font-size: 13px;">Features</h4>
+                                                <label class="font-label">Features</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">Foot model</span>
                                         </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <h4 style="font-size: 11px;">valid license</h4>
+                                                <label class="font-label">valid license</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">car</span>
                                         </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <h4 style="font-size: 11px;">Tattoes</h4>
+                                                <label class="font-label">Tattoes</label>
                                         <div class="form-group">
                                             <span class="badge badge-pill badge-skill">none</span>
                                         </div>

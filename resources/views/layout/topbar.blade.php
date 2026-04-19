@@ -76,11 +76,11 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <nav class="navbar navbar-expand-lg header-nav">
         <div class="container">
-            <div class="navbar-header" style="display: flex; align-items: center;">
+            <div class="navbar-header ps-0" style="display: flex; align-items: center;">
                 <a id="mobile_btn" href="javascript:void(0);">
                     <span class="bar-icon"></span>
                 </a>
-                <a href="{{ env('BASE_URL') }}" class="navbar-brand logo">
+                <a href="{{ env('BASE_URL') }}" class="navbar-brand logo ps-0">
                     <img src="{{ asset('assets/img/logo/Influencers Pro-01-01.png') }}" class="img-fluid shaking" alt="Logo">
                 </a>
 
@@ -144,7 +144,7 @@
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>
                                                     <div style="flex: 1; min-width: 0;">
-                                                        <strong style="font-size: 14px; display: block; line-height: 1.2; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}</strong>
+                                                        <strong style="font-size: 14px; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
                                                         <span style="font-size: 12px; color: #6c757d;">{{ \Illuminate\Support\Str::limit($message->message, 40) }}</span>
                                                         <br>
                                                         <small style="font-size: 10px; color: #adb5bd;">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</small>
@@ -197,7 +197,7 @@
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>
                                                     <div style="flex: 1; min-width: 0;">
-                                                        <strong style="font-size: 14px; display: block; line-height: 1.2; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}</strong>
+                                                        <strong style="font-size: 14px; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
                                                         <span style="font-size: 12px; color: #6c757d;">{{ \Illuminate\Support\Str::limit($message->message, 40) }}</span>
                                                         <br>
                                                         <small style="font-size: 10px; color: #adb5bd;">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</small>

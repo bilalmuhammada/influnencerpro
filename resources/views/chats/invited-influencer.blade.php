@@ -3,13 +3,19 @@
 @section('content')
     <style>
         .lobibox-notify.notify-mini .lobibox-notify-body {
-    margin: 7px 1px 0px 0px !important;
-}
-.lobibox-notify, .lobibox-notify-success, .animated-fast, .fadeInDown, .notify-mini{
-    width: 100px !important;
-    margin-right: 120px !important; 
-    /* text-align: center !important; */
-}
+            margin: 7px 1px 0px 0px !important;
+        }
+
+        .lobibox-notify,
+        .lobibox-notify-success,
+        .animated-fast,
+        .fadeInDown,
+        .notify-mini {
+            width: 100px !important;
+            margin-right: 120px !important;
+            /* text-align: center !important; */
+        }
+
         .switch {
             position: relative;
             display: inline-block;
@@ -49,15 +55,15 @@
             transition: .4s;
         }
 
-        input:checked + .slider {
+        input:checked+.slider {
             background-color: #2196F3;
         }
 
-        input:focus + .slider {
+        input:focus+.slider {
             box-shadow: 0 0 1px #2196F3;
         }
 
-        input:checked + .slider:before {
+        input:checked+.slider:before {
             -webkit-transform: translateX(16px);
             -ms-transform: translateX(16px);
             transform: translateX(16px);
@@ -69,31 +75,47 @@
         }
 
         .shaking {
-    display: inline-block;
-    transition: transform 0.2s ease-in-out;
-   }
-   .social-wrapper:hover .shaking  {
-   /* Change to your desired hover color */
- 
-    animation: shake 1.5s linear infinite;
-   }
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
 
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-  }
+        .social-wrapper:hover .shaking {
+            /* Change to your desired hover color */
+
+            animation: shake 2.5s linear infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-2px);
+            }
+
+            50% {
+                transform: translateX(2px);
+            }
+
+            75% {
+                transform: translateX(-2px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
         .slider.round:before {
             border-radius: 50%;
         }
 
         .influencerdetail {
             /* display: none;
-            opacity:0.9;
-            width:200px;
-            position: absolute; */
+                opacity:0.9;
+                width:200px;
+                position: absolute; */
             /* height: 270px; */
         }
 
@@ -121,7 +143,7 @@
             visibility: hidden;
             opacity: 0
         }
-      
+
         .avatar-one .influencerdetail::after {
             position: absolute;
             left: 0;
@@ -137,9 +159,11 @@
             -webkit-transition: all 0.35s ease-in-out;
             transition: all 0.35s ease-in-out
         }
-        .datepicker:focus{
-    border: 1px solid blue !important;
-}
+
+        .datepicker:focus {
+            border: 1px solid blue !important;
+        }
+
         .filled {
             color: #997045 !important;
         }
@@ -214,61 +238,69 @@
             font-weight: 600;
 
         }
-        .ui-state-default  {
-        border: 0px !important;
-    background-color: white !important; /* Change this to the desired color */
-  }
-  #ui-datepicker-div{
-width: 195px !important;
-  }
-  ::-webkit-scrollbar {
-  width: 6px; /* You can adjust this value based on your preference */
-}
 
-.datepicker {
-    padding-left: 18px !important;
-}
-.social-wrapper:hover .followers-count {
-    color:goldenrod; /* Change to your desired hover color */
-}
-/* Define the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background-color: #997045;
-  border-radius: 34px;
-}
+        .ui-state-default {
+            border: 0px !important;
+            background-color: white !important;
+            /* Change this to the desired color */
+        }
 
-/* Define the scrollbar track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+        #ui-datepicker-div {
+            width: 195px !important;
+        }
 
+        ::-webkit-scrollbar {
+            width: 6px;
+            /* You can adjust this value based on your preference */
+        }
+
+        .datepicker {
+            padding-left: 18px !important;
+        }
+
+        .social-wrapper:hover .followers-count {
+            color: goldenrod;
+            /* Change to your desired hover color */
+        }
+
+        /* Define the scrollbar thumb */
+        ::-webkit-scrollbar-thumb {
+            background-color: #997045;
+            border-radius: 34px;
+        }
+
+        /* Define the scrollbar track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
     </style>
 
     <section style="border-top:2px solid #eee;padding-top:90px;">
-        {{-- <br/> --}}
+        {{-- <br /> --}}
         <div class="row">
             <div class="col-md-12 ">
                 <!-- <div class="input-box text-center mx-auto"
-                     style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
-                    <input type="text" class="middle-search" placeholder=" Search..."
-                           style="border:none;height:50px;width:500px;"><i class="fa fa-search"></i>
-                </div> -->
+                         style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
+                        <input type="text" class="middle-search" placeholder=" Search..."
+                               style="border:none;height:50px;width:500px;"><i class="fa fa-search"></i>
+                    </div> -->
             </div>
         </div>
     </section>
-    {{-- <br/> --}}
+    {{-- <br /> --}}
     <div class="container">
         <div class="col-md-12">
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-10">
                     <form action="{{ env('BASE_URL') }}chats/invited-influencers">
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control datepicker from_date" style="width:115%;"  name="from_date"
-                                       placeholder="Date">
+                                <input type="text" class="form-control datepicker from_date" style="width:115%;"
+                                    name="from_date" placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6">
-                                <input type="text" class="form-control datepicker to_date" style="width:115%;margin-left: 14px;"  name="to_date" placeholder="Date">
+                                <input type="text" class="form-control datepicker to_date"
+                                    style="width:115%;margin-left: 14px;" name="to_date" placeholder="Date">
                             </div>
                             <div class="col-lg-2 col-md-6" style="margin-top:5px;margin-left: 31px;">
                                 <button class="btn btn-primary filter">Filter</button>
@@ -282,71 +314,74 @@ width: 195px !important;
             </div>
         </div>
     </div>
-    <br/>
+    <br />
     <div class="container">
         <div class="col-md-10">
             <div class="row " style="gap: 4rem;">
 
 
-                  @forelse($influencers as $influencer)
+                @forelse($influencers as $influencer)
                     <div class="col-md-2 col-lg-2 col-xl-2" style="top:6px;">
                         <div class="card avatar-one"
-                             onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
-                             style="border:0px solid #997045;width:200px; padding: 0px; cursor: pointer;">
+                            onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+                            style="border:0px solid #997045;width:200px; padding: 0px; cursor: pointer;">
                             <a href="javascript:void(0)">
-                                
-                                
-                                @php
-                                $color = 'white';
-                                  $color1 = 'white';
-                                  
-                                  if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
-                                      if ($influencer->favourites[0]->influencer_id == $influencer->id) {
-                                          if ($influencer->favourites[0]->fr_in == 1) {
-                                              $color = 'red';
-                                          }
-                                       
-                                      }
-                                  }
-                              
-                                  if (isset($influencer->invented) && count($influencer->invented) > 0) {
-                                      if ($influencer->invented[0]->influencer_id == $influencer->id) {
-                                          
-                                          if ($influencer->invented[0]->fr_in == 2) {
-                                              $color1 = '#61de2a';
-                                          }
-                                      }
-                                  }
-                                  
-                                
-                               
-                                
-                              @endphp
-                               
-                                <div class="influencerdetail" id="">
-                                    <div class="start"style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-50px;top:6px;">
 
-                                        <i class="fa-solid fa-heart shaking add-to-favourite"
-                                        data-id="{{ $influencer->id }}"
-                                        data-fvt="1"
-                                        style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
-    
-                                       <i class="fas fa-check-circle shaking  add-to-invented"
-                                          data-id="{{ $influencer->id }}"
-                                          data-fvt="2"
-                                          style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
-    
-                                       {{-- <i class="fas fa-check-circle remove-favourite"
-                                          data-id="{{ $influencer->id }}"
-                                          style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i> --}}
-    
-                                   </div>
+
+                                @php
+                                    $color = 'white';
+                                    $color1 = 'white';
+
+                                    if (isset($influencer->favourites) && count($influencer->favourites) > 0) {
+                                        if ($influencer->favourites[0]->influencer_id == $influencer->id) {
+                                            if ($influencer->favourites[0]->fr_in == 1) {
+                                                $color = 'red';
+                                            }
+
+                                        }
+                                    }
+
+                                    if (isset($influencer->invented) && count($influencer->invented) > 0) {
+                                        if ($influencer->invented[0]->influencer_id == $influencer->id) {
+
+                                            if ($influencer->invented[0]->fr_in == 2) {
+                                                $color1 = '#61de2a';
+                                            }
+                                        }
+                                    }
+
+
+
+
+                                  @endphp
+
+                                <div class="influencerdetail" id="">
+                                    <div class="start"
+                                        style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-50px;top:6px;">
+
+                                        <i class="fa-solid fa-heart shaking add-to-favourite" data-id="{{ $influencer->id }}"
+                                            data-fvt="1"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+
+                                        <i class="fas fa-check-circle shaking  add-to-invented" data-id="{{ $influencer->id }}"
+                                            data-fvt="2"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+
+                                        {{-- <i class="fas fa-check-circle remove-favourite" data-id="{{ $influencer->id }}"
+                                            style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i>
+                                        --}}
+
+                                    </div>
                                     <br>
-                                    {{--<span
-                                        style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based in:</b><br/>&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : '' }}</span><br/>--}}
-                                    {{--<span
-                                        style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer Categories:</b><br/>&nbsp;&nbsp; {{ $influencer->user_professional_detail && $influencer->user_professional_detail->category ? $influencer->user_professional_detail->category->name : '' }}</span>--}}
-                                    <ul class="d-flex justify-content-center w-100 align-items-end" style="list-style-type: none; margin-top: 120px; padding-left: 0; gap: 6px;">
+                                    {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based
+                                            in:</b><br />&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : ''
+                                        }}</span><br />--}}
+                                    {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer
+                                            Categories:</b><br />&nbsp;&nbsp; {{ $influencer->user_professional_detail &&
+                                        $influencer->user_professional_detail->category ?
+                                        $influencer->user_professional_detail->category->name : '' }}</span>--}}
+                                    <ul class="d-flex justify-content-center w-100 align-items-end"
+                                        style="list-style-type: none; margin-top: 120px; padding-left: 0; gap: 6px;">
                                         @php
                                             $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
                                             $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
@@ -355,120 +390,126 @@ width: 195px !important;
                                             $youtube = getInfluencerSocialMediaProfileByTypeAndId('youtube', $influencer->id);
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
-                                         @if($instagram && !empty($instagram->followers) && $instagram->followers != '0')
+                                        @if($instagram && !empty($instagram->followers) && $instagram->followers != '0')
 
 
 
-                                         <li style="display: inline-block;;color:#fff;">
-                                         <div class="social-wrapper" style="text-align: center;">
-                                             <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                 <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
-                                             </a>
-                                             <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                 {{ $instagram ? $instagram->followers : 0 }}
-                                             </div>
-                                         </div>
-                                     </li>
-                                                         @endif
-         
-                                                         @if($twitter  && !empty($twitter->followers) && $twitter->followers != '0')
-                                                         <li style="display: inline-block;;color:#fff;">
-                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
-                                                                 </a>
-                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                                     {{ $twitter ? $twitter->followers : 0 }}
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-         
-                                                             
-                                                         @endif
-         
-                                                         @if($youtube && !empty($youtube->followers) && $youtube->followers != '0')
-                                                         <li style="display: inline-block;;color:#fff;">
-                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                     <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
-                                                                 </a>
-                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                                     {{ $youtube ? $youtube->followers : 0 }}
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         
-                                                             
-                                                         @endif
-                                                         @if($tiktok && !empty($tiktok->followers) && $tiktok->followers != '0')
-                                                         <li style="display: inline-block;;color:#fff;">
-                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
-                                                                 </a>
-                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                                     {{ $tiktok ? $tiktok->followers : 0 }}
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                        
-                                                           
-                                                         @endif
-                                                         @if($facebook && !empty($facebook->followers) && $facebook->followers != '0')
-                                                         <li style="display: inline-block;;color:#fff;">
-                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" style="margin-bottom: 4px;" alt="" width="25px">
-                                                                 </a>
-                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                                     {{ $facebook ? $facebook->followers : 0 }}
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         
-                                                             
-                                                         @endif
-                                                         @if($snapchat && !empty($snapchat->followers) && $snapchat->followers != '0')
-                                                         <li style="display: inline-block;;color:#fff;">
-                                                             <div class="social-wrapper" style="text-align: center;">
-                                                                 <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
-                                                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" style="margin-bottom: 3px;" alt="" width="27px">
-                                                                 </a>
-                                                                 <div class="text-center font-change followers-count" style="font-size:11px;">
-                                                                     {{ $snapchat ? $snapchat->followers : 0 }}
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                       
-                                                            
-                                                         @endif
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking"
+                                                            style="margin-bottom: 4px;" alt="" width="25px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $instagram ? $instagram->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endif
+
+                                        @if($twitter && !empty($twitter->followers) && $twitter->followers != '0')
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking"
+                                                            style="margin-bottom: 4px;" alt="" width="25px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $twitter ? $twitter->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        @endif
+
+                                        @if($youtube && !empty($youtube->followers) && $youtube->followers != '0')
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking"
+                                                            style="margin-bottom: 4px;" alt="" width="25px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $youtube ? $youtube->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        @endif
+                                        @if($tiktok && !empty($tiktok->followers) && $tiktok->followers != '0')
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking"
+                                                            style="margin-bottom: 4px;" alt="" width="25px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $tiktok ? $tiktok->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        @endif
+                                        @if($facebook && !empty($facebook->followers) && $facebook->followers != '0')
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking"
+                                                            style="margin-bottom: 4px;" alt="" width="25px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $facebook ? $facebook->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        @endif
+                                        @if($snapchat && !empty($snapchat->followers) && $snapchat->followers != '0')
+                                            <li style="display: inline-block;;color:#fff;">
+                                                <div class="social-wrapper" style="text-align: center;">
+                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                        <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
+                                                            class="shaking" style="margin-bottom: 3px;" alt="" width="27px">
+                                                    </a>
+                                                    <div class="text-center font-change followers-count" style="font-size:11px;">
+                                                        {{ $snapchat ? $snapchat->followers : 0 }}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                        @endif
                                     </ul>
                                 </div>
-                                <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author"
-                                     class="influencer"
-                                     width="100%" height="200px" >
+                                <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author" class="influencer"
+                                    width="100%" height="200px">
                             </a>
                             @php
-                            $categoryNames = '';
-                            foreach ($influencer->categories as $key => $category) {
-        // Format the first category with # and italic style
-        if ($key == 0) {
-            $categoryNames .= "<span style='font-style: italic;'># " . '</span>'.$category->name ;
-        } else {
-            // Append other categories without # and italic style
-            $categoryNames .= ', ' . $category->name;
-        }
-    }
+                                $categoryNames = '';
+                                foreach ($influencer->categories as $key => $category) {
+                                    // Format the first category with # and italic style
+                                    if ($key == 0) {
+                                        $categoryNames .= "<span style='font-style: italic;'># " . '</span>' . $category->name;
+                                    } else {
+                                        // Append other categories without # and italic style
+                                        $categoryNames .= ', ' . $category->name;
+                                    }
+                                }
 
 
-                            // dd($influencer->categories);
+                                // dd($influencer->categories);
                             @endphp
                             <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">
-                                <h5 style="font-size:12px;"
-                                    class="influencer-name">{{ $influencer ? $influencer->full_name : '' }}</h5>
-                                    <h5 style="font-size:12px;">{!! $categoryNames ?? '' !!}</h5>
+                                <h5 style="font-size:12px;" class="influencer-name">
+                                    {{ $influencer ? $influencer->full_name : '' }}</h5>
+                                <h5 style="font-size:12px;">{!! $categoryNames ?? '' !!}</h5>
                                 <h5 style="font-size:12px;">
-                                    Price: {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
+                                    Price:
+                                    {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
                                     &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}</h5>
                             </div>
                         </div>
@@ -483,22 +524,22 @@ width: 195px !important;
 
             </div>
 
-            </div>
         </div>
+    </div>
     </div>
 @endsection
 
 @section('page_scripts')
     <script>
- $(document).ready(function () {
+        $(document).ready(function () {
 
-$('.datepicker').datepicker({
-dateFormat: 'dd-M-yy',
-changeMonth: true,
-changeYear: true,
-yearRange: "2024:+0",
-});
- });
+            $('.datepicker').datepicker({
+                dateFormat: 'dd-M-yy',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "2024:+0",
+            });
+        });
 
 
 
@@ -512,10 +553,10 @@ yearRange: "2024:+0",
             $.ajax({
                 url: api_url + 'download-csv', // Replace with your Laravel route
                 method: 'POST',
-                data: {influencer_ids: influencerIds},
+                data: { influencer_ids: influencerIds },
                 success: function (response) {
                     // Create a Blob from the response data
-                    var blob = new Blob([response], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+                    var blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
 
                     // Create a downloadable link
                     var downloadLink = document.createElement('a');
@@ -545,7 +586,7 @@ yearRange: "2024:+0",
             thisElem = $(this);
             let influencerId = thisElem.data('id');
             let fvt = thisElem.data('fvt');
-            
+
             $.ajax({
                 url: api_url + 'influencers/add-to-favourites',
                 type: "POST",
@@ -556,11 +597,11 @@ yearRange: "2024:+0",
                 },
                 success: function (response) {
                     console.log(response.status);
-                    if(response.fr_in==1){
+                    if (response.fr_in == 1) {
                         $('.add-to-favourite').css('color', 'red');
-                      }else{
+                    } else {
                         $('.add-to-favourite').css('color', 'white');
-}
+                    }
                     if (response.status) {
                         show_success_message(response.message);
                         $(thisElem).hide();
@@ -578,7 +619,7 @@ yearRange: "2024:+0",
             thisElem = $(this);
             let influencerId = thisElem.data('id');
             let fvt = thisElem.data('fvt');
-            
+
             $.ajax({
                 url: api_url + 'influencers/add-to-invented',
                 type: "POST",
@@ -588,12 +629,12 @@ yearRange: "2024:+0",
                     "fvt": fvt
                 },
                 success: function (response) {
-                    if(response.fr_in==2){
+                    if (response.fr_in == 2) {
                         $('.add-to-invented').css('color', '#61de2a');
-                      }else{
+                    } else {
                         $('.add-to-invented').css('color', 'white');
-}
- 
+                    }
+
 
                     if (response.status) {
 
@@ -611,5 +652,3 @@ yearRange: "2024:+0",
         });
     </script>
 @endsection
-
-

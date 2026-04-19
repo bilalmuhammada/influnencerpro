@@ -8109,7 +8109,7 @@ div#global-loader {
 }
 .font-label{
     margin-bottom: 4px;
-    font-size: 14px !important;
+    font-size: 12px !important;
     font-weight: bold;
     color:#0504aa;
 }
@@ -13665,7 +13665,7 @@ label.file-upload input[type="file"] {
     z-index: 4;
     background: #fff;
     box-shadow: 0px 4px 14px rgba(198, 198, 198, 0.25);
-    border-radius: 20px;
+    border-radius: 4px;
 }
 
 .chat-cont-left .chat-header {
@@ -13709,7 +13709,7 @@ label.file-upload input[type="file"] {
 
 .chat-cont-left .chat-search .input-group .form-control {
     background-color: #fff;
-    border-radius: 50px;
+    border-radius: 4px;
     padding-left: 36px;
 }
 
@@ -13833,7 +13833,7 @@ label.file-upload input[type="file"] {
     max-width: 62%;
     background: #fff;
     box-shadow: 0px 4px 14px rgba(198, 198, 198, 0.25);
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 10px;
 }
 
@@ -14093,7 +14093,7 @@ label.file-upload input[type="file"] {
     width: 100%;
     /* background-color: #f5f5f6; */
     border: none;
-    border-radius: 50px;
+    border-radius: 4px;
     padding: 5px;
 }
 

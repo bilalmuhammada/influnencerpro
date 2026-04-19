@@ -19,6 +19,13 @@
 
     }
 
+    .font-label {
+        white-space: nowrap !important;
+        font-size: 8px !important;
+        font-weight: bold !important;
+        color: blue !important;
+    }
+
     .delete-icon:hover {
         filter: hue-rotate(220deg) saturate(2) brightness(1.2);
 
@@ -158,7 +165,7 @@
     }
 
     .social-wrapper:hover .shaking {
-        animation: shake 1.5s linear infinite;
+        animation: shake 3.5s linear infinite;
     }
 
     @keyframes shake {
@@ -167,15 +174,15 @@
         }
 
         25% {
-            transform: translateX(-5px);
+            transform: translateX(-2px);
         }
 
         50% {
-            transform: translateX(5px);
+            transform: translateX(2px);
         }
 
         75% {
-            transform: translateX(-5px);
+            transform: translateX(-2px);
         }
 
         100% {

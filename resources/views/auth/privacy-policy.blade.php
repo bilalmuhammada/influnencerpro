@@ -28,8 +28,8 @@ a{
     }
 
     .privacy-content-container {
-        padding-left: 40px !important;
-        padding-right: 40px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
 /* Define the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
@@ -58,15 +58,15 @@ ul, ol{
 
     </style>
     <div class="content">
-        <div class="container privacy-content-container" style="margin-top: 0px; max-width: 1140px;">
+        <div class="container privacy-content-container px-0" style="margin-top: 0px;">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12">
+                <div class="col-lg-12 col-md-12">
 
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
                         <div class="modal-body" style="padding: 0px;">
                             <div class="login-header ">
-                                <h3 class="text-center blueGold">Privacy & Policy</h3>
+                                <h3 class="text-center blueGold" style="margin-bottom: 40px;">Privacy & Policy</h3>
                                
                                 
 

@@ -37,7 +37,7 @@
 </style>
 <footer class="footer" style="border:0px solid red;">
     <div class="footer-container mb-30" style="margin-top: 50px;">
-        <div style="border:0px solid red; margin-left:20px;">
+        <div class="px-0" style="border:0px solid red;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                     <h6>
@@ -86,9 +86,9 @@
                                     Contact Us</a>
                             </li>
                             @if(session()->missing('User'))
-                            <!-- <li><a href="{{ url('login') }}"><i class="fas fa-angle-right me-1"></i>Login</a></li> -->
-                            <!-- <li><a href="{{ env('BASE_URL') . 'register' }}"><i class="fas fa-angle-right me-1"></i>Register</a> -->
-                            </li>
+                                <!-- <li><a href="{{ url('login') }}"><i class="fas fa-angle-right me-1"></i>Login</a></li> -->
+                                <!-- <li><a href="{{ env('BASE_URL') . 'register' }}"><i class="fas fa-angle-right me-1"></i>Register</a> -->
+                                </li>
                             @endif
                             <li><a href="{{ env('BASE_URL') }}/termcondition" class="changeColor" {{--
                                     data-bs-toggle="modal" data-bs-target="#termsModal" --}}>

@@ -436,7 +436,7 @@ button.slick-prev, button.slick-prev:hover {
 .slick-arrow.slick-hidden {
     display: none;
 }
-@charset 'UTF-8';
+
 /* Slider */
 .slick-loading .slick-list
 {
@@ -963,7 +963,7 @@ button.slick-prev, button.slick-prev:hover {
     display: none;
 }
 
-@charset 'UTF-8';
+
 /* Slider */
 .slick-loading .slick-list {
     background: #fff url('http://maggiesadler.com/wp-content/uploads/2015/10/ajax-loader.gif') center center no-repeat;
@@ -1161,19 +1161,17 @@ button.slick-prev, button.slick-prev:hover {
 }
 
 .marquee {
-    /*   overflow: hidden; */
+      overflow: hidden;
     }
     
     .marquee-content {
       display: flex;
+      gap: 2vw;
       animation: scrolling 80s linear infinite;
     }
     
     .marquee-item {
       flex: 0 0 10vw;
-      margin: 0 1vw;
-    /*   flex: 0 0 20vw; */
-    /*   margin: 0 2vw; */
     }
     
     .marquee-item img {

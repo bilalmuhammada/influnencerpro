@@ -8,7 +8,7 @@
         /* Adjust as needed */
         padding: 10px;
         /* border: 1px solid #ddd; */
-        border-radius: 20px;
+        border-radius: 4px;
     }
 
     #userOptionsMenu:hover {
@@ -96,7 +96,7 @@
         align-items: center;
         transition: background-color 0.3s;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 2px;
     }
 
     .chat-title:hover {
@@ -151,7 +151,7 @@
 
     .emojionearea.emojionearea-inline {
 
-        border-radius: 25px !important;
+        border-radius: 4px !important;
     }
 
     .select2-container {
@@ -216,7 +216,7 @@
         width: 90% !important;
         border: 1px solid #997045 !important;
         font-size: 12px !important;
-
+        border-radius: 4px !important;
     }
 
     .position-relative {
@@ -569,7 +569,7 @@
                                             id="emoji-trigger"
                                             data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                             data-chat-id="{{ $chat->id }}" data-chat-block="{{$chat->is_blocked}}"
-                                            style="border-radius: 30px; width: 100%; padding-right: 50px;">
+                                            style="border-radius: 4px; width: 100%; padding-right: 50px;">
 
                                     </div>
 

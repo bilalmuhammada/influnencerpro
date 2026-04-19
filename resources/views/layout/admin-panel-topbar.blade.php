@@ -170,10 +170,10 @@
 
 
     @php
-    $notifications = getNotifications();
-    $unread_notifications_count = getUnreadNotificationsCount();
-    $unread_messages = getUnreadMessages();
-    $recent_chats = getRecentChats();
+        $notifications = getNotifications();
+        $unread_notifications_count = getUnreadNotificationsCount();
+        $unread_messages = getUnreadMessages();
+        $recent_chats = getRecentChats();
     @endphp
 
     <nav class="navbar navbar-expand-lg header-nav" style="background-color: white;">
@@ -195,10 +195,10 @@
                     <select class="form-control" name="language_dropdown" style="width:150px;"
                         id="language_dropdown_nav" onchange="translateLanguage()">
                         @foreach(getlanguge() as $language)
-                        <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}"
-                            {{ $language->prefix == 'en' ? 'selected' : '' }}>
-                            {{ $language->name }}
-                        </option>
+                            <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}"
+                                {{ $language->prefix == 'en' ? 'selected' : '' }}>
+                                {{ $language->name }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
@@ -220,236 +220,240 @@
                         <i class="fas fa-times"></i>
                     </a>
                 </div>
-                @if( session()->get('User')!=null)
-                <ul class="main-nav nav" style="display: flex !important; align-items: center;">
+                @if(session()->get('User') != null)
+                            <ul class="main-nav nav" style="display: flex !important; align-items: center;">
 
-                    @if(session()->get('role') == 'vendor')
-                    <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . '/vendor/dashboard' }}">Influencers</a>
-                    </li>
+                                @if(session()->get('role') == 'vendor')
+                                    <li class="has-submenu {{ request()->is('vendor/dashboard') ? 'active' : '' }}">
+                                        <a href="{{ env('BASE_URL') . '/vendor/dashboard' }}">Influencers</a>
+                                    </li>
 
-                    <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favorited Influencers</a>
-                    </li>
-                    <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
-                    </li>
-                    @else
-                    <li class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}"><a
-                            href="{{ env('BASE_URL') . '/influencer/dashboard' }}"
-                            class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}">Dashboard</a></li>
-                    <li
-                        class="has-submenu {{ request()->is('influencers/' . session()->get('User')['id'] . '/public-profile') ? 'active' : '' }}">
-                        <a
-                            href="{{ env('BASE_URL') . '/influencers'}}/{{session()->has('User') ? session()->get('User')['id'] : '' }}/public-profile">Public
-                            Profile</a>
-                    </li>
-                    <li class="has-submenu {{ request()->is('influencer/complete-profile') ? 'active' : '' }}">
-                        <a href="{{ env('BASE_URL') }}/influencer/complete-profile">Edit Profile</a>
-                    </li>
-                    @endif
+                                    <li class="has-submenu {{ request()->is('vendor/favourite-influencers') ? 'active' : '' }}">
+                                        <a href="{{ env('BASE_URL') . '/vendor/favourite-influencers' }}">Favorited Influencers</a>
+                                    </li>
+                                    <li class="has-submenu {{ request()->is('chats/invited-influencers') ? 'active' : '' }}">
+                                        <a href="{{ env('BASE_URL') . '/chats/invited-influencers' }}">Invited Influencers</a>
+                                    </li>
+                                @else
+                                    <li class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}"><a
+                                            href="{{ env('BASE_URL') . '/influencer/dashboard' }}"
+                                            class="{{ request()->is('influencer/dashboard') ? 'active' : '' }}">Dashboard</a></li>
+                                    <li
+                                        class="has-submenu {{ request()->is('influencers/' . session()->get('User')['id'] . '/public-profile') ? 'active' : '' }}">
+                                        <a
+                                            href="{{ env('BASE_URL') . '/influencers'}}/{{session()->has('User') ? session()->get('User')['id'] : '' }}/public-profile">Public
+                                            Profile</a>
+                                    </li>
+                                    <li class="has-submenu {{ request()->is('influencer/complete-profile') ? 'active' : '' }}">
+                                        <a href="{{ env('BASE_URL') }}/influencer/complete-profile">Edit Profile</a>
+                                    </li>
+                                @endif
 
-                    <li class="has-submenu {{ request()->is('subscriptions') ? 'active' : '' }}">
-                        <a href="#" style="color: #88878792">Subscription<i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu6" style="margin-left: 0px;">
-                            @if(session()->get('role') == 'influencer')
-                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
-                            @else
-                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
-                            @endif
-                            <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions
-                                    History</a></li>
-                        </ul>
-                    </li>
+                                <li class="has-submenu {{ request()->is('subscriptions') ? 'active' : '' }}">
+                                    <a href="#" style="color: #88878792">Subscription<i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu6" style="margin-left: 0px;">
+                                        @if(session()->get('role') == 'influencer')
+                                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
+                                        @else
+                                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
+                                        @endif
+                                        <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions
+                                                History</a></li>
+                                    </ul>
+                                </li>
 
-                    <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
-                        @php
-                        $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
-                        @endphp
-                        <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLink" {!! $hasUnread
-                            ? 'data-bs-toggle="dropdown"' : '' !!}>
-                            Chats @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span>
-                            @endif
-                        </a>
-                        @if ($hasUnread)
-                        <div class="dropdown-menu notifications" id="chatDropdown"
-                            style="width: 400px; max-height: 350px; margin-left: -220px; padding:0px; border-radius: 4px !important; overflow: hidden; border: 1px solid #ddd;">
-                            <div class="d-flex justify-content-between align-items-center p-1"
-                                style="background: #fff; border-bottom: 1px solid #eee;">
-                                <span class="notif-header-text"
-                                    style="font-size: 14px; font-weight: 600 !important;">Chats</span>
-                                <span class="notif-badge" style="font-weight: bold;">{{ count($unread_messages) }}
-                                    New</span>
-                            </div>
-
-                            <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
-                                @foreach ($recent_chats as $message)
-                                <div class="notifications-wrapper" style="border-bottom: 1px solid #eee;">
-
-                                    <a href="{{ env('BASE_URL') . '/chats' }}"
-                                        style="text-decoration: none; color: inherit;">
-                                        <div class="notification-item position-relative"
-                                            style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 0px;">
-                                            <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
-                                                <div
-                                                    style="width: 57px; height: 57px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                                                    <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
-                                                        alt="sender image"
-                                                        style="width: 100%; height: 100%; object-fit: cover;">
-                                                </div>
-                                                <div style="flex: 1; min-width: 0;">
-                                                    <strong class="notif-chat">{{ $message->sender ?
-                                                        $message->sender->name : 'User' }}</strong>
-                                                    <span style="font-size: 12px; color: #6c757d; font-weight: 400;">{{
-                                                        \Illuminate\Support\Str::limit($message->message, 40) }}</span>
-                                                    <br>
-                                                    <small style="font-size: 10px; color: #adb5bd; font-weight: 400;">{{
-                                                        \Carbon\Carbon::parse($message->created_at)->diffForHumans()
-                                                        }}</small>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
+                                    @php
+                                        $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
+                                    @endphp
+                                    <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLink" {!! $hasUnread
+                    ? 'data-bs-toggle="dropdown"' : '' !!}>
+                                        Chats @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span>
+                                        @endif
                                     </a>
-                                </div>
-                                @endforeach
-                            </div>
+                                    @if ($hasUnread)
+                                        <div class="dropdown-menu notifications" id="chatDropdown"
+                                            style="width: 400px; max-height: 350px; margin-left: -220px; padding:0px; border-radius: 4px !important; overflow: hidden; border: 1px solid #ddd;">
+                                            <div class="d-flex justify-content-between align-items-center p-1"
+                                                style="background: #fff; border-bottom: 1px solid #eee;">
+                                                <span class="notif-header-text"
+                                                    style="font-size: 14px; font-weight: 600 !important;">Chats</span>
+                                                <span class="notif-badge" style="font-weight: bold;">{{ count($unread_messages) }}
+                                                    New</span>
+                                            </div>
 
-                            <div class="notification-footer text-center p-1"
-                                style="background-color: white; border-top: 1px solid #eee;">
-                                <a href="{{ env('BASE_URL') . '/chats' }}" class="view-all-link"
-                                    style="font-size: 13px; font-weight: 600;">
-                                    View all Chats
-                                </a>
-                            </div>
-                        </div>
-                        @endif
-                    </li>
+                                            <div class="notifications-list" style="max-height: 250px; overflow-y: auto;">
+                                                @foreach ($recent_chats as $message)
+                                                                    <div class="notifications-wrapper" style="border-bottom: 1px solid #eee;">
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">
-                            Notifications @if($unread_notifications_count > 0) <span
-                                class="badge-premium-green notification-badge-count">{{ $unread_notifications_count
-                                }}</span> @endif
-                        </a>
+                                                                        <a href="{{ env('BASE_URL') . '/chats' }}"
+                                                                            style="text-decoration: none; color: inherit;">
+                                                                            <div class="notification-item position-relative"
+                                                                                style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 0px;">
+                                                                                <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
+                                                                                    <div
+                                                                                        style="width: 57px; height: 57px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+                                                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
+                                                                                            alt="sender image"
+                                                                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                                                                    </div>
+                                                                                    <div style="flex: 1; min-width: 0;">
+                                                                                        <strong class="notif-chat">{{ $message->sender ?
+                                                    $message->sender->name : 'User' }}</strong>
+                                                                                        <span style="font-size: 12px; color: #6c757d; font-weight: 400;">{{
+                                                    \Illuminate\Support\Str::limit($message->message, 40) }}</span>
+                                                                                        <br>
+                                                                                        <small style="font-size: 10px; color: #adb5bd; font-weight: 400;">{{
+                                                    \Carbon\Carbon::parse($message->created_at)->diffForHumans()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }}</small>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                @endforeach
+                                            </div>
 
-                        <div class="dropdown-menu notifications"
-                            style="width: 400px; max-height: 350px; margin-left: -220px;">
-
-                            @if (session()->has('User') && isset($notifications) && count($notifications) > 0)
-                            <!-- Header -->
-                            <div class="d-flex justify-content-between align-items-center p-2"
-                                style="padding-top: 3px !important; padding-bottom: 3px !important;">
-                                <span class="notif-header-text"
-                                    style="font-size: 14px; font-weight: 600 !important;">Notifications</span>
-                                <span class="notif-badge"><span class="unread-count">{{ $unread_notifications_count
-                                        }}</span> New</span>
-                            </div>
-
-                            <hr class="m-0" style="border-top: 1px solid #f0f0f0; opacity: 1;">
-
-                            <!-- Notifications list -->
-                            @foreach ($notifications as $notification)
-                            @if($loop->iteration > 3) @break @endif
-
-
-
-                            <div class="notifications-wrapper"
-                                style="border-bottom: 1px solid #f0f0f0; {{ $notification->read_at ? '' : 'background-color: aliceblue;' }}"
-                                data-notification-id="{{ $notification->id }}">
-                                <div class="notification-item" style="">
-                                    <div class="d-flex align-items-start">
-                                        <!-- Avatar -->
-                                        @php
-                                        $notifSender = \App\Models\User::find($notification->user_id);
-                                        $specialties = '';
-                                        if ($notifSender && $notifSender->categories) {
-                                        $specialties = ' - ' .
-                                        $notifSender->categories->take(3)->pluck('name')->implode(', ');
-                                        }
-                                        @endphp
-                                        <div
-                                            style="width: 55px; height:53px; margin-top: 3px; border-radius: 2px; overflow: hidden; flex-shrink: 0; margin-right: 12px;">
-                                            <img src="{{ $notifSender && $notifSender->image_url ? $notifSender->image_url : asset('assets/img/default.png') }}"
-                                                alt="notification image"
-                                                style="width: 100%; height: 100%; object-fit: cover;">
+                                            <div class="notification-footer text-center p-1"
+                                                style="background-color: white; border-top: 1px solid #eee;">
+                                                <a href="{{ env('BASE_URL') . '/chats' }}" class="view-all-link"
+                                                    style="font-size: 13px; font-weight: 600;">
+                                                    View all Chats
+                                                </a>
+                                            </div>
                                         </div>
+                                    @endif
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">
+                                        Notifications @if($unread_notifications_count > 0) <span
+                                            class="badge-premium-green notification-badge-count">{{ $unread_notifications_count
+                                        }}</span> @endif
+                                    </a>
+
+                                    <div class="dropdown-menu notifications"
+                                        style="width: 400px; max-height: 350px; margin-left: -220px;">
+
+                                        @if (session()->has('User') && isset($notifications) && count($notifications) > 0)
+                                            <!-- Header -->
+                                            <div class="d-flex justify-content-between align-items-center p-2"
+                                                style="padding-top: 3px !important; padding-bottom: 3px !important;">
+                                                <span class="notif-header-text"
+                                                    style="font-size: 14px; font-weight: 600 !important;">Notifications</span>
+                                                <span class="notif-badge"><span
+                                                        class="unread-count">{{ $unread_notifications_count
+                                                                                                                                                                                                                                                                        }}</span>
+                                                    New</span>
+                                            </div>
+
+                                            <hr class="m-0" style="border-top: 1px solid #f0f0f0; opacity: 1;">
+
+                                            <!-- Notifications list -->
+                                            @foreach ($notifications as $notification)
+                                                            @if($loop->iteration > 3) @break @endif
 
 
-                                        <!-- Content -->
-                                        <div style="flex: 1; min-width: 0;">
-                                            <div class="notif-name notification-subject">{{ $notifSender ?
+
+                                                            <div class="notifications-wrapper"
+                                                                style="border-bottom: 1px solid #f0f0f0; {{ $notification->read_at ? '' : 'background-color: aliceblue;' }}"
+                                                                data-notification-id="{{ $notification->id }}">
+                                                                <div class="notification-item" style="">
+                                                                    <div class="d-flex align-items-start">
+                                                                        <!-- Avatar -->
+                                                                        @php
+                                                                            $notifSender = \App\Models\User::find($notification->user_id);
+                                                                            $specialties = '';
+                                                                            if ($notifSender && $notifSender->categories) {
+                                                                                $specialties = ' - ' .
+                                                                                    $notifSender->categories->take(3)->pluck('name')->implode(', ');
+                                                                            }
+                                                                        @endphp
+                                                                        <div
+                                                                            style="width: 55px; height:53px; margin-top: 3px; border-radius: 2px; overflow: hidden; flex-shrink: 0; margin-right: 12px;">
+                                                                            <img src="{{ $notifSender && $notifSender->image_url ? $notifSender->image_url : asset('assets/img/default.png') }}"
+                                                                                alt="notification image"
+                                                                                style="width: 100%; height: 100%; object-fit: cover;">
+                                                                        </div>
+
+
+                                                                        <!-- Content -->
+                                                                        <div style="flex: 1; min-width: 0;">
+                                                                            <div class="notif-name notification-subject">
+                                                                                {{ $notifSender ?
                                                 $notifSender->name . ' ' . $notifSender->last_name : 'Unknown User' }}{{
-                                                $specialties }}</div>
-                                            <div class="notif-desc">{{
+                                                $specialties }}
+                                                                            </div>
+                                                                            <div class="notif-desc">{{
                                                 \Illuminate\Support\Str::limit($notification->data, 30) }}</div>
-                                            <div class="notif-time">{{
+                                                                            <div class="notif-time">{{
                                                 \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}
-                                            </div>
-                                        </div>
+                                                                            </div>
+                                                                        </div>
 
-                                        <!-- Three Dots Menu -->
-                                        <div class="dropdown three-dots-container ms-2" style="margin-top: 2px;">
-                                            <button class="btn btn-link p-0 three-dots-btn" type="button"
-                                                onclick="toggleDropdown(this, event)" style="font-size: 16px;">
-                                                <i class="fa fa-ellipsis-h"></i>
-                                            </button>
+                                                                        <!-- Three Dots Menu -->
+                                                                        <div class="dropdown three-dots-container ms-2" style="margin-top: 2px;">
+                                                                            <button class="btn btn-link p-0 three-dots-btn" type="button"
+                                                                                onclick="toggleDropdown(this, event)" style="font-size: 16px;">
+                                                                                <i class="fa fa-ellipsis-h"></i>
+                                                                            </button>
 
-                                            <!-- Custom dropdown menu -->
-                                            <div class="dropdown-menu-custom"
-                                                style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 100px; z-index: 1000; padding: 4px 0 !important;">
-                                                @if(!$notification->read_at)
-                                                <a href="javascript:void(0)"
-                                                    style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; text-decoration: none; background: transparent;"
-                                                    onmouseover="this.style.color='#997045'; this.style.backgroundColor='#f8f9fa';"
-                                                    onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
-                                                    onclick="markAsRead(this, {{ $notification->id }})">Mark as Read</a>
-                                                @endif
-                                                <a href="javascript:void(0)"
-                                                    style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; white-space: nowrap; text-decoration: none; background: transparent;"
-                                                    onmouseover="this.style.color='#997045'; this.style.backgroundColor='#f8f9fa';"
-                                                    onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
-                                                    onclick="removeNotification(this, {{ $notification->id }})">Remove</a>
+                                                                            <!-- Custom dropdown menu -->
+                                                                            <div class="dropdown-menu-custom"
+                                                                                style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 100px; z-index: 1000; padding: 4px 0 !important;">
+                                                                                @if(!$notification->read_at)
+                                                                                    <a href="javascript:void(0)"
+                                                                                        style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; text-decoration: none; background: transparent;"
+                                                                                        onmouseover="this.style.color='goldenrod'; this.style.backgroundColor='#fff';"
+                                                                                        onmouseout="this.style.color='goldenrod'; this.style.backgroundColor='transparent';"
+                                                                                        onclick="markAsRead(this, {{ $notification->id }})">Mark as Read</a>
+                                                                                @endif
+                                                                                <a href="javascript:void(0)"
+                                                                                    style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; white-space: nowrap; text-decoration: none; background: transparent;"
+                                                                                    onmouseover="this.style.color='goldenrod'; this.style.backgroundColor='#fff';"
+                                                                                    onmouseout="this.style.color='goldenrod'; this.style.backgroundColor='transparent';"
+                                                                                    onclick="removeNotification(this, {{ $notification->id }})">Remove</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                            @endforeach
+
+                                            <div class="notification-footer text-center"
+                                                style="padding: 4px 0; background-color: white; border-top: 1px solid #f0f0f0;">
+                                                <a href="{{ env('BASE_URL') . '/notifications' }}" class="view-all-link"
+                                                    style="font-weight: 600; font-size: 13px;">
+                                                    View all Notifications
+                                                </a>
                                             </div>
-                                        </div>
+
+                                        @else
+                                            <div class=" text-center">
+                                                <em>No notifications available</em>
+                                            </div>
+                                        @endif
                                     </div>
-                                </div>
-                            </div>
-                            @endforeach
-
-                            <div class="notification-footer text-center"
-                                style="padding: 3px 0; background-color: white; border-top: 1px solid #f0f0f0;">
-                                <a href="{{ env('BASE_URL').'/notifications' }}" class="view-all-link"
-                                    style="font-weight: 600; font-size: 13px;">
-                                    View all Notifications
-                                </a>
-                            </div>
-
-                            @else
-                            <div class=" text-center">
-                                <em>No notifications available</em>
-                            </div>
-                            @endif
-                        </div>
-                    </li>
+                                </li>
 
 
 
-                    <li class="has-submenu">
-                        <a href="#">
-                            <img src="{{ session()->has('User') ? session()->get('User')->influencer_profile_image_main : asset('assets/img/user.png') }}"
-                                alt="img" width="40" height="40" style="border-radius:20px;margin-top:-10px;">
-                        </a>
-                        <ul class="submenu"
-                            style="margin-left: -11px;  margin-top: -4px; font-weight: normal !important;">
-                            <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}"
-                                    style="font-weight: normal !important; font-size: 13px !important;">Edit Profile</a>
-                            </li>
-                            <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)"
-                                    style="font-weight: normal !important; font-size: 13px !important;">Sign Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                                <li class="has-submenu">
+                                    <a href="#">
+                                        <img src="{{ session()->has('User') ? session()->get('User')->influencer_profile_image_main : asset('assets/img/user.png') }}"
+                                            alt="img" width="40" height="40" style="border-radius:20px;margin-top:-10px;">
+                                    </a>
+                                    <ul class="submenu"
+                                        style="margin-left: -11px;  margin-top: -4px; font-weight: normal !important;">
+                                        <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}"
+                                                style="font-weight: normal !important; font-size: 13px !important;">Edit Profile</a>
+                                        </li>
+                                        <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)"
+                                                style="font-weight: normal !important; font-size: 13px !important;">Sign Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
 
 
                 @endif
