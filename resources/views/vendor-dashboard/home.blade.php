@@ -14,7 +14,7 @@
     }
 
     .social-wrapper:hover .shaking {
-        animation: shake 3.5s linear infinite;
+        animation: shake 2.5s linear infinite;
     }
 
     .filter-social-label:hover {
@@ -23,13 +23,13 @@
     }
 
     .filter-social-label:hover .shaking {
-        animation: shake 3.5s linear infinite;
+        animation: shake 2.5s linear infinite;
     }
 
     /* Apply same shaking speed to fav icons on hover */
     .add-to-favourite:hover,
     .add-to-invented:hover {
-        animation: shake 3.5s linear infinite;
+        animation: shake 2.5s linear infinite;
     }
 
     @keyframes shake {
@@ -38,15 +38,15 @@
         }
 
         25% {
-            transform: translateX(-1.5px);
+            transform: translateX(-2px);
         }
 
         50% {
-            transform: translateX(1.5px);
+            transform: translateX(2px);
         }
 
         75% {
-            transform: translateX(-1.5px);
+            transform: translateX(-2px);
         }
 
         100% {

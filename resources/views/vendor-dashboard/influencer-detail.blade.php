@@ -165,7 +165,7 @@
     }
 
     .social-wrapper:hover .shaking {
-        animation: shake 3.5s linear infinite;
+        animation: shake 2.5s linear infinite;
     }
 
     @keyframes shake {
