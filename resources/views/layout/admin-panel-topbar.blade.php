@@ -405,13 +405,13 @@
                                                                                     <a href="javascript:void(0)"
                                                                                         style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; text-decoration: none; background: transparent;"
                                                                                         onmouseover="this.style.color='goldenrod'; this.style.backgroundColor='#fff';"
-                                                                                        onmouseout="this.style.color='goldenrod'; this.style.backgroundColor='transparent';"
+                                                                                        onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
                                                                                         onclick="markAsRead(this, {{ $notification->id }})">Mark as Read</a>
                                                                                 @endif
                                                                                 <a href="javascript:void(0)"
                                                                                     style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; white-space: nowrap; text-decoration: none; background: transparent;"
                                                                                     onmouseover="this.style.color='goldenrod'; this.style.backgroundColor='#fff';"
-                                                                                    onmouseout="this.style.color='goldenrod'; this.style.backgroundColor='transparent';"
+                                                                                    onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
                                                                                     onclick="removeNotification(this, {{ $notification->id }})">Remove</a>
                                                                             </div>
                                                                         </div>

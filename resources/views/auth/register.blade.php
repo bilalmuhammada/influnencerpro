@@ -11,7 +11,7 @@
         }
 
         .logo-color {
-            color: #0504aa !important;
+            color: blue !important;
         }
 
         input:focus {
@@ -59,12 +59,12 @@
         }
 
         /* .invalid-feedback {
-                            display: none;
-                            color: red;
-                        }
-                        .is-invalid + .invalid-feedback {
-                            display: block;
-                        } */
+                                    display: none;
+                                    color: red;
+                                }
+                                .is-invalid + .invalid-feedback {
+                                    display: block;
+                                } */
     </style>
     <div class="content">
         <div class="container" style="margin-top: 15px;">
@@ -244,15 +244,17 @@
                                                     Register
                                                 </button>
                                             </div>
-                                            <div class="row align-items-center" style="margin-top: 20px;">
-                                                <div class="col-6 text-start">
-                                                    <a class="forgot-link logo-color" style=" margin-top: 0;"
+                                            <div class="row" style="margin-top: 20px;">
+                                                <div
+                                                    class="col-12 d-flex justify-content-between align-items-center dont-have">
+                                                    <a class="forgot-link logo-color"
                                                         href="{{ url('forgot-password') }}">Forgot
                                                         Password?</a>
+                                                    <div class="ms-2">Already on
+                                                        InfluencerPro? <a href="{{ url('login') }}" class="logo-color"
+                                                            style="white-space: nowrap;">Click
+                                                            here</a></div>
                                                 </div>
-                                                <div class="col-6 text-end dont-have" style="margin-top: 0;">Already on
-                                                    InfluencerPro? <a href="{{ url('login') }}" class="logo-color"> Click
-                                                        here</a></div>
                                             </div>
                                         </form>
                                     </div>
@@ -425,16 +427,18 @@
                                             </div>
 
 
-                                            <div class="row form-row align-items-center" style="margin-top: 20px;">
-                                                <div class="col-6 text-start">
-                                                    <a class="forgot-link logo-color" style="margin-top: 0;"
+                                            <div class="row" style="margin-top: 20px;">
+                                                <div
+                                                    class="col-12 d-flex justify-content-between align-items-center dont-have">
+                                                    <a class="forgot-link logo-color"
                                                         href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                         Password?</a>
+                                                    <div class="ms-2">Already on
+                                                        influencerPro?<a class="logo-color"
+                                                            href="{{env('BASE_URL') . '/login'}}"
+                                                            style="white-space: nowrap;">
+                                                            Click here</a></div>
                                                 </div>
-                                                <div class="col-6 text-end dont-have " style="margin-top: 0;">Already on
-                                                    influencerPro?<a class="logo-color"
-                                                        href="{{env('BASE_URL') . '/login'}}">
-                                                        Click here</a></div>
                                             </div>
                                         </form>
                                     </div>
@@ -519,13 +523,13 @@
             @if (request()->role == 'influencer')
                 var form = $('#influencer-register-form')[0];
             @else
-                                        var form = $('#brand-register-form')[0];
+                                                        var form = $('#brand-register-form')[0];
                 var inputs = $(form).find('input');
 
                 remove_validation_on_input_change(inputs);
             @endif
 
-                    });
+                            });
         function checkRole(thisElem) {
             var role = $(thisElem).attr('role');
 

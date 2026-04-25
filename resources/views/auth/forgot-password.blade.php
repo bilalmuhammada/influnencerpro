@@ -11,64 +11,20 @@
         }
 
         input:focus {
-            border-bottom: 2px solid #1b3c8e !important;
-            outline: none;
+            border: 1px solid blue !important;
         }
 
-        .form-control {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 0px;
-            height: 50px;
-            border: none !important;
-            border-bottom: 2px solid #ccc !important;
-            padding-left: 0 !important;
-            transition: border-bottom-color 0.3s;
-            background: transparent !important;
-        }
-
-        .form-focus {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 400px;
-        }
-
-        .form-focus .focus-label {
-            left: 0px !important;
-            font-weight: 500;
-        }
-
-        .login-right {
-            padding: 40px 30px;
-            background: #fff;
-            border-radius: 20px;
-            border: 1px solid #eee;
-        }
-
-        .reset-btn {
-            background-color: #1b3c8e !important;
-            border: none !important;
-            color: white !important;
-            font-size: 18px !important;
-            font-weight: 600 !important;
-            padding: 12px 30px !important;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px !important;
-            cursor: pointer;
-            transition: 0.3s;
-            margin: 30px auto 10px;
+        .t-btn.reset-btn {
+            border-radius: 4px !important;
+            padding: 10px 30px !important;
+            width: auto !important;
+            margin: 20px auto !important;
             display: block;
         }
 
-        .reset-btn:hover {
-            background-color: #142d6b !important;
-            transform: translateY(-2px);
-        }
 
         .login-color {
-            color: #1b3c8e !important;
+            color: #0504aa !important;
             font-weight: 500;
         }
 
@@ -79,14 +35,15 @@
     <div class="content">
         <div class="container" style="margin-top: 60px;">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-4 offset-md-4">
                     <div class="account-content">
                         <div class="align-items-center justify-content-center">
-                            <div class="login-right shadow-sm">
+                            <div class="login-right">
                                 <div class="login-header text-center">
                                     <h3>Reset Password</h3>
                                     <p class="text-muted">Enter your email</p>
                                 </div>
+                                <div class="alert alert-success show-msg" style="display: none;"></div>
                                 <form id="forgot-password-form">
                                     <div class="form-group form-focus">
                                         <input type="email" class="form-control floating email" name="email">
@@ -95,7 +52,9 @@
                                         </div>
                                         <label class="focus-label">Email</label>
                                     </div>
-                                    <button class="reset-btn" type="submit">Reset Password</button>
+                                    <div class="text-center">
+                                        <button class="t-btn reset-btn" type="submit">Reset Password</button>
+                                    </div>
                                     <div class="text-center mt-3">
                                         <p class="dont-have">Remember your password? <a class="login-color"
                                                 href="{{ env('BASE_URL') }}/login">Login Here</a></p>
@@ -145,3 +104,23 @@
 
                         $('.show-msg').html(response.message);
                         $('.show-msg').show();
+
+                        if (response.redirect) {
+                            setTimeout(function () {
+                                window.location.href = base_url + '/verify-otp';
+                            }, 2000);
+                        }
+                    } else {
+                        $('.show-msg').html(response.message);
+                        $('.show-msg').show();
+                    }
+                },
+                error: function (xhr) {
+                    $('.show-msg').html("Something went wrong. Please try again.");
+                    $('.show-msg').show();
+                }
+            });
+        }
+    }
+</script>
+@endsection

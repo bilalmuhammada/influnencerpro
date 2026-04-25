@@ -1,5 +1,4 @@
 @extends('layout.master')
-
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
@@ -76,7 +75,7 @@
     }
 
     .resend a {
-        color: blue; /* Logo Gold */
+        color: blue; /* Blue */
         text-decoration: none;
         font-weight: normal;
         margin-left: 5px;
@@ -209,4 +208,3 @@
     });
 </script>
 @endsection
-

@@ -370,15 +370,15 @@
                             Professional Domains. </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <!-- <br/>
-                                        <div class="col-md-8 align-items-center">
-                                        <div class="form-group form-focus">
-                                        <input type="email" class="form-control floating">
-                                        <label class="focus-label">Email </label>
-                                        </div>
-                                        </div> -->
+                                                            <div class="col-md-8 align-items-center">
+                                                            <div class="form-group form-focus">
+                                                            <input type="email" class="form-control floating">
+                                                            <label class="focus-label">Email </label>
+                                                            </div>
+                                                            </div> -->
                         <!-- <button class="t-btn" type="submit">Start Now</button>
-                                        <br/>
-                                        <br/> -->
+                                                            <br/>
+                                                            <br/> -->
                         <!-- <span class="checkmark"></span> You agree to the InfluencerPro <a href="privacy-policy.html">User Agreement, Privacy Policy,</a> and <a href="privacy-policy.html">Cookie Policy</a>. -->
                     </div>
                 </div>
@@ -418,17 +418,17 @@
                 </div>
 
                 <!-- <div class="col-md-6 d-flex align-items-center">
-                                <div class="app-version-blk aos" data-aos="fade-up">
-                                <h2>Minute-by-minute access to any compaign</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl feugiat lectus in. Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet faucibus. Lorem ipsum dolor sit amet consectetur. Nunc </p>
-                                <h5>Nunc tristique neque tempor nisl feugiat lectus</h5>
-                                </div>
-                                </div>
-                                <div class="col-md-6">
-                                <div class="app-version-img text-center aos" data-aos="fade-up">
-                                <img class="img-fluid" src="{{ asset('assets/img/blog/2.jpg') }}" alt="App">
-                                </div>
-                                </div> -->
+                                                    <div class="app-version-blk aos" data-aos="fade-up">
+                                                    <h2>Minute-by-minute access to any compaign</h2>
+                                                    <p>Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl feugiat lectus in. Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet faucibus. Lorem ipsum dolor sit amet consectetur. Nunc </p>
+                                                    <h5>Nunc tristique neque tempor nisl feugiat lectus</h5>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                    <div class="app-version-img text-center aos" data-aos="fade-up">
+                                                    <img class="img-fluid" src="{{ asset('assets/img/blog/2.jpg') }}" alt="App">
+                                                    </div>
+                                                    </div> -->
 
             </div>
         </div>
@@ -477,301 +477,31 @@
                     <div class="app-version-blk aos" data-aos="fade-up">
                         <h2><a href="{{ env('BASE_URL') . '/register?role=influencer' }}" class="changeColor">Influencers
                             </a></h2>
-                        <p>Join InfluencerPro & Stay connected to receive direct Collaborations from all Business Brands
+                        <p class="mb-0">Join InfluencerPro & Stay connected to receive direct Collaborations from all
+                            Business Brands
                             Worldwide & Make the best of your Professional Life!</p>
-                        {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
-                        <br />
-                        <!-- <button class="t-btn" type="submit">Get started free</button> -->
+
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="app-version-blk aos" data-aos="fade-up">
                         <h2><a href="{{ env('BASE_URL') . '/register?role=brand' }}" class="changeColor">Brands</a></h2>
-                        <p>Register InfluencerPro & Gain access to millions of Influencers’ Database which allows you to
+                        <p class="mb-0">Register InfluencerPro & Gain access to millions of Influencers’ Database which
+                            allows you to
                             view their Profiles & Social Platforms, Multi-Country Availability, Direct Chat, Price Offers &
                             Collaborations!</p>
-                        {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
-                        <br />
-                        <!-- <button class="t-btn" type="submit">Get started free</button> -->
+
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-    {{--<section class="section app-version">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="section-header text-center aos" data-aos="fade-up">
-                        <h1 class="header-title" style="padding:10px;">Demographic Info </h1>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="app-version-img text-center aos" data-aos="fade-up">
-                        <img class="img-fluid" src="{{ asset('assets/img/dash-1.PNG') }}" alt="App">
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                    <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2>Understand audience demographic</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl feugiat lectus in.
-                            Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet faucibus. Lorem ipsum
-                            dolor sit amet consectetur. Nunc </p>
-                        <br />
-                        <br />
-                        <br />
 
-                        <!-- <button class="t-btn" type="submit">Request Demo</button> -->
-                        <br />
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
-    {{-- <section class="section app-version" style="background-color:#997045;padding:10px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="section-header text-center aos" data-aos="fade-up">
-                        <h1 class="header-title" style="padding:10px;">Advantage info</h1>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-8 d-flex align-items-center">
-                    <div class="app-version-blk aos" data-aos="fade-up">
-                        <h2 class="text-center">Drive real ROI with influencer marketing</h2>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl
-                            feugiat lectus in. Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet
-                            faucibus. Lorem ipsum dolor sit amet consectetur. Nunc </p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!---------new section----->
-    {{-- <section class="section app-version" style="border:0px solid red;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="section-header text-center aos">
-                        <h1 class="header-title" style="padding:10px;">Overall Info</h1>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-md-12 mx-auto">
-
-                    <div class="row">
-
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-01.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Influencer Database</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- </div> -->
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Influencer Audience Insights</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Performance Dashboard</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                </div>
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-01.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Content Management System</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Campaign Reports</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
-    <!---------end new section---->
-    <!---------new section----->
-    {{-- <section class="section app-version" style="border:0px solid red;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-12 mx-auto">
-                    <div class="section-header text-center aos">
-                        <h1 class="header-title" style="margin-top: -50px;padding:20px;">Overall Info- Advantages for
-                            Influencers from Subscription</h1>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-md-12  mx-auto" style="border:0px solid red;">
-                    <div class="row justify-content-center">
-
-                        <div class="col-xl-2 col-md-6" style="border:0px solid red;width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-01.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Influencer Database</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- </div> -->
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Influencer Audience Insights</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Performance Dashboard</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                </div>
-                                <!-- </div> -->
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-01.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Content Management System</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <div class="col-xl-2 col-md-6" style="width:235px;border:0px solid red;">
-                            <!-- <div class="row"> -->
-                            <div class="listing" style="width:220px;padding:0px;border:0px solid red;">
-
-                                <div class="feature-item freelance-count aos" data-aos="fade-up" style="height:220px;">
-                                    <div class="feature-icon">
-                                        <img src="{{ asset('assets/img/icon/icon-02.png') }}" class="img-fluid" alt>
-                                    </div>
-                                    <div class="feature-content course-count">
-                                        <h6>Campaign Reports</h6>
-                                        <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur.</p>
-                                    </div>
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
-    <!---------end new section---->
     <section class="section how-it-works-influencers">
         <div class="container px-0">
             <div class="row">
-                <div class="col-12 text-center mb-4">
+                <div class="col-12 text-center mb-0">
                     <div class="section-header">
                         <h1 class="header-title">How it Works - Influencers</h1>
                     </div>
@@ -834,7 +564,7 @@
     <section class="section how-it-works-brands">
         <div class="container px-0">
             <div class="row">
-                <div class="col-12 text-center mb-4">
+                <div class="col-12 text-center mb-2 mt-2">
                     <div class="section-header">
                         <h1 class="header-title">How it Works - Brands</h1>
                     </div>
@@ -900,7 +630,7 @@
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
                     <div class="section-header text-center aos">
-                        <h4 class="header-title" style="margin-top: -23px;">
+                        <h4 class="header-title">
                             Influencer Reviews</h4>
                     </div>
                 </div>
@@ -1329,10 +1059,10 @@
                                     <div class="review-img">
                                     </div>
                                     <div class="review-info align-items-center" style="padding-top:25px;border:0px solid red;width:500px;text-align:center;
-                                                    font-size: 15px;
+                                                                        font-size: 15px;
 
-                                                    line-height: 25px;
-                                                   ">
+                                                                        line-height: 25px;
+                                                                       ">
                                         <h3><a href="#" style="font-size: 14px;">Audrey</a></h3>
                                         <h5>CEO</h5>
                                         <div class="rating">

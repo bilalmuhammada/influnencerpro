@@ -175,11 +175,18 @@ animation: scroll 40% linear infinite
 .review-content{
     text-align: center !important;
 }
+
+.circlez {
+    position: relative;
+    width: 100%;
+}
+
     .circleThumb{
         position: absolute;
-    left: 92px;
+    left: 50%;
+    transform: translateX(-50%);
     /* margin: 0px auto; */
-    top: 0px;
+    top: -21px;
     border-width: 3px;
     border-color: #fff;
     width: 90px;
@@ -450,8 +457,8 @@ button.slick-prev, button.slick-prev:hover {
     font-weight: normal;
     font-style: normal;
 
-    src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot');
-    src: url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.woff') format('woff'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.ttf') format('truetype'), url('file:///C:/Users/msadler/Desktop/slick-1.5.7/slick/fonts/slick.svg#slick') format('svg');
+    src: url('../fonts/slick.eot');
+    src: url('../fonts/slick.eot?#iefix') format('embedded-opentype'), url('../fonts/slick.woff') format('woff'), url('../fonts/slick.ttf') format('truetype'), url('../fonts/slick.svg#slick') format('svg');
 }
 /* Arrows */
 .slick-prev,
@@ -688,7 +695,7 @@ button.slick-prev, button.slick-prev:hover {
     top: 0;
     opacity: 1;
     visibility: visible;
-    height: 100%
+    height: 200px
 }
 
 .sliderox {
@@ -711,7 +718,8 @@ button.slick-prev, button.slick-prev:hover {
 .circleThumbSS {
     border: 1px solid red;
     position: absolute;
-    left: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     /* margin: 0px auto; */
     top: -0px;
     border-width: 3px;

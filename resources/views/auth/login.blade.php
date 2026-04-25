@@ -19,11 +19,11 @@
         }
 
         .logo-color:hover {
-            color: #0504aa !important;
+            color: #997045 !important;
         }
 
         .logo-color {
-            color: #3A9BDC !important;
+            color: blue !important;
         }
 
         .t-btn.login-btn {
@@ -92,15 +92,15 @@
                                         <button class="t-btn login-btn" type="submit"
                                             style="padding:10px 30px;">Login</button>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6 text-start">
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col-12 d-flex justify-content-between align-items-center dont-have">
                                             <a class="forgot-link logo-color"
                                                 href="{{ env('BASE_URL') }}/forgot-password">Forgot
                                                 Password?</a>
+                                            <div class="ms-2">New to
+                                                InfluencerPro? <a href="{{ env('BASE_URL') }}/register?role=influencer"
+                                                    class="logo-color" style="white-space: nowrap;">Click here</a></div>
                                         </div>
-                                        <div class="col-6 text-end dont-have" style="margin-top: 33px !important;">New to
-                                            InfluencerPro? <a href="{{ env('BASE_URL') }}/register?role=influencer"
-                                                class="logo-color">Click here</a></div>
                                     </div>
                                 </form>
                             </div>

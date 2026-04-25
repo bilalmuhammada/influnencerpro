@@ -1882,7 +1882,7 @@ border: 1px solid #2d11e7;
 .form-focus .select2-container .select2-selection--single .select2-selection__rendered {
     padding-right: 30px;
     /* padding-left: 12px; */
-    padding-top: 15px;
+    padding-top: 19px;
 }
 
 .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -8502,7 +8502,7 @@ div#global-loader {
 .forgot-link {
     color: #161c2d;
     font-weight: 500;
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 13px;
     display: inline-block;
 }

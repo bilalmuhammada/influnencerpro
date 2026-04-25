@@ -96,7 +96,7 @@
             /* top: -8px; */
             opacity: 1;
             visibility: visible;
-            height: 100%
+            height: 200px
         }
 
         .avatar-one .influencerdetail {

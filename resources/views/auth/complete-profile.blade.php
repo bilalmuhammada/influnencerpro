@@ -253,7 +253,7 @@
     }
 
     #select2--container {
-        padding-top: 16px;
+        padding-top: 19px;
         color: #0b0b0b !important;
         font-size: 14px !important;
     }

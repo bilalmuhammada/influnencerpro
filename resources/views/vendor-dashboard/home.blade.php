@@ -451,7 +451,7 @@
     .clearall {
         font-weight: 600 !important;
         font-size: 12px !important;
-        color: goldenrod !important;
+        color: #0504aa !important;
         text-decoration: none;
         padding: 0px 0px;
         border-radius: 6px;
@@ -461,12 +461,43 @@
 
     .clearall:hover {
         background: transparent;
-        color: #0504aa !important;
+        color: goldenrod !important;
     }
 
     .sidebar-submit:hover {
         background: blue !important;
         border-color: blue !important;
+    }
+
+    /* Influencer Card Hover Effect */
+    .avatar-one {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .avatar-one .influencerdetail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .avatar-one:hover .influencerdetail {
+        /* top: -8px; */
+        opacity: 1;
+        visibility: visible;
+        height: 200px;
+    }.avatar-one .influencer {
+        transition: none;
     }
 </style>
 <div class="content">
