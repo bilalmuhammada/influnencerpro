@@ -144,7 +144,7 @@
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>
                                                     <div style="flex: 1; min-width: 0;">
-                                                        <strong style="font-size: 14px; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
+                                                        <strong style="font-size: 14px; color: #007bff;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
                                                         <span style="font-size: 12px; color: #6c757d;">{{ \Illuminate\Support\Str::limit($message->message, 40) }}</span>
                                                         <br>
                                                         <small style="font-size: 10px; color: #adb5bd;">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</small>
@@ -156,7 +156,7 @@
                                     @endforeach
                                     </div>
                                     <div class="notification-footer text-center mt-2" style="background-color: white; border-top: 1px solid #f0f0f0;">
-                                        <a href="{{ env('BASE_URL') . 'chats' }}" style="color: blue; font-weight: bold; text-decoration: none;">
+                                        <a href="{{ env('BASE_URL') . 'chats' }}" style="color: #007bff; font-weight: bold; text-decoration: none;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">
                                             View all Chats
                                         </a>
                                     </div>
@@ -197,7 +197,7 @@
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>
                                                     <div style="flex: 1; min-width: 0;">
-                                                        <strong style="font-size: 14px; color: blue;">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
+                                                        <strong style="font-size: 14px; color: #007bff;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">{{ $message->sender ? $message->sender->name : 'User' }}: </strong>
                                                         <span style="font-size: 12px; color: #6c757d;">{{ \Illuminate\Support\Str::limit($message->message, 40) }}</span>
                                                         <br>
                                                         <small style="font-size: 10px; color: #adb5bd;">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</small>
@@ -209,7 +209,7 @@
                                     @endforeach
                                     </div>
                                     <div class="notification-footer text-center mt-2" style="background-color: white; border-top: 1px solid #f0f0f0;">
-                                        <a href="{{ env('BASE_URL') . 'chats' }}" style="color: blue; font-weight: bold; text-decoration: none;">
+                                        <a href="{{ env('BASE_URL') . 'chats' }}" style="color: #007bff; font-weight: bold; text-decoration: none;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">
                                             View all Chats
                                         </a>
                                     </div>
@@ -222,15 +222,15 @@
                                         style="border-radius:20px;margin-top:-10px;"></a>
                                 <ul class="submenu">
                                     <li class="has-submenu"></li>
-                                    <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}">Settings</a></li>
+                                    <li><a href="{{ env('BASE_URL') . 'influencer/account-setting' }}" style="color: #007bff !important;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">Settings</a></li>
                                     <li>
-                                        <a href="{{ env('BASE_URL') . 'influencer/complete-profile' }}" class="logout-btn">
+                                        <a href="{{ env('BASE_URL') . 'influencer/complete-profile' }}" class="logout-btn" style="color: #007bff !important;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">
                                             Profile
                                         </a>
                                     </li>
                             {{-- <li><a href="{{ env('BASE_URL') . 'influencer/change-old-password  ' }}">Change Password</a>
                     </li> --}}
-                            <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)">Sign Out</a></li>
+                            <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)" style="color: #007bff !important;" onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">Sign Out</a></li>
                         </ul>
                         </li>
                         @endif

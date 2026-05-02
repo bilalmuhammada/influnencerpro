@@ -16,10 +16,18 @@
 
         .t-btn.reset-btn {
             border-radius: 4px !important;
-            padding: 10px 30px !important;
+            padding: 8px 20px !important; /* Smaller bar */
             width: auto !important;
             margin: 20px auto !important;
             display: block;
+            background-color: #0504aa !important; /* Logo Blue */
+            border: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .t-btn.reset-btn:hover {
+            background-color: #997045 !important; /* Gold on hover */
         }
 
 
@@ -53,11 +61,11 @@
                                         <label class="focus-label">Email</label>
                                     </div>
                                     <div class="text-center">
-                                        <button class="t-btn reset-btn" type="submit">Reset Password</button>
+                                        <button class="t-btn reset-btn" type="submit">Reset</button>
                                     </div>
-                                    <div class="text-center mt-3">
+                                    <div class="text-end mt-5"> <!-- Pushed down and right-aligned -->
                                         <p class="dont-have">Remember your password? <a class="login-color"
-                                                href="{{ env('BASE_URL') }}/login">Login Here</a></p>
+                                                href="{{ env('BASE_URL') }}/login">Click Here</a></p>
                                     </div>
                                 </form>
                             </div>

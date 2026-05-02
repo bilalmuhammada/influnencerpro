@@ -30,9 +30,8 @@
             color: white !important;
             font-size: 18px !important;
             font-weight: 600 !important;
-            padding: 8px 16px !important;
-            width: 100%;
-            max-width: 200px;
+            padding: 8px 30px !important;
+            width: auto;
             border-radius: 4px !important;
             cursor: pointer;
             transition: 0.3s;
@@ -41,16 +40,16 @@
         }
 
         .reset-btn:hover {
-            background-color: #142d6b !important;
+            background-color: blue !important;
             transform: translateY(-2px);
         }
 
 
         .dont-have {
-            margin-top: 20px;
+            margin-top: 40px;
             font-size: 14px;
             color: #888;
-            text-align: center;
+            text-align: right;
 
             letter-spacing: 0.3px;
         }
@@ -122,10 +121,10 @@
                                         <label class="focus-label">Confirm Password</label>
                                     </div>
 
-                                    <button class="reset-btn" type="submit">Reset Password</button>
+                                    <button class="reset-btn" type="submit">Reset</button>
 
                                     <div class="dont-have">
-                                        Remember your password? <a href="{{ url('login') }}" class="login-here-link">Login
+                                        Remember your password? <a href="{{ url('login') }}" class="login-here-link">Click
                                             Here</a>
                                     </div>
                                 </form>
@@ -195,7 +194,7 @@
                             window.location.href = base_url + '/login';
                         }, 2000);
                     } else {
-                        $('.reset-btn').prop('disabled', false).text('Reset Password');
+                        $('.reset-btn').prop('disabled', false).text('Reset');
                         var errors = response.errors;
                         for (var fieldName in errors) {
                             var errorElement = form.find('[name="' + fieldName + '"]');
@@ -205,7 +204,7 @@
                     }
                 },
                 error: function () {
-                    $('.reset-btn').prop('disabled', false).text('Reset Password');
+                    $('.reset-btn').prop('disabled', false).text('Reset');
                     alert('Server error, please try again.');
                 }
             });

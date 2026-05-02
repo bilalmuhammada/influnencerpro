@@ -370,15 +370,15 @@
                             Professional Domains. </p>
                         {{-- <h5>Nunc tristique neque tempor nisl feugiat lectus</h5> --}}
                         <!-- <br/>
-                                                            <div class="col-md-8 align-items-center">
-                                                            <div class="form-group form-focus">
-                                                            <input type="email" class="form-control floating">
-                                                            <label class="focus-label">Email </label>
-                                                            </div>
-                                                            </div> -->
+                                                                                <div class="col-md-8 align-items-center">
+                                                                                <div class="form-group form-focus">
+                                                                                <input type="email" class="form-control floating">
+                                                                                <label class="focus-label">Email </label>
+                                                                                </div>
+                                                                                </div> -->
                         <!-- <button class="t-btn" type="submit">Start Now</button>
-                                                            <br/>
-                                                            <br/> -->
+                                                                                <br/>
+                                                                                <br/> -->
                         <!-- <span class="checkmark"></span> You agree to the InfluencerPro <a href="privacy-policy.html">User Agreement, Privacy Policy,</a> and <a href="privacy-policy.html">Cookie Policy</a>. -->
                     </div>
                 </div>
@@ -418,17 +418,17 @@
                 </div>
 
                 <!-- <div class="col-md-6 d-flex align-items-center">
-                                                    <div class="app-version-blk aos" data-aos="fade-up">
-                                                    <h2>Minute-by-minute access to any compaign</h2>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl feugiat lectus in. Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet faucibus. Lorem ipsum dolor sit amet consectetur. Nunc </p>
-                                                    <h5>Nunc tristique neque tempor nisl feugiat lectus</h5>
-                                                    </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                    <div class="app-version-img text-center aos" data-aos="fade-up">
-                                                    <img class="img-fluid" src="{{ asset('assets/img/blog/2.jpg') }}" alt="App">
-                                                    </div>
-                                                    </div> -->
+                                                                        <div class="app-version-blk aos" data-aos="fade-up">
+                                                                        <h2>Minute-by-minute access to any compaign</h2>
+                                                                        <p>Lorem ipsum dolor sit amet consectetur. Nunc tristique neque tempor nisl feugiat lectus in. Placerat pharetra eleifend integer integer at. Nunc nunc eu arcu amet faucibus. Lorem ipsum dolor sit amet consectetur. Nunc </p>
+                                                                        <h5>Nunc tristique neque tempor nisl feugiat lectus</h5>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                        <div class="app-version-img text-center aos" data-aos="fade-up">
+                                                                        <img class="img-fluid" src="{{ asset('assets/img/blog/2.jpg') }}" alt="App">
+                                                                        </div>
+                                                                        </div> -->
 
             </div>
         </div>
@@ -625,7 +625,7 @@
     </section>
     <!---------end new section---->
     <!-----------deleted--------->
-    <section class="section influencer-reviews">
+    <section class="section influencer-reviews" style="margin-top: 15px;">
         <div class="container px-0">
             <div class="row">
                 <div class="col-12 col-md-12 mx-auto">
@@ -936,7 +936,7 @@
                                 </div>
                                 <div class="review-content" style=" font-size: 15px; line-height: 25px;height: 200px;">
                                     <p>InfluencerPro saves my time and offers specialized Influencers with availability
-                                        calendar in my preferred business category with direct chats..</p>
+                                        calendar in my preferred business category with direct chats.</p>
                                 </div>
                             </div>
                         </div>
@@ -969,10 +969,10 @@
                                         <img class="img-fluid" src="{{ asset('assets/img/test-quote.svg') }}" alt="quote">
                                     </div> --}}
                                 </div>
-                                <div class="review-content" style="font-size: 15px;line-height: 25px; height: 200px;">
+                                <div class="review-content" style="font-size: 15px;line-height: 20px; height: 200px;">
                                     <p>Made my work so easy, finding Professional Influencers and Collaboration negotiations
                                         were always very hard. Hence, with InfluencerPro I can directly see full profiles
-                                        and collab prices..</p>
+                                        and collab prices.</p>
                                 </div>
                             </div>
                         </div>
@@ -1059,10 +1059,10 @@
                                     <div class="review-img">
                                     </div>
                                     <div class="review-info align-items-center" style="padding-top:25px;border:0px solid red;width:500px;text-align:center;
-                                                                        font-size: 15px;
+                                                                                            font-size: 15px;
 
-                                                                        line-height: 25px;
-                                                                       ">
+                                                                                            line-height: 25px;
+                                                                                           ">
                                         <h3><a href="#" style="font-size: 14px;">Audrey</a></h3>
                                         <h5>CEO</h5>
                                         <div class="rating">

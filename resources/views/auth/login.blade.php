@@ -99,7 +99,7 @@
                                                 Password?</a>
                                             <div class="ms-2">New to
                                                 InfluencerPro? <a href="{{ env('BASE_URL') }}/register?role=influencer"
-                                                    class="logo-color" style="white-space: nowrap;">Click here</a></div>
+                                                    class="logo-color" style="white-space: nowrap;">Click Here</a></div>
                                         </div>
                                     </div>
                                 </form>

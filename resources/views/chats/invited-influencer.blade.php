@@ -113,9 +113,9 @@
 
         .influencerdetail {
             /* display: none;
-                opacity:0.9;
-                width:200px;
-                position: absolute; */
+                            opacity:0.9;
+                            width:200px;
+                            position: absolute; */
             /* height: 270px; */
         }
 
@@ -123,41 +123,23 @@
             /* top: -8px; */
             opacity: 1;
             visibility: visible;
-            height: 100%
+            height: 200px;
         }
 
         .avatar-one .influencerdetail {
             position: absolute;
-            left: 0;
             top: 0;
-            /* padding: 5px;  */
-            /* padding-left:3px; */
-            /* padding-right:3px; */
-            z-index: 1;
-            height: 200px;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-            transition: all 0.35s ease-in-out;
-            width: 100%;
-            visibility: hidden;
-            opacity: 0
-        }
-
-        .avatar-one .influencerdetail::after {
-            position: absolute;
             left: 0;
-            top: 0px;
-            content: "";
-            height: 200px;
             width: 100%;
-            background: #000;
-            z-index: -1;
-            /* border-radius: 1rem; */
-            /* border-radius: 15px; */
-            opacity: 0.8;
-            -webkit-transition: all 0.35s ease-in-out;
-            transition: all 0.35s ease-in-out
+            height: 200px;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
         }
 
         .datepicker:focus {
@@ -273,6 +255,41 @@
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
+        .influencer-box-5 {
+            flex: 0 0 20%;
+            max-width: 19%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        @media (max-width: 1200px) {
+            .influencer-box-5 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .influencer-box-5 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .influencer-box-5 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .influencer-box-5 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 
     <section style="border-top:2px solid #eee;padding-top:90px;">
@@ -280,18 +297,18 @@
         <div class="row">
             <div class="col-md-12 ">
                 <!-- <div class="input-box text-center mx-auto"
-                         style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
-                        <input type="text" class="middle-search" placeholder=" Search..."
-                               style="border:none;height:50px;width:500px;"><i class="fa fa-search"></i>
-                    </div> -->
+                                     style="border:none;height:55px;width:570px;border:1px solid #999;border-radius:30px;text-align:center;">
+                                    <input type="text" class="middle-search" placeholder=" Search..."
+                                           style="border:none;height:50px;width:500px;"><i class="fa fa-search"></i>
+                                </div> -->
             </div>
         </div>
     </section>
     {{-- <br /> --}}
-    <div class="container">
+    <div class="container" style="max-width: 90%; width: 90%;">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12 col-lg-12 col-xl-12 mx-auto">
                     <form action="{{ env('BASE_URL') }}chats/invited-influencers">
                         <div class="row">
                             <div class="col-lg-2 col-md-6">
@@ -315,16 +332,16 @@
         </div>
     </div>
     <br />
-    <div class="container">
-        <div class="col-md-10">
-            <div class="row " style="gap: 4rem;">
+    <div class="container" style="max-width: 90%; width: 90%;">
+        <div class="col-md-12 col-lg-12 col-xl-12 mx-auto">
+            <div class="row " id="infulecer-show">
 
 
                 @forelse($influencers as $influencer)
-                    <div class="col-md-2 col-lg-2 col-xl-2" style="top:6px;">
+                    <div class="influencer-box-5 influencer-box" style="top:6px;">
                         <div class="card avatar-one"
                             onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
-                            style="border:0px solid #997045;width:200px; padding: 0px; cursor: pointer;">
+                            style="border:0px solid #997045;width:100%; padding: 0px; cursor: pointer; height: 100%;">
                             <a href="javascript:void(0)">
 
 
@@ -357,7 +374,7 @@
 
                                 <div class="influencerdetail" id="">
                                     <div class="start"
-                                        style="position:absolute;text-align:right;border:0px solid red;width:244px;margin-left:-50px;top:6px;">
+                                        style="position:absolute;text-align:right;border:0px solid red;right:10px;top:10px;z-index:9;">
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite" data-id="{{ $influencer->id }}"
                                             data-fvt="1"
@@ -381,7 +398,7 @@
                                         $influencer->user_professional_detail->category ?
                                         $influencer->user_professional_detail->category->name : '' }}</span>--}}
                                     <ul class="d-flex justify-content-center w-100 align-items-end"
-                                        style="list-style-type: none; margin-top: 120px; padding-left: 0; gap: 6px;">
+                                        style="list-style-type: none; margin-top: 118px; padding-left: 0; gap: 6px;">
                                         @php
                                             $instagram = getInfluencerSocialMediaProfileByTypeAndId('instagram', $influencer->id);
                                             $tiktok = getInfluencerSocialMediaProfileByTypeAndId('tiktok', $influencer->id);
@@ -486,7 +503,7 @@
                                     </ul>
                                 </div>
                                 <img src="{{ $influencer ? $influencer->image_url : '' }}" alt="author" class="influencer"
-                                    width="100%" height="200px">
+                                    width="100%" height="200px" style="object-fit: cover;">
                             </a>
                             @php
                                 $categoryNames = '';
@@ -505,12 +522,14 @@
                             @endphp
                             <div class="influencer-dev" style="margin: 10px 10px 0px 10px; padding: 3px 0px 0px 3px;">
                                 <h5 style="font-size:12px;" class="influencer-name">
-                                    {{ $influencer ? $influencer->full_name : '' }}</h5>
+                                    {{ $influencer ? $influencer->full_name : '' }}
+                                </h5>
                                 <h5 style="font-size:12px;">{!! $categoryNames ?? '' !!}</h5>
                                 <h5 style="font-size:12px;">
                                     Price:
                                     {{ getSafeValueFromObject($influencer->user_professional_detail, 'price_formatted') }}
-                                    &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}</h5>
+                                    &nbsp;&nbsp;City: {{ $influencer->city ? $influencer->city->name : '' }}
+                                </h5>
                             </div>
                         </div>
                     </div>

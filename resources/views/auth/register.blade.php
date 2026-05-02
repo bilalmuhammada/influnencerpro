@@ -246,14 +246,11 @@
                                             </div>
                                             <div class="row" style="margin-top: 20px;">
                                                 <div
-                                                    class="col-12 d-flex justify-content-between align-items-center dont-have">
-                                                    <a class="forgot-link logo-color"
-                                                        href="{{ url('forgot-password') }}">Forgot
-                                                        Password?</a>
+                                                    class="col-12 d-flex justify-content-end align-items-center dont-have">
                                                     <div class="ms-2">Already on
                                                         InfluencerPro? <a href="{{ url('login') }}" class="logo-color"
                                                             style="white-space: nowrap;">Click
-                                                            here</a></div>
+                                                            Here</a></div>
                                                 </div>
                                             </div>
                                         </form>
@@ -429,15 +426,12 @@
 
                                             <div class="row" style="margin-top: 20px;">
                                                 <div
-                                                    class="col-12 d-flex justify-content-between align-items-center dont-have">
-                                                    <a class="forgot-link logo-color"
-                                                        href="{{ env('BASE_URL') }}/forgot-password">Forgot
-                                                        Password?</a>
+                                                    class="col-12 d-flex justify-content-end align-items-center dont-have">
                                                     <div class="ms-2">Already on
                                                         influencerPro?<a class="logo-color"
                                                             href="{{env('BASE_URL') . '/login'}}"
                                                             style="white-space: nowrap;">
-                                                            Click here</a></div>
+                                                            Click Here</a></div>
                                                 </div>
                                             </div>
                                         </form>
