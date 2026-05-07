@@ -555,7 +555,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
 @endphp
 <!-- partial:index.partial.html -->
-<div class="container-fluid" style="border:0px solid red;padding-top:20px;">
+<div class="container-fluid" style="border:0px solid red;padding-top:50px;">
     <div class="row justify-content-center" style="border:0px solid red;">
         <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0"
             style="border:0px solid red; width: 100%; max-width: 850px; float: none; display: inline-block;">

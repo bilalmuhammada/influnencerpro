@@ -1,7 +1,7 @@
 <header class="header" style="border-bottom:0px solid #eee;">
     <style>
         .colorchange {
-            color: #007bff;
+            color: blue;
         }
 
         .colorchange:hover {
@@ -56,7 +56,7 @@
         }
 
         .three-dots-btn {
-            color: #007bff !important;
+            color: blue !important;
             transition: color 0.2s;
         }
 
@@ -155,7 +155,7 @@
         }
 
         .view-all-link:hover {
-            color: #daa520 !important;
+            color: blue !important;
         }
 
         /* Show dropdown on hover */
@@ -305,7 +305,7 @@
                                                                                         <br>
                                                                                         <small style="font-size: 10px; color: #adb5bd; font-weight: 400;">{{
                                                     \Carbon\Carbon::parse($message->created_at)->diffForHumans()
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }}</small>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }}</small>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -343,7 +343,7 @@
                                                     style="font-size: 14px; font-weight: 600 !important;">Notifications</span>
                                                 <span class="notif-badge"><span
                                                         class="unread-count">{{ $unread_notifications_count
-                                                                                                                                                                                                                                                                        }}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }}</span>
                                                     New</span>
                                             </div>
 
@@ -400,21 +400,21 @@
 
                                                                             <!-- Custom dropdown menu -->
                                                                             <div class="dropdown-menu-custom"
-                                                    style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 100px; z-index: 1000; padding: 4px 0 !important;">
-                                                    @if(!$notification->read_at)
-                                                        <a href="javascript:void(0)"
-                                                            style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: #007bff; text-decoration: none; background: transparent;"
-                                                            onmouseover="this.style.color='#daa520'; this.style.backgroundColor='#fff';"
-                                                            onmouseout="this.style.color='#007bff'; this.style.backgroundColor='transparent';"
-                                                            onclick="markAsRead(this, {{ $notification->id }})">Mark as Read</a>
-                                                    @endif
-                                                    <a href="javascript:void(0)"
-                                                        style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: #007bff; white-space: nowrap; text-decoration: none; background: transparent;"
-                                                        onmouseover="this.style.color='#daa520'; this.style.backgroundColor='#fff';"
-                                                        onmouseout="this.style.color='#007bff'; this.style.backgroundColor='transparent';"
-                                                        onclick="removeNotification(this, {{ $notification->id }})">Remove</a>
-                                                </div>
-                                            </div>
+                                                                                style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 100px; z-index: 1000; padding: 4px 0 !important;">
+                                                                                @if(!$notification->read_at)
+                                                                                    <a href="javascript:void(0)"
+                                                                                        style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; text-decoration: none; background: transparent;"
+                                                                                        onmouseover="this.style.color='#daa520'; this.style.backgroundColor='#fff';"
+                                                                                        onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
+                                                                                        onclick="markAsRead(this, {{ $notification->id }})">Mark as Read</a>
+                                                                                @endif
+                                                                                <a href="javascript:void(0)"
+                                                                                    style="font-size: 11px; display: block; padding: 0px 12px; font-weight: 500; color: blue; white-space: nowrap; text-decoration: none; background: transparent;"
+                                                                                    onmouseover="this.style.color='#daa520'; this.style.backgroundColor='#fff';"
+                                                                                    onmouseout="this.style.color='blue'; this.style.backgroundColor='transparent';"
+                                                                                    onclick="removeNotification(this, {{ $notification->id }})">Remove</a>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -446,12 +446,14 @@
                                     <ul class="submenu"
                                         style="margin-left: -11px;  margin-top: -4px; font-weight: normal !important;">
                                         <li><a href="{{ env('BASE_URL') . '/influencer/account-setting' }}"
-                                                style="font-weight: normal !important; font-size: 13px !important; color: #007bff !important;"
-                                                onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">Edit Profile</a>
+                                                style="font-weight: normal !important; font-size: 13px !important; color: blue !important;"
+                                                onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='blue'">Edit
+                                                Profile</a>
                                         </li>
                                         <li><a href="javascript:void(0)" class="logout-btn" onclick="logout(this)"
-                                                style="font-weight: normal !important; font-size: 13px !important; color: #007bff !important;"
-                                                onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='#007bff'">Sign Out</a>
+                                                style="font-weight: normal !important; font-size: 13px !important; color: blue !important;"
+                                                onmouseover="this.style.color='#daa520'" onmouseout="this.style.color='blue'">Sign
+                                                Out</a>
                                         </li>
                                     </ul>
                                 </li>

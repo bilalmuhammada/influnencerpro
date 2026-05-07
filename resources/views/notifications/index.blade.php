@@ -98,7 +98,7 @@
         }
 
         .table-container {
-            border-radius: 8px !important;
+            border-radius: 4px !important;
             border: 1px solid #e8e8e8 !important;
             background-color: #fff !important;
             box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25) !important;

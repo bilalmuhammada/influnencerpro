@@ -16,23 +16,26 @@
 
         .t-btn.reset-btn {
             border-radius: 4px !important;
-            padding: 8px 20px !important; /* Smaller bar */
+            padding: 8px 20px !important;
+            /* Smaller bar */
             width: auto !important;
             margin: 20px auto !important;
             display: block;
-            background-color: #0504aa !important; /* Logo Blue */
+            background-color: #0000e0 !important;
+            /* Logo Blue */
             border: none;
             color: white;
             font-size: 16px;
         }
 
         .t-btn.reset-btn:hover {
-            background-color: #997045 !important; /* Gold on hover */
+            background-color: #997045 !important;
+            /* Gold on hover */
         }
 
 
         .login-color {
-            color: #0504aa !important;
+            color: blue !important;
             font-weight: 500;
         }
 
@@ -63,7 +66,7 @@
                                     <div class="text-center">
                                         <button class="t-btn reset-btn" type="submit">Reset</button>
                                     </div>
-                                    <div class="text-end mt-5"> <!-- Pushed down and right-aligned -->
+                                    <div class="text-end mt-3"> <!-- Pushed down and right-aligned -->
                                         <p class="dont-have">Remember your password? <a class="login-color"
                                                 href="{{ env('BASE_URL') }}/login">Click Here</a></p>
                                     </div>
@@ -78,57 +81,57 @@
 @endsection
 
 @section('page_scripts')
-<script>
-    $(document).ready(function () {
-        var form = $('#forgot-password-form')[0];
-        var inputs = $(form).find('input');
+    <script>
+        $(document).ready(function () {
+            var form = $('#forgot-password-form')[0];
+            var inputs = $(form).find('input');
 
-        remove_validation_on_input_change(inputs);
-    });
+            remove_validation_on_input_change(inputs);
+        });
 
-    $(document).on('submit', '#forgot-password-form', function (e) {
-        e.preventDefault();
-        var form = $(this)[0];
+        $(document).on('submit', '#forgot-password-form', function (e) {
+            e.preventDefault();
+            var form = $(this)[0];
 
-        reset_call(form);
-    });
+            reset_call(form);
+        });
 
-    function reset_call(form) {
-        var inputs = $(form).find('input');
-        var allInputsValid = validate_inputs(form);
+        function reset_call(form) {
+            var inputs = $(form).find('input');
+            var allInputsValid = validate_inputs(form);
 
-        if (allInputsValid) {
-            form.classList.add('was-validated');
-            var formData = new FormData(form);
-            $.ajax({
-                url: api_url + 'forgot-password-check',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                dataType: "JSON",
-                success: function (response) {
-                    if (response.status) {
+            if (allInputsValid) {
+                form.classList.add('was-validated');
+                var formData = new FormData(form);
+                $.ajax({
+                    url: api_url + 'forgot-password-check',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "JSON",
+                    success: function (response) {
+                        if (response.status) {
 
-                        $('.show-msg').html(response.message);
-                        $('.show-msg').show();
+                            $('.show-msg').html(response.message);
+                            $('.show-msg').show();
 
-                        if (response.redirect) {
-                            setTimeout(function () {
-                                window.location.href = base_url + '/verify-otp';
-                            }, 2000);
+                            if (response.redirect) {
+                                setTimeout(function () {
+                                    window.location.href = base_url + '/verify-otp';
+                                }, 2000);
+                            }
+                        } else {
+                            $('.show-msg').html(response.message);
+                            $('.show-msg').show();
                         }
-                    } else {
-                        $('.show-msg').html(response.message);
+                    },
+                    error: function (xhr) {
+                        $('.show-msg').html("Something went wrong. Please try again.");
                         $('.show-msg').show();
                     }
-                },
-                error: function (xhr) {
-                    $('.show-msg').html("Something went wrong. Please try again.");
-                    $('.show-msg').show();
-                }
-            });
+                });
+            }
         }
-    }
-</script>
+    </script>
 @endsection

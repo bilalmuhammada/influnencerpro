@@ -7,7 +7,7 @@
             display: none;
             color: #dc3545;
             text-align: left;
-            margin-left: 10%;
+
         }
 
         input:focus {
@@ -40,7 +40,7 @@
         }
 
         .reset-btn:hover {
-            background-color: blue !important;
+            background-color: #0000e0 !important;
             transform: translateY(-2px);
         }
 
@@ -55,10 +55,10 @@
         }
 
         .login-here-link {
-            color: #0504aa !important;
+            color: blue !important;
             font-weight: 500;
             text-decoration: none;
-            margin-left: 6px;
+
             transition: all 0.3s ease;
             display: inline-block;
         }
