@@ -12,11 +12,11 @@
     }
 
     #userOptionsMenu:hover {
-        color: goldenrod !important;
+        color: #997045 !important;
     }
 
     #userOptionsMenu {
-        color: #000fff;
+        color: blue !important;
     }
 
     .lobibox-notify.notify-mini .lobibox-notify-body {
@@ -35,13 +35,13 @@
 
     .dropdown-item:focus,
     .dropdown-item:hover {
-        color: blue !important;
-        background-color: #ffffff !important;
-
+        color: #997045 !important;
+        background-color: #f8f9fa !important;
     }
 
     .dropdown-item {
-        padding: 0rem 0.3rem !important;
+        color: blue !important;
+        padding: 0px 9px !important;
     }
 
 
@@ -58,14 +58,12 @@
     .emojionearea.focused {
         border-color: blue !important;
         outline: 0;
-
         box-shadow: none !important;
     }
 
     .emojionearea {
-        border-color: #997045 !important;
+        border-color: #e5e5e5 !important;
         outline: 0;
-
         box-shadow: none !important;
     }
 
@@ -303,943 +301,965 @@
         margin-left: 14px;
 
     }
+
+    .chat-window {
+        background-color: #fff !important;
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 8px !important;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-cont-left,
+    .chat-cont-right {
+        background-color: #fff !important;
+    }
+
+    .chat-header,
+    .chat-footer {
+        background-color: #fff !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
 </style>
 @section('content')
-<div class="content-chat"
-    style="background-color:#eee;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
-    <div class="container" style="max-width: 80% !important;">
-        <div class="row">
+    <div class="content-chat"
+        style="background-color:#ffff;min-height: 500px !important;padding-top:59px;padding-bottom:7px;">
+        <div class="container" style="max-width: 80% !important;">
+            <div class="row">
 
 
 
-            <div class="col-md-12">
-                <div class="chat-window">
+                <div class="col-md-12">
+                    <div class="chat-window">
 
-                    <div class="chat-cont-left">
-                        <div class="row" style="padding:5px 8px;">
-                            <div class="col-md-6">
-                                <div class="d-flex align-items-center" id="checkbox">
-                                    <input type="checkbox" class="hiddencheck " id="check-all" style="width: auto;">
-                                    <label for="check-all" class="mb-0 hiddencheck" style="font-size: 13px;">Select
-                                        All</label>
-                                </div>
-                            </div>
-                            <div class="col-md-2" style="margin-left: -97px;">
-                                <select class="form-select chat" id="filter-dropdown"
-                                    style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
-                                    <option value="all">All Chats</option>
-                                    <option value="unread">Unread</option>
-                                    <option value="favorites">Favorited</option>
-                                    <option value="blocked">Blocked</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2 hiddentrash">
-                                <div class="row">
-                                    <div class="col-md-12 text-center" style="margin: 15px 0px 0px 182px;">
-                                        <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
+                        <div class="chat-cont-left">
+                            <div class="row" style="padding:5px 8px;">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center" id="checkbox">
+                                        <input type="checkbox" class="hiddencheck " id="check-all" style="width: auto;">
+                                        <label for="check-all" class="mb-0 hiddencheck" style="font-size: 13px;">Select
+                                            All</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-2 edit">
-                                <div class="row">
-                                    <div class="col-md-12 text-center" style="margin:   15px 0px 0px 183px;">
-                                        <i class="fa fa-pencil" id="edit-icon"
-                                            style="color: rgb(9, 9, 166);font-size: 15px;"></i>
+                                <div class="col-md-2" style="margin-left: -97px;">
+                                    <select class="form-select chat" id="filter-dropdown"
+                                        style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
+                                        <option value="all">All Chats</option>
+                                        <option value="unread">Unread</option>
+                                        <option value="favorites">Favorited</option>
+                                        <option value="blocked">Blocked</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 hiddentrash">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 182px;">
+                                            <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12 position-relative">
-
-                                <input type="text" name="" id="" placeholder="Search..."
-                                    class="form-control form-control-search" style="min-height: 12px; ">
-
-                            </div>
-                        </div>
-
-                        <div class="chat-users-list" id="chat-users-list">
-                            <div class="chat-scroll">
-                                @foreach($chats as $chat)
-
-                                <a href="javascript:void(0);"
-                                    class="media chatActionBlock chat-title @if($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
-                                    style="display: flex;"
-                                    id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
-                                    unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
-                                    <div class="checkbox-container">
-                                        <input type="checkbox" value="{{ $chat->id }}" class="dlt-chat hiddencheck">
-                                    </div>
-                                    <div class="media-img-wrap flex-shrink-0">
-                                        <div class="avatar">
-                                            <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png') }}"
-                                                alt="User Image" class="avatar-img rounded-circle">
+                                <div class="col-md-2 edit">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center" style="margin:   15px 0px 0px 183px;">
+                                            <i class="fa fa-pencil" id="edit-icon"
+                                                style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
-
-                                    </div>
-                                    <div class="media-body flex-grow-1">
-                                        <div>
-                                            <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name')
-                                                }} {{getSafeValueFromObject($chat->other_user, 'last_name')}}</div>
-                                            <div class="user-last-chat">{{ $chat->latest_message }}</div>
-                                        </div>
-
-                                        <div
-                                            style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px;">
-                                            <div style="display: flex; gap: 8px;">
-                                                <button class="btn btn-link favorite-chat"
-                                                    title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}"
-                                                    style="padding: 0;" data-chat-id="{{ $chat->id }}">
-                                                    <i class="fa fa-heart"
-                                                        style="color: {{ $chat->is_favorite ? 'red' : 'grey' }} !important;"></i>
-                                                </button>
-
-                                                <button class="btn btn-link block-chat"
-                                                    title="{{ $chat->is_blocked ? 'Unblock' : 'Block' }}"
-                                                    style="padding: 0;" data-chat-id="{{ $chat->id }}">
-                                                    <i class="fa fa-ban"
-                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }} !important;"></i>
-                                                </button>
-                                            </div>
-
-                                            <div
-                                                style="display: flex; align-items: center; gap: 9px; font-size: 12px; color: #666;">
-                                                <div class="badge  badge-premium-green  unread-count"
-                                                    style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }}; border-radius: 30px;margin-bottom: 2px;">
-                                                    {{ $chat->unread_count }}
-                                                </div>
-
-                                                <span style="font-size: 12px;">{{
-                                                    $chat->latest_message_recieved_time_diff }}</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                </a>
-
-                                <!-- Add Favorite and Block Icons -->
-
-                                @endforeach
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="chat-cont-right">
-
-
-                        @foreach($chats as $key => $chat)
-
-                        <div class="chat-body-div"
-                            id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')). '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                            style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}"
-                            chat-id="{{ $chat->id }}"
-                            user="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
-                            <div class="chat-header">
-                                <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
-                                    <i class="material-icons">chevron_left</i>
-                                </a>
-
-                                <div class="media d-flex">
-                                    <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
-                                        <div class="avatar">
-                                            <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}">
-                                                <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                                    alt="UserImage" width="50px" height="50px"
-                                                    class="avatar-img rounded-circle">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @php
-                                    $user_categories = DB::table('user_categories')
-                                    ->join('categories', 'user_categories.category_id', '=', 'categories.id')
-                                    ->where('user_categories.user_id', getSafeValueFromObject($chat->other_user, 'id'))
-                                    ->select('categories.name')
-                                    ->get();
-                                    $categoryNames = '';
-                                    foreach ($user_categories as $key => $category) {
-                                    // Append the category name to the string
-                                    $categoryNames .= $category->name;
-                                    // Add a comma and space if it's not the last category
-                                    if ($key != $user_categories->count() - 1) {
-                                    $categoryNames .= ', ';
-                                    }
-                                    }
-
-
-
-
-                                    @endphp
-                                    <div class="media-body flex-grow-1">
-                                        <div class="user-name colorchangecompany"> {!!
-                                            strtolower(getSafeValueFromObject($chat->other_user, 'role')['name'] ?? '')
-                                            === 'vendor'
-                                            ? getSafeValueFromObject($chat->other_user, 'name') . ' ' .
-                                            getSafeValueFromObject($chat->other_user, 'last_name')
-                                            : '<a
-                                                href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">'
-                                                . getSafeValueFromObject($chat->other_user, 'name') . ' ' .
-                                                getSafeValueFromObject($chat->other_user, 'last_name') .
-                                                '</a>' !!} - <span>{{ $categoryNames ?? ''}} {{
-                                                getSafeValueFromObject($chat->other_user, 'company_name') }} </span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                @php
-
-                                $existingReport = \App\Models\ChatReported::where('reported_by',
-                                getSafeValueFromObject($chat->other_user, 'id'))
-                                ->where('chat_id', $chat->id)
-                                ->exists();
-                                @endphp
-
-
-
-                                <div class="dropdown">
-                                    <button class="btn btn-link p-0" type="button" id="userOptionsMenu"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </button>
-
-                                    <!-- Dropdown menu options -->
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                        <a class="dropdown-item block-chat  block_user " style="font-size: 12px;"
-                                            data-chat-id="{{ $chat->id }}" href="#">Block User</a>
-                                        <a class="dropdown-item report-user-btn" style="font-size: 12px;"
-                                            data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
-                                            @if($existingReport)
-                                            Reported User
-                                            @else
-                                            Report User
-                                            @endif
-                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            @if($chat->status == 'accepted')
+                            <div class="row">
+                                <div class="col-md-12 position-relative">
 
-                            <div class="chat-body">
+                                    <input type="text" name="" id="" placeholder="Search..."
+                                        class="form-control form-control-search" style="min-height: 12px; ">
+
+                                </div>
+                            </div>
+
+                            <div class="chat-users-list" id="chat-users-list">
                                 <div class="chat-scroll">
-                                    <ul class="list-unstyled message-body" style="font-weight: 300;">
-                                        @foreach($chat->sorted_messages as $date => $sorted_messages)
-                                        <div class="text-center fw-bolds " style="font-size:12px;"> {{
-                                            \Carbon\Carbon::parse($date)->format('d-M-Y') }}</div>
-                                        @foreach($sorted_messages as $date => $message)
+                                    @foreach($chats as $chat)
 
-                                        <li
-                                            class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
-                                            <div class="avatar flex-shrink-0">
-                                                <img src="{{ $message->message_position == 'right' ? session()->get('User')['image_url'] : getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                                    alt="User Image" class="avatar-img rounded-circle">
-                                            </div>
-                                            <div class="media-body flex-grow-1">
-                                                <div class="msg-box">
-                                                    <div style="display: flex;">
-                                                        <p>{{ $message->message }}</p>
-                                                        <ul class="chat-msg-info">
-                                                            <li>
-                                                                <div class="chat-time">
-                                                                    <span>{{ $message->sended_at_formatted }}</span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        @endforeach
-                                        @endforeach
-                                    </ul>
+                                                                <a href="javascript:void(0);"
+                                                                    class="media chatActionBlock chat-title @if($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                                                    style="display: flex;"
+                                                                    id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
+                                                                    unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
+                                                                    <div class="checkbox-container">
+                                                                        <input type="checkbox" value="{{ $chat->id }}" class="dlt-chat hiddencheck">
+                                                                    </div>
+                                                                    <div class="media-img-wrap flex-shrink-0">
+                                                                        <div class="avatar">
+                                                                            <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png') }}"
+                                                                                alt="User Image" class="avatar-img rounded-circle">
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="media-body flex-grow-1">
+                                                                        <div>
+                                                                            <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name')
+                                                                                                                }}
+                                                                                {{getSafeValueFromObject($chat->other_user, 'last_name')}}</div>
+                                                                            <div class="user-last-chat">{{ $chat->latest_message }}</div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px;">
+                                                                            <div style="display: flex; gap: 8px;">
+                                                                                <button class="btn btn-link favorite-chat"
+                                                                                    title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}"
+                                                                                    style="padding: 0;" data-chat-id="{{ $chat->id }}">
+                                                                                    <i class="fa fa-heart"
+                                                                                        style="color: {{ $chat->is_favorite ? 'red' : 'grey' }} !important;"></i>
+                                                                                </button>
+
+                                                                                <button class="btn btn-link block-chat"
+                                                                                    title="{{ $chat->is_blocked ? 'Unblock' : 'Block' }}"
+                                                                                    style="padding: 0;" data-chat-id="{{ $chat->id }}">
+                                                                                    <i class="fa fa-ban"
+                                                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }} !important;"></i>
+                                                                                </button>
+                                                                            </div>
+
+                                                                            <div
+                                                                                style="display: flex; align-items: center; gap: 9px; font-size: 12px; color: #666;">
+                                                                                <div class="badge  badge-premium-green  unread-count"
+                                                                                    style="display: {{ ($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) ? 'block' : 'none' }}; border-radius: 30px;margin-bottom: 2px;">
+                                                                                    {{ $chat->unread_count }}
+                                                                                </div>
+
+                                                                                <span style="font-size: 12px;">{{
+                                        $chat->latest_message_recieved_time_diff }}</span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                </a>
+
+                                                                <!-- Add Favorite and Block Icons -->
+
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="chat-footer">
-                                <div class="input-group" style="margin-left: 17px;">
-                                    {{-- <div class="avatar" style="padding:4px;">
-                                        <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                            alt="User Image" class="avatar-img rounded-circle">
-                                    </div> --}}
-                                    <div class="input-group" style="position: relative; width: 96%; height: 42px;">
-                                        <input type="text" class="input-msg-send emoji-trigger form-controls"
-                                            id="emoji-trigger"
-                                            data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                            data-chat-id="{{ $chat->id }}" data-chat-block="{{$chat->is_blocked}}"
-                                            style="border-radius: 4px; width: 100%; padding-right: 50px;">
 
-                                    </div>
-
-                                    <button type="button" id="msg-send-btn" class="btn btn-primary msg-send-btn"
-                                        data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
-                                        data-chat-id="{{ $chat->id }}"
-                                        style="position: absolute; right: 41px; top: 9px; background-color: transparent; border: none;">
-                                        <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
-                                            style="font-size: 30px; background-color: none;"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            @else
-                            <div class="chat-body">
-                                <div class="row mt-4">
-                                    <div class="col-md-6 col-12 text-end">
-                                        <button class="btn btn-primary accept" chat-id="{{ $chat->id }}">
-                                            Accept
-                                        </button>
-                                    </div>
-                                    <di_v class="col-md-6 col-12">
-                                        <button class="btn btn-danger reject" chat-id="{{ $chat->id }}">
-                                            Reject
-                                        </button>
-                                </div>
-                            </div>
                         </div>
-                        @endif
+
+                        <div class="chat-cont-right">
+
+
+                            @foreach($chats as $key => $chat)
+
+                                                <div class="chat-body-div"
+                                                    id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
+                                                    style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}"
+                                                    chat-id="{{ $chat->id }}"
+                                                    user="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
+                                                    <div class="chat-header">
+                                                        <a id="back_user_list" href="javascript:void(0)" class="back-user-list">
+                                                            <i class="material-icons">chevron_left</i>
+                                                        </a>
+
+                                                        <div class="media d-flex">
+                                                            <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
+                                                                <div class="avatar">
+                                                                    <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}">
+                                                                        <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                            alt="UserImage" width="50px" height="50px"
+                                                                            class="avatar-img rounded-circle">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            @php
+                                                                $user_categories = DB::table('user_categories')
+                                                                    ->join('categories', 'user_categories.category_id', '=', 'categories.id')
+                                                                    ->where('user_categories.user_id', getSafeValueFromObject($chat->other_user, 'id'))
+                                                                    ->select('categories.name')
+                                                                    ->get();
+                                                                $categoryNames = '';
+                                                                foreach ($user_categories as $key => $category) {
+                                                                    // Append the category name to the string
+                                                                    $categoryNames .= $category->name;
+                                                                    // Add a comma and space if it's not the last category
+                                                                    if ($key != $user_categories->count() - 1) {
+                                                                        $categoryNames .= ', ';
+                                                                    }
+                                                                }
+
+
+
+
+                                                            @endphp
+                                                            <div class="media-body flex-grow-1">
+                                                                <div class="user-name colorchangecompany"> {!!
+                                strtolower(getSafeValueFromObject($chat->other_user, 'role')['name'] ?? '')
+                                === 'vendor'
+                                ? getSafeValueFromObject($chat->other_user, 'name') . ' ' .
+                                getSafeValueFromObject($chat->other_user, 'last_name')
+                                : '<a
+                                                                                                href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">'
+                                . getSafeValueFromObject($chat->other_user, 'name') . ' ' .
+                                getSafeValueFromObject($chat->other_user, 'last_name') .
+                                '</a>' !!} - <span>{{ $categoryNames ?? ''}} {{
+                                getSafeValueFromObject($chat->other_user, 'company_name') }} </span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        @php
+
+                                                            $existingReport = \App\Models\ChatReported::where(
+                                                                'reported_by',
+                                                                getSafeValueFromObject($chat->other_user, 'id')
+                                                            )
+                                                                ->where('chat_id', $chat->id)
+                                                                ->exists();
+                                                        @endphp
+
+
+
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-link p-0" type="button" id="userOptionsMenu"
+                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v"></i>
+                                                            </button>
+
+                                                            <!-- Dropdown menu options -->
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
+                                                                <a class="dropdown-item block-chat  block_user " style="font-size: 12px;"
+                                                                    data-chat-id="{{ $chat->id }}" href="#">Block User</a>
+                                                                <a class="dropdown-item report-user-btn" style="font-size: 12px;"
+                                                                    data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
+                                                                    @if($existingReport)
+                                                                        Reported User
+                                                                    @else
+                                                                        Report User
+                                                                    @endif
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    @if($chat->status == 'accepted')
+
+                                                        <div class="chat-body">
+                                                            <div class="chat-scroll">
+                                                                <ul class="list-unstyled message-body" style="font-weight: 300;">
+                                                                    @foreach($chat->sorted_messages as $date => $sorted_messages)
+                                                                                                <div class="text-center fw-bolds " style="font-size:12px;"> {{
+                                                                        \Carbon\Carbon::parse($date)->format('d-M-Y') }}</div>
+                                                                                                @foreach($sorted_messages as $date => $message)
+
+                                                                                                    <li
+                                                                                                        class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
+                                                                                                        <div class="avatar flex-shrink-0">
+                                                                                                            <img src="{{ $message->message_position == 'right' ? session()->get('User')['image_url'] : getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                                                                alt="User Image" class="avatar-img rounded-circle">
+                                                                                                        </div>
+                                                                                                        <div class="media-body flex-grow-1">
+                                                                                                            <div class="msg-box">
+                                                                                                                <div style="display: flex;">
+                                                                                                                    <p>{{ $message->message }}</p>
+                                                                                                                    <ul class="chat-msg-info">
+                                                                                                                        <li>
+                                                                                                                            <div class="chat-time">
+                                                                                                                                <span>{{ $message->sended_at_formatted }}</span>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </li>
+                                                                                                @endforeach
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat-footer">
+                                                            <div class="input-group" style="margin-left: 17px;">
+                                                                {{-- <div class="avatar" style="padding:4px;">
+                                                                    <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                        alt="User Image" class="avatar-img rounded-circle">
+                                                                </div> --}}
+                                                                <div class="input-group" style="position: relative; width: 96%; height: 42px;">
+                                                                    <input type="text" class="input-msg-send emoji-trigger form-controls"
+                                                                        id="emoji-trigger"
+                                                                        data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
+                                                                        data-chat-id="{{ $chat->id }}" data-chat-block="{{$chat->is_blocked}}"
+                                                                        style="border-radius: 4px; width: 100%; padding-right: 50px;">
+
+                                                                </div>
+
+                                                                <button type="button" id="msg-send-btn" class="btn btn-primary msg-send-btn"
+                                                                    data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
+                                                                    data-chat-id="{{ $chat->id }}"
+                                                                    style="position: absolute; right: 41px; top: 9px; background-color: transparent; border: none;">
+                                                                    <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
+                                                                        style="font-size: 30px; background-color: none;"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    @else
+                                                            <div class="chat-body">
+                                                                <div class="row mt-4">
+                                                                    <div class="col-md-6 col-12 text-end">
+                                                                        <button class="btn btn-primary accept" chat-id="{{ $chat->id }}">
+                                                                            Accept
+                                                                        </button>
+                                                                    </div>
+                                                                    <di_v class="col-md-6 col-12">
+                                                                        <button class="btn btn-danger reject" chat-id="{{ $chat->id }}">
+                                                                            Reject
+                                                                        </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                            </div>
+                            @endforeach
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 @endsection
 
 @section('page_scripts')
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    var api_url = "{{ env('API_URL') }}";
-    $(document).on('click', '.hiddencheck', function (e) {
-        e.stopPropagation();  // Prevent the click from triggering the anchor link
-    });
-
-
+        var api_url = "{{ env('API_URL') }}";
+        $(document).on('click', '.hiddencheck', function (e) {
+            e.stopPropagation();  // Prevent the click from triggering the anchor link
+        });
 
 
 
-    // jQuery.noConflict();
-    // jQuery(document).ready(function($) {
-    $(document).ready(function () {
 
-        $('.form-control-search').on('keyup', function () {
-            var searchTerm = $(this).val().toLowerCase();
 
-            // Loop through all chat items
-            $('#chat-users-list a.chatActionBlock').each(function () {
-                var userName = $(this).find('.user-name').text().toLowerCase();
-                var lastMessage = $(this).find('.user-last-chat').text().toLowerCase();
+        // jQuery.noConflict();
+        // jQuery(document).ready(function($) {
+        $(document).ready(function () {
 
-                // Show if search term matches name or last message
-                if (userName.indexOf(searchTerm) !== -1 || lastMessage.indexOf(searchTerm) !== -1) {
-                    $(this).show();
+            $('.form-control-search').on('keyup', function () {
+                var searchTerm = $(this).val().toLowerCase();
+
+                // Loop through all chat items
+                $('#chat-users-list a.chatActionBlock').each(function () {
+                    var userName = $(this).find('.user-name').text().toLowerCase();
+                    var lastMessage = $(this).find('.user-last-chat').text().toLowerCase();
+
+                    // Show if search term matches name or last message
+                    if (userName.indexOf(searchTerm) !== -1 || lastMessage.indexOf(searchTerm) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            $(document).on('click', '.btn-link', function (e) {
+                e.stopPropagation(); // prevent closing immediately
+                const $menu = $(this).next('.dropdown-menu');
+
+                // Close any open dropdowns first
+                $('.dropdown-menu').not($menu).removeClass('show');
+
+                // Toggle the clicked one
+                $menu.toggleClass('show');
+            });
+
+            // When clicking outside any dropdown
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.dropdown-menu, .btn-link').length) {
+                    $('.dropdown-menu').removeClass('show');
+                }
+            });
+
+
+
+            $(".chat").select2({
+
+                minimumResultsForSearch: -1
+            });
+
+
+
+            $('.emoji-trigger').emojioneArea({
+                pickerPosition: "bottom",
+                events: {
+                    keyup: function (editor, event) {
+                        checkInput();
+                        console.log('emoji');
+                    },
+
+                    keydown: function (editor, event) {
+                        checkInput();
+                        if (event.which == 13) {
+                            console.log('enter');
+
+
+                            // $('#msg-send-btn').click();  
+                        }
+
+                    },
+
+                    change: function (editor, event) {
+                        checkInput();
+                        console.log('emoji');
+                    },
+                    paste: function (editor, event) {
+                        checkInput();
+                        console.log('emoji');
+                    }
+
+                }
+
+            });
+
+
+            function checkInput() {
+                var inputMessage = $('.emojionearea-editor').text().trim();
+                var hasImg = $('.emojionearea-editor').find('img').length > 0;
+                // var hasImg = emojioneAreaInstance.editor.find('img').length > 0;
+
+                // alert(hasImg);
+                if (inputMessage === '' && !hasImg) {
+                    $('.msg-send-btn').prop('disabled', true);
                 } else {
-                    $(this).hide();
+                    $('.msg-send-btn').prop('disabled', false);
                 }
-            });
-        });
-
-        $(document).on('click', '.btn-link', function (e) {
-            e.stopPropagation(); // prevent closing immediately
-            const $menu = $(this).next('.dropdown-menu');
-
-            // Close any open dropdowns first
-            $('.dropdown-menu').not($menu).removeClass('show');
-
-            // Toggle the clicked one
-            $menu.toggleClass('show');
-        });
-
-        // When clicking outside any dropdown
-        $(document).on('click', function (e) {
-            if (!$(e.target).closest('.dropdown-menu, .btn-link').length) {
-                $('.dropdown-menu').removeClass('show');
             }
-        });
-
-
-
-        $(".chat").select2({
-
-            minimumResultsForSearch: -1
-        });
-
-
-
-        $('.emoji-trigger').emojioneArea({
-            pickerPosition: "bottom",
-            events: {
-                keyup: function (editor, event) {
-                    checkInput();
-                    console.log('emoji');
-                },
-
-                keydown: function (editor, event) {
-                    checkInput();
-                    if (event.which == 13) {
-                        console.log('enter');
-
-
-                        // $('#msg-send-btn').click();  
-                    }
-
-                },
-
-                change: function (editor, event) {
-                    checkInput();
-                    console.log('emoji');
-                },
-                paste: function (editor, event) {
-                    checkInput();
-                    console.log('emoji');
-                }
-
-            }
-
-        });
-
-
-        function checkInput() {
-            var inputMessage = $('.emojionearea-editor').text().trim();
-            var hasImg = $('.emojionearea-editor').find('img').length > 0;
-            // var hasImg = emojioneAreaInstance.editor.find('img').length > 0;
-
-            // alert(hasImg);
-            if (inputMessage === '' && !hasImg) {
-                $('.msg-send-btn').prop('disabled', true);
-            } else {
-                $('.msg-send-btn').prop('disabled', false);
-            }
-        }
-        $('.msg-send-btn').prop('disabled', true);
-        $(document).on('click', '.msg-send-btn', function (e) {
             $('.msg-send-btn').prop('disabled', true);
-        });
+            $(document).on('click', '.msg-send-btn', function (e) {
+                $('.msg-send-btn').prop('disabled', true);
+            });
 
 
 
-        $('.gallerys').magnificPopup({
-            type: 'image',
-            delegate: 'a',
-            gallery: {
-                enable: true
-            }
-        });
-
-        // alert('ssss');
-        @if (request() -> i)
-            $('.chat-body-div').css('display', 'none');
-        $('.chat-with-user-{{ request()->i }}').click();
-        @endif
-        ajax_setup();
-
-
-
-    });
-
-
-    $(document).ready(function () {
-
-        $('.hiddentrash .fa-trash').on('click', function () {
-            if (!$('input[type="checkbox"]').is(':checked')) {
-                // Code to return to edit mode or perform your specific action
-                $('.edit').show()
-                $('.hiddencheck').hide();
-                $('.hiddentrash').hide();
-                console.log('Edit mode activated');
-                // Your edit mode logic here
-            } else {
-
-            }
-        });
-
-        // Handle favorite button click
-        $('.favorite-chat').on('click', function () {
-            var button = $(this);
-
-            var chatId = button.data('chat-id');
-
-            $.ajax({
-                url: "{{ route('chat.favorite') }}",
-                method: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    chat_id: chatId
-                },
-                success: function (response) {
-                    if (response.is_favorite) {
-                        button.find('i').css('color', 'red');
-                    } else {
-                        button.find('i').css('color', 'grey');
-                    }
-
-                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
-                    if (response.is_favorite) {
-                        chatItem.addClass('favorite');
-                    } else {
-                        chatItem.removeClass('favorite');
-                    }
+            $('.gallerys').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enable: true
                 }
             });
+
+            // alert('ssss');
+            @if (request()->i)
+                $('.chat-body-div').css('display', 'none');
+                $('.chat-with-user-{{ request()->i }}').click();
+            @endif
+            ajax_setup();
+
+
+
         });
 
 
+        $(document).ready(function () {
 
-        // Toggle block
-        $('.block-chat').on('click', function () {
+            $('.hiddentrash .fa-trash').on('click', function () {
+                if (!$('input[type="checkbox"]').is(':checked')) {
+                    // Code to return to edit mode or perform your specific action
+                    $('.edit').show()
+                    $('.hiddencheck').hide();
+                    $('.hiddentrash').hide();
+                    console.log('Edit mode activated');
+                    // Your edit mode logic here
+                } else {
 
+                }
+            });
 
+            // Handle favorite button click
+            $('.favorite-chat').on('click', function () {
+                var button = $(this);
 
+                var chatId = button.data('chat-id');
 
-
-            var button = $(this);
-
-            var chatId = button.data('chat-id');
-
-
-
-
-
-            $.ajax({
-                url: "{{ route('chat.block') }}",
-                method: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    chat_id: chatId
-                },
-                success: function (response) {
-
-
-                    var emojioneArea = $('.emojionearea.emojionearea-inline');
-                    var emojioneEditor = $('.emojionearea-editor');
-                    var report_user = $('.block_user');
-
-
-
-                    if (response.is_blocked) {
-                        // show_error_message('User Blocked')
-                        button.find('i').css('color', 'goldenrod');
-                        button.attr('title', 'Unblock');
-
-
-                        report_user.text('Unblock User');
-                        if (emojioneArea.length > 0) {
-                            emojioneArea.css({
-                                'background': '#fdeaea',
-                                'cursor': 'not-allowed',
-                                'pointer-events': 'none'
-                            });
-                            emojioneEditor.attr('contenteditable', 'false');
-                        }
-                    } else {
-                        // show_success_message('User Unblocked');
-                        button.find('i').css('color', 'grey');
-
-                        button.attr('title', 'Block');
-                        report_user.text('Block User ');
-                        if (emojioneArea.length > 0) {
-                            emojioneArea.css({
-                                'background': '',
-                                'cursor': '',
-                                'pointer-events': ''
-                            });
-
-
-                            emojioneEditor.attr('contenteditable', 'true');
+                $.ajax({
+                    url: "{{ route('chat.favorite') }}",
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        chat_id: chatId
+                    },
+                    success: function (response) {
+                        if (response.is_favorite) {
+                            button.find('i').css('color', 'red');
+                        } else {
+                            button.find('i').css('color', 'grey');
                         }
 
-
+                        var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                        if (response.is_favorite) {
+                            chatItem.addClass('favorite');
+                        } else {
+                            chatItem.removeClass('favorite');
+                        }
                     }
-
-                    var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
-                    if (response.is_blocked) {
-                        chatItem.addClass('blocked');
-                    } else {
-                        chatItem.removeClass('blocked');
-                    }
-
-
-
-
-
-
-                }
+                });
             });
-        });
 
 
 
-        //fiter dropdown
-
-
-        $('#filter-dropdown').on('change', function () {
-            var filterValue = $(this).val();
+            // Toggle block
+            $('.block-chat').on('click', function () {
 
 
 
-            if (filterValue === 'all') {
-                $('.chat-title').show(); // Show all chats
-            } else if (filterValue === 'favorites') {
-                $('.chat-title').hide(); // Hide all chats
-                $('.favorite').show();   // Show only favorite chats
-            } else if (filterValue === 'blocked') {
-                $('.chat-title').hide(); // Hide all chats
-                $('.blocked').show();    // Show only blocked chats
-            }
-            else if (filterValue === 'unread') {
-                $('.chat-title').hide(); // Hide all chats
-                $('.unread').show();    // Show only blocked chats
-            }
-
-        });
 
 
-    });
+                var button = $(this);
+
+                var chatId = button.data('chat-id');
 
 
-    // $(document).ready(function () {
-    var button = $('.block-chat');
-    var chatId = button.data('chat-id');
-    $('.ad-id').val(chatId);
-
-    $('.hiddencheck').hide()
-    $('.hiddentrash').hide()
 
 
-    $('#edit-icon').click(function () {
-        $('.edit').hide()
-        $('.hiddencheck').toggle();
-        $('.hiddentrash').toggle();
-    });
 
-    // });
-
-
-    $(document).on('change', '#check-all', function () {
-        // Get the checked state of the toggle checkbox
-        var isChecked = $(this).prop('checked');
-
-        // Set the same checked state to all other checkboxes with class 'otherCheckbox'
-        $('.dlt-chat').prop('checked', isChecked);
-    })
-
-    function ajax_setup() {
-        $.ajaxSetup({
-            headers: {
-                // 'Authorization': 'Bearer ' + token,
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            dataType: 'json'
-        });
-    }
-
-    //accept or reject chat request start
-    $(document).on('click', '.accept', function (e) {
-        e.preventDefault();
-        accept_or_reject('accepted', $(this).attr('chat-id'));
-    });
-
-    $(document).on('click', '.reject', function (e) {
-        e.preventDefault();
-        accept_or_reject('rejected', $(this).attr('chat-id'));
-    });
+                $.ajax({
+                    url: "{{ route('chat.block') }}",
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        chat_id: chatId
+                    },
+                    success: function (response) {
 
 
-    function accept_or_reject(status, chat_id) {
-        $.ajax({
-            url: api_url + 'chats/accept-or-reject',
-            method: 'POST',
-            data: {
-                chat_id: chat_id,
-                status: status,
-            },
-            success: function (response) {
-                window.location.href = '';
-            },
-            error: function (response) {
-                console.log('error');
-            }
-        });
-    }
-
-    //accept or reject chat request end
+                        var emojioneArea = $('.emojionearea.emojionearea-inline');
+                        var emojioneEditor = $('.emojionearea-editor');
+                        var report_user = $('.block_user');
 
 
-    function markMessageAsReaded(id, selector) {
 
-        $.ajax({
-            url: api_url + 'chats/mark-as-read',
-            method: 'POST',
-            data: {
-                id: id
-            },
-            success: function (response) {
-                $(selector).find('.unread-count').css('display', 'none');
-                $(selector).removeClass('unread');
-            },
-            error: function (response) {
-                console.log('error');
-            }
-        });
-    }
-
-    $(document).on('click', '.chat-title', function (e) {
-        e.preventDefault();
+                        if (response.is_blocked) {
+                            // show_error_message('User Blocked')
+                            button.find('i').css('color', 'goldenrod');
+                            button.attr('title', 'Unblock');
 
 
-        //calling function to mark messages as readed
-        markMessageAsReaded($(this).attr('chat-id'), $(this));
-
-        var chat_body_selector = "#" + $(this).attr('id') + "-chat-body-div";
-        $('.chat-body-div').css('display', 'none');
-        $(chat_body_selector).css('display', 'block');
-    });
-
-
-    $(document).on('click', '.msg-send-btn', function () {
-        thisElem = $(this);
-
-        var message = $(thisElem).parents('.chat-footer').find('.input-msg-send');
-        send_new_message(message, thisElem);
-    });
-
-    $(document).on('keydown', '.emojionearea-editor', function (e) {
-        if (e.keyCode === 13) {
-            e.preventDefault(); // stop newline
-
-            // Get text + emojis
-            let text = '';
-            $(this).contents().each(function () {
-                if (this.nodeType === 3) { // text node
-                    text += this.nodeValue;
-                } else if (this.nodeType === 1 && this.tagName === 'IMG') { // emoji image
-                    text += $(this).attr('alt') || '';
-                }
-            });
-            text = text.trim();
-
-            // now shows both text and emojis
-
-            let chatFooter = $(this).closest('.chat-footer');
-            let message = chatFooter.find('.input-msg-send');
-            let btn = chatFooter.find('.msg-send-btn');
-
-            // copy editor text into hidden input
-            message.val(text);
-
-            send_new_message(message, btn);
-
-            // clear after send
-            $(this).text('');
-            message.val('');
-        }
-    });
-
-
-    function send_new_message(message, thisElem) {
-        // alert($(message).val());
-        $.ajax({
-            url: api_url + 'chats/send-message',
-            method: 'POST',
-            data: {
-                user_id: $(thisElem).attr('data-user-id'),
-                chat_id: $(thisElem).attr('data-chat-id'),
-                message: $(message).val()
-            },
-            success: function (response) {
-                if (response.status) {
-                    send_msg_body(response.data, thisElem);
-
-                    $(message).val('');
-                    $('.emojionearea-editor').html('');
-                }
-                // $(selector).find('.unread-count').css('display', 'none');
-            },
-            error: function (response) {
-                console.log('error');
-            }
-        });
-    }
-
-    setInterval(function () {
-
-        // alert('sss');
-        $.ajax({
-            url: api_url + 'chats/get-new-messages',
-            method: 'GET',
-            success: function (response) {
-                if (response.status) {
-                    $(response.data).each(function (i, chat) {
-                        if (chat.messages.length > 0) {
-                            $(chat.messages).each(function (i, msg) {
-                                send_msg_body(msg, '', false, $('#' + chat.other_user.name + '-' + chat.other_user.id + '-chat-body-div'), chat);
-                            });
-
-                            $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.user-last-chat').html(chat.latest_message);
-
-                            if (response.login_user_id !== chat.latest_message_sender_id && chat.unread_count > 0) {
-                                $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').show();
-                                $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').html(chat.unread_count);
-                            } else {
-                                $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').hide();
+                            report_user.text('Unblock User');
+                            if (emojioneArea.length > 0) {
+                                emojioneArea.css({
+                                    'background': '#fdeaea',
+                                    'cursor': 'not-allowed',
+                                    'pointer-events': 'none'
+                                });
+                                emojioneEditor.attr('contenteditable', 'false');
                             }
+                        } else {
+                            // show_success_message('User Unblocked');
+                            button.find('i').css('color', 'grey');
+
+                            button.attr('title', 'Block');
+                            report_user.text('Block User ');
+                            if (emojioneArea.length > 0) {
+                                emojioneArea.css({
+                                    'background': '',
+                                    'cursor': '',
+                                    'pointer-events': ''
+                                });
+
+
+                                emojioneEditor.attr('contenteditable', 'true');
+                            }
+
+
                         }
-                    })
+
+                        var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                        if (response.is_blocked) {
+                            chatItem.addClass('blocked');
+                        } else {
+                            chatItem.removeClass('blocked');
+                        }
+
+
+
+
+
+
+                    }
+                });
+            });
+
+
+
+            //fiter dropdown
+
+
+            $('#filter-dropdown').on('change', function () {
+                var filterValue = $(this).val();
+
+
+
+                if (filterValue === 'all') {
+                    $('.chat-title').show(); // Show all chats
+                } else if (filterValue === 'favorites') {
+                    $('.chat-title').hide(); // Hide all chats
+                    $('.favorite').show();   // Show only favorite chats
+                } else if (filterValue === 'blocked') {
+                    $('.chat-title').hide(); // Hide all chats
+                    $('.blocked').show();    // Show only blocked chats
                 }
-            },
-            error: function (response) {
-                console.log('error');
+                else if (filterValue === 'unread') {
+                    $('.chat-title').hide(); // Hide all chats
+                    $('.unread').show();    // Show only blocked chats
+                }
+
+            });
+
+
+        });
+
+
+        // $(document).ready(function () {
+        var button = $('.block-chat');
+        var chatId = button.data('chat-id');
+        $('.ad-id').val(chatId);
+
+        $('.hiddencheck').hide()
+        $('.hiddentrash').hide()
+
+
+        $('#edit-icon').click(function () {
+            $('.edit').hide()
+            $('.hiddencheck').toggle();
+            $('.hiddentrash').toggle();
+        });
+
+        // });
+
+
+        $(document).on('change', '#check-all', function () {
+            // Get the checked state of the toggle checkbox
+            var isChecked = $(this).prop('checked');
+
+            // Set the same checked state to all other checkboxes with class 'otherCheckbox'
+            $('.dlt-chat').prop('checked', isChecked);
+        })
+
+        function ajax_setup() {
+            $.ajaxSetup({
+                headers: {
+                    // 'Authorization': 'Bearer ' + token,
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                dataType: 'json'
+            });
+        }
+
+        //accept or reject chat request start
+        $(document).on('click', '.accept', function (e) {
+            e.preventDefault();
+            accept_or_reject('accepted', $(this).attr('chat-id'));
+        });
+
+        $(document).on('click', '.reject', function (e) {
+            e.preventDefault();
+            accept_or_reject('rejected', $(this).attr('chat-id'));
+        });
+
+
+        function accept_or_reject(status, chat_id) {
+            $.ajax({
+                url: api_url + 'chats/accept-or-reject',
+                method: 'POST',
+                data: {
+                    chat_id: chat_id,
+                    status: status,
+                },
+                success: function (response) {
+                    window.location.href = '';
+                },
+                error: function (response) {
+                    console.log('error');
+                }
+            });
+        }
+
+        //accept or reject chat request end
+
+
+        function markMessageAsReaded(id, selector) {
+
+            $.ajax({
+                url: api_url + 'chats/mark-as-read',
+                method: 'POST',
+                data: {
+                    id: id
+                },
+                success: function (response) {
+                    $(selector).find('.unread-count').css('display', 'none');
+                    $(selector).removeClass('unread');
+                },
+                error: function (response) {
+                    console.log('error');
+                }
+            });
+        }
+
+        $(document).on('click', '.chat-title', function (e) {
+            e.preventDefault();
+
+
+            //calling function to mark messages as readed
+            markMessageAsReaded($(this).attr('chat-id'), $(this));
+
+            var chat_body_selector = "#" + $(this).attr('id') + "-chat-body-div";
+            $('.chat-body-div').css('display', 'none');
+            $(chat_body_selector).css('display', 'block');
+        });
+
+
+        $(document).on('click', '.msg-send-btn', function () {
+            thisElem = $(this);
+
+            var message = $(thisElem).parents('.chat-footer').find('.input-msg-send');
+            send_new_message(message, thisElem);
+        });
+
+        $(document).on('keydown', '.emojionearea-editor', function (e) {
+            if (e.keyCode === 13) {
+                e.preventDefault(); // stop newline
+
+                // Get text + emojis
+                let text = '';
+                $(this).contents().each(function () {
+                    if (this.nodeType === 3) { // text node
+                        text += this.nodeValue;
+                    } else if (this.nodeType === 1 && this.tagName === 'IMG') { // emoji image
+                        text += $(this).attr('alt') || '';
+                    }
+                });
+                text = text.trim();
+
+                // now shows both text and emojis
+
+                let chatFooter = $(this).closest('.chat-footer');
+                let message = chatFooter.find('.input-msg-send');
+                let btn = chatFooter.find('.msg-send-btn');
+
+                // copy editor text into hidden input
+                message.val(text);
+
+                send_new_message(message, btn);
+
+                // clear after send
+                $(this).text('');
+                message.val('');
             }
         });
-    }, 10000)
 
 
-    function send_msg_body(message, thisElem, using_button = true, parent, chat) {
+        function send_new_message(message, thisElem) {
+            // alert($(message).val());
+            $.ajax({
+                url: api_url + 'chats/send-message',
+                method: 'POST',
+                data: {
+                    user_id: $(thisElem).attr('data-user-id'),
+                    chat_id: $(thisElem).attr('data-chat-id'),
+                    message: $(message).val()
+                },
+                success: function (response) {
+                    if (response.status) {
+                        send_msg_body(response.data, thisElem);
 
-        var li = `<li class="media ${message.message_position === 'right' ? 'sent' : 'received'} d-flex">
-                    <div class="avatar flex-shrink-0">
-                        <img
-                            src="${message.message_position === 'right' ? "{{session()->get('User')['image_url']}}" : chat.other_user.image_url}"
-                            alt="User Image"
-                            class="avatar-img rounded-circle">
-                    </div>
-                    <div class="media-body flex-grow-1">
-                        <div class="msg-box">
-                            <div>
-                                <p>${message.message}</p>
-                                <ul class="chat-msg-info">
-                                    <li>
-                                        <div class="chat-time">
-                                            <span>${message.sended_at_formatted}</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>`;
-
-        if (using_button === true) {
-            $(thisElem).parents('.chat-body-div').find('.message-body').append(li);
-        } else {
-            console.log(message)
-            $(parent).find('.message-body').append(li);
+                        $(message).val('');
+                        $('.emojionearea-editor').html('');
+                    }
+                    // $(selector).find('.unread-count').css('display', 'none');
+                },
+                error: function (response) {
+                    console.log('error');
+                }
+            });
         }
-    }
 
-    // mark as read message on input focus
-    $(document).on('focus', '.input-msg-send', function () {
-        var chat_id = $(this).parents('.chat-body-div').attr('chat-id');
-        var user = $(this).parents('.chat-body-div').attr('user');
-        markMessageAsReaded(chat_id, $('#' + user));
-    });
+        setInterval(function () {
 
-    // chat user filter code here
-    // Get references to the input and the list
+            // alert('sss');
+            $.ajax({
+                url: api_url + 'chats/get-new-messages',
+                method: 'GET',
+                success: function (response) {
+                    if (response.status) {
+                        $(response.data).each(function (i, chat) {
+                            if (chat.messages.length > 0) {
+                                $(chat.messages).each(function (i, msg) {
+                                    send_msg_body(msg, '', false, $('#' + chat.other_user.name + '-' + chat.other_user.id + '-chat-body-div'), chat);
+                                });
 
-    $("#search").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("#chat-users-list .chat-title").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.user-last-chat').html(chat.latest_message);
+
+                                if (response.login_user_id !== chat.latest_message_sender_id && chat.unread_count > 0) {
+                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').show();
+                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').html(chat.unread_count);
+                                } else {
+                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').hide();
+                                }
+                            }
+                        })
+                    }
+                },
+                error: function (response) {
+                    console.log('error');
+                }
+            });
+        }, 10000)
+
+
+        function send_msg_body(message, thisElem, using_button = true, parent, chat) {
+
+            var li = `<li class="media ${message.message_position === 'right' ? 'sent' : 'received'} d-flex">
+                            <div class="avatar flex-shrink-0">
+                                <img
+                                    src="${message.message_position === 'right' ? "{{session()->get('User')['image_url']}}" : chat.other_user.image_url}"
+                                    alt="User Image"
+                                    class="avatar-img rounded-circle">
+                            </div>
+                            <div class="media-body flex-grow-1">
+                                <div class="msg-box">
+                                    <div>
+                                        <p>${message.message}</p>
+                                        <ul class="chat-msg-info">
+                                            <li>
+                                                <div class="chat-time">
+                                                    <span>${message.sended_at_formatted}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`;
+
+            if (using_button === true) {
+                $(thisElem).parents('.chat-body-div').find('.message-body').append(li);
+            } else {
+                console.log(message)
+                $(parent).find('.message-body').append(li);
+            }
+        }
+
+        // mark as read message on input focus
+        $(document).on('focus', '.input-msg-send', function () {
+            var chat_id = $(this).parents('.chat-body-div').attr('chat-id');
+            var user = $(this).parents('.chat-body-div').attr('user');
+            markMessageAsReaded(chat_id, $('#' + user));
         });
-    });
+
+        // chat user filter code here
+        // Get references to the input and the list
+
+        $("#search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#chat-users-list .chat-title").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
 
 
-    // Attach a click event to the 'Delete Selected' button
-    $('#deleteSelected').on('click', function () {
-        // Get an array of selected checkbox values
-        var selectedValues = $('.dlt-chat:checked').map(function () {
-            return this.value;
-        }).get();
+        // Attach a click event to the 'Delete Selected' button
+        $('#deleteSelected').on('click', function () {
+            // Get an array of selected checkbox values
+            var selectedValues = $('.dlt-chat:checked').map(function () {
+                return this.value;
+            }).get();
 
-        if (selectedValues.length > 0)
-            Swal.fire({
-                icon: 'warning',
-                title: "Are you sure?",
-                text: "You will not be able to recover this!",
-                type: "error",
-                showCancelButton: true,
-                cancelButtonClass: '#d33',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'Delete!',
-            }).then((result) => {
-                if (result.value) {
-                    $.ajax({
-                        url: api_url + 'chats/delete-chats',
-                        type: 'POST',
-                        dataType: "JSON",
-                        data: { chat_ids: selectedValues },
-                        success: function (response) {
-                            if (response.status) {
-                                Swal.fire({
-                                    title: 'Success!',
-                                    text: response.message,
-                                    icon: 'success',
-                                }).then((result) => {
-                                    // $(thisElem).parents('tr').remove();
-                                    window.location.reload();
-                                })
-                            } else {
+            if (selectedValues.length > 0)
+                Swal.fire({
+                    icon: 'warning',
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this!",
+                    type: "error",
+                    showCancelButton: true,
+                    cancelButtonClass: '#d33',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Delete!',
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url: api_url + 'chats/delete-chats',
+                            type: 'POST',
+                            dataType: "JSON",
+                            data: { chat_ids: selectedValues },
+                            success: function (response) {
+                                if (response.status) {
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: response.message,
+                                        icon: 'success',
+                                    }).then((result) => {
+                                        // $(thisElem).parents('tr').remove();
+                                        window.location.reload();
+                                    })
+                                } else {
+                                    Swal.fire({
+                                        title: 'Problem!',
+                                        text: response.message,
+                                        icon: 'warning',
+                                    })
+                                }
+                            },
+                            error: function (response) {
                                 Swal.fire({
                                     title: 'Problem!',
-                                    text: response.message,
+                                    text: 'Unexpected error',
                                     icon: 'warning',
                                 })
                             }
-                        },
-                        error: function (response) {
-                            Swal.fire({
-                                title: 'Problem!',
-                                text: 'Unexpected error',
-                                icon: 'warning',
-                            })
-                        }
-                    });
-                }
-            })
-    });
-
-
-    $(document).on('click', '.report-ad-submit-btn', function () {
-
-        $.ajax({
-            url: api_url + 'influencers/report-chat',
-            type: 'post',
-            data: $('.report-ad-form').serialize(),
-            dataType: "JSON",
-            success: function (response) {
-                if (response.status) {
-                    $('#reportModal').modal('hide');
-
-
-                    show_success_message("Ad Reported!");
-
-                } else {
-                    show_error_message("Already Reported");
-
-                }
-            },
-            error: function (response) {
-                $('#reportModal').modal('hide');
-                $('.alert-text').text("Login");
-                $('.alert-div').show();
-
-                $('#loginModal').modal('show');
-
-                setTimeout(function () {
-                    $('.alert-text').text('');
-                    $('.alert-div').hide();
-                }, 7000);
-            }
+                        });
+                    }
+                })
         });
 
-    });
+
+        $(document).on('click', '.report-ad-submit-btn', function () {
+
+            $.ajax({
+                url: api_url + 'influencers/report-chat',
+                type: 'post',
+                data: $('.report-ad-form').serialize(),
+                dataType: "JSON",
+                success: function (response) {
+                    if (response.status) {
+                        $('#reportModal').modal('hide');
+
+
+                        show_success_message("Ad Reported!");
+
+                    } else {
+                        show_error_message("Already Reported");
+
+                    }
+                },
+                error: function (response) {
+                    $('#reportModal').modal('hide');
+                    $('.alert-text').text("Login");
+                    $('.alert-div').show();
+
+                    $('#loginModal').modal('show');
+
+                    setTimeout(function () {
+                        $('.alert-text').text('');
+                        $('.alert-div').hide();
+                    }, 7000);
+                }
+            });
+
+        });
 
 
 
 
 
-</script>
+    </script>
 @endsection

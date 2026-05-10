@@ -64,7 +64,7 @@
         }
 
         .verify-btn:hover:not(:disabled) {
-            background-color: #0000e0;
+            background-color: blue !important;
             transform: translateY(-2px);
         }
 

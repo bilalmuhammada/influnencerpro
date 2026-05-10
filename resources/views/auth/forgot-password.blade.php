@@ -7,7 +7,7 @@
             display: none;
             color: #dc3545;
             text-align: left;
-            margin-left: 10%;
+
         }
 
         input:focus {
@@ -21,15 +21,15 @@
             width: auto !important;
             margin: 20px auto !important;
             display: block;
-            background-color: #0000e0 !important;
-            /* Logo Blue */
+            background-color: #997045 !important;
+            /* Light Blue */
             border: none;
             color: white;
             font-size: 16px;
         }
 
         .t-btn.reset-btn:hover {
-            background-color: #997045 !important;
+            background-color: blue !important;
             /* Gold on hover */
         }
 

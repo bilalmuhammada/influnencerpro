@@ -8,7 +8,7 @@
         }
 
         .dt-button {
-            border-color: goldenrod !important;
+            border-color: #997045 !important;
         }
 
         /* No custom col-sm-3 padding */
@@ -59,12 +59,13 @@
         }
 
         .dropdown-item-compact:hover {
-            background-color: transparent !important;
-            color: #0504aa !important;
+            background-color: #f8f9fa !important;
+            color: #997045 !important;
         }
 
 
         .dropdown-item-compact {
+            color: blue !important;
             padding: 0px 8px !important;
             font-size: 12px !important;
         }
