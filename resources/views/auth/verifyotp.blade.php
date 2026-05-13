@@ -38,14 +38,14 @@
         }
 
         .otp-input:focus {
-            border: 2px solid blue !important;
+            border-color: #0504aa !important;
             /* Blue */
             box-shadow: 0 0 10px rgba(27, 60, 142, 0.2);
             outline: none;
         }
 
         .otp-input.has-value {
-            border-color: blue;
+            border-color: #0504aa;
         }
 
         .verify-btn {
@@ -53,9 +53,9 @@
             /* Logo Blue */
             border: none;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
-            padding: 12px 50px;
+            padding: 10px 30px;
             border-radius: 4px;
             /* Sharp edges */
             cursor: pointer;
@@ -64,7 +64,7 @@
         }
 
         .verify-btn:hover:not(:disabled) {
-            background-color: blue !important;
+            background-color: #0504aa !important;
             transform: translateY(-2px);
         }
 
@@ -78,7 +78,7 @@
             margin-top: 30px;
             color: black;
             /* Logo Gold */
-            margin-left: 120px;
+            text-align: center;
         }
 
         .resend a {

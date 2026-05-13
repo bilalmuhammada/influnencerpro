@@ -29,7 +29,7 @@
         }
 
         .t-btn.reset-btn:hover {
-            background-color: blue !important;
+            background-color: #0504aa !important;
             /* Gold on hover */
         }
 

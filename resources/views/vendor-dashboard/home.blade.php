@@ -28,7 +28,7 @@
 
     /* Apply same shaking speed to fav icons on hover */
     .add-to-favourite:hover,
-    .add-to-invented:hover {
+    .add-to-invited:hover {
         animation: shake 2.5s linear infinite;
     }
 
@@ -966,9 +966,9 @@
                     @forelse($influencers as $influencer)
                     <div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                         <div class="card avatar-one"
-                            onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+                            data-url="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail"
                             style="width:100%;cursor: pointer;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
                             </div>
 
 
@@ -1001,11 +1001,17 @@
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite"
                                             data-id="{{ $influencer->id }}" data-fvt="1"
-                                            style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color}}!important; margin-right: -8px; display: {{ $color == 'red' ? 'none' : 'inline-block' }}"></i>
+                                        <i class="fa-solid fa-heart shaking remove-favourite"
+                                            data-id="{{ $influencer->id }}" data-fvt="1"
+                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -8px; display: {{ $color == 'red' ? 'inline-block' : 'none' }}"></i>
 
-                                        <i class="fas fa-check-circle shaking  add-to-invented"
+                                        <i class="fas fa-check-circle shaking  add-to-invited"
                                             data-id="{{ $influencer->id }}" data-fvt="2"
-                                            style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color1}}!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'none' : 'inline-block' }}"></i>
+                                        <i class="fas fa-check-circle shaking  remove-invited"
+                                            data-id="{{ $influencer->id }}" data-fvt="2"
+                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'inline-block' : 'none' }}"></i>
 
 
                                     </div>
@@ -1220,17 +1226,7 @@
             changeYear: true,
             yearRange: "2024:+0",
         });
-        $('.start').on('click', function (e) {
 
-            // Redirect to the desired URL
-
-            const influencerId = $(this).data('id'); // Assume data-id is set for each `.start`
-            const baseUrl = "{{ env('BASE_URL') }}"; // Replace with your actual base URL if needed
-            window.location.href = `${baseUrl}/influencers/${influencerId}/detail`;
-
-            //  onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
-
-        });
 
 
 
@@ -1323,10 +1319,9 @@
         }
     });
 
-    $(document).on('click', '.add-to-favourite', function (e) {
-        e.preventDefault(); // Prevent the default action (link click).
+    $(document).on('click', '.add-to-favourite, .remove-favourite', function (e) {
+        e.preventDefault();
         e.stopImmediatePropagation();
-
 
         let thisElem = $(this);
         let influencerId = thisElem.data('id');
@@ -1341,27 +1336,29 @@
                 "fvt": fvt
             },
             success: function (response) {
-                if (response.fr_in == 1) {
-                    $('.add-to-favourite').css('color', 'red');
-                } else {
-                    $('.add-to-favourite').css('color', 'white');
-                }
                 if (response.status) {
                     show_success_message(response.message);
-                    $(thisElem).hide();
-                    $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
-                    $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                    if (thisElem.hasClass('add-to-favourite')) {
+                        thisElem.hide();
+                        thisElem.parents('.influencerdetail').find('.remove-favourite').show();
+                    } else {
+                        thisElem.hide();
+                        thisElem.parents('.influencerdetail').find('.add-to-favourite').show();
+                    }
                 } else {
                     show_error_message(response.message);
-
                 }
+            },
+            error: function() {
+                show_error_message("Error performing action");
             }
         });
     });
-    $(document).on('click', '.add-to-invented', function (e) {
-        e.preventDefault(); // Prevent the default action (link click).
+
+    $(document).on('click', '.add-to-invited, .remove-invited', function (e) {
+        e.preventDefault();
         e.stopImmediatePropagation();
-        // e.preventDefault();
+
         let thisElem = $(this);
         let influencerId = thisElem.data('id');
         let fvt = thisElem.data('fvt');
@@ -1375,50 +1372,33 @@
                 "fvt": fvt
             },
             success: function (response) {
-                if (response.fr_in == 2) {
-                    $('.add-to-invented').css('color', '#61de2a');
-                } else {
-                    $('.add-to-invented').css('color', 'white');
-                }
-
-
                 if (response.status) {
-
-                    console.log(response.fr_in);
                     show_success_message(response.message);
-                    $(thisElem).hide();
-                    $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
-                    $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'gold');
+                    if (thisElem.hasClass('add-to-invited')) {
+                        thisElem.hide();
+                        thisElem.parents('.influencerdetail').find('.remove-invited').show();
+                    } else {
+                        thisElem.hide();
+                        thisElem.parents('.influencerdetail').find('.add-to-invited').show();
+                    }
                 } else {
                     show_error_message(response.message);
-
                 }
-            }
-        });
-    });
-
-    $(document).on('click', '.remove-favourite', function (e) {
-        e.preventDefault();
-        thisElem = $(this);
-        $.ajax({
-            url: api_url + 'influencers/remove-from-favourites',
-            type: "POST",
-            dataType: "json",
-            data: {
-                "influencer_id": $(this).attr('data-id')
             },
-            success: function (response) {
-                if (response.status) {
-                    show_error_message(response.message);
-                    $(thisElem).hide();
-                    $(thisElem).parents('.influencerdetail').find('.add-to-favourite').show();
-                    $(thisElem).parents('.avatar-one').find('.main-icon').css('color', '#0504aa');
-                } else {
-                    show_error_message(response.message);
-
-                }
+            error: function() {
+                show_error_message("Error performing action");
             }
         });
+
+    $(document).on('click', '.avatar-one', function(e) {
+        if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invited, .remove-invited, .start, .influencerdetail').length) {
+            return;
+        }
+        let url = $(this).data('url');
+        if (url) {
+            window.location.href = url;
+        }
+    });
     });
 
     // front filter
@@ -1533,10 +1513,10 @@
 
         var influencerHtml = `<div class="col-md-3 col-lg-3 col-xl-3 influencer-box">
                                 <div class="card avatar-one" 
-                                     onclick="window.location.href='{{ env('BASE_URL') }}/influencers/${influencer.id}/detail'"
+                                     data-url="{{ env('BASE_URL') }}/influencers/${influencer.id}/detail"
                                    style="width:100%;cursor: pointer;">
                         
-                                   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+                                   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></div>
 
                             
                                     @php
@@ -1564,18 +1544,19 @@
 
                                             <div  class="influencerdetail">
                                             <div style="position:absolute;text-align:right;border:0px solid red;;right: 10px;top:10px;z-index: 99999;">
+                                                  <i class="fa-solid fa-heart shaking add-to-favourite"
+                                                      data-id="${influencer.id}" data-fvt="1"
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${influencer.is_favourite ? 'red' : 'white'}!important; margin-right: -8px; display: ${influencer.is_favourite ? 'none' : 'inline-block'}"></i>
+                                                  <i class="fa-solid fa-heart shaking remove-favourite"
+                                                      data-id="${influencer.id}" data-fvt="1"
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -8px; display: ${influencer.is_favourite ? 'inline-block' : 'none'}"></i>
 
-                                                 <i class="fa-solid fa-heart  add-to-favourite"
-                                                 data-id="{{ $influencer->id }}"
-                                                 data-fvt="1"
-                                                  
-                                                 style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
-
-                                                <i class="fas fa-check-circle   add-to-invented"
-                                                   data-id="{{ $influencer->id }}"
-                                                   data-fvt="2"
-                                                 
-                                                   style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                                  <i class="fas fa-check-circle shaking add-to-invited"
+                                                      data-id="${influencer.id}" data-fvt="2"
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${influencer.is_invented ? '#61de2a' : 'white'}!important; margin-right: -1px; display: ${influencer.is_invented ? 'none' : 'inline-block'}"></i>
+                                                  <i class="fas fa-check-circle shaking remove-invited"
+                                                      data-id="${influencer.id}" data-fvt="2"
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: ${influencer.is_invented ? 'inline-block' : 'none'}"></i>
 
                     
                                             </div>

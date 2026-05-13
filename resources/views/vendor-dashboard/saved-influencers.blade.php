@@ -351,7 +351,7 @@
                 @forelse($influencers as $influencer)
                     <div class="influencer-box-5 influencer-box">
                         <div class="card avatar-one"
-                            onclick="window.location.href='{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail'"
+                            data-url="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail"
                             style="border:0px solid #997045;width:100%; cursor: pointer; height: 100%;">
                             <a href="javascript:void(0)">
 
@@ -387,27 +387,22 @@
                                     <div class="start"
                                         style="position:absolute;text-align:right;border:0px solid red;right:10px;top:10px;z-index:9;">
 
-                                        <i class="fa-solid fa-heart shaking add-to-favourite" data-id="{{ $influencer->id }}"
-                                            data-fvt="1"
-                                            style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
+                                        <i class="fa-solid fa-heart shaking add-to-favourite"
+                                            data-id="{{ $influencer->id }}" data-fvt="1"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px;  color:{{$color}}!important; margin-right: -8px; display: {{ $color == 'red' ? 'none' : 'inline-block' }}"></i>
+                                        <i class="fa-solid fa-heart shaking remove-favourite"
+                                            data-id="{{ $influencer->id }}" data-fvt="1"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px;  color:red!important; margin-right: -8px; display: {{ $color == 'red' ? 'inline-block' : 'none' }}"></i>
 
-                                        <i class="fas fa-check-circle shaking  add-to-invented" data-id="{{ $influencer->id }}"
-                                            data-fvt="2"
-                                            style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'inline-block' : '' }}"></i>
-
-                                        {{-- <i class="fas fa-check-circle remove-favourite" data-id="{{ $influencer->id }}"
-                                            style="padding:7px;border-radius:50%; color: #999 !important; display: {{ hasFavoritedInfluencers($influencer->id, session()->get('User')->id) == false ? 'none' : 'inline-block' }}"></i>
-                                        --}}
+                                        <i class="fas fa-check-circle shaking  add-to-invented"
+                                            data-id="{{ $influencer->id }}" data-fvt="2"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px; color:{{$color1}}!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'none' : 'inline-block' }}"></i>
+                                        <i class="fas fa-check-circle shaking  remove-invented"
+                                            data-id="{{ $influencer->id }}" data-fvt="2"
+                                            style="padding:7px;border-radius:50%;margin-top: 0px; color:#61de2a!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'inline-block' : 'none' }}"></i>
 
                                     </div>
                                     <br>
-                                    {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Based
-                                            in:</b><br />&nbsp;&nbsp; {{ $influencer->state ? $influencer->state->name : ''
-                                        }}</span><br />--}}
-                                    {{--<span style="font-size: 12px;color:#fff;"><b>&nbsp;&nbsp; Influencer
-                                            Categories:</b><br />&nbsp;&nbsp; {{ $influencer->user_professional_detail &&
-                                        $influencer->user_professional_detail->category ?
-                                        $influencer->user_professional_detail->category->name : '' }}</span>--}}
                                     <ul class="d-flex justify-content-center w-100 align-items-end"
                                         style="list-style-type: none; margin-top: 118px; padding-left: 0; gap: 6px;">
                                         @php
@@ -563,6 +558,16 @@
 @section('page_scripts')
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script>
+        $(document).on('click', '.avatar-one', function(e) {
+            if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invented, .remove-invented').length) {
+                return;
+            }
+            let url = $(this).data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+
         $(document).ready(function () {
 
 
@@ -574,7 +579,7 @@
             });
         });
 
-        $(document).on('click', '.add-to-favourite', function (e) {
+        $(document).on('click', '.add-to-favourite, .remove-favourite', function (e) {
             e.preventDefault();
             thisElem = $(this);
             let influencerId = thisElem.data('id');
@@ -590,26 +595,22 @@
                     "fvt": fvt
                 },
                 success: function (response) {
-
-                    if (response.fr_in == 1) {
-                        $('.add-to-favourite').css('color', 'red');
-                    } else {
-                        $('.add-to-favourite').css('color', 'white');
-                    }
-
                     if (response.status) {
                         show_success_message(response.message);
-                        $(thisElem).hide();
-                        $(thisElem).parents('.influencerdetail').find('.remove-favourite').show();
-                        $(thisElem).parents('.avatar-one').find('.main-icon').css('color', 'red');
+                        if(thisElem.hasClass('add-to-favourite')) {
+                            thisElem.hide();
+                            thisElem.parents('.influencerdetail').find('.remove-favourite').show();
+                        } else {
+                            thisElem.hide();
+                            thisElem.parents('.influencerdetail').find('.add-to-favourite').show();
+                        }
                     } else {
                         show_error_message(response.message);
-
                     }
                 }
             });
         });
-        $(document).on('click', '.add-to-invented', function (e) {
+        $(document).on('click', '.add-to-invented, .remove-invented', function (e) {
             e.preventDefault();
             thisElem = $(this);
             let influencerId = thisElem.data('id');
@@ -626,9 +627,9 @@
                 success: function (response) {
 
                     if (response.fr_in == 2) {
-                        $('.add-to-invented').css('color', '#61de2a');
+                        thisElem.css('color', '#61de2a');
                     } else {
-                        $('.add-to-invented').css('color', 'white');
+                        thisElem.css('color', 'white');
                     }
 
                     if (response.status) {
@@ -641,6 +642,32 @@
                     } else {
                         show_error_message(response.message);
 
+                    }
+                }
+            });
+        });
+        $(document).on('click', '.remove-favourite, .remove-invented', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let thisElem = $(this);
+            let influencerId = thisElem.data('id');
+            let fvt = thisElem.data('fvt');
+
+            $.ajax({
+                url: fvt == 1 ? api_url + 'influencers/add-to-favourites' : api_url + 'influencers/add-to-invented',
+                type: "POST",
+                dataType: "json",
+                data: {
+                    "influencer_id": influencerId,
+                    "fvt": fvt
+                },
+                success: function (response) {
+                    show_success_message(response.message);
+                    thisElem.hide();
+                    if (fvt == 1) {
+                        thisElem.parents('.influencerdetail').find('.add-to-favourite').show();
+                    } else {
+                        thisElem.parents('.influencerdetail').find('.add-to-invented').show();
                     }
                 }
             });

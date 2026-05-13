@@ -60,7 +60,7 @@
 
         .dropdown-item-compact:hover {
             background-color: #f8f9fa !important;
-            color: #997045 !important;
+            color: goldenrod !important;
         }
 
 
@@ -150,7 +150,7 @@
                             </thead>
                             <tbody>
                                 @forelse($notifications as $notification)
-                                                            <tr style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
+                                                            <tr id="notif-row-{{ $notification->id }}" style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
                                                                 <td>
                                                                     <div class="table-avatar">
                                                                         <a href="#" class="avatar me-3"> <!-- Increased margin -->
@@ -181,21 +181,15 @@
                                                                         </a>
                                                                         <div class="dropdown-menu dropdown-menu-end py-1" style="min-width: 4rem;">
                                                                             @if(!$notification->read_at)
-                                                                                <form action="{{ route('notifications.mark-as-read', $notification->id) }}"
-                                                                                    method="POST" class="m-0">
-                                                                                    @csrf
-                                                                                    <button type="submit" class="dropdown-item dropdown-item-compact">
-                                                                                        Mark as Read
-                                                                                    </button>
-                                                                                </form>
-                                                                            @endif
-                                                                            <form action="{{ route('notifications.delete', $notification->id) }}"
-                                                                                method="POST" class="m-0">
-                                                                                @csrf
-                                                                                <button type="submit" class="dropdown-item dropdown-item-compact">
-                                                                                    Remove
+                                                                                <button type="button" class="dropdown-item dropdown-item-compact mark-as-read" 
+                                                                                    data-id="{{ $notification->id }}" data-url="{{ route('notifications.mark-as-read', $notification->id) }}">
+                                                                                    Mark as Read
                                                                                 </button>
-                                                                            </form>
+                                                                            @endif
+                                                                            <button type="button" class="dropdown-item dropdown-item-compact delete-notification" 
+                                                                                data-id="{{ $notification->id }}" data-url="{{ route('notifications.delete', $notification->id) }}">
+                                                                                Remove
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -215,4 +209,51 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('.mark-as-read').on('click', function() {
+                let btn = $(this);
+                let id = btn.data('id');
+                let url = btn.data('url');
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            $('#notif-row-' + id).css('background-color', '');
+                            btn.remove();
+                        }
+                    }
+                });
+            });
+
+            $('.delete-notification').on('click', function() {
+                let btn = $(this);
+                let id = btn.data('id');
+                let url = btn.data('url');
+
+                if (confirm('Are you sure you want to remove this notification?')) {
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        success: function(response) {
+                            if (response.success) {
+                                $('#notif-row-' + id).fadeOut(300, function() {
+                                    $(this).remove();
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endsection

@@ -12,7 +12,7 @@
     }
 
     #userOptionsMenu:hover {
-        color: #997045 !important;
+        color: goldenrod !important;
     }
 
     #userOptionsMenu {
@@ -35,7 +35,7 @@
 
     .dropdown-item:focus,
     .dropdown-item:hover {
-        color: #997045 !important;
+        color: goldenrod !important;
         background-color: #f8f9fa !important;
     }
 
@@ -62,7 +62,7 @@
     }
 
     .emojionearea {
-        border-color: #e5e5e5 !important;
+        border-color: #997045 !important;
         outline: 0;
         box-shadow: none !important;
     }
@@ -161,7 +161,7 @@
     }
 
     .mgn-send-color:hover {
-        color: goldenrod !important;
+        color: #997045 !important;
     }
 
     .chat-info {
@@ -398,8 +398,9 @@
                                                                     <div class="media-body flex-grow-1">
                                                                         <div>
                                                                             <div class="user-name">{{ getSafeValueFromObject($chat->other_user, 'name')
-                                                                                                                }}
-                                                                                {{getSafeValueFromObject($chat->other_user, 'last_name')}}</div>
+                                                                                                                                                }}
+                                                                                {{getSafeValueFromObject($chat->other_user, 'last_name')}}
+                                                                            </div>
                                                                             <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                                         </div>
 
@@ -498,7 +499,7 @@
                                 ? getSafeValueFromObject($chat->other_user, 'name') . ' ' .
                                 getSafeValueFromObject($chat->other_user, 'last_name')
                                 : '<a
-                                                                                                href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">'
+                                                                                                                        href="' . env('BASE_URL') . '/influencers/' . getSafeValueFromObject($chat->other_user, 'id') . '/detail">'
                                 . getSafeValueFromObject($chat->other_user, 'name') . ' ' .
                                 getSafeValueFromObject($chat->other_user, 'last_name') .
                                 '</a>' !!} - <span>{{ $categoryNames ?? ''}} {{
@@ -1119,27 +1120,27 @@
         function send_msg_body(message, thisElem, using_button = true, parent, chat) {
 
             var li = `<li class="media ${message.message_position === 'right' ? 'sent' : 'received'} d-flex">
-                            <div class="avatar flex-shrink-0">
-                                <img
-                                    src="${message.message_position === 'right' ? "{{session()->get('User')['image_url']}}" : chat.other_user.image_url}"
-                                    alt="User Image"
-                                    class="avatar-img rounded-circle">
-                            </div>
-                            <div class="media-body flex-grow-1">
-                                <div class="msg-box">
-                                    <div>
-                                        <p>${message.message}</p>
-                                        <ul class="chat-msg-info">
-                                            <li>
-                                                <div class="chat-time">
-                                                    <span>${message.sended_at_formatted}</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                        src="${message.message_position === 'right' ? "{{session()->get('User')['image_url']}}" : chat.other_user.image_url}"
+                                        alt="User Image"
+                                        class="avatar-img rounded-circle">
+                                </div>
+                                <div class="media-body flex-grow-1">
+                                    <div class="msg-box">
+                                        <div>
+                                            <p>${message.message}</p>
+                                            <ul class="chat-msg-info">
+                                                <li>
+                                                    <div class="chat-time">
+                                                        <span>${message.sended_at_formatted}</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>`;
+                            </li>`;
 
             if (using_button === true) {
                 $(thisElem).parents('.chat-body-div').find('.message-body').append(li);
