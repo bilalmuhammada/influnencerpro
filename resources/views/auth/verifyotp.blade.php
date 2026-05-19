@@ -50,7 +50,6 @@
 
         .verify-btn {
             background-color: #997045;
-            /* Logo Blue */
             border: none;
             color: white;
             font-size: 16px;
@@ -60,7 +59,10 @@
             /* Sharp edges */
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 20px;
+            margin: 20px auto 0;
+            display: block;
+            width: 100%;
+            max-width: 100px;
         }
 
         .verify-btn:hover:not(:disabled) {
@@ -75,17 +77,17 @@
 
         .resend {
             font-size: 15px;
-            margin-top: 30px;
+            margin: 20px auto 0;
             color: black;
-            /* Logo Gold */
-            text-align: center;
+            text-align: right;
+            max-width: 300px;
         }
 
         .resend a {
-            color: blue;
-            /* Blue */
+            color: #0504aa;
+            /* Logo Blue */
             text-decoration: none;
-            font-weight: normal;
+            font-weight: 500;
             margin-left: 5px;
         }
 
@@ -187,7 +189,7 @@
                 return;
             }
 
-            $('#verifyBtn').prop('disabled', true).text('Verifying...');
+            $('#verifyBtn').prop('disabled', true);
             $('.invalid-feedback').hide();
 
             $.ajax({

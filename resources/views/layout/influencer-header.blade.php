@@ -19,8 +19,8 @@
     </head>
 
     <script>
-        base_url = "{{ env('BASE_URL') }}";
-        api_url = "{{ env("API_URL") }}";
+        base_url = "{{ url('/') }}";
+        api_url = "{{ url('/api') }}/";
 
         token = localStorage.getItem('user_token');
     </script>

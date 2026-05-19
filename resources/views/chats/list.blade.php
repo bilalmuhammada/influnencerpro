@@ -746,7 +746,8 @@
                 delegate: 'a',
                 gallery: {
                     enable: true
-                }
+                },
+                fixedContentPos: false
             });
 
             // alert('ssss');

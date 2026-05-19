@@ -739,22 +739,22 @@ function validate_inputs(form) {
 }
 
 function show_success_message(message) {
-    Lobibox.notify('success', {
-        icon: 'success',
-        size: 'mini',
-        msg: message,
-        delay: 3000 
-    });
+    // Lobibox.notify('success', {
+    //     icon: 'success',
+    //     size: 'mini',
+    //     msg: message,
+    //     delay: 3000 
+    // });
 }
 
 
 function show_error_message(message) {
-    Lobibox.notify('error', {
-        icon: 'error',
-        size: 'mini',
-        msg: message,
-        delay: 3000 
-    });
+    // Lobibox.notify('error', {
+    //     icon: 'error',
+    //     size: 'mini',
+    //     msg: message,
+    //     delay: 3000 
+    // });
 }
 
 

@@ -16,7 +16,7 @@
 
         .t-btn.reset-btn {
             border-radius: 4px !important;
-            padding: 10px 30px !important;
+            padding: 10px 20px !important;
             width: auto !important;
             margin: 20px auto !important;
             display: block;
@@ -40,7 +40,7 @@
         }
 
         .reset-btn:hover {
-            background-color: #0000e0 !important;
+            background-color: blue !important;
             transform: translateY(-2px);
         }
 
@@ -55,7 +55,7 @@
         }
 
         .login-here-link {
-            color: blue !important;
+            color: #0504aa !important;
             font-weight: 500;
             text-decoration: none;
 
@@ -121,7 +121,7 @@
                                         <label class="focus-label">Confirm Password</label>
                                     </div>
 
-                                    <button class="reset-btn" type="submit">Reset</button>
+                                    <button class="reset-btn" type="submit">Update</button>
 
                                     <div class="dont-have">
                                         Remember your password? <a href="{{ url('login') }}" class="login-here-link">Click
@@ -177,7 +177,7 @@
                 return;
             }
 
-            $('.reset-btn').prop('disabled', true).text('Updating...');
+            $('.reset-btn').prop('disabled', true);
 
             var formData = new FormData(form[0]);
             $.ajax({
@@ -194,7 +194,7 @@
                             window.location.href = base_url + '/login';
                         }, 2000);
                     } else {
-                        $('.reset-btn').prop('disabled', false).text('Reset');
+                        $('.reset-btn').prop('disabled', false).text('Update');
                         var errors = response.errors;
                         for (var fieldName in errors) {
                             var errorElement = form.find('[name="' + fieldName + '"]');
@@ -204,7 +204,7 @@
                     }
                 },
                 error: function () {
-                    $('.reset-btn').prop('disabled', false).text('Reset');
+                    $('.reset-btn').prop('disabled', false).text('Update');
                     alert('Server error, please try again.');
                 }
             });

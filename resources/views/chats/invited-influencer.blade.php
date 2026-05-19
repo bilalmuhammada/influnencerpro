@@ -410,12 +410,9 @@
                                             $snapchat = getInfluencerSocialMediaProfileByTypeAndId('snapchat', $influencer->id);
                                         @endphp
                                         @if($instagram && !empty($instagram->followers) && $instagram->followers != '0')
-
-
-
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $instagram && !empty($instagram->url) ? 'https://' . ltrim($instagram->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking"
                                                             style="margin-bottom: 4px;" alt="" width="25px">
                                                     </a>
@@ -429,7 +426,7 @@
                                         @if($twitter && !empty($twitter->followers) && $twitter->followers != '0')
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $twitter && !empty($twitter->url) ? 'https://' . ltrim($twitter->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking"
                                                             style="margin-bottom: 4px;" alt="" width="25px">
                                                     </a>
@@ -445,7 +442,7 @@
                                         @if($youtube && !empty($youtube->followers) && $youtube->followers != '0')
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $youtube && !empty($youtube->url) ? 'https://' . ltrim($youtube->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking"
                                                             style="margin-bottom: 4px;" alt="" width="25px">
                                                     </a>
@@ -460,7 +457,7 @@
                                         @if($tiktok && !empty($tiktok->followers) && $tiktok->followers != '0')
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $tiktok && !empty($tiktok->url) ? 'https://' . ltrim($tiktok->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking"
                                                             style="margin-bottom: 4px;" alt="" width="25px">
                                                     </a>
@@ -475,7 +472,7 @@
                                         @if($facebook && !empty($facebook->followers) && $facebook->followers != '0')
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $facebook && !empty($facebook->url) ? 'https://' . ltrim($facebook->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking"
                                                             style="margin-bottom: 4px;" alt="" width="25px">
                                                     </a>
@@ -490,7 +487,7 @@
                                         @if($snapchat && !empty($snapchat->followers) && $snapchat->followers != '0')
                                             <li style="display: inline-block;;color:#fff;">
                                                 <div class="social-wrapper" style="text-align: center;">
-                                                    <a href="{{ env('BASE_URL') }}/influencers/{{ $influencer->id }}/detail">
+                                                    <a href="{{ $snapchat && !empty($snapchat->url) ? 'https://' . ltrim($snapchat->url, 'https://') : '#' }}" target="_blank" rel="noopener noreferrer">
                                                         <img src="{{ asset('assets/img/social-icon/snapchat.png') }}"
                                                             class="shaking" style="margin-bottom: 3px;" alt="" width="27px">
                                                     </a>
@@ -553,7 +550,7 @@
 @section('page_scripts')
     <script>
         $(document).on('click', '.avatar-one', function(e) {
-            if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invented, .remove-invented').length) {
+            if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invented, .remove-invented, .social-wrapper').length) {
                 return;
             }
             let url = $(this).data('url');

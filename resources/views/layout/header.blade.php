@@ -96,8 +96,8 @@
     <script src="{{ asset('assets/js/slick.js') }}"></script> --}}
 
     <script>
-        var base_url = "{{ env('BASE_URL') }}";
-        var api_url = "{{ env('API_URL') }}";
+        var base_url = "{{ url('/') }}";
+        var api_url = "{{ url('/api') }}/";
 
         token = localStorage.getItem('user_token');
 

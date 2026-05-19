@@ -834,7 +834,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                         <li style="display: inline-block;float: right; margin-right: -14px; margin-top: -14px;">
 
                             <a class="open-chat btn" style="font-size: 21px;"
-                                href="{{ env('BASE_URL') }}/chats?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
+                                href="{{ url('/chats') }}?i={{ $influencer->id }}&u={{ $influencer->name }}"><b>
                                     Chat
                                 </b>
                             </a>
@@ -895,7 +895,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                 </div>
                 <!-- <div class="profile" style="margin-top: 8px;">
                         <strong><span style="font-size:30px;">Profile</span><small><a
-                                    href="{{ env('BASE_URL') . 'influencer/complete-profile' }}">Edit
+                                    href="{{ url('/influencer/complete-profile') }}">Edit
                                     Profile</a></small></strong>
                     </div> -->
 
@@ -1118,7 +1118,8 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
             delegate: 'a',
             gallery: {
                 enable: true
-            }
+            },
+            fixedContentPos: false
         });
     });
 
@@ -1126,19 +1127,21 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
     const image = document.getElementById('influencer');
     const text = document.getElementById('influencerdetail');
 
-    // Add a mouseover event listener to the image
-    image.addEventListener('mouseover', () => {
-        // Show the text when hovering over the image
-        text.style.display = 'block';
-        image.style.display = 'none';
-    });
+    if (image && text) {
+        // Add a mouseover event listener to the image
+        image.addEventListener('mouseover', () => {
+            // Show the text when hovering over the image
+            text.style.display = 'block';
+            image.style.display = 'none';
+        });
 
-    // Add a mouseout event listener to the image
-    text.addEventListener('mouseout', () => {
-        // Hide the text when the mouse leaves the image
-        text.style.display = 'none';
-        image.style.display = 'block';
-    });
+        // Add a mouseout event listener to the image
+        text.addEventListener('mouseout', () => {
+            // Hide the text when the mouse leaves the image
+            text.style.display = 'none';
+            image.style.display = 'block';
+        });
+    }
 
     function sendRequestCall() {
         $.ajax({
