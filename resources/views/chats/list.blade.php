@@ -548,34 +548,36 @@
                                                         <div class="chat-body">
                                                             <div class="chat-scroll">
                                                                 <ul class="list-unstyled message-body" style="font-weight: 300;">
-                                                                    @foreach($chat->sorted_messages as $date => $sorted_messages)
-                                                                                                <div class="text-center fw-bolds " style="font-size:12px;"> {{
-                                                                        \Carbon\Carbon::parse($date)->format('d-M-Y') }}</div>
-                                                                                                @foreach($sorted_messages as $date => $message)
+                                                                    @if(!empty($chat->sorted_messages))
+                                                                        @foreach($chat->sorted_messages as $date => $sorted_messages)
+                                                                                                    <div class="text-center fw-bolds " style="font-size:12px;"> {{
+                                                                            \Carbon\Carbon::parse($date)->format('d-M-Y') }}</div>
+                                                                                                    @foreach($sorted_messages as $date => $message)
 
-                                                                                                    <li
-                                                                                                        class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
-                                                                                                        <div class="avatar flex-shrink-0">
-                                                                                                            <img src="{{ $message->message_position == 'right' ? session()->get('User')['image_url'] : getSafeValueFromObject($chat->other_user, 'image_url') }}"
-                                                                                                                alt="User Image" class="avatar-img rounded-circle">
-                                                                                                        </div>
-                                                                                                        <div class="media-body flex-grow-1">
-                                                                                                            <div class="msg-box">
-                                                                                                                <div style="display: flex;">
-                                                                                                                    <p>{{ $message->message }}</p>
-                                                                                                                    <ul class="chat-msg-info">
-                                                                                                                        <li>
-                                                                                                                            <div class="chat-time">
-                                                                                                                                <span>{{ $message->sended_at_formatted }}</span>
-                                                                                                                            </div>
-                                                                                                                        </li>
-                                                                                                                    </ul>
+                                                                                                        <li
+                                                                                                            class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
+                                                                                                            <div class="avatar flex-shrink-0">
+                                                                                                                <img src="{{ $message->message_position == 'right' ? session()->get('User')['image_url'] : getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                                                                    alt="User Image" class="avatar-img rounded-circle">
+                                                                                                            </div>
+                                                                                                            <div class="media-body flex-grow-1">
+                                                                                                                <div class="msg-box">
+                                                                                                                    <div style="display: flex;">
+                                                                                                                        <p>{{ $message->message }}</p>
+                                                                                                                        <ul class="chat-msg-info">
+                                                                                                                            <li>
+                                                                                                                                <div class="chat-time">
+                                                                                                                                    <span>{{ $message->sended_at_formatted }}</span>
+                                                                                                                                </div>
+                                                                                                                            </li>
+                                                                                                                        </ul>
+                                                                                                                    </div>
                                                                                                                 </div>
                                                                                                             </div>
-                                                                                                        </div>
-                                                                                                    </li>
-                                                                                                @endforeach
-                                                                    @endforeach
+                                                                                                        </li>
+                                                                                                    @endforeach
+                                                                        @endforeach
+                                                                    @endif
                                                                 </ul>
                                                             </div>
                                                         </div>
