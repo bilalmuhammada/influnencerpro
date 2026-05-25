@@ -128,6 +128,10 @@
         /* Show when hovering over the gallery container */
     }
 
+    #pdfdownload.pdf-sidebar-right .theiaStickySidebar {
+        transform: translateX(12px);
+    }
+
     .open-chat:hover {
 
         color: goldenrod !important;
@@ -183,39 +187,6 @@
         font-weight: 600;
         white-space: nowrap;
         line-height: 1;
-    }
-
-    .pdf-export-copy {
-        background: #fff;
-        left: -99999px;
-        position: fixed;
-        top: 0;
-        width: 1120px;
-        z-index: -1;
-    }
-
-    .pdf-export-copy .container {
-        max-width: 1120px !important;
-        width: 1120px !important;
-    }
-
-    .pdf-export-copy .card-header__ img.card-title {
-        height: 208px !important;
-        object-fit: cover !important;
-        width: 100% !important;
-    }
-
-    .pdf-export-copy .gallerys img {
-        height: 200px !important;
-        object-fit: cover !important;
-        width: 100% !important;
-    }
-
-    .pdf-export-copy .image-actions,
-    .pdf-export-copy .share-link,
-    .pdf-export-copy .downloadButton,
-    .pdf-export-copy .open-chat {
-        display: none !important;
     }
 
     @keyframes shake {
@@ -1031,7 +1002,6 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 {{-- @include('pages.files.components.table.ajax') --}}
 {{-- @include("vendor-dashboard.influncerProfiledownload"); --}}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -1042,76 +1012,37 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
     $(document).ready(function () {
 
-        $('.downloadButton').on('click', function () {
-
-            let element = document.getElementById("pdfdownload");
-
-
-
-            const logoUrl = "{{ asset('assets/img/logo/Influencers Pro-01-01.png')  }}";
-            const influencerName = '{{ $influencer->full_name }}';
-
+        $(".downloadButton").on("click", function () {
+            const element = document.getElementById("pdfdownload");
+            const influencerName = @json($influencer->full_name);
+            element.classList.add("pdf-sidebar-right");
 
             html2pdf()
                 .from(element)
                 .set({
-                    margin: 6,
+                    margin: 0,
                     filename: `InfluencerPro - ${influencerName}.pdf`,
-                    image: { type: 'jpeg', quality: 0.98 },
-                    // html2canvas: { scale: 1 },
+                    image: { type: "jpeg", quality: 0.98 },
                     html2canvas: {
-                        scale: 2, // Ensure proper scaling
-                        useCORS: true, // Allow cross-origin images
-                        letterRendering: true, // Improve text rendering
-                        allowTaint: true, // Allow tainted images
-                        logging: true, // Enable logging for debugging
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        letterRendering: true,
+                        backgroundColor: "#ffffff",
+                        scrollX: 0,
+                        scrollY: 0,
+                        windowWidth: window.innerWidth,
+                        windowHeight: document.documentElement.scrollHeight
                     },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+                    jsPDF: { unit: "mm", format: "a4", orientation: "landscape" }
                 })
-                .toPdf()
-                .get('pdf')
-                .then(function (pdf) {
-                    const pageWidth = pdf.internal.pageSize.getWidth();  // A4 Landscape Width (297mm)
-                    const pageHeight = pdf.internal.pageSize.getHeight(); // A4 Landscape Height (210mm)
-                    const totalPages = pdf.internal.getNumberOfPages();
-                    const imgWidth = 100 * 0.6;  // 60% of page width for better appearance
-                    const imgHeight = 80 * 0.2; // Maintain aspect ratio (adjust as needed)
-                    const centerX = (pageWidth - imgWidth) / 2;
-                    const topY = 3; // Adjust Y-position for top placement
-                    const bottomY = pageHeight - imgHeight - 6; // Adjust Y-position for bottom placement
-
-                    const text = "© InfluencerPro.org {{ date('Y') }}, All Rights Reserved.";
-
-                    // Add Centered Logo at the Top of the First Page
-                    pdf.setPage(1);
-                    pdf.addImage(logoUrl, 'PNG', centerX, topY, imgWidth, imgHeight);
-
-                    // Add Centered Logo at the Bottom of the Last Page
-                    pdf.setPage(totalPages);
-                    pdf.addImage(logoUrl, 'PNG', centerX, bottomY, imgWidth, imgHeight);
-                    const textX = centerX - 7; // Adjust horizontal position if needed
-                    const textY = bottomY + imgHeight; // Position text below the image (2 units margin)
-
-                    // Set text styling
-                    pdf.setFontSize(10); // Reduce font size to make it fit
-                    pdf.setFont("helvetica", "normal"); // Set font family
-                    pdf.setTextColor(0, 73, 142); // Set text color (#00498e in RGB)
-
-                    // Add the text
-                    pdf.text(text, textX, textY);
-
-
-
-                    pdf.setFontSize(5);  // Reduce font size to make it fit
-
-                    pdf.save(`InfluencerPro - ${influencerName}.pdf`);
+                .save()
+                .then(function () {
+                    element.classList.remove("pdf-sidebar-right");
+                })
+                .catch(function () {
+                    element.classList.remove("pdf-sidebar-right");
                 });
-
-
-
-
-
-
         });
         // Handle delete icon click
         $('.delete-icon').on('click', function () {
