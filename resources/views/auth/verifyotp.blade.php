@@ -81,6 +81,7 @@
             color: black;
             text-align: right;
             max-width: 300px;
+            padding-right: 0px;
         }
 
         .resend a {
@@ -88,7 +89,7 @@
             /* Logo Blue */
             text-decoration: none;
             font-weight: 500;
-            margin-left: 5px;
+            margin-left: 0px;
         }
 
         .resend a:hover {

@@ -89,7 +89,7 @@ class UserController extends Controller
     }
     public function getPaginatedInfluencers(Request $request)
     {
-        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail', 'favourites', 'social_media_profiles'])->whereHas('role', function ($Role) {
+        $influencers = User::with(['city', 'country', 'state', 'role', 'user_professional_detail', 'favourites', 'invented', 'social_media_profiles'])->whereHas('role', function ($Role) {
             $Role->where('code', 'influencer');
         });
 

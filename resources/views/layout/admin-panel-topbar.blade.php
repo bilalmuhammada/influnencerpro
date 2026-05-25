@@ -293,7 +293,7 @@
                                                                                 <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
                                                                                     <div
                                                                                         style="width: 57px; height: 57px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                                                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
+                                                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/user.png') }}"
                                                                                             alt="sender image"
                                                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                                                     </div>
@@ -371,7 +371,7 @@
                                                                         @endphp
                                                                         <div
                                                                             style="width: 55px; height:53px; margin-top: 3px; border-radius: 2px; overflow: hidden; flex-shrink: 0; margin-right: 12px;">
-                                                                            <img src="{{ $notifSender && $notifSender->image_url ? $notifSender->image_url : asset('assets/img/default.png') }}"
+                                                                            <img src="{{ $notifSender && $notifSender->image_url ? $notifSender->image_url : asset('assets/img/user.png') }}"
                                                                                 alt="notification image"
                                                                                 style="width: 100%; height: 100%; object-fit: cover;">
                                                                         </div>
@@ -575,14 +575,23 @@
 
     function translateLanguage() {
         var dropdown = document.getElementById("language_dropdown_nav");
-        var selectedLanguageCode = dropdown.options[dropdown.selectedIndex].value;
-        if (selectedLanguageCode) {
-            var googleTranslateCombo = document.querySelector('.goog-te-combo');
-            if (googleTranslateCombo) {
-                googleTranslateCombo.value = selectedLanguageCode;
-                googleTranslateCombo.dispatchEvent(new Event('change'));
-            }
+        if (!dropdown) {
+            return;
         }
+
+        var selectedLanguageCode = dropdown.options[dropdown.selectedIndex].value;
+        if (!selectedLanguageCode) {
+            return;
+        }
+
+        var googleTranslateCombo = document.querySelector('.goog-te-combo');
+        if (googleTranslateCombo) {
+            googleTranslateCombo.value = selectedLanguageCode;
+            googleTranslateCombo.dispatchEvent(new Event('change'));
+            return;
+        }
+
+        setTimeout(translateLanguage, 300);
     }
 
     function getCookie(name) {
@@ -609,26 +618,55 @@
         return $option;
     }
 
-    $(document).ready(function () {
-        $('#language_dropdown_nav').select2({
-            width: 'resolve',
-            templateResult: formatFlagOption,
-            templateSelection: formatFlagOption,
-            escapeMarkup: function (markup) {
-                return markup;
+    function initializeLanguageSelect2(attempts) {
+        var languageDropdown = $('#language_dropdown_nav');
+
+        if (!languageDropdown.length) {
+            return;
+        }
+
+        if ($.fn.select2) {
+            if (!languageDropdown.hasClass('select2-hidden-accessible')) {
+                languageDropdown.select2({
+                    width: 'resolve',
+                    templateResult: formatFlagOption,
+                    templateSelection: formatFlagOption,
+                    escapeMarkup: function (markup) {
+                        return markup;
+                    }
+                });
             }
-        });
+
+            return;
+        }
+
+        if (attempts > 0) {
+            setTimeout(function () {
+                initializeLanguageSelect2(attempts - 1);
+            }, 300);
+        }
+    }
+
+    $(document).ready(function () {
+        var languageDropdown = $('#language_dropdown_nav');
+
+        initializeLanguageSelect2(10);
 
         // Persist language visually
         var googtrans = getCookie('googtrans');
-        if (googtrans) {
+        if (googtrans && languageDropdown.length) {
             var lang = googtrans.split('/').pop();
-            if (lang && $('#language_dropdown_nav').val() !== lang) {
-                $('#language_dropdown_nav').val(lang).trigger('change.select2');
+            if (lang && languageDropdown.val() !== lang) {
+                languageDropdown.val(lang);
+
+                if ($.fn.select2) {
+                    languageDropdown.trigger('change.select2');
+                }
             }
         }
 
-        $('#nationality_id,.selectMul').select2({
+        if ($.fn.select2) {
+            $('#nationality_id,.selectMul').select2({
             placeholder: " ",
             allowClear: true,
             width: '100%',
@@ -637,13 +675,14 @@
                     return "No Data";
                 }
             }
-        });
+            });
 
-        $('.mySelect').select2({
+            $('.mySelect').select2({
             placeholder: " ",
             allowClear: true,
             minimumResultsForSearch: Infinity
-        });
+            });
+        }
     });
 </script>
 <script type="text/javascript"

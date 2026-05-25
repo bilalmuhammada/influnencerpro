@@ -146,9 +146,15 @@ class User extends Authenticatable
       
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;
-        } else {
-            return asset('assets/img/user.png');
         }
+
+        $image = $this->influencer_profile_images()->first();
+
+        if ($image) {
+            return asset('uploads/users') . '/' . $image->name;
+        }
+
+        return asset('assets/img/user.png');
     }
 
     public function influencer_profile_images()
@@ -205,15 +211,19 @@ class User extends Authenticatable
 
     public function getImageUrlAttribute()
     {
-        // Get the first related influencer profile image
-        $image = $this->influencer_profile_images()->first();
-        // dd($image);
+        $image = $this->influencer_profile_image_main()->first();
 
         if ($image) {
             return asset('uploads/users') . '/' . $image->name;
-        } else {
-            return asset('assets/img/user.png');
         }
+
+        $image = $this->influencer_profile_images()->first();
+
+        if ($image) {
+            return asset('uploads/users') . '/' . $image->name;
+        }
+
+        return asset('assets/img/user.png');
     }
 
     public function favourites()

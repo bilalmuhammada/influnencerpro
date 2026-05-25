@@ -548,7 +548,7 @@
                     <div class="feature-item freelance-count aos h-100" data-aos="fade-up">
                         <h1 class="numberstyle text-center">5</h1>
                         <div class="feature-content course-count text-center">
-                            <h6 class="fw-bold">Watch the video</h6>
+                            <h6 class="fw-bold">Demo Video</h6>
                             <div class="play-btn mt-3 text-center">
                                 <a class="popup-video" href="#">
                                     <i class="fas fa-play text-primary"></i>
@@ -611,7 +611,7 @@
                     <div class="feature-item freelance-count aos h-100" data-aos="fade-up">
                         <h1 class="numberstyle text-center">5</h1>
                         <div class="feature-content course-count text-center">
-                            <h6 class="fw-bold">Watch the video</h6>
+                            <h6 class="fw-bold">Demo Video</h6>
                             <div class="play-btn mt-3 text-center">
                                 <a class="popup-video" href="#">
                                     <i class="fas fa-play text-primary"></i>

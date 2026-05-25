@@ -1754,7 +1754,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
             method: 'post',
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             addRemoveLinks: false,
-            maxFiles: 5,
+            maxFiles: 20,
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 'Authorization': `Bearer ${token}`
@@ -1766,6 +1766,11 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                 console.log(response);
             },
             init: function () {
+                this.on("maxfilesexceeded", function (file) {
+                    this.removeFile(file);
+                    show_error_message('Maximum 20 images allowed');
+                });
+
                 this.on("addedfile", function (file) {
                     // Create the remove button
                     var removeButton = Dropzone.createElement("<button class='dz-remove'>×</button>");

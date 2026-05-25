@@ -464,9 +464,17 @@
         color: goldenrod !important;
     }
 
+    .sidebar-submit {
+        background: #997045 !important;
+        border-color: #997045 !important;
+        color: #fff !important;
+        box-shadow: 0 4px 10px rgba(153, 112, 69, 0.2) !important;
+    }
+
     .sidebar-submit:hover {
-        background: #0000d0 !important;
-        border-color: #0000d0 !important;
+        background: #0504aa !important;
+        border-color: #0504aa !important;
+        box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2) !important;
     }
 
     /* Influencer Card Hover Effect */
@@ -498,6 +506,13 @@
         height: 200px;
     }.avatar-one .influencer {
         transition: none;
+    }
+
+    @media (hover: none) {
+        .avatar-one .influencerdetail {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 </style>
 <div class="content">
@@ -679,12 +694,16 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <label class="font_label mt-1">Age Range</label>
-                                        <div class="d-flex gap-2">
+                                        <label class="font_label mt-1">Age</label>
+                                        <div class="row">
+                                            <div class="col-6">
                                             <input type="number" class="form-control form-control-sm" name="age1"
                                                 placeholder="Min" value="{{ request()->age1 }}">
+                                            </div>
+                                            <div class="col-6">
                                             <input type="number" class="form-control form-control-sm" name="age"
                                                 placeholder="Max" value="{{ request()->age }}">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -818,7 +837,7 @@
                                 </div>
 
                                 <div class="mb-1">
-                                    <label class="font_label mt-1">Art Skills</label>
+                                    <label class="font_label mt-1">Art</label>
                                     <select class="form-control selectMul" name="art[]" multiple>
                                         @foreach(getArts()->sortBy('name') as $art)
                                         <option value="{{ $art->key }}" {{ in_array($art->key, request()->art ?? []) ?
@@ -829,13 +848,17 @@
                                 <div class="row mb-1">
                                     <div class="col-12">
                                         <label class="font_label ">Availability</label>
-                                        <div class="d-flex gap-2">
+                                        <div class="row">
+                                            <div class="col-6">
                                             <input type="text" name="availability_from"
                                                 class="form-control form-control-sm datepicker1" placeholder="Date"
                                                 value="{{ request()->availability_from }}">
+                                            </div>
+                                            <div class="col-6">
                                             <input type="text" name="availability_to"
                                                 class="form-control form-control-sm datepicker1" placeholder="Date"
                                                 value="{{ request()->availability_to }}">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -856,7 +879,7 @@
 
                             <div class="btn-search text-center mt-3 mb-3">
                                 <button type="submit" class="btn btn-primary py-1 sidebar-submit"
-                                    style="width: 90px; border-radius: 4px; margin-bottom: 2px; font-weight: 600; background: #0504aa !important; border: 1px solid #0504aa !important; box-shadow: 0 4px 10px rgba(5, 4, 170, 0.2); font-size: 15px;">Apply</button>
+                                    style="width: 90px; border-radius: 4px; margin-bottom: 2px; font-weight: 600; font-size: 15px;">Apply</button>
                             </div>
                         </div>
                     </div>
@@ -1001,17 +1024,17 @@
 
                                         <i class="fa-solid fa-heart shaking add-to-favourite"
                                             data-id="{{ $influencer->id }}" data-fvt="1"
-                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color}}!important; margin-right: -8px; display: {{ $color == 'red' ? 'none' : 'inline-block' }}"></i>
+                                            style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color}}!important; margin-right: -4px; display: {{ $color == 'red' ? 'none' : 'inline-block' }}"></i>
                                         <i class="fa-solid fa-heart shaking remove-favourite"
                                             data-id="{{ $influencer->id }}" data-fvt="1"
-                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -8px; display: {{ $color == 'red' ? 'inline-block' : 'none' }}"></i>
+                                            style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -4px; display: {{ $color == 'red' ? 'inline-block' : 'none' }}"></i>
 
                                         <i class="fas fa-check-circle shaking  add-to-invited"
                                             data-id="{{ $influencer->id }}" data-fvt="2"
-                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color1}}!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'none' : 'inline-block' }}"></i>
+                                            style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:{{$color1}}!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'none' : 'inline-block' }}"></i>
                                         <i class="fas fa-check-circle shaking  remove-invited"
                                             data-id="{{ $influencer->id }}" data-fvt="2"
-                                            style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'inline-block' : 'none' }}"></i>
+                                            style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: {{ $color1 == '#61de2a' ? 'inline-block' : 'none' }}"></i>
 
 
                                     </div>
@@ -1311,6 +1334,20 @@
         }
     });
 
+    function setCardActionState(actionElem, activeClass, inactiveClass) {
+        actionElem.hide();
+        actionElem.parents('.influencerdetail').find(activeClass).show();
+    }
+
+    function restoreCardActionState(actionElem, activeClass, inactiveClass) {
+        actionElem.parents('.influencerdetail').find(activeClass).hide();
+        actionElem.parents('.influencerdetail').find(inactiveClass).show();
+    }
+
+    function isValidToggleResponse(response) {
+        return response.status || response.message === 'Removed';
+    }
+
     $(document).on('click', '.add-to-favourite, .remove-favourite', function (e) {
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -1318,6 +1355,13 @@
         let thisElem = $(this);
         let influencerId = thisElem.data('id');
         let fvt = thisElem.data('fvt');
+        let isAdding = thisElem.hasClass('add-to-favourite');
+
+        if (isAdding) {
+            setCardActionState(thisElem, '.remove-favourite', '.add-to-favourite');
+        } else {
+            setCardActionState(thisElem, '.add-to-favourite', '.remove-favourite');
+        }
 
         $.ajax({
             url: api_url + 'influencers/add-to-favourites',
@@ -1328,20 +1372,23 @@
                 "fvt": fvt
             },
             success: function (response) {
-                if (response.status) {
+                if (isValidToggleResponse(response)) {
                     show_success_message(response.message);
-                    if (thisElem.hasClass('add-to-favourite')) {
-                        thisElem.hide();
-                        thisElem.parents('.influencerdetail').find('.remove-favourite').show();
-                    } else {
-                        thisElem.hide();
-                        thisElem.parents('.influencerdetail').find('.add-to-favourite').show();
-                    }
                 } else {
+                    if (isAdding) {
+                        restoreCardActionState(thisElem, '.remove-favourite', '.add-to-favourite');
+                    } else {
+                        restoreCardActionState(thisElem, '.add-to-favourite', '.remove-favourite');
+                    }
                     show_error_message(response.message);
                 }
             },
             error: function() {
+                if (isAdding) {
+                    restoreCardActionState(thisElem, '.remove-favourite', '.add-to-favourite');
+                } else {
+                    restoreCardActionState(thisElem, '.add-to-favourite', '.remove-favourite');
+                }
                 show_error_message("Error performing action");
             }
         });
@@ -1354,6 +1401,13 @@
         let thisElem = $(this);
         let influencerId = thisElem.data('id');
         let fvt = thisElem.data('fvt');
+        let isAdding = thisElem.hasClass('add-to-invited');
+
+        if (isAdding) {
+            setCardActionState(thisElem, '.remove-invited', '.add-to-invited');
+        } else {
+            setCardActionState(thisElem, '.add-to-invited', '.remove-invited');
+        }
 
         $.ajax({
             url: api_url + 'influencers/add-to-invented',
@@ -1364,23 +1418,36 @@
                 "fvt": fvt
             },
             success: function (response) {
-                if (response.status) {
+                if (isValidToggleResponse(response)) {
                     show_success_message(response.message);
-                    if (thisElem.hasClass('add-to-invited')) {
-                        thisElem.hide();
-                        thisElem.parents('.influencerdetail').find('.remove-invited').show();
-                    } else {
-                        thisElem.hide();
-                        thisElem.parents('.influencerdetail').find('.add-to-invited').show();
-                    }
                 } else {
+                    if (isAdding) {
+                        restoreCardActionState(thisElem, '.remove-invited', '.add-to-invited');
+                    } else {
+                        restoreCardActionState(thisElem, '.add-to-invited', '.remove-invited');
+                    }
                     show_error_message(response.message);
                 }
             },
             error: function() {
+                if (isAdding) {
+                    restoreCardActionState(thisElem, '.remove-invited', '.add-to-invited');
+                } else {
+                    restoreCardActionState(thisElem, '.add-to-invited', '.remove-invited');
+                }
                 show_error_message("Error performing action");
             }
         });
+    });
+
+    $(document).on('click', '.avatar-one .social-wrapper', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        let url = $(this).find('a').attr('href');
+        if (url && url !== '#') {
+            window.open(url, '_blank', 'noopener');
+        }
     });
 
     $(document).on('click', '.avatar-one', function(e) {
@@ -1503,6 +1570,9 @@
     // Function to render influencers on the page
     function renderInfluencer(influencer) {
         let socialHtml = '';
+        let isFavourite = influencer.favourites && influencer.favourites.length > 0;
+        let isInvited = influencer.invented && influencer.invented.length > 0;
+
         if (influencer.social_media_profiles && influencer.social_media_profiles.length > 0) {
             influencer.social_media_profiles.forEach(function(profile) {
                 if (profile.followers && profile.followers !== '0') {
@@ -1557,17 +1627,17 @@
                                             <div style="position:absolute;text-align:right;border:0px solid red;;right: 10px;top:10px;z-index: 99999;">
                                                   <i class="fa-solid fa-heart shaking add-to-favourite"
                                                       data-id="${influencer.id}" data-fvt="1"
-                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${influencer.is_favourite ? 'red' : 'white'}!important; margin-right: -8px; display: ${influencer.is_favourite ? 'none' : 'inline-block'}"></i>
+                                                      style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${isFavourite ? 'red' : 'white'}!important; margin-right: -4px; display: ${isFavourite ? 'none' : 'inline-block'}"></i>
                                                   <i class="fa-solid fa-heart shaking remove-favourite"
                                                       data-id="${influencer.id}" data-fvt="1"
-                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -8px; display: ${influencer.is_favourite ? 'inline-block' : 'none'}"></i>
+                                                      style="padding:5px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:red!important; margin-right: -4px; display: ${isFavourite ? 'inline-block' : 'none'}"></i>
 
                                                   <i class="fas fa-check-circle shaking add-to-invited"
                                                       data-id="${influencer.id}" data-fvt="2"
-                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${influencer.is_invited ? '#61de2a' : 'white'}!important; margin-right: -1px; display: ${influencer.is_invited ? 'none' : 'inline-block'}"></i>
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:${isInvited ? '#61de2a' : 'white'}!important; margin-right: -1px; display: ${isInvited ? 'none' : 'inline-block'}"></i>
                                                   <i class="fas fa-check-circle shaking remove-invited"
                                                       data-id="${influencer.id}" data-fvt="2"
-                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: ${influencer.is_invited ? 'inline-block' : 'none'}"></i>
+                                                      style="padding:10px;border-radius:50%;margin-top: 0px; cursor: pointer; position: relative; z-index: 10; color:#61de2a!important; margin-right: -1px; display: ${isInvited ? 'inline-block' : 'none'}"></i>
 
                     
                                             </div>

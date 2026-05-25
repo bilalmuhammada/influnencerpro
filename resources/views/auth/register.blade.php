@@ -224,7 +224,7 @@
                                                     {{-- <input type="checkbox" name="agreed_to_terms"
                                                         class="agreed_to_terms" style="width: 20px;height: 20px;"> --}}
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    <span style="font-size: 14px;">
+                                                    <span style="font-size: 12px;">
                                                         By registering I agree to the
                                                         <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms
                                                             & Conditions</a> and
@@ -400,7 +400,7 @@
                                                     {{-- <input type="checkbox" name="agreed_to_terms"
                                                         class="agreed_to_terms" style="width: 20px;height: 20px;"> --}}
                                                     {{-- <span class="checkmark"></span> --}}
-                                                    <span style="font-size: 14px;">
+                                                    <span style="font-size: 12px;">
                                                         By registering I agree to the
                                                         <a href="{{ env('BASE_URL') }}/termcondition" target="_blank">Terms
                                                             & Conditions</a> and

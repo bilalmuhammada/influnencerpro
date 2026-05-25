@@ -13,14 +13,23 @@
 
         function translateLanguage() {
             var dropdown = document.getElementById("language_dropdown_nav");
-            var selectedLanguageCode = dropdown.options[dropdown.selectedIndex].value;
-            if (selectedLanguageCode) {
-                var googleTranslateCombo = document.querySelector('.goog-te-combo');
-                if (googleTranslateCombo) {
-                    googleTranslateCombo.value = selectedLanguageCode;
-                    googleTranslateCombo.dispatchEvent(new Event('change'));
-                }
+            if (!dropdown) {
+                return;
             }
+
+            var selectedLanguageCode = dropdown.options[dropdown.selectedIndex].value;
+            if (!selectedLanguageCode) {
+                return;
+            }
+
+            var googleTranslateCombo = document.querySelector('.goog-te-combo');
+            if (googleTranslateCombo) {
+                googleTranslateCombo.value = selectedLanguageCode;
+                googleTranslateCombo.dispatchEvent(new Event('change'));
+                return;
+            }
+
+            setTimeout(translateLanguage, 300);
         }
 
         function formatFlagOption(option) {
@@ -48,21 +57,29 @@
         }
 
         $(document).ready(function() {
-            $('#language_dropdown_nav').select2({
-                width: 'resolve',
-                templateResult: formatFlagOption,
-                templateSelection: formatFlagOption,
-                escapeMarkup: function(markup) {
-                    return markup;
-                }
-            });
+            var languageDropdown = $('#language_dropdown_nav');
+
+            if (languageDropdown.length && $.fn.select2) {
+                languageDropdown.select2({
+                    width: 'resolve',
+                    templateResult: formatFlagOption,
+                    templateSelection: formatFlagOption,
+                    escapeMarkup: function(markup) {
+                        return markup;
+                    }
+                });
+            }
 
             // Persist language visually
             var googtrans = getCookie('googtrans');
-            if (googtrans) {
+            if (googtrans && languageDropdown.length) {
                 var lang = googtrans.split('/').pop();
-                if (lang && $('#language_dropdown_nav').val() !== lang) {
-                    $('#language_dropdown_nav').val(lang).trigger('change.select2');
+                if (lang && languageDropdown.val() !== lang) {
+                    languageDropdown.val(lang);
+
+                    if ($.fn.select2) {
+                        languageDropdown.trigger('change.select2');
+                    }
                 }
             }
 
@@ -86,13 +103,15 @@
 
                 <div class="country" style="margin-left:17px;">
                     <div class="mobile-country desktop-menu-right">
-                        <select class="form-control" name="language_dropdown" style="width:155px;" id="language_dropdown_nav" onchange="translateLanguage()">
-                            @foreach(getlanguge() as $language)
-                            <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}" {{ $language->prefix == 'en' ? 'selected' : '' }}>
-                                {{ $language->name }}
-                            </option>
-                            @endforeach
-                        </select>
+                        @unless(request()->is('notifications*'))
+                            <select class="form-control" name="language_dropdown" style="width:155px;" id="language_dropdown_nav" onchange="translateLanguage()">
+                                @foreach(getlanguge() as $language)
+                                <option value="{{ $language->prefix }}" data-flag-url="{{ asset($language->flag_image_url) }}" {{ $language->prefix == 'en' ? 'selected' : '' }}>
+                                    {{ $language->name }}
+                                </option>
+                                @endforeach
+                            </select>
+                        @endunless
                     </div>
                 </div>
             </div>
@@ -139,7 +158,7 @@
                                             <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
                                                 <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
+                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/user.png') }}"
                                                             alt="sender image"
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>
@@ -192,7 +211,7 @@
                                             <div class="notification-item position-relative" style="background: {{ $message->is_readed ? '#fff' : 'aliceblue' }}; border-radius: 5px; padding: 2px 10px;">
                                                 <div class="d-flex align-items-start" style="gap: 12px; flex: 1;">
                                                     <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/default.png') }}"
+                                                        <img src="{{ $message->sender && $message->sender->image_url ? $message->sender->image_url : asset('assets/img/user.png') }}"
                                                             alt="sender image"
                                                             style="width: 100%; height: 100%; object-fit: cover;">
                                                     </div>

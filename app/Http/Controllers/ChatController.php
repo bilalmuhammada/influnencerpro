@@ -17,23 +17,28 @@ class ChatController extends Controller
 
 
     {
-        if($request->i){
-        Chat::updateOrCreate(
-            ['second_user_id'=>$request->i],
-            ['first_user_id'=>session()->get('User')['id'],'status'=> 'accepted', 'initiated_by'=>session()->get('User')['id']]
-        );
-    }
+        if ($request->i) {
+            Chat::updateOrCreate(
+                [
+                    'first_user_id' => session()->get('User')['id'],
+                    'second_user_id' => $request->i,
+                ],
+                [
+                    'status' => 'accepted',
+                    'initiated_by' => session()->get('User')['id'],
+                ]
+            );
+        }
    
       
         $chats = Chat::with(['messages'])
-            ->where('first_user_id', SiteHelper::getLoginUserId())
-             ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            ->where(function ($query) {
+                $query->where('first_user_id', SiteHelper::getLoginUserId())
+                    ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            });
        
        
             // dd($chats->get(), session()->get('role'));
-        if ($request->i) {
-                $chats = $chats->where('second_user_id', '=', $request->i);
-        } 
         if (session()->get('role') == 'vendor') {
             $chats = $chats->where('status', '=', 'accepted');
         } else {
@@ -73,7 +78,12 @@ class ChatController extends Controller
     }
     public function toggleFavorite(Request $request)
     {
-        $chat = Chat::findOrFail($request->chat_id);
+        $chat = Chat::where('id', $request->chat_id)
+            ->where(function ($query) {
+                $query->where('first_user_id', SiteHelper::getLoginUserId())
+                    ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            })
+            ->firstOrFail();
         $chat->is_favorite = !$chat->is_favorite;
         $chat->save();
 
@@ -83,7 +93,12 @@ class ChatController extends Controller
     public function toggleBlock(Request $request)
     {
         
-        $chat = Chat::findOrFail($request->chat_id);
+        $chat = Chat::where('id', $request->chat_id)
+            ->where(function ($query) {
+                $query->where('first_user_id', SiteHelper::getLoginUserId())
+                    ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            })
+            ->firstOrFail();
         $chat->is_blocked = !$chat->is_blocked;
         $chat->save();
 

@@ -30,7 +30,7 @@
             color: white !important;
             font-size: 18px !important;
             font-weight: 600 !important;
-            padding: 8px 30px !important;
+            padding: 8px 16px !important;
             width: auto;
             border-radius: 4px !important;
             cursor: pointer;
@@ -40,7 +40,7 @@
         }
 
         .reset-btn:hover {
-            background-color: blue !important;
+            background-color: #0504aa !important;
             transform: translateY(-2px);
         }
 

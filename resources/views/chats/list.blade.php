@@ -127,6 +127,10 @@
         background-color: #eeffff !important;
     }
 
+    .chat-title.active-chat-user {
+        background-color: #eeffff !important;
+    }
+
 
     .user-info {
         flex-grow: 1;
@@ -150,6 +154,10 @@
     .emojionearea.emojionearea-inline {
 
         border-radius: 4px !important;
+    }
+
+    .chat-footer .emojionearea .emojionearea-picker {
+        z-index: 1050 !important;
     }
 
     .select2-container {
@@ -308,17 +316,62 @@
         border-radius: 8px !important;
         overflow: hidden;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        height: calc(100vh - 90px);
     }
 
     .chat-cont-left,
     .chat-cont-right {
         background-color: #fff !important;
+        height: 100%;
     }
 
     .chat-header,
     .chat-footer {
         background-color: #fff !important;
         border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    .chat-cont-right {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        position: relative;
+    }
+
+    .chat-cont-right .chat-body-div {
+        display: none !important;
+        flex: 1;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .chat-cont-right .chat-body-div.active-chat {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .chat-cont-right .chat-body {
+        flex: 0 0 auto;
+        height: calc(100% - 136px);
+        min-height: 0;
+    }
+
+    .chat-cont-right .chat-body>.chat-scroll {
+        min-height: 0 !important;
+        max-height: none !important;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .chat-cont-right .chat-footer {
+        bottom: 0;
+        flex: 0 0 auto;
+        left: 0;
+        position: absolute !important;
+        right: 0;
+        z-index: 20;
     }
 </style>
 @section('content')
@@ -381,7 +434,7 @@
                                     @foreach($chats as $chat)
 
                                                                 <a href="javascript:void(0);"
-                                                                    class="media chatActionBlock chat-title @if($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} @endif"
+                                                                    class="media chatActionBlock chat-title @if($login_user_id != $chat->latest_message_sender_id && $chat->unread_count > 0) unread @endif   @if($chat->is_blocked) blocked @endif @if($chat->is_favorite) favorite @endif @if(getSafeValueFromObject($chat->other_user, 'id') == request()->i) chat-with-user-{{ request()->i }} active-chat-user @endif"
                                                                     style="display: flex;"
                                                                     id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}"
                                                                     unread-ids="{{ json_encode($chat->unread_ids) }}" chat-id="{{ $chat->id }}">
@@ -429,7 +482,7 @@
                                                                                     {{ $chat->unread_count }}
                                                                                 </div>
 
-                                                                                <span style="font-size: 12px;">{{
+                                                                                <span style="font-size: 12px; white-space: nowrap;">{{
                                         $chat->latest_message_recieved_time_diff }}</span>
                                                                             </div>
                                                                         </div>
@@ -450,11 +503,17 @@
                         <div class="chat-cont-right">
 
 
+                            @php $activeChatRendered = false; @endphp
                             @foreach($chats as $key => $chat)
+                                                @php
+                                                    $isActiveChat = getSafeValueFromObject($chat->other_user, 'id') == request()->i && !$activeChatRendered;
+                                                    if ($isActiveChat) {
+                                                        $activeChatRendered = true;
+                                                    }
+                                                @endphp
 
-                                                <div class="chat-body-div"
+                                                <div class="chat-body-div {{ $isActiveChat ? 'active-chat' : '' }}"
                                                     id="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}-chat-body-div"
-                                                    style="{{ getSafeValueFromObject($chat->other_user, 'id') == request()->i ? '' : 'display: none' }}"
                                                     chat-id="{{ $chat->id }}"
                                                     user="{{ str_replace(' ', '', getSafeValueFromObject($chat->other_user, 'name')) . '-' . getSafeValueFromObject($chat->other_user, 'id') }}">
                                                     <div class="chat-header">
@@ -465,8 +524,8 @@
                                                         <div class="media d-flex">
                                                             <div class="media-img-wrap theiaStickySidebar gallerys flex-shrink-0">
                                                                 <div class="avatar">
-                                                                    <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}">
-                                                                        <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                    <a href="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png') }}">
+                                                                        <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png') }}"
                                                                             alt="UserImage" width="50px" height="50px"
                                                                             class="avatar-img rounded-circle">
                                                                     </a>
@@ -557,7 +616,7 @@
                                                                                                         <li
                                                                                                             class="media {{ $message->message_position == 'right' ? 'sent' : 'received' }} d-flex">
                                                                                                             <div class="avatar flex-shrink-0">
-                                                                                                                <img src="{{ $message->message_position == 'right' ? session()->get('User')['image_url'] : getSafeValueFromObject($chat->other_user, 'image_url') }}"
+                                                                                                                <img src="{{ $message->message_position == 'right' ? (session()->get('User')['image_url'] ?? asset('assets/img/user.png')) : (getSafeValueFromObject($chat->other_user, 'image_url') ?: asset('assets/img/user.png')) }}"
                                                                                                                     alt="User Image" class="avatar-img rounded-circle">
                                                                                                             </div>
                                                                                                             <div class="media-body flex-grow-1">
@@ -613,13 +672,13 @@
                                                                             Accept
                                                                         </button>
                                                                     </div>
-                                                                    <di_v class="col-md-6 col-12">
+                                                                    <div class="col-md-6 col-12">
                                                                         <button class="btn btn-danger reject" chat-id="{{ $chat->id }}">
                                                                             Reject
                                                                         </button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
                                                     @endif
                                             </div>
                             @endforeach
@@ -635,6 +694,7 @@
     <script type="text/javascript">
 
         var api_url = "{{ env('API_URL') }}";
+        var fallback_avatar = "{{ asset('assets/img/user.png') }}";
         $(document).on('click', '.hiddencheck', function (e) {
             e.stopPropagation();  // Prevent the click from triggering the anchor link
         });
@@ -692,7 +752,7 @@
 
 
             $('.emoji-trigger').emojioneArea({
-                pickerPosition: "bottom",
+                pickerPosition: "top",
                 events: {
                     keyup: function (editor, event) {
                         checkInput();
@@ -752,9 +812,26 @@
                 fixedContentPos: false
             });
 
+            window.showChatPane = function (selector) {
+                var pane = $(selector).first();
+
+                $('.chat-body-div').removeClass('active-chat');
+                $('.chat-title').removeClass('active-chat-user');
+                pane.addClass('active-chat');
+
+                if (pane.length) {
+                    $('#' + pane.attr('user')).addClass('active-chat-user');
+                }
+            };
+
+            if ($('.chat-body-div.active-chat').length > 1) {
+                var firstActivePane = $('.chat-body-div.active-chat').first();
+                $('.chat-body-div').removeClass('active-chat');
+                firstActivePane.addClass('active-chat');
+            }
+
             // alert('ssss');
             @if (request()->i)
-                $('.chat-body-div').css('display', 'none');
                 $('.chat-with-user-{{ request()->i }}').click();
             @endif
             ajax_setup();
@@ -812,7 +889,9 @@
 
 
             // Toggle block
-            $('.block-chat').on('click', function () {
+            $('.block-chat').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
 
 
 
@@ -836,16 +915,19 @@
                     success: function (response) {
 
 
-                        var emojioneArea = $('.emojionearea.emojionearea-inline');
-                        var emojioneEditor = $('.emojionearea-editor');
-                        var report_user = $('.block_user');
+                        var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
+                        var chatPane = $('.chat-body-div[chat-id="' + chatId + '"]');
+                        var emojioneArea = chatPane.find('.emojionearea.emojionearea-inline');
+                        var emojioneEditor = chatPane.find('.emojionearea-editor');
+                        var report_user = chatPane.find('.block_user');
+                        var blockButtons = $('.block-chat[data-chat-id="' + chatId + '"]');
 
 
 
                         if (response.is_blocked) {
                             // show_error_message('User Blocked')
-                            button.find('i').css('color', 'goldenrod');
-                            button.attr('title', 'Unblock');
+                            blockButtons.find('i').css('color', 'goldenrod');
+                            blockButtons.attr('title', 'Unblock');
 
 
                             report_user.text('Unblock User');
@@ -859,9 +941,9 @@
                             }
                         } else {
                             // show_success_message('User Unblocked');
-                            button.find('i').css('color', 'grey');
+                            blockButtons.find('i').css('color', 'grey');
 
-                            button.attr('title', 'Block');
+                            blockButtons.attr('title', 'Block');
                             report_user.text('Block User ');
                             if (emojioneArea.length > 0) {
                                 emojioneArea.css({
@@ -877,7 +959,6 @@
 
                         }
 
-                        var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
                         if (response.is_blocked) {
                             chatItem.addClass('blocked');
                         } else {
@@ -1017,8 +1098,7 @@
             markMessageAsReaded($(this).attr('chat-id'), $(this));
 
             var chat_body_selector = "#" + $(this).attr('id') + "-chat-body-div";
-            $('.chat-body-div').css('display', 'none');
-            $(chat_body_selector).css('display', 'block');
+            showChatPane(chat_body_selector);
         });
 
 
@@ -1121,11 +1201,13 @@
 
 
         function send_msg_body(message, thisElem, using_button = true, parent, chat) {
+            var sender_avatar = "{{ session()->get('User')['image_url'] ?? '' }}" || fallback_avatar;
+            var receiver_avatar = chat && chat.other_user && chat.other_user.image_url ? chat.other_user.image_url : fallback_avatar;
 
             var li = `<li class="media ${message.message_position === 'right' ? 'sent' : 'received'} d-flex">
                                 <div class="avatar flex-shrink-0">
                                     <img
-                                        src="${message.message_position === 'right' ? "{{session()->get('User')['image_url']}}" : chat.other_user.image_url}"
+                                        src="${message.message_position === 'right' ? sender_avatar : receiver_avatar}"
                                         alt="User Image"
                                         class="avatar-img rounded-circle">
                                 </div>

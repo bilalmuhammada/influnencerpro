@@ -155,7 +155,7 @@
                                                                     <div class="table-avatar">
                                                                         <a href="#" class="avatar me-3"> <!-- Increased margin -->
                                                                             <img class="avatar-img rounded-circle"
-                                                                                src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/default.png') }}"
+                                                                                src="{{ getValueById(\App\Models\User::class, $notification->user_id, 'image_url') ?: asset('assets/img/user.png') }}"
                                                                                 alt="User Image">
                                                                         </a>
                                                                         <a href="#" class="notif-desc-text">
@@ -209,7 +209,6 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             $.ajaxSetup({

@@ -488,9 +488,15 @@ class AuthController extends Controller
         $profile_images = $request->file('profile_images');
 
         if ($profile_images && $Influencer) {
-            foreach ($profile_images as $profile_image) {
+            $existingProfileImages = Attachment::where('object', 'User')
+                ->where('object_id', $Influencer->id)
+                ->where('context', 'influencer-profile-image')
+                ->count();
+            $remainingProfileImageSlots = max(0, 20 - $existingProfileImages);
 
-                $profile_image_name = $profile_image->getClientOriginalName() . Auth::id() . '.' . $profile_image->getClientOriginalExtension();
+            foreach (array_slice($profile_images, 0, $remainingProfileImageSlots) as $profile_image) {
+
+                $profile_image_name = uniqid(Auth::id() . '_', true) . '.' . $profile_image->getClientOriginalExtension();
                 $profile_image->move(public_path('uploads/users'), $profile_image_name);
 
                 Attachment::create([
@@ -825,8 +831,19 @@ UserProfessionDetail::updateOrCreate($matchprf_user_id, [
 //   dd($user_id );
         // if ($profile_images && $Influencer) {
             // foreach ($profile_images as $profile_image) {
+                $existingProfileImages = Attachment::where('object', 'User')
+                    ->where('object_id', $Influencer->id)
+                    ->where('context', 'influencer-profile-image')
+                    ->count();
 
-                $profile_image_name = $profile_image->getClientOriginalName() .$user_id. '.' . $profile_image->getClientOriginalExtension();
+                if ($existingProfileImages >= 20) {
+                    return response()->json([
+                        'status' => false,
+                        'message' => 'Maximum 20 images allowed'
+                    ], 422);
+                }
+
+                $profile_image_name = uniqid($user_id . '_', true) . '.' . $profile_image->getClientOriginalExtension();
                 $profile_image->move(public_path('uploads/users'), $profile_image_name);
 
                 Attachment::create([

@@ -168,6 +168,56 @@
         animation: shake 2.5s linear infinite;
     }
 
+    .share-link {
+        position: relative;
+    }
+
+    .share-copy-tooltip {
+        position: absolute;
+        left: 50%;
+        top: -18px;
+        transform: translateX(-50%);
+        display: none;
+        color: #dc3545;
+        font-size: 10px;
+        font-weight: 600;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    .pdf-export-copy {
+        background: #fff;
+        left: -99999px;
+        position: fixed;
+        top: 0;
+        width: 1120px;
+        z-index: -1;
+    }
+
+    .pdf-export-copy .container {
+        max-width: 1120px !important;
+        width: 1120px !important;
+    }
+
+    .pdf-export-copy .card-header__ img.card-title {
+        height: 208px !important;
+        object-fit: cover !important;
+        width: 100% !important;
+    }
+
+    .pdf-export-copy .gallerys img {
+        height: 200px !important;
+        object-fit: cover !important;
+        width: 100% !important;
+    }
+
+    .pdf-export-copy .image-actions,
+    .pdf-export-copy .share-link,
+    .pdf-export-copy .downloadButton,
+    .pdf-export-copy .open-chat {
+        display: none !important;
+    }
+
     @keyframes shake {
         0% {
             transform: translateX(0);
@@ -662,6 +712,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                                 {{ $influencer ? $influencer->full_name : ''}}
                                 <a href="javascript:void(0)" style="margin: 9px 10px 0px 18px;" class="share-link"
                                     onclick="shareLink()">
+                                    <span class="share-copy-tooltip">Saved to Clipboard</span>
                                     <img src="{{ asset('assets/img/icons/share.png') }}" alt="" class="shaking"
                                         width="30px">
                                 </a>
@@ -1067,34 +1118,28 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
             var url = $(this).data('url');
             var imageElement = $(this).closest('.gallerys');
-            if (confirm('Are you sure you want to delete this image?')) {
-                var imageId = $(this).data('image-id');
-                var $this = $(this);
+            var imageId = $(this).data('image-id');
+            var $this = $(this);
 
-                $.ajax({
-                    url: url,
-                    type: 'DELETE',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            imageElement.remove();
-                            show_success_message(response.message);
-                        } else {
-                            show_error_message(response.message);
-                        }
-                        // On success, remove the image element or show a success message
-                        // $this.closest('.gallerys').remove();
-                        // t('Image deleted successfully.');
-
-                    },
-                    error: function (xhr) {
-                        // Handle errors
-                        console.log('An error occurred while deleting the image.');
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    if (response.success) {
+                        imageElement.remove();
+                        show_success_message(response.message);
+                    } else {
+                        show_error_message(response.message);
                     }
-                });
-            }
+
+                },
+                error: function (xhr) {
+                    console.log('An error occurred while deleting the image.');
+                }
+            });
         });
     });
 
@@ -1168,7 +1213,6 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
 
 
-        console.log('klsdf')
         // Create a dummy input element
         var dummyInput = document.createElement('input');
         // Set its value to the current URL
@@ -1182,8 +1226,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
         // Remove the input element
         document.body.removeChild(dummyInput);
 
-        // Optionally, you can provide user feedback (e.g., show a tooltip)
-        show_success_message('URL Copied');
+        $('.share-copy-tooltip').stop(true, true).fadeIn(120).delay(1200).fadeOut(200);
     }
 </script>
 @endsection
