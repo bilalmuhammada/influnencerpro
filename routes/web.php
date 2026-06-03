@@ -29,13 +29,14 @@ Route::post('/chat/block', [\App\Http\Controllers\ChatController::class, 'toggle
 
 Route::get('/register', [UserAuthController::class, 'register']);
 Route::get('/login', [UserAuthController::class, 'login'])->name('login');
-Route::get('/subscriptions', [\App\Http\Controllers\GeneralController::class, 'subscription']);
-Route::get('/influncersubscriptions', [\App\Http\Controllers\GeneralController::class, 'influncersubscription']);
+$subscriptionsEnabled = false;
+Route::get('/subscriptions', $subscriptionsEnabled ? [\App\Http\Controllers\GeneralController::class, 'subscription'] : fn () => abort(404));
+Route::get('/influncersubscriptions', $subscriptionsEnabled ? [\App\Http\Controllers\GeneralController::class, 'influncersubscription'] : fn () => abort(404));
 
 
-Route::get('/checkout',  [\App\Http\Controllers\GeneralController::class, 'checkout'])->name('checkout');
-Route::post('/session',  [\App\Http\Controllers\GeneralController::class, 'session'])->name('session');
-Route::get('/success',  [\App\Http\Controllers\GeneralController::class, 'success'])->name('success');
+Route::get('/checkout', $subscriptionsEnabled ? [\App\Http\Controllers\GeneralController::class, 'checkout'] : fn () => abort(404))->name('checkout');
+Route::post('/session', $subscriptionsEnabled ? [\App\Http\Controllers\GeneralController::class, 'session'] : fn () => abort(404))->name('session');
+Route::get('/success', $subscriptionsEnabled ? [\App\Http\Controllers\GeneralController::class, 'success'] : fn () => abort(404))->name('success');
 
 Route::get('/forgot-password', [UserAuthController::class, 'forgotPassword']);
 Route::get('/reset/{reset_password_token}', [UserAuthController::class, 'reset']);

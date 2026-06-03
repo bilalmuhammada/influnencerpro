@@ -558,6 +558,16 @@
 @section('page_scripts')
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script>
+        $(document).on('click', '.avatar-one .social-wrapper', function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            let url = $(this).closest('.avatar-one').data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+
         $(document).on('click', '.avatar-one', function(e) {
             if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invented, .remove-invented, .social-wrapper').length) {
                 return;

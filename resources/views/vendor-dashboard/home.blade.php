@@ -1444,9 +1444,9 @@
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        let url = $(this).find('a').attr('href');
-        if (url && url !== '#') {
-            window.open(url, '_blank', 'noopener');
+        let url = $(this).closest('.avatar-one').data('url');
+        if (url) {
+            window.location.href = url;
         }
     });
 

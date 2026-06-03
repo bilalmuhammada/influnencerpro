@@ -550,7 +550,7 @@
                         <div class="feature-content course-count text-center">
                             <h6 class="fw-bold">Demo Video</h6>
                             <div class="play-btn mt-3 text-center">
-                                <a class="popup-video" href="#">
+                                <a class="popup-video" href="javascript:void(0);">
                                     <i class="fas fa-play text-primary"></i>
                                 </a>
                             </div>
@@ -613,7 +613,7 @@
                         <div class="feature-content course-count text-center">
                             <h6 class="fw-bold">Demo Video</h6>
                             <div class="play-btn mt-3 text-center">
-                                <a class="popup-video" href="#">
+                                <a class="popup-video" href="javascript:void(0);">
                                     <i class="fas fa-play text-primary"></i>
                                 </a>
                             </div>

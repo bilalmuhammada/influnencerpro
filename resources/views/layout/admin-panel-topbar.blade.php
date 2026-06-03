@@ -249,18 +249,21 @@
                                     </li>
                                 @endif
 
-                                <li class="has-submenu {{ request()->is('subscriptions') ? 'active' : '' }}">
-                                    <a href="#" style="color: #88878792">Subscription<i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu6" style="margin-left: 0px;">
-                                        @if(session()->get('role') == 'influencer')
-                                            <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
-                                        @else
-                                            <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
-                                        @endif
-                                        <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions
-                                                History</a></li>
-                                    </ul>
-                                </li>
+                                @php $subscriptionsEnabled = false; @endphp
+                                @if($subscriptionsEnabled)
+                                    <li class="has-submenu {{ request()->is('subscriptions') ? 'active' : '' }}">
+                                        <a href="#" style="color: #88878792">Subscription<i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu6" style="margin-left: 0px;">
+                                            @if(session()->get('role') == 'influencer')
+                                                <li><a href="{{ env('BASE_URL') . '/influncersubscriptions' }}">Subscriptions</a></li>
+                                            @else
+                                                <li><a href="{{ env('BASE_URL') . '/subscriptions' }}">Subscriptions</a></li>
+                                            @endif
+                                            <li><a href="{{ env('BASE_URL') . '/reports/transaction-history' }}">Transactions
+                                                    History</a></li>
+                                        </ul>
+                                    </li>
+                                @endif
 
                                 <li class="nav-item dropdown {{ request()->is('chats') ? 'active' : '' }}">
                                     @php

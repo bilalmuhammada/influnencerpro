@@ -549,6 +549,16 @@
 
 @section('page_scripts')
     <script>
+        $(document).on('click', '.avatar-one .social-wrapper', function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            let url = $(this).closest('.avatar-one').data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+
         $(document).on('click', '.avatar-one', function(e) {
             if ($(e.target).closest('.add-to-favourite, .remove-favourite, .add-to-invented, .remove-invented, .social-wrapper').length) {
                 return;
