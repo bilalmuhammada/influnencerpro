@@ -357,7 +357,8 @@
 
                                                             <div class="notifications-wrapper"
                                                                 style="border-bottom: 1px solid #f0f0f0; {{ $notification->read_at ? '' : 'background-color: aliceblue;' }}"
-                                                                data-notification-id="{{ $notification->id }}">
+                                                                data-notification-id="{{ $notification->id }}"
+                                                                data-is-unread="{{ $notification->read_at ? '0' : '1' }}">
                                                                 <div class="notification-item" style="">
                                                                     <div class="d-flex align-items-start">
                                                                         <!-- Avatar -->
@@ -506,11 +507,15 @@
             success: function (response) {
                 if (response.success) {
                     const wrapper = $(el).closest('.notifications-wrapper');
-                    wrapper.css('background-color', 'white');
+                    const wasUnread = wrapper.data('is-unread') === 1 || wrapper.data('is-unread') === '1';
+
+                    wrapper.css('background-color', 'white').data('is-unread', '0');
                     $(el).remove(); // Remove "Mark as Read" link
 
                     // Update counts
-                    updateNotificationCounts(-1);
+                    if (wasUnread) {
+                        updateNotificationCounts(-1);
+                    }
                 }
             }
         });
@@ -526,7 +531,7 @@
             success: function (response) {
                 if (response.success) {
                     const wrapper = $(el).closest('.notifications-wrapper');
-                    const wasUnread = wrapper.css('background-color') === 'rgb(240, 248, 255)' || wrapper.attr('style').includes('aliceblue');
+                    const wasUnread = wrapper.data('is-unread') === 1 || wrapper.data('is-unread') === '1';
                     wrapper.remove();
 
                     if (wasUnread) {

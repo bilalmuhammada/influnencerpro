@@ -219,7 +219,7 @@
                                                 </div> --}}
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
-                                            <div class="dont-have">
+                                            <div class="dont-have" style="margin-top: 5px;">
                                                 <span class="custom_check">
                                                     {{-- <input type="checkbox" name="agreed_to_terms"
                                                         class="agreed_to_terms" style="width: 20px;height: 20px;"> --}}
@@ -244,7 +244,7 @@
                                                     Register
                                                 </button>
                                             </div>
-                                            <div class="row" style="margin-top: 20px;">
+                                            <div class="row" style="margin-top: 5px;">
                                                 <div
                                                     class="col-12 d-flex justify-content-end align-items-center dont-have">
                                                     <div class="ms-2">Already on
@@ -395,7 +395,7 @@
                                                 </div> --}}
                                                 <label class="focus-label">Confirm Password</label>
                                             </div>
-                                            <div class="dont-have">
+                                            <div class="dont-have" style="margin-top: 5px;">
                                                 <span class="custom_check">
                                                     {{-- <input type="checkbox" name="agreed_to_terms"
                                                         class="agreed_to_terms" style="width: 20px;height: 20px;"> --}}
@@ -424,7 +424,7 @@
                                             </div>
 
 
-                                            <div class="row" style="margin-top: 20px;">
+                                            <div class="row" style="margin-top: 5px;">
                                                 <div
                                                     class="col-12 d-flex justify-content-end align-items-center dont-have">
                                                     <div class="ms-2">Already on

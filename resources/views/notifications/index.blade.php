@@ -150,7 +150,7 @@
                             </thead>
                             <tbody>
                                 @forelse($notifications as $notification)
-                                                            <tr id="notif-row-{{ $notification->id }}" style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
+                                                            <tr id="notif-row-{{ $notification->id }}" data-is-unread="{{ $notification->read_at ? '0' : '1' }}" style="{{ $notification->read_at ? '' : 'background-color: #eeffff;' }}">
                                                                 <td>
                                                                     <div class="table-avatar">
                                                                         <a href="#" class="avatar me-3"> <!-- Increased margin -->
@@ -227,8 +227,14 @@
                     type: 'POST',
                     success: function(response) {
                         if (response.success) {
-                            $('#notif-row-' + id).css('background-color', '');
+                            const row = $('#notif-row-' + id);
+                            const wasUnread = row.data('is-unread') === 1 || row.data('is-unread') === '1';
+
+                            row.css('background-color', '').data('is-unread', '0');
                             btn.remove();
+                            if (wasUnread) {
+                                updateNotificationCounts(-1);
+                            }
                         }
                     }
                 });
@@ -245,14 +251,35 @@
                         type: 'POST',
                         success: function(response) {
                             if (response.success) {
-                                $('#notif-row-' + id).fadeOut(300, function() {
+                                const row = $('#notif-row-' + id);
+                                const wasUnread = row.data('is-unread') === 1 || row.data('is-unread') === '1';
+
+                                row.fadeOut(300, function() {
                                     $(this).remove();
                                 });
+                                if (wasUnread) {
+                                    updateNotificationCounts(-1);
+                                }
                             }
                         }
                     });
                 }
             });
+
+            function updateNotificationCounts(change) {
+                const badge = $('.notification-badge-count');
+                const unreadLabel = $('.unread-count');
+
+                let currentCount = parseInt(unreadLabel.text()) || parseInt(badge.text()) || 0;
+                let newCount = Math.max(currentCount + change, 0);
+
+                unreadLabel.text(newCount);
+                if (newCount > 0) {
+                    badge.text(newCount);
+                } else {
+                    badge.remove();
+                }
+            }
         });
     </script>
 @endsection
