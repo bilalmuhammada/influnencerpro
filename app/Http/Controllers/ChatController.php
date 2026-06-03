@@ -148,7 +148,19 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request)
     {
-        // dd($request->all());
+        $chat = Chat::where('id', $request->chat_id)
+            ->where(function ($query) {
+                $query->where('first_user_id', SiteHelper::getLoginUserId())
+                    ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            })
+            ->first();
+
+        if (!$chat || $chat->is_blocked) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Chat Blocked by User',
+            ], 403);
+        }
 
         // if( $request->message !='null'){
             $Message = Message::create([

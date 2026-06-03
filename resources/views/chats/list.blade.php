@@ -373,6 +373,32 @@
         right: 0;
         z-index: 20;
     }
+
+    .chat-footer.chat-blocked .emojionearea,
+    .chat-footer.chat-blocked .input-msg-send {
+        background: #fdeaea !important;
+        cursor: not-allowed !important;
+        pointer-events: none !important;
+    }
+
+    .chat-footer.chat-blocked .msg-send-btn {
+        pointer-events: none !important;
+        opacity: 0.55;
+    }
+
+    .chat-blocked-note {
+        color: red;
+        display: none;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 0 8px;
+        text-align: center;
+    }
+
+    .chat-footer.chat-blocked .chat-blocked-note {
+        display: block;
+    }
 </style>
 @section('content')
     <div class="content-chat"
@@ -589,7 +615,7 @@
                                                             <!-- Dropdown menu options -->
                                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
                                                                 <a class="dropdown-item block-chat  block_user " style="font-size: 12px;"
-                                                                    data-chat-id="{{ $chat->id }}" href="#">Block User</a>
+                                                                    data-chat-id="{{ $chat->id }}" href="#">{{ $chat->is_blocked ? 'Unblock User' : 'Block User' }}</a>
                                                                 <a class="dropdown-item report-user-btn" style="font-size: 12px;"
                                                                     data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
                                                                     @if($existingReport)
@@ -640,7 +666,8 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <div class="chat-footer">
+                                                        <div class="chat-footer {{ $chat->is_blocked ? 'chat-blocked' : '' }}">
+                                                            <div class="chat-blocked-note">Chat Blocked by User</div>
                                                             <div class="input-group" style="margin-left: 17px;">
                                                                 {{-- <div class="avatar" style="padding:4px;">
                                                                     <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
@@ -651,6 +678,7 @@
                                                                         id="emoji-trigger"
                                                                         data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                                         data-chat-id="{{ $chat->id }}" data-chat-block="{{$chat->is_blocked}}"
+                                                                        {{ $chat->is_blocked ? 'disabled' : '' }}
                                                                         style="border-radius: 4px; width: 100%; padding-right: 50px;">
 
                                                                 </div>
@@ -658,6 +686,7 @@
                                                                 <button type="button" id="msg-send-btn" class="btn btn-primary msg-send-btn"
                                                                     data-user-id="{{ getSafeValueFromObject($chat->other_user, 'id') }}"
                                                                     data-chat-id="{{ $chat->id }}"
+                                                                    {{ $chat->is_blocked ? 'disabled' : '' }}
                                                                     style="position: absolute; right: 41px; top: 9px; background-color: transparent; border: none;">
                                                                     <i class="fa fa-arrow-circle-up mgn-send-color" aria-hidden="true"
                                                                         style="font-size: 30px; background-color: none;"></i>
@@ -797,6 +826,9 @@
                 }
             }
             $('.msg-send-btn').prop('disabled', true);
+            $('.chat-footer.chat-blocked').each(function () {
+                setChatFooterBlocked($(this), true);
+            });
             $(document).on('click', '.msg-send-btn', function (e) {
                 $('.msg-send-btn').prop('disabled', true);
             });
@@ -917,10 +949,9 @@
 
                         var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
                         var chatPane = $('.chat-body-div[chat-id="' + chatId + '"]');
-                        var emojioneArea = chatPane.find('.emojionearea.emojionearea-inline');
-                        var emojioneEditor = chatPane.find('.emojionearea-editor');
                         var report_user = chatPane.find('.block_user');
                         var blockButtons = $('.block-chat[data-chat-id="' + chatId + '"]');
+                        var chatFooter = chatPane.find('.chat-footer');
 
 
 
@@ -931,31 +962,14 @@
 
 
                             report_user.text('Unblock User');
-                            if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '#fdeaea',
-                                    'cursor': 'not-allowed',
-                                    'pointer-events': 'none'
-                                });
-                                emojioneEditor.attr('contenteditable', 'false');
-                            }
+                            setChatFooterBlocked(chatFooter, true);
                         } else {
                             // show_success_message('User Unblocked');
                             blockButtons.find('i').css('color', 'grey');
 
                             blockButtons.attr('title', 'Block');
                             report_user.text('Block User ');
-                            if (emojioneArea.length > 0) {
-                                emojioneArea.css({
-                                    'background': '',
-                                    'cursor': '',
-                                    'pointer-events': ''
-                                });
-
-
-                                emojioneEditor.attr('contenteditable', 'true');
-                            }
-
+                            setChatFooterBlocked(chatFooter, false);
 
                         }
 
@@ -1040,6 +1054,23 @@
             });
         }
 
+        function setChatFooterBlocked(chatFooter, isBlocked) {
+            var footer = $(chatFooter);
+            var input = footer.find('.input-msg-send');
+            var button = footer.find('.msg-send-btn');
+            var editor = footer.find('.emojionearea-editor');
+
+            footer.toggleClass('chat-blocked', isBlocked);
+            input.prop('disabled', isBlocked).attr('data-chat-block', isBlocked ? '1' : '0');
+            button.prop('disabled', isBlocked);
+            editor.attr('contenteditable', isBlocked ? 'false' : 'true');
+
+            if (isBlocked) {
+                editor.text('');
+                input.val('');
+            }
+        }
+
         //accept or reject chat request start
         $(document).on('click', '.accept', function (e) {
             e.preventDefault();
@@ -1112,6 +1143,11 @@
         $(document).on('keydown', '.emojionearea-editor', function (e) {
             if (e.keyCode === 13) {
                 e.preventDefault(); // stop newline
+                let chatFooter = $(this).closest('.chat-footer');
+
+                if (chatFooter.hasClass('chat-blocked')) {
+                    return;
+                }
 
                 // Get text + emojis
                 let text = '';
@@ -1126,7 +1162,6 @@
 
                 // now shows both text and emojis
 
-                let chatFooter = $(this).closest('.chat-footer');
                 let message = chatFooter.find('.input-msg-send');
                 let btn = chatFooter.find('.msg-send-btn');
 
@@ -1143,6 +1178,11 @@
 
 
         function send_new_message(message, thisElem) {
+            var chatFooter = $(thisElem).closest('.chat-footer');
+            if (chatFooter.hasClass('chat-blocked') || $(message).attr('data-chat-block') === '1') {
+                return;
+            }
+
             // alert($(message).val());
             $.ajax({
                 url: api_url + 'chats/send-message',
@@ -1162,6 +1202,9 @@
                     // $(selector).find('.unread-count').css('display', 'none');
                 },
                 error: function (response) {
+                    if (response.status === 403) {
+                        setChatFooterBlocked(chatFooter, true);
+                    }
                     console.log('error');
                 }
             });
