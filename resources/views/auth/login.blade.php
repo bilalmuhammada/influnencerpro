@@ -9,8 +9,14 @@
 
 
 
-        input:focus {
+        .form-focus .form-control {
+            transition: border-color 0.2s ease;
+        }
+
+        .form-focus .form-control:hover,
+        .form-focus .form-control:focus {
             border: 1px solid blue !important;
+            box-shadow: none !important;
         }
 
         ::-webkit-scrollbar {
@@ -80,7 +86,7 @@
                                         </div>
                                         <label class="focus-label">Password</label>
                                     </div>
-                                    <div class="form-group" style="margin-top: 15px;">
+                                    <div class="form-group" style="margin-top: 5px;">
                                         <label class="custom_check" style="margin-left: 20px;">
                                             <input type="checkbox" name="rem_password"
                                                 style="margin-left: -71px !important;">

@@ -92,17 +92,27 @@ class ChatController extends Controller
 
     public function toggleBlock(Request $request)
     {
-        
+        $loginUserId = SiteHelper::getLoginUserId();
+
         $chat = Chat::where('id', $request->chat_id)
-            ->where(function ($query) {
-                $query->where('first_user_id', SiteHelper::getLoginUserId())
-                    ->orWhere('second_user_id', SiteHelper::getLoginUserId());
+            ->where(function ($query) use ($loginUserId) {
+                $query->where('first_user_id', $loginUserId)
+                    ->orWhere('second_user_id', $loginUserId);
             })
             ->firstOrFail();
+
         $chat->is_blocked = !$chat->is_blocked;
+        $chat->blocked_by = $chat->is_blocked ? $loginUserId : null;
         $chat->save();
 
-        return response()->json(['is_blocked' => $chat->is_blocked]);
+        $otherUser = $chat->other_user;
+
+        return response()->json([
+            'is_blocked' => $chat->is_blocked,
+            'blocked_message' => $chat->is_blocked
+                ? 'You blocked ' . getSafeValueFromObject($otherUser, 'name')
+                : null,
+        ]);
     }
 
 

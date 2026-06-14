@@ -389,10 +389,10 @@
     .chat-blocked-note {
         color: red;
         display: none;
-        font-size: 15px;
+        font-size: 10px;
         font-weight: 700;
         line-height: 1;
-        margin: 0 0 8px;
+        margin: 6px 0 3px;
         text-align: center;
     }
 
@@ -667,7 +667,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="chat-footer {{ $chat->is_blocked ? 'chat-blocked' : '' }}">
-                                                            <div class="chat-blocked-note">Chat Blocked by User</div>
+                                                            <div class="chat-blocked-note">
+                                                                @if($chat->is_blocked)
+                                                                    @if($chat->blocked_by == $login_user_id)
+                                                                        You blocked {{ getSafeValueFromObject($chat->other_user, 'name') }}
+                                                                    @else
+                                                                        Chat blocked by {{ getSafeValueFromObject($chat->other_user, 'name') }}
+                                                                    @endif
+                                                                @endif
+                                                            </div>
                                                             <div class="input-group" style="margin-left: 17px;">
                                                                 {{-- <div class="avatar" style="padding:4px;">
                                                                     <img src="{{ getSafeValueFromObject($chat->other_user, 'image_url') }}"
@@ -962,7 +970,7 @@
 
 
                             report_user.text('Unblock User');
-                            setChatFooterBlocked(chatFooter, true);
+                            setChatFooterBlocked(chatFooter, true, response.blocked_message);
                         } else {
                             // show_success_message('User Unblocked');
                             blockButtons.find('i').css('color', 'grey');
@@ -1054,11 +1062,12 @@
             });
         }
 
-        function setChatFooterBlocked(chatFooter, isBlocked) {
+        function setChatFooterBlocked(chatFooter, isBlocked, blockedMessage) {
             var footer = $(chatFooter);
             var input = footer.find('.input-msg-send');
             var button = footer.find('.msg-send-btn');
             var editor = footer.find('.emojionearea-editor');
+            var note = footer.find('.chat-blocked-note');
 
             footer.toggleClass('chat-blocked', isBlocked);
             input.prop('disabled', isBlocked).attr('data-chat-block', isBlocked ? '1' : '0');
@@ -1066,8 +1075,13 @@
             editor.attr('contenteditable', isBlocked ? 'false' : 'true');
 
             if (isBlocked) {
+                if (blockedMessage) {
+                    note.text(blockedMessage);
+                }
                 editor.text('');
                 input.val('');
+            } else {
+                note.text('');
             }
         }
 

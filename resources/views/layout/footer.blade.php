@@ -34,6 +34,56 @@
     .changeColor:hover {
         color: blue !important;
     }
+
+    .coming-soon-trigger {
+        cursor: pointer;
+    }
+
+    .coming-soon-popup {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, .55);
+    }
+
+    .coming-soon-popup.is-open {
+        display: flex;
+    }
+
+    .coming-soon-popup-content {
+        position: relative;
+        width: 100%;
+        max-width: 340px;
+        padding: 55px 25px 45px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+        text-align: center;
+    }
+
+    .coming-soon-popup-content h3 {
+        margin: 0;
+        color: #6557d9;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .coming-soon-popup-close {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        padding: 4px 9px;
+        color: #333;
+        font-size: 26px;
+        line-height: 1;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
 </style>
 <footer class="footer" style="border:0px solid red;">
     <div class="footer-container mb-30" style="margin-top: 50px;">
@@ -46,19 +96,20 @@
                     </h6>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -30px;">
-                    <img src="{{ asset('assets/iphone.png') }}" alt=" " class="" height="80px" width="100px">
+                    <img src="{{ asset('assets/iphone.png') }}" alt="InfluencerPro mobile app"
+                        class="coming-soon-trigger" height="80px" width="100px">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt=" " class="shaking"
-                        height="45px" style="margin-top:20px;">
+                    <img src="{{ asset('assets/img/icon/icons/google-play-stores.png') }}" alt="Get it on Google Play"
+                        class="shaking coming-soon-trigger" height="45px" style="margin-top:20px;">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px;">
-                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt=" " class="shaking"
-                        height="45px" style="margin-top:20px; margin-left: 0rem;">
+                    <img src="{{ asset('assets/img/icon/icons/apple-store.png') }}" alt="Download on the App Store"
+                        class="shaking coming-soon-trigger" height="45px" style="margin-top:20px; margin-left: 0rem;">
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" style="margin-top: -20px; ">
-                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt=" " class="shaking"
-                        height="45px" style="margin-top:20px; margin-left: 0rem;">
+                    <img src="{{ asset('assets/img/icon/icons/huawei-app-gallery.png') }}" alt="Explore it on AppGallery"
+                        class="shaking coming-soon-trigger" height="45px" style="margin-top:20px; margin-left: 0rem;">
                 </div>
             </div>
         </div>
@@ -203,7 +254,50 @@
     </div>
 
 </footer>
+
+<div class="coming-soon-popup" id="comingSoonPopup" role="dialog" aria-modal="true" aria-labelledby="comingSoonTitle"
+    aria-hidden="true">
+    <div class="coming-soon-popup-content">
+        <button type="button" class="coming-soon-popup-close" aria-label="Close">&times;</button>
+        <h3 id="comingSoonTitle">Coming Soon</h3>
+    </div>
+</div>
+
 <script>
+    (function () {
+        var popup = document.getElementById('comingSoonPopup');
+        var closeButton = popup.querySelector('.coming-soon-popup-close');
+
+        function openComingSoonPopup() {
+            popup.classList.add('is-open');
+            popup.setAttribute('aria-hidden', 'false');
+            closeButton.focus();
+        }
+
+        function closeComingSoonPopup() {
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+        }
+
+        document.querySelectorAll('.coming-soon-trigger').forEach(function (trigger) {
+            trigger.addEventListener('click', openComingSoonPopup);
+        });
+
+        closeButton.addEventListener('click', closeComingSoonPopup);
+
+        popup.addEventListener('click', function (event) {
+            if (event.target === popup) {
+                closeComingSoonPopup();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && popup.classList.contains('is-open')) {
+                closeComingSoonPopup();
+            }
+        });
+    })();
+
     // $('.popup-video').magnificPopup({
     //     type: 'iframe'
     // });

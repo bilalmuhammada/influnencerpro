@@ -14,8 +14,14 @@
             color: blue !important;
         }
 
-        input:focus {
+        .form-focus .form-control {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-focus .form-control:hover,
+        .form-focus .form-control:focus {
             border: 1px solid blue !important;
+            box-shadow: none !important;
         }
 
         #select2-country_dropdown-container {

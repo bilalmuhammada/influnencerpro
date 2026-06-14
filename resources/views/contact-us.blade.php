@@ -4,9 +4,18 @@
         .invalid-feedback {
             margin-top: 0;
         }
-        .floating:focus {
-    border: 1px solid blue !important;
-}
+        .form-focus .floating,
+        .form-focus .form-control-file {
+            transition: border-color 0.2s ease;
+        }
+
+        .form-focus .floating:hover,
+        .form-focus .floating:focus,
+        .form-focus .form-control-file:hover,
+        .form-focus .form-control-file:focus {
+            border: 1px solid blue !important;
+            box-shadow: none !important;
+        }
 .lobibox-notify.notify-mini .lobibox-notify-body {
     margin: 7px 1px 0px 0px !important;
 }
@@ -122,7 +131,7 @@ input[type="file"] {
                                                                                
                                             <option selected hidden disabled value="">&nbsp;&nbsp;</option>
                                             <option value="brands">Brand</option>
-                                            <option value="influncer">Influncer</option>
+                                            <option value="influncer">Influencer</option>
                                           </select>
                                           <label class="focus-label">I'm a/an  </label>
                                         </div>
@@ -136,7 +145,7 @@ input[type="file"] {
                                                   <option value="suggestion">Suggestion</option>
                                                   <option value="complain">Complain</option>
                                                   <option value="reportbrand">Report a Brand</option>
-                                                  <option value="reportinfluncer">Report an Influncer</option>
+                                                  <option value="reportinfluncer">Report an Influencer</option>
                                                 </select>
                                                 <label class="focus-label">Reason </label>
                                         </div>

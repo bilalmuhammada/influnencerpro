@@ -36,6 +36,15 @@
             color: goldenrod;
         }
 
+        .popup-video .fa-play {
+            transition: color 0.2s ease;
+        }
+
+        .popup-video:hover .fa-play,
+        .popup-video:focus .fa-play {
+            color: goldenrod !important;
+        }
+
         .changeColor {
             color: goldenrod;
         }

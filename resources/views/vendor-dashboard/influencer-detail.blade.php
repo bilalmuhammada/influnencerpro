@@ -179,10 +179,10 @@
     .share-copy-tooltip {
         position: absolute;
         left: 50%;
-        top: -8px;
+        top: -16px;
         transform: translateX(-50%);
         display: none;
-        color: red;
+        color: #38bdf8;
         font-size: 10px;
         font-weight: 600;
         white-space: nowrap;
