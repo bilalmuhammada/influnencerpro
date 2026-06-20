@@ -110,7 +110,7 @@ class ChatController extends Controller
         return response()->json([
             'is_blocked' => $chat->is_blocked,
             'blocked_message' => $chat->is_blocked
-                ? 'You blocked ' . getSafeValueFromObject($otherUser, 'name')
+                ? 'Chat blocked by You'
                 : null,
         ]);
     }

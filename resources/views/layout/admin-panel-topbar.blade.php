@@ -12,6 +12,10 @@
             top: 5px !important;
         }
 
+        .badge-premium-green {
+            margin-left: 0px !important;
+        }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }

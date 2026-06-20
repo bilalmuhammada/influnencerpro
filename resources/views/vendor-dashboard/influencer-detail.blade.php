@@ -14,6 +14,10 @@
 
     }
 
+    .badge-skill {
+        color: #000 !important;
+    }
+
     .linespace {
         line-height: 1.25;
 
@@ -85,6 +89,11 @@
     .social-wrapper:hover .followers-count {
         color: goldenrod;
         /* Change to your desired hover color */
+    }
+
+    .social-wrapper a {
+        display: block;
+        text-decoration: none;
     }
 
 
@@ -182,7 +191,7 @@
         top: -16px;
         transform: translateX(-50%);
         display: none;
-        color: #38bdf8;
+        color: blue;
         font-size: 10px;
         font-weight: 600;
         white-space: nowrap;
@@ -736,10 +745,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/insta.png') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($instagram ? $instagram->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($instagram ? $instagram->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -752,10 +761,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/twitter.png') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($twitter ? $twitter->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($instagram ? $instagram->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -768,10 +777,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/youtube.svg') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($youtube ? $youtube->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($youtube ? $youtube->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -783,10 +792,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/tiktok.png') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($tiktok ? $tiktok->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($tiktok ? $tiktok->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -798,10 +807,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/fb.png') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($facebook ? $facebook->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($facebook ? $facebook->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -814,10 +823,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/snapchat.png') }}" class="shaking" alt=""
                                         width="33px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($snapchat ? $snapchat->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($snapchat ? $snapchat->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -831,10 +840,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/pinterest.png') }}" class="shaking"
                                         alt="" width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($pinterestProfiles ? $pinterestProfiles->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($pinterestProfiles ? $pinterestProfiles->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp; &nbsp;
                         @endif
@@ -846,10 +855,10 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                     <img src="{{ asset('assets/img/social-icon/web.png') }}" class="shaking" alt=""
                                         width="30px">
+                                    <div class="text-center font-change followers-count">
+                                        {{ strtoupper($web ? $web->followers : 0) }}
+                                    </div>
                                 </a>
-                                <div class="text-center font-change followers-count">
-                                    {{ strtoupper($web ? $web->followers : 0) }}
-                                </div>
                             </div>
                         </li> &nbsp;
                         @endif

@@ -44,6 +44,7 @@ input::placeholder{
 }
 input[type="file"] {
             color: #000;
+            border-radius: 4px !important;
         }
 
         /* input[type="file"]::-webkit-file-upload-button {

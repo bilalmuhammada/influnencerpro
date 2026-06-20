@@ -8,11 +8,12 @@
 }
 .closebtncolor{
   
-    background-color: rgb(220, 53, 69); color:white;
+    background-color: #000fff; color:white;
+    border-color: #000fff;
 }
 
 .closebtn{
-    color: #000fff;
+    color: #fff;
     
 }
 .closebtn:hover{
@@ -22,16 +23,19 @@
 .closebtncolor:hover{
     color: white;
     background-color: #A17A4E;
+    border-color: #A17A4E;
     
 }
 .reportBtn{
     color: white;
-    margin-left: 16px; background-color:rgb(0, 123, 255);
+    margin-left: 16px; background-color:#000fff;
+    border-color: #000fff;
 }
 
 .reportBtn:hover{
     color: white;
     background-color: #A17A4E;
+    border-color: #A17A4E;
 }
 
 
@@ -83,12 +87,18 @@
         .textarea{
             
             font-size: 14px;
-            border: 1px solid goldenrod !important;   
+            border: 1px solid #997045 !important;   
             color:#000
         }
         .textarea:focus{
-            border:1px solid #000fff !important;
+            border:1px solid #997045 !important;
+            box-shadow: none !important;
           
+        }
+
+        .textarea::placeholder{
+            color:#997045;
+            opacity:1;
         }
        
         .modal-footer {
@@ -148,13 +158,13 @@
                         <label class="form-check-label" for="reason5">Privacy Violation </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input1" type="radio" name="report_reason" id="reason5" value="Abusive Behavoir "/>
-                        <label class="form-check-label" for="reason5">Abusive Behavoir </label>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason6" value="Abusive Behavoir "/>
+                        <label class="form-check-label" for="reason6">Abusive Behavoir </label>
                     </div>
                     
                     <div class="form-check" style="margin-bottom: 12px;">
-                        <input class="form-check-input1" type="radio" name="report_reason" id="reason5" value="other"/>
-                        <label class="form-check-label" for="reason5">Other </label>
+                        <input class="form-check-input1" type="radio" name="report_reason" id="reason7" value="other"/>
+                        <label class="form-check-label" for="reason7">Other </label>
                     </div>
                     <!-- textarea -->
                     <div class="col-md-12" style="margin-bottom: 12px;">

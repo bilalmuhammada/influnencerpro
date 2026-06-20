@@ -3,6 +3,10 @@
         .select2-container--default .select2-selection--single .select2-selection__arrow {
             top: 5px !important;
         }
+
+        .badge-premium-green {
+            margin-left: 0px !important;
+        }
     </style>
     <script type="text/javascript">
         function googleTranslateElementInit() {

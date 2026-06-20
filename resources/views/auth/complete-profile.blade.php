@@ -107,6 +107,16 @@
         background: transparent !important;
     }
 
+    .form-group.form-focus.selection-complete .select2-container--default .select2-selection--multiple {
+        border-color: #997045 !important;
+    }
+
+    .form-group.form-focus.selection-complete .select2-selection__choice,
+    .form-group.form-focus.selection-complete .select2-selection__choice__remove,
+    .form-group.form-focus.selection-complete .focus-label {
+        color: #997045 !important;
+    }
+
     .select2-container--default .select2-selection--multiple .select2-selection__rendered {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -523,8 +533,8 @@
     /* height: 12px; */
 
     /* } */
-    .select2-container--default:hover .select2-selection--multiple,
-    .form-group.form-focus:focus-within .select2-container--default .select2-selection--multiple {
+    .form-group.form-focus:not(.selection-complete) .select2-container--default:hover .select2-selection--multiple,
+    .form-group.form-focus:focus-within:not(.selection-complete) .select2-container--default .select2-selection--multiple {
         border: 1px solid #0504aa !important;
     }
 
@@ -1960,10 +1970,24 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
         show_img();
         show_img('#image0', '#logo0');
         var maxSelections = 3;
+        var limitedSelects = $('#category_ids, #spoken_language_ids, #arts');
+
+        function updateSelectionCompleteState(select) {
+            var value = $(select).val();
+            var selectedCount = Array.isArray(value) ? value.length : 0;
+            $(select).parents('.form-group').toggleClass('selection-complete', selectedCount >= maxSelections);
+        }
+
+        limitedSelects.each(function () {
+            updateSelectionCompleteState(this);
+        });
+
         $('#category_ids, #spoken_language_ids, #arts').on('select2:selecting', function (e) {
             if ($(this).val() && $(this).val().length >= maxSelections) {
                 e.preventDefault();
             }
+        }).on('select2:select select2:unselect change', function () {
+            updateSelectionCompleteState(this);
         });
         // $('.feature-select2').select2();
         $('.selectdropdown').select2({

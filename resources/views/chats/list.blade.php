@@ -206,13 +206,21 @@
 
 
     #filter-dropdown:focus {
-        border-color: #80bdff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        border-color: #000fff;
+        box-shadow: none;
         outline: none;
+    }
+
+    #filter-dropdown,
+    #filter-dropdown option {
+        color: #000fff;
+        font-size: 13px;
+        line-height: 1.2;
     }
 
     input.form-control-search:focus {
         border-color: #000fff !important;
+        box-shadow: none !important;
 
     }
 
@@ -225,12 +233,17 @@
         border-radius: 4px !important;
     }
 
+    input.form-control-search:hover {
+        border-color: #000fff !important;
+        box-shadow: none !important;
+    }
+
     .position-relative {
         position: relative;
     }
 
     #filter-dropdown:hover {
-        border-color: #80bdff;
+        border-color: #000fff;
     }
 
     .form-control-search::placeholder {
@@ -392,12 +405,21 @@
         font-size: 10px;
         font-weight: 700;
         line-height: 1;
-        margin: 6px 0 3px;
+        margin: 2px 0 -2px;
         text-align: center;
+        transform: translateY(4px);
     }
 
     .chat-footer.chat-blocked .chat-blocked-note {
         display: block;
+    }
+
+    .chat-footer .input-msg-send:hover,
+    .chat-footer .input-msg-send:focus,
+    .chat-footer .emojionearea:hover,
+    .chat-footer .emojionearea.focused {
+        border-color: #000fff !important;
+        box-shadow: none !important;
     }
 </style>
 @section('content')
@@ -422,7 +444,7 @@
                                 </div>
                                 <div class="col-md-2" style="margin-left: -97px;">
                                     <select class="form-select chat" id="filter-dropdown"
-                                        style="width: 160%; padding: 0; margin-top: 9px; border:transparent !important">
+                                        style="width: 140%; padding: 0 2px; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="unread">Unread</option>
                                         <option value="favorites">Favorited</option>
@@ -484,20 +506,13 @@
                                                                         </div>
 
                                                                         <div
-                                                                            style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px;">
-                                                                            <div style="display: flex; gap: 8px;">
+                                                                            style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px; margin-left: auto;">
+                                                                            <div style="display: flex; justify-content: flex-end; width: 100%;">
                                                                                 <button class="btn btn-link favorite-chat"
                                                                                     title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}"
                                                                                     style="padding: 0;" data-chat-id="{{ $chat->id }}">
                                                                                     <i class="fa fa-heart"
                                                                                         style="color: {{ $chat->is_favorite ? 'red' : 'grey' }} !important;"></i>
-                                                                                </button>
-
-                                                                                <button class="btn btn-link block-chat"
-                                                                                    title="{{ $chat->is_blocked ? 'Unblock' : 'Block' }}"
-                                                                                    style="padding: 0;" data-chat-id="{{ $chat->id }}">
-                                                                                    <i class="fa fa-ban"
-                                                                                        style="color: {{ $chat->is_blocked ? 'goldenrod' : 'grey' }} !important;"></i>
                                                                                 </button>
                                                                             </div>
 
@@ -614,9 +629,10 @@
 
                                                             <!-- Dropdown menu options -->
                                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                                <a class="dropdown-item block-chat  block_user " style="font-size: 12px;"
-                                                                    data-chat-id="{{ $chat->id }}" href="#">{{ $chat->is_blocked ? 'Unblock User' : 'Block User' }}</a>
+                                                                <a class="dropdown-item block-chat  block_user " style="font-size: 12px; {{ $chat->is_blocked && $chat->blocked_by != $login_user_id ? 'display:none;' : '' }}"
+                                                                    data-chat-id="{{ $chat->id }}" href="#">{{ $chat->is_blocked && $chat->blocked_by == $login_user_id ? 'Unblock User' : 'Block User' }}</a>
                                                                 <a class="dropdown-item report-user-btn" style="font-size: 12px;"
+                                                                    data-chat-id="{{ $chat->id }}"
                                                                     data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
                                                                     @if($existingReport)
                                                                         Reported User
@@ -668,9 +684,9 @@
                                                         </div>
                                                         <div class="chat-footer {{ $chat->is_blocked ? 'chat-blocked' : '' }}">
                                                             <div class="chat-blocked-note">
-                                                                @if($chat->is_blocked)
+                                                                    @if($chat->is_blocked)
                                                                     @if($chat->blocked_by == $login_user_id)
-                                                                        You blocked {{ getSafeValueFromObject($chat->other_user, 'name') }}
+                                                                        Chat blocked by You
                                                                     @else
                                                                         Chat blocked by {{ getSafeValueFromObject($chat->other_user, 'name') }}
                                                                     @endif
@@ -852,6 +868,17 @@
                 fixedContentPos: false
             });
 
+            function scrollChatToBottom(pane) {
+                var chatScroll = $(pane).find('.chat-body > .chat-scroll').first();
+                if (!chatScroll.length) {
+                    return;
+                }
+
+                chatScroll.scrollTop(chatScroll[0].scrollHeight);
+            }
+
+            window.scrollChatToBottom = scrollChatToBottom;
+
             window.showChatPane = function (selector) {
                 var pane = $(selector).first();
 
@@ -861,6 +888,9 @@
 
                 if (pane.length) {
                     $('#' + pane.attr('user')).addClass('active-chat-user');
+                    setTimeout(function () {
+                        scrollChatToBottom(pane);
+                    }, 0);
                 }
             };
 
@@ -869,6 +899,10 @@
                 $('.chat-body-div').removeClass('active-chat');
                 firstActivePane.addClass('active-chat');
             }
+
+            setTimeout(function () {
+                scrollChatToBottom($('.chat-body-div.active-chat'));
+            }, 0);
 
             // alert('ssss');
             @if (request()->i)
@@ -970,6 +1004,7 @@
 
 
                             report_user.text('Unblock User');
+                            report_user.show();
                             setChatFooterBlocked(chatFooter, true, response.blocked_message);
                         } else {
                             // show_success_message('User Unblocked');
@@ -977,6 +1012,7 @@
 
                             blockButtons.attr('title', 'Block');
                             report_user.text('Block User ');
+                            report_user.show();
                             setChatFooterBlocked(chatFooter, false);
 
                         }
@@ -1026,10 +1062,12 @@
         });
 
 
-        // $(document).ready(function () {
-        var button = $('.block-chat');
-        var chatId = button.data('chat-id');
-        $('.ad-id').val(chatId);
+        $(document).on('click', '.report-user-btn', function () {
+            $('#report-ad-form1')[0].reset();
+            $('.ad-id').val($(this).data('chat-id'));
+            $('.alert-text').text('');
+            $('.alert-div').hide();
+        });
 
         $('.hiddencheck').hide()
         $('.hiddentrash').hide()
@@ -1285,10 +1323,17 @@
                             </li>`;
 
             if (using_button === true) {
-                $(thisElem).parents('.chat-body-div').find('.message-body').append(li);
+                var pane = $(thisElem).parents('.chat-body-div');
+                pane.find('.message-body').append(li);
+                if (window.scrollChatToBottom) {
+                    window.scrollChatToBottom(pane);
+                }
             } else {
                 console.log(message)
                 $(parent).find('.message-body').append(li);
+                if (window.scrollChatToBottom) {
+                    window.scrollChatToBottom(parent);
+                }
             }
         }
 
@@ -1366,26 +1411,27 @@
 
 
         $(document).on('click', '.report-ad-submit-btn', function () {
+            var form = $('#report-ad-form1');
 
             $.ajax({
                 url: api_url + 'influencers/report-chat',
                 type: 'post',
-                data: $('.report-ad-form').serialize(),
+                data: form.serialize(),
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status) {
-                        $('#reportModal').modal('hide');
+                        $('#reportUserModal').modal('hide');
 
 
                         show_success_message("Ad Reported!");
 
                     } else {
-                        show_error_message("Already Reported");
+                        show_error_message(response.message || "Already Reported");
 
                     }
                 },
                 error: function (response) {
-                    $('#reportModal').modal('hide');
+                    $('#reportUserModal').modal('hide');
                     $('.alert-text').text("Login");
                     $('.alert-div').show();
 
