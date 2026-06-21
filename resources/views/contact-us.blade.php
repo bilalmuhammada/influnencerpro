@@ -9,6 +9,15 @@
             transition: border-color 0.2s ease;
         }
 
+        .form-focus textarea.floating,
+        .form-focus textarea.floating:focus {
+            background-color: #fff !important;
+        }
+
+        .form-focus .focus-label {
+            background-color: #fff !important;
+        }
+
         .form-focus .floating:hover,
         .form-focus .floating:focus,
         .form-focus .form-control-file:hover,

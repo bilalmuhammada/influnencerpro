@@ -8,34 +8,33 @@
 }
 .closebtncolor{
   
-    background-color: #000fff; color:white;
-    border-color: #000fff;
+    background-color: #997045; color:white;
+    border-color: #997045;
 }
 
-.closebtn{
-    color: #fff;
-    
+.modal-header .closebtn {
+    color: #0504aa;
 }
-.closebtn:hover{
-    color: goldenrod;
-    
+
+.modal-header .closebtn:hover {
+    color: #997045;
 }
 .closebtncolor:hover{
     color: white;
-    background-color: #A17A4E;
-    border-color: #A17A4E;
+    background-color: #000fff;
+    border-color: #000fff;
     
 }
 .reportBtn{
     color: white;
-    margin-left: 16px; background-color:#000fff;
-    border-color: #000fff;
+    margin-left: 16px; background-color:#997045;
+    border-color: #997045;
 }
 
 .reportBtn:hover{
     color: white;
-    background-color: #A17A4E;
-    border-color: #A17A4E;
+    background-color: #000fff;
+    border-color: #000fff;
 }
 
 
@@ -91,13 +90,16 @@
             color:#000
         }
         .textarea:focus{
-            border:1px solid #997045 !important;
+            border:1px solid #0504aa !important;
             box-shadow: none !important;
-          
+        }
+
+        .textarea:hover {
+            border:1px solid #0504aa !important;
         }
 
         .textarea::placeholder{
-            color:#997045;
+            color:#6b7280;
             opacity:1;
         }
        

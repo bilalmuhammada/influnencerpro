@@ -44,6 +44,18 @@
         padding: 0px 9px !important;
     }
 
+    .dropdown-item.report-user-btn.reported-user {
+        color: #dc2626 !important;
+        cursor: not-allowed;
+    }
+
+    .dropdown-item.block-chat-disabled,
+    .dropdown-item.block-chat-disabled:hover {
+        color: #6c757d !important;
+        cursor: not-allowed;
+        background-color: transparent !important;
+    }
+
 
     .emojionearea .emojionearea-button>div,
     .emojionearea .emojionearea-picker .emojionearea-wrapper:after {
@@ -164,6 +176,10 @@
         margin-top: 5px !important;
     }
 
+    #filter-dropdown + .select2-container {
+        margin-top: -2px !important;
+    }
+
     .mgn-send-color {
         color: #0686ee !important;
     }
@@ -255,6 +271,7 @@
 
     .select2-container--open .select2-dropdown {
         left: 0px !important;
+        top: -12px !important;
     }
 
     .select2-container--default .select2-results>.select2-results__options {
@@ -263,6 +280,11 @@
 
     .select2-container--default .select2-results__option {
         padding: 2px 10px !important;
+        color: #000fff !important;
+    }
+
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+        color: #000fff !important;
     }
 
     /* Customize the dropdown arrow */
@@ -399,15 +421,20 @@
         opacity: 0.55;
     }
 
+    .chat-footer.chat-blocked {
+        padding: 4px 0 6px !important;
+    }
+
     .chat-blocked-note {
         color: red;
         display: none;
         font-size: 10px;
         font-weight: 700;
-        line-height: 1;
-        margin: 2px 0 -2px;
+        line-height: 14px;
+        height: 14px;
+        margin: 0 41px 4px 17px;
         text-align: center;
-        transform: translateY(4px);
+        transform: none;
     }
 
     .chat-footer.chat-blocked .chat-blocked-note {
@@ -442,9 +469,9 @@
                                             All</label>
                                     </div>
                                 </div>
-                                <div class="col-md-2" style="margin-left: -97px;">
+                                <div class="col-md-2" style="margin-left: -68px;">
                                     <select class="form-select chat" id="filter-dropdown"
-                                        style="width: 140%; padding: 0 2px; margin-top: 9px; border:transparent !important">
+                                        style="width: 170%; padding: 0 2px; margin-top: 9px; border:transparent !important">
                                         <option value="all">All Chats</option>
                                         <option value="unread">Unread</option>
                                         <option value="favorites">Favorited</option>
@@ -453,14 +480,14 @@
                                 </div>
                                 <div class="col-md-2 hiddentrash">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 182px;">
+                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 146px;">
                                             <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 edit">
                                     <div class="row">
-                                        <div class="col-md-12 text-center" style="margin:   15px 0px 0px 183px;">
+                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 145px;">
                                             <i class="fa fa-pencil" id="edit-icon"
                                                 style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                         </div>
@@ -613,7 +640,7 @@
 
                                                             $existingReport = \App\Models\ChatReported::where(
                                                                 'reported_by',
-                                                                getSafeValueFromObject($chat->other_user, 'id')
+                                                                $login_user_id
                                                             )
                                                                 ->where('chat_id', $chat->id)
                                                                 ->exists();
@@ -629,17 +656,22 @@
 
                                                             <!-- Dropdown menu options -->
                                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                                <a class="dropdown-item block-chat  block_user " style="font-size: 12px; {{ $chat->is_blocked && $chat->blocked_by != $login_user_id ? 'display:none;' : '' }}"
-                                                                    data-chat-id="{{ $chat->id }}" href="#">{{ $chat->is_blocked && $chat->blocked_by == $login_user_id ? 'Unblock User' : 'Block User' }}</a>
-                                                                <a class="dropdown-item report-user-btn" style="font-size: 12px;"
-                                                                    data-chat-id="{{ $chat->id }}"
-                                                                    data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">
-                                                                    @if($existingReport)
-                                                                        Reported User
-                                                                    @else
-                                                                        Report User
-                                                                    @endif
-                                                                </a>
+                                                                @if($chat->is_blocked && $chat->blocked_by != $login_user_id)
+                                                                    <span class="dropdown-item block-chat-disabled" style="font-size: 12px;"
+                                                                        title="This user has already blocked this chat">Block User</span>
+                                                                @else
+                                                                    <a class="dropdown-item block-chat block_user" style="font-size: 12px;"
+                                                                        data-chat-id="{{ $chat->id }}" href="#">{{ $chat->is_blocked ? 'Unblock User' : 'Block User' }}</a>
+                                                                @endif
+
+                                                                @if($existingReport)
+                                                                    <span class="dropdown-item report-user-btn reported-user" style="font-size: 12px;"
+                                                                        aria-disabled="true">Reported User</span>
+                                                                @else
+                                                                    <a class="dropdown-item report-user-btn" style="font-size: 12px;"
+                                                                        data-chat-id="{{ $chat->id }}"
+                                                                        data-bs-toggle="modal" data-bs-target="#reportUserModal" href="#">Report User</a>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

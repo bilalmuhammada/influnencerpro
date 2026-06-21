@@ -137,10 +137,6 @@
         /* Show when hovering over the gallery container */
     }
 
-    #pdfdownload.pdf-sidebar-right .theiaStickySidebar {
-        transform: translateX(12px);
-    }
-
     .open-chat:hover {
 
         color: goldenrod !important;
@@ -235,7 +231,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 <div class="content  pdfdownload" id="pdfdownload" style="padding-top: 70px; ">
     <div class="container" style="width: 80%;">
         <div class="row">
-            <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys" style="border:0px solid red;">
+            <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar gallerys pdf-profile-sidebar" style="border:0px solid red;">
 
                 <div class="card search-filter" style="border:0px solid red;">
                     <!-- <div class="card-header d-flex justify-content-between"> -->
@@ -684,7 +680,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                 </div>
 
             </div>
-            <div class="col-md-12 col-lg-8 col-xl-9">
+            <div class="col-md-12 col-lg-8 col-xl-9 pdf-profile-content">
                 <div class="row">
                     <div class="col-md-6">
                         <strong>
@@ -696,7 +692,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                                     <img src="{{ asset('assets/img/icons/share.png') }}" alt="" class="shaking"
                                         width="30px">
                                 </a>
-                                <a id="downloadButton bilal-influncerdetail" style="margin: 9px 6px 0px 0px;"
+                                <a id="downloadButton" style="margin: 9px 6px 0px 0px;"
                                     class="downloadButton">
                                     {{-- <i class="fas fa-download" style="color: blue;"></i> --}}
                                     <img src="{{ asset('assets/img/icons/dwnld.png') }}" class="shaking" alt=""
@@ -973,7 +969,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
 
                     @forelse($influencer->influencer_profile_images as $image)
-                    <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3">
+                    <div class="col-md-3 col-lg-3 col-xl-3 gallerys p-3 pdf-gallery-item">
                         <div class="avatar-one project-img" style="width:100%;   border-radius:0.3rem !important; ">
                             <a href="{{ $image->file_name_url }}">
                                 <img src="{{ $image->file_name_url }}" alt="author" width="100%" height="200px">
@@ -1024,13 +1020,16 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
         $(".downloadButton").on("click", function () {
             const element = document.getElementById("pdfdownload");
             const influencerName = @json($influencer->full_name);
-            element.classList.add("pdf-sidebar-right");
 
             html2pdf()
                 .from(element)
                 .set({
                     margin: 0,
                     filename: `InfluencerPro - ${influencerName}.pdf`,
+                    pagebreak: {
+                        mode: ['css', 'legacy'],
+                        avoid: ['.pdf-gallery-item', '.pdf-profile-sidebar .col-md-6', '.pdf-profile-sidebar .col-md-12']
+                    },
                     image: { type: "jpeg", quality: 0.98 },
                     html2canvas: {
                         scale: 2,
@@ -1041,16 +1040,59 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                         scrollX: 0,
                         scrollY: 0,
                         windowWidth: window.innerWidth,
-                        windowHeight: document.documentElement.scrollHeight
+                        windowHeight: document.documentElement.scrollHeight,
+                        onclone: function (documentClone) {
+                            const exportStyle = documentClone.createElement('style');
+                            exportStyle.textContent = `
+                                #pdfdownload .pdf-profile-sidebar {
+                                    flex: 0 0 32% !important;
+                                    max-width: 32% !important;
+                                }
+                                #pdfdownload .pdf-profile-content {
+                                    flex: 0 0 68% !important;
+                                    max-width: 68% !important;
+                                }
+                                #pdfdownload .pdf-gallery-item,
+                                #pdfdownload .pdf-profile-sidebar .col-md-6,
+                                #pdfdownload .pdf-profile-sidebar .col-md-12 {
+                                    break-inside: avoid !important;
+                                    page-break-inside: avoid !important;
+                                }
+                                #pdfdownload .pdf-gallery-item img {
+                                    display: block;
+                                    max-width: 100% !important;
+                                    object-fit: cover;
+                                }
+                            `;
+                            documentClone.head.appendChild(exportStyle);
+
+                            // The sticky plugin wraps the sidebar and applies inline offsets.
+                            // Unwrap it in the PDF copy so it stays in the first grid column.
+                            documentClone.querySelectorAll('.gallerys > .theiaStickySidebar').forEach(function (sidebar) {
+                                const stickyContent = sidebar.querySelector(':scope > .theiaStickySidebar');
+
+                                if (stickyContent) {
+                                    while (stickyContent.firstChild) {
+                                        sidebar.insertBefore(stickyContent.firstChild, stickyContent);
+                                    }
+                                    stickyContent.remove();
+                                }
+
+                                sidebar.classList.remove('theiaStickySidebar');
+                                [
+                                    'position', 'overflow', 'box-sizing', 'min-height', 'height',
+                                    'width', 'transform', 'top', 'right', 'bottom', 'left'
+                                ].forEach(function (property) {
+                                    sidebar.style.removeProperty(property);
+                                });
+                            });
+                        }
                     },
                     jsPDF: { unit: "mm", format: "a4", orientation: "landscape" }
                 })
                 .save()
-                .then(function () {
-                    element.classList.remove("pdf-sidebar-right");
-                })
-                .catch(function () {
-                    element.classList.remove("pdf-sidebar-right");
+                .catch(function (error) {
+                    console.error('Unable to generate influencer PDF:', error);
                 });
         });
         // Handle delete icon click

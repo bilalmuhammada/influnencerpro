@@ -5,7 +5,7 @@
         }
 
         .badge-premium-green {
-            margin-left: 0px !important;
+            margin-left: -0.5px !important;
         }
     </style>
     <script type="text/javascript">

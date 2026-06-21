@@ -13,7 +13,7 @@
         }
 
         .badge-premium-green {
-            margin-left: 0px !important;
+            margin-left: -0.5px !important;
         }
 
         ::-webkit-scrollbar-track {

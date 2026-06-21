@@ -111,10 +111,8 @@
         border-color: #997045 !important;
     }
 
-    .form-group.form-focus.selection-complete .select2-selection__choice,
-    .form-group.form-focus.selection-complete .select2-selection__choice__remove,
-    .form-group.form-focus.selection-complete .focus-label {
-        color: #997045 !important;
+    .form-group.form-focus.selection-complete:hover .select2-container--default .select2-selection--multiple {
+        border-color: #0504aa !important;
     }
 
     .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -172,11 +170,6 @@
 
     #select2--results {
         min-height: 70px !important;
-    }
-
-    .dropdowndecoration:hover,
-    .dropdowndecoration:focus-within {
-        border: 1px solid #0504aa !important;
     }
 
     .dropdowndecoration {
@@ -288,16 +281,6 @@
         font-size: 14px;
         font-weight: bold;
     }
-
-    .inputbg:hover,
-    .inputbg:focus-within,
-    .floating:hover,
-    .floating:focus-within,
-    .form-group.form-focus.focused-within .form-control {
-        border: 1px solid #0504aa !important;
-    }
-
-
 
 
     .dropzone .dz-preview .dz-image {
@@ -533,9 +516,32 @@
     /* height: 12px; */
 
     /* } */
-    .form-group.form-focus:not(.selection-complete) .select2-container--default:hover .select2-selection--multiple,
-    .form-group.form-focus:focus-within:not(.selection-complete) .select2-container--default .select2-selection--multiple {
-        border: 1px solid #0504aa !important;
+    /* Hover/focus changes the field frame only; field text keeps its normal colour. */
+    .form-group.form-focus:not(.selection-complete):hover .select2-container--default .select2-selection--multiple,
+    .form-group.form-focus:focus-within:not(.selection-complete) .select2-container--default .select2-selection--multiple,
+    .form-group.form-focus:hover .select2-container--default .select2-selection--single,
+    .form-group.form-focus:focus-within .select2-container--default .select2-selection--single,
+    .form-group.form-focus:hover .form-control,
+    .form-group.form-focus:focus-within .form-control,
+    .form-group.form-focus.dropdowndecoration:hover,
+    .form-group.form-focus.dropdowndecoration:focus-within,
+    .inputbg:hover,
+    .inputbg:focus-within,
+    .floating:hover,
+    .floating:focus-within {
+        border-color: #0504aa !important;
+    }
+
+    /* Completing three selections restores only the Logo-Gold field frame. */
+    .form-group.form-focus.selection-complete .select2-container--default .select2-selection--multiple {
+        border-color: #997045 !important;
+    }
+
+    /* The remove icon is red on hover, including after three selections. */
+    .form-group.form-focus .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #dc2626 !important;
+        opacity: 1 !important;
+        background: transparent !important;
     }
 
     .select2-container--default .select2-selection--multiple {

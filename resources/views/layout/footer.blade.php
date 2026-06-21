@@ -41,7 +41,7 @@
         left: 50%;
         top: 0;
         transform: translateX(-50%);
-        color: #38bdf8;
+        color: blue;
         font-size: 10px;
         font-weight: 600;
         line-height: 1;
@@ -239,8 +239,12 @@
     // $('.popup-video').magnificPopup({
     //     type: 'iframe'
     // });
+    var storeComingSoonTimer;
+
     document.querySelectorAll('.store-coming-soon-trigger').forEach(function (trigger) {
         trigger.addEventListener('click', function () {
+            clearTimeout(storeComingSoonTimer);
+
             document.querySelectorAll('.store-coming-soon').forEach(function (label) {
                 label.classList.remove('is-visible');
             });
@@ -249,6 +253,12 @@
             if (label) {
                 label.classList.add('is-visible');
             }
+
+            storeComingSoonTimer = setTimeout(function () {
+                document.querySelectorAll('.store-coming-soon').forEach(function (label) {
+                    label.classList.remove('is-visible');
+                });
+            }, 1200);
         });
     });
 
