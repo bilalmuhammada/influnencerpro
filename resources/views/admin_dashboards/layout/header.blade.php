@@ -77,8 +77,18 @@
             padding-left: 0px !important;
         }
 
+        .form-control:hover,
+        .form-control:focus,
+        .form-controlz:hover,
+        .form-controlz:focus,
+        .select2-container .select2-selection--single:hover,
+        .select2-container--default.select2-container--focus .select2-selection--single,
+        .select2-container--default.select2-container--open .select2-selection--single {
+            border-color: blue !important;
+        }
+
         .select2-container--default .select2-selection--single:hover .select2-selection__rendered {
-            color: goldenrod !important;
+            color: blue !important;
         }
 
         .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
@@ -91,11 +101,12 @@
         }
 
         .select2-container--default .select2-selection--single:hover .select2-selection__arrow b {
-            border-color: goldenrod transparent transparent transparent !important;
+            border-color: blue transparent transparent transparent !important;
         }
 
         .select2-container--default .select2-selection--single:hover {
-            color: goldenrod !important;
+            color: blue !important;
+            border-color: blue !important;
         }
 
         .badge-premium-green {

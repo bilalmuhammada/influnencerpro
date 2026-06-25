@@ -260,6 +260,17 @@ input[type=password] {
     padding: 6px 15px;
     border: 1px solid #997045 !important;
 }
+
+.form-control:hover,
+.form-control:focus,
+.form-controlz:hover,
+.form-controlz:focus,
+.select2-container .select2-selection--single:hover,
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--single {
+    border-color: blue !important;
+}
+
 .form-controlz {
     border-color: #E7E8EA;
     /* color: #353535; */
@@ -1227,7 +1238,7 @@ button.bg-danger:hover {
 }
 
 .form-control:focus {
-    border-color: #C7C8CA;
+    border-color: blue !important;
     box-shadow: none;
     outline: 0 none;
 }
