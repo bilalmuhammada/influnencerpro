@@ -69,6 +69,12 @@ margin-bottom: 13px;
 
 </style>
 @section('content')
+    @php
+        $totalProfileViews = (float) ($influencer->total_views ?? 0);
+        $formattedProfileViews = $totalProfileViews >= 1000000
+            ? str_replace('.', ',', rtrim(rtrim(number_format($totalProfileViews / 1000000, 1, '.', ''), '0'), '.')) . 'M'
+            : number_format($totalProfileViews);
+    @endphp
 
     <section class="contents" style="border:0px solid red;padding:46px 0 0px;">
         <div class="container" style="border-top:1px solid #eee;">
@@ -92,7 +98,7 @@ margin-bottom: 13px;
                                  style="border:2px solid #eee;text-align:center;padding:20px 0px;border-radius:5px;">
                                 <div class="icon iconx3"><i class="fa fa-user" style="font-size:50px;"></i></div>
                                 <!-- <h1 class="total_click">{{ formatNumber($influencer->total_clicks) }}</h1> -->
-                                <h5 class="total_click bilal-worki">{{ formatNumber($influencer->total_views) }}</h5>
+                                <h5 class="total_click bilal-worki">{{ $formattedProfileViews }}</h5>
                                 <!-- <span><b>Clicks</b></span> -->
                                 <span><b style="font-size: 14px">Profile Views</b></span>
                             </div>
@@ -199,8 +205,8 @@ $(function() {
                     create_donut_chart(response.pie_chart);
                     create_bar_chart(response.profile_visit_bar_chart);
 
-                    $('.total_view').html(response.profile_visit_count);
-                    $('.total_click').html(response.profile_visit_count);
+                    $('.total_view').html(formatProfileViews(response.profile_visit_count));
+                    $('.total_click').html(formatProfileViews(response.profile_visit_count));
                     $('.favourite_count').html(response.favorite_count);
                     $('.chat_count').html(response.chat_count);
                 },
@@ -208,6 +214,19 @@ $(function() {
                     console.log("You must have sufficient data to show the Bar Chart");
                 }
             });
+        }
+
+        function formatProfileViews(value) {
+            var number = Number(value) || 0;
+
+            if (number >= 1000000) {
+                return (number / 1000000)
+                    .toFixed(1)
+                    .replace(/\.0$/, '')
+                    .replace('.', ',') + 'M';
+            }
+
+            return number.toLocaleString('en-US');
         }
 
         function create_pie_chart(response) {

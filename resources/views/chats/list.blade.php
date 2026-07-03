@@ -36,7 +36,8 @@
     .dropdown-item:focus,
     .dropdown-item:hover {
         color: goldenrod !important;
-        background-color: #f8f9fa !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
     }
 
     .dropdown-item {
@@ -45,13 +46,13 @@
     }
 
     .dropdown-item.report-user-btn.reported-user {
-        color: #dc2626 !important;
+        color: red !important;
         cursor: not-allowed;
     }
 
     .dropdown-item.block-chat-disabled,
     .dropdown-item.block-chat-disabled:hover {
-        color: #6c757d !important;
+        color: blue !important;
         cursor: not-allowed;
         background-color: transparent !important;
     }
@@ -93,6 +94,7 @@
     }
 
     .dropdown-menu.show {
+        box-shadow: none !important;
         padding: 0rem 0;
         display: block;
         min-width: 12px;
@@ -107,6 +109,7 @@
         transition: background-color 0.3s;
         padding: 10px;
         border-radius: 2px;
+        width: 100%;
     }
 
     .chat-title:hover {
@@ -189,9 +192,22 @@
     }
 
     .chat-info {
+        flex: 0 0 90px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        gap: 12px;
+        margin-left: auto;
+        margin-right: 3px;
+    }
+
+    .chat-cont-left .chat-users-list .chat-title .media-body {
+        min-width: 0;
+    }
+
+    .chat-cont-left .chat-users-list .chat-title .media-body > div:first-child {
+        min-width: 0;
+        overflow: hidden;
     }
 
     .last-chat-time {
@@ -227,11 +243,18 @@
         outline: none;
     }
 
-    #filter-dropdown,
-    #filter-dropdown option {
+    #filter-dropdown {
         color: #000fff;
         font-size: 13px;
         line-height: 1.2;
+    }
+
+    #filter-dropdown option {
+        color: #000;
+    }
+
+    .chat-list-filter .select2-selection__rendered {
+        color: #000fff !important;
     }
 
     input.form-control-search:focus {
@@ -280,7 +303,7 @@
 
     .select2-container--default .select2-results__option {
         padding: 2px 10px !important;
-        color: #000fff !important;
+        color: #000 !important;
     }
 
     .select2-container--default .select2-results__option--highlighted[aria-selected] {
@@ -340,9 +363,43 @@
     }
 
     #checkbox {
-        margin-top: 15px;
-        margin-left: 14px;
+        flex: 0 0 auto;
+    }
 
+    .chat-list-toolbar {
+        align-items: center;
+        display: flex;
+        gap: 0px;
+        min-height: 42px;
+        padding: 5px 21px;
+        position: relative;
+        width: 100%;
+    }
+
+    .chat-list-filter {
+        flex: 0 0 95px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+
+    .chat-list-filter #filter-dropdown {
+        border: transparent !important;
+        margin-top: 0;
+        padding: 0 2px;
+        width: 100%;
+    }
+
+    .chat-list-filter #filter-dropdown + .select2-container {
+        margin-top: 0 !important;
+        width: 95px !important;
+    }
+
+    .chat-list-toolbar-action {
+        cursor: pointer;
+        flex: 0 0 auto;
+        margin-left: auto;
+        text-align: right;
     }
 
     .chat-window {
@@ -432,9 +489,10 @@
         font-weight: 700;
         line-height: 14px;
         height: 14px;
-        margin: 0 41px 4px 17px;
+        margin: 0 0 4px 17px;
         text-align: center;
         transform: none;
+        width: 96%;
     }
 
     .chat-footer.chat-blocked .chat-blocked-note {
@@ -461,37 +519,27 @@
                     <div class="chat-window">
 
                         <div class="chat-cont-left">
-                            <div class="row" style="padding:5px 8px;">
-                                <div class="col-md-6">
-                                    <div class="d-flex align-items-center" id="checkbox">
-                                        <input type="checkbox" class="hiddencheck " id="check-all" style="width: auto;">
-                                        <label for="check-all" class="mb-0 hiddencheck" style="font-size: 13px;">Select
-                                            All</label>
-                                    </div>
+                            <div class="chat-list-toolbar">
+                                <div class="d-flex align-items-center" id="checkbox">
+                                    <input type="checkbox" class="hiddencheck" id="check-all" style="width: auto;">
+                                    <label for="check-all" class="mb-0 hiddencheck" style="font-size: 13px;">Select
+                                        All</label>
                                 </div>
-                                <div class="col-md-2" style="margin-left: -68px;">
+                                <div class="chat-list-filter">
                                     <select class="form-select chat" id="filter-dropdown"
-                                        style="width: 170%; padding: 0 2px; margin-top: 9px; border:transparent !important">
+                                        aria-label="Filter chats">
                                         <option value="all">All Chats</option>
                                         <option value="unread">Unread</option>
                                         <option value="favorites">Favorited</option>
                                         <option value="blocked">Blocked</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2 hiddentrash">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 146px;">
-                                            <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
-                                        </div>
-                                    </div>
+                                <div class="hiddentrash chat-list-toolbar-action">
+                                    <i class="fa fa-trash" style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                 </div>
-                                <div class="col-md-2 edit">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center" style="margin: 15px 0px 0px 145px;">
-                                            <i class="fa fa-pencil" id="edit-icon"
-                                                style="color: rgb(9, 9, 166);font-size: 15px;"></i>
-                                        </div>
-                                    </div>
+                                <div class="edit chat-list-toolbar-action">
+                                    <i class="fa fa-pencil" id="edit-icon"
+                                        style="color: rgb(9, 9, 166);font-size: 15px;"></i>
                                 </div>
                             </div>
 
@@ -532,8 +580,7 @@
                                                                             <div class="user-last-chat">{{ $chat->latest_message }}</div>
                                                                         </div>
 
-                                                                        <div
-                                                                            style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin-right: 3px; margin-left: auto;">
+                                                                        <div class="chat-info">
                                                                             <div style="display: flex; justify-content: flex-end; width: 100%;">
                                                                                 <button class="btn btn-link favorite-chat"
                                                                                     title="{{ $chat->is_favorite ? 'Unfavourite' : 'Favourite' }}"
@@ -995,7 +1042,7 @@
 
 
             // Toggle block
-            $('.block-chat').on('click', function (e) {
+            $(document).on('click', '.block-chat', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -1023,7 +1070,6 @@
 
                         var chatItem = $('.chat-title[chat-id="' + chatId + '"]');
                         var chatPane = $('.chat-body-div[chat-id="' + chatId + '"]');
-                        var report_user = chatPane.find('.block_user');
                         var blockButtons = $('.block-chat[data-chat-id="' + chatId + '"]');
                         var chatFooter = chatPane.find('.chat-footer');
 
@@ -1035,16 +1081,14 @@
                             blockButtons.attr('title', 'Unblock');
 
 
-                            report_user.text('Unblock User');
-                            report_user.show();
+                            blockButtons.text('Unblock User').show();
                             setChatFooterBlocked(chatFooter, true, response.blocked_message);
                         } else {
                             // show_success_message('User Unblocked');
                             blockButtons.find('i').css('color', 'grey');
 
                             blockButtons.attr('title', 'Block');
-                            report_user.text('Block User ');
-                            report_user.show();
+                            blockButtons.text('Block User').show();
                             setChatFooterBlocked(chatFooter, false);
 
                         }
@@ -1060,6 +1104,13 @@
 
 
 
+                    },
+                    error: function (xhr) {
+                        show_error_message(
+                            xhr.responseJSON && xhr.responseJSON.message
+                                ? xhr.responseJSON.message
+                                : 'Unable to update this chat.'
+                        );
                     }
                 });
             });

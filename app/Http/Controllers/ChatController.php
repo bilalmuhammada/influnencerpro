@@ -101,11 +101,19 @@ class ChatController extends Controller
             })
             ->firstOrFail();
 
-        $chat->is_blocked = !$chat->is_blocked;
-        $chat->blocked_by = $chat->is_blocked ? $loginUserId : null;
-        $chat->save();
+        if (!$chat->is_blocked) {
+            $chat->is_blocked = true;
+            $chat->blocked_by = $loginUserId;
+        } elseif ((int) $chat->blocked_by === (int) $loginUserId) {
+            $chat->is_blocked = false;
+            $chat->blocked_by = null;
+        } else {
+            return response()->json([
+                'message' => 'Only the user who blocked this chat can unblock it.',
+            ], 403);
+        }
 
-        $otherUser = $chat->other_user;
+        $chat->save();
 
         return response()->json([
             'is_blocked' => $chat->is_blocked,

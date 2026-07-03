@@ -86,16 +86,16 @@
         .textarea{
             
             font-size: 14px;
-            border: 1px solid #997045 !important;   
+            border: 1px solid goldenrod !important;
             color:#000
         }
         .textarea:focus{
-            border:1px solid #0504aa !important;
+            border:1px solid blue !important;
             box-shadow: none !important;
         }
 
         .textarea:hover {
-            border:1px solid #0504aa !important;
+            border: 1px solid blue !important;
         }
 
         .textarea::placeholder{

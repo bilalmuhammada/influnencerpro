@@ -258,7 +258,7 @@
                 document.querySelectorAll('.store-coming-soon').forEach(function (label) {
                     label.classList.remove('is-visible');
                 });
-            }, 1200);
+            }, 3000);
         });
     });
 
