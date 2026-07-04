@@ -707,7 +707,11 @@
 
                                                             <!-- Dropdown menu options -->
                                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userOptionsMenu">
-                                                                @if($chat->is_blocked && $chat->blocked_by != $login_user_id)
+                                                                @if(
+                                                                    $chat->is_blocked
+                                                                    && $chat->blocked_by !== null
+                                                                    && (int) $chat->blocked_by !== (int) $login_user_id
+                                                                )
                                                                     <span class="dropdown-item block-chat-disabled" style="font-size: 12px;"
                                                                         title="This user has already blocked this chat">Block User</span>
                                                                 @else

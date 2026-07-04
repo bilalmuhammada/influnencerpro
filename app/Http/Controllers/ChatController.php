@@ -104,7 +104,10 @@ class ChatController extends Controller
         if (!$chat->is_blocked) {
             $chat->is_blocked = true;
             $chat->blocked_by = $loginUserId;
-        } elseif ((int) $chat->blocked_by === (int) $loginUserId) {
+        } elseif (
+            $chat->blocked_by === null
+            || (int) $chat->blocked_by === (int) $loginUserId
+        ) {
             $chat->is_blocked = false;
             $chat->blocked_by = null;
         } else {
