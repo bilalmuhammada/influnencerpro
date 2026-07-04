@@ -45,9 +45,13 @@
         padding: 0px 9px !important;
     }
 
-    .dropdown-item.report-user-btn.reported-user {
+    .dropdown-item.report-user-btn.reported-user,
+    .dropdown-item.report-user-btn.reported-user:hover,
+    .dropdown-item.report-user-btn.reported-user:focus {
         color: red !important;
-        cursor: not-allowed;
+        cursor: default;
+        pointer-events: none;
+        background-color: transparent !important;
     }
 
     .dropdown-item.block-chat-disabled,
