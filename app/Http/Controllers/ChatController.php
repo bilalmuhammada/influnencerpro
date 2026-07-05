@@ -8,6 +8,7 @@ use App\Models\Message;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class ChatController extends Controller
 {
@@ -93,6 +94,7 @@ class ChatController extends Controller
     public function toggleBlock(Request $request)
     {
         $loginUserId = SiteHelper::getLoginUserId();
+        $supportsBlockOwner = Schema::hasColumn('chats', 'blocked_by');
 
         $chat = Chat::where('id', $request->chat_id)
             ->where(function ($query) use ($loginUserId) {
@@ -103,13 +105,18 @@ class ChatController extends Controller
 
         if (!$chat->is_blocked) {
             $chat->is_blocked = true;
-            $chat->blocked_by = $loginUserId;
+            if ($supportsBlockOwner) {
+                $chat->blocked_by = $loginUserId;
+            }
         } elseif (
-            $chat->blocked_by === null
+            !$supportsBlockOwner
+            || $chat->blocked_by === null
             || (int) $chat->blocked_by === (int) $loginUserId
         ) {
             $chat->is_blocked = false;
-            $chat->blocked_by = null;
+            if ($supportsBlockOwner) {
+                $chat->blocked_by = null;
+            }
         } else {
             return response()->json([
                 'message' => 'Only the user who blocked this chat can unblock it.',

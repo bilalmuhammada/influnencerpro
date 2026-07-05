@@ -8,15 +8,19 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::table('chats', function (Blueprint $table) {
-            $table->unsignedBigInteger('blocked_by')->nullable()->after('is_blocked');
-        });
+        if (!Schema::hasColumn('chats', 'blocked_by')) {
+            Schema::table('chats', function (Blueprint $table) {
+                $table->unsignedBigInteger('blocked_by')->nullable()->after('is_blocked');
+            });
+        }
     }
 
     public function down()
     {
-        Schema::table('chats', function (Blueprint $table) {
-            $table->dropColumn('blocked_by');
-        });
+        if (Schema::hasColumn('chats', 'blocked_by')) {
+            Schema::table('chats', function (Blueprint $table) {
+                $table->dropColumn('blocked_by');
+            });
+        }
     }
 };
