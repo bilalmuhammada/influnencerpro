@@ -185,7 +185,7 @@
     .select2-results__option {
         padding: 8px 13px !important;
         font-size: 14px !important;
-        color: #0504aa !important;
+        color: #000 !important;
     }
 
     /* Remove bold from selected and highlighted items in the dropdown list */
