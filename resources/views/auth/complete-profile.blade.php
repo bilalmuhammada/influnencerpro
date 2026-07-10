@@ -185,7 +185,7 @@
     .select2-results__option {
         padding: 8px 13px !important;
         font-size: 14px !important;
-        color: #4b5563 !important;
+        color: #0504aa !important;
     }
 
     /* Remove bold from selected and highlighted items in the dropdown list */
@@ -298,6 +298,15 @@
         color: black !important;
         font-size: 15px !important;
         font-weight: normal !important;
+    }
+
+    select.form-control,
+    .form-group.form-focus select.form-control,
+    .form-group.form-focus .select2-container .select2-selection__rendered,
+    .select2-container--default .select2-selection--single .select2-selection__rendered,
+    .select2-container--default .select2-selection--multiple .select2-selection__choice,
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+        color: #0504aa !important;
     }
 
     .form-control::placeholder {
