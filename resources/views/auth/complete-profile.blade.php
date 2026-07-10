@@ -143,7 +143,7 @@
     }
 
     .select2-selection__rendered[role="textbox"][aria-readonly="true"] {
-        color: black !important;
+        color: #0504aa !important;
         padding-left: 4px !important;
     }
 
@@ -344,6 +344,7 @@
     }
 
     .form-focus .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #0504aa !important;
         font-size: 14px !important;
         font-weight: normal !important;
         line-height: 22px !important;
@@ -454,7 +455,7 @@
     }
 
     #select2-mySelect-container {
-        color: #0b0b0b !important;
+        color: #0504aa !important;
     }
 
     #select2-arts-container {
