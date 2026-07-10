@@ -1,3 +1,40 @@
+// The Clipboard API is unavailable in non-secure contexts (for example, local HTTP).
+// Provide a fallback so copy handlers can still call navigator.clipboard.writeText().
+if (
+    typeof navigator !== 'undefined'
+    && (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function')
+) {
+    var clipboardFallback = {
+        writeText: function (text) {
+            var textarea = document.createElement('textarea');
+            textarea.value = String(text);
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+            } finally {
+                document.body.removeChild(textarea);
+            }
+
+            return Promise.resolve();
+        }
+    };
+
+    try {
+        Object.defineProperty(navigator, 'clipboard', {
+            configurable: true,
+            value: clipboardFallback
+        });
+    } catch (error) {
+        navigator.clipboard = clipboardFallback;
+    }
+}
+
 //submitting register form
 $(document).on('click', '.register-button', function () {
     grecaptcha.ready(function () {

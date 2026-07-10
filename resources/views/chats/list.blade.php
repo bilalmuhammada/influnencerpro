@@ -1197,17 +1197,31 @@
             var button = footer.find('.msg-send-btn');
             var editor = footer.find('.emojionearea-editor');
             var note = footer.find('.chat-blocked-note');
+            var emojiInstance = input.data('emojioneArea') || (input[0] && input[0].emojioneArea);
 
             footer.toggleClass('chat-blocked', isBlocked);
             input.prop('disabled', isBlocked).attr('data-chat-block', isBlocked ? '1' : '0');
             button.prop('disabled', isBlocked);
-            editor.attr('contenteditable', isBlocked ? 'false' : 'true');
+
+            if (emojiInstance) {
+                if (isBlocked) {
+                    emojiInstance.disable();
+                } else {
+                    emojiInstance.enable();
+                }
+            } else {
+                editor.attr('contenteditable', isBlocked ? 'false' : 'true');
+            }
 
             if (isBlocked) {
                 if (blockedMessage) {
                     note.text(blockedMessage);
                 }
-                editor.text('');
+                if (emojiInstance) {
+                    emojiInstance.setText('');
+                } else {
+                    editor.text('');
+                }
                 input.val('');
             } else {
                 note.text('');

@@ -60,7 +60,7 @@
   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('asset-admin/js/custom.js')}}"></script>
-    <script src="{{ asset('asset-admin/js/authenticate.js')}}"></script>
+    <script src="{{ asset('asset-admin/js/authenticate.js') }}?v={{ filemtime(public_path('asset-admin/js/authenticate.js')) }}"></script>
 
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">

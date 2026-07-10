@@ -57,7 +57,7 @@
 
     <script src="{{ asset('asset-admin/js/custom.js')}}"></script>
  
-    <script src="{{ asset('asset-admin/js/authenticate.js')}}"></script>
+    <script src="{{ asset('asset-admin/js/authenticate.js') }}?v={{ filemtime(public_path('asset-admin/js/authenticate.js')) }}"></script>
 
     <script>
         // var varyingModal = document.getElementById('varyingModal')
