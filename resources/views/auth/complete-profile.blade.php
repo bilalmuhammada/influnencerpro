@@ -539,7 +539,7 @@
     .inputbg:focus-within,
     .floating:hover,
     .floating:focus-within {
-        border-color: #0504aa !important;
+        border-color: blue !important;
     }
 
     /* Completing three selections restores only the Logo-Gold field frame. */
