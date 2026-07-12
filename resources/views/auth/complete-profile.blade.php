@@ -547,7 +547,22 @@
         border-color: #997045 !important;
     }
 
+    /* Keep selected dropdown text blue; only the down arrow turns gold. */
+    .form-group.form-focus:hover .select2-container--default .select2-selection--single .select2-selection__rendered,
+    .form-group.form-focus:focus-within .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #0504aa !important;
+    }
+
+    .form-group.form-focus:hover .select2-container--default .select2-selection--single .select2-selection__arrow b,
+    .form-group.form-focus:focus-within .select2-container--default .select2-selection--single .select2-selection__arrow b {
+        border-color: #997045 transparent transparent transparent !important;
+    }
+
     /* The remove icon is red on hover, including after three selections. */
+    .form-group.form-focus .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        font-weight: bold !important;
+    }
+
     .form-group.form-focus .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
         color: #dc2626 !important;
         opacity: 1 !important;
