@@ -53,6 +53,7 @@ input::placeholder{
 }
 input[type="file"] {
             color: #000;
+            border: 1px solid #997045 !important;
             border-radius: 4px !important;
         }
 
