@@ -555,7 +555,7 @@
 
     .form-group.form-focus:hover .select2-container--default .select2-selection--single .select2-selection__arrow b,
     .form-group.form-focus:focus-within .select2-container--default .select2-selection--single .select2-selection__arrow b {
-        border-color: #997045 transparent transparent transparent !important;
+        border-color: goldenrod transparent transparent transparent !important;
     }
 
     /* The remove icon is red on hover, including after three selections. */
