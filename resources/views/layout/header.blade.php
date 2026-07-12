@@ -244,6 +244,7 @@
             border-radius: 4px !important;
         }
 
+        .select2-search--dropdown .select2-search__field:hover,
         .select2-search--dropdown .select2-search__field:focus {
             border-color: blue !important;
             outline: none !important;
