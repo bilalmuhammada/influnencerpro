@@ -495,7 +495,7 @@
         height: 14px;
         margin: 0 0 4px 17px;
         text-align: center;
-        transform: translate(-10px, 2px);
+        transform: translate(-10px, 0.5rem);
         width: 96%;
     }
 
