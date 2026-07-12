@@ -86,7 +86,7 @@
         .textarea{
             
             font-size: 14px;
-            border: 1px solid goldenrod !important;
+            border: 1px solid #997045 !important;
             color:#000
         }
         .textarea:focus{
