@@ -281,6 +281,12 @@
         .goog-te-banner-frame.skiptranslate,
         .goog-te-banner-frame,
         .goog-te-balloon-frame,
+        iframe.skiptranslate,
+        iframe[class^="VIpgJd-ZVi9od-ORHb"],
+        iframe[class*=" VIpgJd-ZVi9od-ORHb"],
+        body > .skiptranslate,
+        [class^="VIpgJd-ZVi9od-ORHb"],
+        [class*=" VIpgJd-ZVi9od-ORHb"],
         #goog-gt-tt,
         .goog-te-balloon-frame.skiptranslate,
         .goog-te-menu-value span:nth-child(2),
@@ -290,6 +296,7 @@
 
         body {
             top: 0px !important;
+            margin-top: 0 !important;
         }
 
         .VIpgJd-ZVi9od-ORHb {
