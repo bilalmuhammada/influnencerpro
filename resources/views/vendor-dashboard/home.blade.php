@@ -1334,14 +1334,28 @@
         }
     });
 
-    function setCardActionState(actionElem, activeClass, inactiveClass) {
-        actionElem.hide();
-        actionElem.parents('.influencerdetail').find(activeClass).show();
+    function setCardActionState(actionElem, activeClass) {
+        let card = actionElem.closest('.influencerdetail');
+        let activeIcon = card.find(activeClass);
+
+        actionElem[0].style.setProperty('display', 'none', 'important');
+        activeIcon.each(function () {
+            this.style.setProperty('display', 'inline-block', 'important');
+            let isSelectedIcon = activeClass.indexOf('.remove-') === 0;
+            let selectedColor = activeClass.indexOf('favourite') !== -1 ? 'red' : '#61de2a';
+            this.style.setProperty('color', isSelectedIcon ? selectedColor : 'white', 'important');
+        });
     }
 
     function restoreCardActionState(actionElem, activeClass, inactiveClass) {
-        actionElem.parents('.influencerdetail').find(activeClass).hide();
-        actionElem.parents('.influencerdetail').find(inactiveClass).show();
+        let card = actionElem.closest('.influencerdetail');
+
+        card.find(activeClass).each(function () {
+            this.style.setProperty('display', 'none', 'important');
+        });
+        card.find(inactiveClass).each(function () {
+            this.style.setProperty('display', 'inline-block', 'important');
+        });
     }
 
     function isValidToggleResponse(response) {

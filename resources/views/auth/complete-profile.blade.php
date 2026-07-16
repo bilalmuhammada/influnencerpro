@@ -572,6 +572,12 @@
     .select2-container--default .select2-selection--multiple {
         border: 1px solid #997045 !important;
     }
+
+    /* Completed multi-select fields should also turn blue when hovered. */
+    .form-group.form-focus.selection-complete:hover .select2-container--default .select2-selection--multiple,
+    .form-group.form-focus.selection-complete:focus-within .select2-container--default .select2-selection--multiple {
+        border-color: blue !important;
+    }
 </style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 

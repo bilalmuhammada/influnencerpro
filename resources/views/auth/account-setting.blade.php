@@ -91,7 +91,7 @@ input::placeholder {
                                         <label class="focus-label">Mobile </label>
                                     </div>
                                    <div class="form-group form-focus">
-                                      <input type="password" class="form-control floating" name="password" id="influencer_password" placeholder="8  Characters - 1 Capital, 1 Number, 1 Special" value="">
+                                      <input type="password" class="form-control floating" name="password" id="influencer_password" placeholder="8 Characters - 1 Capital, 1 Number, 1 Special" value="">
                                       <div class="input-group-append">
                                         <span class="toggle-password" onclick="togglePassword('influencer_password')" style="cursor: pointer;">👁️</span>
                                     </div>

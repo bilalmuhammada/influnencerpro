@@ -375,7 +375,7 @@
         display: flex;
         gap: 0px;
         min-height: 42px;
-        padding: 5px 21px;
+        padding: 5px 25px;
         position: relative;
         width: 100%;
     }
@@ -493,7 +493,7 @@
         font-weight: 700;
         line-height: 14px;
         height: 14px;
-        margin: 0 0 4px 17px;
+        margin: 0 0 7px 17px;
         text-align: center;
         transform: translate(-10px, 0.5rem);
         width: 96%;
