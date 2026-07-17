@@ -273,8 +273,7 @@
                                     @php
                                         $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
                                     @endphp
-                                    <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLink" {!! $hasUnread
-                    ? 'data-bs-toggle="dropdown"' : '' !!}>
+                                    <a href="{{ url('/chats') }}" class="nav-link" id="chatLink">
                                         Chats @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span>
                                         @endif
                                     </a>
@@ -332,8 +331,8 @@
                                     @endif
                                 </li>
 
-                                <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link" id="notificationLink" data-bs-toggle="dropdown">
+                                <li class="nav-item dropdown {{ request()->is('notifications') ? 'active' : '' }}">
+                                    <a href="{{ url('/notifications') }}" class="nav-link" id="notificationLink">
                                         Notifications @if($unread_notifications_count > 0) <span
                                             class="badge-premium-green notification-badge-count">{{ $unread_notifications_count
                                         }}</span> @endif
@@ -479,14 +478,6 @@
 
 <script>
 
-
-    $(document).ready(function () {
-        $('#notificationLink, #chatLink').on('click', function (e) {
-            if ($(this).attr('data-bs-toggle') === 'dropdown' || $(this).attr('id') === 'notificationLink') {
-                $(this).closest('.dropdown').toggleClass('active');
-            }
-        });
-    });
 
     function toggleDropdown(element, event) {
         // Stop click from bubbling to parent notification dropdown

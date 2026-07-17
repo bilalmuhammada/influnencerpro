@@ -142,7 +142,7 @@
                                 @php 
                                     $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
                                 @endphp
-                                <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLink" {!! $hasUnread ? 'data-bs-toggle="dropdown"' : '' !!}>
+                                <a href="{{ url('/chats') }}" class="nav-link" id="chatLink">
                                     Chat @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span> @endif
                                 </a>
                                 @if ($hasUnread)
@@ -195,7 +195,7 @@
                                 @php 
                                     $hasUnread = isset($unread_messages) && count($unread_messages) > 0;
                                 @endphp
-                                <a href="{{ $hasUnread ? '#' : url('/chats') }}" class="nav-link" id="chatLinkInfluencer" {!! $hasUnread ? 'data-bs-toggle="dropdown"' : '' !!}>
+                                <a href="{{ url('/chats') }}" class="nav-link" id="chatLinkInfluencer">
                                     Chat @if($hasUnread) <span class="badge-premium-green">{{ count($unread_messages) }}</span> @endif
                                 </a>
                                 @if ($hasUnread)
