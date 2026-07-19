@@ -80,7 +80,7 @@ input::placeholder {
                                         <label class="focus-label">Last Name </label>
                                     </div>
                                     <div class="form-group form-focus">
-                                        <input type="email" class="form-control floating" name="email" placeholder="Please provide a valid Email."  value="{{ session()->get('User')['email'] }}">
+                                        <input type="email" class="form-control floating" name="email" placeholder="Please provide a valid Email." value="{{ session()->get('User')['email'] }}" readonly aria-readonly="true">
                                         <label class="focus-label">Email </label>
                                     </div>
                                     <div class="form-group form-focus">

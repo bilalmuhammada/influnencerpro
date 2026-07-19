@@ -19,16 +19,23 @@ class ChatController extends Controller
 
     {
         if ($request->i) {
-            Chat::updateOrCreate(
-                [
-                    'first_user_id' => session()->get('User')['id'],
+            $loginUserId = SiteHelper::getLoginUserId();
+            $chatExists = Chat::where(function ($query) use ($loginUserId, $request) {
+                $query->where('first_user_id', $loginUserId)
+                    ->where('second_user_id', $request->i);
+            })->orWhere(function ($query) use ($loginUserId, $request) {
+                $query->where('first_user_id', $request->i)
+                    ->where('second_user_id', $loginUserId);
+            })->exists();
+
+            if (!$chatExists) {
+                Chat::create([
+                    'first_user_id' => $loginUserId,
                     'second_user_id' => $request->i,
-                ],
-                [
                     'status' => 'accepted',
-                    'initiated_by' => session()->get('User')['id'],
-                ]
-            );
+                    'initiated_by' => $loginUserId,
+                ]);
+            }
         }
    
       
@@ -190,10 +197,14 @@ class ChatController extends Controller
             ], 403);
         }
 
-        // if( $request->message !='null'){
-            $Message = Message::create([
-                'sender_id' => SiteHelper::getLoginUserId(),
-                'receiver_id' => 22,
+        $senderId = SiteHelper::getLoginUserId();
+        $receiverId = (int) $chat->first_user_id === (int) $senderId
+            ? $chat->second_user_id
+            : $chat->first_user_id;
+
+        $Message = Message::create([
+                'sender_id' => $senderId,
+                'receiver_id' => $receiverId,
                 'message' => $request->message,
                 'chat_id' => $request->chat_id,
                 'is_readed' => 0,
@@ -205,20 +216,13 @@ class ChatController extends Controller
             'message' => "Message Sent Successfully",
             'data' => $Message
         ]);
-        // }else{
-       
-        //     return response()->json([
-        //         'status' => false,
-        //         'message' => "Message Not Sent Successfully",
-        //         // 'data' => $Message
-        //     ]);
-        // }
-      
     }
 
     public function markMessagesAsRead(Request $request)
     {
-        Message::where('chat_id', $request->id)->update([
+        Message::where('chat_id', $request->id)
+            ->where('receiver_id', SiteHelper::getLoginUserId())
+            ->update([
             'is_readed' => 1,
             'readed_at' => Carbon::now()
         ]);
@@ -232,11 +236,15 @@ class ChatController extends Controller
 
     public function getNewMessages(Request $request)
     {
-        $chats = Chat::with(['messages' => function ($message) {
-            $message->where('is_delivered', 0)->where('sender_id', '!=', SiteHelper::getLoginUserId());
+        $loginUserId = SiteHelper::getLoginUserId();
+        $chats = Chat::with(['messages' => function ($message) use ($loginUserId) {
+            $message->where('is_delivered', 0)
+                ->where('receiver_id', $loginUserId);
         }])
-            ->where('first_user_id', SiteHelper::getLoginUserId())
-            ->orWhere('second_user_id', SiteHelper::getLoginUserId())
+            ->where(function ($query) use ($loginUserId) {
+                $query->where('first_user_id', $loginUserId)
+                    ->orWhere('second_user_id', $loginUserId);
+            })
             ->get();
 
         foreach ($chats as $chat) {

@@ -327,6 +327,11 @@
         margin-bottom: 8px !important;
     }
 
+    /* Keep the price row aligned with the spacing used between all profile fields. */
+    .profile-price-row {
+        margin-top: 0 !important;
+    }
+
     .focus-label,
     .inner_label {
         position: absolute !important;
@@ -1273,7 +1278,7 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
 
                                             </div>
 
-                                            <div class="row" style="">
+                                            <div class="row" style="margin-bottom: 6px;">
                                                 <div class="col-md-4">
                                                     <div class="form-group form-focus dropdowndecoration"
                                                         style="height: 52px;">
@@ -1342,6 +1347,9 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                                                     </div>
                                                 </div>
 
+                                            </div>
+                                            <div class="row profile-price-row">
+
                                                 @php
                                                 // dd($influencer_professional_detail);
                                                 @endphp
@@ -1380,13 +1388,6 @@ $availabilities = $influencer->availabilities->where('is_default', 0);
                                                             Includes</label>
                                                     </div>
                                                 </div>
-
-
-                                            </div>
-                                            <div class="row available-box" style="">
-
-
-
 
 
                                             </div>

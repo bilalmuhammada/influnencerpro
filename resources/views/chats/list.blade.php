@@ -1376,18 +1376,36 @@
                 success: function (response) {
                     if (response.status) {
                         $(response.data).each(function (i, chat) {
+                            var chatItem = $('.chat-title[chat-id="' + chat.id + '"]');
+                            var chatPane = $('.chat-body-div[chat-id="' + chat.id + '"]');
+                            var chatFooter = chatPane.find('.chat-footer');
+                            var isBlocked = Boolean(Number(chat.is_blocked));
+
+                            chatItem.toggleClass('blocked', isBlocked);
+                            setChatFooterBlocked(
+                                chatFooter,
+                                isBlocked,
+                                isBlocked
+                                    ? (Number(chat.blocked_by) === Number(response.login_user_id)
+                                        ? 'Chat blocked by You'
+                                        : 'Chat blocked by ' + (chat.other_user ? chat.other_user.name : 'User'))
+                                    : null
+                            );
+
                             if (chat.messages.length > 0) {
                                 $(chat.messages).each(function (i, msg) {
-                                    send_msg_body(msg, '', false, $('#' + chat.other_user.name + '-' + chat.other_user.id + '-chat-body-div'), chat);
+                                    send_msg_body(msg, '', false, chatPane, chat);
                                 });
 
-                                $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.user-last-chat').html(chat.latest_message);
+                                chatItem.find('.user-last-chat').html(chat.latest_message);
 
                                 if (response.login_user_id !== chat.latest_message_sender_id && chat.unread_count > 0) {
-                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').show();
-                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').html(chat.unread_count);
+                                    chatItem.find('.unread-count').show();
+                                    chatItem.find('.unread-count').html(chat.unread_count);
+                                    chatItem.addClass('unread');
                                 } else {
-                                    $('#' + chat.other_user.name + '-' + chat.other_user.id).find('.unread-count').hide();
+                                    chatItem.find('.unread-count').hide();
+                                    chatItem.removeClass('unread');
                                 }
                             }
                         })

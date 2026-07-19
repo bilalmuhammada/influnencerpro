@@ -63,7 +63,8 @@ class Chat extends Model
     {
         return Message::where([
             'chat_id' => $this->id,
-            'is_readed' => false
+            'receiver_id' => SiteHelper::getLoginUserId(),
+            'is_readed' => false,
         ])->count();
     }
 
@@ -84,7 +85,8 @@ class Chat extends Model
 
         return $Message_ids = Message::where([
             'chat_id' => $this->id,
-            'is_readed' => false
+            'receiver_id' => SiteHelper::getLoginUserId(),
+            'is_readed' => false,
         ])->pluck('id');
     }
 

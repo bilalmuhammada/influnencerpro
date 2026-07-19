@@ -188,7 +188,7 @@ class SiteHelper
         if (session()->has('User')) {
             return session()->get('User')['id'];
         } else {
-            Auth::id();
+            return Auth::id();
         }
     }
 
